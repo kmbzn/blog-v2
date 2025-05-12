@@ -1,25 +1,9 @@
 <template><div><h1 id="국민체조" tabindex="-1"><a class="header-anchor" href="#국민체조"><span>국민체조</span></a></h1>
 <table>
-<thead>
-<tr>
-<th>숨</th>
-<th>다</th>
-<th>팔</th>
-<th>목</th>
-<th>가</th>
-<th>옆</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>등</td>
-<td>몸</td>
-<td>온</td>
-<td>뜀</td>
-<td>팔</td>
-<td>숨</td>
-</tr>
-</tbody>
+  <tbody>
+    <tr><td>숨</td><td>다</td><td>팔</td><td>목</td><td>가</td><td>옆</td></tr>
+    <tr><td>등</td><td>몸</td><td>온</td><td>뜀</td><td>팔</td><td>숨</td></tr>
+  </tbody>
 </table>
 <h2 id="pre-제자리걸음" tabindex="-1"><a class="header-anchor" href="#pre-제자리걸음"><span>pre. 제자리걸음</span></a></h2>
 <ul>
