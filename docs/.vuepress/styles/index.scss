@@ -27,28 +27,20 @@ li {
 .vp-sidebar-item {
   font-family: 'Pretendard', sans-serif;
 }
-
 pre,
 code,
 div[class*='language-'] {
   font-family: 'goorm-sans-code', consolas, monaco, 'Andale Mono', 'Ubuntu Mono', monospace !important;
 }
 
-.vp-navbar .vp-site-logo {
-    position: absolute;
-    left: 50%;
-  }
-  .vp-site-name {
-    display: none;
-  }
-
-  .theme-default-content {
-    border-bottom: 1px solid #fff !important;
-  }
+.theme-default-content {
+  border-bottom: 1px solid #fff !important;
+}
 
 .vp-navbar .vp-site-logo {
   position: absolute;
   left: 50%;
+  transform: translateX(-50%);
 }
 .vp-site-name {
   display: none;
