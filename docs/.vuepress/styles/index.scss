@@ -1,0 +1,116 @@
+/* 기본 본문용 폰트 */
+@font-face {
+  font-family: 'Tmoney RoundWind';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/TmoneyRoundWindRegular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* 코드 블록 전용 폰트 */
+@font-face {
+  font-family: 'goorm-sans-code';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2408@1.0/goorm-sans-code.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+}
+
+p,
+li {
+  font-family: 'Tmoney RoundWind', sans-serif;
+}
+
+.vp-sidebar,
+.vp-sidebar-item {
+  font-family: 'Pretendard', sans-serif;
+}
+
+pre,
+code,
+div[class*='language-'] {
+  font-family: 'goorm-sans-code', consolas, monaco, 'Andale Mono', 'Ubuntu Mono', monospace !important;
+}
+
+.vp-navbar .vp-site-logo {
+    position: absolute;
+    left: 50%;
+  }
+  .vp-site-name {
+    display: none;
+  }
+
+  .theme-default-content {
+    border-bottom: 1px solid #fff !important;
+  }
+
+.vp-navbar .vp-site-logo {
+  position: absolute;
+  left: 50%;
+}
+.vp-site-name {
+  display: none;
+}
+
+@media print {
+  @page {
+    size: A4 portrait; /* 또는 size: auto; */
+    margin: 0;
+  }
+
+  html, body {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+  }
+
+  .vp-navbar,
+  .vp-sidebar,
+  .vp-page-nav,
+  .vp-footer,
+  .last-updated {
+    display: none !important;
+  }
+
+  .theme-default-content {
+    margin: 0 auto !important;
+    padding: 0 1rem !important;
+    width: 10% !important;
+    max-width: 800px !important;
+  }
+}
+
+
+/* 본문 내용 구분선 */
+.theme-default-content h2 {
+  border-bottom: 1px solid var(--vp-c-gutter) !important;
+}
+
+/* Footer 구분선도 동일하게 설정 + 길이 맞춤 */
+.vp-footer {
+  max-width: 740px;
+  margin: 0 auto;
+  padding: 2rem 0;
+  border-top: 1px solid var(--vp-c-gutter);
+}
+
+:root {
+  --vp-c-gutter: #aaa;
+  --vp-c-text: #333;
+}
+
+html[data-theme='dark'] {
+  --vp-c-gutter: #444;
+  --vp-c-text: #ddd;
+}
+
+:root {
+  --vp-c-accent: #FC5719 !important; // 새 강조색
+  --vp-c-accent-bg: #FC5719 !important; // 새 강조색
+}
+
+img {
+  border-radius: 6px;
+}
