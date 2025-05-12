@@ -1,10 +1,9 @@
 <template><div><h1 id="국민체조" tabindex="-1"><a class="header-anchor" href="#국민체조"><span>국민체조</span></a></h1>
-<table>
-  <tbody>
-    <tr><td>숨</td><td>다</td><td>팔</td><td>목</td><td>가</td><td>옆</td></tr>
-    <tr><td>등</td><td>몸</td><td>온</td><td>뜀</td><td>팔</td><td>숨</td></tr>
-  </tbody>
-</table>
+<div class="hint-container info">
+<p class="hint-container-title">정보</p>
+<p>국민체조의 동작 순서를 외우기 어려울 땐, <strong>&quot;숨다팔목가옆&quot;</strong> → <strong>&quot;등몸온뜀팔숨&quot;</strong> 식으로 6글자씩 끊어 외워 보세요.<br>
+각 글자는 동작의 첫 글자를 의미합니다. 리듬감 있게 암기하면 빠르게 익힐 수 있습니다.</p>
+</div>
 <h2 id="pre-제자리걸음" tabindex="-1"><a class="header-anchor" href="#pre-제자리걸음"><span>pre. 제자리걸음</span></a></h2>
 <ul>
 <li>처음에는 주먹을 쥐고 가볍게 차렷 자세</li>
