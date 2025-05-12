@@ -36,7 +36,9 @@ div[class*='language-'] {
   font-family: 'goorm-sans-code', consolas, monaco, 'Andale Mono', 'Ubuntu Mono', monospace !important;
 }
 
-
+.vp-page [vp-content] {
+  padding: 0 0;
+}
 .vp-navbar .vp-site-logo {
   position: absolute;
   left: 50%;
@@ -44,7 +46,7 @@ div[class*='language-'] {
 }
 
 .vp-site-name {
-  display: none;
+  padding: 0;
 }
 
 /* 본문 내용 구분선 */
@@ -57,6 +59,10 @@ div[class*='language-'] {
   margin: 0 auto;
   padding: 2rem 0;
   border-top: 1px solid var(--vp-c-gutter);
+}
+
+.vp-footer-wrapper[data-v-43ea5535] {
+  padding: 0;
 }
 
 a.header-anchor::before {
@@ -73,6 +79,10 @@ a.header-anchor::before {
   --vp-c-accent-bg: #FC5719; // 강조색
   --code-c-bg: #223;
   .vp-page-meta {
+    display: none;
+  }
+  .vp-page-nav {
+    display: none;
   }
 }
 
@@ -98,7 +108,6 @@ img {
   .vp-sidebar,
   .vp-page-nav,
   .vp-footer,
-  .vp-page-meta,
   .vp-footer-wrapper {
     display: none;
   }
@@ -112,9 +121,6 @@ img {
     padding-top: 0;
   }
   .vp-page {
-    padding: 0 0;
-  }
-  .vp-page [vp-content] {
     padding: 0 0;
   }
   div[class*=language-] pre code {
