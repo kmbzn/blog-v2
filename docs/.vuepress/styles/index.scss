@@ -82,16 +82,9 @@ div[class*='language-'] {
   }
 }
 
-
 /* 본문 내용 구분선 */
 .theme-default-content h2 {
   border-bottom: 1px solid var(--vp-c-gutter) !important;
-}
-
-.last-updated {
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
 }
 
 /* Footer 구분선도 동일하게 설정 + 길이 맞춤 */
