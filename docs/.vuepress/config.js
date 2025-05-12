@@ -51,9 +51,7 @@ export default defineUserConfig({
           '/computer-graphics/7-Hierachical-Modeling-Mesh',
         ]
       }
-    ],
-    sidebarDepth: 0,
-    lastUpdated: false
+    ]
   }),
   bundler: viteBundler()
 })
