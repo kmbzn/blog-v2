@@ -61,10 +61,23 @@ If you'd like to create your own blog based on this one:
 
 3. After forking, clone it to your local machine:
 
-  ```sh
-  git clone https://github.com/kmbzn/blog.git
-  cd blog
-  ```
+::: code-tabs
+@tab HTTPS
+```bash
+git clone https://github.com/kmbzn/blog-v2.git
+cd blog-v2
+```
+@tab SSH
+```bash
+git clone git@github.com:kmbzn/blog-v2.git
+cd blog-v2
+```
+@tab GitHub CLI
+```bash
+gh repo clone kmbzn/blog-v2
+cd blog-v2
+```
+:::
 
 4. Open the folder in your code editor (e.g., vscode).
 

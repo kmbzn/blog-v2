@@ -91,10 +91,27 @@
 <p>After forking, clone it to your local machine:</p>
 </li>
 </ol>
-<div class="language-bash line-numbers-mode" data-highlighter="prismjs" data-ext="sh"><pre v-pre><code><span class="line"><span class="token function">git</span> clone https://github.com/kmbzn/blog.git</span>
-<span class="line"><span class="token builtin class-name">cd</span> blog</span>
+<CodeTabs id="225" :data='[{"id":"HTTPS"},{"id":"SSH"},{"id":"GitHub CLI"}]'>
+<template #title0="{ value, isActive }">HTTPS</template>
+<template #title1="{ value, isActive }">SSH</template>
+<template #title2="{ value, isActive }">GitHub CLI</template>
+<template #tab0="{ value, isActive }">
+<div class="language-bash line-numbers-mode" data-highlighter="prismjs" data-ext="sh"><pre v-pre><code><span class="line"><span class="token function">git</span> clone https://github.com/kmbzn/blog-v2.git</span>
+<span class="line"><span class="token builtin class-name">cd</span> blog-v2</span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div></div></div><ol start="4">
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div></div></div></template>
+<template #tab1="{ value, isActive }">
+<div class="language-bash line-numbers-mode" data-highlighter="prismjs" data-ext="sh"><pre v-pre><code><span class="line"><span class="token function">git</span> clone git@github.com:kmbzn/blog-v2.git</span>
+<span class="line"><span class="token builtin class-name">cd</span> blog-v2</span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div></div></div></template>
+<template #tab2="{ value, isActive }">
+<div class="language-bash line-numbers-mode" data-highlighter="prismjs" data-ext="sh"><pre v-pre><code><span class="line">gh repo clone kmbzn/blog-v2</span>
+<span class="line"><span class="token builtin class-name">cd</span> blog-v2</span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div></div></div></template>
+</CodeTabs>
+<ol start="4">
 <li>
 <p>Open the folder in your code editor (e.g., vscode).</p>
 </li>
