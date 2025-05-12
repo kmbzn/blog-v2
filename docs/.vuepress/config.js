@@ -2,12 +2,20 @@ import { defineUserConfig } from 'vuepress'
 import { viteBundler } from '@vuepress/bundler-vite'
 import theme from './theme/index.js'
 import { markdownMathPlugin } from '@vuepress/plugin-markdown-math'
+import { gitPlugin } from '@vuepress/plugin-git'
 
 export default defineUserConfig({
   lang: 'ko-KR',
   plugins: [
     markdownMathPlugin({
       type: 'katex',
+    }),
+    gitPlugin({
+      transformer: (timestamp, lang) => {
+        const date = new Date(timestamp)
+        const pad = (n) => n.toString().padStart(2, '0')
+        return `${date.getFullYear()}-${pad(date.getMonth() + 1)}-${pad(date.getDate())} ${pad(date.getHours())}:${pad(date.getMinutes())}`
+      },
     }),
   ],
   description: 'Summarizing key concepts from CS lectures.',
@@ -53,7 +61,7 @@ export default defineUserConfig({
       }
     ],
     sidebarDepth: 0,
-    lastUpdated: false
+    lastUpdated: true
   }),
   bundler: viteBundler()
 })
