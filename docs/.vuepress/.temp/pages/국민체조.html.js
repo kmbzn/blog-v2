@@ -1,5 +1,5 @@
-import comp from "/home/kmbzn/workspace/blog-v2/docs/.vuepress/.temp/pages/국민체조.html.vue"
-const data = JSON.parse("{\"path\":\"/%EA%B5%AD%EB%AF%BC%EC%B2%B4%EC%A1%B0.html\",\"title\":\"국민체조\",\"lang\":\"ko-KR\",\"frontmatter\":{},\"git\":{},\"filePathRelative\":\"국민체조.md\"}")
+import comp from "C:/Users/kmbzn/blog-v2/docs/.vuepress/.temp/pages/국민체조.html.vue"
+const data = JSON.parse("{\"path\":\"/%EA%B5%AD%EB%AF%BC%EC%B2%B4%EC%A1%B0.html\",\"title\":\"국민체조\",\"lang\":\"ko-KR\",\"frontmatter\":{},\"git\":{\"updatedTime\":1747013490000,\"contributors\":[{\"name\":\"김병준\",\"username\":\"\",\"email\":\"kmbzn24@hanyang.ac.kr\",\"commits\":1}],\"changelog\":[{\"hash\":\"2b556a92d04849cf6de46aa4f92180a2dc2325bb\",\"time\":1747013490000,\"email\":\"kmbzn24@hanyang.ac.kr\",\"author\":\"김병준\",\"message\":\"initial commit\"}]},\"filePathRelative\":\"국민체조.md\"}")
 export { comp, data }
 
 if (import.meta.webpackHot) {

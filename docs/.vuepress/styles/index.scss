@@ -1,4 +1,6 @@
-/* 기본 본문용 폰트 */
+// index.scss
+
+// 티머니 둥근바람체
 @font-face {
   font-family: 'Tmoney RoundWind';
   src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/TmoneyRoundWindRegular.woff') format('woff');
@@ -6,7 +8,7 @@
   font-style: normal;
 }
 
-/* 코드 블록 전용 폰트 */
+// 구름 산스 코드
 @font-face {
   font-family: 'goorm-sans-code';
   src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2408@1.0/goorm-sans-code.woff2') format('woff2');
@@ -27,59 +29,29 @@ li {
 .vp-sidebar-item {
   font-family: 'Pretendard', sans-serif;
 }
+
 pre,
 code,
 div[class*='language-'] {
   font-family: 'goorm-sans-code', consolas, monaco, 'Andale Mono', 'Ubuntu Mono', monospace !important;
 }
 
-.theme-default-content {
-  border-bottom: 1px solid #fff !important;
-}
 
 .vp-navbar .vp-site-logo {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
 }
+
 .vp-site-name {
   display: none;
 }
 
-@media print {
-  @page {
-    size: A4 portrait; /* 또는 size: auto; */
-    margin: 0;
-  }
-
-  html, body {
-    margin: 0 !important;
-    padding: 0 !important;
-    width: 100% !important;
-  }
-
-  .vp-navbar,
-  .vp-sidebar,
-  .vp-page-nav,
-  .vp-footer,
-  .last-updated {
-    display: none !important;
-  }
-
-  .theme-default-content {
-    margin: 0 auto !important;
-    padding: 0 1rem !important;
-    width: 10% !important;
-    max-width: 800px !important;
-  }
-}
-
 /* 본문 내용 구분선 */
 .theme-default-content h2 {
-  border-bottom: 1px solid var(--vp-c-gutter) !important;
+  border-bottom: 1px solid var(--vp-c-gutter);
 }
 
-/* Footer 구분선도 동일하게 설정 + 길이 맞춤 */
 .vp-footer {
   max-width: 740px;
   margin: 0 auto;
@@ -87,9 +59,25 @@ div[class*='language-'] {
   border-top: 1px solid var(--vp-c-gutter);
 }
 
+a.header-anchor::before {
+  content: "#";
+  top: .3em;
+  left: -1em;
+  font-size: .75em;
+}
+
 :root {
   --vp-c-gutter: #aaa;
   --vp-c-text: #333;
+  --vp-c-accent: #FC5719; // 강조색
+  --vp-c-accent-bg: #FC5719; // 강조색
+  --code-c-bg: #223;
+  .vp-page-meta {
+  }
+}
+
+table {
+  --vp-c-bg-alt: transparent;
 }
 
 html[data-theme='dark'] {
@@ -97,11 +85,48 @@ html[data-theme='dark'] {
   --vp-c-text: #ddd;
 }
 
-:root {
-  --vp-c-accent: #FC5719 !important; // 새 강조색
-  --vp-c-accent-bg: #FC5719 !important; // 새 강조색
-}
-
 img {
   border-radius: 6px;
 }
+
+@media print {
+  @page {
+    size: auto;
+  }
+  // 요소 숨기기
+  .vp-navbar,
+  .vp-sidebar,
+  .vp-page-nav,
+  .vp-footer,
+  .vp-page-meta,
+  .vp-footer-wrapper {
+    display: none;
+  }
+  .vp-page h1,
+  .vp-page h2,
+  .vp-page h3,
+  .vp-page h4,
+  .vp-page h5,
+  .vp-page h6 {
+    margin-top: 0;
+    padding-top: 0;
+  }
+  .vp-page {
+    padding: 0 0;
+  }
+  .vp-page [vp-content] {
+    padding: 0 0;
+  }
+  div[class*=language-] pre code {
+    color: #333;
+  }
+  div[class*=language-].line-numbers-mode pre {
+    display: block;
+    border-color: var(--vp-c-accent);
+    
+  }
+  div[class*=language-].line-numbers-mode:after {
+    border: none;
+  }
+}
+

@@ -10,13 +10,6 @@ export default defineUserConfig({
     markdownMathPlugin({
       type: 'katex',
     }),
-    gitPlugin({
-      transformer: (timestamp, lang) => {
-        const date = new Date(timestamp)
-        const pad = (n) => n.toString().padStart(2, '0')
-        return `${date.getFullYear()}-${pad(date.getMonth() + 1)}-${pad(date.getDate())} ${pad(date.getHours())}:${pad(date.getMinutes())}`
-      },
-    }),
   ],
   description: 'Summarizing key concepts from CS lectures.',
   email: 'kmbzn24@gmail.com',
