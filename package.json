@@ -1,6 +1,6 @@
 {
   "name": "blog-v2",
-  "description": "VuePress v2 블로그입니다.",
+  "description": "VuePress v2 blog",
   "version": "0.0.1",
   "license": "UNLICENSED",
   "type": "module",
@@ -25,5 +25,8 @@
   },
   "dependencies": {
     "markdown-it-katex": "^2.0.3"
+  },
+  "engines": {
+    "node": ">=20.4.0"
   }
 }
