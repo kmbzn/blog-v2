@@ -1,5 +1,5 @@
 import comp from "C:/Users/kmbzn/blog-v2/docs/.vuepress/.temp/pages/index.html.vue"
-const data = JSON.parse("{\"path\":\"/\",\"title\":\"kmbzn.com\",\"lang\":\"ko-KR\",\"frontmatter\":{},\"git\":{\"updatedTime\":1747013490000,\"contributors\":[{\"name\":\"김병준\",\"username\":\"\",\"email\":\"kmbzn24@hanyang.ac.kr\",\"commits\":1}],\"changelog\":[{\"hash\":\"2b556a92d04849cf6de46aa4f92180a2dc2325bb\",\"time\":1747013490000,\"email\":\"kmbzn24@hanyang.ac.kr\",\"author\":\"김병준\",\"message\":\"initial commit\"}]},\"filePathRelative\":\"README.md\"}")
+const data = JSON.parse("{\"path\":\"/\",\"title\":\"kmbzn.com\",\"lang\":\"ko-KR\",\"frontmatter\":{},\"git\":{\"updatedTime\":1747080515000,\"contributors\":[{\"name\":\"김병준\",\"username\":\"\",\"email\":\"kmbzn24@hanyang.ac.kr\",\"commits\":1},{\"name\":\"kmbzn\",\"username\":\"kmbzn\",\"email\":\"kmbzn@example.com\",\"commits\":1,\"url\":\"https://github.com/kmbzn\"}],\"changelog\":[{\"hash\":\"aeeb8353830b4f783e839a7a6c57b1ed755d67d8\",\"time\":1747080515000,\"email\":\"kmbzn@example.com\",\"author\":\"kmbzn\",\"message\":\"code-tabs\"},{\"hash\":\"2b556a92d04849cf6de46aa4f92180a2dc2325bb\",\"time\":1747013490000,\"email\":\"kmbzn24@hanyang.ac.kr\",\"author\":\"김병준\",\"message\":\"initial commit\"}]},\"filePathRelative\":\"README.md\"}")
 export { comp, data }
 
 if (import.meta.webpackHot) {
