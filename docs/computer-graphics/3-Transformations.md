@@ -40,11 +40,11 @@
   **linear transformation**이라 부름
 - Linear transformation은 다음 조건을 만족해야 함:
   $$
-  T(\\mathbf{v}_1 + \\mathbf{v}_2) \\\\ = T(\\mathbf{v}_1) + T(\\mathbf{v}_2), \quad T(c\\mathbf{v}) \\\\ = cT(\\mathbf{v})
+  T(\mathbf{v}_1 + \mathbf{v}_2) \\ = T(\mathbf{v}_1) + T(\mathbf{v}_2), \quad T(c\mathbf{v}) \\ = cT(\mathbf{v})
   $$
 - 행렬 $M$ 또한 동일한 *선형성(linearity)*을 만족:
   $$
-  M(\\mathbf{v}_1 + \\mathbf{v}_2) \\\\ = M\\mathbf{v}_1 + M\\mathbf{v}_2, \quad M(c\\mathbf{v}) \\\\ = c(M\\mathbf{v})
+  M(\mathbf{v}_1 + \mathbf{v}_2) \\ = \mathbf{M}\mathbf{v}_1 + M\mathbf{v}_2, \quad M(c\mathbf{v}) \\ = c(\mathbf{M}\mathbf{v})
   $$
 
 ## 2D Linear Transformations
@@ -62,33 +62,33 @@
 $$
 \mathbf{S} =
 \begin{bmatrix}
-s & 0 \\\\
+s & 0 \\
 0 & s
-\end{bmatrix} \\\\
+\end{bmatrix} \\
 \mathbf{p} =
 \begin{bmatrix}
-x \\\\
+x \\
 y
 \end{bmatrix}
 \quad\Rightarrow\quad
 \mathbf{p}' =
 \begin{bmatrix}
-sx \\\\
+sx \\
 sy
 \end{bmatrix}
 $$
 - 예: 배율 ( s = 1.5 )인 scaling을 적용할 경우,  
 $$
 \begin{bmatrix}
-1.5 & 0 \\\\
+1.5 & 0 \\
 0 & 1.5
 \end{bmatrix}
 \begin{bmatrix}
-x \\\\
+x \\
 y
 \end{bmatrix} =
 \begin{bmatrix}
-1.5x \\\\
+1.5x \\
 1.5y
 \end{bmatrix}
 $$
@@ -98,15 +98,15 @@ $$
 - x축과 y축 방향으로 **서로 다른 비율로** 확대 또는 축소
 $$
 \begin{bmatrix}
-s_x & 0 \\\\
+s_x & 0 \\
 0 & s_y
 \end{bmatrix}
 \begin{bmatrix}
-x \\\\
+x \\
 y
 \end{bmatrix} =
 \begin{bmatrix}
-s_xx \\\\
+s_xx \\
 s_yy
 \end{bmatrix}
 $$
@@ -119,15 +119,15 @@ $$
 - 양의 각도는 반시계 방향(CCW, Counter-Clockwise)을 의미함
 $$
 \begin{bmatrix}
-\cos \theta & -\sin \theta \\\\
+\cos \theta & -\sin \theta \\
 \sin \theta & \cos \theta
 \end{bmatrix}
 \begin{bmatrix}
-x \\\\
+x \\
 y
 \end{bmatrix} =
 \begin{bmatrix}
-x \cos \theta - y \sin \theta \\\\
+x \cos \theta - y \sin \theta \\
 x \sin \theta + y \cos \theta
 \end{bmatrix}
 $$
@@ -149,7 +149,7 @@ $$
 - 예시: $x$축 방향 reflection
 $$
 \begin{bmatrix}
--1 & 0\\\\
+-1 & 0\\
 0 & 1
 \end{bmatrix}
 $$
@@ -160,15 +160,15 @@ $$
 - 예시: $x$축 기준으로 $y$에 비례하여 $x$ 이동
 $$
 \begin{bmatrix}
--1 & 0\\\\
+-1 & 0\\
 0 & 1
 \end{bmatrix}
 \begin{bmatrix}
-x\\\\
+x\\
 y
 \end{bmatrix} =
 \begin{bmatrix}
-x+ay\\\\
+x+ay\\
 y
 \end{bmatrix}
 $$
@@ -178,15 +178,15 @@ $$
 - 아무런 변환도 수행하지 않는 행렬 → **"Doing nothing"**
 $$
 \begin{bmatrix}
-1 & 0\\\\
+1 & 0\\
 0 & 1
 \end{bmatrix}
 \begin{bmatrix}
-x\\\\
+x\\
 y
 \end{bmatrix} =
 \begin{bmatrix}
-x\\\\
+x\\
 y
 \end{bmatrix}
 $$
@@ -354,81 +354,81 @@ $$
 - 2D linear transformation의 표현:
   $$
   \begin{bmatrix}
-  a & b & 0 \\\\
-  c & d & 0 \\\\
+  a & b & 0 \\
+  c & d & 0 \\
   0 & 0 & 1
   \end{bmatrix}
   \begin{bmatrix}
-  x \\\\
-  y \\\\
+  x \\
+  y \\
   1
   \end{bmatrix} =
   \begin{bmatrix}
-  ax + by \\\\
-  cx + dy \\\\
+  ax + by \\
+  cx + dy \\
   1
   \end{bmatrix}
   $$
 - 2D translation의 표현:
   $$
   \begin{bmatrix}
-  1 & 0 & t \\\\
-  0 & 1 & s \\\\
+  1 & 0 & t \\
+  0 & 1 & s \\
   0 & 0 & 1
   \end{bmatrix}
   \begin{bmatrix}
-  x \\\\
-  y \\\\
+  x \\
+  y \\
   1
   \end{bmatrix} =
   \begin{bmatrix}
-  x + t \\\\
-  y + s \\\\
+  x + t \\
+  y + s \\
   1
   \end{bmatrix}
   $$
 - 2D affine transformation의 표현:
   $$
   \begin{bmatrix}
-  m_{11} & m_{12} & u_x \\\\
-  m_{21} & m_{22} & u_y \\\\
+  m_{11} & m_{12} & u_x \\
+  m_{21} & m_{22} & u_y \\
   0 & 0 & 1
   \end{bmatrix}
   $$
 - **Affine transformation 합성**은 **3×3 행렬 곱셈**으로 간단하게 처리 가능:
 $$
-T(\mathbf{p}) = M_T \mathbf{p} + \mathbf{u}_T \\\\
+T(\mathbf{p}) = M_T \mathbf{p} + \mathbf{u}_T \\
 S(\mathbf{p}) = M_S \mathbf{p} + \mathbf{u}_S
 $$
 → block 행렬 표현:
 $$
 T(\mathbf{p}) =
 \begin{bmatrix}
-M_T & \mathbf{u}_T \\\\
+M_T & \mathbf{u}_T \\
 0 & 1
-\end{bmatrix}, \\\\
+\end{bmatrix}, \\
 S(\mathbf{p}) =
 \begin{bmatrix}
-M_S & \mathbf{u}_S \\\\
+M_S & \mathbf{u}_S \\
 0 & 1
 \end{bmatrix}
 $$
 $$
-(S \circ T)(\mathbf{p}) \\\\ =
+(S \circ T)(\mathbf{p}) \\ =
 \begin{bmatrix}
-M_S & \mathbf{u}_S \\\\
+M_S & \mathbf{u}_S \\
 0 & 1
 \end{bmatrix}
 \begin{bmatrix}
-M_T & \mathbf{u}_T \\\\
+M_T & \mathbf{u}_T \\
 0 & 1
 \end{bmatrix}
 \begin{bmatrix}
-\mathbf{p} \\\\
+\mathbf{p} \\
 1
-\end{bmatrix} \\\\ =
+\end{bmatrix} \\ =
 \begin{bmatrix}
-(M_S M_T) \mathbf{p} + (M_S \mathbf{u}_T + \mathbf{u}_S) \\\\
+(M_S M_T) \mathbf{p} + (M_S \mathbf{u}_T + \mathbf{u}_S) \\
 1
 \end{bmatrix}
 $$
@@ -478,15 +478,15 @@ $$
 - **Cartesian coordinate system**:
   $$
   \begin{bmatrix}
-  p_x \\\\
+  p_x \\
   p_y
   \end{bmatrix}
   $$
 - **Homogeneous coordinate system**:
   $$
   \begin{bmatrix}
-  p_x \\\\
-  p_y \\\\
+  p_x \\
+  p_y \\
   1
   \end{bmatrix}
   $$
@@ -496,17 +496,17 @@ $$
 - **Cartesian coordinate system**:
   $$
   \begin{bmatrix}
-  p_x \\\\
-  p_y \\\\
+  p_x \\
+  p_y \\
   p_z
   \end{bmatrix}
   $$
 - **Homogeneous coordinate system**:
   $$
   \begin{bmatrix}
-  p_x \\\\
-  p_y \\\\
-  p_z \\\\
+  p_x \\
+  p_y \\
+  p_z \\
   1
   \end{bmatrix}
   $$
@@ -519,11 +519,11 @@ $$
 
 $$
 \begin{bmatrix}
-m_{11} & m_{12} \\\\
+m_{11} & m_{12} \\
 m_{21} & m_{22}
 \end{bmatrix}
 \begin{bmatrix}
-p_x \\\\
+p_x \\
 p_y
 \end{bmatrix}
 $$
@@ -534,13 +534,13 @@ $$
 
 $$
 \begin{bmatrix}
-m_{11} & m_{12} & 0 \\\\
-m_{21} & m_{22} & 0 \\\\
+m_{11} & m_{12} & 0 \\
+m_{21} & m_{22} & 0 \\
 0 & 0 & 1
 \end{bmatrix}
 \begin{bmatrix}
-p_x \\\\
-p_y \\\\
+p_x \\
+p_y \\
 1
 \end{bmatrix}
 $$
@@ -555,26 +555,26 @@ $$
 
   $$
   \begin{bmatrix}
-  m_{11} & m_{12} & m_{13} \\\\
-  m_{21} & m_{22} & m_{23} \\\\
+  m_{11} & m_{12} & m_{13} \\
+  m_{21} & m_{22} & m_{23} \\
   m_{31} & m_{32} & m_{33}
   \end{bmatrix}
   \begin{bmatrix}
-  p_x \\\\
-  p_y \\\\
+  p_x \\
+  p_y \\
   p_z
   \end{bmatrix}
-  \\\\ \text{or}\ \\\\
+  \\\\ \text{or}\ \\
   \begin{bmatrix}
-  m_{11} & m_{12} & m_{13} & 0 \\\\
-  m_{21} & m_{22} & m_{23} & 0 \\\\
-  m_{31} & m_{32} & m_{33} & 0 \\\\
+  m_{11} & m_{12} & m_{13} & 0 \\
+  m_{21} & m_{22} & m_{23} & 0 \\
+  m_{31} & m_{32} & m_{33} & 0 \\
   0 & 0 & 0 & 1
   \end{bmatrix}
   \begin{bmatrix}
-  p_x \\\\
-  p_y \\\\
-  p_z \\\\
+  p_x \\
+  p_y \\
+  p_z \\
   1
   \end{bmatrix}
   $$
@@ -586,17 +586,17 @@ $$
   $$
   S_s =
   \begin{bmatrix}
-  S_x & 0 & 0 \\\\
-  0 & S_y & 0 \\\\
+  S_x & 0 & 0 \\
+  0 & S_y & 0 \\
   0 & 0 & S_z
   \end{bmatrix}
   \quad\text{(3D)}
-  \\\\
+  \\
   S_s =
   \begin{bmatrix}
-  S_x & 0 & 0 & 0 \\\\
-  0 & S_y & 0 & 0 \\\\
-  0 & 0 & S_z & 0 \\\\
+  S_x & 0 & 0 & 0 \\
+  0 & S_y & 0 & 0 \\
+  0 & 0 & S_z & 0 \\
   0 & 0 & 0 & 1
   \end{bmatrix}
   \quad\text{(3D-H)}
@@ -607,16 +607,16 @@ $$
   $$
   H_{x,d} =
   \begin{bmatrix}
-  1 & d_y & d_z \\\\
-  0 & 1 & 0 \\\\
+  1 & d_y & d_z \\
+  0 & 1 & 0 \\
   0 & 0 & 1
   \end{bmatrix}
-  \\\\ \text{or} \\\\
+  \\ \text{or} \\
   H_{x,d} =
   \begin{bmatrix}
-  1 & d_y & d_z & 0 \\\\
-  0 & 1 & 0 & 0 \\\\
-  0 & 0 & 1 & 0 \\\\
+  1 & d_y & d_z & 0 \\
+  0 & 1 & 0 & 0 \\
+  0 & 0 & 1 & 0 \\
   0 & 0 & 0 & 1
   \end{bmatrix}
   $$
@@ -628,8 +628,8 @@ $$
   $$
   R_{x,\theta} =
   \begin{bmatrix}
-  1 & 0 & 0 \\\\
-  0 & \cos\theta & -\sin\theta \\\\
+  1 & 0 & 0 \\
+  0 & \cos\theta & -\sin\theta \\
   0 & \sin\theta & \cos\theta
   \end{bmatrix}
   $$
@@ -639,8 +639,8 @@ $$
   $$
   R_{y,\theta} =
   \begin{bmatrix}
-  \cos\theta & 0 & \sin\theta \\\\
-  0 & 1 & 0 \\\\
+  \cos\theta & 0 & \sin\theta \\
+  0 & 1 & 0 \\
   -\sin\theta & 0 & \cos\theta
   \end{bmatrix}
   $$
@@ -650,8 +650,8 @@ $$
   $$
   R_{z,\theta} =
   \begin{bmatrix}
-  \cos\theta & -\sin\theta & 0 \\\\
-  \sin\theta & \cos\theta & 0 \\\\
+  \cos\theta & -\sin\theta & 0 \\
+  \sin\theta & \cos\theta & 0 \\
   0 & 0 & 1
   \end{bmatrix}
   $$
@@ -666,11 +666,11 @@ $$
 
 $$
 \begin{bmatrix}
-p_x \\\\ p_y
+p_x \\ p_y
 \end{bmatrix}
 +
 \begin{bmatrix}
-u_x \\\\ u_y
+u_x \\ u_y
 \end{bmatrix}
 $$
 
@@ -678,12 +678,12 @@ $$
 
 $$
 \begin{bmatrix}
-1 & 0 & u_x \\\\
-0 & 1 & u_y \\\\
+1 & 0 & u_x \\
+0 & 1 & u_y \\
 0 & 0 & 1
 \end{bmatrix}
 \begin{bmatrix}
-p_x \\\\ p_y \\\\ 1
+p_x \\ p_y \\ 1
 \end{bmatrix}
 $$
 
@@ -695,11 +695,11 @@ $$
 
 $$
 \begin{bmatrix}
-p_x \\\\ p_y \\\\ p_z
+p_x \\ p_y \\ p_z
 \end{bmatrix}
 +
 \begin{bmatrix}
-u_x \\\\ u_y \\\\ u_z
+u_x \\ u_y \\ u_z
 \end{bmatrix}
 $$
 
@@ -707,13 +707,13 @@ $$
 
 $$
 \begin{bmatrix}
-1 & 0 & 0 & u_x \\\\
-0 & 1 & 0 & u_y \\\\
-0 & 0 & 1 & u_z \\\\
+1 & 0 & 0 & u_x \\
+0 & 1 & 0 & u_y \\
+0 & 0 & 1 & u_z \\
 0 & 0 & 0 & 1
 \end{bmatrix}
 \begin{bmatrix}
-p_x \\\\ p_y \\\\ p_z \\\\ 1
+p_x \\ p_y \\ p_z \\ 1
 \end{bmatrix}
 $$
 
@@ -723,8 +723,8 @@ $$
 
 $$
 \begin{bmatrix}
-m_{11} & m_{12} & u_x \\\\
-m_{21} & m_{22} & u_y \\\\
+m_{11} & m_{12} & u_x \\
+m_{21} & m_{22} & u_y \\
 0 & 0 & 1
 \end{bmatrix}
 $$
@@ -736,9 +736,9 @@ $$
 
 $$
 \begin{bmatrix}
-m_{11} & m_{12} & m_{13} & u_x \\\\
-m_{21} & m_{22} & m_{23} & u_y \\\\
-m_{31} & m_{32} & m_{33} & u_z \\\\
+m_{11} & m_{12} & m_{13} & u_x \\
+m_{21} & m_{22} & m_{23} & u_y \\
+m_{31} & m_{32} & m_{33} & u_z \\
 0 & 0 & 0 & 1
 \end{bmatrix}
 $$
@@ -749,9 +749,9 @@ $$
 $$
 \mathbf{M} =
 \begin{bmatrix}
-m_{11} & m_{12} & m_{13} & u_1 \\\\
-m_{21} & m_{22} & m_{23} & u_2 \\\\
-m_{31} & m_{32} & m_{33} & u_3 \\\\
+m_{11} & m_{12} & m_{13} & u_1 \\
+m_{21} & m_{22} & m_{23} & u_2 \\
+m_{31} & m_{32} & m_{33} & u_3 \\
 0 & 0 & 0 & 1
 \end{bmatrix}
 $$
@@ -761,9 +761,9 @@ $$
 $$
 
 $$
-\mathbf{p}_1' \leftarrow \mathbf{M} \mathbf{p}_1 \\\\
-\mathbf{p}_2' \leftarrow \mathbf{M} \mathbf{p}_2 \\\\
-\mathbf{p}_3' \leftarrow \mathbf{M} \mathbf{p}_3 \\\\ \dots \\\\
+\mathbf{p}_1' \leftarrow \mathbf{M} \mathbf{p}_1 \\
+\mathbf{p}_2' \leftarrow \mathbf{M} \mathbf{p}_2 \\
+\mathbf{p}_3' \leftarrow \mathbf{M} \mathbf{p}_3 \\ \dots \\
 \mathbf{p}_N' \leftarrow \mathbf{M} \mathbf{p}_N
 $$
 
@@ -777,10 +777,8 @@ $$
 $$
 
 $$
-\mathbf{p}_1'' \leftarrow \mathbf{M}_2 \mathbf{M}_1 \mathbf{p}_1 \\\\
-\mathbf{p}_2'' \leftarrow \mathbf{M}_2 \mathbf{M}_1 \mathbf{p}_2 \\\\
-\mathbf{p}_3'' \leftarrow \mathbf{M}_2 \mathbf{M}_1 \mathbf{p}_3 \\\\ \dots \\\\
+\mathbf{p}_1'' \leftarrow \mathbf{M}_2 \mathbf{M}_1 \mathbf{p}_1 \\
+\mathbf{p}_2'' \leftarrow \mathbf{M}_2 \mathbf{M}_1 \mathbf{p}_2 \\
+\mathbf{p}_3'' \leftarrow \mathbf{M}_2 \mathbf{M}_1 \mathbf{p}_3 \\ \dots \\
 \mathbf{p}_N'' \leftarrow \mathbf{M}_2 \mathbf{M}_1 \mathbf{p}_N
 $$
-
-<home/>

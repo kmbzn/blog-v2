@@ -139,7 +139,7 @@ $$
 ## Recall: Directions of the "arrow"
 
 - $$
-  \mathbf{p}_w = \mathbf{M} \mathbf{p}^{\\{1\\}}
+  \mathbf{p}_w = \mathbf{M} \mathbf{p}^{\{1\}}
   $$
 - 1번째 의미: geometry 변환 방향  
 - 3번째 의미: frame이 바뀌는 관점에서 → 방향 반대가 되는 것처럼 보일 수 있음
@@ -252,36 +252,39 @@ $$
 - 프레임 $\\{1\\}$은 프레임 $\\{0\\}$ 기준으로 정의된다.
 - 좌표계 축 $(x,~y,~z)$과 원점 좌표가 행렬의 열(column)로 구성된다:
 
-  $$
-  \text{Frame } \\{1\\} \text{ in } \\{0\\} =
-  \begin{bmatrix}
-  \mathbf{x}_1 & \mathbf{y}_1 & \mathbf{z}_1 & \mathbf{p}_1
-  \end{bmatrix}
-  $$
+$$
+\text{Frame } \{1\} \text{ in } \{0\} =
+\begin{bmatrix}
+\mathbf{x}_1 & \mathbf{y}_1 & \mathbf{z}_1 & \mathbf{p}_1
+\end{bmatrix}
+$$
 
-  또는 4×4 homogeneous form으로 표현하면:
+또는 4×4 homogeneous form으로 표현하면:
 
-  $$
-  \begin{bmatrix}
-  x\_{1x} & y\_{1x} & z\_{1x} & p\_{1x} \\\\
-  x\_{1y} & y\_{1y} & z\_{1y} & p\_{1y} \\\\
-  x\_{1z} & y\_{1z} & z\_{1z} & p\_{1z} \\\\
-  0 & 0 & 0 & 1
-  \end{bmatrix}
-  $$
+$$
+\begin{bmatrix}
+x_{1x} & y_{1x} & z_{1x} & p_{1x} \\
+x_{1y} & y_{1y} & z_{1y} & p_{1y} \\
+x_{1z} & y_{1z} & z_{1z} & p_{1z} \\
+0 & 0 & 0 & 1
+\end{bmatrix}
+$$
 
 ## Thus, the Camera Frame is defined by
 
-  $$ \mathbf{v=wxu}$$
+$$
+\mathbf{v} = \mathbf{w} \times \mathbf{u}
+$$
 
-  $$
-  \begin{bmatrix}
-  u_x & v_x & w_x & P\_{\text{eye},x} \\\\
-  u_y & v_y & w_y & P\_{\text{eye},y} \\\\
-  u_z & v_z & w_z & P\_{\text{eye},z} \\\\
-  0   & 0   & 0   & 1
-  \end{bmatrix}
-  $$
+$$
+\begin{bmatrix}
+u_x & v_x & w_x & P_{\text{eye},x} \\
+u_y & v_y & w_y & P_{\text{eye},y} \\
+u_z & v_z & w_z & P_{\text{eye},z} \\
+0   & 0   & 0   & 1
+\end{bmatrix}
+$$
+
 
 ## How can we get viewing matrix $\mathbf{V}$ from the camera frame?
 
@@ -294,9 +297,9 @@ $$
 
   $$
   \begin{bmatrix}
-  u_x & v_x & w_x & P\_{\text{eye},x} \\\\
-  u_y & v_y & w_y & P\_{\text{eye},y} \\\\
-  u_z & v_z & w_z & P\_{\text{eye},z} \\\\
+  u_x & v_x & w_x & P\_{\text{eye},x} \\
+  u_y & v_y & w_y & P\_{\text{eye},y} \\
+  u_z & v_z & w_z & P\_{\text{eye},z} \\
   0   & 0   & 0   & 1
   \end{bmatrix}
   $$
@@ -309,11 +312,11 @@ $$
   $$
   \mathbf{V} =
   \begin{bmatrix}
-  \mathbf{R} & \mathbf{t} \\\\
+  \mathbf{R} & \mathbf{t} \\
   \mathbf{0} & 1
   \end{bmatrix}^{-1} =
   \begin{bmatrix}
-  \mathbf{R}^\top & -\mathbf{R}^\top \mathbf{t} \\\\
+  \mathbf{R}^\top & -\mathbf{R}^\top \mathbf{t} \\
   \mathbf{0} & 1
   \end{bmatrix}
   $$
@@ -326,13 +329,13 @@ $$
   $$
   \mathbf{T} =
   \begin{bmatrix}
-  \mathbf{R} & \mathbf{t} \\\\
+  \mathbf{R} & \mathbf{t} \\
   \mathbf{0} & 1
   \end{bmatrix}
   \quad \Rightarrow \quad
   \mathbf{T}^{-1} =
   \begin{bmatrix}
-  \mathbf{R}^\top & -\mathbf{R}^\top \mathbf{t} \\\\
+  \mathbf{R}^\top & -\mathbf{R}^\top \mathbf{t} \\
   \mathbf{0} & 1
   \end{bmatrix}
   $$
@@ -345,9 +348,9 @@ $$
 
   $$
   \mathbf{V} = \begin{bmatrix}
-  u_x & v_x & w_x & -\mathbf{u} \cdot \mathbf{P}\_{\text{eye}} \\\\
-  u_y & v_y & w_y & -\mathbf{v} \cdot \mathbf{P}\_{\text{eye}} \\\\
-  u_z & v_z & w_z & -\mathbf{w} \cdot \mathbf{P}\_{\text{eye}} \\\\
+  u_x & v_x & w_x & -\mathbf{u} \cdot \mathbf{P}\_{\text{eye}} \\
+  u_y & v_y & w_y & -\mathbf{v} \cdot \mathbf{P}\_{\text{eye}} \\
+  u_z & v_z & w_z & -\mathbf{w} \cdot \mathbf{P}\_{\text{eye}} \\
   0   & 0   & 0   & 1
   \end{bmatrix}
   $$
@@ -375,5 +378,3 @@ $$
 
 - [Moving camera](https://webglfundamentals.org/webgl/lessons/resources/camera-move-camera.html?mode=0)
 - [Moving world](https://webglfundamentals.org/webgl/lessons/resources/camera-move-camera.html?mode=2)
-
-<home/>

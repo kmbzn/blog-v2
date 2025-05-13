@@ -81,7 +81,7 @@
 - **벡터들의 선형 결합(linear combination)** 또한 벡터임
 
 $$
-\mathbf{u}_0, \mathbf{u}_1, \dots, \mathbf{u}_n \in V \\\\
+\mathbf{u}_0, \mathbf{u}_1, \dots, \mathbf{u}_n \in V \\
 \Rightarrow
 c_0 \mathbf{u}_0 + c_1 \mathbf{u}_1 + \dots + c_n \mathbf{u}_n \in V
 $$
@@ -144,13 +144,13 @@ $$
 - Affine space에서:
 $$
 \begin{aligned}
-\mathbf{p} + \mathbf{p} & = \text{(undefined)} \\\\
-\mathbf{p} - \mathbf{p} & = \text{vector} \\\\
-\mathbf{p} \pm \mathbf{v} & = \text{point} \\\\
-\mathbf{v} \pm \mathbf{v} & = \text{vector} \\\\
-c \cdot \mathbf{v} & = \text{vector} \\\\
-1 \cdot \mathbf{p} & = \text{point} \\\\
-0 \cdot \mathbf{p} & = \text{vector} \\\\
+\mathbf{p} + \mathbf{p} & = \text{(undefined)} \\
+\mathbf{p} - \mathbf{p} & = \text{vector} \\
+\mathbf{p} \pm \mathbf{v} & = \text{point} \\
+\mathbf{v} \pm \mathbf{v} & = \text{vector} \\
+c \cdot \mathbf{v} & = \text{vector} \\
+1 \cdot \mathbf{p} & = \text{point} \\
+0 \cdot \mathbf{p} & = \text{vector} \\
 c \cdot \mathbf{p} & = \text{(undefined)} \quad (c \neq 0, 1)
 \end{aligned}
 $$
@@ -165,30 +165,30 @@ $$
 
 예시:
 $$
-(x_1, y_1, z_1, 1) + (x_2, y_2, z_2, 1) \\\\= (x_1 + x_2, y_1 + y_2, z_1 + z_2, 2) \text{→ point (undefined)}
+(x_1, y_1, z_1, 1) + (x_2, y_2, z_2, 1) \\= (x_1 + x_2, y_1 + y_2, z_1 + z_2, 2) \text{→ point (undefined)}
 $$
 
 $$
-(x_1, y_1, z_1, 1) - (x_2, y_2, z_2, 1) \\\\= (x_1 - x_2, y_1 - y_2, z_1 - z_2, 0) \text{→ vector}
+(x_1, y_1, z_1, 1) - (x_2, y_2, z_2, 1) \\= (x_1 - x_2, y_1 - y_2, z_1 - z_2, 0) \text{→ vector}
 $$
 
 $$
-(x_1, y_1, z_1, 1) + (x_2, y_2, z_2, 0) \\\\= (x_1 + x_2, y_1 + y_2, z_1 + z_2, 1) \text{→ point}
+(x_1, y_1, z_1, 1) + (x_2, y_2, z_2, 0) \\= (x_1 + x_2, y_1 + y_2, z_1 + z_2, 1) \text{→ point}
 $$
 
 $$
-(x_1, y_1, z_1, 0) + (x_2, y_2, z_2, 0) \\\\= (x_1 + x_2, y_1 + y_2, z_1 + z_2, 0) \text{→ vector}
+(x_1, y_1, z_1, 0) + (x_2, y_2, z_2, 0) \\= (x_1 + x_2, y_1 + y_2, z_1 + z_2, 0) \text{→ vector}
 $$
 
 $$
-c \cdot (x, y, z, 0) \\\\= (cx, cy, cz, 0) \text{→ vector}
+c \cdot (x, y, z, 0) \\= (cx, cy, cz, 0) \text{→ vector}
 $$
 
 $$
-c \cdot (x, y, z, 1) \\\\= (cx, cy, cz, c) \text{→}
+c \cdot (x, y, z, 1) \\= (cx, cy, cz, c) \text{→}
 \begin{cases}
-\text{point} & \text{if } c = 1 \\\\
-\text{vector} & \text{if } c = 0 \\\\
+\text{point} & \text{if } c = 1 \\
+\text{vector} & \text{if } c = 0 \\
 \text{undefined} & \text{if } c \ne 0, 1
 \end{cases}
 $$
@@ -197,15 +197,15 @@ $$
 
 $$
 \begin{bmatrix}
-\mathbf{M} & \mathbf{t} \\\\
+\mathbf{M} & \mathbf{t} \\
 \mathbf{0}^\mathrm{T} & 1
 \end{bmatrix}
 \begin{bmatrix}
-\mathbf{p} \\\\
+\mathbf{p} \\
 1
 \end{bmatrix} =
 \begin{bmatrix}
-\mathbf{M} \mathbf{p} + \mathbf{t} \\\\
+\mathbf{M} \mathbf{p} + \mathbf{t} \\
 1
 \end{bmatrix}
 \text{→ point}
@@ -213,15 +213,15 @@ $$
 
 $$
 \begin{bmatrix}
-\mathbf{M} & \mathbf{t} \\\\
+\mathbf{M} & \mathbf{t} \\
 \mathbf{0}^\mathrm{T} & 1
 \end{bmatrix}
 \begin{bmatrix}
-\mathbf{v} \\\\
+\mathbf{v} \\
 0
 \end{bmatrix} =
 \begin{bmatrix}
-\mathbf{M} \mathbf{v} \\\\
+\mathbf{M} \mathbf{v} \\
 0
 \end{bmatrix}
 \text{→ vector}
@@ -266,9 +266,9 @@ $$
 $$
 \mathbf{M} =
 \begin{bmatrix}
-m_{11} & m_{12} & m_{13} & u_x \\\\
-m_{21} & m_{22} & m_{23} & u_y \\\\
-m_{31} & m_{32} & m_{33} & u_z \\\\
+m_{11} & m_{12} & m_{13} & u_x \\
+m_{21} & m_{22} & m_{23} & u_y \\
+m_{31} & m_{32} & m_{33} & u_z \\
 0 & 0 & 0 & 1
 \end{bmatrix}
 $$
@@ -286,13 +286,13 @@ $$
 - **World frame**은 보통 다음으로 표현됨:
   - 표준 축 벡터  
     $$
-    \hat{\mathbf{e}}_x = \begin{bmatrix}1 \\\\ 0 \\\\ 0\end{bmatrix}~
-    \hat{\mathbf{e}}_y = \begin{bmatrix}0 \\\\ 1 \\\\ 0\end{bmatrix}~
-    \hat{\mathbf{e}}_z = \begin{bmatrix}0 \\\\ 0 \\\\ 1\end{bmatrix}
+    \hat{\mathbf{e}}_x = \begin{bmatrix}1 \\ 0 \\ 0\end{bmatrix}~
+    \hat{\mathbf{e}}_y = \begin{bmatrix}0 \\ 1 \\ 0\end{bmatrix}~
+    \hat{\mathbf{e}}_z = \begin{bmatrix}0 \\ 0 \\ 1\end{bmatrix}
     $$
   - 원점  
     $$
-    \mathbf{0}= \begin{bmatrix}0 \\\\ 0 \\\\ 0\end{bmatrix}
+    \mathbf{0}= \begin{bmatrix}0 \\ 0 \\ 0\end{bmatrix}
     $$
 
 ## Let’s Transform a "World Frame"
@@ -300,33 +300,33 @@ $$
 - $\mathbf{M}$을 **world frame에 곱하면**, 각 축 벡터 및 원점이 변환됨:
 
 $
-\text{x-axis:} \quad \mathbf{M} \begin{bmatrix}1 \\\\ 0 \\\\ 0 \\\\ 0\end{bmatrix}
+\text{x-axis:} \quad \mathbf{M} \begin{bmatrix}1 \\ 0 \\ 0 \\ 0\end{bmatrix}
 $
 : 첫 번째 column
 
 $
-\text{y-axis:} \quad \mathbf{M} \begin{bmatrix}0 \\\\ 1 \\\\ 0 \\\\ 0\end{bmatrix}
+\text{y-axis:} \quad \mathbf{M} \begin{bmatrix}0 \\ 1 \\ 0 \\ 0\end{bmatrix}
 $
 : 두 번째 column
 
 $
-\text{z-axis:} \quad \mathbf{M} \begin{bmatrix}0 \\\\ 0 \\\\ 1 \\\\ 0\end{bmatrix}
+\text{z-axis:} \quad \mathbf{M} \begin{bmatrix}0 \\ 0 \\ 1 \\ 0\end{bmatrix}
 $
 : 세 번째 column
 
 $
-\text{origin:} \quad \mathbf{M} \begin{bmatrix}0 \\\\ 0 \\\\ 0 \\\\ 1\end{bmatrix}
+\text{origin:} \quad \mathbf{M} \begin{bmatrix}0 \\ 0 \\ 0 \\ 1\end{bmatrix}
 $
 : 네 번째 column
 
 ## 2) Affine Transformation Matrix Defines an Affine Frame w.r.t. World Frame
 
-- 행렬 $\mathbf{M}$은 **기준 프레임 $\\{0\\}$ 기준으로 표현된 body frame $\\{1\\}$을 정의**
+- 행렬 $\mathbf{M}$은 **기준 프레임 $\{0\}$ 기준으로 표현된 body frame $\{1\}$을 정의**
 - $\mathbf{M}$의 각 column은 다음을 나타냄:
   - 앞의 3개 column: 축 벡터
   - 마지막 column: 원점 위치
 
-→ $\mathbf{M}$은 **body frame $\\{1\\}$을 world frame $\\{0\\}$ 기준으로 표현**한 것
+→ $\mathbf{M}$은 **body frame $\{1\}$을 world frame $\{0\}$ 기준으로 표현**한 것
 
 ## Examples
 
@@ -338,7 +338,7 @@ $
 
 ## 3) Affine Transformation Matrix Transforms a Point in Body Frame to (the same) Point (but) represented in World Frame
 
-- $ \mathbf{p}^{\\{1\\}} = \begin{bmatrix}1 \\\\ 1 \\\\ 0\end{bmatrix} $  
+- $ \mathbf{p}^{\\{1\\}} = \begin{bmatrix}1 \\ 1 \\ 0\end{bmatrix} $  
   (body frame $\\{1\\}$ 기준의 점)
 $$
 \mathbf{p}^{\\{0\\}} = \mathbf{M} \cdot \mathbf{p}^{\\{1\\}}
@@ -373,38 +373,41 @@ $$
 ## {0} to {1}
 
 - $\mathbf{M}_1$은 다음을 수행:
-  1. 프레임 $\\{0\\}$ 기준에서 geometry를 변환  
-  1. 프레임 $\\{0\\}$ 기준에서 프레임 $\\{1\\}$을 정의  
-  1. 프레임 $\\{1\\}$ 기준의 점을 $\\{0\\}$ 기준으로 표현  
-     $$ \mathbf{p}^{\\{0\\}} = \mathbf{M}_1 \cdot \mathbf{p}^{\\{1\\}} $$
+  1. 프레임 $\{0\}$ 기준에서 geometry를 변환  
+  1. 프레임 $\{0\}$ 기준에서 프레임 $\{1\}$을 정의  
+  1. 프레임 $\{1\}$ 기준의 점을 $\{0\}$ 기준으로 표현  
+     $$ \mathbf{p}^{\{0\}} = \mathbf{M}_1 \cdot \mathbf{p}^{\{1\}} $$
 
 ## {1} to {2}
 
 - $\mathbf{M}_2$는 다음을 수행:
-  1. 프레임 $\\{1\\}$ 기준에서 geometry를 변환  
-  1. 프레임 $\\{1\\}$ 기준에서 프레임 를 정의  
-  1. 프레임 $\\{2\\}$ 기준의 점을 $\\{1\\}$ 기준으로 표현  
-     $$ \mathbf{p}^{\\{1\\}} = \mathbf{M}_2 \cdot \mathbf{p}^{\\{2\\}} $$
+  1. 프레임 $\{1\}$ 기준에서 geometry를 변환  
+  1. 프레임 $\{1\}$ 기준에서 프레임 를 정의  
+  1. 프레임 $\{2\}$ 기준의 점을 $\{1\}$ 기준으로 표현  
+     $$ \mathbf{p}^{\{1\}} = \mathbf{M}_2 \cdot \mathbf{p}^{\{2\}} $$
 
 ## {0} to {2}
 
 - $\mathbf{M}_1 \mathbf{M}_2$는 다음을 수행:
-  1. 프레임 $\\{0\\}$ 기준에서 geometry를 변환  
-  1. 프레임 $\\{0\\}$ 기준에서 프레임 $\\{2\\}$를 정의  
-  1. 프레임 $\\{2\\}$ 기준의 점을 $\\{0\\}$ 기준으로 표현  
-     $$ \mathbf{p}^{\\{0\\}} = \mathbf{M}_1 \cdot \mathbf{M}_2 \cdot \mathbf{p}^{\\{2\\}} $$
+  1. 프레임 $\{0\}$ 기준에서 geometry를 변환  
+  1. 프레임 $\{0\}$ 기준에서 프레임 $\{2\}$를 정의  
+  1. 프레임 $\{2\}$ 기준의 점을 $\{0\}$ 기준으로 표현  
+     $$ \mathbf{p}^{\{0\}} = \mathbf{M}_1 \cdot \mathbf{M}_2 \cdot \mathbf{p}^{\{2\}} $$
 
 ## Revisit: Order Matters!
 
 - $\mathbf{T}, \mathbf{R}$이 affine transformation을 나타내는 행렬일 때:
+
 $$
 \mathbf{p}' = \mathbf{T} \cdot \mathbf{R} \cdot \mathbf{p}
-\\\\\Rightarrow \text{ 먼저 } \mathbf{R}(\mathbf{p}) \text{ 적용, 그 후 } \mathbf{T}
 $$
+먼저 $\mathbf{R}(\mathbf{p})$를 적용한 뒤, 그 결과에 $\mathbf{T}$를 적용
+
 $$
 \mathbf{p}' = \mathbf{R} \cdot \mathbf{T} \cdot \mathbf{p}
-\\\\\Rightarrow \text{ 먼저 } \mathbf{T}(\mathbf{p}) \text{ 적용, 그 후 } \mathbf{R}
 $$
+먼저 $\mathbf{T}(\mathbf{p})$를 적용한 뒤, 그 결과에 $\mathbf{R}$을 적용
+
 - → **행렬의 곱셈 순서는 매우 중요함!**  
   - 결합법칙은 성립하지만 교환법칙은 성립하지 않음: $AB \ne BA$
 
@@ -419,7 +422,7 @@ $$
 \mathbf{p}
 \xrightarrow{\mathbf{R}(-90^\circ)}
 \mathbf{R}(\mathbf{p})
-\\\\\xrightarrow{\mathbf{T}(x, 3)}
+\\\xrightarrow{\mathbf{T}(x, 3)}
 \mathbf{p}' = \mathbf{T}(\mathbf{R}(\mathbf{p}))
 $$
 - **다른 해석 방식**:  
@@ -436,7 +439,7 @@ $$
 
 $$
 \mathbf{p}' = \mathbf{M}_1 \cdot \mathbf{M}_2 \cdot \mathbf{p}
-\\\\ (\text{pre-multiplication by } \mathbf{M}_1)
+\\ (\text{pre-multiplication by } \mathbf{M}_1)
 $$
 
 → **Right-to-Left 순서**
@@ -450,7 +453,7 @@ $$
 
 $$
 \mathbf{p}' = \mathbf{M}_1 \cdot \mathbf{M}_2 \cdot \mathbf{p}
-\\\\ (\text{post-multiplication by } \mathbf{M}_1)
+\\ (\text{post-multiplication by } \mathbf{M}_1)
 $$
 
 → **Left-to-Right 순서**
