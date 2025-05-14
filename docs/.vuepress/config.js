@@ -50,6 +50,7 @@ export default defineUserConfig({
           '/computer-graphics/5-Vertex-Processing-1',
           '/computer-graphics/6-Vertex-Processing-2',
           '/computer-graphics/7-Hierachical-Modeling-Mesh',
+          '/computer-graphics/Project-2',
         ]
       }
     ],
