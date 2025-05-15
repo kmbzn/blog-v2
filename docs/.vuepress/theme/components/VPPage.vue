@@ -30,12 +30,6 @@
             <a href="https://www.npmjs.com/" target="_blank">
               <img src="https://upload.wikimedia.org/wikipedia/commons/d/db/Npm-logo.svg" alt="npm" />
             </a>
-            <a href="https://openai.com/chatgpt" target="_blank">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/ChatGPT-Logo.svg/120px-ChatGPT-Logo.svg.png" alt="ChatGPT" />
-            </a>
-            <a href="https://katex.org/" target="_blank">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/KaTeX_logo.svg/250px-KaTeX_logo.svg.png" alt="KaTeX" />
-            </a>
           </div>
           <p class="copyright">
             All trademarks and logos are property of their respective owners.<br>
