@@ -27,6 +27,9 @@
             <a href="https://code.visualstudio.com/" target="_blank">
               <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VSCode" />
             </a>
+            <a href="https://www.npmjs.com/" target="_blank">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/d/db/Npm-logo.svg" alt="npm" />
+            </a>
             <a href="https://openai.com/chatgpt" target="_blank">
               <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/ChatGPT-Logo.svg/120px-ChatGPT-Logo.svg.png" alt="ChatGPT" />
             </a>
@@ -53,7 +56,7 @@ import ParentPage from '@vuepress/theme-default/lib/client/components/VPPage.vue
 .vp-footer-wrapper {
   max-width: 800px;
   margin: 0 auto;
-  padding: 2rem 1.5rem;
+  padding: 2rem 1rem;
 }
 
 .vp-footer-wrapper hr {
