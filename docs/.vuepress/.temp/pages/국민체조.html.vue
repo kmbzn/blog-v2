@@ -1,26 +1,15 @@
 <template><div><h1 id="국민체조" tabindex="-1"><a class="header-anchor" href="#국민체조"><span>국민체조</span></a></h1>
-<table>
-<thead>
-<tr>
-<th>숨</th>
-<th>다</th>
-<th>팔</th>
-<th>목</th>
-<th>가</th>
-<th>옆</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>등</td>
-<td>몸</td>
-<td>온</td>
-<td>뜀</td>
-<td>팔</td>
-<td>숨</td>
-</tr>
-</tbody>
-</table>
+<div class="hint-container tip">
+<p class="hint-container-title">팁</p>
+<p>국민체조의 동작 순서를 외우기 어려울 땐, <strong>&quot;숨다팔목가옆&quot;</strong> → <strong>&quot;등몸온뜀팔숨&quot;</strong> 식으로 6글자씩 끊어 외워 보세요.<br>
+각 글자는 동작의 첫 글자를 의미합니다. 리듬감 있게 암기하면 빠르게 익힐 수 있습니다.</p>
+</div>
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/Ur-E2QnXON4"
+          style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
+          frameborder="0" allowfullscreen>
+  </iframe>
+</div>
 <h2 id="pre-제자리걸음" tabindex="-1"><a class="header-anchor" href="#pre-제자리걸음"><span>pre. 제자리걸음</span></a></h2>
 <ul>
 <li>처음에는 주먹을 쥐고 가볍게 차렷 자세</li>

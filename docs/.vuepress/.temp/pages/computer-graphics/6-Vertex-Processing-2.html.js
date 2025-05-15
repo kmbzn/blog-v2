@@ -1,5 +1,5 @@
-import comp from "/home/kmbzn/workspace/blog-v2/docs/.vuepress/.temp/pages/computer-graphics/6-Vertex-Processing-2.html.vue"
-const data = JSON.parse("{\"path\":\"/computer-graphics/6-Vertex-Processing-2.html\",\"title\":\"6 - Vertex Processing 2\",\"lang\":\"ko-KR\",\"frontmatter\":{},\"git\":{},\"filePathRelative\":\"computer-graphics/6-Vertex-Processing-2.md\"}")
+import comp from "C:/Users/kmbzn/blog-v2/docs/.vuepress/.temp/pages/computer-graphics/6-Vertex-Processing-2.html.vue"
+const data = JSON.parse("{\"path\":\"/computer-graphics/6-Vertex-Processing-2.html\",\"title\":\"6 - Vertex Processing 2\",\"lang\":\"ko-KR\",\"frontmatter\":{},\"git\":{\"updatedTime\":1747013490000,\"contributors\":[{\"name\":\"김병준\",\"username\":\"\",\"email\":\"kmbzn24@hanyang.ac.kr\",\"commits\":1}],\"changelog\":[{\"hash\":\"2b556a92d04849cf6de46aa4f92180a2dc2325bb\",\"time\":1747013490000,\"email\":\"kmbzn24@hanyang.ac.kr\",\"author\":\"김병준\",\"message\":\"initial commit\"}]},\"filePathRelative\":\"computer-graphics/6-Vertex-Processing-2.md\"}")
 export { comp, data }
 
 if (import.meta.webpackHot) {

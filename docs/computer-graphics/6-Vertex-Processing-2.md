@@ -91,7 +91,7 @@ $$
 - 사각형 공간 내 점 $(p_x,~p_y)$을 다른 사각형 공간의 대응 점 $(p_x',~p_y')$로 매핑하는 변환
   - 예: $(x_l,~y_l)$ ~ $(x_r,~y_r)$ → $(x_l',~y_l')$ ~ $(x_r',~y_r')$
 $$
-p'_x = \left( \frac{p_x - x_l}{x_r - x_l} \right)(x_r' - x_l') + x_l' \\\\
+p'_x = \left( \frac{p_x - x_l}{x_r - x_l} \right)(x_r' - x_l') + x_l' \\
 p'_y = \left( \frac{p_y - y_l}{y_r - y_l} \right)(y_r' - y_l') + y_l'
 $$
 
@@ -101,8 +101,8 @@ $$
 
   $$
   \begin{aligned}
-  x_h &= \text{right},\quad x_l = \text{left},\quad x_h' = 1,\quad x_l' = -1 \\\\
-  y_h &= \text{top},\quad y_l = \text{bottom},\quad y_h' = 1,\quad y_l' = -1 \\\\
+  x_h &= \text{right},\quad x_l = \text{left},\quad x_h' = 1,\quad x_l' = -1 \\
+  y_h &= \text{top},\quad y_l = \text{bottom},\quad y_h' = 1,\quad y_l' = -1 \\
   z_h &= -\text{far},\quad z_l = -\text{near},\quad z_h' = 1,\quad z_l' = -1
   \end{aligned}
   $$
@@ -110,9 +110,9 @@ $$
   $$
   \mathbf{P}_{\text{orth}} =
   \begin{bmatrix}
-  \frac{2}{\text{right} - \text{left}} & 0 & 0 & -\frac{\text{right} + \text{left}}{\text{right} - \text{left}} \\\\
-  0 & \frac{2}{\text{top} - \text{bottom}} & 0 & -\frac{\text{top} + \text{bottom}}{\text{top} - \text{bottom}} \\\\
-  0 & 0 & \frac{-2}{\text{far} - \text{near}} & -\frac{\text{far} + \text{near}}{\text{far} - \text{near}} \\\\
+  \frac{2}{\text{right} - \text{left}} & 0 & 0 & -\frac{\text{right} + \text{left}}{\text{right} - \text{left}} \\
+  0 & \frac{2}{\text{top} - \text{bottom}} & 0 & -\frac{\text{top} + \text{bottom}}{\text{top} - \text{bottom}} \\
+  0 & 0 & \frac{-2}{\text{far} - \text{near}} & -\frac{\text{far} + \text{near}}{\text{far} - \text{near}} \\
   0 & 0 & 0 & 1
   \end{bmatrix}
   $$
@@ -180,7 +180,7 @@ $$
 
 - 유사한 삼각형의 성질:
 $$
-\frac{y'}{d} = \frac{y}{-z} \\\\
+\frac{y'}{d} = \frac{y}{-z} \\
 \Rightarrow\quad y' = \frac{-d \cdot y}{z}
 $$
 
@@ -201,16 +201,16 @@ $$
 
   $$
   \begin{bmatrix}
-  x \\\\
-  y \\\\
-  z \\\\
+  x \\
+  y \\
+  z \\
   w
   \end{bmatrix}
   \sim
   \begin{bmatrix}
-  kx \\\\
-  ky \\\\
-  kz \\\\
+  kx \\
+  ky \\
+  kz \\
   kw
   \end{bmatrix}
   $$
@@ -223,25 +223,25 @@ $$
 
   $$
   \begin{bmatrix}
-  x' \\\\
-  y' \\\\
+  x' \\
+  y' \\
   1
   \end{bmatrix} =
   \begin{bmatrix}
-  \frac{-d \cdot x}{z} \\\\
-  \frac{-d \cdot y}{z} \\\\
+  \frac{-d \cdot x}{z} \\
+  \frac{-d \cdot y}{z} \\
   1
   \end{bmatrix} =
   \begin{bmatrix}
-  d z & 0   & 0  & 0 \\\\
-  0   & d z & 0  & 0 \\\\
-  0   & 0   & 0  & -1 \\\\
+  d z & 0   & 0  & 0 \\
+  0   & d z & 0  & 0 \\
+  0   & 0   & 0  & -1 \\
   0   & 0   & 1  & 0
   \end{bmatrix}
   \begin{bmatrix}
-  x \\\\
-  y \\\\
-  z \\\\
+  x \\
+  y \\
+  z \\
   1
   \end{bmatrix}
   $$
@@ -285,27 +285,27 @@ $$
 
   $$
   \begin{bmatrix}
-  x' \\\\
-  y' \\\\
-  z' \\\\
+  x' \\
+  y' \\
+  z' \\
   1
   \end{bmatrix} =
   \begin{bmatrix}
-  \frac{-d x}{z} \\\\
-  \frac{-d y}{z} \\\\
-  \frac{-X}{z} \\\\
+  \frac{-d x}{z} \\
+  \frac{-d y}{z} \\
+  \frac{-X}{z} \\
   1
   \end{bmatrix} =
   \begin{bmatrix}
-  d z & 0 & 0 & 0 \\\\
-  0 & d z & 0 & 0 \\\\
-  0 & 0 & a & b \\\\
+  d z & 0 & 0 & 0 \\
+  0 & d z & 0 & 0 \\
+  0 & 0 & a & b \\
   0 & 0 & -1 & 0
   \end{bmatrix}
   \begin{bmatrix}
-  x \\\\
-  y \\\\
-  z \\\\
+  x \\
+  y \\
+  z \\
   1
   \end{bmatrix}
   $$
@@ -338,9 +338,9 @@ $$
   $$
   \mathbf{P}_{\text{dc}} =
   \begin{bmatrix}
-  n & 0 & 0 & 0 \\\\
-  0 & n & 0 & 0 \\\\
-  0 & 0 & f + n & f n \\\\
+  n & 0 & 0 & 0 \\
+  0 & n & 0 & 0 \\
+  0 & 0 & f + n & f n \\
   0 & 0 & -1 & 0
   \end{bmatrix}
   $$
@@ -354,9 +354,9 @@ $$
   $$
   \mathbf{P}\_{\text{pers}} = \mathbf{P}_{\text{orth}} \cdot \mathbf{P}\_{\text{dc}} =
   \begin{bmatrix}
-  \frac{n}{r} & 0 & 0 & 0 \\\\
-  0 & \frac{n}{t} & 0 & 0 \\\\
-  0 & 0 & \frac{f + n}{n - f} & \frac{f n}{n - f} \\\\
+  \frac{n}{r} & 0 & 0 & 0 \\
+  0 & \frac{n}{t} & 0 & 0 \\
+  0 & 0 & \frac{f + n}{n - f} & \frac{f n}{n - f} \\
   0 & 0 & -1 & 0
   \end{bmatrix}
   $$
@@ -427,14 +427,12 @@ $$
   $$
   \mathbf{T}\_{\text{vp}} =
   \begin{bmatrix}
-  \frac{\text{width}}{2} & 0 & 0 & \frac{\text{width}}{2} + x\_{\min} \\\\
-  0 & \frac{\text{height}}{2} & 0 & \frac{\text{height}}{2} + y\_{\min} \\\\
-  0 & 0 & \frac{1}{2} & \frac{1}{2} \\\\
+  \frac{\text{width}}{2} & 0 & 0 & \frac{\text{width}}{2} + x\_{\min} \\
+  0 & \frac{\text{height}}{2} & 0 & \frac{\text{height}}{2} + y\_{\min} \\
+  0 & 0 & \frac{1}{2} & \frac{1}{2} \\
   0 & 0 & 0 & 1
   \end{bmatrix}
   $$
 
 - $(x_{\min},\ y\_{\min})$부터 시작하여  
   $(\text{width},\ \text{height})$ 크기의 **화면 좌표**로 이동
-
-<home/>

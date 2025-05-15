@@ -78,10 +78,10 @@
   **각 노드의 frame을 world frame 기준으로 변환**해야 함 → 각 정점의 global 위치 계산
 - 복습:
   $$
-  \mathbf{p}^{\\{0\\}} = \mathbf{M} \mathbf{p}^{\\{1\\}}
+  \mathbf{p}^{\{0\}} = \mathbf{M} \mathbf{p}^{\{1\}}
   $$
-  - $\\{1\\}$에 서서 $\mathbf{p}$를 봄 → $\mathbf{p}^{(1)}$  
-  - $\\{0\\}$에 서서 $\mathbf{p}$를 봄 → $\mathbf{p}^{(0)}$
+  - $\{1\}$에 서서 $\mathbf{p}$를 봄 → $\mathbf{p}^{(1)}$  
+  - $\{0\}$에 서서 $\mathbf{p}$를 봄 → $\mathbf{p}^{(0)}$
 
 ## Rendering Hierarchical Models
 
@@ -101,39 +101,46 @@
 ## Recall: Post-(right) Multiplication
 - $\mathbf{p'=M_1M_2p}$ (M₂에 post-multiply)  
   → L-to-R
-1) $\mathbf{M_1}$: body frame $\\{0\\}$ → $\\{1\\}$  변환  
-2) $\mathbf{M_2}$: body frame $\\{1\\}$  → $\\{2\\}$  변환  
-3) $\mathbf{p}$: $\\{2\\}$ 의 점 → $\\{0\\}$  기준으로 위치 계산
+1) $\mathbf{M_1}$: body frame {0} → {1} 변환  
+2) $\mathbf{M_2}$: body frame {1} → {2} 변환  
+3) $\mathbf{p}$: {2}의 점 → {0} 기준으로 위치 계산  
+
 예:  
 $$
-\mathbf{p'=TRp}
+\mathbf{p}' = \mathbf{T} \mathbf{R} \mathbf{p}
 $$
 
 ## Interpretation of a Series of Transformations
 
-- $ \mathbf{p}_0 = \mathbf{I} \mathbf{p}_0 $ (처음 상태는 단위행렬 기준)
-- $\\{0\\}$에 서서 원을 관측하며  
-  $\\{0\\}$ → $\\{1\\}$ → $\\{2\\}$ → ... → $\\{4\\}$ 순으로 body frame이 변함
-- $ \mathbf{p}_1 = \mathbf{M}_1 \mathbf{p}_0 $  
-  - 현재 body frame: $\\{1\\}$, 기준: $\\{0\\}$  
-  - $\\{1\\}$에서 관찰 시 → $\mathbf{p}_0$  
-  - $\\{0\\}$에서 관찰 시 → $\mathbf{p}_1$
-- $ \mathbf{p}_2 = \mathbf{M}_1 \mathbf{M}_2 \mathbf{p}_0 $  
-  - 현재 body frame: $\\{2\\}$, 기준: $\\{0\\} $ 
-  - $\\{2\\}$에서 관찰 시 → $\mathbf{p}_0$  
-  - $\\{0\\}$에서 관찰 시 → $\mathbf{p}_2$
-- $ \mathbf{p}_3 = \mathbf{M}_1 \mathbf{M}_2 \mathbf{M}_3 \mathbf{p}_0 $  
-  - 현재 body frame: $\\{3\\}$, 기준: $\\{0\\}$  
-  - $\\{3\\}$에서 관찰 시 → $\mathbf{p}_0$  
-  - $\\{0\\}$에서 관찰 시 → $\mathbf{p}_3$
-- $ \mathbf{p}_4 = \mathbf{M}_1 \mathbf{M}_2 \mathbf{M}_3 \mathbf{M}_4 \mathbf{p}_0 $  
-  - 현재 body frame: $\\{4\\}$, 기준: $\\{0\\}$  
-  - $\\{4\\}$에서 관찰 시 → $\mathbf{p}_0$  
-  - $\\{0\\}$에서 관찰 시 → $\mathbf{p}_4$
-- 반복 구조 재설명  
-  - $ \mathbf{p}_4 = \mathbf{M}_1 \mathbf{M}_2 \mathbf{M}_3 \mathbf{M}_4 \mathbf{p}_0 $  
-  - $\\{4\\}$에서 $\mathbf{p}_0$를 보는 관찰 → $\mathbf{p}_4$  
-  - $\\{0\\}$에서 $\mathbf{p}_4$ 관찰
+- $\mathbf{p}_0 = \mathbf{I} \mathbf{p}_0$ (처음 상태는 단위행렬 기준)
+- {0}에 서서 물체를 관측하며  
+  {0} → {1} → {2} → ... → {4} 순으로 body frame이 변함
+
+- $\mathbf{p}_1 = \mathbf{M}_1 \mathbf{p}_0$  
+  - 현재 body frame: {1}, 기준: {0}  
+  - {1}에서 관찰 시 → $\mathbf{p}_0$  
+  - {0}에서 관찰 시 → $\mathbf{p}_1$
+
+- $\mathbf{p}_2 = \mathbf{M}_1 \mathbf{M}_2 \mathbf{p}_0$  
+  - 현재 body frame: {2}, 기준: {0}  
+  - {2}에서 관찰 시 → $\mathbf{p}_0$  
+  - {0}에서 관찰 시 → $\mathbf{p}_2$
+
+- $\mathbf{p}_3 = \mathbf{M}_1 \mathbf{M}_2 \mathbf{M}_3 \mathbf{p}_0$  
+  - 현재 body frame: {3}, 기준: {0}  
+  - {3}에서 관찰 시 → $\mathbf{p}_0$  
+  - {0}에서 관찰 시 → $\mathbf{p}_3$
+
+- $\mathbf{p}_4 = \mathbf{M}_1 \mathbf{M}_2 \mathbf{M}_3 \mathbf{M}_4 \mathbf{p}_0$  
+  - 현재 body frame: {4}, 기준: {0}  
+  - {4}에서 관찰 시 → $\mathbf{p}_0$  
+  - {0}에서 관찰 시 → $\mathbf{p}_4$
+
+- 반복 구조 정리  
+  - $\mathbf{p}_4 = \mathbf{M}_1 \mathbf{M}_2 \mathbf{M}_3 \mathbf{M}_4 \mathbf{p}_0$  
+  - {4}에서 $\mathbf{p}_0$를 바라보는 관찰 결과 → $\mathbf{p}_4$  
+  - {0}에서 $\mathbf{p}_4$를 바라보는 관찰 결과 그대로 → $\mathbf{p}_4$
+
 - 동일 내용 시각화:
   - $\mathbf{M}_1,\ \mathbf{M}_2,\ \mathbf{M}_3,\ \mathbf{M}_4$ 순서로 적용
   - 각 변환은 이전 노드의 body frame 기준으로 적용됨
@@ -141,7 +148,7 @@ $$
 
 ## Computing Global Transform from Series of Local Transforms
 
-- $ \mathbf{p}_4 = \mathbf{M}_1 \mathbf{M}_2 \mathbf{M}_3 \mathbf{M}_4 \mathbf{p}_0 $
+- $\mathbf{p}_4 = \mathbf{M}_1 \mathbf{M}_2 \mathbf{M}_3 \mathbf{M}_4 \mathbf{p}_0$
   - node 4의 **global transformation**: $\mathbf{M}_1 \mathbf{M}_2 \mathbf{M}_3 \mathbf{M}_4$
 - 각 $\mathbf{M}_i$: $i$번째 노드의 **local transformation**
 - 적용 순서:
@@ -220,7 +227,7 @@ $$
 
 ## Representation for Triangle Mesh
 
-- 이 주제는 메모리에 정점을 저장하는 방식에 대한 것이다
+- 이 주제는 메모리에 정점을 저장하는 방식에 대한 것
   - 정점의 위치
   - 정점 간 관계(삼각형 구성)
 - 기본적인 두 가지 표현 방식:
@@ -229,8 +236,8 @@ $$
 
 ## Vertex Winding Order
 
-- Vertex winding order는 다각형의 정점들이 나열되는 순서임
-- 이 순서로 다각형의 "앞면"을 결정함
+- Vertex winding order는 **다각형의 정점들이 나열**되는 순서
+- 이 순서로 다각형의 **앞면**을 결정함
   - OpenGL: 반시계 방향(CCW)이 앞면
   - Direct3D: 시계 방향(CW)이 앞면
 
@@ -241,7 +248,7 @@ $$
   - vertex array:
   $$
   \begin{aligned}
-  \text{tri[0]} &\rightarrow (x_0, y_0, z_0),\ (x_1, y_1, z_1),\ (x_2, y_2, z_2) \\\\
+  \text{tri[0]} &\rightarrow (x_0, y_0, z_0),\ (x_1, y_1, z_1),\ (x_2, y_2, z_2) \\
   \text{tri[1]} &\rightarrow (x_0, y_0, z_0),\ (x_2, y_2, z_2),\ (x_3, y_3, z_3)
   \end{aligned}
   $$
@@ -285,17 +292,17 @@ $$
   - vertex array:
   $$
   \begin{aligned}
-  \text{verts[0]} &= (x_0,\ y_0,\ z_0) \\\\
-  \text{verts[1]} &= (x_1,\ y_1,\ z_1) \\\\
-  \text{verts[2]} &= (x_2,\ y_2,\ z_2) \\\\
+  \text{verts[0]} &= (x_0,\ y_0,\ z_0) \\
+  \text{verts[1]} &= (x_1,\ y_1,\ z_1) \\
+  \text{verts[2]} &= (x_2,\ y_2,\ z_2) \\
   &\vdots
   \end{aligned}
   $$
   - index array:
   $$
   \begin{aligned}
-  \text{tInd[0]} &= (0,\ 2,\ 1) \\\\
-  \text{tInd[1]} &= (0,\ 3,\ 2) \\\\
+  \text{tInd[0]} &= (0,\ 2,\ 1) \\
+  \text{tInd[1]} &= (0,\ 3,\ 2) \\
   &\vdots
   \end{aligned}
   $$
@@ -373,12 +380,12 @@ f 3/1 4/2 5/3
 - 기타 지원 기능:
 
   - 선(Polyline)
-    ```
+    ```obj
     l 1 5 8 2 4 9
     ```
 
   - 재질(Materials)
-    ```
+    ```obj
     mtllib [외부 .mtl 파일 이름]
     usemtl [재질 이름]
     ```

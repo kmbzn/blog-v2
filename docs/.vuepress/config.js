@@ -10,13 +10,6 @@ export default defineUserConfig({
     markdownMathPlugin({
       type: 'katex',
     }),
-    gitPlugin({
-      transformer: (timestamp, lang) => {
-        const date = new Date(timestamp)
-        const pad = (n) => n.toString().padStart(2, '0')
-        return `${date.getFullYear()}-${pad(date.getMonth() + 1)}-${pad(date.getDate())} ${pad(date.getHours())}:${pad(date.getMinutes())}`
-      },
-    }),
   ],
   description: 'Summarizing key concepts from CS lectures.',
   email: 'kmbzn24@gmail.com',
@@ -57,6 +50,7 @@ export default defineUserConfig({
           '/computer-graphics/5-Vertex-Processing-1',
           '/computer-graphics/6-Vertex-Processing-2',
           '/computer-graphics/7-Hierachical-Modeling-Mesh',
+          '/computer-graphics/Project-2',
         ]
       }
     ],
