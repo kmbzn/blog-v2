@@ -45,11 +45,24 @@
 
 body, .built-with, .vp-footer .copyright {
   font-family: 'Pretendard';
+  margin: 0 -.7rem;
 }
 
-p, li, table, img {
+p, li, table {
   font-family: 'Tmoney RoundWind';
-  padding: 0 -.5rem;
+}
+
+.hint-container, vp-code-tabs {
+  margin: 0 0;
+}
+
+@media (max-width: 419px) {
+    #content > .vp-code-tabs div[class*=language-] {
+      margin-inline: -1rem;
+    }
+    #content > .vp-code-tabs .vp-code-tabs-nav {
+      margin-inline: -1rem;
+    }
 }
 
 pre,
@@ -108,14 +121,10 @@ a.header-anchor::before {
 // footer 및 meta 영역
 // -----------------------------
 
-.vp-footer {
+.vp-footer[data-v-43ea5535] {
   max-width: 740px;
-  margin: 0 auto;
-  padding: 2rem 0;
-}
-
-.vp-footer-wrapper[data-v-43ea5535] {
-  padding: 0;
+  padding: 1.5rem 0;
+  margin: 0 1rem;
 }
 
 .vp-page-meta,
