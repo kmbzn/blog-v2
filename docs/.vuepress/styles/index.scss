@@ -67,7 +67,7 @@ div[class*='language-'] {
 // -----------------------------
 
 .vp-page [vp-content] {
-  padding: 0 1.5rem;
+  padding: 0 1rem;
 }
 
 .vp-navbar .vp-site-logo {
@@ -92,10 +92,14 @@ img {
   border-bottom: 1px solid var(--vp-c-gutter);
 }
 
+a.header-anchor {
+  padding-left: .5rem
+}
+
 a.header-anchor::before {
   content: "#";
   top: .3em;
-  left: -1em;
+  left: -.5em;
   font-size: .75em;
 }
 
