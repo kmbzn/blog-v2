@@ -25,7 +25,7 @@
               <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" />
             </a>
             <a href="https://code.visualstudio.com/" target="_blank">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VSCode" />
+              <img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Visual_Studio_Code_1.35_icon.svg" alt="VSCode" />
             </a>
             <a href="https://www.npmjs.com/" target="_blank">
               <img src="https://upload.wikimedia.org/wikipedia/commons/d/db/Npm-logo.svg" alt="npm" />
@@ -103,10 +103,9 @@ import ParentPage from '@vuepress/theme-default/lib/client/components/VPPage.vue
 </style>
 
 <style>
-/* 다크 모드에서 일부 로고 색 반전 */
+/* 다크 모드서 일부 로고 색상 반전 */
 html[data-theme='dark'] .tech-logos img[alt="GitHub"],
-html[data-theme='dark'] .tech-logos img[alt="ChatGPT"],
-html[data-theme='dark'] .tech-logos img[alt="KaTeX"] {
+html[data-theme='dark'] .tech-logos img[alt="ChatGPT"] {
   filter: invert(100%);
 }
 </style>

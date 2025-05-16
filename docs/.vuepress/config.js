@@ -2,7 +2,6 @@ import { defineUserConfig } from 'vuepress'
 import { viteBundler } from '@vuepress/bundler-vite'
 import theme from './theme/index.js'
 import { markdownMathPlugin } from '@vuepress/plugin-markdown-math'
-import { gitPlugin } from '@vuepress/plugin-git'
 
 export default defineUserConfig({
   lang: 'ko-KR',
@@ -43,13 +42,7 @@ export default defineUserConfig({
         text: '🖥️ Computer Graphics',
         collapsible: false,
         children: [
-          '/computer-graphics/1-Course-Intro',
-          '/computer-graphics/2-Rendering-Basics',
-          '/computer-graphics/3-Transformations',
-          '/computer-graphics/4-Affine-Space-Frame_Matrix',
-          '/computer-graphics/5-Vertex-Processing-1',
-          '/computer-graphics/6-Vertex-Processing-2',
-          '/computer-graphics/7-Hierachical-Modeling-Mesh',
+          '/computer-graphics/8-Lighting',
           '/computer-graphics/Project-2',
         ]
       }

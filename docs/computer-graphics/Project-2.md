@@ -120,9 +120,9 @@ glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE)
 ## 7. 추가 참고 사항
 
 - Python용 glfw에서 `drop_callback`은 인자가 다릅니다:
-  ```python
-  def drop_callback(window, paths):  # paths는 파일 경로 문자열 리스트
-  ```
+```python
+def drop_callback(window, paths):  # paths는 파일 경로 문자열 리스트
+```
 - obj 포맷 참고: [Wavefront .obj 파일 포맷 위키백과](https://en.wikipedia.org/wiki/Wavefront_.obj_file)
 - Python의 문자열 메서드 중 `split()`이 파싱에 유용합니다.
 
