@@ -25,7 +25,7 @@
               <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" />
             </a>
             <a href="https://code.visualstudio.com/" target="_blank">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Visual_Studio_Code_1.35_icon.svg" alt="VSCode" />
+              <img src="https://blog.kakaocdn.net/dn/lTWD3/btsMdkdWJqP/b4aSv2aa6c425THE40jKB1/img.png" alt="VSCode" />
             </a>
             <a href="https://www.npmjs.com/" target="_blank">
               <img src="https://upload.wikimedia.org/wikipedia/commons/d/db/Npm-logo.svg" alt="npm" />
