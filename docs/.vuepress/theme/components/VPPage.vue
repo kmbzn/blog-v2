@@ -54,12 +54,11 @@ import ParentPage from '@vuepress/theme-default/lib/client/components/VPPage.vue
 }
 
 .vp-footer-wrapper hr {
-  margin: 1rem 0 2rem;
   border: none;
-  border-top: 1px solid var(--vp-c-divider);
 }
 
 .vp-footer {
+  margin: 0 1rem;
   text-align: center;
 }
 

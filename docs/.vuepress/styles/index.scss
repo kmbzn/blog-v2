@@ -68,7 +68,6 @@ div[class*='language-'] {
 
 .vp-page [vp-content] {
   padding: 0 1.5rem;
-  padding: 0 1.5rem;
 }
 
 .vp-navbar .vp-site-logo {
@@ -108,7 +107,6 @@ a.header-anchor::before {
   max-width: 740px;
   margin: 0 auto;
   padding: 2rem 0;
-  border-top: 1px solid var(--vp-c-gutter);
 }
 
 .vp-footer-wrapper[data-v-43ea5535] {
@@ -128,7 +126,7 @@ a.header-anchor::before {
   --vp-c-gutter: #aaa;
   --vp-c-text: #333;
   --vp-c-accent: #fc6525;
-  --vp-c-accent-bg: #ba5020;
+  --vp-c-accent-bg: #fc6525;
   --code-c-bg: #223;
 }
 

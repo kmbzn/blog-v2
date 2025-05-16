@@ -11,7 +11,6 @@ export default defineUserConfig({
     }),
   ],
   description: 'Summarizing key concepts from CS lectures.',
-  email: 'kmbzn24@gmail.com',
   base: '/',
   head: [
     ['link', { rel: 'stylesheet', href: 'https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css' }],
@@ -33,6 +32,7 @@ export default defineUserConfig({
     colorMode: 'auto',
     sidebar: [
       {
+        text: '💰 Finance',
         collapsible: false,
         children: [
           '/finance/나는-왜-비트코인에-투자했는가'
