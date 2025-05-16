@@ -47,8 +47,9 @@ body, .built-with, .vp-footer .copyright {
   font-family: 'Pretendard';
 }
 
-p, li, table {
+p, li, table, img {
   font-family: 'Tmoney RoundWind';
+  padding: 0 1rem;
 }
 
 pre,
@@ -67,7 +68,7 @@ div[class*='language-'] {
 // -----------------------------
 
 .vp-page [vp-content] {
-  padding: 0 1rem;
+  padding: 0 1.5rem;
 }
 
 .vp-navbar .vp-site-logo {
