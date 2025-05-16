@@ -35,7 +35,7 @@ export default defineUserConfig({
       {
         collapsible: false,
         children: [
-          '/국민체조',
+          '/finance/나는-왜-비트코인에-투자했는가'
         ]
       },
       {

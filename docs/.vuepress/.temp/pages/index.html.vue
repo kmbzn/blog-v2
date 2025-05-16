@@ -71,8 +71,8 @@ CS, tech, design, 금융 등 여러 분야에 걸쳐 자유롭게 기록하고 �
 <h3 id="실생활-관심사" tabindex="-1"><a class="header-anchor" href="#실생활-관심사"><span>실생활 관심사</span></a></h3>
 <ul>
 <li>Watch industry: 브랜드, movement 구조, 디자인, 스타일, 착용 경험</li>
-<li>금융 및 자산 투자: Bitcoin, crypto, blockchain, 미국/국내 주식</li>
-<li>소비자로서의 최적화 경험: 통신 요금제, 신용카드, 제품과 서비스에 대한 합리적 선택과 비용 효율화</li>
+<li>금융 및 자산 투자: Bitcoin, crypto, blockchain, 미국/국내 주식 및 ETF</li>
+<li>소비자로서의 최적화 경험: 통신 요금제, 신용카드, 각종 제품과 구독 서비스에 대한 합리적 선택 및 비용 효율화</li>
 <li>국제 시사 및 사회 이슈: 세계 뉴스, 정치, 경제, 사회적 사건 등 전반적인 동향</li>
 <li>인문학적 관심: 세계사, 언어의 역사, 세계 인문환경 등 문화와 지성의 흐름에 대한 이해</li>
 </ul>
@@ -146,7 +146,7 @@ Make sure you have <strong>Node.js</strong> installed before building the site.<
 </ul>
 <blockquote>
 <p>이 블로그의 프레임워크(코드 및 레이아웃)는 <strong>개인 및 상업적 용도로 자유롭게 사용, 복사, 수정, 배포할 수 있습니다.</strong><br>
-단, <strong>게시물 및 첨부된 이미지 등의 콘텐츠는 상업적 사용이 금지</strong>되며, 별도의 허가 없이 복제, 재배포하거나 수익을 목적으로 사용하는 것을 금지합니다.<br>
+단, <strong>게시물 및 첨부된 이미지 등의 콘텐츠는 상업적 사용이 금지</strong>되며, 별도의 허가 없이 복제, 재배포하거나 수익을 목적으로 사용하는 것을 금합니다.<br>
 콘텐츠의 상업적 활용이 필요하다면 이메일로 사전 문의해 주세요.</p>
 </blockquote>
 <p>If you wish to use any part of the content commercially, please contact me via email.</p>
