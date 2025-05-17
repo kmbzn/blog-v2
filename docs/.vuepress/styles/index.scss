@@ -99,10 +99,10 @@ a.header-anchor::before {
    Footer and Meta Area
 --------------------------------- */
 
-.vp-footer[data-v-43ea5535] {
+.vp-footer {
   max-width: 740px;
-  padding: 1.5rem 0;
-  margin: 0;
+  padding: 1rem 0;
+  margin: 0 !important;
 }
 
 .vp-page-meta,
