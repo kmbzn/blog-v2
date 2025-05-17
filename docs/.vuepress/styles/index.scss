@@ -45,24 +45,10 @@
 
 body, .built-with, .vp-footer .copyright {
   font-family: 'Pretendard';
-  margin: 0 -.7rem;
 }
 
 p, li, table {
   font-family: 'Tmoney RoundWind';
-}
-
-.hint-container, vp-code-tabs {
-  margin: 0 0;
-}
-
-@media (max-width: 419px) {
-    #content > .vp-code-tabs div[class*=language-] {
-      margin-inline: -1rem;
-    }
-    #content > .vp-code-tabs .vp-code-tabs-nav {
-      margin-inline: -1rem;
-    }
 }
 
 pre,
