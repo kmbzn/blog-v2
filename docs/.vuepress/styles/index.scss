@@ -1,8 +1,6 @@
-// /docs/.vuepress/styles/index.scss
-
-// -----------------------------
-// 폰트 설정
-// -----------------------------
+/* ---------------------------------
+   Font Settings
+--------------------------------- */
 
 @font-face {
   font-family: 'Tmoney RoundWind';
@@ -39,11 +37,12 @@
   font-style: normal;
 }
 
-// -----------------------------
-// 기본 폰트 지정
-// -----------------------------
+/* ---------------------------------
+   Base Font Assignments
+--------------------------------- */
 
-body, .built-with, .vp-footer .copyright {
+body, .built-with, .vp-footer .copyright,
+.vp-sidebar, .vp-sidebar-item {
   font-family: 'Pretendard';
 }
 
@@ -51,23 +50,20 @@ p, li, table {
   font-family: 'Tmoney RoundWind';
 }
 
-pre,
-code,
-div[class*='language-'] {
+pre, code, div[class*='language-'] {
   font-family: 'goorm-sans-code', consolas, monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
 }
 
-.vp-sidebar,
-.vp-sidebar-item {
-  font-family: 'Pretendard';
-}
-
-// -----------------------------
-// 기본 스타일 수정
-// -----------------------------
+/* ---------------------------------
+   Base Style Overrides
+--------------------------------- */
 
 .vp-page [vp-content] {
-  padding: 0 1.5rem;
+  padding: 0 1rem;
+}
+
+.hint-container {
+  margin: 0;
 }
 
 .vp-navbar .vp-site-logo {
@@ -92,25 +88,21 @@ img {
   border-bottom: 1px solid var(--vp-c-gutter);
 }
 
-a.header-anchor {
-  padding-left: .5rem
-}
-
 a.header-anchor::before {
   content: "#";
-  top: .3em;
-  left: -.5em;
-  font-size: .75em;
+  top: 0.2rem;
+  left: -0.65em;
+  font-size: 0.75em;
 }
 
-// -----------------------------
-// footer 및 meta 영역
-// -----------------------------
+/* ---------------------------------
+   Footer and Meta Area
+--------------------------------- */
 
 .vp-footer[data-v-43ea5535] {
   max-width: 740px;
   padding: 1.5rem 0;
-  margin: 0 1rem;
+  margin: 0;
 }
 
 .vp-page-meta,
@@ -118,9 +110,9 @@ a.header-anchor::before {
   display: none;
 }
 
-// -----------------------------
-// 색상 변수
-// -----------------------------
+/* ---------------------------------
+   Color Variables
+--------------------------------- */
 
 :root {
   --vp-c-gutter: #aaa;
@@ -139,9 +131,22 @@ table {
   --vp-c-bg-alt: transparent;
 }
 
-// -----------------------------
-// 반응형 (모바일)
-// -----------------------------
+/* ---------------------------------
+   Responsive (Mobile)
+--------------------------------- */
+
+@media (max-width: 419px) {
+  #content > .vp-code-tabs .vp-code-tabs-nav,
+  pre,
+  div[class^="language-"] {
+    margin-inline: -1rem !important;
+  }
+
+  div[class*=language-].line-numbers-mode pre {
+    margin-left: 3rem !important;
+    margin-right: 0 !important;
+  }
+}
 
 @media (max-width: 1060px) {
   .vp-sidebar {
@@ -161,9 +166,9 @@ table {
   }
 }
 
-// -----------------------------
-// 인쇄용 설정
-// -----------------------------
+/* ---------------------------------
+   Print Settings
+--------------------------------- */
 
 @media print {
   @page {
@@ -176,16 +181,6 @@ table {
   .vp-footer,
   .vp-footer-wrapper {
     display: none;
-  }
-
-  .vp-page h1,
-  .vp-page h2,
-  .vp-page h3,
-  .vp-page h4,
-  .vp-page h5,
-  .vp-page h6 {
-    margin-top: 0;
-    padding-top: 0;
   }
 
   .vp-page {
