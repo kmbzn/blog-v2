@@ -1,10 +1,14 @@
 # Python 시간 초과 방지를 위한 팁
 
+<p align="center">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1869px-Python-logo-notext.svg.png" width="180" alt="Bitcoin logo" />
+</p>
+
 필자는 최근 교내 알고리즘 대회에 참가하여 평상시 가장 익숙한 언어인 Python으로 문제를 풀었다.  
 하지만 몇몇 문제에서 끝내 시간 초과(Time Limit Exceeded)를 해결하지 못해 아쉬운 결과를 얻었다.  
 대회 규정상 외부 사이트 검색이나 LLM 사용이 금지되어 있었기 때문에, 평소 익숙하지 않았던 입출력 최적화나 자료구조 선택에 대한 기본기를 떠올릴 수 없었다.  
 해당 경험을 계기로, Python으로 알고리즘 문제를 풀 때 실수하기 쉬운 **시간 초과의 원인과 이를 방지하기 위한 기본적인 최적화 기법들**을 정리해두는 것이 필요하다고 느꼈다.  
-이 글은 필자가 이후의 대회를 대비하기 위해 정리한 메모이며, Python 사용자에게 도움이 될 수 있도록 간결하고 실용적인 내용을 위주로 구성하였다.
+이 글은 필자가 추후에 있을 대회나 코테를 대비하기 위해 정리한 메모이며, Python 사용자에게 도움이 될 수 있도록 간결하고 실용적인 내용 위주로 구성하였다.
 
 ---
 
@@ -18,7 +22,7 @@ Python으로 알고리즘 문제를 풀 때 시간 초과가 발생하는 가장
 
 ::: tip
 Python의 `input()` 함수는 내부적으로 여러 처리 과정을 거치기 때문에 상대적으로 느리다.  
-많은 양의 입력을 빠르게 처리해야 할 때는 `sys.stdin.readline()`을 사용하는 것이 훨씬 효율적이다.
+많은 양의 입력을 빠르게 처리해야 할 때는 `sys.stdin.readline()`을 사용하는 것이 효율적이다.
 :::
 
 ```python
@@ -26,7 +30,7 @@ import sys
 n = int(sys.stdin.readline())
 ```
 
-> **실행 시간 비교 (단일 입력 기준):**  
+> **실행 시간 비교 (단일 입력 기준)**  
 > - `input()` → 약 100μs  
 > - `sys.stdin.readline()` → 약 15~30μs  
 > 3배에서 최대 **6배** 차이
@@ -45,7 +49,7 @@ for i in range(n):
     arr[i] = data[i]
 ```
 
-> **이유:**  
+> **이유**  
 > `append()`는 내부적으로 동적 배열 크기 재조정이 발생할 수 있고, Cache miss도 유발됨
 
 ## 출력 최적화: `print()` 반복 vs 문자열 누적 후 일괄 출력
@@ -59,7 +63,7 @@ for x in arr:
 print('\n'.join(map(str, arr)))
 ```
 
-> **이유:**  
+> **이유**  
 > `print()`는 호출될 때마다 I/O 작업이 발생하므로 반복 호출 시 overhead가 큼
 
 ## 재귀 제한 조정
@@ -74,7 +78,7 @@ import sys
 sys.setrecursionlimit(10**6)
 ```
 
-> **주의:**  
+> **주의**  
 > 재귀 깊이를 과도하게 설정할 경우 메모리 부족으로 인해 프로그램이 **비정상 종료**될 수 있음
 
 ## Queue 구조 최적화: `list` vs `deque`
@@ -92,7 +96,7 @@ queue.append(1)
 queue.popleft()  # O(1)
 ```
 
-> **이유:**  
+> **이유**  
 > list에서 `pop(0)`을 하면 모든 요소를 한 칸씩 당겨야 하므로 $O(n)$이 소요됨  
 > 반면 `deque`는 양방향 큐이기 때문에 `append`, `popleft`가 모두 $O(1)$로 동작함
 
