@@ -32,6 +32,13 @@ export default defineUserConfig({
     colorMode: 'auto',
     sidebar: [
       {
+        text: '🧠 Algorithm',
+        collapsible: false,
+        children: [
+          '/algorithm/Python-시간-초과-방지를-위한-팁'
+        ]
+      },
+      {
         text: '💰 Finance',
         collapsible: false,
         children: [
