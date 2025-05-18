@@ -1,4 +1,4 @@
-# kmbzn.com
+# Mindscape
 
 ::: info
 이 웹사이트는 다양한 주제에 대한 저의 관심과 생각을 체계적으로 정리하고 공유하는 공간입니다.  
@@ -6,7 +6,7 @@ CS, tech, design, 금융 등 여러 분야에 걸쳐 자유롭게 기록하고 �
 :::
 
 ![Profile Image](https://kmbzn.com/images/profile.jpg)  
-*Welcome to my personal blog...*
+*Welcome to my personal page...*
 
 ## 👤 About Me
 

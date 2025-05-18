@@ -1,7 +1,8 @@
 export const redirects = JSON.parse("{}")
 
 export const routes = Object.fromEntries([
-  ["/", { loader: () => import(/* webpackChunkName: "index.html" */"/home/kmbzn/workspace/blog-v2/docs/.vuepress/.temp/pages/index.html.js"), meta: {"title":"kmbzn.com"} }],
+  ["/", { loader: () => import(/* webpackChunkName: "index.html" */"/home/kmbzn/workspace/blog-v2/docs/.vuepress/.temp/pages/index.html.js"), meta: {"title":"Mindscape"} }],
+  ["/algorithm/Python-%EC%8B%9C%EA%B0%84-%EC%B4%88%EA%B3%BC-%EB%B0%A9%EC%A7%80%EB%A5%BC-%EC%9C%84%ED%95%9C-%ED%8C%81.html", { loader: () => import(/* webpackChunkName: "algorithm_Python-시간-초과-방지를-위한-팁.html" */"/home/kmbzn/workspace/blog-v2/docs/.vuepress/.temp/pages/algorithm/Python-시간-초과-방지를-위한-팁.html.js"), meta: {"title":"Python 시간 초과 방지를 위한 팁"} }],
   ["/computer-graphics/1-Course-Intro.html", { loader: () => import(/* webpackChunkName: "computer-graphics_1-Course-Intro.html" */"/home/kmbzn/workspace/blog-v2/docs/.vuepress/.temp/pages/computer-graphics/1-Course-Intro.html.js"), meta: {"title":"1 - Course Intro"} }],
   ["/computer-graphics/2-Rendering-Basics.html", { loader: () => import(/* webpackChunkName: "computer-graphics_2-Rendering-Basics.html" */"/home/kmbzn/workspace/blog-v2/docs/.vuepress/.temp/pages/computer-graphics/2-Rendering-Basics.html.js"), meta: {"title":"2 - Rendering Basics"} }],
   ["/computer-graphics/3-Transformations.html", { loader: () => import(/* webpackChunkName: "computer-graphics_3-Transformations.html" */"/home/kmbzn/workspace/blog-v2/docs/.vuepress/.temp/pages/computer-graphics/3-Transformations.html.js"), meta: {"title":"3 - Transformations"} }],

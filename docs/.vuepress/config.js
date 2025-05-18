@@ -27,8 +27,8 @@ export default defineUserConfig({
     ['link', { rel: 'stylesheet', href: 'https://cdn.jsdelivr.net/npm/pretendard@1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css' }]
   ],
   theme: theme({
-    logo: '/images/logo.png',
-    logoDark: '/images/logo-dark.png',
+    logo: '/images/kbz.png',
+    logoDark: '/images/kbz-dark.png',
     colorMode: 'auto',
     sidebar: [
       {
