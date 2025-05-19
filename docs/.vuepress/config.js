@@ -35,7 +35,9 @@ export default defineUserConfig({
         text: '🧠 Algorithm',
         collapsible: false,
         children: [
-          '/algorithm/Python-시간-초과-방지를-위한-팁'
+          '/algorithm/Python-시간-초과-방지를-위한-팁',
+          '/algorithm/1966',
+          '/algorithm/1018'
         ]
       },
       {
