@@ -15,7 +15,7 @@ export default defineUserConfig({
   head: [
     ['link', { rel: 'stylesheet', href: 'https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css' }],
     ['meta', { property: 'og:description', content: 'KeyBaseZone' }],
-    ['meta', { property: 'og:image', content: 'https://kmbzn.com/images/og-home.png' }],
+    ['meta', { property: 'og:image', content: 'https://kmbzn.com/images/og-image.png' }],
     ['link', { rel: 'icon', type: 'image/x-icon', href: '/images/favicon.ico' }],
     ['link', { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/images/favicon-16x16.png' }],
     ['link', { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/images/favicon-32x32.png' }],
