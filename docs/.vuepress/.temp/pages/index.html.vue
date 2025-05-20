@@ -1,9 +1,4 @@
 <template><div><h1 id="mindscape" tabindex="-1"><a class="header-anchor" href="#mindscape"><span>Mindscape</span></a></h1>
-<div class="hint-container info">
-<p class="hint-container-title">정보</p>
-<p>이 웹사이트는 다양한 주제에 대한 저의 관심과 생각을 체계적으로 정리하고 공유하는 공간입니다.<br>
-CS, tech, design, 금융 등 여러 분야에 걸쳐 자유롭게 기록하고 있습니다.</p>
-</div>
 <p><img src="https://kmbzn.com/images/profile.jpg" alt="Profile Image"><br>
 <em>Welcome to my personal page...</em></p>
 <h2 id="👤-about-me" tabindex="-1"><a class="header-anchor" href="#👤-about-me"><span>👤 About Me</span></a></h2>
@@ -98,7 +93,7 @@ CS, tech, design, 금융 등 여러 분야에 걸쳐 자유롭게 기록하고 �
 <p>After forking, clone it to your local machine:</p>
 </li>
 </ol>
-<CodeTabs id="245" :data='[{"id":"HTTPS"},{"id":"SSH"},{"id":"GitHub CLI"}]'>
+<CodeTabs id="240" :data='[{"id":"HTTPS"},{"id":"SSH"},{"id":"GitHub CLI"}]'>
 <template #title0="{ value, isActive }">HTTPS</template>
 <template #title1="{ value, isActive }">SSH</template>
 <template #title2="{ value, isActive }">GitHub CLI</template>
