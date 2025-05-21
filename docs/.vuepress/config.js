@@ -60,7 +60,14 @@ export default defineUserConfig({
           '/computer-graphics/8-Lighting',
           '/computer-graphics/Project-2',
         ]
-      }
+      },
+      {
+        text: '🗂️ Operating System',
+        collapsible: false,
+        children: [
+          '/operating-system/Project-2'
+        ]
+      },
     ],
     sidebarDepth: 0,
     lastUpdated: true
