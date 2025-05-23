@@ -34,7 +34,7 @@ export default defineUserConfig({
       {
         collapsible: false,
         children: [
-          '/KeyBaseZone'
+          '/Mindscape'
         ]
       },
       {
