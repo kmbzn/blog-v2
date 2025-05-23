@@ -1,5 +1,6 @@
 <template><div><h1 id="_1018번-체스판-다시-칠하기" tabindex="-1"><a class="header-anchor" href="#_1018번-체스판-다시-칠하기"><span>1018번: 체스판 다시 칠하기</span></a></h1>
-<p>난이도: 실버 IV</p>
+<p><a href="https://www.acmicpc.net/problem/1018" target="_blank" rel="noopener noreferrer">https://www.acmicpc.net/problem/1018</a></p>
+<p>난이도: <strong>실버 IV</strong></p>
 <p>해당 문제는 <strong>Python 3</strong>으로 풀이하였습니다.</p>
 <p>우선 문제에서 입력으로 주어지는 <code v-pre>N</code>, <code v-pre>M</code>값을 각각 받아옵니다.</p>
 <div class="language-python line-numbers-mode" data-highlighter="prismjs" data-ext="py"><pre v-pre><code><span class="line">N<span class="token punctuation">,</span> M <span class="token operator">=</span> <span class="token builtin">map</span><span class="token punctuation">(</span><span class="token builtin">int</span><span class="token punctuation">,</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span></span>

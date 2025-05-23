@@ -1,6 +1,7 @@
 <template><div><h1 id="_1966번-프린터-큐" tabindex="-1"><a class="header-anchor" href="#_1966번-프린터-큐"><span>1966번: 프린터 큐</span></a></h1>
-<p>난이도: 실버 III</p>
-<p>해당 문제는 Python 3으로 풀이하였습니다.</p>
+<p><a href="https://www.acmicpc.net/problem/1966" target="_blank" rel="noopener noreferrer">https://www.acmicpc.net/problem/1966</a></p>
+<p>난이도: <strong>실버 III</strong></p>
+<p>해당 문제는 <strong>Python 3</strong>으로 풀이하였습니다.</p>
 <p>우선 문제에서 주어지는 테스트케이스의 수, <code v-pre>N</code>, <code v-pre>M</code>값을 변수로 받아오고, 문제 풀이에 필요한 변수들을 선언하겠습니다.</p>
 <div class="language-python line-numbers-mode" data-highlighter="prismjs" data-ext="py"><pre v-pre><code><span class="line">test <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span></span>
 <span class="line"><span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> test<span class="token punctuation">)</span><span class="token punctuation">:</span></span>

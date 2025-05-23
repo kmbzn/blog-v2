@@ -1,4 +1,5 @@
 # Musics 🎧
+
 ::: info
 최근 개인적으로 즐겨 듣고 있는 곡들을 정리해둔 공간입니다.  
 감상은 [Spotify](https://open.spotify.com/) 또는 [YouTube](https://www.youtube.com/)를 통해 가능합니다.  
@@ -17,7 +18,7 @@
 <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/6dxgKYAH0TvoSb16xD30rD?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
 <iframe style="border-radius:12px" width="100%" height="152" src="https://www.youtube.com/embed/3VOerLGIMG4?controls=1&modestbranding=1" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe>
 
-### 4. Good Day 2025 (Telepathy + By the Moonlight Window)
+### 4. Good Day 2025 (텔레파시 + 달빛 창가에서)
 <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/4SinziOMDPR58wWHakWP9v?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
 <iframe style="border-radius:12px" width="100%" height="152" src="https://www.youtube.com/embed/cRfbII60IjY?controls=1&modestbranding=1" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe>
 
@@ -25,7 +26,7 @@
 <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/3BqfHyw9cLm6POreivziWN?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
 <iframe style="border-radius:12px" width="100%" height="152" src="https://www.youtube.com/embed/XNSmuTpzr8U?controls=1&modestbranding=1" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe>
 
-### 6. 달빛 소년
+### 6. 달빛소년
 <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/3QLaYOmG5rEvIgIJ90nhXd?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
 <iframe style="border-radius:12px" width="100%" height="152" src="https://www.youtube.com/embed/EapUSbnsIws?controls=1&modestbranding=1" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe>
 
