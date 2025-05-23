@@ -1,4 +1,4 @@
-<template><div><h1 id="mindscape" tabindex="-1"><a class="header-anchor" href="#mindscape"><span>Mindscape</span></a></h1>
+<template><div><h1 id="keybasezone" tabindex="-1"><a class="header-anchor" href="#keybasezone"><span>KeyBaseZone</span></a></h1>
 <p><img src="https://kmbzn.com/images/profile.jpg" alt="Profile Image"><br>
 <em>Welcome to my personal page...</em></p>
 <h2 id="👤-about-me" tabindex="-1"><a class="header-anchor" href="#👤-about-me"><span>👤 About Me</span></a></h2>
@@ -36,6 +36,7 @@
 </tr>
 </tbody>
 </table>
+<img src="https://ghchart.rshah.org/kmbzn" alt="GitHub chart">
 <h2 id="📚-topics" tabindex="-1"><a class="header-anchor" href="#📚-topics"><span>📚 Topics</span></a></h2>
 <p>다음과 같은 주제에 대해 다루고자 합니다:</p>
 <h3 id="컴퓨터-공학-computer-science" tabindex="-1"><a class="header-anchor" href="#컴퓨터-공학-computer-science"><span>컴퓨터 공학 (Computer Science)</span></a></h3>
@@ -93,7 +94,7 @@
 <p>After forking, clone it to your local machine:</p>
 </li>
 </ol>
-<CodeTabs id="240" :data='[{"id":"HTTPS"},{"id":"SSH"},{"id":"GitHub CLI"}]'>
+<CodeTabs id="241" :data='[{"id":"HTTPS"},{"id":"SSH"},{"id":"GitHub CLI"}]'>
 <template #title0="{ value, isActive }">HTTPS</template>
 <template #title1="{ value, isActive }">SSH</template>
 <template #title2="{ value, isActive }">GitHub CLI</template>

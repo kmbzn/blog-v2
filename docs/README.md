@@ -14,6 +14,8 @@
 | Major  | *Dept. of* Computer Science                  |
 | HS     | *Joongdong High,* 112th                      |
 
+<img src="https://ghchart.rshah.org/kmbzn" alt="GitHub chart">
+
 ## 📚 Topics
 
 다음과 같은 주제에 대해 다루고자 합니다:

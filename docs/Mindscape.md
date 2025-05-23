@@ -1,4 +1,4 @@
-# Mindscape
+# Mindscape 🔥
 
 <p align="center">
   <img src="https://kmbzn.com/images/android-chrome-512x512.png" width="180" alt="Main Logo" />
