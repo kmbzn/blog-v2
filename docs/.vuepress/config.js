@@ -66,7 +66,8 @@ export default defineUserConfig({
         text: '🗂️ Operating System',
         collapsible: false,
         children: [
-          '/operating-system/Project-2'
+          '/operating-system/Project-2',
+          '/operating-system/Project-2-test-code'
         ]
       },
     ],

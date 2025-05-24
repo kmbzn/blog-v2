@@ -1,8 +1,8 @@
 # Project 02: Implementing a simple kernel-level thread  
 Operating System  
 
-제출 마감 기한:  
-2025. 05. 25. 23:59  
+Due date  
+2025. 05. 28. 23:59
 
 ## Overview 개요  
 - 이 프로젝트는 xv6 운영체제에서 커널 수준 스레드(kernel-level thread)의 단순화된 버전을 구현하는 것이다.
