@@ -1,4 +1,4 @@
-# Project 02: xv6 RISC-V Kernel-Level Threads 구현
+# xv6 RISC-V Kernel-Level Threads 구현: wiki
 
 ## Design
 
@@ -63,7 +63,7 @@ xv6는 원래 단일 프로세스 구조 기반이며, 각 `proc` 구조체는 �
 
 ### 테스트 결과
 
-테스트는 교수님이 제공한 `thread_test.c`를 기준으로 수행하였으며, 다음과 같은 결과를 출력하였다.
+테스트는 수업에서 제공된 `thread_test.c`를 기준으로 수행하였으며, 다음과 같은 결과를 출력하였다.
 
 #### [TEST#1] 기본 스레드 생성 및 종료 순서 확인
 
@@ -141,6 +141,5 @@ usertrap(): unexpected scause 0xd pid=39 sepc=0x1000 stval=0x8020
 - `uvmshare()`는 기존 `uvmcopy()`를 변형하여 PTE_W가 없는 페이지는 직접 공유하도록 구현하였다.
 - 각 페이지에 대해 `walk()`를 통해 부모의 PTE를 가져오고, 해당 내용을 자식 pagetable에 그대로 매핑한다.
 - `is_thread` 플래그는 `clone()`으로 생성된 proc에만 1로 설정되며, `join()`에서 해당 여부를 판별하는 기준으로 사용된다.
-- 교수님이 제공한 `thread_test.c`와 `thread_fcn.c`는 절대 수정하지 않고, 외부 wrapper 및 커널 내부에서 모든 문제를 해결하도록 하였다.
 - 모든 코드에서 `ptable` 관련 코드는 제거하였고, `proc[NPROC]` 순회 및 `wait_lock`, `proc->lock`으로 모든 동기화 처리하였다.
 

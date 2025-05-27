@@ -1,9 +1,9 @@
-# Musics 🎧
+# Playlist 🎧
 
 ::: info
 최근 개인적으로 즐겨 듣고 있는 곡들을 정리해둔 공간입니다.  
 감상은 [Spotify](https://open.spotify.com/) 또는 [YouTube](https://www.youtube.com/)를 통해 가능합니다.  
-번호는 순위가 아닌 임의로 부여된 것입니다. 재생목록은 수시로 update될 것입니다.
+번호는 순위가 아닌 임의로 부여된 것입니다. 재생목록은 수시로 update할 계획입니다.
 :::
 
 ### 1. 너에게 닿기를
