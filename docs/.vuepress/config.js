@@ -67,7 +67,8 @@ export default defineUserConfig({
         collapsible: false,
         children: [
           '/operating-system/Project-2',
-          '/operating-system/Project-2-test-code'
+          '/operating-system/Project-2-test-code',
+          '/operating-system/wiki'
         ]
       },
     ],
