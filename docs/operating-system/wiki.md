@@ -69,9 +69,9 @@ RISC-V에서는 process를 죽이기 위해선 그 주소 공간을 공유하는
 
 #### 8. Separate wait/join
 
-- 기존의 `wait()`는 프로세스만 수거해야 한다.
-- 스레드는 `join()`을 통해 수거하므로 `wait()`와는 독립적으로 구현된다.
-- `join()`은 `proc[NPROC]`을 순회하며 `parent == myproc()`이고 `is_thread == 1`이며 `ZOMBIE` 상태인 스레드를 찾아 회수한다.
+- 기존의 `wait()`는 process만 수거해야 한다.
+- thread는 `join()`을 통해 수거하므로 `wait()`와는 독립적으로 구현된다.
+- `join()`은 `proc[NPROC]`을 순회하며 `parent == myproc()`이고 `is_thread == 1`이며 `ZOMBIE` 상태인 thread를 찾아 회수한다.
 
 #### 9. Guarantee sleep/wakeup Semantics
 
@@ -147,7 +147,7 @@ uint64 sys_join(void)
 
 ### 2. Kernel Internal Functions (`kernel/proc.c`)
 
-#### clone()
+#### `clone()`
 
 - `allocproc()`을 통해 새로운 TCB를 할당한다.
 - `uvmshare()`로 부모와 동일한 pagetable을 공유한다.
@@ -167,8 +167,8 @@ np->trapframe->a1  = (uint64)arg2;
 #### `join()`
 
 - `proc[]` 배열 전체를 순회하며, `parent == myproc()`이면서 `is_thread == 1`인 자식만 확인한다.
-- `state == ZOMBIE`인 스레드를 발견하면 `freeproc()`으로 회수하고, 그 스레드의 `ustack` 값을 `copyout()`을 통해 유저에게 전달한다.
-- 수거할 스레드가 없으면 sleep 상태로 대기한다.
+- `state == ZOMBIE`인 thread를 발견하면 `freeproc()`으로 회수하고, 그 thread의 `ustack` 값을 `copyout()`을 통해 유저에게 전달한다.
+- 수거할 thread가 없으면 sleep 상태로 대기한다.
 
 #### `exec()`
 
@@ -185,7 +185,7 @@ for(struct proc *q = proc; q < &proc[NPROC]; q++) {
 - `exec`을 호출한 현재 thread를 제외한, 같은 주소 공간을 공유하는 thread를 모두 제거한다.
 - 이 동작은 새로운 pagetable을 세팅하기 전에 반드시 이루어져야 한다.
 
-#### kill()
+#### `kill()`
 
 ```c
 for (p = proc; p < &proc[NPROC]; p++) {
@@ -202,8 +202,8 @@ for (p = proc; p < &proc[NPROC]; p++) {
 
 #### `fork()`
 
-- 기존과 거의 동일하나, `is_thread = 0`으로 초기화하여 완전한 프로세스 복제가 되도록 한다.
-- 스레드가 아닌 프로세스는 반드시 독립적인 주소 공간을 가진다.
+- 기존과 거의 동일하나, `is_thread = 0`으로 초기화하여 완전한 process 복제가 되도록 한다.
+- thread가 아닌 process는 반드시 독립적인 주소 공간을 가진다.
 
 
 ### 3. User-Level Library (`user/thread.c`, `user/thread.h`)
@@ -228,7 +228,7 @@ if (pid > 0 && s) sbrk(-PGSIZE);
 return pid;
 ```
 
-- join이 성공적으로 종료된 스레드의 stack 주소를 전달해주면, 이를 `sbrk(-PGSIZE)`로 반납하여 memory leak을 방지한다.
+- join이 성공적으로 종료된 thread의 stack 주소를 전달해주면, 이를 `sbrk(-PGSIZE)`로 반납하여 memory leak을 방지한다.
 
 #### thread.h
 
@@ -287,23 +287,7 @@ entry("join");
 - 각 thread의 실행 순서와 종료 시점은 예시와 다르지만, 전역 변수의 수정 및 main thread에서 그 결과를 확인하는 흐름은 동일하게 유지된다.
 
 #### Conclusion
-- 논리적으로 문제가 없으며, xv6의 round-robin scheduler에 따라 실행 순서는 달라질 수 있으므로 출력 순서의 차이는 허용된다.
-
-
-```
-[TEST#1]
-Thread 0 start
-Thread 1 start
-Thread 1 end
-Thread 2 start
-Thread 2 end
-Thread 3 start
-Thread 3 end
-Thread 4 start
-Thread 4 end
-Thread 0 end
-TEST#1 Passed
-```
+- 논리적으로 문제가 없으며, xv6의 round-robin scheduler에 따라 실행 순서는 달라질 수 있으므로 출력 순서의 차이는 허용되는 것으로 봐야 할 것이다.
 
 ### TEST#2: Argument Passing and Independent Execution
 
@@ -312,22 +296,7 @@ TEST#1 Passed
 - 실제 결과에서도 `iter` 값이 `0`부터 `4000`까지 정확히 출력된다.
 
 #### Conclusion
-- 출력 형식과 순서가 모두 일치하며, 기능적으로도 완벽히 구현되었기 때문에 별도의 설명 없이 통과로 판단된다.
-
-```
-[TEST#2]
-Thread 0 start, iter=0
-Thread 0 end
-Thread 1 start, iter=1000
-Thread 1 end
-Thread 2 start, iter=2000
-Thread 2 end
-Thread 3 start, iter=3000
-Thread 3 end
-Thread 4 start, iter=4000
-Thread 4 end
-TEST#2 Passed
-```
+- 출력 형식과 순서가 모두 일치하며, 기능적으로도 완벽히 구현되었기 때문에 별도의 설명 없이 **통과**로 판단된다.
 
 ### TEST#3: Address Space Isolation After Fork
 
@@ -337,21 +306,9 @@ TEST#2 Passed
 
 #### Conclusion
 - 전체 구조와 흐름이 동일하며, 주소 공간 충돌 없이 fork 이후 자식 thread가 정상적으로 분리된 메모리에서 실행되었음을 확인할 수 있다.
-- 부모 스레드가 자신의 자식 스레드를 실행시켜 병렬적으로 처리
-- 모든 자식과 부모 스레드가 정상 종료
+- 부모 thread가 자신의 자식 thread를 실행시켜 병렬적으로 처리
+- 모든 자식과 부모 thread가 정상 종료
 - **결과: nested thread 생성 및 실행 정상 처리**
-
-```
-[TEST#3]
-Thread 0 start
-Thread 1 start
-...
-Child of thread 4 end
-Thread 0 end
-Thread 1 end
-...
-TEST#3 Passed
-```
 
 ### TEST#4: sbrk and Memory Allocation Boundary Protection
 
@@ -366,18 +323,9 @@ TEST#3 Passed
 #### Conclusion
 - 오히려 trap이 발생함으로써 보호되지 않은 메모리 접근을 차단함을 증명하였고, 이는 test의 의도와 부합하므로 통과로 간주할 수 있다.
 - thread 0에서 `sbrk()`로 메모리 확장
-- 각 스레드는 공유된 주소 공간에 대한 접근 시도
-- 여러 스레드에서 접근 오류(scause 0xf) 발생 → 예상된 행동
+- 각 thread는 공유된 주소 공간에 대한 접근 시도
+- 여러 thread에서 접근 오류(scause 0xf) 발생 → 예상된 행동
 - **결과: 주소 공간 공유와 memory boundary test 성공**
-
-```
-Thread 0 sbrk: increased break by 14000
-new break = 0x000000000001A010
-Thread 1 size = 0x0000000000007000
-usertrap(): unexpected scause 0xf pid=25 ...
-Thread 0 end
-TEST#4 Passed
-```
 
 ### TEST#5: Shared PID and Kill Behavior
 
@@ -391,20 +339,9 @@ TEST#4 Passed
 
 #### Conclusion
 - `kill` 관련 동작은 제대로 반영되었고, 모든 thread가 동일한 process의 일부로 정상 종료되었으므로 기능 구현에 문제는 없다.
-- 모든 스레드가 동일한 `PID(29)`로 출력됨
+- 모든 thread가 동일한 `PID(29)`로 출력됨
 - 이는 thread가 독립적인 process가 아님을 증명
-- **결과: 모든 스레드는 동일한 process 내에서 실행됨**
-
-```
-[TEST#5]
-Thread 0 start, pid 29
-Thread 1 start, pid 29
-...
-Thread 0 end
-TEST#5 Passed
-```
-
----
+- **결과: 모든 thread는 동일한 process 내에서 실행됨**
 
 ### TEST#6: exec and Thread Termination Behavior
 
@@ -419,20 +356,9 @@ TEST#5 Passed
 #### Conclusion
 - 모든 trap은 exec에 따른 의도된 부작용이며, exec 이후 program이 정상 실행되었기 때문에 올바른 동작으로 판단된다.
 - `thread 0`이 `exec()`을 호출하여 새로운 프로그램으로 변환
-- 다른 스레드들은 예상대로 비정상 종료 (scause `0x2` / `0xd`)
+- 다른 thread들은 예상대로 비정상 종료 (scause `0x2` / `0xd`)
 - `exec()` 이후 새로운 프로그램이 정상적으로 실행됨을 확인
-- **결과: exec 이후 전체 프로세스 context 교체 성공**
-
-```
-[TEST#6]
-Thread 0 start
-usertrap(): unexpected scause 0x2 ...
-Thread exec test 0
-usertrap(): unexpected scause 0xd ...
-TEST#6 Passed
-```
-
----
+- **결과: exec 이후 전체 process context 교체 성공**
 
 ## Final Conclusion
 
@@ -443,12 +369,11 @@ TEST#6 Passed
 - 모든 test의 핵심 기능은 정확히 구현되었으며, trap 발생 또한 메모리 보호 기법이 올바르게 작동했음을 의미한다.
 - 따라서 `"All tests passed"` 라는 출력은 논리적으로 타당하고, 모든 요구 조건을 충족했다고 판단할 수 있다.
 
-![log](https://kmbzn.com/images/log.png)  
+<img src="https://kmbzn.com/images/log.png" width="320">
 
 ## Troubleshooting
 
-thread 구현은 전통적인 process와 달리 **주소 공간 공유**, **컨텍스트 분리**, **자원 회수 타이밍** 등 다층적인 문제를 수반한다. 본 project에서 발생했던 대표적인 문제 사례들과, 그에 대한 원인 분석 및 해결 과정을 기술한다.
-
+thread 구현은 전통적인 process와 달리 **주소 공간 공유**, **컨텍스트 분리**, **자원 회수 타이밍** 등 다층적인 문제를 수반한다. 본 project 진행 과정에서 발생했던 대표적인 문제 사례들과, 그에 대한 원인 분석 및 해결 과정을 기술하도록 한다.
 
 ### 1. `clone()` Infinite Thread Creation → PID Explosion
 
@@ -461,12 +386,12 @@ thread 구현은 전통적인 process와 달리 **주소 공간 공유**, **컨�
 #### Cause
 
 - `thread_create()`에서 `sbrk(PGSIZE)`로 stack을 요청했으나 실패한 경우, 그 stack 주소가 `(void*)-1`이 됨
-- 이 상태로도 `clone()`이 호출되면, 커널 내 stack validation에서 실패하여 -1을 반환하지만, 사용자 코드는 이를 무시함
-- 그 결과 join이 불가능한 좀비 스레드가 계속 생성되어 `proc[]`을 소진함
+- 이 상태로도 `clone()`이 호출되면, 커널 내 stack validation에서 실패하여 `-1`을 반환하지만, 사용자 코드는 이를 무시함
+- 그 결과 join이 불가능한 zombie thread가 계속 생성되어 `proc[]`을 소진함
 
-#### 해결 방법
+#### Solution
 
-- `thread_create()`에서 스택이 할당 실패했거나 page alignment가 맞지 않으면 **즉시 실패 처리**하도록 변경
+- `thread_create()`에서 stack이 할당 실패했거나 page alignment가 맞지 않으면 **즉시 실패 처리**하도록 변경
 
 ```c
 void *s = sbrk(PGSIZE);
@@ -484,19 +409,19 @@ if (!stack || (uint64)stack < PGSIZE || ... ) return -1;
 
 #### Issue
 
-- `clone()` 내에서 `if (!fcn) return -1;` 조건을 설정한 후, 모든 스레드 생성이 실패
+- `clone()` 내에서 `if (!fcn) return -1;` 조건을 설정한 후, 모든 thread 생성이 실패
 - `thread_test`에서 `Thread 0 start`조차 출력되지 않음
 
 #### Cause
 
-- 과제 명세에서 제공한 테스트 코드에서 `thread_basic()` 함수의 주소가 실제로 `0x0`으로 설정되어 있음
-- 이는 xv6의 링커 및 로더 설정 상 일부 함수가 `.text` 세그먼트의 시작 주소인 `0x0`에 배치되기 때문
+- 수업에서 제공한 test code에서 `thread_basic()` 함수의 주소가 실제로 `0x0`으로 설정되어 있음
+- 이는 xv6의 linker 및 loader 설정 상 일부 함수가 `.text` 세그먼트의 시작 주소인 `0x0`에 배치되기 때문
 - xv6 riscv 환경에서는 `epc = 0`이 trap 없이 유효하게 실행되어야 하며, `0x0` 주소는 정상적인 실행 진입점임
 
-#### 해결 방법
+#### Solution
 
 - `clone()` 내 `fcn` null-check 조건을 **완전히 제거**
-- 대신 `walkaddr()`를 통해 해당 주소가 유저 영역에 존재하는 유효한 물리 페이지를 가리키는지만 확인
+- 대신 `walkaddr()`를 통해 해당 address가 유저 영역에 존재하는 유효한 physical page를 가리키는지만 확인
 
 ```c
 if ((uint64)fcn >= MAXVA || !walkaddr(p->pagetable, (uint64)fcn)) return -1;
@@ -508,15 +433,15 @@ if ((uint64)fcn >= MAXVA || !walkaddr(p->pagetable, (uint64)fcn)) return -1;
 #### Issue
 
 - `join()`을 호출했으나 `Thread X join failed`가 출력되며 테스트 실패
-- 스레드는 종료되었으나 커널이 해당 상태를 인지하지 못함
+- thread는 종료되었으나 커널이 해당 상태를 인지하지 못함
 
 #### Cause
 
-- 스레드 종료 시 `state == ZOMBIE`가 되었지만, `join()`에서 접근 시 `np->lock`을 획득하지 않거나,
+- thread 종료 시 `state == ZOMBIE`가 되었지만, `join()`에서 접근 시 `np->lock`을 획득하지 않거나,
   이미 `freeproc()` 이후 lock을 해제한 뒤 상태를 확인하려 해 race condition이 발생
 - 또는 `p->lock`과 `wait_lock`을 동시에 사용하면서 deadlock이 발생할 수 있음
 
-#### 해결 방법
+#### Solution
 
 - `join()` 내에서 반드시 `np->lock`을 획득한 뒤 `state`를 확인
 - `freeproc()`도 반드시 `np->lock`을 보유한 상태에서 호출하고, 해제는 이후에 수행
@@ -527,7 +452,7 @@ if ((uint64)fcn >= MAXVA || !walkaddr(p->pagetable, (uint64)fcn)) return -1;
 
 #### Issue
 
-- `exec()` 테스트(`TEST#6`) 수행 시, 다른 스레드들에서 다음과 같은 로그 출력
+- `exec()` 테스트(`TEST#6`) 수행 시, 다른 thread들에서 다음과 같은 log 출력
 
 ```
 usertrap(): unexpected scause 0x2 pid=36 sepc=0x1000 stval=0xdeadbeef
@@ -537,13 +462,13 @@ usertrap(): unexpected scause 0x2 pid=36 sepc=0x1000 stval=0xdeadbeef
 
 #### Cause
 
-- `exec()`은 호출 스레드의 pagetable을 완전히 새로운 것으로 교체하는 작업이다.
-- 그러나 같은 pagetable을 공유하는 다른 스레드들이 아직 살아 있고, 해당 주소를 기준으로 명령어를 fetch하려고 하면 invalid memory trap이 발생
+- `exec()`은 호출 thread의 pagetable을 완전히 새로운 것으로 교체하는 작업이다.
+- 그러나 같은 pagetable을 공유하는 다른 thread들이 아직 살아 있고, 해당 주소를 기준으로 명령어를 fetch하려고 하면 invalid memory trap이 발생
 - 특히, 이미 소멸된 함수 주소(`fcn`)로 점프하는 도중 문제가 발생
 
-#### 해결 방법
+#### Solution
 
-- `exec()` 호출 시 현재 스레드를 제외한 동일 pagetable의 스레드를 `freeproc()`으로 제거
+- `exec()` 호출 시 현재 thread를 제외한 동일 pagetable의 thread를 `freeproc()`으로 제거
 
 ```c
 for(struct proc *q = proc; q < &proc[NPROC]; q++) {
@@ -555,20 +480,20 @@ for(struct proc *q = proc; q < &proc[NPROC]; q++) {
 }
 ```
 
-- 결과적으로, `exec()`는 해당 프로세스를 스레드 단위가 아닌 "주소 공간 단위"로 완전히 재시작하는 함수로 보아야 한다
+- 결과적으로, `exec()`는 해당 process를 thread 단위가 아닌 "주소 공간 단위"로 완전히 재시작하는 함수로 보아야 한다.
 
 
 ### 5. Only Some Threads Terminated on `kill(pid)` → zombie leak
 
 #### Issue
 
-- `kill(main_pid)` 호출 시 일부 스레드는 여전히 돌고 있으며, `join()`도 반환하지 않음
-- `TEST#5`에서 스레드 중 하나만 종료하고 나머지는 무한 루프에 빠짐
+- `kill(main_pid)` 호출 시 일부 thread는 여전히 돌고 있으며, `join()`도 반환하지 않음
+- `TEST#5`에서 thread 중 하나만 종료하고 나머지는 무한 루프에 빠짐
 
 #### Cause
 
-- 기존 `kill()` 구현은 `pid`와 일치하는 단일 프로세스만 종료 처리함
-- 그러나 스레드 구조에서는 하나의 주소 공간에 여러 스레드가 존재하며, 개별 pid만 종료해선 효과가 없음
+- 기존 `kill()` 구현은 `pid`와 일치하는 단일 process만 종료 처리함
+- 그러나 thread 구조에서는 하나의 주소 공간에 여러 thread가 존재하며, 개별 pid만 종료해선 효과가 없음
 
 #### Solution
 
@@ -590,8 +515,8 @@ for (p = proc; p < &proc[NPROC]; p++) {
 
 #### Issue
 
-- 스레드 수거 이후에도 `sbrk()`된 메모리가 회수되지 않아, `sbrk(0)` 값이 계속 증가
-- long-running 프로세스에서 memory exhaustion 발생
+- thread 수거 이후에도 `sbrk()`된 메모리가 회수되지 않아, `sbrk(0)` 값이 계속 증가
+- long-running process에서 memory exhaustion 발생
 
 #### Cause
 
@@ -635,7 +560,7 @@ release(&p->lock);
 acquire(&wait_lock);
 ```
 
-- `wakeup()`은 lock 없이 작동해야 하므로 별도로 `p->lock`을 각 스레드마다 획득하고 상태를 바꿔줌
+- `wakeup()`은 lock 없이 작동해야 하므로 별도로 `p->lock`을 각 thread마다 획득하고 상태를 바꿔줌
 
 
 ## Summary: Major Issues List
@@ -658,17 +583,17 @@ acquire(&wait_lock);
 
 - 본 project는 **xv6 RISC-V 버전**을 기반으로 하며, x86 기반 구현 예제들과는 구조적으로 다르다.
   - 특히 `ptable[]`이 존재하지 않고, `proc[NPROC]` 배열과 spinlock으로만 동기화를 수행한다.
-  - 따라서 x86의 `switchuvm()`, `loaduvm()` 등의 동작 방식과 달리, RISC-V에서는 `walk()` 및 `pagetable_t`에 직접 접근하는 방식이 필요하다.
+  - 따라서 x86의 `switchuvm()`, `loaduvm()` 등의 동작 방식과 달리, RISC-V에서는 `walk()` 및 `pagetable_t`에 직접 접근하는 방식이 필요했다.
 
-- xv6의 trapframe, context, scheduler 등은 thread-safe하지 않으므로, 스레드마다 반드시 독립된 `trapframe`, `context`, `ustack`을 사용해야 한다.
+- xv6의 trapframe, context, scheduler 등은 thread-safe하지 않으므로, thread마다 반드시 독립된 `trapframe`, `context`, `ustack`을 사용해야 한다.
 
 - `uvmshare()`는 기존 `uvmcopy()`를 변형하여 구현한 함수로, `PTE_U` 비트가 설정된 사용자 영역 page에 대해서만 공유(reference mapping)하도록 설계하였다.
   - 이는 read-only 세그먼트에 대해서도 문제가 없으며, exec이나 fork와는 다른 동작을 보장한다.
 
-- `thread_fcn.c`, `thread_test.c`는 과제 명세에서 제공한 채점 기준 파일로, **절대 수정 금지** 대상이다.
+- `thread_fcn.c`, `thread_test.c`는 과제 명세에서 제공한 채점 기준 파일이다.
   - 이 파일의 구조나 `fcn = 0x0` 형태의 호출 방식은 정상 동작이며, panic 유발 요소가 아니다.
 
-- 모든 스레드 구현은 xv6의 기존 기능과 완전히 호환되어야 하며, 특히 다음과 같은 시스템 콜들과 연동 가능해야 한다:
+- 모든 thread 구현은 xv6의 기존 기능과 완전히 호환되어야 하며, 특히 다음과 같은 system call들과 연동 가능해야 한다.
   - `fork()`, `exec()`, `exit()`, `wait()`, `kill()`, `sleep()`, `pipe()`
 
 ### Additional Useful References
