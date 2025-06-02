@@ -69,7 +69,9 @@ export default defineUserConfig({
         children: [
           '/operating-system/Project-2',
           '/operating-system/Project-2-test-code',
-          '/operating-system/wiki'
+          '/operating-system/wiki',
+          '/operating-system/10.VirtualMemory-1',
+          '/operating-system/11.VirtualMemory-2'
         ]
       },
     ],
