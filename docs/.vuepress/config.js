@@ -35,7 +35,8 @@ export default defineUserConfig({
         collapsible: false,
         children: [
           '/Mindscape',
-          '/Musics'
+          '/Musics',
+          '/vim'
         ]
       },
       {
