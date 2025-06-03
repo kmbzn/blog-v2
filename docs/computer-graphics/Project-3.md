@@ -1,6 +1,6 @@
 # Computer Graphics Project 3: Bvh Viewer
 
-제출 기한: 2025년 6월 8일 (23:59)  
+제출 기한: 2025년 6월 6일 (23:59)  
 **(기한 초과 제출은 점수 없음)**
 
 - LMS 코스 홈 > Weekly Learning (주차별 학습) > Week 11 > Project 3  
@@ -26,10 +26,10 @@ python3 main.py
 자신만의 bvh 뷰어를 구현하세요.
 
 - 단일 프로그램에서 모든 요구사항을 구현해야 합니다.  
-  이 프로젝트는 별도의 프로그램으로 요구하지 않습니다.
+  이 Project는 별도의 프로그램으로 요구하지 않습니다.
 
-- 창의 해상도는 (800, 800)일 필요는 없습니다.  
-  세부사항이 잘 보이도록 충분히 큰 해상도를 사용하세요.
+- 창의 해상도는 `(800, 800)`일 필요는 없습니다.  
+  세부사항이 잘 보이도록 **충분히 큰** 해상도를 사용하세요.
 
 ### C. OpenGL 3.3 Core Profile을 사용해야 합니다
 
@@ -67,7 +67,7 @@ glfw.window_hint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE)
      - skeleton (정지 포즈)만 렌더링하세요.
 
   2. HIERARCHY 섹션의 데이터만 사용해서 캐릭터를 그리세요.  
-     - translation은 (0,0,0), rotation은 없도록 (단위 행렬)
+     - translation은 `(0,0,0)`, rotation은 없도록 (단위 행렬)
 
   3. **박스 렌더링(box rendering)** 사용  
      - 점이나 선이 아니라 박스로 렌더링  
@@ -138,7 +138,7 @@ file = open(os.path.join('data', 'run.bvh'))
 
 ## 4. 실행 환경
 
-- Python 3.8에서 실행 가능해야 하며,  
+- `Python 3.8`에서 실행 가능해야 하며,  
   사용 가능한 모듈은 다음으로 제한됨:
   - NumPy
   - PyOpenGL
@@ -167,7 +167,7 @@ file = open(os.path.join('data', 'run.bvh'))
 
 ### A. drop_callback 함수 주의사항
 
-- glfw Python 바인딩에서는 C버전과 다르게  
+- `glfw` Python 바인딩에서는 C 버전과 다르게  
   `drop_callback(window, paths)`로만 호출됨  
   (paths는 파일 경로 리스트)
 
