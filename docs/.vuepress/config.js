@@ -59,7 +59,7 @@ export default defineUserConfig({
         collapsible: false,
         children: [
           '/computer-graphics/8-Lighting',
-          '/computer-graphics/Project-2',
+          '/computer-graphics/Project-3',
         ]
       },
       {
