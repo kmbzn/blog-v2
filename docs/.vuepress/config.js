@@ -67,13 +67,14 @@ export default defineUserConfig({
         text: '🗂️ Operating System',
         collapsible: false,
         children: [
-          '/operating-system/Project-2',
-          '/operating-system/Project-2-test-code',
-          '/operating-system/wiki',
+          '/operating-system/7.Deadlocks',
           '/operating-system/8.MemoryManagement-1',
           '/operating-system/9.MemoryManagement-2',
           '/operating-system/10.VirtualMemory-1',
-          '/operating-system/11.VirtualMemory-2'
+          '/operating-system/11.VirtualMemory-2',
+          '/operating-system/12.FileSystem',
+          '/operating-system/13.MassStorageManagement',
+          '/operating-system/14.IOSystems'
         ]
       },
     ],
