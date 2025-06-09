@@ -32,7 +32,6 @@ export default defineUserConfig({
     colorMode: 'auto',
     sidebar: [
       {
-        collapsible: false,
         children: [
           '/Mindscape',
           '/Musics',
@@ -41,7 +40,6 @@ export default defineUserConfig({
       },
       {
         text: '🧠 Algorithm',
-        collapsible: false,
         children: [
           '/algorithm/Python-시간-초과-방지를-위한-팁',
           '/algorithm/1966',
@@ -50,7 +48,6 @@ export default defineUserConfig({
       },
       {
         text: '💰 Finance',
-        collapsible: false,
         children: [
           '/finance/나는-왜-비트코인에-투자했는가'
         ]
@@ -60,12 +57,11 @@ export default defineUserConfig({
         collapsible: false,
         children: [
           '/computer-graphics/8-Lighting',
-          '/computer-graphics/Project-3',
+          '/computer-graphics/9-Orientation-Rotation',
         ]
       },
       {
         text: '🗂️ Operating System',
-        collapsible: false,
         children: [
           '/operating-system/7.Deadlocks',
           '/operating-system/8.MemoryManagement-1',
