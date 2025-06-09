@@ -43,18 +43,24 @@ export default defineUserConfig({
         children: [
           '/algorithm/Python-시간-초과-방지를-위한-팁',
           '/algorithm/1966',
-          '/algorithm/1018'
+          '/algorithm/1018',
         ]
       },
       {
         text: '💰 Finance',
         children: [
-          '/finance/나는-왜-비트코인에-투자했는가'
+          '/finance/나는-왜-비트코인에-투자했는가',
+        ]
+      },
+      {
+        text: '🏋️ Wellness',
+        children: [
+          '/wellness/ExtraVirginOliveOil',
         ]
       },
       {
         text: '🖥️ Computer Graphics',
-        collapsible: false,
+        collapsible: true,
         children: [
           '/computer-graphics/8-Lighting',
           '/computer-graphics/9-Orientation-Rotation',
@@ -62,6 +68,7 @@ export default defineUserConfig({
       },
       {
         text: '🗂️ Operating System',
+        collapsible: true,
         children: [
           '/operating-system/7.Deadlocks',
           '/operating-system/8.MemoryManagement-1',
