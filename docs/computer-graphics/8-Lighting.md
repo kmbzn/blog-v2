@@ -364,3 +364,585 @@ $$X = (M^\mathrm{T})^{-1}$$
 - 기호:  
   - $\mathbf{t}$: 접선 벡터  
   - $\mathbf{n}$: 법선 벡터
+
+# 8 - Lab - Lighting
+
+## Outline
+
+- Flat / Smooth Shading을 위한 Vertex Normal 설정
+- Phong 조명과 Gouraud Shading을 이용한 큐브 렌더링  
+  - + Ambient 성분  
+  - + Diffuse 성분  
+  - + Specular 성분  
+- Phong 조명과 Phong Shading을 이용한 큐브 렌더링  
+- Phong 조명과 Gouraud / Phong Shading을 사용한 “Smooth” 큐브 렌더링  
+
+## Setting Vertex Normal for Flat / Smooth Shading
+
+(본문 없음)
+
+## Example: a cube of length 2 again
+
+> 큐브의 한 변의 길이가 2인 예시  
+
+```
+vertex index    position
+0               (-1,  1,  1)
+1               ( 1,  1,  1)
+2               ( 1, -1,  1)
+3               (-1, -1,  1)
+4               (-1,  1, -1)
+5               ( 1,  1, -1)
+6               ( 1, -1, -1)
+7               (-1, -1, -1)
+```
+
+## Flat Shading in OpenGL
+
+- 다각형 쉐이딩 방식은 지정한 vertex normal 벡터에 따라 결정됨
+
+- Flat shading: 각 정점(vertex)에 대해 해당 정점이 속한 면(face)의 법선(normal)을 정점의 normal로 설정
+
+> The normal at a vertex is the same as the face normal. Therefore, each vertex has as many normals as the number of faces it belongs to.  
+> (정점의 normal은 face normal과 동일하므로, 하나의 정점은 자신이 속한 면의 수만큼의 normal을 가짐)
+
+## Normals of the Cube for Flat Shading
+
+> 각 정점마다 face에 따라 normal이 다르게 설정되어 있음  
+
+```
+vertex index    position         normal
+0               (-1,  1,  1)     (0,0,1)
+0               (-1,  1,  1)     (-1,0,0)
+0               (-1,  1,  1)     (0,1,0)
+1               ( 1,  1,  1)     (0,0,1)
+1               ( 1,  1,  1)     (1,0,0)
+1               ( 1,  1,  1)     (0,1,0)
+2               ( 1, -1,  1)     (0,0,1)
+2               ( 1, -1,  1)     (1,0,0)
+2               ( 1, -1,  1)     (0,-1,0)
+3               (-1, -1,  1)     (0,0,1)
+3               (-1, -1,  1)     (-1,0,0)
+3               (-1, -1,  1)     (0,-1,0)
+4               (-1,  1, -1)     (0,0,-1)
+4               (-1,  1, -1)     (-1,0,0)
+4               (-1,  1, -1)     (0,1,0)
+5               ( 1,  1, -1)     (0,0,-1)
+5               ( 1,  1, -1)     (1,0,0)
+5               ( 1,  1, -1)     (0,1,0)
+6               ( 1, -1, -1)     (0,0,-1)
+6               ( 1, -1, -1)     (1,0,0)
+6               ( 1, -1, -1)     (0,-1,0)
+7               (-1, -1, -1)     (0,0,-1)
+7               (-1, -1, -1)     (-1,0,0)
+7               (-1, -1, -1)     (0,-1,0)
+```
+
+## Vertex Data
+
+```python
+def prepare_vao_cube():
+    # 36개의 정점: 총 12개의 삼각형
+    vertices = glm.array(glm.float32,
+        # position             normal
+        -1, -1,  1,     0,  0,  1,   # v0
+         1, -1,  1,     0,  0,  1,   # v1
+         1,  1,  1,     0,  0,  1,   # v2
+         1,  1,  1,     0,  0,  1,   # v2
+        -1,  1,  1,     0,  0,  1,   # v3
+        -1, -1,  1,     0,  0,  1,   # v0
+        ...
+    )
+```
+
+## Flat Shading in OpenGL
+
+- 하지만, 현대 OpenGL에서는 "진정한" flat shading (정확히는 '다각형 단위 색상 계산')은 시각적으로 어색한 결과를 낳는 경우가 많음
+
+- 다음과 같이 flat 한정자(qualifier)를 사용하여 이를 구현 가능함:
+  ```glsl
+  flat in vec4 vout_color;  // fragment shader에서
+  ```
+
+- 이는 현대 OpenGL에서 모든 polygon이 삼각형으로 처리되기 때문임
+
+## Flat Shading in OpenGL
+
+- Flat shading을 위한 목적으로, 보통은 "각 polygon마다 단일 normal"이 아닌 아래 방식이 사용됨:
+
+  - 각 정점 normal을 해당 정점이 속한 face의 normal로 설정
+
+  - 색상 계산을 정점(vertex) 또는 프래그먼트(fragment) 단위로 수행
+
+    > Normal이 동일하더라도 조명 벡터가 각 정점에서 약간씩 다르므로, 계산된 색상도 미묘하게 다르게 나옴
+
+## Smooth Shading in OpenGL
+
+- Smooth shading: 정점 normal을 해당 정점이 포함된 모든 face normal의 평균으로 설정함
+
+> Only one vertex normal per vertex; average of face normals of the faces the vertex is part of
+
+## Normals of the Cube for Smooth Shading
+
+```
+vertex index    position        normal
+0               (-1,  1,  1)    (-0.57735026918963,  0.57735026918963,  0.57735026918963)
+1               ( 1,  1,  1)    ( 0.57735026918963,  0.57735026918963,  0.57735026918963)
+2               ( 1, -1,  1)    ( 0.57735026918963, -0.57735026918963,  0.57735026918963)
+3               (-1, -1,  1)    (-0.57735026918963, -0.57735026918963,  0.57735026918963)
+4               (-1,  1, -1)    (-0.57735026918963,  0.57735026918963, -0.57735026918963)
+5               ( 1,  1, -1)    ( 0.57735026918963,  0.57735026918963, -0.57735026918963)
+6               ( 1, -1, -1)    ( 0.57735026918963, -0.57735026918963, -0.57735026918963)
+7               (-1, -1, -1)    (-0.57735026918963, -0.57735026918963, -0.57735026918963)
+```
+
+## Vertex and Index Data
+
+```python
+# 8개의 정점
+vertices = glm.array(glm.float32,
+    # position             normal
+     1.0,  0.577f,   1.0,    0.577f,  0.577f,  0.577f,   # v0
+    -1.0,  0.577f,   1.0,   -0.577f,  0.577f,  0.577f,   # v1
+    -1.0, -0.577f,   1.0,   -0.577f, -0.577f,  0.577f,   # v2
+     1.0, -0.577f,   1.0,    0.577f, -0.577f,  0.577f,   # v3
+     1.0,  0.577f,  -1.0,    0.577f,  0.577f, -0.577f,   # v4
+    -1.0,  0.577f,  -1.0,   -0.577f,  0.577f, -0.577f,   # v5
+    -1.0, -0.577f,  -1.0,   -0.577f, -0.577f, -0.577f,   # v6
+     1.0, -0.577f,  -1.0,    0.577f, -0.577f, -0.577f,   # v7
+)
+
+# 12개의 삼각형
+indices = glm.array(glm.uint32,
+    0, 1, 2,
+    0, 2, 3,
+    4, 0, 3,
+    4, 3, 7,
+    5, 4, 7,
+    5, 7, 6,
+    1, 5, 6,
+    1, 6, 2,
+    4, 5, 1,
+    4, 1, 0,
+    2, 6, 7,
+    2, 7, 3,
+)
+```
+
+## How to Get Vertex Normals
+
+- vertex data array에 vertex normal을 하드코딩  
+  - 앞서 본 코드 예제처럼. 일반적으로 사용되지는 않음
+
+- vertex position으로부터 normal을 계산
+
+- .obj 파일과 같은 모델 파일로부터 normal을 읽어오기  
+  - 가장 일반적으로 사용되는 방식
+
+## Render a Cube using Phong Illumination and Gouraud Shading  
+- 조명 성분들을 하나씩 추가하여 구현
+
+## Light & Material Phong Illumination Components
+
+- 물체의 최종 색상은 조명 색과 재질 RGB 색상의 **요소별 곱(element-wise multiplication)** 으로 계산됨
+
+- 마찬가지로, 각 Phong 조명 성분(ambient, diffuse, specular)도  
+  조명 색과 재질 색의 요소별 곱으로 계산됨
+
+  - 예:  
+    ```text
+    diffuse_color = light_diffuse_color * material_diffuse_color
+    ```
+
+## Good Settings for Light & Material Phong Illumination Components
+
+- Light  
+  - **diffuse, specular**: 광원 자체의 색상  
+  - **ambient**: 같은 색상이지만 강도는 약하게 (약 10%)
+
+- Material  
+  - **diffuse, ambient**: 물체의 색상  
+  - **specular**:  
+    - 흰색 (비금속)  
+    - 물체 색상 (금속)
+
+## Recall: Gouraud Shading
+
+- 각 정점마다 단일 normal을 사용함
+
+- 각 정점에서 조명 기반으로 색상을 계산함  
+  → **조명 연산은 vertex shader에서 수행**
+
+- 다각형 내부의 색상은 정점 간 보간으로 처리됨  
+  - Barycentric 보간 사용
+
+## [Code] 1-ambient-only-gouraud-facenorm
+
+**Vertex Shader**
+```glsl
+#version 330 core
+layout (location = 0) in vec3 vin_pos;
+layout (location = 1) in vec3 vin_normal;
+
+out vec4 vout_color;
+
+uniform mat4 MVP;
+
+void main()
+{
+    vec4 p3D_in_hcoord = vec4(vin_pos.xyz, 1.0);
+    gl_Position = MVP * p3D_in_hcoord;
+
+    // 광원 및 재질 속성
+    vec3 light_ambient_color = vec3(1.1,1,1);
+    vec3 material_ambient_color = vec3(1,0,0);
+
+    // 조명 성분 계산
+    vec3 light_ambient = 0.1 * light_ambient_color;
+
+    // 재질 성분 결합
+    vec3 material_ambient = material_ambient_color;
+
+    vec3 ambient = light_ambient * material_ambient;
+
+    vec3 color = ambient;
+
+    vout_color = vec4(color, 1.0);
+}
+```
+
+## [Code] 1-ambient-only-gouraud-facenorm
+
+### Fragment shader
+```glsl
+#version 330 core
+
+in vec4 vout_color;  // 보간된 색상
+
+out vec4 FragColor;
+
+void main()
+{
+    FragColor = vout_color;
+}
+```
+
+## [Code] 1-ambient-only-gouraud-facenorm
+
+```python
+def prepare_vao_cube():
+    # 12개의 삼각형을 위한 36개의 정점
+    vertices = glm.array(glm.float32,
+        # position         normal
+        -1, -1,  1,     0,  0,  1,  # v0
+         1, -1,  1,     0,  0,  1,  # v1
+         1,  1,  1,     0,  0,  1,  # v2
+         1,  1,  1,     0,  0,  1,  # v2
+        -1,  1,  1,     0,  0,  1,  # v3
+        -1, -1,  1,     0,  0,  1,  # v0
+        ...
+    )
+```
+> (page 5와 동일)
+
+## [Code] 1-ambient-only-gouraud-facenorm
+
+```python
+def main():
+    vao_cube = prepare_vao_cube()
+    while not glfwWindowShouldClose(window):
+
+        glUseProgram(shader_program)
+
+        # projection matrix
+        P = glm.perspective(glm.radians(45), 1, 1, 10)
+
+        # view matrix
+        view_pos = glm.vec3(3*np.sin(cam_ang), cam_height,
+                            3*np.cos(cam_ang))
+        V = glm.lookAt(view_pos, glm.vec3(0,0,0), glm.vec3(0,1,0))
+
+        # model matrix (M)
+        M = glm.mat4()
+
+        # MVP 행렬 설정
+        MVP = P * V * M
+
+        glUniformMatrix4fv(loc_MVP, 1, GL_FALSE, glm.value_ptr(MVP))
+        glUniformMatrix4fv(loc_M, 1, GL_FALSE, glm.value_ptr(M))
+
+        draw_cube_with_current_MVP()
+```
+
+## [Code] 2-ambient-diffuse-gouraud-shading
+
+### Vertex shader
+```glsl
+#version 330 core
+
+layout (location = 0) in vec3 vin_pos;
+layout (location = 1) in vec3 vin_normal;
+
+out vec4 vout_color;
+
+uniform mat4 MVP;
+uniform mat4 M;
+
+void main()
+{
+    vec4 p3D_in_hcoord = vec4(vin_pos.xyz, 1.0);
+    gl_Position = MVP * p3D_in_hcoord;
+
+    // 조명 및 재질 속성
+    vec3 light_pos = vec3(3,2,4);
+    vec3 light_color = vec3(1,1,1);
+    vec3 material_color = vec3(1,0,0);
+
+    // ambient 성분
+    vec3 light_ambient = 0.1 * light_color;
+    vec3 material_ambient = material_color;
+    vec3 ambient = light_ambient * material_ambient;
+
+    // normal 계산
+    vec3 normal = normalize(mat3(inverse(transpose(M))) * vin_normal);
+    vec3 pos = vec3(M * vec4(vin_pos,1));  // world space 위치
+    vec3 light_dir = normalize(light_pos - pos);
+
+    float diff = max(dot(normal, light_dir), 0.0);
+    vec3 light_diffuse = light_color;
+    vec3 material_diffuse = material_color;
+    vec3 diffuse = diff * light_diffuse * material_diffuse;
+
+    vec3 color = ambient + diffuse;
+    vout_color = vec4(color, 1.0);
+}
+```
+
+## [Code] 2-ambient-diffuse-gouraud-shading
+
+```glsl
+// 조명 성분
+vec3 light_ambient = 0.1 * light_color;
+vec3 light_diffuse = light_color;
+
+// 재질 성분
+vec3 material_ambient = material_color;
+vec3 material_diffuse = material_color;
+
+// ambient
+vec3 ambient = light_ambient * material_ambient;
+
+// normal 변환
+vec3 normal = normalize(mat3(inverse(transpose(M))) * vin_normal);
+vec3 pos = vec3(M * vec4(vin_pos, 1.0));
+vec3 light_dir = normalize(light_pos - pos);
+
+// diffuse
+float diff = max(dot(normal, light_dir), 0.0);
+vec3 diffuse = diff * light_diffuse * material_diffuse;
+
+vec3 color = ambient + diffuse;
+vout_color = vec4(color, 1.0);
+```
+
+## [Code] 2-ambient-diffuse-gouraud-shading
+
+> Normal 벡터 변환 방식:
+```glsl
+vec3 normal = normalize(mat3(inverse(transpose(M))) * vin_normal);
+```
+
+> 식 정리:
+$$
+I_d = \mathbf{l_d} \circ \mathbf{m_d} \cdot \max(0, \mathbf{L} \cdot \mathbf{N})
+$$
+
+- 여기서 $\max()$는 음수 색상 값을 방지하기 위해 사용됨
+
+> 오른쪽 도해:  
+- normal에 변환 행렬 X를 적용  
+- X는 $begin:math:text$ M^T $end:math:text$ 의 역행렬: $begin:math:text$ X = (M^T)^{-1} $end:math:text$
+
+## [Code] 2-ambient-diffuse-gouraud-shading
+
+```cpp
+vec3 surface_pos = vec3(M * vec4(vin_pos, 1));  // world space에서의 표면 위치
+```
+
+- 표면의 위치는 조명이 적용되는 지점을 의미 (world space 기준)
+
+- 모든 조명 연산은 world space에서 수행됨  
+  → 모든 위치와 벡터도 world space로 변환되어야 함
+
+- 그러나 **view space에서의 조명 계산**이 권장됨  
+  - 고전적인 뷰 공간은 항상 (0,0,0)에 위치한 카메라 기준
+  - 최근 시스템에서는 world space도 자주 사용됨  
+    → 이후 view space에서도 조명 연산을 수행할 예정
+
+## [Code] 3-all-components-gouraud-facenorm
+
+### Vertex shader
+```glsl
+uniform mat4 MVP;
+uniform mat4 M;
+uniform vec3 view_pos;
+
+void main()
+{
+    vec4 p3D_in_hcoord = vec4(vin_pos.xyz, 1.0);
+    gl_Position = MVP * p3D_in_hcoord;
+
+    // 광원 및 재질 속성
+    vec3 light_pos = vec3(3,2,4);
+    vec3 light_color = vec3(1,1,1);
+    vec3 material_color = vec3(1,0,0);
+    float material_shininess = 32.0;
+
+    // 조명 성분
+    vec3 light_ambient = 0.1 * light_color;
+    vec3 light_diffuse = light_color;
+    vec3 light_specular = light_color;
+```
+
+## [Code] 3-all-components-gouraud-facenorm
+
+```glsl
+// 재질 성분
+vec3 material_ambient = material_color;
+vec3 material_diffuse = material_color;       // 비금속 재질
+vec3 material_specular = vec3(1.0);           // 흰색 반사광
+
+// ambient
+vec3 ambient = light_ambient * material_ambient;
+
+// diffuse 및 specular 계산용 normal
+vec3 normal = normalize(mat3(inverse(transpose(M))) * vin_normal);
+vec3 surface_pos = vec3(M * vec4(vin_pos, 1.0));
+vec3 light_dir = normalize(light_pos - surface_pos);
+
+// diffuse
+float diff = max(dot(normal, light_dir), 0.0);
+vec3 diffuse = diff * light_diffuse * material_diffuse;
+
+// specular
+vec3 view_dir = normalize(view_pos - surface_pos);
+vec3 reflect_dir = reflect(-light_dir, normal);
+float spec = pow(max(dot(view_dir, reflect_dir), 0.0), material_shininess);
+vec3 specular = spec * light_specular * material_specular;
+
+vec3 color = ambient + diffuse + specular;
+vout_color = vec4(color, 1.);
+```
+
+## [Code] 3-all-components-gouraud-facenorm
+
+```glsl
+vec3 reflect_dir = reflect(-light_dir, normal);
+float spec = pow(max(dot(view_dir, reflect_dir), 0.0), material_shininess);
+```
+
+> $$ I_s = \mathbf{l_s} \circ \mathbf{m_s} \cdot \cos^\alpha \theta = \mathbf{l_s} \circ \mathbf{m_s} \cdot (\mathbf{V} \cdot \mathbf{R})^\alpha $$
+
+- 여기서 `max()`는 음수 색상을 방지하기 위해 사용됨
+
+## Quiz 3
+
+# Render a Cube using Phong Illumination and Phong Shading
+
+## Recall: Phong Shading
+
+- 각 정점마다 단일 vertex normal 사용  
+- 정점 normal을 폴리곤 내부에서 보간  
+- 폴리곤 내 **각 픽셀마다** 보간된 normal을 이용해 조명 계산  
+  → **조명 계산은 fragment shader에서 수행**
+
+## [Code] 4-all-components-phong-facenorm
+
+### Vertex shader
+```glsl
+#version 330 core
+
+layout (location = 0) in vec3 vin_pos;
+layout (location = 1) in vec3 vin_normal;
+
+out vec3 vout_surface_pos;
+out vec3 vout_normal;
+
+uniform mat4 MVP;
+uniform mat4 M;
+
+void main()
+{
+    vec4 p3D_in_hcoord = vec4(vin_pos.xyz, 1.0);
+    gl_Position = MVP * p3D_in_hcoord;
+
+    vout_surface_pos = vec3(M * vec4(vin_pos, 1));
+    vout_normal = normalize(mat3(inverse(transpose(M))) * vin_normal);
+}
+```
+
+## [Code] 4-all-components-phong-facenorm
+
+### Fragment shader
+```glsl
+#version 330 core
+
+in vec3 vout_surface_pos;  // 보간된 표면 위치
+in vec3 vout_normal;       // 보간된 normal
+
+out vec4 FragColor;
+
+uniform vec3 view_pos;
+
+void main()
+{
+    // 조명 및 재질 속성
+    vec3 light_pos = vec3(3,2,4);
+    vec3 light_color = vec3(1,1,1);
+    vec3 material_color = vec3(1,0,0);
+    float material_shininess = 32.0;
+
+    // 조명 성분
+    vec3 light_ambient = 0.1 * light_color;
+    vec3 light_diffuse = light_color;
+    vec3 light_specular = light_color;
+
+    // 재질 성분
+    vec3 material_ambient = material_color;
+    vec3 material_diffuse = material_color;
+    vec3 material_specular = vec3(1.0);  // 또는 material_color
+
+    // ambient
+    vec3 ambient = light_ambient * material_ambient;
+
+    // diffuse 및 specular 계산
+    vec3 normal = normalize(vout_normal);
+    vec3 surface_pos = vout_surface_pos;
+    vec3 light_dir = normalize(light_pos - surface_pos);
+
+    // diffuse
+    float diff = max(dot(normal, light_dir), 0.0);
+    vec3 diffuse = diff * light_diffuse * material_diffuse;
+
+    // specular
+    vec3 view_dir = normalize(view_pos - surface_pos);
+    vec3 reflect_dir = reflect(-light_dir, normal);
+    float spec = pow(max(dot(view_dir, reflect_dir), 0.0), material_shininess);
+    vec3 specular = spec * light_specular * material_specular;
+
+    vec3 color = ambient + diffuse + specular;
+    FragColor = vec4(color, 1.);
+}
+```
+
+# Render a "Smooth" Cube using Phong Illumination and Gouraud / Phong Shading
+
+## [Code]
+
+- `'5-all-components-gouraud-avgnorm'`  
+  : `'3-all-components-gouraud-facenorm'`과 동일하나  
+  - `prepare_vao_cube()` 호출부와 `glDrawElements()` 호출만 다름
+
+- `'6-all-components-phong-avgnorm'`  
+  : `'4-all-components-phong-facenorm'`과 동일하나  
+  - `prepare_vao_cube()` 호출부와 `glDrawElements()` 호출만 다름
