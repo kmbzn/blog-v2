@@ -1,7 +1,7 @@
 # 🫒 엑스트라 버진 올리브유 (Extra Virgin Olive Oil)
 
 <p align="center">
-  <img src="https://i.namu.wiki/i/oxl0N3KSqawtFPGpUKuZDEhsUm81eBD9d3I6p08pMOw4C4_rd5yVqjtsFMJN4_NBnssjGTPF8M9eKCGYPlehCA.webp" width="100%"/>
+  <img src="https://health.ucdavis.edu/media-resources/contenthub/post/internet/good-food/2024/04/images-body/olive-oil-health-benefits.jpg" width="100%"/>
 </p>
 
 ## 정의
@@ -17,7 +17,7 @@
 ## 주요 성분
 - **불포화지방산** (특히 올레산 Oleic acid): 건강한 지방
 - **비타민 E, K**
-- **폴리페놀**(polyphenol): 항산화 물질, 쓴맛과 함께 건강 효과를 줌
+- **폴리페놀**: 항산화 물질, 목이 따끔거리는 느낌과 함께 건강 효과를 줌
 
 ## 복용 효능
 
