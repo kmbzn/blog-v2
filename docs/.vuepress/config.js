@@ -15,7 +15,7 @@ export default defineUserConfig({
   head: [
     ['link', { rel: 'stylesheet', href: 'https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css' }],
     ['meta', { property: 'og:description', content: 'KeyBaseZone' }],
-    ['meta', { property: 'og:image', content: 'https://kmbzn.com/images/og-home.png' }],
+    ['meta', { property: 'og:image', content: 'https://kmbzn.com/images/og.png' }],
     ['link', { rel: 'icon', type: 'image/x-icon', href: '/images/favicon.ico' }],
     ['link', { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/images/favicon-16x16.png' }],
     ['link', { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/images/favicon-32x32.png' }],
@@ -41,7 +41,7 @@ export default defineUserConfig({
       {
         text: '🧠 Algorithm',
         children: [
-          '/algorithm/Python-시간-초과-방지를-위한-팁',
+          '/algorithm/PythonTimeout',
           '/algorithm/1966',
           '/algorithm/1018',
         ]
@@ -49,7 +49,7 @@ export default defineUserConfig({
       {
         text: '💰 Finance',
         children: [
-          '/finance/나는-왜-비트코인에-투자했는가',
+          '/finance/WhyBitcoin',
         ]
       },
       {

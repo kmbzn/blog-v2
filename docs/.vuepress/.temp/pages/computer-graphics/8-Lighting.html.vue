@@ -498,6 +498,613 @@ http://faculty.cs.tamu.edu/schaefer/CSCE441/notes.html</p>
 </ul>
 </li>
 </ul>
+<h1 id="_8-lab-lighting" tabindex="-1"><a class="header-anchor" href="#_8-lab-lighting"><span>8 - Lab - Lighting</span></a></h1>
+<h2 id="outline" tabindex="-1"><a class="header-anchor" href="#outline"><span>Outline</span></a></h2>
+<ul>
+<li>Flat / Smooth Shading을 위한 Vertex Normal 설정</li>
+<li>Phong 조명과 Gouraud Shading을 이용한 큐브 렌더링
+<ul>
+<li>
+<ul>
+<li>Ambient 성분</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>Diffuse 성분</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>Specular 성분</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Phong 조명과 Phong Shading을 이용한 큐브 렌더링</li>
+<li>Phong 조명과 Gouraud / Phong Shading을 사용한 “Smooth” 큐브 렌더링</li>
+</ul>
+<h2 id="setting-vertex-normal-for-flat-smooth-shading" tabindex="-1"><a class="header-anchor" href="#setting-vertex-normal-for-flat-smooth-shading"><span>Setting Vertex Normal for Flat / Smooth Shading</span></a></h2>
+<p>(본문 없음)</p>
+<h2 id="example-a-cube-of-length-2-again" tabindex="-1"><a class="header-anchor" href="#example-a-cube-of-length-2-again"><span>Example: a cube of length 2 again</span></a></h2>
+<blockquote>
+<p>큐브의 한 변의 길이가 2인 예시</p>
+</blockquote>
+<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code><span class="line">vertex index    position</span>
+<span class="line">0               (-1,  1,  1)</span>
+<span class="line">1               ( 1,  1,  1)</span>
+<span class="line">2               ( 1, -1,  1)</span>
+<span class="line">3               (-1, -1,  1)</span>
+<span class="line">4               (-1,  1, -1)</span>
+<span class="line">5               ( 1,  1, -1)</span>
+<span class="line">6               ( 1, -1, -1)</span>
+<span class="line">7               (-1, -1, -1)</span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="flat-shading-in-opengl" tabindex="-1"><a class="header-anchor" href="#flat-shading-in-opengl"><span>Flat Shading in OpenGL</span></a></h2>
+<ul>
+<li>
+<p>다각형 쉐이딩 방식은 지정한 vertex normal 벡터에 따라 결정됨</p>
+</li>
+<li>
+<p>Flat shading: 각 정점(vertex)에 대해 해당 정점이 속한 면(face)의 법선(normal)을 정점의 normal로 설정</p>
+</li>
+</ul>
+<blockquote>
+<p>The normal at a vertex is the same as the face normal. Therefore, each vertex has as many normals as the number of faces it belongs to.<br>
+(정점의 normal은 face normal과 동일하므로, 하나의 정점은 자신이 속한 면의 수만큼의 normal을 가짐)</p>
+</blockquote>
+<h2 id="normals-of-the-cube-for-flat-shading" tabindex="-1"><a class="header-anchor" href="#normals-of-the-cube-for-flat-shading"><span>Normals of the Cube for Flat Shading</span></a></h2>
+<blockquote>
+<p>각 정점마다 face에 따라 normal이 다르게 설정되어 있음</p>
+</blockquote>
+<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code><span class="line">vertex index    position         normal</span>
+<span class="line">0               (-1,  1,  1)     (0,0,1)</span>
+<span class="line">0               (-1,  1,  1)     (-1,0,0)</span>
+<span class="line">0               (-1,  1,  1)     (0,1,0)</span>
+<span class="line">1               ( 1,  1,  1)     (0,0,1)</span>
+<span class="line">1               ( 1,  1,  1)     (1,0,0)</span>
+<span class="line">1               ( 1,  1,  1)     (0,1,0)</span>
+<span class="line">2               ( 1, -1,  1)     (0,0,1)</span>
+<span class="line">2               ( 1, -1,  1)     (1,0,0)</span>
+<span class="line">2               ( 1, -1,  1)     (0,-1,0)</span>
+<span class="line">3               (-1, -1,  1)     (0,0,1)</span>
+<span class="line">3               (-1, -1,  1)     (-1,0,0)</span>
+<span class="line">3               (-1, -1,  1)     (0,-1,0)</span>
+<span class="line">4               (-1,  1, -1)     (0,0,-1)</span>
+<span class="line">4               (-1,  1, -1)     (-1,0,0)</span>
+<span class="line">4               (-1,  1, -1)     (0,1,0)</span>
+<span class="line">5               ( 1,  1, -1)     (0,0,-1)</span>
+<span class="line">5               ( 1,  1, -1)     (1,0,0)</span>
+<span class="line">5               ( 1,  1, -1)     (0,1,0)</span>
+<span class="line">6               ( 1, -1, -1)     (0,0,-1)</span>
+<span class="line">6               ( 1, -1, -1)     (1,0,0)</span>
+<span class="line">6               ( 1, -1, -1)     (0,-1,0)</span>
+<span class="line">7               (-1, -1, -1)     (0,0,-1)</span>
+<span class="line">7               (-1, -1, -1)     (-1,0,0)</span>
+<span class="line">7               (-1, -1, -1)     (0,-1,0)</span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="vertex-data" tabindex="-1"><a class="header-anchor" href="#vertex-data"><span>Vertex Data</span></a></h2>
+<div class="language-python line-numbers-mode" data-highlighter="prismjs" data-ext="py"><pre v-pre><code><span class="line"><span class="token keyword">def</span> <span class="token function">prepare_vao_cube</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span></span>
+<span class="line">    <span class="token comment"># 36개의 정점: 총 12개의 삼각형</span></span>
+<span class="line">    vertices <span class="token operator">=</span> glm<span class="token punctuation">.</span>array<span class="token punctuation">(</span>glm<span class="token punctuation">.</span>float32<span class="token punctuation">,</span></span>
+<span class="line">        <span class="token comment"># position             normal</span></span>
+<span class="line">        <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span>  <span class="token number">1</span><span class="token punctuation">,</span>     <span class="token number">0</span><span class="token punctuation">,</span>  <span class="token number">0</span><span class="token punctuation">,</span>  <span class="token number">1</span><span class="token punctuation">,</span>   <span class="token comment"># v0</span></span>
+<span class="line">         <span class="token number">1</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span>  <span class="token number">1</span><span class="token punctuation">,</span>     <span class="token number">0</span><span class="token punctuation">,</span>  <span class="token number">0</span><span class="token punctuation">,</span>  <span class="token number">1</span><span class="token punctuation">,</span>   <span class="token comment"># v1</span></span>
+<span class="line">         <span class="token number">1</span><span class="token punctuation">,</span>  <span class="token number">1</span><span class="token punctuation">,</span>  <span class="token number">1</span><span class="token punctuation">,</span>     <span class="token number">0</span><span class="token punctuation">,</span>  <span class="token number">0</span><span class="token punctuation">,</span>  <span class="token number">1</span><span class="token punctuation">,</span>   <span class="token comment"># v2</span></span>
+<span class="line">         <span class="token number">1</span><span class="token punctuation">,</span>  <span class="token number">1</span><span class="token punctuation">,</span>  <span class="token number">1</span><span class="token punctuation">,</span>     <span class="token number">0</span><span class="token punctuation">,</span>  <span class="token number">0</span><span class="token punctuation">,</span>  <span class="token number">1</span><span class="token punctuation">,</span>   <span class="token comment"># v2</span></span>
+<span class="line">        <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span>  <span class="token number">1</span><span class="token punctuation">,</span>  <span class="token number">1</span><span class="token punctuation">,</span>     <span class="token number">0</span><span class="token punctuation">,</span>  <span class="token number">0</span><span class="token punctuation">,</span>  <span class="token number">1</span><span class="token punctuation">,</span>   <span class="token comment"># v3</span></span>
+<span class="line">        <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span>  <span class="token number">1</span><span class="token punctuation">,</span>     <span class="token number">0</span><span class="token punctuation">,</span>  <span class="token number">0</span><span class="token punctuation">,</span>  <span class="token number">1</span><span class="token punctuation">,</span>   <span class="token comment"># v0</span></span>
+<span class="line">        <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span></span>
+<span class="line">    <span class="token punctuation">)</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="flat-shading-in-opengl-1" tabindex="-1"><a class="header-anchor" href="#flat-shading-in-opengl-1"><span>Flat Shading in OpenGL</span></a></h2>
+<ul>
+<li>
+<p>하지만, 현대 OpenGL에서는 &quot;진정한&quot; flat shading (정확히는 '다각형 단위 색상 계산')은 시각적으로 어색한 결과를 낳는 경우가 많음</p>
+</li>
+<li>
+<p>다음과 같이 flat 한정자(qualifier)를 사용하여 이를 구현 가능함:</p>
+<div class="language-glsl line-numbers-mode" data-highlighter="prismjs" data-ext="glsl"><pre v-pre><code><span class="line"><span class="token keyword">flat</span> <span class="token keyword">in</span> <span class="token keyword">vec4</span> vout_color<span class="token punctuation">;</span>  <span class="token comment">// fragment shader에서</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div></li>
+<li>
+<p>이는 현대 OpenGL에서 모든 polygon이 삼각형으로 처리되기 때문임</p>
+</li>
+</ul>
+<h2 id="flat-shading-in-opengl-2" tabindex="-1"><a class="header-anchor" href="#flat-shading-in-opengl-2"><span>Flat Shading in OpenGL</span></a></h2>
+<ul>
+<li>
+<p>Flat shading을 위한 목적으로, 보통은 &quot;각 polygon마다 단일 normal&quot;이 아닌 아래 방식이 사용됨:</p>
+<ul>
+<li>
+<p>각 정점 normal을 해당 정점이 속한 face의 normal로 설정</p>
+</li>
+<li>
+<p>색상 계산을 정점(vertex) 또는 프래그먼트(fragment) 단위로 수행</p>
+<blockquote>
+<p>Normal이 동일하더라도 조명 벡터가 각 정점에서 약간씩 다르므로, 계산된 색상도 미묘하게 다르게 나옴</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="smooth-shading-in-opengl" tabindex="-1"><a class="header-anchor" href="#smooth-shading-in-opengl"><span>Smooth Shading in OpenGL</span></a></h2>
+<ul>
+<li>Smooth shading: 정점 normal을 해당 정점이 포함된 모든 face normal의 평균으로 설정함</li>
+</ul>
+<blockquote>
+<p>Only one vertex normal per vertex; average of face normals of the faces the vertex is part of</p>
+</blockquote>
+<h2 id="normals-of-the-cube-for-smooth-shading" tabindex="-1"><a class="header-anchor" href="#normals-of-the-cube-for-smooth-shading"><span>Normals of the Cube for Smooth Shading</span></a></h2>
+<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code><span class="line">vertex index    position        normal</span>
+<span class="line">0               (-1,  1,  1)    (-0.57735026918963,  0.57735026918963,  0.57735026918963)</span>
+<span class="line">1               ( 1,  1,  1)    ( 0.57735026918963,  0.57735026918963,  0.57735026918963)</span>
+<span class="line">2               ( 1, -1,  1)    ( 0.57735026918963, -0.57735026918963,  0.57735026918963)</span>
+<span class="line">3               (-1, -1,  1)    (-0.57735026918963, -0.57735026918963,  0.57735026918963)</span>
+<span class="line">4               (-1,  1, -1)    (-0.57735026918963,  0.57735026918963, -0.57735026918963)</span>
+<span class="line">5               ( 1,  1, -1)    ( 0.57735026918963,  0.57735026918963, -0.57735026918963)</span>
+<span class="line">6               ( 1, -1, -1)    ( 0.57735026918963, -0.57735026918963, -0.57735026918963)</span>
+<span class="line">7               (-1, -1, -1)    (-0.57735026918963, -0.57735026918963, -0.57735026918963)</span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="vertex-and-index-data" tabindex="-1"><a class="header-anchor" href="#vertex-and-index-data"><span>Vertex and Index Data</span></a></h2>
+<div class="language-python line-numbers-mode" data-highlighter="prismjs" data-ext="py"><pre v-pre><code><span class="line"><span class="token comment"># 8개의 정점</span></span>
+<span class="line">vertices <span class="token operator">=</span> glm<span class="token punctuation">.</span>array<span class="token punctuation">(</span>glm<span class="token punctuation">.</span>float32<span class="token punctuation">,</span></span>
+<span class="line">    <span class="token comment"># position             normal</span></span>
+<span class="line">     <span class="token number">1.0</span><span class="token punctuation">,</span>  <span class="token number">0</span><span class="token punctuation">.</span>577f<span class="token punctuation">,</span>   <span class="token number">1.0</span><span class="token punctuation">,</span>    <span class="token number">0</span><span class="token punctuation">.</span>577f<span class="token punctuation">,</span>  <span class="token number">0</span><span class="token punctuation">.</span>577f<span class="token punctuation">,</span>  <span class="token number">0</span><span class="token punctuation">.</span>577f<span class="token punctuation">,</span>   <span class="token comment"># v0</span></span>
+<span class="line">    <span class="token operator">-</span><span class="token number">1.0</span><span class="token punctuation">,</span>  <span class="token number">0</span><span class="token punctuation">.</span>577f<span class="token punctuation">,</span>   <span class="token number">1.0</span><span class="token punctuation">,</span>   <span class="token operator">-</span><span class="token number">0</span><span class="token punctuation">.</span>577f<span class="token punctuation">,</span>  <span class="token number">0</span><span class="token punctuation">.</span>577f<span class="token punctuation">,</span>  <span class="token number">0</span><span class="token punctuation">.</span>577f<span class="token punctuation">,</span>   <span class="token comment"># v1</span></span>
+<span class="line">    <span class="token operator">-</span><span class="token number">1.0</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">0</span><span class="token punctuation">.</span>577f<span class="token punctuation">,</span>   <span class="token number">1.0</span><span class="token punctuation">,</span>   <span class="token operator">-</span><span class="token number">0</span><span class="token punctuation">.</span>577f<span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">0</span><span class="token punctuation">.</span>577f<span class="token punctuation">,</span>  <span class="token number">0</span><span class="token punctuation">.</span>577f<span class="token punctuation">,</span>   <span class="token comment"># v2</span></span>
+<span class="line">     <span class="token number">1.0</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">0</span><span class="token punctuation">.</span>577f<span class="token punctuation">,</span>   <span class="token number">1.0</span><span class="token punctuation">,</span>    <span class="token number">0</span><span class="token punctuation">.</span>577f<span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">0</span><span class="token punctuation">.</span>577f<span class="token punctuation">,</span>  <span class="token number">0</span><span class="token punctuation">.</span>577f<span class="token punctuation">,</span>   <span class="token comment"># v3</span></span>
+<span class="line">     <span class="token number">1.0</span><span class="token punctuation">,</span>  <span class="token number">0</span><span class="token punctuation">.</span>577f<span class="token punctuation">,</span>  <span class="token operator">-</span><span class="token number">1.0</span><span class="token punctuation">,</span>    <span class="token number">0</span><span class="token punctuation">.</span>577f<span class="token punctuation">,</span>  <span class="token number">0</span><span class="token punctuation">.</span>577f<span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">0</span><span class="token punctuation">.</span>577f<span class="token punctuation">,</span>   <span class="token comment"># v4</span></span>
+<span class="line">    <span class="token operator">-</span><span class="token number">1.0</span><span class="token punctuation">,</span>  <span class="token number">0</span><span class="token punctuation">.</span>577f<span class="token punctuation">,</span>  <span class="token operator">-</span><span class="token number">1.0</span><span class="token punctuation">,</span>   <span class="token operator">-</span><span class="token number">0</span><span class="token punctuation">.</span>577f<span class="token punctuation">,</span>  <span class="token number">0</span><span class="token punctuation">.</span>577f<span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">0</span><span class="token punctuation">.</span>577f<span class="token punctuation">,</span>   <span class="token comment"># v5</span></span>
+<span class="line">    <span class="token operator">-</span><span class="token number">1.0</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">0</span><span class="token punctuation">.</span>577f<span class="token punctuation">,</span>  <span class="token operator">-</span><span class="token number">1.0</span><span class="token punctuation">,</span>   <span class="token operator">-</span><span class="token number">0</span><span class="token punctuation">.</span>577f<span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">0</span><span class="token punctuation">.</span>577f<span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">0</span><span class="token punctuation">.</span>577f<span class="token punctuation">,</span>   <span class="token comment"># v6</span></span>
+<span class="line">     <span class="token number">1.0</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">0</span><span class="token punctuation">.</span>577f<span class="token punctuation">,</span>  <span class="token operator">-</span><span class="token number">1.0</span><span class="token punctuation">,</span>    <span class="token number">0</span><span class="token punctuation">.</span>577f<span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">0</span><span class="token punctuation">.</span>577f<span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">0</span><span class="token punctuation">.</span>577f<span class="token punctuation">,</span>   <span class="token comment"># v7</span></span>
+<span class="line"><span class="token punctuation">)</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment"># 12개의 삼각형</span></span>
+<span class="line">indices <span class="token operator">=</span> glm<span class="token punctuation">.</span>array<span class="token punctuation">(</span>glm<span class="token punctuation">.</span>uint32<span class="token punctuation">,</span></span>
+<span class="line">    <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span></span>
+<span class="line">    <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span></span>
+<span class="line">    <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span></span>
+<span class="line">    <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span></span>
+<span class="line">    <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span></span>
+<span class="line">    <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span></span>
+<span class="line">    <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span></span>
+<span class="line">    <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span></span>
+<span class="line">    <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span></span>
+<span class="line">    <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span></span>
+<span class="line">    <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span></span>
+<span class="line">    <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span></span>
+<span class="line"><span class="token punctuation">)</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="how-to-get-vertex-normals" tabindex="-1"><a class="header-anchor" href="#how-to-get-vertex-normals"><span>How to Get Vertex Normals</span></a></h2>
+<ul>
+<li>
+<p>vertex data array에 vertex normal을 하드코딩</p>
+<ul>
+<li>앞서 본 코드 예제처럼. 일반적으로 사용되지는 않음</li>
+</ul>
+</li>
+<li>
+<p>vertex position으로부터 normal을 계산</p>
+</li>
+<li>
+<p>.obj 파일과 같은 모델 파일로부터 normal을 읽어오기</p>
+<ul>
+<li>가장 일반적으로 사용되는 방식</li>
+</ul>
+</li>
+</ul>
+<h2 id="render-a-cube-using-phong-illumination-and-gouraud-shading" tabindex="-1"><a class="header-anchor" href="#render-a-cube-using-phong-illumination-and-gouraud-shading"><span>Render a Cube using Phong Illumination and Gouraud Shading</span></a></h2>
+<ul>
+<li>조명 성분들을 하나씩 추가하여 구현</li>
+</ul>
+<h2 id="light-material-phong-illumination-components" tabindex="-1"><a class="header-anchor" href="#light-material-phong-illumination-components"><span>Light &amp; Material Phong Illumination Components</span></a></h2>
+<ul>
+<li>
+<p>물체의 최종 색상은 조명 색과 재질 RGB 색상의 <strong>요소별 곱(element-wise multiplication)</strong> 으로 계산됨</p>
+</li>
+<li>
+<p>마찬가지로, 각 Phong 조명 성분(ambient, diffuse, specular)도<br>
+조명 색과 재질 색의 요소별 곱으로 계산됨</p>
+<ul>
+<li>예:<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code><span class="line">diffuse_color = light_diffuse_color * material_diffuse_color</span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div></li>
+</ul>
+</li>
+</ul>
+<h2 id="good-settings-for-light-material-phong-illumination-components" tabindex="-1"><a class="header-anchor" href="#good-settings-for-light-material-phong-illumination-components"><span>Good Settings for Light &amp; Material Phong Illumination Components</span></a></h2>
+<ul>
+<li>
+<p>Light</p>
+<ul>
+<li><strong>diffuse, specular</strong>: 광원 자체의 색상</li>
+<li><strong>ambient</strong>: 같은 색상이지만 강도는 약하게 (약 10%)</li>
+</ul>
+</li>
+<li>
+<p>Material</p>
+<ul>
+<li><strong>diffuse, ambient</strong>: 물체의 색상</li>
+<li><strong>specular</strong>:
+<ul>
+<li>흰색 (비금속)</li>
+<li>물체 색상 (금속)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="recall-gouraud-shading" tabindex="-1"><a class="header-anchor" href="#recall-gouraud-shading"><span>Recall: Gouraud Shading</span></a></h2>
+<ul>
+<li>
+<p>각 정점마다 단일 normal을 사용함</p>
+</li>
+<li>
+<p>각 정점에서 조명 기반으로 색상을 계산함<br>
+→ <strong>조명 연산은 vertex shader에서 수행</strong></p>
+</li>
+<li>
+<p>다각형 내부의 색상은 정점 간 보간으로 처리됨</p>
+<ul>
+<li>Barycentric 보간 사용</li>
+</ul>
+</li>
+</ul>
+<h2 id="code-1-ambient-only-gouraud-facenorm" tabindex="-1"><a class="header-anchor" href="#code-1-ambient-only-gouraud-facenorm"><span>[Code] 1-ambient-only-gouraud-facenorm</span></a></h2>
+<p><strong>Vertex Shader</strong></p>
+<div class="language-glsl line-numbers-mode" data-highlighter="prismjs" data-ext="glsl"><pre v-pre><code><span class="line"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">version</span> <span class="token expression"><span class="token number">330</span> core</span></span></span>
+<span class="line"><span class="token keyword">layout</span> <span class="token punctuation">(</span>location <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token keyword">in</span> <span class="token keyword">vec3</span> vin_pos<span class="token punctuation">;</span></span>
+<span class="line"><span class="token keyword">layout</span> <span class="token punctuation">(</span>location <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token keyword">in</span> <span class="token keyword">vec3</span> vin_normal<span class="token punctuation">;</span></span>
+<span class="line"></span>
+<span class="line"><span class="token keyword">out</span> <span class="token keyword">vec4</span> vout_color<span class="token punctuation">;</span></span>
+<span class="line"></span>
+<span class="line"><span class="token keyword">uniform</span> <span class="token keyword">mat4</span> MVP<span class="token punctuation">;</span></span>
+<span class="line"></span>
+<span class="line"><span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span></span>
+<span class="line"><span class="token punctuation">{</span></span>
+<span class="line">    <span class="token keyword">vec4</span> p3D_in_hcoord <span class="token operator">=</span> <span class="token keyword">vec4</span><span class="token punctuation">(</span>vin_pos<span class="token punctuation">.</span>xyz<span class="token punctuation">,</span> <span class="token number">1.0</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">    gl_Position <span class="token operator">=</span> MVP <span class="token operator">*</span> p3D_in_hcoord<span class="token punctuation">;</span></span>
+<span class="line"></span>
+<span class="line">    <span class="token comment">// 광원 및 재질 속성</span></span>
+<span class="line">    <span class="token keyword">vec3</span> light_ambient_color <span class="token operator">=</span> <span class="token keyword">vec3</span><span class="token punctuation">(</span><span class="token number">1.1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">    <span class="token keyword">vec3</span> material_ambient_color <span class="token operator">=</span> <span class="token keyword">vec3</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line"></span>
+<span class="line">    <span class="token comment">// 조명 성분 계산</span></span>
+<span class="line">    <span class="token keyword">vec3</span> light_ambient <span class="token operator">=</span> <span class="token number">0.1</span> <span class="token operator">*</span> light_ambient_color<span class="token punctuation">;</span></span>
+<span class="line"></span>
+<span class="line">    <span class="token comment">// 재질 성분 결합</span></span>
+<span class="line">    <span class="token keyword">vec3</span> material_ambient <span class="token operator">=</span> material_ambient_color<span class="token punctuation">;</span></span>
+<span class="line"></span>
+<span class="line">    <span class="token keyword">vec3</span> ambient <span class="token operator">=</span> light_ambient <span class="token operator">*</span> material_ambient<span class="token punctuation">;</span></span>
+<span class="line"></span>
+<span class="line">    <span class="token keyword">vec3</span> color <span class="token operator">=</span> ambient<span class="token punctuation">;</span></span>
+<span class="line"></span>
+<span class="line">    vout_color <span class="token operator">=</span> <span class="token keyword">vec4</span><span class="token punctuation">(</span>color<span class="token punctuation">,</span> <span class="token number">1.0</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line"><span class="token punctuation">}</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="code-1-ambient-only-gouraud-facenorm-1" tabindex="-1"><a class="header-anchor" href="#code-1-ambient-only-gouraud-facenorm-1"><span>[Code] 1-ambient-only-gouraud-facenorm</span></a></h2>
+<h3 id="fragment-shader" tabindex="-1"><a class="header-anchor" href="#fragment-shader"><span>Fragment shader</span></a></h3>
+<div class="language-glsl line-numbers-mode" data-highlighter="prismjs" data-ext="glsl"><pre v-pre><code><span class="line"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">version</span> <span class="token expression"><span class="token number">330</span> core</span></span></span>
+<span class="line"></span>
+<span class="line"><span class="token keyword">in</span> <span class="token keyword">vec4</span> vout_color<span class="token punctuation">;</span>  <span class="token comment">// 보간된 색상</span></span>
+<span class="line"></span>
+<span class="line"><span class="token keyword">out</span> <span class="token keyword">vec4</span> FragColor<span class="token punctuation">;</span></span>
+<span class="line"></span>
+<span class="line"><span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span></span>
+<span class="line"><span class="token punctuation">{</span></span>
+<span class="line">    FragColor <span class="token operator">=</span> vout_color<span class="token punctuation">;</span></span>
+<span class="line"><span class="token punctuation">}</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="code-1-ambient-only-gouraud-facenorm-2" tabindex="-1"><a class="header-anchor" href="#code-1-ambient-only-gouraud-facenorm-2"><span>[Code] 1-ambient-only-gouraud-facenorm</span></a></h2>
+<div class="language-python line-numbers-mode" data-highlighter="prismjs" data-ext="py"><pre v-pre><code><span class="line"><span class="token keyword">def</span> <span class="token function">prepare_vao_cube</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span></span>
+<span class="line">    <span class="token comment"># 12개의 삼각형을 위한 36개의 정점</span></span>
+<span class="line">    vertices <span class="token operator">=</span> glm<span class="token punctuation">.</span>array<span class="token punctuation">(</span>glm<span class="token punctuation">.</span>float32<span class="token punctuation">,</span></span>
+<span class="line">        <span class="token comment"># position         normal</span></span>
+<span class="line">        <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span>  <span class="token number">1</span><span class="token punctuation">,</span>     <span class="token number">0</span><span class="token punctuation">,</span>  <span class="token number">0</span><span class="token punctuation">,</span>  <span class="token number">1</span><span class="token punctuation">,</span>  <span class="token comment"># v0</span></span>
+<span class="line">         <span class="token number">1</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span>  <span class="token number">1</span><span class="token punctuation">,</span>     <span class="token number">0</span><span class="token punctuation">,</span>  <span class="token number">0</span><span class="token punctuation">,</span>  <span class="token number">1</span><span class="token punctuation">,</span>  <span class="token comment"># v1</span></span>
+<span class="line">         <span class="token number">1</span><span class="token punctuation">,</span>  <span class="token number">1</span><span class="token punctuation">,</span>  <span class="token number">1</span><span class="token punctuation">,</span>     <span class="token number">0</span><span class="token punctuation">,</span>  <span class="token number">0</span><span class="token punctuation">,</span>  <span class="token number">1</span><span class="token punctuation">,</span>  <span class="token comment"># v2</span></span>
+<span class="line">         <span class="token number">1</span><span class="token punctuation">,</span>  <span class="token number">1</span><span class="token punctuation">,</span>  <span class="token number">1</span><span class="token punctuation">,</span>     <span class="token number">0</span><span class="token punctuation">,</span>  <span class="token number">0</span><span class="token punctuation">,</span>  <span class="token number">1</span><span class="token punctuation">,</span>  <span class="token comment"># v2</span></span>
+<span class="line">        <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span>  <span class="token number">1</span><span class="token punctuation">,</span>  <span class="token number">1</span><span class="token punctuation">,</span>     <span class="token number">0</span><span class="token punctuation">,</span>  <span class="token number">0</span><span class="token punctuation">,</span>  <span class="token number">1</span><span class="token punctuation">,</span>  <span class="token comment"># v3</span></span>
+<span class="line">        <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span>  <span class="token number">1</span><span class="token punctuation">,</span>     <span class="token number">0</span><span class="token punctuation">,</span>  <span class="token number">0</span><span class="token punctuation">,</span>  <span class="token number">1</span><span class="token punctuation">,</span>  <span class="token comment"># v0</span></span>
+<span class="line">        <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span></span>
+<span class="line">    <span class="token punctuation">)</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><blockquote>
+<p>(page 5와 동일)</p>
+</blockquote>
+<h2 id="code-1-ambient-only-gouraud-facenorm-3" tabindex="-1"><a class="header-anchor" href="#code-1-ambient-only-gouraud-facenorm-3"><span>[Code] 1-ambient-only-gouraud-facenorm</span></a></h2>
+<div class="language-python line-numbers-mode" data-highlighter="prismjs" data-ext="py"><pre v-pre><code><span class="line"><span class="token keyword">def</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span></span>
+<span class="line">    vao_cube <span class="token operator">=</span> prepare_vao_cube<span class="token punctuation">(</span><span class="token punctuation">)</span></span>
+<span class="line">    <span class="token keyword">while</span> <span class="token keyword">not</span> glfwWindowShouldClose<span class="token punctuation">(</span>window<span class="token punctuation">)</span><span class="token punctuation">:</span></span>
+<span class="line"></span>
+<span class="line">        glUseProgram<span class="token punctuation">(</span>shader_program<span class="token punctuation">)</span></span>
+<span class="line"></span>
+<span class="line">        <span class="token comment"># projection matrix</span></span>
+<span class="line">        P <span class="token operator">=</span> glm<span class="token punctuation">.</span>perspective<span class="token punctuation">(</span>glm<span class="token punctuation">.</span>radians<span class="token punctuation">(</span><span class="token number">45</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span></span>
+<span class="line"></span>
+<span class="line">        <span class="token comment"># view matrix</span></span>
+<span class="line">        view_pos <span class="token operator">=</span> glm<span class="token punctuation">.</span>vec3<span class="token punctuation">(</span><span class="token number">3</span><span class="token operator">*</span>np<span class="token punctuation">.</span>sin<span class="token punctuation">(</span>cam_ang<span class="token punctuation">)</span><span class="token punctuation">,</span> cam_height<span class="token punctuation">,</span></span>
+<span class="line">                            <span class="token number">3</span><span class="token operator">*</span>np<span class="token punctuation">.</span>cos<span class="token punctuation">(</span>cam_ang<span class="token punctuation">)</span><span class="token punctuation">)</span></span>
+<span class="line">        V <span class="token operator">=</span> glm<span class="token punctuation">.</span>lookAt<span class="token punctuation">(</span>view_pos<span class="token punctuation">,</span> glm<span class="token punctuation">.</span>vec3<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">,</span> glm<span class="token punctuation">.</span>vec3<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span></span>
+<span class="line"></span>
+<span class="line">        <span class="token comment"># model matrix (M)</span></span>
+<span class="line">        M <span class="token operator">=</span> glm<span class="token punctuation">.</span>mat4<span class="token punctuation">(</span><span class="token punctuation">)</span></span>
+<span class="line"></span>
+<span class="line">        <span class="token comment"># MVP 행렬 설정</span></span>
+<span class="line">        MVP <span class="token operator">=</span> P <span class="token operator">*</span> V <span class="token operator">*</span> M</span>
+<span class="line"></span>
+<span class="line">        glUniformMatrix4fv<span class="token punctuation">(</span>loc_MVP<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> GL_FALSE<span class="token punctuation">,</span> glm<span class="token punctuation">.</span>value_ptr<span class="token punctuation">(</span>MVP<span class="token punctuation">)</span><span class="token punctuation">)</span></span>
+<span class="line">        glUniformMatrix4fv<span class="token punctuation">(</span>loc_M<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> GL_FALSE<span class="token punctuation">,</span> glm<span class="token punctuation">.</span>value_ptr<span class="token punctuation">(</span>M<span class="token punctuation">)</span><span class="token punctuation">)</span></span>
+<span class="line"></span>
+<span class="line">        draw_cube_with_current_MVP<span class="token punctuation">(</span><span class="token punctuation">)</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="code-2-ambient-diffuse-gouraud-shading" tabindex="-1"><a class="header-anchor" href="#code-2-ambient-diffuse-gouraud-shading"><span>[Code] 2-ambient-diffuse-gouraud-shading</span></a></h2>
+<h3 id="vertex-shader" tabindex="-1"><a class="header-anchor" href="#vertex-shader"><span>Vertex shader</span></a></h3>
+<div class="language-glsl line-numbers-mode" data-highlighter="prismjs" data-ext="glsl"><pre v-pre><code><span class="line"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">version</span> <span class="token expression"><span class="token number">330</span> core</span></span></span>
+<span class="line"></span>
+<span class="line"><span class="token keyword">layout</span> <span class="token punctuation">(</span>location <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token keyword">in</span> <span class="token keyword">vec3</span> vin_pos<span class="token punctuation">;</span></span>
+<span class="line"><span class="token keyword">layout</span> <span class="token punctuation">(</span>location <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token keyword">in</span> <span class="token keyword">vec3</span> vin_normal<span class="token punctuation">;</span></span>
+<span class="line"></span>
+<span class="line"><span class="token keyword">out</span> <span class="token keyword">vec4</span> vout_color<span class="token punctuation">;</span></span>
+<span class="line"></span>
+<span class="line"><span class="token keyword">uniform</span> <span class="token keyword">mat4</span> MVP<span class="token punctuation">;</span></span>
+<span class="line"><span class="token keyword">uniform</span> <span class="token keyword">mat4</span> M<span class="token punctuation">;</span></span>
+<span class="line"></span>
+<span class="line"><span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span></span>
+<span class="line"><span class="token punctuation">{</span></span>
+<span class="line">    <span class="token keyword">vec4</span> p3D_in_hcoord <span class="token operator">=</span> <span class="token keyword">vec4</span><span class="token punctuation">(</span>vin_pos<span class="token punctuation">.</span>xyz<span class="token punctuation">,</span> <span class="token number">1.0</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">    gl_Position <span class="token operator">=</span> MVP <span class="token operator">*</span> p3D_in_hcoord<span class="token punctuation">;</span></span>
+<span class="line"></span>
+<span class="line">    <span class="token comment">// 조명 및 재질 속성</span></span>
+<span class="line">    <span class="token keyword">vec3</span> light_pos <span class="token operator">=</span> <span class="token keyword">vec3</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">    <span class="token keyword">vec3</span> light_color <span class="token operator">=</span> <span class="token keyword">vec3</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">    <span class="token keyword">vec3</span> material_color <span class="token operator">=</span> <span class="token keyword">vec3</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line"></span>
+<span class="line">    <span class="token comment">// ambient 성분</span></span>
+<span class="line">    <span class="token keyword">vec3</span> light_ambient <span class="token operator">=</span> <span class="token number">0.1</span> <span class="token operator">*</span> light_color<span class="token punctuation">;</span></span>
+<span class="line">    <span class="token keyword">vec3</span> material_ambient <span class="token operator">=</span> material_color<span class="token punctuation">;</span></span>
+<span class="line">    <span class="token keyword">vec3</span> ambient <span class="token operator">=</span> light_ambient <span class="token operator">*</span> material_ambient<span class="token punctuation">;</span></span>
+<span class="line"></span>
+<span class="line">    <span class="token comment">// normal 계산</span></span>
+<span class="line">    <span class="token keyword">vec3</span> normal <span class="token operator">=</span> <span class="token function">normalize</span><span class="token punctuation">(</span><span class="token keyword">mat3</span><span class="token punctuation">(</span><span class="token function">inverse</span><span class="token punctuation">(</span><span class="token function">transpose</span><span class="token punctuation">(</span>M<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">*</span> vin_normal<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">    <span class="token keyword">vec3</span> pos <span class="token operator">=</span> <span class="token keyword">vec3</span><span class="token punctuation">(</span>M <span class="token operator">*</span> <span class="token keyword">vec4</span><span class="token punctuation">(</span>vin_pos<span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// world space 위치</span></span>
+<span class="line">    <span class="token keyword">vec3</span> light_dir <span class="token operator">=</span> <span class="token function">normalize</span><span class="token punctuation">(</span>light_pos <span class="token operator">-</span> pos<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line"></span>
+<span class="line">    <span class="token keyword">float</span> diff <span class="token operator">=</span> <span class="token function">max</span><span class="token punctuation">(</span><span class="token function">dot</span><span class="token punctuation">(</span>normal<span class="token punctuation">,</span> light_dir<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">0.0</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">    <span class="token keyword">vec3</span> light_diffuse <span class="token operator">=</span> light_color<span class="token punctuation">;</span></span>
+<span class="line">    <span class="token keyword">vec3</span> material_diffuse <span class="token operator">=</span> material_color<span class="token punctuation">;</span></span>
+<span class="line">    <span class="token keyword">vec3</span> diffuse <span class="token operator">=</span> diff <span class="token operator">*</span> light_diffuse <span class="token operator">*</span> material_diffuse<span class="token punctuation">;</span></span>
+<span class="line"></span>
+<span class="line">    <span class="token keyword">vec3</span> color <span class="token operator">=</span> ambient <span class="token operator">+</span> diffuse<span class="token punctuation">;</span></span>
+<span class="line">    vout_color <span class="token operator">=</span> <span class="token keyword">vec4</span><span class="token punctuation">(</span>color<span class="token punctuation">,</span> <span class="token number">1.0</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line"><span class="token punctuation">}</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="code-2-ambient-diffuse-gouraud-shading-1" tabindex="-1"><a class="header-anchor" href="#code-2-ambient-diffuse-gouraud-shading-1"><span>[Code] 2-ambient-diffuse-gouraud-shading</span></a></h2>
+<div class="language-glsl line-numbers-mode" data-highlighter="prismjs" data-ext="glsl"><pre v-pre><code><span class="line"><span class="token comment">// 조명 성분</span></span>
+<span class="line"><span class="token keyword">vec3</span> light_ambient <span class="token operator">=</span> <span class="token number">0.1</span> <span class="token operator">*</span> light_color<span class="token punctuation">;</span></span>
+<span class="line"><span class="token keyword">vec3</span> light_diffuse <span class="token operator">=</span> light_color<span class="token punctuation">;</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment">// 재질 성분</span></span>
+<span class="line"><span class="token keyword">vec3</span> material_ambient <span class="token operator">=</span> material_color<span class="token punctuation">;</span></span>
+<span class="line"><span class="token keyword">vec3</span> material_diffuse <span class="token operator">=</span> material_color<span class="token punctuation">;</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment">// ambient</span></span>
+<span class="line"><span class="token keyword">vec3</span> ambient <span class="token operator">=</span> light_ambient <span class="token operator">*</span> material_ambient<span class="token punctuation">;</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment">// normal 변환</span></span>
+<span class="line"><span class="token keyword">vec3</span> normal <span class="token operator">=</span> <span class="token function">normalize</span><span class="token punctuation">(</span><span class="token keyword">mat3</span><span class="token punctuation">(</span><span class="token function">inverse</span><span class="token punctuation">(</span><span class="token function">transpose</span><span class="token punctuation">(</span>M<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">*</span> vin_normal<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line"><span class="token keyword">vec3</span> pos <span class="token operator">=</span> <span class="token keyword">vec3</span><span class="token punctuation">(</span>M <span class="token operator">*</span> <span class="token keyword">vec4</span><span class="token punctuation">(</span>vin_pos<span class="token punctuation">,</span> <span class="token number">1.0</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line"><span class="token keyword">vec3</span> light_dir <span class="token operator">=</span> <span class="token function">normalize</span><span class="token punctuation">(</span>light_pos <span class="token operator">-</span> pos<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment">// diffuse</span></span>
+<span class="line"><span class="token keyword">float</span> diff <span class="token operator">=</span> <span class="token function">max</span><span class="token punctuation">(</span><span class="token function">dot</span><span class="token punctuation">(</span>normal<span class="token punctuation">,</span> light_dir<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">0.0</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line"><span class="token keyword">vec3</span> diffuse <span class="token operator">=</span> diff <span class="token operator">*</span> light_diffuse <span class="token operator">*</span> material_diffuse<span class="token punctuation">;</span></span>
+<span class="line"></span>
+<span class="line"><span class="token keyword">vec3</span> color <span class="token operator">=</span> ambient <span class="token operator">+</span> diffuse<span class="token punctuation">;</span></span>
+<span class="line">vout_color <span class="token operator">=</span> <span class="token keyword">vec4</span><span class="token punctuation">(</span>color<span class="token punctuation">,</span> <span class="token number">1.0</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="code-2-ambient-diffuse-gouraud-shading-2" tabindex="-1"><a class="header-anchor" href="#code-2-ambient-diffuse-gouraud-shading-2"><span>[Code] 2-ambient-diffuse-gouraud-shading</span></a></h2>
+<blockquote>
+<p>Normal 벡터 변환 방식:</p>
+</blockquote>
+<div class="language-glsl line-numbers-mode" data-highlighter="prismjs" data-ext="glsl"><pre v-pre><code><span class="line"><span class="token keyword">vec3</span> normal <span class="token operator">=</span> <span class="token function">normalize</span><span class="token punctuation">(</span><span class="token keyword">mat3</span><span class="token punctuation">(</span><span class="token function">inverse</span><span class="token punctuation">(</span><span class="token function">transpose</span><span class="token punctuation">(</span>M<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">*</span> vin_normal<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><blockquote>
+<p>식 정리:</p>
+</blockquote>
+<p v-pre class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi>I</mi><mi>d</mi></msub><mo>=</mo><msub><mi mathvariant="bold">l</mi><mi mathvariant="bold">d</mi></msub><mo>∘</mo><msub><mi mathvariant="bold">m</mi><mi mathvariant="bold">d</mi></msub><mo>⋅</mo><mi>max</mi><mo>⁡</mo><mo stretchy="false">(</mo><mn>0</mn><mo separator="true">,</mo><mi mathvariant="bold">L</mi><mo>⋅</mo><mi mathvariant="bold">N</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">I_d = \mathbf{l_d} \circ \mathbf{m_d} \cdot \max(0, \mathbf{L} \cdot \mathbf{N})
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07847em;">I</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361em;"><span style="top:-2.55em;margin-left:-0.0785em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">d</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8444em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathbf">l</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathbf mtight">d</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">∘</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.5945em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathbf">m</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathbf mtight">d</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mop">max</span><span class="mopen">(</span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathbf">L</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathbf">N</span><span class="mclose">)</span></span></span></span></span></p>
+<ul>
+<li>여기서 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>max</mi><mo>⁡</mo><mo stretchy="false">(</mo><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\max()</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mop">max</span><span class="mopen">(</span><span class="mclose">)</span></span></span></span>는 음수 색상 값을 방지하기 위해 사용됨</li>
+</ul>
+<blockquote>
+<p>오른쪽 도해:</p>
+</blockquote>
+<ul>
+<li>normal에 변환 행렬 X를 적용</li>
+<li>X는 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>b</mi><mi>e</mi><mi>g</mi><mi>i</mi><mi>n</mi><mo>:</mo><mi>m</mi><mi>a</mi><mi>t</mi><mi>h</mi><mo>:</mo><mi>t</mi><mi>e</mi><mi>x</mi><mi>t</mi></mrow><annotation encoding="application/x-tex">begin:math:text</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">b</span><span class="mord mathnormal">e</span><span class="mord mathnormal" style="margin-right:0.03588em;">g</span><span class="mord mathnormal">in</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">:</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal">ma</span><span class="mord mathnormal">t</span><span class="mord mathnormal">h</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">:</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6151em;"></span><span class="mord mathnormal">t</span><span class="mord mathnormal">e</span><span class="mord mathnormal">x</span><span class="mord mathnormal">t</span></span></span></span> M^T <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>e</mi><mi>n</mi><mi>d</mi><mo>:</mo><mi>m</mi><mi>a</mi><mi>t</mi><mi>h</mi><mo>:</mo><mi>t</mi><mi>e</mi><mi>x</mi><mi>t</mi></mrow><annotation encoding="application/x-tex">end:math:text</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal">e</span><span class="mord mathnormal">n</span><span class="mord mathnormal">d</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">:</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal">ma</span><span class="mord mathnormal">t</span><span class="mord mathnormal">h</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">:</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6151em;"></span><span class="mord mathnormal">t</span><span class="mord mathnormal">e</span><span class="mord mathnormal">x</span><span class="mord mathnormal">t</span></span></span></span> 의 역행렬: <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>b</mi><mi>e</mi><mi>g</mi><mi>i</mi><mi>n</mi><mo>:</mo><mi>m</mi><mi>a</mi><mi>t</mi><mi>h</mi><mo>:</mo><mi>t</mi><mi>e</mi><mi>x</mi><mi>t</mi></mrow><annotation encoding="application/x-tex">begin:math:text</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">b</span><span class="mord mathnormal">e</span><span class="mord mathnormal" style="margin-right:0.03588em;">g</span><span class="mord mathnormal">in</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">:</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal">ma</span><span class="mord mathnormal">t</span><span class="mord mathnormal">h</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">:</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6151em;"></span><span class="mord mathnormal">t</span><span class="mord mathnormal">e</span><span class="mord mathnormal">x</span><span class="mord mathnormal">t</span></span></span></span> X = (M^T)^{-1} <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>e</mi><mi>n</mi><mi>d</mi><mo>:</mo><mi>m</mi><mi>a</mi><mi>t</mi><mi>h</mi><mo>:</mo><mi>t</mi><mi>e</mi><mi>x</mi><mi>t</mi></mrow><annotation encoding="application/x-tex">end:math:text</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal">e</span><span class="mord mathnormal">n</span><span class="mord mathnormal">d</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">:</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal">ma</span><span class="mord mathnormal">t</span><span class="mord mathnormal">h</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">:</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6151em;"></span><span class="mord mathnormal">t</span><span class="mord mathnormal">e</span><span class="mord mathnormal">x</span><span class="mord mathnormal">t</span></span></span></span></li>
+</ul>
+<h2 id="code-2-ambient-diffuse-gouraud-shading-3" tabindex="-1"><a class="header-anchor" href="#code-2-ambient-diffuse-gouraud-shading-3"><span>[Code] 2-ambient-diffuse-gouraud-shading</span></a></h2>
+<div class="language-cpp line-numbers-mode" data-highlighter="prismjs" data-ext="cpp"><pre v-pre><code><span class="line">vec3 surface_pos <span class="token operator">=</span> <span class="token function">vec3</span><span class="token punctuation">(</span>M <span class="token operator">*</span> <span class="token function">vec4</span><span class="token punctuation">(</span>vin_pos<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// world space에서의 표면 위치</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><ul>
+<li>
+<p>표면의 위치는 조명이 적용되는 지점을 의미 (world space 기준)</p>
+</li>
+<li>
+<p>모든 조명 연산은 world space에서 수행됨<br>
+→ 모든 위치와 벡터도 world space로 변환되어야 함</p>
+</li>
+<li>
+<p>그러나 <strong>view space에서의 조명 계산</strong>이 권장됨</p>
+<ul>
+<li>고전적인 뷰 공간은 항상 (0,0,0)에 위치한 카메라 기준</li>
+<li>최근 시스템에서는 world space도 자주 사용됨<br>
+→ 이후 view space에서도 조명 연산을 수행할 예정</li>
+</ul>
+</li>
+</ul>
+<h2 id="code-3-all-components-gouraud-facenorm" tabindex="-1"><a class="header-anchor" href="#code-3-all-components-gouraud-facenorm"><span>[Code] 3-all-components-gouraud-facenorm</span></a></h2>
+<h3 id="vertex-shader-1" tabindex="-1"><a class="header-anchor" href="#vertex-shader-1"><span>Vertex shader</span></a></h3>
+<div class="language-glsl line-numbers-mode" data-highlighter="prismjs" data-ext="glsl"><pre v-pre><code><span class="line"><span class="token keyword">uniform</span> <span class="token keyword">mat4</span> MVP<span class="token punctuation">;</span></span>
+<span class="line"><span class="token keyword">uniform</span> <span class="token keyword">mat4</span> M<span class="token punctuation">;</span></span>
+<span class="line"><span class="token keyword">uniform</span> <span class="token keyword">vec3</span> view_pos<span class="token punctuation">;</span></span>
+<span class="line"></span>
+<span class="line"><span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span></span>
+<span class="line"><span class="token punctuation">{</span></span>
+<span class="line">    <span class="token keyword">vec4</span> p3D_in_hcoord <span class="token operator">=</span> <span class="token keyword">vec4</span><span class="token punctuation">(</span>vin_pos<span class="token punctuation">.</span>xyz<span class="token punctuation">,</span> <span class="token number">1.0</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">    gl_Position <span class="token operator">=</span> MVP <span class="token operator">*</span> p3D_in_hcoord<span class="token punctuation">;</span></span>
+<span class="line"></span>
+<span class="line">    <span class="token comment">// 광원 및 재질 속성</span></span>
+<span class="line">    <span class="token keyword">vec3</span> light_pos <span class="token operator">=</span> <span class="token keyword">vec3</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">    <span class="token keyword">vec3</span> light_color <span class="token operator">=</span> <span class="token keyword">vec3</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">    <span class="token keyword">vec3</span> material_color <span class="token operator">=</span> <span class="token keyword">vec3</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">    <span class="token keyword">float</span> material_shininess <span class="token operator">=</span> <span class="token number">32.0</span><span class="token punctuation">;</span></span>
+<span class="line"></span>
+<span class="line">    <span class="token comment">// 조명 성분</span></span>
+<span class="line">    <span class="token keyword">vec3</span> light_ambient <span class="token operator">=</span> <span class="token number">0.1</span> <span class="token operator">*</span> light_color<span class="token punctuation">;</span></span>
+<span class="line">    <span class="token keyword">vec3</span> light_diffuse <span class="token operator">=</span> light_color<span class="token punctuation">;</span></span>
+<span class="line">    <span class="token keyword">vec3</span> light_specular <span class="token operator">=</span> light_color<span class="token punctuation">;</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="code-3-all-components-gouraud-facenorm-1" tabindex="-1"><a class="header-anchor" href="#code-3-all-components-gouraud-facenorm-1"><span>[Code] 3-all-components-gouraud-facenorm</span></a></h2>
+<div class="language-glsl line-numbers-mode" data-highlighter="prismjs" data-ext="glsl"><pre v-pre><code><span class="line"><span class="token comment">// 재질 성분</span></span>
+<span class="line"><span class="token keyword">vec3</span> material_ambient <span class="token operator">=</span> material_color<span class="token punctuation">;</span></span>
+<span class="line"><span class="token keyword">vec3</span> material_diffuse <span class="token operator">=</span> material_color<span class="token punctuation">;</span>       <span class="token comment">// 비금속 재질</span></span>
+<span class="line"><span class="token keyword">vec3</span> material_specular <span class="token operator">=</span> <span class="token keyword">vec3</span><span class="token punctuation">(</span><span class="token number">1.0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>           <span class="token comment">// 흰색 반사광</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment">// ambient</span></span>
+<span class="line"><span class="token keyword">vec3</span> ambient <span class="token operator">=</span> light_ambient <span class="token operator">*</span> material_ambient<span class="token punctuation">;</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment">// diffuse 및 specular 계산용 normal</span></span>
+<span class="line"><span class="token keyword">vec3</span> normal <span class="token operator">=</span> <span class="token function">normalize</span><span class="token punctuation">(</span><span class="token keyword">mat3</span><span class="token punctuation">(</span><span class="token function">inverse</span><span class="token punctuation">(</span><span class="token function">transpose</span><span class="token punctuation">(</span>M<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">*</span> vin_normal<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line"><span class="token keyword">vec3</span> surface_pos <span class="token operator">=</span> <span class="token keyword">vec3</span><span class="token punctuation">(</span>M <span class="token operator">*</span> <span class="token keyword">vec4</span><span class="token punctuation">(</span>vin_pos<span class="token punctuation">,</span> <span class="token number">1.0</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line"><span class="token keyword">vec3</span> light_dir <span class="token operator">=</span> <span class="token function">normalize</span><span class="token punctuation">(</span>light_pos <span class="token operator">-</span> surface_pos<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment">// diffuse</span></span>
+<span class="line"><span class="token keyword">float</span> diff <span class="token operator">=</span> <span class="token function">max</span><span class="token punctuation">(</span><span class="token function">dot</span><span class="token punctuation">(</span>normal<span class="token punctuation">,</span> light_dir<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">0.0</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line"><span class="token keyword">vec3</span> diffuse <span class="token operator">=</span> diff <span class="token operator">*</span> light_diffuse <span class="token operator">*</span> material_diffuse<span class="token punctuation">;</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment">// specular</span></span>
+<span class="line"><span class="token keyword">vec3</span> view_dir <span class="token operator">=</span> <span class="token function">normalize</span><span class="token punctuation">(</span>view_pos <span class="token operator">-</span> surface_pos<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line"><span class="token keyword">vec3</span> reflect_dir <span class="token operator">=</span> <span class="token function">reflect</span><span class="token punctuation">(</span><span class="token operator">-</span>light_dir<span class="token punctuation">,</span> normal<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line"><span class="token keyword">float</span> spec <span class="token operator">=</span> <span class="token function">pow</span><span class="token punctuation">(</span><span class="token function">max</span><span class="token punctuation">(</span><span class="token function">dot</span><span class="token punctuation">(</span>view_dir<span class="token punctuation">,</span> reflect_dir<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">0.0</span><span class="token punctuation">)</span><span class="token punctuation">,</span> material_shininess<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line"><span class="token keyword">vec3</span> specular <span class="token operator">=</span> spec <span class="token operator">*</span> light_specular <span class="token operator">*</span> material_specular<span class="token punctuation">;</span></span>
+<span class="line"></span>
+<span class="line"><span class="token keyword">vec3</span> color <span class="token operator">=</span> ambient <span class="token operator">+</span> diffuse <span class="token operator">+</span> specular<span class="token punctuation">;</span></span>
+<span class="line">vout_color <span class="token operator">=</span> <span class="token keyword">vec4</span><span class="token punctuation">(</span>color<span class="token punctuation">,</span> <span class="token number">1.</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="code-3-all-components-gouraud-facenorm-2" tabindex="-1"><a class="header-anchor" href="#code-3-all-components-gouraud-facenorm-2"><span>[Code] 3-all-components-gouraud-facenorm</span></a></h2>
+<div class="language-glsl line-numbers-mode" data-highlighter="prismjs" data-ext="glsl"><pre v-pre><code><span class="line"><span class="token keyword">vec3</span> reflect_dir <span class="token operator">=</span> <span class="token function">reflect</span><span class="token punctuation">(</span><span class="token operator">-</span>light_dir<span class="token punctuation">,</span> normal<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line"><span class="token keyword">float</span> spec <span class="token operator">=</span> <span class="token function">pow</span><span class="token punctuation">(</span><span class="token function">max</span><span class="token punctuation">(</span><span class="token function">dot</span><span class="token punctuation">(</span>view_dir<span class="token punctuation">,</span> reflect_dir<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">0.0</span><span class="token punctuation">)</span><span class="token punctuation">,</span> material_shininess<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div></div></div><blockquote>
+<p v-pre class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi>I</mi><mi>s</mi></msub><mo>=</mo><msub><mi mathvariant="bold">l</mi><mi mathvariant="bold">s</mi></msub><mo>∘</mo><msub><mi mathvariant="bold">m</mi><mi mathvariant="bold">s</mi></msub><mo>⋅</mo><msup><mrow><mi>cos</mi><mo>⁡</mo></mrow><mi>α</mi></msup><mi>θ</mi><mo>=</mo><msub><mi mathvariant="bold">l</mi><mi mathvariant="bold">s</mi></msub><mo>∘</mo><msub><mi mathvariant="bold">m</mi><mi mathvariant="bold">s</mi></msub><mo>⋅</mo><mo stretchy="false">(</mo><mi mathvariant="bold">V</mi><mo>⋅</mo><mi mathvariant="bold">R</mi><msup><mo stretchy="false">)</mo><mi>α</mi></msup></mrow><annotation encoding="application/x-tex">I_s = \mathbf{l_s} \circ \mathbf{m_s} \cdot \cos^\alpha \theta = \mathbf{l_s} \circ \mathbf{m_s} \cdot (\mathbf{V} \cdot \mathbf{R})^\alpha 
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07847em;">I</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:-0.0785em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">s</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8444em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathbf">l</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1611em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathbf mtight">s</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">∘</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.5945em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathbf">m</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1611em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathbf mtight">s</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.7144em;"></span><span class="mop"><span class="mop">cos</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7144em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.0037em;">α</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">θ</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8444em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathbf">l</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1611em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathbf mtight">s</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">∘</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.5945em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathbf">m</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1611em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathbf mtight">s</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathbf" style="margin-right:0.01597em;">V</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathbf">R</span><span class="mclose"><span class="mclose">)</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7144em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.0037em;">α</span></span></span></span></span></span></span></span></span></span></span></span></p>
+</blockquote>
+<ul>
+<li>여기서 <code v-pre>max()</code>는 음수 색상을 방지하기 위해 사용됨</li>
+</ul>
+<h2 id="quiz-3" tabindex="-1"><a class="header-anchor" href="#quiz-3"><span>Quiz 3</span></a></h2>
+<h1 id="render-a-cube-using-phong-illumination-and-phong-shading" tabindex="-1"><a class="header-anchor" href="#render-a-cube-using-phong-illumination-and-phong-shading"><span>Render a Cube using Phong Illumination and Phong Shading</span></a></h1>
+<h2 id="recall-phong-shading" tabindex="-1"><a class="header-anchor" href="#recall-phong-shading"><span>Recall: Phong Shading</span></a></h2>
+<ul>
+<li>각 정점마다 단일 vertex normal 사용</li>
+<li>정점 normal을 폴리곤 내부에서 보간</li>
+<li>폴리곤 내 <strong>각 픽셀마다</strong> 보간된 normal을 이용해 조명 계산<br>
+→ <strong>조명 계산은 fragment shader에서 수행</strong></li>
+</ul>
+<h2 id="code-4-all-components-phong-facenorm" tabindex="-1"><a class="header-anchor" href="#code-4-all-components-phong-facenorm"><span>[Code] 4-all-components-phong-facenorm</span></a></h2>
+<h3 id="vertex-shader-2" tabindex="-1"><a class="header-anchor" href="#vertex-shader-2"><span>Vertex shader</span></a></h3>
+<div class="language-glsl line-numbers-mode" data-highlighter="prismjs" data-ext="glsl"><pre v-pre><code><span class="line"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">version</span> <span class="token expression"><span class="token number">330</span> core</span></span></span>
+<span class="line"></span>
+<span class="line"><span class="token keyword">layout</span> <span class="token punctuation">(</span>location <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token keyword">in</span> <span class="token keyword">vec3</span> vin_pos<span class="token punctuation">;</span></span>
+<span class="line"><span class="token keyword">layout</span> <span class="token punctuation">(</span>location <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token keyword">in</span> <span class="token keyword">vec3</span> vin_normal<span class="token punctuation">;</span></span>
+<span class="line"></span>
+<span class="line"><span class="token keyword">out</span> <span class="token keyword">vec3</span> vout_surface_pos<span class="token punctuation">;</span></span>
+<span class="line"><span class="token keyword">out</span> <span class="token keyword">vec3</span> vout_normal<span class="token punctuation">;</span></span>
+<span class="line"></span>
+<span class="line"><span class="token keyword">uniform</span> <span class="token keyword">mat4</span> MVP<span class="token punctuation">;</span></span>
+<span class="line"><span class="token keyword">uniform</span> <span class="token keyword">mat4</span> M<span class="token punctuation">;</span></span>
+<span class="line"></span>
+<span class="line"><span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span></span>
+<span class="line"><span class="token punctuation">{</span></span>
+<span class="line">    <span class="token keyword">vec4</span> p3D_in_hcoord <span class="token operator">=</span> <span class="token keyword">vec4</span><span class="token punctuation">(</span>vin_pos<span class="token punctuation">.</span>xyz<span class="token punctuation">,</span> <span class="token number">1.0</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">    gl_Position <span class="token operator">=</span> MVP <span class="token operator">*</span> p3D_in_hcoord<span class="token punctuation">;</span></span>
+<span class="line"></span>
+<span class="line">    vout_surface_pos <span class="token operator">=</span> <span class="token keyword">vec3</span><span class="token punctuation">(</span>M <span class="token operator">*</span> <span class="token keyword">vec4</span><span class="token punctuation">(</span>vin_pos<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">    vout_normal <span class="token operator">=</span> <span class="token function">normalize</span><span class="token punctuation">(</span><span class="token keyword">mat3</span><span class="token punctuation">(</span><span class="token function">inverse</span><span class="token punctuation">(</span><span class="token function">transpose</span><span class="token punctuation">(</span>M<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">*</span> vin_normal<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line"><span class="token punctuation">}</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="code-4-all-components-phong-facenorm-1" tabindex="-1"><a class="header-anchor" href="#code-4-all-components-phong-facenorm-1"><span>[Code] 4-all-components-phong-facenorm</span></a></h2>
+<h3 id="fragment-shader-1" tabindex="-1"><a class="header-anchor" href="#fragment-shader-1"><span>Fragment shader</span></a></h3>
+<div class="language-glsl line-numbers-mode" data-highlighter="prismjs" data-ext="glsl"><pre v-pre><code><span class="line"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">version</span> <span class="token expression"><span class="token number">330</span> core</span></span></span>
+<span class="line"></span>
+<span class="line"><span class="token keyword">in</span> <span class="token keyword">vec3</span> vout_surface_pos<span class="token punctuation">;</span>  <span class="token comment">// 보간된 표면 위치</span></span>
+<span class="line"><span class="token keyword">in</span> <span class="token keyword">vec3</span> vout_normal<span class="token punctuation">;</span>       <span class="token comment">// 보간된 normal</span></span>
+<span class="line"></span>
+<span class="line"><span class="token keyword">out</span> <span class="token keyword">vec4</span> FragColor<span class="token punctuation">;</span></span>
+<span class="line"></span>
+<span class="line"><span class="token keyword">uniform</span> <span class="token keyword">vec3</span> view_pos<span class="token punctuation">;</span></span>
+<span class="line"></span>
+<span class="line"><span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span></span>
+<span class="line"><span class="token punctuation">{</span></span>
+<span class="line">    <span class="token comment">// 조명 및 재질 속성</span></span>
+<span class="line">    <span class="token keyword">vec3</span> light_pos <span class="token operator">=</span> <span class="token keyword">vec3</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">    <span class="token keyword">vec3</span> light_color <span class="token operator">=</span> <span class="token keyword">vec3</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">    <span class="token keyword">vec3</span> material_color <span class="token operator">=</span> <span class="token keyword">vec3</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">    <span class="token keyword">float</span> material_shininess <span class="token operator">=</span> <span class="token number">32.0</span><span class="token punctuation">;</span></span>
+<span class="line"></span>
+<span class="line">    <span class="token comment">// 조명 성분</span></span>
+<span class="line">    <span class="token keyword">vec3</span> light_ambient <span class="token operator">=</span> <span class="token number">0.1</span> <span class="token operator">*</span> light_color<span class="token punctuation">;</span></span>
+<span class="line">    <span class="token keyword">vec3</span> light_diffuse <span class="token operator">=</span> light_color<span class="token punctuation">;</span></span>
+<span class="line">    <span class="token keyword">vec3</span> light_specular <span class="token operator">=</span> light_color<span class="token punctuation">;</span></span>
+<span class="line"></span>
+<span class="line">    <span class="token comment">// 재질 성분</span></span>
+<span class="line">    <span class="token keyword">vec3</span> material_ambient <span class="token operator">=</span> material_color<span class="token punctuation">;</span></span>
+<span class="line">    <span class="token keyword">vec3</span> material_diffuse <span class="token operator">=</span> material_color<span class="token punctuation">;</span></span>
+<span class="line">    <span class="token keyword">vec3</span> material_specular <span class="token operator">=</span> <span class="token keyword">vec3</span><span class="token punctuation">(</span><span class="token number">1.0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// 또는 material_color</span></span>
+<span class="line"></span>
+<span class="line">    <span class="token comment">// ambient</span></span>
+<span class="line">    <span class="token keyword">vec3</span> ambient <span class="token operator">=</span> light_ambient <span class="token operator">*</span> material_ambient<span class="token punctuation">;</span></span>
+<span class="line"></span>
+<span class="line">    <span class="token comment">// diffuse 및 specular 계산</span></span>
+<span class="line">    <span class="token keyword">vec3</span> normal <span class="token operator">=</span> <span class="token function">normalize</span><span class="token punctuation">(</span>vout_normal<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">    <span class="token keyword">vec3</span> surface_pos <span class="token operator">=</span> vout_surface_pos<span class="token punctuation">;</span></span>
+<span class="line">    <span class="token keyword">vec3</span> light_dir <span class="token operator">=</span> <span class="token function">normalize</span><span class="token punctuation">(</span>light_pos <span class="token operator">-</span> surface_pos<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line"></span>
+<span class="line">    <span class="token comment">// diffuse</span></span>
+<span class="line">    <span class="token keyword">float</span> diff <span class="token operator">=</span> <span class="token function">max</span><span class="token punctuation">(</span><span class="token function">dot</span><span class="token punctuation">(</span>normal<span class="token punctuation">,</span> light_dir<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">0.0</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">    <span class="token keyword">vec3</span> diffuse <span class="token operator">=</span> diff <span class="token operator">*</span> light_diffuse <span class="token operator">*</span> material_diffuse<span class="token punctuation">;</span></span>
+<span class="line"></span>
+<span class="line">    <span class="token comment">// specular</span></span>
+<span class="line">    <span class="token keyword">vec3</span> view_dir <span class="token operator">=</span> <span class="token function">normalize</span><span class="token punctuation">(</span>view_pos <span class="token operator">-</span> surface_pos<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">    <span class="token keyword">vec3</span> reflect_dir <span class="token operator">=</span> <span class="token function">reflect</span><span class="token punctuation">(</span><span class="token operator">-</span>light_dir<span class="token punctuation">,</span> normal<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">    <span class="token keyword">float</span> spec <span class="token operator">=</span> <span class="token function">pow</span><span class="token punctuation">(</span><span class="token function">max</span><span class="token punctuation">(</span><span class="token function">dot</span><span class="token punctuation">(</span>view_dir<span class="token punctuation">,</span> reflect_dir<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">0.0</span><span class="token punctuation">)</span><span class="token punctuation">,</span> material_shininess<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">    <span class="token keyword">vec3</span> specular <span class="token operator">=</span> spec <span class="token operator">*</span> light_specular <span class="token operator">*</span> material_specular<span class="token punctuation">;</span></span>
+<span class="line"></span>
+<span class="line">    <span class="token keyword">vec3</span> color <span class="token operator">=</span> ambient <span class="token operator">+</span> diffuse <span class="token operator">+</span> specular<span class="token punctuation">;</span></span>
+<span class="line">    FragColor <span class="token operator">=</span> <span class="token keyword">vec4</span><span class="token punctuation">(</span>color<span class="token punctuation">,</span> <span class="token number">1.</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line"><span class="token punctuation">}</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h1 id="render-a-smooth-cube-using-phong-illumination-and-gouraud-phong-shading" tabindex="-1"><a class="header-anchor" href="#render-a-smooth-cube-using-phong-illumination-and-gouraud-phong-shading"><span>Render a &quot;Smooth&quot; Cube using Phong Illumination and Gouraud / Phong Shading</span></a></h1>
+<h2 id="code" tabindex="-1"><a class="header-anchor" href="#code"><span>[Code]</span></a></h2>
+<ul>
+<li>
+<p><code v-pre>'5-all-components-gouraud-avgnorm'</code><br>
+: <code v-pre>'3-all-components-gouraud-facenorm'</code>과 동일하나</p>
+<ul>
+<li><code v-pre>prepare_vao_cube()</code> 호출부와 <code v-pre>glDrawElements()</code> 호출만 다름</li>
+</ul>
+</li>
+<li>
+<p><code v-pre>'6-all-components-phong-avgnorm'</code><br>
+: <code v-pre>'4-all-components-phong-facenorm'</code>과 동일하나</p>
+<ul>
+<li><code v-pre>prepare_vao_cube()</code> 호출부와 <code v-pre>glDrawElements()</code> 호출만 다름</li>
+</ul>
+</li>
+</ul>
 </div></template>
 
 

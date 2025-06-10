@@ -1,7 +1,7 @@
 <template><div><h1 id="project-02-implementing-a-simple-kernel-level-thread" tabindex="-1"><a class="header-anchor" href="#project-02-implementing-a-simple-kernel-level-thread"><span>Project 02: Implementing a simple kernel-level thread</span></a></h1>
 <p>Operating System</p>
-<p>제출 마감 기한:<br>
-2025. 05. 25. 23:59</p>
+<p>Due date<br>
+2025. 05. 28. 23:59</p>
 <h2 id="overview-개요" tabindex="-1"><a class="header-anchor" href="#overview-개요"><span>Overview 개요</span></a></h2>
 <ul>
 <li>이 프로젝트는 xv6 운영체제에서 커널 수준 스레드(kernel-level thread)의 단순화된 버전을 구현하는 것이다.</li>

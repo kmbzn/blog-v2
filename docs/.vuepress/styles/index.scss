@@ -199,4 +199,9 @@ table {
   div[class*='language-'].line-numbers-mode:after {
     border: none;
   }
+  
+  [vp-content] h1, [vp-content] h2, [vp-content] h3, [vp-content] h4, [vp-content] h5, [vp-content] h6 {
+      padding-top: 0rem;
+      margin-top: 0rem;
+  }
 }
