@@ -56,6 +56,7 @@ export default defineUserConfig({
         text: '🏋️ Wellness',
         children: [
           '/wellness/ExtraVirginOliveOil',
+          '/wellness/PsylliumHusk',
         ]
       },
       {
