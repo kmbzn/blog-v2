@@ -16,7 +16,7 @@
 
 - **Smoothness**
   - 이음 없는 부드러운 연결
-- 많은 컴퓨터 그래픽 응용에서 **부드러운 형태(smooth shape)** 와 **부드러운 움직임(smooth movement)** 이 필요
+- 많은 컴퓨터 그래픽 응용에서 부드러운 형태(smooth shape) 와 부드러운 움직임(smooth movement) 이 필요
 
 ## Curve Representations
 
@@ -45,7 +45,7 @@
 
 ## Polynomial Curve
 
-- **다항식(Polynomial)** 은 컴퓨터 그래픽에서 곡선을 표현할 때 자주 사용됨
+- 다항식(Polynomial) 은 컴퓨터 그래픽에서 곡선을 표현할 때 자주 사용됨
   - 단순함
   - 효율적
   - 다루기 쉬움
@@ -64,7 +64,7 @@
 
 ## Polynomial Interpolation
 
-- **1차 다항식(linear polynomial)** 을 이용한 선형 보간 예시
+- 1차 다항식(linear polynomial) 을 이용한 선형 보간 예시
 
 - 입력: 두 점 $(t_0, x_0), (t_1, x_1)$  
 - 출력: 1차 다항식  
@@ -104,7 +104,7 @@
 
 ## Polynomial Interpolation
 
-- **2차 다항식(quadratic)** 을 이용한 보간
+- 2차 다항식(quadratic) 을 이용한 보간
 
 - 입력: 세 점 $(t_0, x_0), (t_1, x_1), (t_2, x_2)$  
 - 2차 다항식:
@@ -165,7 +165,7 @@
 
 ## Cubic Polynomials
 
-- **3차 다항식(cubic)** 은 컴퓨터 그래픽스에서 가장 일반적으로 사용됨
+- 3차 다항식(cubic) 은 컴퓨터 그래픽스에서 가장 일반적으로 사용됨
 
 - 이유:
   - 3차는 3D 곡선을 표현할 수 있는 **가장 낮은 차수의 다항식**
@@ -187,7 +187,7 @@
 - 곡선이 복잡할 경우 어떻게 만들까?
 
 - 하나의 3차 다항식만으로는 표현이 어려움  
-  → 해결책: **Spline (구간별 다항식, piecewise polynomial)**
+  → 해결책: Spline (구간별 다항식, piecewise polynomial)
 
 - 지금은 먼저 하나의 구간(segment)에 집중해서 살펴봄
 
@@ -316,10 +316,10 @@
 
 ## Hermite Curve의 개념 및 동기
 
-- Hermite curve는 일반적으로 **3차 다항식(cubic polynomial)** 으로 표현되며,  
+- Hermite curve는 일반적으로 3차 다항식(cubic polynomia 으로 표현되며,  
   **Hermite 형식**으로 주어진다.
 
-- **Spline 설계**에서는 곡선 조각들 사이의 **부드러운 연결(smooth connection)** 이 중요  
+- **Spline 설계**에서는 곡선 조각들 사이의 부드러운 연결(smooth connection) 이 중요  
   → Hermite 곡선은 다음을 명시함으로써 이를 해결:
   - 양 끝점의 위치
   - 양 끝점에서의 1차 도함수 (기울기, tangent)
@@ -436,15 +436,15 @@
 
 # Bezier Curve
 
-- Bezier 곡선은 일반적으로 Bezier 형식으로 표현되는 **다항 곡선(polynomial curve)**
+- Bezier 곡선은 일반적으로 Bezier 형식으로 표현되는 다항 곡선(polynomial curve)
 
 - **Motivation**:
   - Spline에서는 부드러운 곡선 연결이 중요
-  - Bezier에서는 이를 위해 **제어점(control points)** 을 적절히 배치함으로써 해결
+  - Bezier에서는 이를 위해 제어점(control points) 을 적절히 배치함으로써 해결
 
 ## Recall: Hermite curve
 
-- 제약 조건: **끝점**과 **접선(도함수)**
+- 제약 조건: **끝점**과 접선(도함수)
 
 - Hermite 곡선은 다음과 같이 표현됨:
   $$
@@ -716,13 +716,13 @@
 
 ## Properties of Bezier Curve
 
-- **제어점(control points)** 을 통해 직관적으로 제어 가능
+- **제어점(control points) 을 통해 직관적으로 제어 가능
 
-- 곡선은 항상 **제어점들의 convex hull** 안에 존재
+- 곡선은 항상 **제어점들의 convex hull 안에 존재
 
   - convex hull: 제어점들을 포함하는 최소 볼록 다각형
 
-- **끝점 보간(end point interpolation)**:  
+- 끝점 보간(end point interpolation):  
   Bezier 곡선은 $\mathbf{p}_0$과 $\mathbf{p}_n$을 정확히 통과
 
 ## Quiz 3
@@ -731,7 +731,7 @@
 
 ## Spline
 
-- Spline: **조각별 다항식 (piecewise polynomial)**
+- Spline: 조각별 다항식 (piecewise polynomial)
 
 - 세 가지 주요 이슈:
   - 이 조각들을 **어떻게 연속적으로** 연결할 것인가?
@@ -747,14 +747,14 @@
 
 ## Continuity (연속성의 정도)
 
-- 부드러움(Smoothness)은 **연속성의 차수(order)** 로 설명할 수 있음
+- 부드러움(Smoothness)은 연속성의 차수(order) 로 설명할 수 있음
 
   - **0차 연속성 $C^0$**:  
-    양쪽에서 **위치(position)** 만 일치
+    양쪽에서 위치(position) 만 일치
   - **1차 연속성 $C^1$**:  
-    위치와 **1차 미분(속도, velocity)** 일치
+    위치와 1차 미분(속도, velocity) 일치
   - **2차 연속성 $C^2$**:  
-    위치, 1차, **2차 미분(가속도, acceleration)** 까지 일치
+    위치, 1차, 2차 미분(가속도, acceleration) 까지 일치
 
 - 아래 그림은 차수에 따른 연속성의 차이를 시각적으로 보여줌
 
@@ -771,7 +771,7 @@
 
 ## Control (로컬 제어)
 
-- **로컬 제어(local control)**:
+- 로컬 제어(local control):
   - **제어점을 하나 바꿨을 때 영향을 받는 범위가 제한됨**
 
 - 로컬 제어가 없으면 spline 사용이 매우 어려움  
@@ -783,10 +783,10 @@
 
 ## Interpolation / Approximation
 
-- **Interpolation (보간)**:
+- Interpolation (보간):
   - 곡선이 **점들을 정확히 통과**
 
-- **Approximation (근사)**:
+- Approximation (근사):
   - 곡선이 **점들을 따라가지만 통과하지는 않음**
 
 - 보간이 더 선호되지만, 항상 필요하지는 않음
@@ -795,7 +795,7 @@
 
 - 연속성: $C^0$ 또는 $C^1$ 가능
 - 로컬 제어(Local controllability)
-- **보간(interpolation)**: 단지 양 끝 두 점만 통과
+- 보간(interpolation): 단지 양 끝 두 점만 통과
 
 - Bezier spline은 매우 광범위하게 사용됨:
   - Adobe Illustrator 같은 그래픽 도구에서 형태(shape) 생성
@@ -813,7 +813,7 @@
   \mathbf{p}'(t_j) = \frac{\mathbf{P}_{j+1} - \mathbf{P}_{j-1}}{2}
   $$
 
-- **$C^1$ 연속성**, **로컬 제어 가능**, **보간(interpolation)** 가능
+- **$C^1$ 연속성**, **로컬 제어 가능**, 보간(interpolation) 가능
 
 ## Natural Cubic Splines
 
@@ -827,7 +827,7 @@
   - 2차 도함수 연속성: $(n-1)$ 개
   - 양 끝점에서 2차 도함수 0 설정: $x''(t_0) = x''(t_n) = 0$
 
-- **$C^2$ 연속성**, **로컬 제어 불가**, **보간(interpolation)** 방식
+- **$C^2$ 연속성**, **로컬 제어 불가**, 보간(interpolation) 방식
 
 ## B-splines (brief intro)
 
@@ -836,4 +836,4 @@
 - 겹치는 세그먼트들로 곡선 생성:
   - 예: 0-1-2-3, 1-2-3-4, 2-3-4-5, ...
 
-- **$C^2$ 연속성**, **로컬 제어 가능**, **근사(approximation)** 방식
+- **$C^2$ 연속성**, **로컬 제어 가능**, 근사(approximation) 방식

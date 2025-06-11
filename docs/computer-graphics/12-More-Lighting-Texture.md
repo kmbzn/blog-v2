@@ -1,9 +1,4 @@
-# Computer Graphics  
-12 - More Lighting, Texture
-
-Yoonsang Lee  
-Hanyang University  
-Spring 2025
+# 12 - More Lighting, Texture
 
 ## Revised Class Schedule
 
@@ -174,8 +169,6 @@ Spring 2025
 https://learn.foundry.com/modo/content/help/pages/modeling/uv/uv_unwrapping.html  
 https://blenderartists.org/t/uv-unwrapping-scaling-issue/1342000
 
-## UV Map Examples
-
 (그림: 캐릭터, 자동차 등 다양한 UV 매핑 예시)
 
 출처:  
@@ -185,20 +178,17 @@ https://sketchfab.com
 ## Defining Texture Coordinate Function:  
 2) Projections to Parametric Surfaces
 
-- 사각형, 구, 원기둥 등 **파라메트릭 표면(parametric surfaces)**과 유사한 객체는
+- 사각형, 구, 원기둥 등 파라메트릭 표면(parametric surfaces)과 유사한 객체는
 - 해당 파라메트릭 표면에 정점을 투사하여 텍스처 좌표 함수를 정의할 수 있음
 
 ## Examples of coordinate functions  
 Planar projection
 
 (그림: 평면 투영에 의한 UV 분포)
-
-## Examples of coordinate functions  
 Spherical projection
 
 (그림: 구면 투영에 의한 지구 텍스처 적용)
 
-## Examples of coordinate functions  
 Cylindrical projection
 
 (그림: 실린더 형태로 투영된 텍스처)
@@ -216,11 +206,7 @@ pixel.color = color
 
 - 그러나 텍스처 좌표 함수는 각 정점(vertex)에 대해 정의됨
 - 그렇다면 각 픽셀마다의 텍스처 좌표는 어떻게 계산할 수 있을까?
-
-## Rendering Texture-Mapped Objects
-
 - 텍스처 좌표는 다각형 내부에서 barycentric interpolation으로 계산됨
-
 - 다각형 내부의 각 픽셀에 대해, 픽셀이 포함된 삼각형의 정점 좌표에 따라 (u, v)가 결정됨
 
 $$
@@ -248,8 +234,6 @@ $$
 - normal map
 
 출처: https://www.models-resource.com
-
-## Examples of Diffuse, Specular, Normal Map
 
 (예시: Game of Thrones 캐릭터 텍스처)
 - final 렌더링

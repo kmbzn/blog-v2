@@ -1,8 +1,4 @@
-# Computer Graphics  
-10 - Character Animation  
-Yoonsang Lee  
-Hanyang University  
-Spring 2025
+# 10 - Character Animation
 
 ## Outline
 
