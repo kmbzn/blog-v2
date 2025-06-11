@@ -40,6 +40,7 @@ export default defineUserConfig({
       },
       {
         text: '🧠 Algorithm',
+        collapsible: true,
         children: [
           '/algorithm/PythonTimeout',
           '/algorithm/1966',
@@ -65,6 +66,9 @@ export default defineUserConfig({
         children: [
           '/computer-graphics/8-Lighting',
           '/computer-graphics/9-Orientation-Rotation',
+          '/computer-graphics/10-Character-Animation',
+          '/computer-graphics/11-Curves.md',
+          '/computer-graphics/12-More-Lighting-Texture',
         ]
       },
       {
