@@ -32,12 +32,10 @@
 - **Skin**은 변형 가능한 메시(deformable mesh)일 수 있음
 
 - **Skinning**: 스켈레톤을 skin mesh에 "임베딩(embedding)"하는 과정  
-  (자세한 내용은 생략 예정)
+  (자세한 내용은 생략)
 
 > *A human thigh with simple skin weights painted on it*  
 > 출처: [gameanim.com/gdc/gdc-2011-practices.pdf](https://gameanimation.s3.amazonaws.com/game-skinning-and-deforming)
-
-## Visualizing Character in Skeletal Animation
 
 - 캐릭터는 **개별 강체(rigid mesh)** 를 이용해 더 단순하게 시각화할 수도 있음
 
@@ -47,10 +45,6 @@
 - 참고 영상:  
   - [https://youtu.be/PBydW8L6B9Y](https://youtu.be/PBydW8L6B9Y)  
   - [https://youtu.be/hpqec_twooo](https://youtu.be/hpqec_twooo)
-
-## Skeletal Animation
-
-(본문 없음)
 
 ## Skeletal Animation
 
@@ -79,16 +73,6 @@ Hips
  └── LeftUpLeg ─ LeftLeg ─ LeftFoot
 ```
 
-## "Skeleton" Part
-
-- **"Skeleton"**: 정적 데이터
-  - **joint 계층 구조**
-  - **부모 joint로부터의 오프셋(offset)**
-    - 일반적으로 translation
-    - 기준: 부모 좌표계(parent frame)
-
-> 구성도는 동일
-
 ## Recall: Hierarchical Model - Human Figure
 
 - 각 body part의 움직임은 **자기 부모의 좌표계** 기준으로 정의됨  
@@ -104,32 +88,13 @@ Hips
 ## "Motion" Part
 
 - **"Motion"**: 시간에 따라 변하는 데이터
-  - **내부 joint들의 움직임**
+
+  - **내부 joint의 움직임**
     - 보통 회전(rotation)
-    - 기준: joint offset 적용 후의 부모 frame
+    - 기준: 각 joint의 기본 프레임 (즉, joint offset이 적용된 이후의 부모 프레임)
 
   - **skeletal root의 이동 (translation 및 회전 포함)**
     - 일반적으로 pelvis joint
-    - 기준: world frame
-
-- **"Motion"**: 시간에 따라 변하는 데이터
-  - **내부 joint의 움직임**
-    - 보통 회전(rotation)
-    - 기준: 각 joint의 기본 프레임  
-      (즉, joint offset이 적용된 이후의 부모 프레임)
-
-  - **skeletal root의 이동 (translation 및 rotation 포함)**
-    - 일반적으로 pelvis
-    - 기준: world frame
-
-- **"Motion"**: 시간에 따라 변하는 데이터
-  - **내부 joint의 움직임**
-    - 보통 회전(rotation)
-    - 기준: 각 joint의 기본 프레임  
-      (즉, joint offset이 적용된 이후의 부모 프레임)
-
-  - **skeletal root의 이동 (translation 및 rotation 포함)**
-    - 일반적으로 pelvis
     - 기준: world frame
 
 [https://youtu.be/PBydW8L6B9Y](https://youtu.be/PBydW8L6B9Y)
@@ -141,10 +106,6 @@ Hips
 - **Joint**: 두 객체 사이를 연결하고 회전을 허용하는 연결점  
 - **Link**: joint 사이의 강체  
 - **End effector**: 운동 사슬 끝의 자유 단말 지점
-
-## Forward Kinematics
-
-(본문 없음)
 
 ## Kinematics
 
@@ -270,10 +231,6 @@ Hips
   - **Joint transformation $J_i$**
     → "Motion"
 
-## Quiz 1
-
-## Quiz 2
-
 # Creating Character Animation
 
 ## Methods for Creating Character Animation
@@ -299,8 +256,6 @@ Hips
 > 출처 이미지:  
 > [https://book.co...](https://book.co... MATLAB 2021 기준)
 
-## Keyframe Animation (추가 설명)
-
 - 손그림 애니메이션 전통에 뿌리를 둔 **전통적인 방식**
 
 - 현실적이거나 물리적으로 타당한 움직임을 구현하기 어려움  
@@ -318,10 +273,7 @@ Hips
 
 - **"Motion"과 "skeleton"은 후처리를 통해 추출됨**
 
-## Motion Capture (예시)
-
 > [https://youtu.be/YcS73UCkO20](https://youtu.be/YcS73UCkO20)
-
 - 실시간 캡처 현장 사진
 
 ## Bvh Motion Capture Data Example
@@ -400,8 +352,6 @@ MOTION {
 
 > DeepMimic (Peng et al. 2018): [https://youtu.be/pXp5v2gcz90](https://youtu.be/pXp5v2gcz90)  
 > PhysicsFC (Kim et al. 2025): [https://youtu.be/sdWRBWESC4A](https://youtu.be/sdWRBWESC4A)
-
-# BVH File Format
 
 ## BVH File Format
 
@@ -526,5 +476,3 @@ Frame Time: 0.016667
 
 - 목록에서 다른 motion 선택 가능
 - 해당 BVH 파일을 다운로드하여 텍스트 에디터에서 열어볼 수 있음
-
-## Quiz 3

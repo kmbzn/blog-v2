@@ -35,7 +35,7 @@
   - Diffuse, Specular, Normal Map
   - Texture Map의 다양한 활용
 
-## More Lighting
+# More Lighting
 
 ## Recall: Reflection of General Materials
 
@@ -46,15 +46,15 @@
 ## Bidirectional Reflectance Distribution Function (BRDF)
 
 - 불투명 표면에서 빛이 어떻게 반사되는지 정의
-  - θᵢ, φᵢ: 입사 광 방향
-  - θₒ, φₒ: 반사 광 방향
-  - fᵣ: 출사 방향에 따른 반사 복사도 비율을 반환
+  - $\theta_i, \phi_i$: 입사광 방향
+  - $\theta_o, \phi_o$: 반사광 방향
+  - $f_r$: 출사 방향에 따른 반사 복사도 비율을 반환
 
-- 수식 표현:  
-  fᵣ(θᵢ, φᵢ; θₒ, φₒ) ≥ 0
+- 수식 표현:
+$$f_r(\theta_i, \phi_i; \theta_o, \phi_o) \ge 0$$
 
 ## Examples of BRDF  
-(theoretical approximation, not from measurement)
+*(theoretical approximation, not from measurement)*
 
 - 자동차 백미러의 강한 반사
 - 분필 표면처럼 매우 diffuse한 재질
@@ -72,8 +72,6 @@
 - 특정 재질의 BRDF는 다음과 같은 장비로 측정 가능:
   - 기본 개념: 회전하는 광원과 회전하는 센서 사용
 
-(이미지 출처: Chuck Molled)
-
 ## Using Measured BRDF for Rendering
 
 - 측정된 BRDF는 렌더링에 사용될 수 있음
@@ -83,8 +81,6 @@
 | Rendered object | 렌더링된 오브젝트 |
 | Real object example | 실제 물체 예시 |
 
-(*BRDF 데이터 및 일부 이미지는 https://www.cs.cornell.edu/projects/relight/BRDF 의 자료 기반)
-
 ## Local vs. Global Illumination
 
 - **Local (또는 direct, non-global) illumination**
@@ -93,8 +89,6 @@
   - 예: Phong illumination 모델
 
 (그림: Direct illumination 예시)
-
-## Local vs. Global Illumination
 
 - **Global illumination**
   - 직접 조명 +
@@ -110,8 +104,6 @@
 - 간접 조명은 주변광(ambient component)으로만 **대략적으로 근사됨**
 
 (그림: Phong direct vs. ambient 근사 비교)
-
-## Quiz 1
 
 ## Texture Mapping
 
@@ -165,15 +157,7 @@
 
 (그림: 나무 상자 및 버섯 모델의 UV 매핑 예시)
 
-출처:  
-https://learn.foundry.com/modo/content/help/pages/modeling/uv/uv_unwrapping.html  
-https://blenderartists.org/t/uv-unwrapping-scaling-issue/1342000
-
 (그림: 캐릭터, 자동차 등 다양한 UV 매핑 예시)
-
-출처:  
-https://help.autodesk.com/view/MAYAUL/2023/ENU/?guid=GUID-1DC9DC36-299E-44B5-A785-3A3F91A8E82A  
-https://sketchfab.com
 
 ## Defining Texture Coordinate Function:  
 2) Projections to Parametric Surfaces
@@ -193,8 +177,6 @@ Cylindrical projection
 
 (그림: 실린더 형태로 투영된 텍스처)
 
-## Quiz 2
-
 ## Rendering Texture-Mapped Objects
 
 ```
@@ -207,7 +189,7 @@ pixel.color = color
 - 그러나 텍스처 좌표 함수는 각 정점(vertex)에 대해 정의됨
 - 그렇다면 각 픽셀마다의 텍스처 좌표는 어떻게 계산할 수 있을까?
 - 텍스처 좌표는 다각형 내부에서 barycentric interpolation으로 계산됨
-- 다각형 내부의 각 픽셀에 대해, 픽셀이 포함된 삼각형의 정점 좌표에 따라 (u, v)가 결정됨
+- 다각형 내부의 각 픽셀에 대해, 픽셀이 포함된 삼각형의 정점 좌표에 따라 `(u, v)`가 결정됨
 
 $$
 (u, v) = \alpha_1 (u_1, v_1) + \alpha_2 (u_2, v_2) + \alpha_3 (u_3, v_3)
@@ -233,8 +215,6 @@ $$
 - specular map
 - normal map
 
-출처: https://www.models-resource.com
-
 (예시: Game of Thrones 캐릭터 텍스처)
 - final 렌더링
 - diffuse
@@ -242,8 +222,6 @@ $$
 - wireframe
 - normal
 - texture map
-
-출처: revulo.romeromain.com
 
 ## Normal Mapping - Motivation
 
@@ -253,8 +231,6 @@ $$
 
 - 인간 시각은 실제 형상이 아닌 밝기 패턴으로 형태를 인식
   - 즉, 밝고 어두운 영역의 패턴은 normal에 의해 결정됨
-
-출처: https://commons.wikimedia.org
 
 ## Normal Mapping - Basic Idea
 
@@ -271,11 +247,9 @@ $$
 - 중: simplified (900 triangles)
 - 우: 더 간단한 모델 (200 triangles)
 
-출처: https://cs.brown.edu/courses
-
 ## Normal Mapping - Details
 
-- 고폴리 모델의 normal vector를 각 픽셀의 RGB 값으로 인코딩
+- 고폴리(high-poly) 모델의 normal vector를 각 픽셀의 RGB 값으로 인코딩
 - tangent space normal map에서는 픽셀 RGB가 u, v, w 축에 해당하는 normal 성분을 나타냄
 
 표기:
@@ -283,21 +257,13 @@ $$
 - u: 텍스처 u축
 - v: 텍스처 v축
 - w: 표면의 실제 normal 방향
-
-참고:
-https://foundationsofgameenginedev.com
-
-## Normal Mapping - Details
-
 - R = Nᵤ, G = Nᵥ, B = Nʷ  
   - U: -1 to +1 → Red: 0 to 255  
   - V: -1 to +1 → Green: 0 to 255  
   - W: 0 to +1 → Blue: 128 to 255
 
 - tangent space normal map이 푸르스름한 이유:
-  - 대부분의 normal은 tangent space 기준 (128, 128, 255) 근처이기 때문
-
-## Quiz 3
+  - 대부분의 normal은 tangent space 기준 `(128, 128, 255)` 근처이기 때문
 
 ## Bump Mapping
 
@@ -328,7 +294,6 @@ https://foundationsofgameenginedev.com
 
 - Normal mapping / Displacement mapping  
   - https://threejs.org/examples/#webgl_materials_displacementmap
-
 - Bump mapping  
   - https://threejs.org/examples/#webgl_materials_bumpmap
 
@@ -343,16 +308,12 @@ https://foundationsofgameenginedev.com
 
 (이미지: 텍스처만 적용된 장면 vs. 라이트맵이 적용된 장면 비교)
 
-출처: Prof. Seungki Yoon (KAIST)
-
 ## Shadow Map
 
 - light view에서의 depth map을 이용해 샘플 지점이 보이는지를 판단
   - 눈에는 보이지만 광원에 가려진 지점은 그림자로 표시됨
 
 (그림: teapot을 기준으로 광원 방향에서 깊이 확인)
-
-출처: Prof. Seungki Yoon (KAIST)
 
 ## Environment Map
 
@@ -361,8 +322,6 @@ https://foundationsofgameenginedev.com
   - 표면 normal을 이용해 텍스처 좌표 계산
 
 (그림: 구면에 적용된 environment map)
-
-출처: Prof. Seungki Yoon (KAIST)
 
 ## [Practice] Online Demos
 

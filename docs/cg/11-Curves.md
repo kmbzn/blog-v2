@@ -310,8 +310,6 @@
   - $b_0(t) = 1 - t$
   - $b_1(t) = t$
 
-## Quiz 1
-
 # Hermite Curve
 
 ## Hermite Curve의 개념 및 동기
@@ -431,8 +429,6 @@
 
 - 끝점과 접선(도함수)의 위치를 드래그하여  
   곡선이 어떻게 변하는지 실시간으로 확인
-
-## Quiz 2
 
 # Bezier Curve
 
@@ -724,8 +720,6 @@
 
 - 끝점 보간(end point interpolation):  
   Bezier 곡선은 $\mathbf{p}_0$과 $\mathbf{p}_n$을 정확히 통과
-
-## Quiz 3
 
 # Brief Intro to Spline
 
