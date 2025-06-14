@@ -716,9 +716,9 @@
 
 ## Properties of Bezier Curve
 
-- **제어점(control points) 을 통해 직관적으로 제어 가능
+- 제어점(control points) 을 통해 직관적으로 제어 가능
 
-- 곡선은 항상 **제어점들의 convex hull 안에 존재
+- 곡선은 항상 제어점들의 convex hull 안에 존재
 
   - convex hull: 제어점들을 포함하는 최소 볼록 다각형
 
