@@ -20,7 +20,7 @@
 
 # Basic Concepts
 
-## State vs. Movement
+## State vs Movement
 
 - **position : translation**  
   - position = 객체의 3차원 위치  
@@ -28,12 +28,9 @@
 
 > 기준 좌표계: Some reference frame
 
-## State vs. Movement
-
-- **(position : translation)**  
-- **(orientation : rotation)**  
-- → **(state : movement)**
-
+- (position : translation)  
+- (orientation : rotation)  
+- → (state : movement)
 - orientation = 객체의 3차원 “방향 상태”  
 - rotation = 각운동 (angular movement)
 
@@ -52,7 +49,7 @@
   - **Translation**: 선형 이동 (위치 간 차이)  
   - **Rotation**: 각운동 (방향 간 차이)
 
-- 이 관계는 **점(point)** 과 **벡터(vector)** 관계에 유사함  
+- 이 관계는 **점(point)** 과 **벡터(vector)** 관계와 유사함  
   - 점(point): 위치  
   - 벡터(vector): 두 점 사이의 차이
 
@@ -81,16 +78,10 @@
   - 한 방향으로의 이동: **1 DOF**
   - 한 축을 중심으로 하는 회전: **1 DOF**
 
-## Degrees of Freedom (DOF)
-
 - 평면 상 이동 → 2 DOFs  
 - 두 축을 중심으로 하는 회전 → 2 DOFs
-
 - 3D 공간 이동 → 3 DOFs  
 - 3D 공간에서의 회전 → 3 DOFs
-
-## Degrees of Freedom (DOF)
-
 - 3D 공간에서의 임의의 강체 운동  
   → **6 DOFs**  
   (이동 3개 + 회전 3개)
@@ -100,7 +91,6 @@
 - **정리 (Theorem)**  
   > When a sphere is moved around its centre it is always possible to find a diameter whose direction in the displaced position is the same as in the initial position.  
   > — *Leonhard Euler (1707–1783)*
-
 - 3차원 공간에서,  
   **강체(rigid body)의 임의의 이동 중 물체의 한 점이 고정되어 있다면**,  
   이는 항상 **어떤 축을 중심으로 하는 단일 회전**으로 표현 가능하다.
@@ -110,7 +100,7 @@
 - 3D 회전 (즉, 한 점이 고정된 상태의 모든 움직임)은  
   항상 **회전 축**과 그 축을 중심으로 하는 **회전 각도**를 찾을 수 있음
 
-> $θ$: 회전 각도  
+> $\theta$: 회전 각도  
 > $n$: 회전 축 (단위 벡터)
 
 # 3D Orientation & Rotation Representations
@@ -195,7 +185,7 @@ R_x(\theta) =
 0 & \cos \theta & -\sin \theta \\
 0 & \sin \theta & \cos \theta
 \end{bmatrix}
-$$
+$$  
 
 - $y$축 회전:
 
@@ -206,7 +196,7 @@ R_y(\theta) =
 0 & 1 & 0 \\
 -\sin \theta & 0 & \cos \theta
 \end{bmatrix}
-$$
+$$  
 
 - $z$축 회전:
 
@@ -222,10 +212,8 @@ $$
 ## Gimbal Lock
 
 - Euler 각을 사용할 경우, 두 회전 축이 정렬되면 일시적으로 **자유도(DOF)를 잃게 됨**
-
 - **정상 구성 (Normal configuration)**:  
   - 물체는 자유롭게 회전 가능
-
 - **Gimbal lock 구성**:  
   - 특정 방향으로의 회전이 불가능해짐
 
@@ -239,15 +227,12 @@ $$
 - 세 회전 축을 정렬시켜 gimbal lock 상태 만들기  
   - 예: pitch를 90도로 설정
 
-## Quiz 1
-
 ## Rotation Vector (Axis-Angle)
 
 - 회전 벡터(rotation vector)  
-  - $ \mathbf{v} = \theta \, \hat{\mathbf{v}} = (x, y, z) $
-
+  - $\mathbf{v} = \theta \, \hat{\mathbf{v}} = (x, y, z)$
 - 축-각 표현(axis-angle)  
-  - $ (\theta, \hat{\mathbf{v}}) $
+  - $(\theta, \hat{\mathbf{v}})$
 
 > $\theta$: 회전 각도  
 > $\hat{\mathbf{v}}$: 회전 축 (단위 벡터)
@@ -255,8 +240,7 @@ $$
 ## Rotation Vector (Axis-Angle)
 
 - 회전 벡터는 **exponential coordinates** 라고도 불림
-
-- 명칭 유래가 궁금하다면 다음 참고:  
+- 명칭 유래가 궁금하다면 다음을 참고:  
   [Modern Robotics, Section 3.2.3](http://hades.mech.northwestern.edu/images/2/25/MR-v2.pdf)
 
 ## Rotation Matrix
@@ -274,33 +258,26 @@ r_{31} & r_{32} & r_{33}
 \end{bmatrix}
 \quad \text{(expressed in the world frame)}
 $$
-
-## Rotation Matrix
-
 - 정방 행렬 $R$이 회전 행렬이기 위한 조건은 다음 두 가지를 모두 만족해야 함:
 
   1. $RR^T = R^TR = I$
   2. $\det(R) = 1$
 
 - 회전 행렬은 **orthogonal matrix** 이며, 행렬식이 1인 경우는 특별히 **special orthogonal matrix** 라고 부름
-
 - 3차원 회전 행렬의 집합은 **$SO(3)$**, 즉 special orthogonal group을 구성함
 
 ## Geometric Properties of Rotation Matrix
 
 - $R^T$는 $R$의 **역회전**임  
   - $RR^T = I \iff R^{-1} = R^T$
-
 - $R_1 R_2$ 또한 회전 행렬임 (회전의 합성)  
   - 증명:  
-    $$(R_1 R_2)^T (R_1 R_2) = R_2^T R_1^T R_1 R_2 = R_2^T R_2 = I$$  
-    $ \det(R_1 R_2) = \det(R_1) \cdot \det(R_2) = 1 $
+    $(R_1 R_2)^T (R_1 R_2) = R_2^T R_1^T R_1 R_2 = R_2^T R_2 = I$  
+    $\det(R_1 R_2) = \det(R_1) \cdot \det(R_2) = 1$
 
 - 회전 행렬을 적용하더라도 벡터의 길이는 변하지 않음  
   - 증명:  
     $$\|R \mathbf{v}\|^2 = (R \mathbf{v})^T (R \mathbf{v}) = \mathbf{v}^T R^T R \mathbf{v} = \mathbf{v}^T \mathbf{v} = \|\mathbf{v}\|^2$$
-
-## Quaternions
 
 - 복소수(complex number)는 2D 회전을 표현 가능  
   - $z = x + yi$, $i^2 = -1$  
@@ -335,7 +312,7 @@ $$
 ## Unit Quaternions
 
 - **Unit quaternion**은 3D 회전을 표현함  
-  - $$q = w + x i + y j + z k$$
+  - $q = w + x i + y j + z k$
   - 조건: $x^2 + y^2 + z^2 = 1$
 
 - $z = \cos \varphi + i \sin \varphi$ 형태의 복소수와 유사하게, 2D 회전을 표현함
@@ -389,15 +366,13 @@ $$
 - 회전 적용:  
   $$\mathbf{p'} = q_1 q_2 \, \mathbf{p} \, (q_1 q_2)^{-1} = q_1 (q_2 \, \mathbf{p} \, q_2^{-1}) q_1^{-1}$$
 
-## Quiz 2
+## Which Representation to Use?
 
-# Which Representation to Use?
-
-## 1) "Addition" of Rotations
+### 1) "Addition" of Rotations
 
 - ✅ Rotation matrix, Unit quaternion:  
   - $R_2 R_1,\; q_2 q_1$  
-  - $R_x(\theta_1)$ 후에 $R_y(\theta_2)$ 적용하면 $(현재 기준)$ body frame 기준 회전  
+  - $R_x(\theta_1)$ 후에 $R_y(\theta_2)$ 적용하면 (현재 기준) body frame 기준 회전  
   - 단, 요소 단위 덧셈은 회전 행렬이나 쿼터니언을 보장하지 않음
 
 - ❌ Euler angles:  
@@ -407,7 +382,7 @@ $$
 - ❌ Rotation vector:  
   - $\mathbf{v}_1 + \mathbf{v}_2$는 $\mathbf{v}_2$로 이어서 회전한다는 의미가 아님
 
-## 2) "Subtraction" of Rotations
+### 2) "Subtraction" of Rotations
 
 - ✅ Rotation matrix, Unit quaternion:  
   - $R_1^T R_2,\; q_1^{-1} q_2$  
@@ -423,7 +398,7 @@ $$
   - $\mathbf{v}_2 - \mathbf{v}_1$  
   - 두 회전의 차이를 의미하지 않음
 
-## 3) Interpolation of Rotations
+### 3) Interpolation of Rotations
 
 - 각 구성 요소를 선형 보간(linear interpolation)해도 괜찮을까?
 
@@ -492,11 +467,11 @@ $$
 = R_1 \exp \left( t \cdot \log \left( R_1^T R_2 \right) \right)
 $$
 
-> $t$는 지수(power) 연산이며 전치(transpose)가 아님에 주의
+> 여기서 $t$는 지수(power) 연산이며 전치(transpose)가 아님
 
 ## Slerp with Rotation Matrices
 
-- $$\text{slerp}(R_1, R_2, t) = R_1 (R_1^T R_2)^t$$
+- $\text{slerp}(R_1, R_2, t) = R_1 (R_1^T R_2)^t$
 
 - 의미:
   - $R_1^T R_2$: $R_1$에서 $R_2$로의 회전 차이  
@@ -527,7 +502,6 @@ $$
 - 실습 팁:
   - `pyglm`, `scipy` (Python), `Eigen` (C++) 등 라이브러리에서 $\exp$, $\log$ 함수 사용 가능
   - 본 실습에서는 `pyglm` 사용
-
 - 직접 구현도 가능하며 복잡하지 않음
 
 ## Slerp with Quaternions
@@ -569,9 +543,7 @@ $$
 - "Start Rotation" 및 "End Rotation" 변경  
 - "Interpolate" 슬라이더 이동해보기
 
-## Quiz 3
-
-## 3) Interpolation of Rotations: Summary
+### 3) Interpolation of Rotations: Summary
 
 - ✅ **Rotation matrix, Unit quaternion**:
   - $\text{slerp}(R_1, R_2, t)$ 또는 $\text{slerp}(q_1, q_2, t)$
@@ -585,7 +557,7 @@ $$
   - $\text{lerp}(\mathbf{v}_1, \mathbf{v}_2)$  
   - 두 회전 사이의 선형 보간이 아님
 
-## 4) Continuity / Correspondence
+### 4) Continuity / Correspondence
 
 - ❌ Euler angles, Rotation vector:
   - 회전을 3개의 매개변수로 표현함
@@ -597,71 +569,68 @@ $$
 > 하나의 방향이 여러 Euler 각도로 표현됨  
 > 시간에 따라 방향이 부자연스럽게 튀는 현상
 
-## 4) Continuity / Correspondence
+△ Unit quaternion:
+- 4개의 매개변수 사용
+- 연속 표현 가능
+- 이중 일치(two-to-one mapping)
+  - $q$와 $-q$는 같은 회전을 의미
+  - → 이 특성을 **antipodal equivalence**라 함
 
-- △ Unit quaternion:
-  - 4개의 매개변수 사용
-  - 연속 표현 가능
-  - 이중 일치(two-to-one mapping)
-    - $q$와 $-q$는 같은 회전을 의미
-    - → 이 특성을 **antipodal equivalence**라 함
-
-- ✅ Rotation matrix:
-  - 9개의 매개변수 사용
-  - 일대일 대응 및 연속 표현 가능
+✅ Rotation matrix:
+- 9개의 매개변수 사용
+- 일대일 대응 및 연속 표현 가능
 
 ## Again: Which Representation to Use?
 
 - **일반적인 조언**:
   - 회전 행렬 또는 unit quaternion 사용
-
 - **고급 조언**:
   - 하나의 표현만 고집하지 말 것 (각각 장단점 존재)
   - 표현 간 변환을 통해 상황에 맞는 최적 방식 선택 가능
 
 ## Pros & Cons of Euler Angles
 
-- 🔻 단점:
-  - 정확한 **덧셈, 뺄셈, 보간 연산**이 불가능
-  - 불연속성과 다대일 표현
-  - Gimbal lock 문제
+🔻 단점:
+- 정확한 **덧셈, 뺄셈, 보간 연산**이 불가능
+- 불연속성과 다대일 표현
+- Gimbal lock 문제
 
-- 🔺 장점:
-  - 직관적인 조작 가능 (3D 툴에서 널리 사용되는 이유)
-  - 실제 기구(hardware)의 3축 조인트 상태 표현에 적합  
-    (예: 로봇 관절이나 짐벌 등)
+🔺 장점:
+- 직관적인 조작 가능 (3D 툴에서 널리 사용되는 이유)
+- 실제 기구(hardware)의 3축 조인트 상태 표현에 적합  
+  (예: 로봇 관절이나 짐벌 등)
 
 ## Pros & Cons of Rotation Vector
 
-- 🔻 정확한 **"덧셈"**, **"뺄셈"**, **보간** 연산이 불가능  
-- 🔻 불연속성 및 다대일 대응
+🔻 정확한 **"덧셈"**, **"뺄셈"**, **보간** 연산이 불가능  
+🔻 불연속성 및 다대일 대응
 
-- 🔺 회전 시각화에 용이  
-  - 회전 축과 각도를 직관적으로 표현 가능
+🔺 회전 시각화에 용이  
+- 회전 축과 각도를 직관적으로 표현 가능
 
-- 🔺 3개의 매개변수로 가장 간결한 표현 가능  
-  - Euler angle도 3개지만 gimbal lock 문제 존재
+🔺 3개의 매개변수로 가장 간결한 표현 가능  
+- Euler angle도 3개지만 gimbal lock 문제 존재
 
 ## Pros & Cons of Rotation Matrix
 
-- 🔺 정확한 **"덧셈"**, **"뺄셈"**, **보간** 연산 가능  
-- 🔺 연속적인 일대일 대응 (매우 좋음)  
-- 🔺 방향 시각화에 용이  
-  - 각 행(또는 열)을 x, y, z 축으로 시각화 가능  
-- 🔺 4x4 아핀 변환 행렬로 쉽게 확장 가능 (회전 + 이동 통합 표현)
+🔺 정확한 **"덧셈"**, **"뺄셈"**, **보간** 연산 가능  
+🔺 연속적인 일대일 대응 (매우 좋음)  
+🔺 방향 시각화에 용이  
+- 각 행(또는 열)을 x, y, z 축으로 시각화 가능  
+🔺 4x4 아핀 변환 행렬로 쉽게 확장 가능 (회전 + 이동 통합 표현)
 
-- 🔻 매개변수 수가 많음 (9개)  
-- 🔻 계산 비용이 조금 더 크며, 수치적으로 약간 덜 안정적 (unit quaternion 대비)
+🔻 매개변수 수가 많음 (9개)  
+🔻 계산 비용이 조금 더 크며, 수치적으로 약간 덜 안정적 (unit quaternion 대비)
 
 ## Pros & Cons of Unit Quaternion
 
-- 🔺 정확한 **"덧셈"**, **"뺄셈"**, **보간** 연산 가능  
-- 🔺 연속 표현 가능  
-- 🔺 4개의 매개변수만 사용  
-- 🔺 회전 행렬보다 계산이 빠르고 수치적으로 안정적
+🔺 정확한 **"덧셈"**, **"뺄셈"**, **보간** 연산 가능  
+🔺 연속 표현 가능  
+🔺 4개의 매개변수만 사용  
+🔺 회전 행렬보다 계산이 빠르고 수치적으로 안정적
 
-- 🔻 두 쿼터니언이 하나의 회전을 표현 (two-to-one, **antipodal equivalence**)  
-- 🔻 숫자 체계가 직관적이지 않음
+🔻 두 쿼터니언이 하나의 회전을 표현 (two-to-one, **antipodal equivalence**)  
+🔻 숫자 체계가 직관적이지 않음
 
 ## Conversion between Representations
 
