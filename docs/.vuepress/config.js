@@ -89,7 +89,7 @@ export default defineUserConfig({
         text: '🔣 Programming Language Theory',
         collapsible: true,
         children: [
-          '/pl/7.Deadlocks',
+          '/pl/13-FPL(1).md',
         ]
       },
     ],
