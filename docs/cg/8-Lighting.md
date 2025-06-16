@@ -845,8 +845,6 @@ float spec = pow(max(dot(view_dir, reflect_dir), 0.0), material_shininess);
 
 - 여기서 `max()`는 음수 색상을 방지하기 위해 사용됨
 
-## Quiz 3
-
 # Render a Cube using Phong Illumination and Phong Shading
 
 ## Recall: Phong Shading
