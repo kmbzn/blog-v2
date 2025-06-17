@@ -476,3 +476,131 @@ Frame Time: 0.016667
 
 - 목록에서 다른 motion 선택 가능
 - 해당 BVH 파일을 다운로드하여 텍스트 에디터에서 열어볼 수 있음
+
+## 10 - Lab - Character Animation
+
+## 개요
+- 예제: Joint & Link 변환
+- CGR 연구실의 최신 연구 간략한 소개
+
+## 예제: Joint & Link 변환
+
+### 상기: 순방향 운동학 맵 (Forward Kinematics Map)
+순방향 운동학 맵 T는 다음과 같은 변환들의 교차 곱으로 표현됩니다.
+- 관절(Joint) 변환 (시간에 따라 변함)
+    - 관절 움직임 (모션, *motion*)
+- 링크(Link) 변환 (정적)
+    - 관절 오프셋 (스켈레톤, *skeleton*)
+
+$T = \dots T_i L_i R_i \dots T_1 L_1 R_1$
+
+(여기서 $ T_i $는 i번째 관절로의 이동(translation), $ R_i $는 i번째 관절에서의 회전(rotation)을 의미합니다.)
+
+### [코드] 1-joint-link-transform
+`7-Lab-Hierarchical-Mesh/1-hierarchical.py` 코드를 수정하여, 동일한 기능은 유지하되 지역(local) 변환 대신 관절(joint) & 링크(link) 변환을 사용하도록 만들어 봅시다.
+
+```python
+# 기존 hierarchical.py의 Node 클래스 (일부)
+class Node:
+    def __init__(self, name, vao, color, local_transform):
+        # ...
+        self.local_transform = local_transform
+        self.global_transform = glm.mat4()
+        # ...
+    
+    def update_tree_global_transform(self, parent_global_transform):
+        self.global_transform = parent_global_transform * self.local_transform
+        for child in self.children:
+            child.update_tree_global_transform(self.global_transform)
+            
+# 수정된 1-joint-link-transform.py의 Node 클래스 (일부)
+class Node:
+    def __init__(self, name, vao, color, link_transform):
+        self.name = name
+        self.vao = vao
+        self.color = color
+        self.link_transform = link_transform
+        self.joint_transform = glm.mat4()
+        # self.local_transform = glm.mat4() # 더 이상 사용하지 않음
+        self.global_transform = glm.mat4()
+        # self.children = [] # 더 이상 사용하지 않음
+
+    def set_joint_transform(self, joint_transform):
+        self.joint_transform = joint_transform
+
+    def update_tree_global_transform(self, parent_global_transform):
+        link_transform_from_parent = self.link_transform
+        joint_transform = self.joint_transform
+        self.global_transform = parent_global_transform * link_transform_from_parent * joint_transform
+
+# 메인 루프에서의 변환 설정
+def main():
+    # ... 초기화 코드 ...
+
+    while not glfw.window_should_close(window):
+        # ...
+        
+        # 기존 hierarchical.py 방식
+        # th = glfw.get_time()
+        # box.set_local_transform(glm.rotate(th, (0,0,1)))
+        # blue.set_local_transform(glm.translate((0,.5,0)) * glm.rotate(th, (0,0,1)))
+        # red.set_local_transform(glm.translate((0,.5,0)) * glm.rotate(th, (0,0,1)))
+        
+        # 수정된 1-joint-link-transform.py 방식
+        # joint 키프레임 변환
+        t = glfw.get_time()
+        th = np.sin(t*np.pi)*.5 + np.pi/2.
+        joint_transform = glm.rotate(th, (0,0,1))
+
+        # 각 노드의 joint 변환 설정
+        box.set_joint_transform(glm.mat4())
+        blue.set_joint_transform(joint_transform)
+        red.set_joint_transform(joint_transform)
+        
+        # ... 렌더링 코드 ...
+```
+
+## CGR 연구실의 최신 연구 간략한 소개
+
+### CGR 연구실 소개
+컴퓨터 그래픽스 & 로보틱스 연구실 (Computer Graphics & Robotics Lab.)
+
+저희 연구 그룹은 다음과 같은 목표를 가집니다.
+- 인간, 동물, 로봇 등 자연적이거나 인공적인 생명체의 다양한 측면(움직임, 근본적인 메커니즘 등)을 이해하고
+- 가상 환경에서 실제 세계로 그것들을 구현합니다.
+
+### 주요 연구 방향
+'어떻게 움직일 것인가?'
+- 관절이 있는 캐릭터
+- 로봇
+
+'움직이는 법을 배우기 (Learning How to Move)'
+
+## PhysicsFC: 물리 기반 축구 선수 컨트롤러를 위한 사용자 제어 스킬 학습
+(PhysicsFC: Learning User-Controlled Skills for a Physics-Based Football Player Controller)
+
+학회: SIGGRAPH 2025, 밴쿠버, 8월 10-14일
+
+인용: Minsu Kim, Eunho Jung, Yoonsang Lee. "PhysicsFC: Learning User-Controlled Skills for a Physics-Based Football Player Controller." ACM Transactions on Graphics (SIGGRAPH 2025) 게재 승인.
+
+## 타겟 위치 도달 과업을 위한 딥 강화학습 기반 모션 매칭 활용
+(Utilizing Motion Matching with Deep Reinforcement Learning for Target Location Tasks)
+
+움직이는 장애물이 있는 타겟 위치 도달 과업을 위해, 우리는 '히트 보상(hit reward)'과 '장애물 커리큘럼(obstacle curriculum)'이라는 두 가지 새로운 구성 요소를 제안합니다.
+(이 과업에서, 정책은 보조 센서 입력을 받습니다.)
+
+인용: Jeongun Lee, Taesoo Kwon, Hyunjin Shin, Yoonsang Lee. “Utilizing Motion Matching with Deep Reinforcement Learning for Target Location Tasks.” Eurographics 2024 Short Papers, 2024년 4월.
+
+## 다양한 환경에서의 단일 강체 캐릭터의 적응형 추적
+(Adaptive Tracking of a Single-Rigid-Body Character in Various Environments)
+
+움직이는 장애물이 있는 타겟 위치 도달 과업을 위해, 우리는 '히트 보상(hit reward)'과 '장애물 커리큘럼(obstacle curriculum)'이라는 두 가지 새로운 구성 요소를 제안합니다.
+(이 과업에서, 정책은 보조 센서 입력을 받습니다.)
+
+인용: Taesoo Kwon, Taehong Gu, Jaewon Ahn, Yoonsang Lee. "Adaptive Tracking of a Single-Rigid-Body Character in Various Environments." SA '23: SIGGRAPH Asia 2023 Conference Papers, 논문 번호: 118, 2023년 12월.
+
+## 모션 매칭 (Motion Matching)
+
+우리는 모션 매칭에 기반한 상호작용적 캐릭터 제어 방법을 제안합니다.
+
+인용: Jeongun Lee, Taesoo Kwon, Yoonsang Lee. “Interactive Character Path-Following Using Long-Horizon Motion Matching With Revised Future Queries.” IEEE Access, 2023년 1월.

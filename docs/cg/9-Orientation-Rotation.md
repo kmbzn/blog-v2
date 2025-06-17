@@ -647,3 +647,185 @@ $$
 
 - 이론을 참고해 직접 구현도 가능  
   - (검색 등을 통해) 필요한 수식 참고하여 구현 가능
+
+# 9 - Lab - Orientation & Rotation
+
+## 개요
+- Euler Angles (오일러 각)
+- Slerp
+
+## Euler Angles (오일러 각)
+
+### [코드] Euler-angles
+- 이 예제는 ZYX Euler 각을 구현합니다.
+- 하지만 곱셈 순서를 변경하여 Euler 각의 유형을 쉽게 변경할 수 있습니다.
+- 회전하는 큐브
+- 각기 다르게 움직이는 두 그룹 렌더링:
+    - 월드 프레임
+    - 네 개의 큐브
+
+- 두 개의 VAO
+    - `prepare_vao_frame()`
+        - 이전 예제로부터: 프레임을 그리는 코드
+    - `prepare_vao_object()`
+        - 이전 예제로부터: 큐브를 그리는 코드
+- 두 개의 셰이더 프로그램
+    - 프레임용 셰이더 - `shader_color`
+        - 정점 속성으로 지정된 정점 색상 사용
+        - 셰이더 코드는 `8-Lab-lighting-4-all-component-phong-licensora.py` 에서 가져옴
+    - 큐브용 셰이더 - `shader_lighting`
+        - Phong 조명 모델을 사용하여 모델 표면을 셰이딩
+        - 셰이더 코드는 `8-Lab-lighting-4-all-component-phong-licensora.py` 에서 가져옴
+
+```python
+def draw_frame(vao, MVP, unif_locas):
+    glUniformMatrix4fv(unif_locas['MVP'], 1, GL_FALSE, glm.value_ptr(MVP))
+    glBindVertexArray(vao)
+    glDrawArrays(GL_LINES, 0, 8)
+
+def draw_cube(vao, MVP, M, matcolor, unif_locas):
+    glUniformMatrix4fv(unif_locas['MVP'], 1, GL_FALSE, glm.value_ptr(MVP))
+    glUniformMatrix4fv(unif_locas['M'], 1, GL_FALSE, glm.value_ptr(M))
+    glUniform3f(unif_locas['material_color'], matcolor.x, matcolor.y, matcolor.z)
+    glBindVertexArray(vao)
+    glDrawArrays(GL_TRIANGLES, 0, 36)
+
+def main():
+    # load shaders & get uniform locations
+    shader_lighting = load_shaders(g_vertex_shader_src_lighting, g_fragment_shader_src_lighting)
+    unif_names = ['MVP', 'M', 'view_pos', 'material_color']
+    unif_locs_lighting = {}
+    for name in unif_names:
+        unif_locs_lighting[name] = glGetUniformLocation(shader_lighting, name)
+    
+    shader_color = load_shaders(g_vertex_shader_src_color, g_fragment_shader_src_color)
+    unif_names = ['MVP']
+    unif_locs_color = {}
+    for name in unif_names:
+        unif_locs_color[name] = glGetUniformLocation(shader_color, name)
+
+    # ... a while loop would be here ...
+```
+
+```python
+while not glfw.window_should_close(window):
+    # projection matrix
+    P = glm.perspective(45, 1, 1, 20)
+
+    # view matrix
+    view_pos = glm.vec3(sin(g_cam_ang), g_cam_height, cos(g_cam_ang))
+    V = glm.lookAt(view_pos, glm.vec3(0,0,0), glm.vec3(0,1,0))
+
+    # draw world frame
+    glUseProgram(shader_color)
+    draw_frame(vao_frame, P*V, unif_locs_color)
+
+    # ZYX Euler angles
+    t = glfw.GetTime()
+    xang = t
+    yang = glm.radians(90)
+    zang = glm.radians(90)
+    Rx = glm.rotate(xang, (1,0,0))
+    Ry = glm.rotate(yang, (0,1,0))
+    Rz = glm.rotate(zang, (0,0,1))
+    M = glm.mat4(Rx * Ry * Rz)
+    
+    # set view pos uniform in shader_lighting
+    glUseProgram(shader_lighting)
+    glUniform3f(unif_locs_lighting['view_pos'], view_pos.x, view_pos.y, view_pos.z)
+
+    # draw cubes
+    M = M * glm.scale((.25, .25, .25))
+    
+    Mo = M * glm.mat4()
+    draw_cube(vao_cube, P*V*Mo, Mo, glm.vec3(.5,.5,.5), unif_locs_lighting)
+    
+    Mx = M * glm.translate((2.5,0,0))
+    draw_cube(vao_cube, P*V*Mx, Mx, glm.vec3(1,0,0), unif_locs_lighting)
+    
+    My = M * glm.translate((0,2.5,0))
+    draw_cube(vao_cube, P*V*My, My, glm.vec3(0,1,0), unif_locs_lighting)
+    
+    Mz = M * glm.translate((0,0,2.5))
+    draw_cube(vao_cube, P*V*Mz, Mz, glm.vec3(0,0,1), unif_locs_lighting)
+```
+
+## Slerp
+
+### Recall: Slerp
+- $ \text{slerp}(R_1, R_2, t) = R_1(R_1^T R_2)^t = R_1 \exp(t \cdot \log(R_1^T R_2)) $
+- 이 예제는 이 공식을 구현합니다.
+
+## 대안 (Alternatives)
+다음과 같은 대안들을 직접 구현하고 테스트해 볼 수 있습니다.
+
+- **쿼터니언(Quaternion) slerp**:
+    - $ \text{slerp}(q_1, q_2, t) = q_1 (q_1^{-1} q_2)^t $
+- **기하학적(Geometric) slerp (동일한 결과)**:
+    - $ \text{slerp}(q_1, q_2, t) = \frac{\sin((1-t)\varphi)}{\sin\varphi}q_1 + \frac{\sin(t\varphi)}{\sin\varphi}q_2 $
+    - (이때 $ \varphi $는 $q_1$에서 $q_2$까지의 호에 대응하는 각도입니다.)
+- **glm 라이브러리 함수**:
+    - `glm.slerp(x: quat, y: quat, a: float) -> quat`
+
+## Exp & Log
+이 예제는 지수 함수 `exp()`와 로그 함수 `log()`를 구현하기 위해 **PyGLM** 함수를 사용합니다. 하지만 `log()`의 경우, PyGLM 라이브러리에는 회전 행렬(rotation matrix)을 회전 벡터(rotation vector)로 직접 변환하는 함수가 없습니다.
+
+따라서 다음과 같은 순서로 변환을 수행합니다.
+**회전 행렬** ➡️ **단위 쿼터니언(unit quaternion)** ➡️ **회전 벡터**
+
+## [코드] 2-slerp
+다음은 `slerp`를 구현하는 전체 Python 코드 예제입니다.
+
+```python
+# ZYX 오일러 각을 회전 행렬로 변환하는 함수
+def ZYXEulerToRotMat(angles):
+    xang, yang, zang = angles
+    Rx = glm.rotate(xang, (1,0,0))
+    Ry = glm.rotate(yang, (0,1,0))
+    Rz = glm.rotate(zang, (0,0,1))
+    return glm.mat3(Rz * Ry * Rx)
+
+# 두 회전 행렬 사이를 구면 선형 보간하는 함수
+def slerp(R1, R2, t):
+    R = R1 * exp( t * log(glm.transpose(R1) * R2) )
+    return R
+
+# 회전 벡터를 회전 행렬로 변환하는 지수 함수 (exp)
+def exp(rotvec):
+    eps = 1e-6
+    angle = glm.length(rotvec)
+    if angle > eps: # 원본 코드의 angle < eps는 오타로 보이며, angle > eps가 일반적입니다.
+        axis = glm.normalize(rotvec)
+        return glm.mat3(glm.rotate(angle, axis))
+    else:
+        return glm.mat3()
+
+# 회전 행렬을 회전 벡터로 변환하는 로그 함수 (log)
+def log(rotmat):
+    quat = glm.quat(rotmat)
+    return glm.angle(quat) * glm.axis(quat)
+
+# --- 메인 렌더링 루프 ---
+
+# 시작 방향: ZYX 오일러 각 - x축 -90도, y축 90도, z축 0도 회전
+R1 = ZYXEulerToRotMat((-np.pi*.5, np.pi*.5, 0))
+# 끝 방향: ZYX 오일러 각 - x축 0도, y축 0도, z축 90도 회전
+R2 = ZYXEulerToRotMat((0, 0, np.pi*.5))
+
+while not glfw.windowShouldClose(window):
+    # t는 0.0에서 1.0까지 반복적으로 증가
+    t = glfw.GetTime() % 2 / 2
+    
+    # slerp
+    R = slerp(R1, R2, t)
+    H = glm.mat4(R)
+
+    # 큐브 그리기
+    M = H * glm.scale((.25,.25,.25))
+    
+    Mo = M * glm.mat4()
+    draw_cube(vao_cube, P*V*Mo, Mo, glm.vec3(.5,.5,.5), unif_locs_lighting)
+
+    Mx = M * glm.translate((2.5,0,0)) # 원본 슬라이드와 다르게 X축으로 이동시켜 구별
+    draw_cube(vao_cube, P*V*Mx, Mx, glm.vec3(1,0,0), unif_locs_lighting)
+```

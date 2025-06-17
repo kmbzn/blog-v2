@@ -12,7 +12,7 @@
 ## Final Exam Announcement
 
 - 일시: 6월 18일 (수), 오후 6:30–7:30
-- 장소: 추후 공지
+- 장소: IT/BT Room 911
 - 범위: Lecture 8–12, Lab 8–12
 
 - 시험 시작 후 30분 전에는 퇴실할 수 없습니다. (시험을 일찍 끝내더라도)
@@ -334,3 +334,422 @@ $$
 - Environment mapping  
   - https://threejs.org/examples/#webgl_materials_cubemap_dynamic  
   - https://threejs.org/examples/?q=refrac#webgl_materials_cubemap_refraction
+
+# 12 - Lab - Texture Mapping
+
+## Outline
+- Pillow 설치
+- 텍스처가 적용된 단일 삼각형
+- 텍스처 필터링
+- 밉맵
+- 텍스처 래핑
+- 다중 텍스처
+
+## Install Pillow
+- Pillow: 대중적인 파이썬 이미지 처리 라이브러리
+
+- 설치:
+```sh
+$ workon cg-course
+$ pip install pillow
+```
+
+- 문서:  
+https://pillow.readthedocs.io/en/stable/index.html
+
+## [Code] 1-triangle-texture
+- "5-Lab-3DTransformations-VertProcess/1/3-lookat.py"에서 시작
+- 프레임을 그리는 코드 제거
+- PIL(Pillow) 모듈 import:
+```python
+from PIL import Image
+```
+
+- VAO  
+  - 이제 vertex 데이터에는 꼭짓점 위치와 색상뿐 아니라 텍스처 좌표도 포함됨
+
+vertex 배열 구성 예시:
+```
+# positions      # colors         # texture coordinates
+0.0,  0.5, 0.0,   1.0, 0.0, 0.0,   0.5, 1.0,
+-0.5, -0.5, 0.0,  0.0, 1.0, 0.0,   0.0, 0.0,
+0.5, -0.5, 0.0,   0.0, 0.0, 1.0,   1.0, 0.0
+```
+
+- VAO 생성 및 활성화  
+- VBO 생성 및 데이터 복사
+
+```python
+def prepare_vao_triangle():
+    # 꼭짓점 위치 속성 설정
+    glVertexAttribPointer(index, size, type, normalized, stride, pointer)
+    glEnableVertexAttribArray(index)
+
+    # 꼭짓점 색상 속성 설정
+    glVertexAttribPointer(...)
+    glEnableVertexAttribArray(...)
+
+    # 텍스처 좌표 속성 설정 - 2D 데이터
+    glVertexAttribPointer(...)
+    glEnableVertexAttribArray(...)
+
+    return VAO
+```
+- 이미지를 로드하고 텍스처 객체를 생성하는 과정
+
+- 텍스처 객체를 생성하고 바인딩: `glGenTextures`, `glBindTexture`  
+- 이미지 로드: Pillow 라이브러리 사용 (`Image.open`)  
+- 로드한 이미지를 텍스처로 설정: `glTexImage2D`
+
+```python
+def main():
+    # 텍스처 객체 생성
+    texture = glGenTextures(1)
+    glBindTexture(GL_TEXTURE_2D, texture)
+
+    # 텍스처 필터링 파라미터 설정
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR)
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR)
+
+    try:
+        img = Image.open("./A02pysc-Solarsystemscope_texture_8k_earth_daymap.jpg")
+
+        # 이미지 수직 뒤집기 (OpenGL의 y축 방향 때문)
+        img = img.transpose(Image.FLIP_TOP_BOTTOM)
+
+        # 텍스처 이미지로 설정
+        glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, img.width, img.height, 0,
+                     GL_RGB, GL_UNSIGNED_BYTE, img.tobytes())
+
+        img.close()
+    except:
+        print("Failed to load texture")
+```
+
+- `glTexImage2D` 함수 사용 예시 및 설명
+
+```c
+glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, img.width, img.height, 0,
+             GL_RGB, GL_UNSIGNED_BYTE, img.tobytes())
+```
+
+- `glTexImage2D(target, level, internalformat, width, height, border, format, type, data)`
+  - `target`: 텍스처 대상. GL_TEXTURE_2D로 설정
+  - `level`: 디테일 레벨. 보통 0 (glGenerateMipmap 사용 시 변경 가능)
+  - `internalformat`: 텍스처를 저장할 내부 포맷
+  - `width`, `height`: 이미지 크기
+  - `border`: `0` (레거시 값)
+  - `format`, `type`: 원본 이미지의 포맷과 데이터 타입
+  - `data`: 메모리 상의 이미지 데이터
+- Vertex Shader 코드
+
+```glsl
+#version 330 core
+layout (location = 0) in vec3 vin_pos;
+layout (location = 1) in vec3 vin_color;
+layout (location = 2) in vec2 vin_uv;
+
+out vec3 vout_color;
+out vec2 vout_uv;
+
+uniform mat4 MVP;
+
+void main() {
+    // 동차 좌표계에서의 3D 위치 계산
+    vec4 pos4 = vec4(vin_pos.xyz, 1.0);
+    gl_Position = MVP * pos4;
+
+    vout_color = vec4(vin_color, 1.0);
+    vout_uv = vin_uv;
+}
+```
+
+- Fragment Shader 코드
+
+```glsl
+#version 330 core
+in vec2 vout_uv;          // 보간된 텍스처 좌표
+in vec3 vout_color;
+
+out vec4 FragColor;
+
+uniform sampler2D texture1;  // GLSL 내장 sampler 타입
+
+void main()
+{
+    // FragColor = vec4(vout_color, 1.0);  // 색상만 사용하는 경우
+
+    // 텍스처 좌표에 따라 색상 샘플링
+    FragColor = texture(texture1, vout_uv);
+}
+```
+
+- 최종 그리기 루프
+
+```python
+def main():
+    ...
+    while not glfwWindowShouldClose(window):
+        # 현재 프레임 기준으로 삼각형을 그림
+        glBindVertexArray(vao_triangle)
+        glDrawArrays(GL_TRIANGLES, 0, 3)
+    ...
+```
+
+- 아직 uniform 변수 `texture1`의 값을 설정하지 않음  
+- GLSL에서는 sampler uniform이 기본값 0으로 설정된다는 보장이 없음  
+- 대부분 드라이버에서 기본값이 0(GL_TEXTURE0)이기 때문에 잘 작동하지만,  
+  플랫폼이나 GPU에 따라 명시적으로 지정해주는 것이 안전함  
+- 아래 코드를 추가하여 uniform 바인딩을 명확히 설정:
+
+```c
+loc_texture1 = glGetUniformLocation(shader_program, "texture1");
+glActiveTexture(GL_TEXTURE0);
+glBindTexture(GL_TEXTURE_2D, texture1);
+glUniform1i(loc_texture1, 0);
+```
+
+(이미지 설명: 좌측 하단 그림은 지구 텍스처를 삼각형에 매핑한 예시임)
+
+## [Code] 2-triangle-texture-color  
+- vertex 색상과 텍스처를 함께 사용할 수 있음  
+- 예: 텍스처 값에 색상 값을 곱해 시각적 효과 추가
+
+```glsl
+void main() {
+    ...
+    FragColor = texture(texture1, vout_uv) * vout_color;
+}
+```
+
+(이미지 설명: 색상이 적용된 지구 이미지의 텍스처 예시)
+
+## [Code] 3-triangle-texture-filter  
+- 더 큰 삼각형을 그려보자
+
+```python
+def main():
+    while not glfwWindowShouldClose(window):
+        ...
+        # 모델링 행렬
+        M = glm.mat4()
+        M = glm.scale(glm.vec3(3.5, 5.5, 1.0))
+        ...
+```
+
+(이미지 설명: 확대된 삼각형에 저해상도 텍스처가 뚜렷하게 보임)
+
+- 더 부드러운 결과를 얻으려면?
+
+(이미지 설명: 왼쪽은 GL_NEAREST로 픽셀이 뚜렷함, 오른쪽은 `GL_LINEAR로` 보간되어 부드럽게 표현됨)
+
+- 텍스처 필터링(Texture filtering)은 주어진 `(u, v)`에 대한 색상 값을 계산하는 방식 지정  
+- 텍스처 좌표는 실수이므로 정확히 픽셀 중심과 일치하지 않을 수 있음  
+- `GL_NEAREST`: 가장 가까운 텍셀(texel)의 색상을 사용 (픽셀화된 결과)  
+- `GL_LINEAR`: 주변 텍셀을 보간하여 색상을 계산 (부드러운 결과)
+(이미지 설명: 좌측은 Nearest 필터, 우측은 Linear 필터에 따른 픽셀 시각화 예시)
+- `MIN` 필터와 `MAG` 필터를 구분해서 설정 가능  
+- `MIN` 필터: 축소 시  
+- `MAG` 필터: 확대 시
+
+```python
+def main():
+    ...
+    # 텍스처 생성
+    texture = glGenTextures(1)
+    glBindTexture(GL_TEXTURE_2D, texture)
+
+    # GL_NEAREST 설정 예시
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST)
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST)
+
+    # GL_LINEAR 설정 예시
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR)
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR)
+
+    try:
+        img = Image.open("./230px-Solarsystemscope_texture_8k_earth_daymap.jpg")
+```
+
+(이미지 설명: Python 코드에서 MIN/MAG 필터를 GL_LINEAR 또는 GL_NEAREST로 설정하는 예시)
+
+## [Code] 4-triangle-texture-mipmaps  
+- 고해상도 텍스처를 멀리 있는 물체에 사용할 경우, 한 픽셀에 모든 정보가 들어가 비효율적임  
+- 이를 해결하기 위해 **mipmap** 사용  
+  - mipmap은 동일 텍스처의 해상도를 점점 낮춘 이미지 집합  
+  - 객체와의 거리 등에 따라 적절한 해상도의 레벨을 선택해 사용  
+  - OpenGL은 자동으로 적절한 mipmap 레벨을 선택
+
+(이미지 설명: 각 레벨마다 텍스처 해상도가 절반씩 줄어들며, 픽셀 수준의 샘플링이 이루어짐)
+
+```python
+def main():
+    ...
+    # GL_TEXTURE_MIN_FILTER: 축소 시 필터링 방식
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR)
+
+    # GL_LINEAR_MIPMAP_LINEAR: 인접한 두 mipmap 레벨에서 각각 선형 보간 후, 다시 선형 보간
+    # GL_LINEAR_MIPMAP_NEAREST: 가까운 두 레벨 중 하나 선택 + 내부는 선형 보간
+
+    # GL_TEXTURE_MAG_FILTER: 확대 시 필터링 방식
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR)
+
+    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, img.width, img.height, 0,
+                 GL_RGB, GL_UNSIGNED_BYTE, img.tobytes())
+
+    glGenerateMipmap(GL_TEXTURE_2D)
+```
+
+## [Code] 5-triangle-texture-wrap  
+- 텍스처 좌표가 `(0.0, 1.0)` 범위를 벗어날 경우 OpenGL은 어떻게 처리할까?
+
+- 텍스처 래핑 방식 4가지:
+  - `GL_REPEAT`: 기본값, 텍스처 반복
+  - `GL_MIRRORED_REPEAT`: 반전하며 반복
+  - `GL_CLAMP_TO_EDGE`: 가장자리를 늘림
+  - `GL_CLAMP_TO_BORDER`: 테두리 색상으로 채움
+
+(이미지 설명: 각각의 wrapping 모드에 따른 시각적 차이 비교)
+
+```python
+def prepare_vao_triangle():
+    vertices = glm.array(glm.float32,
+        # position        # color       # texture coordinates
+         0.0, 0.0, 0.0,    1.0, 0.0, 0.0,   -0.5, -0.5,  # v0
+         0.5, 0.0, 0.0,    0.0, 1.0, 0.0,    2.0, -0.5,  # v1
+         0.0, 0.5, 0.0,    0.0, 0.0, 1.0,   -0.5, 2.0    # v2
+    )
+```
+
+(텍스처 좌표가 0~1을 벗어나도록 지정해 wrap 모드에 따른 차이를 실험)
+
+```python
+def main():
+    ...
+    # 기본값은 GL_REPEAT
+
+    # GL_TEXTURE_WRAP_S: 수평(u) 방향 설정
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE)
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_MIRRORED_REPEAT)
+
+    # GL_TEXTURE_WRAP_T: 수직(v) 방향 설정
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT)
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_BORDER)
+
+    # 경계색 설정 (GL_CLAMP_TO_BORDER 시 사용됨)
+    border_color = [1.0, 1.0, 1.0, 1.0]
+    glTexParameterfv(GL_TEXTURE_2D, GL_TEXTURE_BORDER_COLOR, border_color)
+
+    try:
+        ...
+```
+
+## [Code] 6-cube-multiple-textures  
+- 두 개의 이미지를 로드하여 diffuse map과 specular map으로 각각 사용  
+- 다양한 조명 효과 표현 가능
+
+(이미지 설명: 왼쪽은 diffuse map, 가운데는 specular map, 오른쪽은 결과 큐브)
+
+- `glUniform1i`를 사용하여 sampler uniform에 texture unit의 위치를 할당 가능  
+- 이를 통해 fragment shader에서 **여러 텍스처를 동시에 사용할 수 있음**  
+- 기본 방식:
+  - 각 sampler 변수에 대해 `glUniform1i`로 texture unit 인덱스 지정
+  - `glActiveTexture(GL_TEXTUREi)`로 활성화
+  - `glBindTexture(GL_TEXTURE_2D, texture)`로 바인딩
+
+(요약: diffuse map과 specular map을 동시에 사용하는 구조)
+
+- `8-Lab-Lighting/4-all-components-phong-faceonvm.py`에서 시작  
+- Pillow import  
+- VAO의 vertex data에 texture coordinate 추가  
+- sampler uniform 변수 `texture_diffuse`, `texture_specular`를 텍스처 객체에 연결  
+- shader 내부에서 diffuse/ambient는 `texture_diffuse`로부터,  
+  specular은 `texture_specular`로부터 샘플링
+
+```python
+def main():
+    # diffuse texture
+    texture_diffuse = glGenTextures(1)
+    glBindTexture(GL_TEXTURE_2D, texture_diffuse)
+    try:
+        img = Image.open("./230px-Solarsystemscope_texture_8k_earth_daymap.jpg")
+
+    # specular texture
+    texture_specular = glGenTextures(1)
+    glBindTexture(GL_TEXTURE_2D, texture_specular)
+    try:
+        img = Image.open("./plain-checkerboard.jpg")
+
+    # 유니폼에 texture unit 인덱스 지정
+    glUniform1i(glGetUniformLocation(shader_program, "texture_diffuse"), 0)
+    glActiveTexture(GL_TEXTURE0)
+    glBindTexture(GL_TEXTURE_2D, texture_diffuse)
+
+    glUniform1i(glGetUniformLocation(shader_program, "texture_specular"), 1)
+    glActiveTexture(GL_TEXTURE1)
+    glBindTexture(GL_TEXTURE_2D, texture_specular)
+```
+
+- Vertex Shader
+
+```glsl
+#version 330 core
+layout (location = 0) in vec3 vin_pos;
+layout (location = 1) in vec3 vin_normal;
+layout (location = 2) in vec2 vin_uv;
+
+out vec3 vout_surface_pos;
+out vec3 vout_normal;
+out vec2 vout_uv;
+
+uniform mat4 MVP;
+uniform mat4 M;
+
+void main() {
+    vec4 pos4 = vec4(vin_pos.xyz, 1.0);
+    gl_Position = MVP * pos4;
+
+    vout_surface_pos = vec3(M * pos4);
+    vout_normal = normalize(mat3(transpose(inverse(M))) * vin_normal);
+    vout_uv = vin_uv;
+}
+```
+
+- Fragment Shader
+
+```glsl
+in vec2 vout_uv;
+
+uniform sampler2D texture_diffuse;
+uniform sampler2D texture_specular;
+
+void main() {
+    // 재질 색상 계산 예시
+    vec3 material_color = vec3(1.0, 0.0, 0.0); // 기본값
+
+    // 텍스처에서 diffuse 색상 샘플링
+    vec3 material_diffuse = vec3(texture(texture_diffuse, vout_uv));
+
+    // 비금속 재질에서 specular 사용 예시
+    vec3 material_specular = vec3(texture(texture_specular, vout_uv));
+
+    // 최종 색상 조합 예시
+    FragColor = vec4(diffuse + specular, 1.0);
+}
+```
+
+- 큐브를 구성하는 12개의 삼각형에 대해 vertex 데이터 구성
+
+```python
+def prepare_vao_cube():
+    vertices = glm.array(glm.float32,
+        # pos        normal       texcoord
+        -1, -1,  1,   0,  0,  1,   0, 0,  # v0
+         1, -1,  1,   0,  0,  1,   1, 0,  # v1
+         1,  1,  1,   0,  0,  1,   1, 1,  # v2
+        -1, -1,  1,   0,  0,  1,   0, 0,  # v0
+         1,  1,  1,   0,  0,  1,   1, 1,  # v2
+        -1,  1,  1,   0,  0,  1,   0, 1,  # v3
+        ...
+    )
+```

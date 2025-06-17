@@ -447,7 +447,7 @@
   \end{aligned}
   $$
 
-- 여기서 **미분값은 3배 스케일로 정의됨**  
+- 여기서 **미분값은 3배 scale로 정의됨**  
   (Bézier 곡선의 미분 시 offset이 포함되므로 조정 필요)
 
 ## Hermite to Bézier 변환 (요약)
@@ -535,7 +535,7 @@
 
 - 이 행렬은 Bézier 곡선을 어떤 차수에서도 정의할 수 있게 해줌
 
-## Bezier Curve
+## Bézier Curve
 
 - **Bernstein Basis Functions** $(n = 3)$:
   $$
@@ -546,7 +546,7 @@
   B_3^3(t) &= t^3
   \end{aligned}
   $$
-- **Cubic Bezier Curve** 표현:
+- **Cubic Bézier Curve** 표현:
   $$
   \mathbf{p}(t) =
   B_0^3(t)\mathbf{p}_0 +
@@ -747,3 +747,213 @@
 - 겹치는 세그먼트들로 곡선 생성:
   - 예: 0-1-2-3, 1-2-3-4, 2-3-4-5, ...
 - **$C^2$ 연속성**, **로컬 제어 가능**, 근사(approximation) 방식
+
+## 11 - Lab - Curves
+
+## 개요
+- 예제: 단일 베지에 곡선(Bezier curve)의 상호작용적 조작
+
+## [코드] 1-interactive-cubic-bezier
+
+제어점(control point)을 드래그하여 곡선을 조작합니다.
+
+### 두 개의 VAO
+- 제어점용 VAO - `g_vao_control_points`
+- 곡선 정점용 VAO - `g_vao_curve_points`
+
+### 하나의 셰이더 프로그램
+- 제어점과 곡선 정점은 동일한 셰이더 프로그램으로 렌더링됩니다.
+- 이들의 정점 속성(vertex attribute)은 정점 위치만 가집니다.
+- 색상은 uniform 변수를 통해 설정됩니다.
+
+### 전역 변수
+제어점들의 위치를 위한 전역 변수:
+```python
+g_control_points = [
+    glm.vec3(-150,   0, 0),
+    glm.vec3( -50, 150, 0),
+    glm.vec3(  50, 150, 0),
+    glm.vec3( 150,   0, 0),
+]
+```
+현재 '드래그' 중인 제어점의 인덱스를 위한 전역 변수:
+```python
+g_moving_index = None
+```
+이들은 전역 변수로 정의되어 main() 및 이벤트 콜백 함수에서 접근하고 업데이트할 수 있습니다.
+
+### 셰이더 코드
+
+정점 셰이더 (Vertex shader):
+```glsl
+#version 330 core
+layout (location = 0) in vec3 vin_pos;
+uniform mat4 MVP;
+void main()
+{
+    gl_Position = MVP * vec4(vin_pos, 1.0);
+}
+```
+
+프래그먼트 셰이더 (Fragment shader):
+```glsl
+#version 330 core
+out vec4 FragColor;
+uniform vec4 color;
+void main()
+{
+    FragColor = color;
+}
+```
+
+### 유틸리티 함수 코드
+
+```python
+# VAO, VBO를 준비하는 함수
+# (참고: 슬라이드의 일부 코드가 가려져 있어 '...'로 표기했습니다.)
+def prepare_control_points():
+    # 정점 배열 객체(VAO)를 생성하고 활성화합니다:
+    VAO = glGenVertexArrays(1)
+    glBindVertexArray(VAO)
+    
+    # 정점 버퍼 객체(VBO)를 생성하고 활성화합니다:
+    VBO = glGenBuffers(1)
+    glBindBuffer(GL_ARRAY_BUFFER, VBO)
+    
+    # 데이터를 복사하지 않고 VBO 공간만 할당합니다 (세 번째 인자를 None으로 지정).
+    glBufferData(GL_ARRAY_BUFFER, ...) # 가려진 부분
+    
+    # 정점 속성을 설정합니다.
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, ...) # 가려진 부분
+    glEnableVertexAttribArray(0)
+    
+    # 업데이트된 정점 위치를 VBO로 복사할 때 필요하므로 VBO와 VAO를 함께 반환합니다.
+    return VAO, VBO
+
+# VBO 데이터를 업데이트하는 함수 (실제 그리기 함수는 생략됨)
+def draw_control_points(vao, vbo):
+    glBindVertexArray(vao)      # vao 활성화
+    glBindBuffer(GL_ARRAY_BUFFER, vbo) # vbo 활성화
+    
+    # 정점 데이터를 메인 메모리에서 준비
+    vertices = glm.array(points)
+    
+    # 할당 없이 정점 데이터를 VBO로 복사
+    glBufferSubData(GL_ARRAY_BUFFER, 0, vertices.nbytes, vertices.ptr)
+
+# 제어점들로부터 베지에 곡선 위의 점들을 생성하는 함수
+def generate_curve_points(control_points):
+    curve_points = []
+    # for t in np.linspace(0, 1, 101): # linspace(시작, 끝, 개수)
+    for t in np.arange(0, 1+1e-10, .01): # arange(시작, 끝, 간격)
+        
+        T = np.array([t**3, t**2, t, 1])
+
+        # 베지에 기저 행렬 (Bezier basis matrix)
+        M = np.array([[-1,  3, -3, 1],
+                      [ 3, -6,  3, 0],
+                      [-3,  3,  0, 0],
+                      [ 1,  0,  0, 0]])
+
+        P = np.array(control_points)
+        
+        p = T @ M @ P
+        
+        curve_points.append(glm.vec3(p))
+        
+    return curve_points
+```
+
+### 메인 함수 및 렌더링 루프
+
+```python
+def main():
+    global g_vao_control_points, g_vao_curve_points
+    # 제어점(control points) vao와 vbo 준비
+    g_vao_control_points, g_vbo_control_points = prepare_vao_for_points()
+
+    # 초기 곡선 정점(curve points) 생성
+    curve_points = generate_curve_points(g_control_points)
+
+    # 곡선 정점(curve points) vao와 vbo 준비
+    g_vao_curve_points, g_vbo_curve_points = prepare_vao_for_points()
+    copy_points_data(curve_points, g_vbo_curve_points)
+
+    # 점 크기 설정 (제어점 그리기를 위함)
+    glPointSize(20)
+
+    while not glfw.WindowShouldClose(window):
+        # ... 렌더링 로직 (아래에 계속) ...
+        
+        glUseProgram(shader_program)
+
+        # 투영 행렬 & MVP 유니폼 설정
+        # 카메라 공간이 glfw 화면 공간과 동일한 크기를 갖도록 함
+        P = glm.ortho(0, WINDOW_WIDTH, 0, WINDOW_HEIGHT, -1, 1)
+        MVP = P
+        glUniformMatrix4fv(unif_locs['MVP'], 1, GL_FALSE, glm.value_ptr(MVP))
+
+        # 제어 폴리곤(control polygon) 그리기
+        glUniform3f(unif_locs['color'], 0, 1, 0)
+        glBindVertexArray(g_vao_control_points)
+        glDrawArrays(GL_LINE_LOOP, 0, len(g_control_points))
+        glDrawArrays(GL_POINTS, 0, len(g_control_points))
+
+        # 곡선(curve) 그리기
+        glUniform3f(unif_locs['color'], 1, 1, 1)
+        glBindVertexArray(g_vao_curve_points)
+        glDrawArrays(GL_LINE_STRIP, 0, len(curve_points))
+        
+        # ...
+```
+
+### 이벤트 콜백 함수
+
+```python
+# 마우스 클릭이 제어점 근처에서 일어났는지 확인하는 함수
+def hittest(x, y, control_point):
+    if glm.abs(x-control_point.x)<10 and glm.abs(y-control_point.y)<10:
+        return True
+    else:
+        return False
+
+# 마우스 버튼 콜백 함수
+def button_callback(window, button, action, mod):
+    global g_control_points, g_moving_index
+    if button==glfw.MOUSE_BUTTON_LEFT:
+        x, y = glfw.GetCursorPos(window)
+        
+        # glfw 화면 좌표(좌상단 기준)를 
+        # 우리가 사용하는 카메라 공간 좌표(좌하단 기준)로 변환
+        y = WINDOW_HEIGHT - y
+        
+        if action==glfw.PRESS:
+            g_moving_index = None
+            for i in range(len(g_control_points)):
+                if hittest(x, y, g_control_points[i]):
+                    g_moving_index = i
+                    break
+        elif action==glfw.RELEASE:
+            g_moving_index = None
+
+# 마우스 커서 콜백 함수
+def cursor_callback(window, xpos, ypos):
+    global g_control_points, g_moving_index
+    global g_vbo_control_points, g_vbo_curve_points
+
+    # 우리가 사용하는 카메라 공간 좌표로 변환
+    ypos = WINDOW_HEIGHT - ypos
+
+    if g_moving_index is not None:
+        # 움직이는 제어점의 위치 업데이트
+        g_control_points[g_moving_index].x = xpos
+        g_control_points[g_moving_index].y = ypos
+
+        # 업데이트된 제어점 위치를 g_vbo_control_points로 복사
+        copy_points_data(g_control_points, g_vbo_control_points)
+
+        # 업데이트된 제어점으로부터 곡선 정점을 생성하고
+        # g_vbo_curve_points로 복사
+        curve_points = generate_curve_points(g_control_points)
+        copy_points_data(curve_points, g_vbo_curve_points)
+```
