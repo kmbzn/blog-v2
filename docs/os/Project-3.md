@@ -83,11 +83,9 @@ ALL COW TESTS PASSED
 
 ## Current Block Addressing Hierarchy
 
-![Current Block Addressing Hierarchy Diagram](image_of_current_block_addressing_diagram.png)
 
 ## Block Addressing Hierarchy
 
-![New Block Addressing Hierarchy Diagram](image_of_new_block_addressing_diagram.png)
 
 ## Implementation Tasks
 

@@ -66,14 +66,26 @@ pre, code, div[class*='language-'] {
   margin: 0;
 }
 
+.vp-navbar {
+  position: absolute;
+  display: flex;
+  align-items: center;
+}
+
+.vp-toggle-sidebar-button {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
 .vp-navbar .vp-site-logo {
   position: absolute;
   left: 50%;
-  transform: translateX(-50%);
+  height: 28px;
+  transform: translate(-50%, -50%);
 }
 
-.vp-site-name {
-  padding: 0;
+:root {
+  --navbar-height: 3rem;
 }
 
 img {
@@ -150,6 +162,11 @@ table {
     margin-left: 3rem !important;
     margin-right: 0 !important;
   }
+}
+
+.vp-sidebar {
+  top: 0;
+  padding-top: calc(var(--navbar-height) - 1rem);
 }
 
 @media (max-width: 1060px) {

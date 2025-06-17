@@ -157,35 +157,42 @@ $$
 
 ## Points & Vectors in Homogeneous Coordinates
 
-- Homogeneous coordinates에서는,
+- Homogeneous coordinates에서는,  
   - **3D point**: $ (x, y, z, \mathbf{1}) $  
   - **3D vector**: $ (x, y, z, \mathbf{0}) $
 
-→ 이 표현은 coordinate-free geometric programming의 개념과 **완전하게 일치하는 모델**을 제공함
+$\rightarrow$ 이 표현은 coordinate-free geometric programming의 개념과 **완전하게 일치하는 모델**을 제공함
 
 예시:
+
 $$
-(x_1, y_1, z_1, 1) + (x_2, y_2, z_2, 1) \\= (x_1 + x_2, y_1 + y_2, z_1 + z_2, 2) \text{→ point (undefined)}
+(x_1, y_1, z_1, 1) + (x_2, y_2, z_2, 1) \\
+= (x_1 + x_2, y_1 + y_2, z_1 + z_2, 2) \rightarrow \text{point (undefined)}
 $$
 
 $$
-(x_1, y_1, z_1, 1) - (x_2, y_2, z_2, 1) \\= (x_1 - x_2, y_1 - y_2, z_1 - z_2, 0) \text{→ vector}
+(x_1, y_1, z_1, 1) - (x_2, y_2, z_2, 1) \\
+= (x_1 - x_2, y_1 - y_2, z_1 - z_2, 0) \rightarrow \text{vector}
 $$
 
 $$
-(x_1, y_1, z_1, 1) + (x_2, y_2, z_2, 0) \\= (x_1 + x_2, y_1 + y_2, z_1 + z_2, 1) \text{→ point}
+(x_1, y_1, z_1, 1) + (x_2, y_2, z_2, 0) \\
+= (x_1 + x_2, y_1 + y_2, z_1 + z_2, 1) \rightarrow \text{point}
 $$
 
 $$
-(x_1, y_1, z_1, 0) + (x_2, y_2, z_2, 0) \\= (x_1 + x_2, y_1 + y_2, z_1 + z_2, 0) \text{→ vector}
+(x_1, y_1, z_1, 0) + (x_2, y_2, z_2, 0) \\
+= (x_1 + x_2, y_1 + y_2, z_1 + z_2, 0) \rightarrow \text{vector}
 $$
 
 $$
-c \cdot (x, y, z, 0) \\= (cx, cy, cz, 0) \text{→ vector}
+c \cdot (x, y, z, 0) \\
+= (cx, cy, cz, 0) \rightarrow \text{vector}
 $$
 
 $$
-c \cdot (x, y, z, 1) \\= (cx, cy, cz, c) \text{→}
+c \cdot (x, y, z, 1) \\
+= (cx, cy, cz, c) \rightarrow
 \begin{cases}
 \text{point} & \text{if } c = 1 \\
 \text{vector} & \text{if } c = 0 \\
@@ -203,12 +210,13 @@ $$
 \begin{bmatrix}
 \mathbf{p} \\
 1
-\end{bmatrix} =
+\end{bmatrix}
+=
 \begin{bmatrix}
 \mathbf{M} \mathbf{p} + \mathbf{t} \\
 1
 \end{bmatrix}
-\text{→ point}
+\rightarrow \text{point}
 $$
 
 $$
@@ -219,12 +227,13 @@ $$
 \begin{bmatrix}
 \mathbf{v} \\
 0
-\end{bmatrix} =
+\end{bmatrix}
+=
 \begin{bmatrix}
 \mathbf{M} \mathbf{v} \\
 0
 \end{bmatrix}
-\text{→ vector}
+\rightarrow \text{vector}
 $$
 
 → **translation은 vector에는 적용되지 않음!**

@@ -83,11 +83,9 @@ ALL COW TESTS PASSED
 
 ## 현재 블록 주소 지정 계층 구조
 
-![현재 블록 주소 지정 계층 구조 다이어그램](image_of_current_block_addressing_diagram.png)
 
 ## 블록 주소 지정 계층 구조
 
-![새로운 블록 주소 지정 계층 구조 다이어그램](image_of_new_block_addressing_diagram.png)
 
 ## 구현 과제
 
