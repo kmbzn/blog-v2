@@ -148,9 +148,10 @@ Hips
     - Skeleton 상의 joint offset
 
 - 예시:
-  $$
-  T = J_0 L_0 J_1 L_1 J_2 L_2 J_3
-  $$
+$$
+T = J_0 L_0 J_1 L_1 J_2 L_2 J_3
+$$
+  
   - $J$: joint rotation  
   - $L$: joint offset (translation)
 
@@ -494,7 +495,7 @@ Frame Time: 0.016667
 
 $T = \dots T_i L_i R_i \dots T_1 L_1 R_1$
 
-(여기서 $ T_i $는 i번째 관절로의 이동(translation), $ R_i $는 i번째 관절에서의 회전(rotation)을 의미합니다.)
+(여기서 $T_i$는 i번째 관절로의 이동(translation), $R_i$는 i번째 관절에서의 회전(rotation)을 의미합니다.)
 
 ### [코드] 1-joint-link-transform
 `7-Lab-Hierarchical-Mesh/1-hierarchical.py` 코드를 수정하여, 동일한 기능은 유지하되 지역(local) 변환 대신 관절(joint) & 링크(link) 변환을 사용하도록 만들어 봅시다.
