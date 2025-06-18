@@ -24,6 +24,7 @@ export const routes = Object.fromEntries([
   ["/cg/9-Orientation-Rotation.html", { loader: () => import(/* webpackChunkName: "cg_9-Orientation-Rotation.html" */"/home/kmbzn/workspace/blog-v2/docs/.vuepress/.temp/pages/cg/9-Orientation-Rotation.html.js"), meta: {"title":"9 - Orientation & Rotation"} }],
   ["/cg/Project-2.html", { loader: () => import(/* webpackChunkName: "cg_Project-2.html" */"/home/kmbzn/workspace/blog-v2/docs/.vuepress/.temp/pages/cg/Project-2.html.js"), meta: {"title":"Computer Graphics Project 2: Obj viewer"} }],
   ["/cg/Project-3.html", { loader: () => import(/* webpackChunkName: "cg_Project-3.html" */"/home/kmbzn/workspace/blog-v2/docs/.vuepress/.temp/pages/cg/Project-3.html.js"), meta: {"title":"Computer Graphics Project 3: Bvh Viewer"} }],
+  ["/finance/WhyBitcoin.html", { loader: () => import(/* webpackChunkName: "finance_WhyBitcoin.html" */"/home/kmbzn/workspace/blog-v2/docs/.vuepress/.temp/pages/finance/WhyBitcoin.html.js"), meta: {"title":"나는 왜 비트코인에 투자했는가"} }],
   ["/os/10.VirtualMemory-1.html", { loader: () => import(/* webpackChunkName: "os_10.VirtualMemory-1.html" */"/home/kmbzn/workspace/blog-v2/docs/.vuepress/.temp/pages/os/10.VirtualMemory-1.html.js"), meta: {"title":"10. Virtual Memory(1)"} }],
   ["/os/11.VirtualMemory-2.html", { loader: () => import(/* webpackChunkName: "os_11.VirtualMemory-2.html" */"/home/kmbzn/workspace/blog-v2/docs/.vuepress/.temp/pages/os/11.VirtualMemory-2.html.js"), meta: {"title":"11. Virtual Memory(2)"} }],
   ["/os/12.FileSystem.html", { loader: () => import(/* webpackChunkName: "os_12.FileSystem.html" */"/home/kmbzn/workspace/blog-v2/docs/.vuepress/.temp/pages/os/12.FileSystem.html.js"), meta: {"title":"12. File System"} }],
@@ -35,28 +36,11 @@ export const routes = Object.fromEntries([
   ["/os/Project-2-test-code.html", { loader: () => import(/* webpackChunkName: "os_Project-2-test-code.html" */"/home/kmbzn/workspace/blog-v2/docs/.vuepress/.temp/pages/os/Project-2-test-code.html.js"), meta: {"title":"Project 02: Test Code"} }],
   ["/os/Project-2.html", { loader: () => import(/* webpackChunkName: "os_Project-2.html" */"/home/kmbzn/workspace/blog-v2/docs/.vuepress/.temp/pages/os/Project-2.html.js"), meta: {"title":"Project 02: Implementing a simple kernel-level thread"} }],
   ["/os/Project-3-ko.html", { loader: () => import(/* webpackChunkName: "os_Project-3-ko.html" */"/home/kmbzn/workspace/blog-v2/docs/.vuepress/.temp/pages/os/Project-3-ko.html.js"), meta: {"title":"프로젝트 03"} }],
+  ["/os/Project-3-wiki.html", { loader: () => import(/* webpackChunkName: "os_Project-3-wiki.html" */"/home/kmbzn/workspace/blog-v2/docs/.vuepress/.temp/pages/os/Project-3-wiki.html.js"), meta: {"title":"Project 3: Virtual Memory & File system - wiki"} }],
   ["/os/Project-3.html", { loader: () => import(/* webpackChunkName: "os_Project-3.html" */"/home/kmbzn/workspace/blog-v2/docs/.vuepress/.temp/pages/os/Project-3.html.js"), meta: {"title":"Project 03"} }],
   ["/os/wiki.html", { loader: () => import(/* webpackChunkName: "os_wiki.html" */"/home/kmbzn/workspace/blog-v2/docs/.vuepress/.temp/pages/os/wiki.html.js"), meta: {"title":"Project 02: xv6 RISC-V Kernel-Level Threads Implementation - wiki"} }],
   ["/pl/13-FPL(1).html", { loader: () => import(/* webpackChunkName: "pl_13-FPL(1).html" */"/home/kmbzn/workspace/blog-v2/docs/.vuepress/.temp/pages/pl/13-FPL(1).html.js"), meta: {"title":"13. FPL(1)"} }],
-  ["/finance/WhyBitcoin.html", { loader: () => import(/* webpackChunkName: "finance_WhyBitcoin.html" */"/home/kmbzn/workspace/blog-v2/docs/.vuepress/.temp/pages/finance/WhyBitcoin.html.js"), meta: {"title":"나는 왜 비트코인에 투자했는가"} }],
   ["/wellness/ExtraVirginOliveOil.html", { loader: () => import(/* webpackChunkName: "wellness_ExtraVirginOliveOil.html" */"/home/kmbzn/workspace/blog-v2/docs/.vuepress/.temp/pages/wellness/ExtraVirginOliveOil.html.js"), meta: {"title":"🫒 엑스트라 버진 올리브유 (Extra Virgin Olive Oil)"} }],
   ["/wellness/PsylliumHusk.html", { loader: () => import(/* webpackChunkName: "wellness_PsylliumHusk.html" */"/home/kmbzn/workspace/blog-v2/docs/.vuepress/.temp/pages/wellness/PsylliumHusk.html.js"), meta: {"title":"차전자피(Psyllium Husk)의 효능"} }],
   ["/404.html", { loader: () => import(/* webpackChunkName: "404.html" */"/home/kmbzn/workspace/blog-v2/docs/.vuepress/.temp/pages/404.html.js"), meta: {"title":""} }],
 ]);
-
-if (import.meta.webpackHot) {
-  import.meta.webpackHot.accept()
-  if (__VUE_HMR_RUNTIME__.updateRoutes) {
-    __VUE_HMR_RUNTIME__.updateRoutes(routes)
-  }
-  if (__VUE_HMR_RUNTIME__.updateRedirects) {
-    __VUE_HMR_RUNTIME__.updateRedirects(redirects)
-  }
-}
-
-if (import.meta.hot) {
-  import.meta.hot.accept(({ routes, redirects }) => {
-    __VUE_HMR_RUNTIME__.updateRoutes(routes)
-    __VUE_HMR_RUNTIME__.updateRedirects(redirects)
-  })
-}
