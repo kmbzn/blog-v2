@@ -58,6 +58,7 @@ export default defineUserConfig({
         children: [
           '/humanities/Nordvik',
           '/humanities/NorthSentinelIsland',
+          '/humanities/Rongorongo',
         ]
       },
       {
