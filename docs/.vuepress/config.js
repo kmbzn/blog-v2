@@ -54,6 +54,12 @@ export default defineUserConfig({
         ]
       },
       {
+        text: '🏛️ Humanities',
+        children: [
+          '/humanities/Nordvik',
+        ]
+      },
+      {
         text: '🏋️ Wellness',
         children: [
           '/wellness/ExtraVirginOliveOil',
