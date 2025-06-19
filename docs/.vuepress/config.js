@@ -50,13 +50,14 @@ export default defineUserConfig({
       {
         text: '💰 Finance',
         children: [
-          '/finance/WhyBitcoin',
+          '/finance/Bitcoin',
         ]
       },
       {
         text: '🏛️ Humanities',
         children: [
           '/humanities/Nordvik',
+          '/humanities/NorthSentinelIsland',
         ]
       },
       {

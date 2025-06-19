@@ -1,4 +1,4 @@
-# 나는 왜 비트코인에 투자했는가
+# 비트코인(Bitcoin)
 
 <p align="center">
   <img src="https://bitcoin.org/img/icons/opengraph.png" width="180" alt="Bitcoin logo" />
