@@ -9,29 +9,17 @@
 ### 관객이 될게 (I stan U)
 <iframe style="border-radius:12px" width="100%" height="152" src="https://www.youtube.com/embed/_ZfT3M6ZKEM?controls=1&modestbranding=1" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe>
 
+### Happy Day
+<iframe style="border-radius:12px" width="100%" height="152" src="https://www.youtube.com/embed/6CFs-4if788?controls=1&modestbranding=1" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+
 ### 너에게 닿기를
 <iframe style="border-radius:12px" width="100%" height="152" src="https://www.youtube.com/embed/Ry1RrIVyl1M?controls=1&modestbranding=1" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe>
-
-### Hate Rodrigo (Feat. 우기)
-<iframe style="border-radius:12px" width="100%" height="152" src="https://www.youtube.com/embed/uTKYOio9KAk?controls=1&modestbranding=1" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe>
-
-### 민들레 - single ver.
-<iframe style="border-radius:12px" width="100%" height="152" src="https://www.youtube.com/embed/qr9i9jRuTug?controls=1&modestbranding=1" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe>
 
 ### HOT
 <iframe style="border-radius:12px" width="100%" height="152" src="https://www.youtube.com/embed/cCkAcVOS3ig?controls=1&modestbranding=1" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe>
 
-### 오늘만 I LOVE YOU
-<iframe style="border-radius:12px" width="100%" height="152" src="https://www.youtube.com/embed/0MJjPYgaLNQ?controls=1&modestbranding=1" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe>
-
 ### SoulMate (Feat. 아이유)
 <iframe style="border-radius:12px" width="100%" height="152" src="https://www.youtube.com/embed/Vl1kO9hObpA?controls=1&modestbranding=1" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe>
-
-### No Boss (Feat. Dok2)
-<iframe style="border-radius:12px" width="100%" height="152" src="https://www.youtube.com/embed/ZmKB_0tecKM?controls=1&modestbranding=1" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe>
-
-### like JENNIE
-<iframe style="border-radius:12px" width="100%" height="152" src="https://www.youtube.com/embed/bwzrdr9nDiI?controls=1&modestbranding=1" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe>
 
 ### 봄바람 (FEAT.나얼)
 <iframe style="border-radius:12px" width="100%" height="152" src="https://www.youtube.com/embed/VEWJlmw7CO8?controls=1&modestbranding=1" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe>
@@ -45,23 +33,29 @@
 ### Missing You (Feat. 김윤아 of 자우림)
 <iframe style="border-radius:12px" width="100%" height="152" src="https://www.youtube.com/embed/XNSmuTpzr8U?controls=1&modestbranding=1" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe>
 
-### 파도
-<iframe style="border-radius:12px" width="100%" height="152" src="https://www.youtube.com/embed/35KLXum5uD8?controls=1&modestbranding=1" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe>
-
-### 사포닌 같은 너
-<iframe style="border-radius:12px" width="100%" height="152" src="https://www.youtube.com/embed/kPHJonG_3N0?controls=1&modestbranding=1" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe>
-
 ### 어푸(Ah puh)
 <iframe style="border-radius:12px" width="100%" height="152" src="https://www.youtube.com/embed/rMI73uie2W8?controls=1&modestbranding=1" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe>
 
 ### Journey
 <iframe style="border-radius:12px" width="100%" height="152" src="https://www.youtube.com/embed/3VOerLGIMG4?controls=1&modestbranding=1" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe>
 
-### Love Yourself
-<iframe style="border-radius:12px" width="100%" height="152" src="https://www.youtube.com/embed/TKDpOEkT0cY?controls=1&modestbranding=1" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+### 봄 그리고 너
+<iframe style="border-radius:12px" width="100%" height="152" src="https://www.youtube.com/embed/npU-ZlTPNtA?controls=1&modestbranding=1" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe>
 
-### Like Crazy
-<iframe style="border-radius:12px" width="100%" height="152" src="https://www.youtube.com/embed/YuR6kRxBFAk?controls=1&modestbranding=1" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+### Pookie
+<iframe style="border-radius:12px" width="100%" height="152" src="https://www.youtube.com/embed/1ZX1vEDTfY4?controls=1&modestbranding=1" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe>
 
-### 아주 멀지 않은 날에
-<iframe style="border-radius:12px" width="100%" height="152" src="https://www.youtube.com/embed/VxWb5xir3K0?controls=1&modestbranding=1" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+### Antifreeze
+<iframe style="border-radius:12px" width="100%" height="152" src="https://www.youtube.com/embed/PGADim6UzHE?controls=1&modestbranding=1" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+
+### PILLOW
+<iframe style="border-radius:12px" width="100%" height="152" src="https://www.youtube.com/embed/4wlq0InRjWw?controls=1&modestbranding=1" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+
+### Ice Cream (with Selena Gomez)
+<iframe style="border-radius:12px" width="100%" height="152" src="https://www.youtube.com/embed/vRXZj0DzXIA?controls=1&modestbranding=1" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+
+### I DO ME
+<iframe style="border-radius:12px" width="100%" height="152" src="https://www.youtube.com/embed/vRXZj0DzXIA?controls=1&modestbranding=1" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+
+### MY LOVE (2025)
+<iframe style="border-radius:12px" width="100%" height="152" src="https://www.youtube.com/embed/h1PsdVXdAj0?controls=1&modestbranding=1" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe>

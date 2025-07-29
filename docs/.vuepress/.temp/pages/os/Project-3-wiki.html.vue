@@ -12,13 +12,13 @@
 </li>
 <li>large file support
 <ul>
-<li>최대 268 KB 한계(12 direct + 1 indirect)</li>
+<li>최대 <code v-pre>268 KB</code> 한계(12 direct + 1 indirect)</li>
 <li>해결: <strong>double-indirect</strong> 레이아웃 도입 → 약 66 MB까지 파일 생성·접근 가능</li>
 </ul>
 </li>
 <li>symbolic link
 <ul>
-<li>hard link만 제공, 경로-기반 링크 부재</li>
+<li>hard link만 제공, 경로-기반 링크가 부재</li>
 <li>해결: <strong>UNIX-style symlink</strong> 구현 + link-chain 해석(깊이 제한 10단계)</li>
 </ul>
 </li>
@@ -39,8 +39,8 @@
 </tr>
 <tr>
 <td>Large file</td>
-<td>268 KB 최대 크기</td>
-<td>66 MB 지원(double-indirect)</td>
+<td><code v-pre>268 KB</code> 최대 크기</td>
+<td><code v-pre>66 MB</code> 지원(double-indirect)</td>
 </tr>
 <tr>
 <td>Symbolic link</td>
@@ -50,70 +50,50 @@
 </tbody>
 </table>
 <p>본 구현은 xv6의 원형 구조를 유지하면서 자연스럽게 기능을 확장하였으며, 각 기능별 테스트 프로그램을 통해 안정성과 정확성을 확인하였다.<br>
-이 wiki는 <strong>테스트 설명 → 구현 세부 사항 → 결과 및 문제 해결</strong> 순서로 서술해 최종 완성도를 입증한다.</p>
+이 wiki는 <strong>테스트 설명 → 구현 세부 사항 → 결과 및 문제 해결</strong> 순서로 서술해 최종 완성도를 입증하게 된다.</p>
 <hr>
 <h3 id="_1-2-design-principles-and-requirement-strategy" tabindex="-1"><a class="header-anchor" href="#_1-2-design-principles-and-requirement-strategy"><span>1.2. Design principles and requirement strategy</span></a></h3>
-<ol>
-<li>
-<p><strong>On-demand page duplication</strong></p>
+<h3 id="_1-2-1-on-demand-page-duplication" tabindex="-1"><a class="header-anchor" href="#_1-2-1-on-demand-page-duplication"><span>1.2.1. On-demand page duplication</span></a></h3>
 <ul>
-<li><code v-pre>uvmcopy</code>에서 writable page의 <code v-pre>PTE_W</code>를 제거하고 <code v-pre>PTE_COW</code>를 세팅해 parent, child가 같은 physical page를 읽기 전용으로 공유한다.</li>
-<li>write fault는 <code v-pre>usertrap</code>에서 감지하며, ref-count &gt; 1이면 새 page를 <code v-pre>kalloc</code> 후 복사, ref-count == 1이면 flag만 갱신해 write-enable 한다.</li>
+<li><code v-pre>uvmcopy</code>에서 writable page의 <code v-pre>PTE_W</code>를 제거하고 <code v-pre>PTE_COW</code>를 세팅해 parent, child가 같은 physical page를 read-only로 공유한다.</li>
+<li>write fault는 <code v-pre>usertrap</code>에서 감지하며, <code v-pre>ref-count &gt; 1</code>이면 새 page를 <code v-pre>kalloc</code> 후 복사, <code v-pre>ref-count == 1</code>이면 <code v-pre>flag</code>만 갱신해 write-enable 한다.</li>
 </ul>
-</li>
-<li>
-<p><strong>Page reference accounting</strong></p>
+<h3 id="_1-2-2-page-reference-accounting" tabindex="-1"><a class="header-anchor" href="#_1-2-2-page-reference-accounting"><span>1.2.2. Page reference accounting</span></a></h3>
 <ul>
 <li><code v-pre>ref_counts[PHYSTOP/PGSIZE]</code> 전역 배열로 모든 physical page 사용 개수를 추적한다.</li>
 <li><code v-pre>inc_ref</code> / <code v-pre>kfree</code>로 증가·감소하며 0일 때만 free list에 반환해 leak을 방지한다.</li>
 </ul>
-</li>
-<li>
-<p><strong>TLB consistency on permission change</strong></p>
+<h3 id="_1-2-3-tlb-consistency-on-permission-change" tabindex="-1"><a class="header-anchor" href="#_1-2-3-tlb-consistency-on-permission-change"><span>1.2.3. TLB consistency on permission change</span></a></h3>
 <ul>
 <li>RISC-V에는 x86 CR0.WP가 없으므로, write-protect 후 반드시 <code v-pre>sfence_vma</code>를 호출해 사용자 TLB를 flush한다.</li>
 </ul>
-</li>
-<li>
-<p><strong>Double-indirect block layout</strong></p>
+<h3 id="_1-2-4-double-indirect-block-layout" tabindex="-1"><a class="header-anchor" href="#_1-2-4-double-indirect-block-layout"><span>1.2.4. Double-indirect block layout</span></a></h3>
 <ul>
 <li><code v-pre>NDIRECT</code>를 11로 줄이고 <code v-pre>addrs[11]</code> (single), <code v-pre>addrs[12]</code> (double) 두 포인터를 예약한다.</li>
 <li><code v-pre>bmap</code>는 three-tier lookup (direct → single → double) 로직을 가진다.</li>
 <li><code v-pre>MAXFILE = 11 + 256 + 256²</code> 계산으로 bigfile 테스트(65 803 blocks)를 커버한다.</li>
 </ul>
-</li>
-<li>
-<p><strong>Metadata integrity via write-ahead logging</strong></p>
+<h3 id="_1-2-5-metadata-integrity-via-write-ahead-logging" tabindex="-1"><a class="header-anchor" href="#_1-2-5-metadata-integrity-via-write-ahead-logging"><span>1.2.5. Metadata integrity via write-ahead logging</span></a></h3>
 <ul>
 <li>indirect 테이블을 수정할 때마다 <code v-pre>log_write(bp)</code> 호출 후 <code v-pre>brelse(bp)</code>로 해제해 log 일관성을 보장한다.</li>
 </ul>
-</li>
-<li>
-<p><strong>Safe truncation path</strong></p>
+<h3 id="_1-2-6-safe-truncation-path" tabindex="-1"><a class="header-anchor" href="#_1-2-6-safe-truncation-path"><span>1.2.6. Safe truncation path</span></a></h3>
 <ul>
 <li><code v-pre>itrunc</code>는 direct → single → double 세 단계에 대해 역순으로 <code v-pre>bfree</code>를 호출해 orphan block을 남기지 않는다.</li>
 </ul>
-</li>
-<li>
-<p><strong>Path-level symbolic link</strong></p>
+<h3 id="_1-2-7-path-level-symbolic-link" tabindex="-1"><a class="header-anchor" href="#_1-2-7-path-level-symbolic-link"><span>1.2.7. Path-level symbolic link</span></a></h3>
 <ul>
 <li>새로운 inode type <code v-pre>T_SYMLINK</code>을 추가하고, link 파일에 target 경로 문자열을 저장한다.</li>
 <li><code v-pre>sys_open</code>은 최대 <code v-pre>MAX_SYMLINK_LOOPS (10)</code> 깊이까지 재귀 해석하며, <code v-pre>O_NOFOLLOW</code>가 있으면 링크 자체를 연다.</li>
 </ul>
-</li>
-<li>
-<p><strong>Loop and broken-link defense</strong></p>
+<h3 id="_1-2-8-loop-and-broken-link-defense" tabindex="-1"><a class="header-anchor" href="#_1-2-8-loop-and-broken-link-defense"><span>1.2.8. Loop and broken-link defense</span></a></h3>
 <ul>
 <li>depth 카운터로 순환 링크를 차단하고, target 미존재 시 open 실패를 반환한다.</li>
 </ul>
-</li>
-<li>
-<p><strong>Concurrency safety</strong></p>
+<h3 id="_1-2-9-concurrency-safety" tabindex="-1"><a class="header-anchor" href="#_1-2-9-concurrency-safety"><span>1.2.9. Concurrency safety</span></a></h3>
 <ul>
 <li>symlink 생성·삭제는 <code v-pre>begin_op()/end_op()</code> 트랜잭션 내부에서 inode lock을 끝까지 유지해 race condition을 방지한다.</li>
 </ul>
-</li>
-</ol>
 <hr>
 <h3 id="_1-3-design-key-summary" tabindex="-1"><a class="header-anchor" href="#_1-3-design-key-summary"><span>1.3. Design key summary</span></a></h3>
 <table>
@@ -162,7 +142,7 @@
 </tr>
 </tbody>
 </table>
-<p>이 설계에 따라 COW, large file, symbolic link 세 기능을 <strong>기존 xv6 코드와 호환</strong>되도록 통합했으며, 각각 <code v-pre>cowtest</code>, <code v-pre>bigfile</code>, <code v-pre>symlinktest</code>를 완전 통과해 목표 요구 사항을 충족한다.</p>
+<p>이 설계에 따라 COW, large file, symbolic link 세 기능을 <strong>기존 xv6 코드와 호환</strong>되도록 통합했으며, 각각 <code v-pre>cowtest</code>, <code v-pre>bigfile</code>, <code v-pre>symlinktest</code>를 완전 통과하고 목표 요구사항을 충족하게 된다.</p>
 <h2 id="_2-test-파일에-대한-설명" tabindex="-1"><a class="header-anchor" href="#_2-test-파일에-대한-설명"><span>2. TEST 파일에 대한 설명</span></a></h2>
 <h3 id="_2-1-user-cowtest-c" tabindex="-1"><a class="header-anchor" href="#_2-1-user-cowtest-c"><span>2.1. <code v-pre>/user/cowtest.c</code></span></a></h3>
 <p>이 프로그램은 copy-on-write fork 기능을 테스트하는 user space 프로그램이다.</p>
@@ -336,7 +316,7 @@
 <span class="line"><span class="token punctuation">}</span><span class="token punctuation">;</span></span>
 <span class="line"></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><hr>
-<h4 id="_3-2-3-bmap-수정" tabindex="-1"><a class="header-anchor" href="#_3-2-3-bmap-수정"><span>3.2.3. bmap 수정</span></a></h4>
+<h4 id="_3-2-3-bmap-수정" tabindex="-1"><a class="header-anchor" href="#_3-2-3-bmap-수정"><span>3.2.3. <code v-pre>bmap</code> 수정</span></a></h4>
 <p>double indirect 분기를 추가해 두 단계로 block을 할당·탐색한다.</p>
 <div class="language-c line-numbers-mode" data-highlighter="prismjs" data-ext="c"><pre v-pre><code><span class="line"><span class="token comment">// kernel/fs.c (발췌)</span></span>
 <span class="line">bn <span class="token operator">-=</span> NINDIRECT<span class="token punctuation">;</span></span>
@@ -375,11 +355,11 @@
 <li>두 번째 레벨 배열에서 실제 data block을 할당해 반환한다.</li>
 </ul>
 <hr>
-<h4 id="_3-2-4-itrunc-개념-요약" tabindex="-1"><a class="header-anchor" href="#_3-2-4-itrunc-개념-요약"><span>3.2.4. itrunc 개념 요약</span></a></h4>
+<h4 id="_3-2-4-itrunc-개념-요약" tabindex="-1"><a class="header-anchor" href="#_3-2-4-itrunc-개념-요약"><span>3.2.4. <code v-pre>itrunc</code> 개념 요약</span></a></h4>
 <p><code v-pre>itrunc</code>는 direct, single indirect, double indirect 블록을 모두 순회하며 <code v-pre>bfree</code>를 호출해 해제한다.<br>
 double indirect는 두 단계에 걸쳐 <code v-pre>bread → loop → bfree</code> 순으로 재귀적으로 처리한다.</p>
 <hr>
-<h4 id="_3-2-5-bigfile-테스트와의-정합성" tabindex="-1"><a class="header-anchor" href="#_3-2-5-bigfile-테스트와의-정합성"><span>3.2.5. bigfile 테스트와의 정합성</span></a></h4>
+<h4 id="_3-2-5-bigfile-테스트와의-정합성" tabindex="-1"><a class="header-anchor" href="#_3-2-5-bigfile-테스트와의-정합성"><span>3.2.5. <code v-pre>bigfile</code> 테스트와의 정합성</span></a></h4>
 <ul>
 <li><code v-pre>bigfile.c</code>는 <code v-pre>MAXFILE</code>에 해당하는 <code v-pre>65803</code> block을 순차 write한 뒤 read로 검증한다.</li>
 <li>double indirect 분기와 상수 조정으로 write loop가 block 할당 오류 없이 완료된다.</li>
@@ -406,7 +386,7 @@ double indirect는 두 단계에 걸쳐 <code v-pre>bread → loop → bfree</co
 <ol>
 <li><code v-pre>create(linkpath, T_SYMLINK, 0, 0)</code> 호출로 빈 symlink inode 생성</li>
 <li><code v-pre>writei</code>로 target 경로 문자열을 inode 데이터 영역에 기록</li>
-<li>작업 실패 시 <code v-pre>iunlockput</code> 후 -1 반환</li>
+<li>작업 실패 시 <code v-pre>iunlockput</code> 후 <code v-pre>-1</code> 반환</li>
 </ol>
 <div class="language-c line-numbers-mode" data-highlighter="prismjs" data-ext="c"><pre v-pre><code><span class="line"><span class="token keyword">if</span><span class="token punctuation">(</span><span class="token punctuation">(</span>ip <span class="token operator">=</span> <span class="token function">create</span><span class="token punctuation">(</span>path<span class="token punctuation">,</span> T_SYMLINK<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span></span>
 <span class="line">  <span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span></span>
@@ -414,8 +394,8 @@ double indirect는 두 단계에 걸쳐 <code v-pre>bread → loop → bfree</co
 <span class="line">  <span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span></span>
 <span class="line"></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><hr>
-<h4 id="_3-3-3-ys-open의-경로-해석" tabindex="-1"><a class="header-anchor" href="#_3-3-3-ys-open의-경로-해석"><span>3.3.3. ys_open의 경로 해석</span></a></h4>
-<p>open 시 symlink를 자동으로 따라가도록 while 루프를 추가했다.</p>
+<h4 id="_3-3-3-ys-open의-경로-해석" tabindex="-1"><a class="header-anchor" href="#_3-3-3-ys-open의-경로-해석"><span>3.3.3. <code v-pre>ys_open</code>의 경로 해석</span></a></h4>
+<p>open 시 <code v-pre>symlink</code>를 자동으로 따라가도록 <code v-pre>while</code> 루프를 추가했다.</p>
 <ul>
 <li>최대 <code v-pre>MAX_SYMLINK_DEPTH</code>만큼 반복하며 <code v-pre>namei</code>로 현재 경로를 lookup</li>
 <li>inode가 <code v-pre>T_SYMLINK</code>, <code v-pre>O_NOFOLLOW</code>가 없는 경우
@@ -424,7 +404,7 @@ double indirect는 두 단계에 걸쳐 <code v-pre>bread → loop → bfree</co
 <li>깊이 카운트를 증가시키고 루프 재시작</li>
 </ul>
 </li>
-<li>depth 초과 시 실패</li>
+<li>depth 초과 시 <em>실패</em></li>
 </ul>
 <div class="language-c line-numbers-mode" data-highlighter="prismjs" data-ext="c"><pre v-pre><code><span class="line"><span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> depth <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> depth <span class="token operator">&lt;</span> MAX_SYMLINK_DEPTH<span class="token punctuation">;</span> depth<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span></span>
 <span class="line">  <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token punctuation">(</span>ip <span class="token operator">=</span> <span class="token function">namei</span><span class="token punctuation">(</span>path<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">{</span></span>
@@ -495,7 +475,7 @@ double indirect는 두 단계에 걸쳐 <code v-pre>bread → loop → bfree</co
 </tr>
 </tbody>
 </table>
-<p>→ 메모리 공유·복사·해제 전 과정이 모두 올바르게 작동한다.</p>
+<p>→ 메모리 공유·복사·해제 전 과정이 모두 <strong>올바르게 작동</strong>한다.</p>
 <hr>
 <h3 id="_4-2-bigfile-c" tabindex="-1"><a class="header-anchor" href="#_4-2-bigfile-c"><span>4.2. <code v-pre>bigfile.c</code></span></a></h3>
 <table>
@@ -528,7 +508,7 @@ double indirect는 두 단계에 걸쳐 <code v-pre>bread → loop → bfree</co
 </tr>
 </tbody>
 </table>
-<p>→ 66 MB 급 파일을 오류 없이 write-read 했으므로 large-file 확장이 성공적으로 동작한다.</p>
+<p>→ <code v-pre>66 MB</code>급 file을 오류 없이 write-read 했으므로 large-file 확장이 성공적으로 동작한다고 할 수 있다.</p>
 <hr>
 <h3 id="_4-3-symlinktest-c" tabindex="-1"><a class="header-anchor" href="#_4-3-symlinktest-c"><span>4.3. <code v-pre>symlinktest.c</code></span></a></h3>
 <table>
@@ -603,7 +583,7 @@ double indirect는 두 단계에 걸쳐 <code v-pre>bread → loop → bfree</co
 <span class="line">$ </span>
 <span class="line"></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ol start="3">
-<li>세 테스트 모두 <code v-pre>… ok</code> / <code v-pre>PASSED</code> 출력.</li>
+<li>세 test 모두 <code v-pre>… ok</code> / <code v-pre>PASSED</code> 출력되었음.</li>
 </ol>
 <p><img src="https://kmbzn.com/images/screenshot.png" alt="screenshot"></p>
 <hr>

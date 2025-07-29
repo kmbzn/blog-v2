@@ -1,4 +1,4 @@
-<template><div><h1 id="차전자피-psyllium-husk-의-효능" tabindex="-1"><a class="header-anchor" href="#차전자피-psyllium-husk-의-효능"><span>차전자피(Psyllium Husk)의 효능</span></a></h1>
+<template><div><h1 id="차전자피-psyllium-husk" tabindex="-1"><a class="header-anchor" href="#차전자피-psyllium-husk"><span>차전자피(Psyllium Husk)</span></a></h1>
 <p align="center">
   <img src="https://drvegan.com/cdn/shop/files/Psyllium_Husk.jpg?v=1689267974&width=1200" width="240" alt="Main Logo" />
 </p>
