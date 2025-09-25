@@ -5,45 +5,45 @@
 감상은 <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer">YouTube</a>를 통해 가능합니다.<br>
 번호는 순위가 아닌 임의로 부여된 것입니다. 재생목록은 수시로 update할 계획입니다.</p>
 </div>
+<h3 id="항해" tabindex="-1"><a class="header-anchor" href="#항해"><span>항해</span></a></h3>
+<iframe style="border-radius:12px" width="100%" height="152" src="https://www.youtube.com/embed/Gbb2A5m7d_4?controls=1&modestbranding=1" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+<h3 id="style" tabindex="-1"><a class="header-anchor" href="#style"><span>STYLE</span></a></h3>
+<iframe style="border-radius:12px" width="100%" height="152" src="https://www.youtube.com/embed/n7kFRxFIPrI?controls=1&modestbranding=1" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+<h3 id="antifreeze" tabindex="-1"><a class="header-anchor" href="#antifreeze"><span>Antifreeze</span></a></h3>
+<iframe style="border-radius:12px" width="100%" height="152" src="https://www.youtube.com/embed/PGADim6UzHE?controls=1&modestbranding=1" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+<h3 id="만년설" tabindex="-1"><a class="header-anchor" href="#만년설"><span>만년설</span></a></h3>
+<iframe style="border-radius:12px" width="100%" height="152" src="https://www.youtube.com/embed/2L_W8hPpdhg?controls=1&modestbranding=1" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+<h3 id="오래오래-우리" tabindex="-1"><a class="header-anchor" href="#오래오래-우리"><span>오래오래, 우리</span></a></h3>
+<iframe style="border-radius:12px" width="100%" height="152" src="https://www.youtube.com/embed/9E_dpzOe8L0?controls=1&modestbranding=1" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+<h3 id="i-do-me" tabindex="-1"><a class="header-anchor" href="#i-do-me"><span>I DO ME</span></a></h3>
+<iframe style="border-radius:12px" width="100%" height="152" src="https://www.youtube.com/embed/hAEfi_SKTEU?controls=1&modestbranding=1" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+<h3 id="멸종위기사랑" tabindex="-1"><a class="header-anchor" href="#멸종위기사랑"><span>멸종위기사랑</span></a></h3>
+<iframe style="border-radius:12px" width="100%" height="152" src="https://www.youtube.com/embed/19oT04OuBhg?controls=1&modestbranding=1" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+<h3 id="wicked" tabindex="-1"><a class="header-anchor" href="#wicked"><span>WICKED</span></a></h3>
+<iframe style="border-radius:12px" width="100%" height="152" src="https://www.youtube.com/embed/mhKCRnUKp5U?controls=1&modestbranding=1" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe>
 <h3 id="관객이-될게-i-stan-u" tabindex="-1"><a class="header-anchor" href="#관객이-될게-i-stan-u"><span>관객이 될게 (I stan U)</span></a></h3>
 <iframe style="border-radius:12px" width="100%" height="152" src="https://www.youtube.com/embed/_ZfT3M6ZKEM?controls=1&modestbranding=1" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+<h3 id="happy-day" tabindex="-1"><a class="header-anchor" href="#happy-day"><span>Happy Day</span></a></h3>
+<iframe style="border-radius:12px" width="100%" height="152" src="https://www.youtube.com/embed/6CFs-4if788?controls=1&modestbranding=1" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe>
 <h3 id="너에게-닿기를" tabindex="-1"><a class="header-anchor" href="#너에게-닿기를"><span>너에게 닿기를</span></a></h3>
 <iframe style="border-radius:12px" width="100%" height="152" src="https://www.youtube.com/embed/Ry1RrIVyl1M?controls=1&modestbranding=1" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe>
-<h3 id="hate-rodrigo-feat-우기" tabindex="-1"><a class="header-anchor" href="#hate-rodrigo-feat-우기"><span>Hate Rodrigo (Feat. 우기)</span></a></h3>
-<iframe style="border-radius:12px" width="100%" height="152" src="https://www.youtube.com/embed/uTKYOio9KAk?controls=1&modestbranding=1" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe>
-<h3 id="민들레-single-ver" tabindex="-1"><a class="header-anchor" href="#민들레-single-ver"><span>민들레 - single ver.</span></a></h3>
-<iframe style="border-radius:12px" width="100%" height="152" src="https://www.youtube.com/embed/qr9i9jRuTug?controls=1&modestbranding=1" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe>
-<h3 id="hot" tabindex="-1"><a class="header-anchor" href="#hot"><span>HOT</span></a></h3>
-<iframe style="border-radius:12px" width="100%" height="152" src="https://www.youtube.com/embed/cCkAcVOS3ig?controls=1&modestbranding=1" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe>
-<h3 id="오늘만-i-love-you" tabindex="-1"><a class="header-anchor" href="#오늘만-i-love-you"><span>오늘만 I LOVE YOU</span></a></h3>
-<iframe style="border-radius:12px" width="100%" height="152" src="https://www.youtube.com/embed/0MJjPYgaLNQ?controls=1&modestbranding=1" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe>
-<h3 id="soulmate-feat-아이유" tabindex="-1"><a class="header-anchor" href="#soulmate-feat-아이유"><span>SoulMate (Feat. 아이유)</span></a></h3>
-<iframe style="border-radius:12px" width="100%" height="152" src="https://www.youtube.com/embed/Vl1kO9hObpA?controls=1&modestbranding=1" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe>
-<h3 id="no-boss-feat-dok2" tabindex="-1"><a class="header-anchor" href="#no-boss-feat-dok2"><span>No Boss (Feat. Dok2)</span></a></h3>
-<iframe style="border-radius:12px" width="100%" height="152" src="https://www.youtube.com/embed/ZmKB_0tecKM?controls=1&modestbranding=1" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe>
-<h3 id="like-jennie" tabindex="-1"><a class="header-anchor" href="#like-jennie"><span>like JENNIE</span></a></h3>
-<iframe style="border-radius:12px" width="100%" height="152" src="https://www.youtube.com/embed/bwzrdr9nDiI?controls=1&modestbranding=1" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe>
-<h3 id="봄바람-feat-나얼" tabindex="-1"><a class="header-anchor" href="#봄바람-feat-나얼"><span>봄바람 (FEAT.나얼)</span></a></h3>
-<iframe style="border-radius:12px" width="100%" height="152" src="https://www.youtube.com/embed/VEWJlmw7CO8?controls=1&modestbranding=1" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+<h3 id="뛰어-jump" tabindex="-1"><a class="header-anchor" href="#뛰어-jump"><span>뛰어(JUMP)</span></a></h3>
+<iframe style="border-radius:12px" width="100%" height="152" src="https://www.youtube.com/embed/CgCVZdcKcqY?controls=1&modestbranding=1" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+<h3 id="famous" tabindex="-1"><a class="header-anchor" href="#famous"><span>FAMOUS</span></a></h3>
+<iframe style="border-radius:12px" width="100%" height="152" src="https://www.youtube.com/embed/VjvzYjU1mY0?controls=1&modestbranding=1" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+<h3 id="당신의-밤은-나의-밤과-같습니까" tabindex="-1"><a class="header-anchor" href="#당신의-밤은-나의-밤과-같습니까"><span>당신의 밤은 나의 밤과 같습니까</span></a></h3>
+<iframe style="border-radius:12px" width="100%" height="152" src="https://www.youtube.com/embed/tFEe3pwlQgE?controls=1&modestbranding=1" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+<h3 id="you-i" tabindex="-1"><a class="header-anchor" href="#you-i"><span>You(=I)</span></a></h3>
+<iframe style="border-radius:12px" width="100%" height="152" src="https://www.youtube.com/embed/DtVNL81WeHM?controls=1&modestbranding=1" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe>
 <h3 id="달빛소년" tabindex="-1"><a class="header-anchor" href="#달빛소년"><span>달빛소년</span></a></h3>
 <iframe style="border-radius:12px" width="100%" height="152" src="https://www.youtube.com/embed/EapUSbnsIws?controls=1&modestbranding=1" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe>
 <h3 id="내게-사랑이-뭐냐고-물어본다면" tabindex="-1"><a class="header-anchor" href="#내게-사랑이-뭐냐고-물어본다면"><span>내게 사랑이 뭐냐고 물어본다면</span></a></h3>
 <iframe style="border-radius:12px" width="100%" height="152" src="https://www.youtube.com/embed/5ly8tAU-n_w?controls=1&modestbranding=1" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe>
-<h3 id="missing-you-feat-김윤아-of-자우림" tabindex="-1"><a class="header-anchor" href="#missing-you-feat-김윤아-of-자우림"><span>Missing You (Feat. 김윤아 of 자우림)</span></a></h3>
-<iframe style="border-radius:12px" width="100%" height="152" src="https://www.youtube.com/embed/XNSmuTpzr8U?controls=1&modestbranding=1" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe>
-<h3 id="파도" tabindex="-1"><a class="header-anchor" href="#파도"><span>파도</span></a></h3>
-<iframe style="border-radius:12px" width="100%" height="152" src="https://www.youtube.com/embed/35KLXum5uD8?controls=1&modestbranding=1" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe>
-<h3 id="사포닌-같은-너" tabindex="-1"><a class="header-anchor" href="#사포닌-같은-너"><span>사포닌 같은 너</span></a></h3>
-<iframe style="border-radius:12px" width="100%" height="152" src="https://www.youtube.com/embed/kPHJonG_3N0?controls=1&modestbranding=1" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe>
-<h3 id="어푸-ah-puh" tabindex="-1"><a class="header-anchor" href="#어푸-ah-puh"><span>어푸(Ah puh)</span></a></h3>
-<iframe style="border-radius:12px" width="100%" height="152" src="https://www.youtube.com/embed/rMI73uie2W8?controls=1&modestbranding=1" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe>
-<h3 id="journey" tabindex="-1"><a class="header-anchor" href="#journey"><span>Journey</span></a></h3>
-<iframe style="border-radius:12px" width="100%" height="152" src="https://www.youtube.com/embed/3VOerLGIMG4?controls=1&modestbranding=1" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe>
-<h3 id="love-yourself" tabindex="-1"><a class="header-anchor" href="#love-yourself"><span>Love Yourself</span></a></h3>
-<iframe style="border-radius:12px" width="100%" height="152" src="https://www.youtube.com/embed/TKDpOEkT0cY?controls=1&modestbranding=1" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe>
-<h3 id="like-crazy" tabindex="-1"><a class="header-anchor" href="#like-crazy"><span>Like Crazy</span></a></h3>
-<iframe style="border-radius:12px" width="100%" height="152" src="https://www.youtube.com/embed/YuR6kRxBFAk?controls=1&modestbranding=1" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe>
-<h3 id="아주-멀지-않은-날에" tabindex="-1"><a class="header-anchor" href="#아주-멀지-않은-날에"><span>아주 멀지 않은 날에</span></a></h3>
-<iframe style="border-radius:12px" width="100%" height="152" src="https://www.youtube.com/embed/VxWb5xir3K0?controls=1&modestbranding=1" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe></div></template>
+<h3 id="flower" tabindex="-1"><a class="header-anchor" href="#flower"><span>Flower</span></a></h3>
+<iframe style="border-radius:12px" width="100%" height="152" src="https://www.youtube.com/embed/pqUqaBC_2lk?controls=1&modestbranding=1" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+<h3 id="함께" tabindex="-1"><a class="header-anchor" href="#함께"><span>함께</span></a></h3>
+<iframe style="border-radius:12px" width="100%" height="152" src="https://www.youtube.com/embed/c-WBmg7RG4s?controls=1&modestbranding=1" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+<h3 id="fedexx-girl-feat-창모" tabindex="-1"><a class="header-anchor" href="#fedexx-girl-feat-창모"><span>Fedexx Girl (Feat. 창모)</span></a></h3>
+<iframe style="border-radius:12px" width="100%" height="152" src="https://www.youtube.com/embed/7MZck5JPYNU?controls=1&modestbranding=1" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe></div></template>
 
 

@@ -48,6 +48,18 @@ export default defineUserConfig({
         ]
       },
       {
+        text: '🔣 상공회의소 한자',
+        collapsible: false,
+        children: [
+          '/hanja/9', 
+          '/hanja/8',
+          '/hanja/7',
+          '/hanja/6',
+          '/hanja/5',
+          '/hanja/4',
+        ]
+      },
+      {
         text: '💰 Finance',
         children: [
           '/finance/Bitcoin',
@@ -55,6 +67,7 @@ export default defineUserConfig({
       },
       {
         text: '🏛️ Humanities',
+        collapsible: true,
         children: [
           '/humanities/Nordvik',
           '/humanities/NorthSentinelIsland',
@@ -63,6 +76,7 @@ export default defineUserConfig({
       },
       {
         text: '🏋️ Wellness',
+        collapsible: true,
         children: [
           '/wellness/ExtraVirginOliveOil',
           '/wellness/PsylliumHusk',
@@ -91,13 +105,6 @@ export default defineUserConfig({
           '/os/12.FileSystem',
           '/os/13.MassStorageManagement',
           '/os/14.IOSystems',
-        ]
-      },
-      {
-        text: '🔣 Programming Language Theory',
-        collapsible: true,
-        children: [
-          '/pl/13-FPL(1)',
         ]
       },
     ],
