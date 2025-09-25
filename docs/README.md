@@ -1,6 +1,8 @@
 # KeyBaseZone
 
-![Profile Image](https://kmbzn.com/images/profile.jpg)  
+<p align="left">
+  <img src="https://kmbzn.com/images/profile.jpg" width="360" alt="Profile" />
+</p>  
 *Welcome to my personal page...*
 
 ## 👤 About Me
@@ -50,7 +52,7 @@
 
 ### 건강 및 영양
 - 체중 증가를 위한 칼로리 설계, 식습관 및 생활 습관 조절
-- 소화, FODMAP, 기능성 식품 등 식이 관련 이슈
+- 소화, FODMAP, 기능성 식품 등 식이 관련 issues
 - 웨이트 기반 셀프 트레이닝과 기초 체력 관리
 
 > *전공 기반의 기술적 분석부터 시각적 표현, 실생활의 경험, 인문학적 관점까지 다양한 관심사를 자유롭게 정리하고 공유하는 공간입니다.*
