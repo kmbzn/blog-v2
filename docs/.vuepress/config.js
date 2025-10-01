@@ -45,6 +45,7 @@ export default defineUserConfig({
           '/algorithm/PythonTimeout',
           '/algorithm/1966',
           '/algorithm/1018',
+          '/algorithm/std::vector',
         ]
       },
       {
