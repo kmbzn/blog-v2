@@ -59,7 +59,7 @@ for (auto rit = v.rbegin(); rit != v.rend(); ++rit)
     cout << *rit << " "; // 역방향 순회
 ```
 
-## 6. 범위 기반 for문
+## 6. 범위 기반 `for`문
 ```cpp
 for (int x : v)
     cout << x << " ";
