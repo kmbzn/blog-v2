@@ -1,7 +1,7 @@
 # C++ `std::vector` 사용법 정리
 
 <p align="center">
-  <img src="https://static.wikia.nocookie.net/illumination/images/b/bc/Vector_%28Despicable_Me%29.png/revision/latest?cb=20230405224511" width="180" alt="vector logo" />
+  <img src="https://static.wikitide.net/greatcharacterswiki/8/8f/Screenshot_2022-09-13_203128.png" width="240" alt="vector" />
 </p>
 
 ## 1. 기본 선언 및 초기화
