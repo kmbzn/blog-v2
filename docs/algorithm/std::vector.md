@@ -1,7 +1,7 @@
 # C++ `std::vector` 사용법 정리
 
 <p align="center">
-  <img src="https://static.wikitide.net/greatcharacterswiki/8/8f/Screenshot_2022-09-13_203128.png" width="240" alt="vector" />
+  <img src="https://static.wikitide.net/greatcharacterswiki/8/8f/Screenshot_2022-09-13_203128.png" width="120" alt="vector" />
 </p>
 
 ## 1. 기본 선언 및 초기화

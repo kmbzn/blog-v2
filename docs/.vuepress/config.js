@@ -52,7 +52,7 @@ export default defineUserConfig({
         text: '🔣 상공회의소 한자',
         collapsible: false,
         children: [
-          '/hanja/9', 
+          '/hanja/saja', 
           '/hanja/8',
           '/hanja/7',
           '/hanja/6',
