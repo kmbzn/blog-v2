@@ -43,14 +43,15 @@ export default defineUserConfig({
         collapsible: true,
         children: [
           '/algorithm/PythonTimeout',
-          '/algorithm/1966',
-          '/algorithm/1018',
           '/algorithm/std::vector',
+          '/algorithm/vim',
+          '/algorithm/1018',
+          '/algorithm/1966',
         ]
       },
       {
         text: '🔣 상공회의소 한자',
-        collapsible: false,
+        collapsible: true,
         children: [
           '/hanja/saja', 
           '/hanja/8',
