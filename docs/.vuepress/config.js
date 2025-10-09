@@ -50,6 +50,14 @@ export default defineUserConfig({
         ]
       },
       {
+        text: '🗂️ Database System',
+        collapsible: false,
+        children: [
+          '/db/1.Introduction',
+          '/db/Assignment2-1',
+        ]
+      },
+      {
         text: '🔣 상공회의소 한자',
         collapsible: true,
         children: [
@@ -93,20 +101,6 @@ export default defineUserConfig({
           '/cg/10-Character-Animation',
           '/cg/11-Curves.md',
           '/cg/12-More-Lighting-Texture',
-        ]
-      },
-      {
-        text: '🗂️ Operating System',
-        collapsible: true,
-        children: [
-          '/os/7.Deadlocks',
-          '/os/8.MemoryManagement-1',
-          '/os/9.MemoryManagement-2',
-          '/os/10.VirtualMemory-1',
-          '/os/11.VirtualMemory-2',
-          '/os/12.FileSystem',
-          '/os/13.MassStorageManagement',
-          '/os/14.IOSystems',
         ]
       },
     ],
