@@ -22,7 +22,7 @@ memory image<br>
 실행</p>
 </blockquote>
 <h2 id="process-in-memory-address-space" tabindex="-1"><a class="header-anchor" href="#process-in-memory-address-space"><span>Process in Memory: Address Space</span></a></h2>
-<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code><span class="line">    max</span>
+<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code class="language-text"><span class="line">    max</span>
 <span class="line">  +--------+</span>
 <span class="line">  | stack  |</span>
 <span class="line">  +--------+</span>
@@ -53,7 +53,7 @@ memory image<br>
 <li><strong>하드웨어 지원 필요</strong> (예: base and limit register, MMU)</li>
 </ul>
 <h2 id="address-mapping-table" tabindex="-1"><a class="header-anchor" href="#address-mapping-table"><span>Address Mapping Table</span></a></h2>
-<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code><span class="line">          CPU</span>
+<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code class="language-text"><span class="line">          CPU</span>
 <span class="line">    논리적 주소 (logical)    →    물리적 주소 (physical)</span>
 <span class="line">    ---------------------      -------------------------</span>
 <span class="line">        0번지                    →     500번지</span>
@@ -66,7 +66,7 @@ memory image<br>
 <ul>
 <li>물리 주소 공간은 base register와 limit register의 쌍으로 정의됨</li>
 </ul>
-<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code><span class="line">  0           ┐</span>
+<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code class="language-text"><span class="line">  0           ┐</span>
 <span class="line">              │  operating system</span>
 <span class="line">  256000      │</span>
 <span class="line">  300040      │  process            ← base</span>
@@ -114,7 +114,7 @@ memory image<br>
 </ul>
 </li>
 </ul>
-<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code><span class="line">  [ CPU ]</span>
+<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code class="language-text"><span class="line">  [ CPU ]</span>
 <span class="line">     │</span>
 <span class="line">     ▼</span>
 <span class="line">  ┌─────────────┐</span>
@@ -180,7 +180,7 @@ memory image<br>
 </ul>
 </li>
 </ul>
-<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code><span class="line">  ┌────────────┐</span>
+<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code class="language-text"><span class="line">  ┌────────────┐</span>
 <span class="line">  │     OS     │ ← low memory</span>
 <span class="line">  └────────────┘</span>
 <span class="line">  ┌────────────┐</span>
@@ -191,7 +191,7 @@ memory image<br>
 <ul>
 <li>하드웨어는 relocation과 limit register를 사용하여 주소를 변환함</li>
 </ul>
-<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code><span class="line">  [ CPU ]</span>
+<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code class="language-text"><span class="line">  [ CPU ]</span>
 <span class="line">     │</span>
 <span class="line">     ▼</span>
 <span class="line"> ┌────────────┐</span>
@@ -315,7 +315,7 @@ memory image<br>
 </li>
 </ul>
 <h2 id="paging-1" tabindex="-1"><a class="header-anchor" href="#paging-1"><span>Paging</span></a></h2>
-<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code><span class="line">  max</span>
+<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code class="language-text"><span class="line">  max</span>
 <span class="line">   │</span>
 <span class="line">   ▼</span>
 <span class="line"> ┌────────────┐</span>
@@ -354,7 +354,7 @@ memory image<br>
 </ul>
 </li>
 </ul>
-<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code><span class="line">주소 구조:</span>
+<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code class="language-text"><span class="line">주소 구조:</span>
 <span class="line"></span>
 <span class="line">  page number   page offset</span>
 <span class="line">  ┌───────┬────────────────┐</span>
@@ -365,7 +365,7 @@ memory image<br>
 <span class="line">- 논리 주소 공간이 $2^m$일 때, 페이지 크기가 $2^n$이면</span>
 <span class="line"></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="address-translation-architecture" tabindex="-1"><a class="header-anchor" href="#address-translation-architecture"><span>Address Translation Architecture</span></a></h2>
-<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code><span class="line">CPU</span>
+<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code class="language-text"><span class="line">CPU</span>
 <span class="line"> ↓</span>
 <span class="line">┌─────────────┐</span>
 <span class="line">│ logical addr│</span>
@@ -406,13 +406,13 @@ memory image<br>
 <ul>
 <li>(a) 할당 전</li>
 </ul>
-<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code><span class="line">free-frame list: 18 3 14 9 6 ...</span>
+<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code class="language-text"><span class="line">free-frame list: 18 3 14 9 6 ...</span>
 <span class="line">new process: page 0, page 1</span>
 <span class="line"></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div></div></div><ul>
 <li>(b) 할당 후</li>
 </ul>
-<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code><span class="line">free-frame list: 13 8 10 ...</span>
+<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code class="language-text"><span class="line">free-frame list: 13 8 10 ...</span>
 <span class="line">new process:</span>
 <span class="line">  page 0 → frame 14</span>
 <span class="line">  page 1 → frame 9</span>
@@ -476,7 +476,7 @@ memory image<br>
 </li>
 </ul>
 <h2 id="paging-hardware-with-tlb" tabindex="-1"><a class="header-anchor" href="#paging-hardware-with-tlb"><span>Paging Hardware with TLB</span></a></h2>
-<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code><span class="line">           logical address</span>
+<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code class="language-text"><span class="line">           logical address</span>
 <span class="line">                ↓</span>
 <span class="line">               ┌───┐</span>
 <span class="line">               │ p │────┐</span>
@@ -510,7 +510,7 @@ memory image<br>
 <p>유효 접근 시간 (EAT: Effective Access Time)</p>
 </li>
 </ul>
-<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code><span class="line">&lt;히트 시> + &lt;미스 시></span>
+<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code class="language-text"><span class="line">&lt;히트 시> + &lt;미스 시></span>
 <span class="line">EAT = (α + β) * ε + (α + 2β) * (1 − ε)</span>
 <span class="line">    = α + (2 − ε)β</span>
 <span class="line"></span></code></pre>
@@ -536,7 +536,7 @@ memory image<br>
 <li>페이지 테이블에서는 6개의 항목만 유효</li>
 <li>PTLR(Page Table Length Register)을 사용하여 valid-invalid bit 대신 유효성을 검사할 수 있음</li>
 </ul>
-<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code><span class="line">logical address → 00000</span>
+<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code class="language-text"><span class="line">logical address → 00000</span>
 <span class="line">                → frame number</span>
 <span class="line">                → valid-invalid bit</span>
 <span class="line"></span>
@@ -576,7 +576,7 @@ memory image<br>
 <li>ed1~ed3는 공유 코드</li>
 <li>나머지 데이터 페이지는 프로세스 별로 분리됨</li>
 </ul>
-<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code><span class="line">process P1:</span>
+<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code class="language-text"><span class="line">process P1:</span>
 <span class="line">  page table → ed1</span>
 <span class="line">              ed2</span>
 <span class="line">              ed3</span>

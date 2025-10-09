@@ -546,7 +546,7 @@
 <li>이 슬라이드에서는 OBJ 포맷을 자세히 살펴봄</li>
 </ul>
 <h2 id="obj-file-format" tabindex="-1"><a class="header-anchor" href="#obj-file-format"><span>OBJ File Format</span></a></h2>
-<div class="language-obj line-numbers-mode" data-highlighter="prismjs" data-ext="obj"><pre v-pre><code><span class="line"># 주석</span>
+<div class="language-obj line-numbers-mode" data-highlighter="prismjs" data-ext="obj"><pre v-pre><code class="language-obj"><span class="line"># 주석</span>
 <span class="line"></span>
 <span class="line"># vertex positions: (x, y, z)</span>
 <span class="line">v 0.123 0.234 0.345</span>
@@ -582,12 +582,12 @@
 <ul>
 <li>
 <p>선(Polyline)</p>
-<div class="language-obj line-numbers-mode" data-highlighter="prismjs" data-ext="obj"><pre v-pre><code><span class="line">l 1 5 8 2 4 9</span>
+<div class="language-obj line-numbers-mode" data-highlighter="prismjs" data-ext="obj"><pre v-pre><code class="language-obj"><span class="line">l 1 5 8 2 4 9</span>
 <span class="line"></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div></li>
 <li>
 <p>재질(Materials)</p>
-<div class="language-obj line-numbers-mode" data-highlighter="prismjs" data-ext="obj"><pre v-pre><code><span class="line">mtllib [외부 .mtl 파일 이름]</span>
+<div class="language-obj line-numbers-mode" data-highlighter="prismjs" data-ext="obj"><pre v-pre><code class="language-obj"><span class="line">mtllib [외부 .mtl 파일 이름]</span>
 <span class="line">usemtl [재질 이름]</span>
 <span class="line"></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div></div></div></li>
@@ -598,7 +598,7 @@
 </li>
 </ul>
 <h2 id="an-obj-example" tabindex="-1"><a class="header-anchor" href="#an-obj-example"><span>An OBJ Example</span></a></h2>
-<div class="language-obj line-numbers-mode" data-highlighter="prismjs" data-ext="obj"><pre v-pre><code><span class="line"># A simple cube</span>
+<div class="language-obj line-numbers-mode" data-highlighter="prismjs" data-ext="obj"><pre v-pre><code class="language-obj"><span class="line"># A simple cube</span>
 <span class="line">v 1.000000 -1.000000 -1.000000</span>
 <span class="line">v 1.000000 -1.000000  1.000000</span>
 <span class="line">v -1.000000 -1.000000  1.000000</span>

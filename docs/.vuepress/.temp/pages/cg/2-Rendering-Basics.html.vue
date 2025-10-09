@@ -83,7 +83,7 @@
 </ul>
 </li>
 </ul>
-<div class="language-python line-numbers-mode" data-highlighter="prismjs" data-ext="py"><pre v-pre><code><span class="line"><span class="token keyword">for</span> each primitive <span class="token keyword">in</span> scene <span class="token punctuation">:</span></span>
+<div class="language-python line-numbers-mode" data-highlighter="prismjs" data-ext="py"><pre v-pre><code class="language-python"><span class="line"><span class="token keyword">for</span> each primitive <span class="token keyword">in</span> scene <span class="token punctuation">:</span></span>
 <span class="line">    transform the primitive to viewport</span>
 <span class="line">    find pixels <span class="token keyword">for</span> the primitive</span>
 <span class="line">    <span class="token builtin">set</span> color of the pixels based on texture <span class="token keyword">and</span> lighting model</span>
@@ -150,7 +150,7 @@
 <li>카메라 위치에서 image plane 상의 각 픽셀을 통과하는 ray를 생성</li>
 <li>해당 ray가 어떤 오브젝트와 교차하는지에 따라 픽셀의 색상이 결정됨</li>
 </ul>
-<div class="language-python line-numbers-mode" data-highlighter="prismjs" data-ext="py"><pre v-pre><code><span class="line"><span class="token keyword">for</span> each pixel <span class="token keyword">in</span> image<span class="token punctuation">(</span>plane<span class="token punctuation">)</span> <span class="token punctuation">:</span></span>
+<div class="language-python line-numbers-mode" data-highlighter="prismjs" data-ext="py"><pre v-pre><code class="language-python"><span class="line"><span class="token keyword">for</span> each pixel <span class="token keyword">in</span> image<span class="token punctuation">(</span>plane<span class="token punctuation">)</span> <span class="token punctuation">:</span></span>
 <span class="line">  determine which <span class="token builtin">object</span> should be shown at the pixel</span>
 <span class="line">  <span class="token builtin">set</span> color of the pixel based on texture <span class="token keyword">and</span> lighting model</span>
 <span class="line"></span></code></pre>

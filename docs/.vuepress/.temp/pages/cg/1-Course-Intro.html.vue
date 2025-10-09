@@ -487,7 +487,7 @@
 <li>
 <p><strong>Ubuntu</strong></p>
 <ul>
-<li><code v-pre>glxinfo</code> 사용 (mesa-utils 설치 필요)<div class="language-bash line-numbers-mode" data-highlighter="prismjs" data-ext="sh"><pre v-pre><code><span class="line"><span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> mesa-utils</span>
+<li><code v-pre>glxinfo</code> 사용 (mesa-utils 설치 필요)<div class="language-bash line-numbers-mode" data-highlighter="prismjs" data-ext="sh"><pre v-pre><code class="language-bash"><span class="line"><span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> mesa-utils</span>
 <span class="line">glxinfo <span class="token operator">|</span> <span class="token function">grep</span> version</span>
 <span class="line"></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div></div></div></li>

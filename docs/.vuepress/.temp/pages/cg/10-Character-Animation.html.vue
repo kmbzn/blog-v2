@@ -92,7 +92,7 @@
 </ul>
 </li>
 </ul>
-<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code><span class="line">Hips</span>
+<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code class="language-text"><span class="line">Hips</span>
 <span class="line"> ├── Spine</span>
 <span class="line"> │    ├── Head</span>
 <span class="line"> │    ├── RightArm ─ RightForeArm ─ RightHand</span>
@@ -313,7 +313,7 @@
 </ul>
 </li>
 </ul>
-<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code><span class="line">Hips</span>
+<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code class="language-text"><span class="line">Hips</span>
 <span class="line"> ├── Spine</span>
 <span class="line"> │    ├── Head</span>
 <span class="line"> │    ├── RightArm ─ RightForeArm ─ RightHand</span>
@@ -416,7 +416,7 @@
 <li>실시간 캡처 현장 사진</li>
 </ul>
 <h2 id="bvh-motion-capture-data-example" tabindex="-1"><a class="header-anchor" href="#bvh-motion-capture-data-example"><span>Bvh Motion Capture Data Example</span></a></h2>
-<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code><span class="line">HIERARCHY</span>
+<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code class="language-text"><span class="line">HIERARCHY</span>
 <span class="line">  "Skeleton" {</span>
 <span class="line">    ROOT Hips</span>
 <span class="line">    {</span>
@@ -566,7 +566,7 @@ PhysicsFC (Kim et al. 2025): <a href="https://youtu.be/sdWRBWESC4A" target="_bla
 </li>
 </ul>
 <h2 id="예시-구조만-발췌" tabindex="-1"><a class="header-anchor" href="#예시-구조만-발췌"><span>예시 (구조만 발췌)</span></a></h2>
-<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code><span class="line">HIERARCHY</span>
+<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code class="language-text"><span class="line">HIERARCHY</span>
 <span class="line">ROOT Hips</span>
 <span class="line">{</span>
 <span class="line">  OFFSET 0.0 0.0 0.0</span>
@@ -621,7 +621,7 @@ PhysicsFC (Kim et al. 2025): <a href="https://youtu.be/sdWRBWESC4A" target="_bla
 </li>
 </ul>
 <h2 id="예시-motion-section" tabindex="-1"><a class="header-anchor" href="#예시-motion-section"><span>예시 (Motion Section)</span></a></h2>
-<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code><span class="line">MOTION</span>
+<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code class="language-text"><span class="line">MOTION</span>
 <span class="line">Frames: 179</span>
 <span class="line">Frame Time: 0.016667</span>
 <span class="line">1.5796 0.099733323 0.091933 -4.117298987 ...</span>
@@ -723,7 +723,7 @@ channel 개수만큼 나열됨 (6, 3, 3, 3 = 총 15개 열)
 <p>(여기서 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>T</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">T_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">T</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.1389em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>는 i번째 관절로의 이동(translation), <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>R</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">R_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.00773em;">R</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.0077em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>는 i번째 관절에서의 회전(rotation)을 의미합니다.)</p>
 <h3 id="코드-1-joint-link-transform" tabindex="-1"><a class="header-anchor" href="#코드-1-joint-link-transform"><span>[코드] 1-joint-link-transform</span></a></h3>
 <p><code v-pre>7-Lab-Hierarchical-Mesh/1-hierarchical.py</code> 코드를 수정하여, 동일한 기능은 유지하되 지역(local) 변환 대신 관절(joint) &amp; 링크(link) 변환을 사용하도록 만들어 봅시다.</p>
-<div class="language-python line-numbers-mode" data-highlighter="prismjs" data-ext="py"><pre v-pre><code><span class="line"><span class="token comment"># 기존 hierarchical.py의 Node 클래스 (일부)</span></span>
+<div class="language-python line-numbers-mode" data-highlighter="prismjs" data-ext="py"><pre v-pre><code class="language-python"><span class="line"><span class="token comment"># 기존 hierarchical.py의 Node 클래스 (일부)</span></span>
 <span class="line"><span class="token keyword">class</span> <span class="token class-name">Node</span><span class="token punctuation">:</span></span>
 <span class="line">    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> name<span class="token punctuation">,</span> vao<span class="token punctuation">,</span> color<span class="token punctuation">,</span> local_transform<span class="token punctuation">)</span><span class="token punctuation">:</span></span>
 <span class="line">        <span class="token comment"># ...</span></span>

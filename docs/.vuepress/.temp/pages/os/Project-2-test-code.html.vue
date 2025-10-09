@@ -27,7 +27,7 @@
 <li>스레드 간에 공유되는 것과 공유되지 않는 것을 고려하고 구현하세요.</li>
 <li>함수 주소는 0으로 보일 수 있습니다.</li>
 </ul>
-<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code><span class="line">(gdb) p/x &amp;main_thread</span>
+<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code class="language-text"><span class="line">(gdb) p/x &amp;main_thread</span>
 <span class="line">$1 = 0x0</span>
 <span class="line"></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="test-1" tabindex="-1"><a class="header-anchor" href="#test-1"><span>Test 1</span></a></h2>
@@ -36,7 +36,7 @@
 <li>Thread 0은 전역 변수를 수정하고, 나머지 스레드는 즉시 종료합니다.</li>
 <li>Thread 0은 마지막에 종료해야 하며, 메인 스레드는 Thread 0이 수행한 수정 결과를 확인할 수 있어야 합니다.</li>
 </ul>
-<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code><span class="line">[TEST#1]</span>
+<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code class="language-text"><span class="line">[TEST#1]</span>
 <span class="line">Thread 1 start</span>
 <span class="line">Thread 2 start</span>
 <span class="line">Thread 3 start</span>
@@ -52,7 +52,7 @@
 <li>이 테스트는 스레드가 두 개의 인자를 정확히 받고 공유 자원에 올바르게 쓰는지 검증합니다.</li>
 <li>메인 스레드는 스레드들이 올바르게 동작했는지도 함께 검사합니다.</li>
 </ul>
-<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code><span class="line">[TEST#2]</span>
+<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code class="language-text"><span class="line">[TEST#2]</span>
 <span class="line">Thread 0 start, iter=0</span>
 <span class="line">Thread 0 end</span>
 <span class="line">Thread 1 start, iter=1000</span>
@@ -72,7 +72,7 @@
 자식 프로세스는 별도의 주소 공간을 가져야 합니다.</li>
 <li>자식이 부모의 주소 공간을 공유한다면 에러를 감지합니다.</li>
 </ul>
-<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code><span class="line">[TEST#3]</span>
+<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code class="language-text"><span class="line">[TEST#3]</span>
 <span class="line">Thread 0 start</span>
 <span class="line">Thread 1 start</span>
 <span class="line">Thread 2 start</span>
@@ -101,7 +101,7 @@
 <li>하나의 스레드가 할당한 메모리에 다른 스레드가 접근할 때 문제가 없는지 확인합니다.</li>
 <li>여러 스레드가 각각 메모리를 할당할 경우, 주소가 중복되지 않아야 합니다.</li>
 </ul>
-<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code><span class="line">[TEST#4]</span>
+<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code class="language-text"><span class="line">[TEST#4]</span>
 <span class="line">addr 0 at break = 0x88888801000</span>
 <span class="line">addr 1 at break = 0x88888801400</span>
 <span class="line">addr 2 at break = 0x88888801800</span>
@@ -115,7 +115,7 @@
 <li>메인 스레드가 종료되면 모든 스레드는 함께 종료되어야 합니다.</li>
 <li>다른 스레드 중 하나가 종료되면, 그 스레드만 종료되어야 합니다.</li>
 </ul>
-<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code><span class="line">[TEST#5]</span>
+<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code class="language-text"><span class="line">[TEST#5]</span>
 <span class="line">Thread 0 start, pid 29</span>
 <span class="line">Thread 1 start, pid 29</span>
 <span class="line">Thread 2 start, pid 29</span>
@@ -131,7 +131,7 @@
 <li>Thread 0은 thread_fcn 프로그램을 실행합니다.</li>
 <li>exec이 호출되면, 모든 스레드는 종료되고 새로운 이미지로 대체되어야 합니다.</li>
 </ul>
-<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code><span class="line">[TEST#6]</span>
+<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code class="language-text"><span class="line">[TEST#6]</span>
 <span class="line">Thread 0 start</span>
 <span class="line">Thread 1 start</span>
 <span class="line">Thread 2 start</span>
@@ -142,7 +142,7 @@
 <span class="line">TEST#6 Passed</span>
 <span class="line"></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="result" tabindex="-1"><a class="header-anchor" href="#result"><span>Result</span></a></h2>
-<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code><span class="line">$ thread_test</span>
+<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code class="language-text"><span class="line">$ thread_test</span>
 <span class="line">[TEST#1] Passed</span>
 <span class="line">[TEST#2] Passed</span>
 <span class="line">[TEST#3] Passed</span>

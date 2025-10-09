@@ -18,7 +18,7 @@
 <p>Python의 <code v-pre>input()</code> 함수는 내부적으로 여러 처리 과정을 거치기 때문에 상대적으로 느리다.<br>
 많은 양의 입력을 빠르게 처리해야 할 때는 <code v-pre>sys.stdin.readline()</code>을 사용하는 것이 효율적이다.</p>
 </div>
-<div class="language-python line-numbers-mode" data-highlighter="prismjs" data-ext="py"><pre v-pre><code><span class="line"><span class="token keyword">import</span> sys</span>
+<div class="language-python line-numbers-mode" data-highlighter="prismjs" data-ext="py"><pre v-pre><code class="language-python"><span class="line"><span class="token keyword">import</span> sys</span>
 <span class="line">n <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span>sys<span class="token punctuation">.</span>stdin<span class="token punctuation">.</span>readline<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span></span>
 <span class="line"></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div></div></div><blockquote>
@@ -30,7 +30,7 @@
 </ul>
 </blockquote>
 <h2 id="배열-삽입-최적화-append-vs-index-접근" tabindex="-1"><a class="header-anchor" href="#배열-삽입-최적화-append-vs-index-접근"><span>배열 삽입 최적화: <code v-pre>append()</code> vs Index 접근</span></a></h2>
-<div class="language-python line-numbers-mode" data-highlighter="prismjs" data-ext="py"><pre v-pre><code><span class="line"><span class="token comment"># 느린 방식: append()</span></span>
+<div class="language-python line-numbers-mode" data-highlighter="prismjs" data-ext="py"><pre v-pre><code class="language-python"><span class="line"><span class="token comment"># 느린 방식: append()</span></span>
 <span class="line">arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span></span>
 <span class="line"><span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">:</span></span>
 <span class="line">    arr<span class="token punctuation">.</span>append<span class="token punctuation">(</span>data<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span></span>
@@ -45,7 +45,7 @@
 <code v-pre>append()</code>는 내부적으로 동적 배열 크기 재조정이 발생할 수 있고, Cache miss도 유발됨</p>
 </blockquote>
 <h2 id="출력-최적화-print-반복-vs-문자열-누적-후-일괄-출력" tabindex="-1"><a class="header-anchor" href="#출력-최적화-print-반복-vs-문자열-누적-후-일괄-출력"><span>출력 최적화: <code v-pre>print()</code> 반복 vs 문자열 누적 후 일괄 출력</span></a></h2>
-<div class="language-python line-numbers-mode" data-highlighter="prismjs" data-ext="py"><pre v-pre><code><span class="line"><span class="token comment"># 느린 방식</span></span>
+<div class="language-python line-numbers-mode" data-highlighter="prismjs" data-ext="py"><pre v-pre><code class="language-python"><span class="line"><span class="token comment"># 느린 방식</span></span>
 <span class="line"><span class="token keyword">for</span> x <span class="token keyword">in</span> arr<span class="token punctuation">:</span></span>
 <span class="line">    <span class="token keyword">print</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span></span>
 <span class="line"></span>
@@ -62,7 +62,7 @@
 <p>Python의 기본 재귀 깊이는 <code v-pre>1,000</code>으로 제한되어 있어, DFS나 분할정복 등의 알고리즘에서 문제가 발생할 수 있다.<br>
 이럴 경우에 재귀 깊이를 늘려줄 수 있다.</p>
 </div>
-<div class="language-python line-numbers-mode" data-highlighter="prismjs" data-ext="py"><pre v-pre><code><span class="line"><span class="token keyword">import</span> sys</span>
+<div class="language-python line-numbers-mode" data-highlighter="prismjs" data-ext="py"><pre v-pre><code class="language-python"><span class="line"><span class="token keyword">import</span> sys</span>
 <span class="line">sys<span class="token punctuation">.</span>setrecursionlimit<span class="token punctuation">(</span><span class="token number">10</span><span class="token operator">**</span><span class="token number">6</span><span class="token punctuation">)</span></span>
 <span class="line"></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div></div></div><blockquote>
@@ -70,7 +70,7 @@
 재귀 깊이를 과도하게 설정할 경우 메모리 부족으로 인해 프로그램이 <strong>비정상 종료</strong>될 수 있음</p>
 </blockquote>
 <h2 id="queue-구조-최적화-list-vs-deque" tabindex="-1"><a class="header-anchor" href="#queue-구조-최적화-list-vs-deque"><span>Queue 구조 최적화: <code v-pre>list</code> vs <code v-pre>deque</code></span></a></h2>
-<div class="language-python line-numbers-mode" data-highlighter="prismjs" data-ext="py"><pre v-pre><code><span class="line"><span class="token comment"># 비효율적 방식</span></span>
+<div class="language-python line-numbers-mode" data-highlighter="prismjs" data-ext="py"><pre v-pre><code class="language-python"><span class="line"><span class="token comment"># 비효율적 방식</span></span>
 <span class="line">queue <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span></span>
 <span class="line">queue<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span></span>
 <span class="line">queue<span class="token punctuation">.</span>pop<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span>  <span class="token comment"># O(n)</span></span>

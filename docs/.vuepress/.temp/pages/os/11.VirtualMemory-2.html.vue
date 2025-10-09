@@ -108,7 +108,7 @@
 → CPU는 대기만 하며 throughput 매우 낮아짐</p>
 </li>
 </ul>
-<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code><span class="line">예시 코드:</span>
+<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code class="language-text"><span class="line">예시 코드:</span>
 <span class="line"></span>
 <span class="line">main() {</span>
 <span class="line">  for (i = 1; i &lt; 100000; i++) {</span>
@@ -180,7 +180,7 @@
 </ul>
 </li>
 <li>
-<p v-pre class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>W</mi><mi>S</mi><mo stretchy="false">(</mo><mi>t</mi><mo separator="true">,</mo><mi mathvariant="normal">Δ</mi><mo stretchy="false">)</mo><mo>=</mo><mo stretchy="false">{</mo><mtext>최근 </mtext><mi mathvariant="normal">Δ</mi><mtext> 동안 참조된 페이지들</mtext><mo stretchy="false">}</mo></mrow><annotation encoding="application/x-tex">WS(t, \Delta) = \{ \text{최근 } \Delta \text{ 동안 참조된 페이지들} \} 
+<p v-pre class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>W</mi><mi>S</mi><mo stretchy="false">(</mo><mi>t</mi><mo separator="true">,</mo><mi mathvariant="normal">Δ</mi><mo stretchy="false">)</mo><mo>=</mo><mo stretchy="false">{</mo><mtext>최근 </mtext><mi mathvariant="normal">Δ</mi><mtext> 동안 참조된 페이지들</mtext><mo stretchy="false">}</mo></mrow><annotation encoding="application/x-tex"> WS(t, \Delta) = \{ \text{최근 } \Delta \text{ 동안 참조된 페이지들} \} 
 </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">W</span><span class="mord mathnormal" style="margin-right:0.05764em;">S</span><span class="mopen">(</span><span class="mord mathnormal">t</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">Δ</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">{</span><span class="mord text"><span class="mord hangul_fallback">최근</span><span class="mord"> </span></span><span class="mord">Δ</span><span class="mord text"><span class="mord"> </span><span class="mord hangul_fallback">동안</span><span class="mord"> </span><span class="mord hangul_fallback">참조된</span><span class="mord"> </span><span class="mord hangul_fallback">페이지들</span></span><span class="mclose">}</span></span></span></span></span></p>
 <ul>
 <li>Δ가 너무 작으면 → locality를 모두 포함하지 못함</li>
@@ -209,12 +209,12 @@
 <ul>
 <li>page reference table:</li>
 </ul>
-<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code><span class="line">. . 2 6 1 5 7 7 7 7 5 1 1 2 6 3 4 4 3 4 4 3 3 4 . . .</span>
+<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code class="language-text"><span class="line">. . 2 6 1 5 7 7 7 7 5 1 1 2 6 3 4 4 3 4 4 3 3 4 . . .</span>
 <span class="line"></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><ul>
 <li>Δ 동안 참조된 페이지들:</li>
 </ul>
-<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code><span class="line">WS(t₁) = {1, 2, 5, 6, 7}</span>
+<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code class="language-text"><span class="line">WS(t₁) = {1, 2, 5, 6, 7}</span>
 <span class="line">WS(t₂) = {3, 4}</span>
 <span class="line"></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="working-set-model-설명" tabindex="-1"><a class="header-anchor" href="#working-set-model-설명"><span>Working-Set Model (설명)</span></a></h2>
@@ -279,7 +279,7 @@
 <ul>
 <li>페이지 폴트율에 따라 프레임 수를 조절</li>
 </ul>
-<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code><span class="line">page fault rate</span>
+<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code class="language-text"><span class="line">page fault rate</span>
 <span class="line">  ↑</span>
 <span class="line">  │      upper bound (감소해야 함)</span>
 <span class="line">  │       ↘</span>
@@ -332,14 +332,14 @@
 </li>
 </ul>
 <h2 id="before-process-1-modifies-page-c" tabindex="-1"><a class="header-anchor" href="#before-process-1-modifies-page-c"><span>Before Process 1 Modifies Page C</span></a></h2>
-<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code><span class="line">process₁           physical memory           process₂</span>
+<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code class="language-text"><span class="line">process₁           physical memory           process₂</span>
 <span class="line">   │                   ┌────────┐               │</span>
 <span class="line">   ├──────▶  page A ◀──┤ page A ├──▶────────────┤</span>
 <span class="line">   ├──────▶  page B ◀──┤ page B ├──▶────────────┤</span>
 <span class="line">   └──────▶  page C ◀──┤ page C ├──▶────────────┘</span>
 <span class="line"></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="after-process-1-modifies-page-c" tabindex="-1"><a class="header-anchor" href="#after-process-1-modifies-page-c"><span>After Process 1 Modifies Page C</span></a></h2>
-<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code><span class="line">process₁           physical memory           process₂</span>
+<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code class="language-text"><span class="line">process₁           physical memory           process₂</span>
 <span class="line">   │                   ┌────────┐               │</span>
 <span class="line">   ├──────▶  page A ◀──┤ page A ├──▶────────────┤</span>
 <span class="line">   ├──────▶  page B ◀──┤ page B ├──▶────────────┤</span>
@@ -394,7 +394,7 @@
 <p>모델:</p>
 <ul>
 <li>s 페이지를 미리 로드했고, 그 중 d 페이지만 사용되었을 때</li>
-<li>비용 절감 조건:<p v-pre class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mtext>cost of s  page faults saved</mtext><mo>&gt;</mo><mi>s</mi><mo>×</mo><mo stretchy="false">(</mo><mn>1</mn><mo>−</mo><mi>d</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\text{cost of s \text{ page faults saved}} &gt; s \times (1 - d) 
+<li>비용 절감 조건:<p v-pre class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mtext>cost of s  page faults saved</mtext><mo>&gt;</mo><mi>s</mi><mo>×</mo><mo stretchy="false">(</mo><mn>1</mn><mo>−</mo><mi>d</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex"> \text{cost of s \text{ page faults saved}} &gt; s \times (1 - d) 
 </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord text"><span class="mord">cost of s </span><span class="mord text"><span class="mord"> page faults saved</span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">&gt;</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6667em;vertical-align:-0.0833em;"></span><span class="mord mathnormal">s</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">d</span><span class="mclose">)</span></span></span></span></span></p>
 </li>
 </ul>
@@ -431,7 +431,7 @@
 <ul>
 <li>TLB를 통해 접근 가능한 메모리 양</li>
 <li>
-<p v-pre class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mtext>TLB Reach</mtext><mo>=</mo><mtext>TLB Size</mtext><mo>×</mo><mtext>Page Size</mtext></mrow><annotation encoding="application/x-tex">\text{TLB Reach} = \text{TLB Size} \times \text{Page Size} 
+<p v-pre class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mtext>TLB Reach</mtext><mo>=</mo><mtext>TLB Size</mtext><mo>×</mo><mtext>Page Size</mtext></mrow><annotation encoding="application/x-tex"> \text{TLB Reach} = \text{TLB Size} \times \text{Page Size} 
 </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord text"><span class="mord">TLB Reach</span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.7667em;vertical-align:-0.0833em;"></span><span class="mord text"><span class="mord">TLB Size</span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.8778em;vertical-align:-0.1944em;"></span><span class="mord text"><span class="mord">Page Size</span></span></span></span></span></span></p>
 </li>
 </ul>
@@ -468,12 +468,12 @@
 <p>예:</p>
 </li>
 </ul>
-<div class="language-c line-numbers-mode" data-highlighter="prismjs" data-ext="c"><pre v-pre><code><span class="line"><span class="token keyword">int</span> data<span class="token punctuation">[</span><span class="token number">128</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">128</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">// row당 하나의 페이지 사용</span></span>
+<div class="language-c line-numbers-mode" data-highlighter="prismjs" data-ext="c"><pre v-pre><code class="language-c"><span class="line"><span class="token keyword">int</span> data<span class="token punctuation">[</span><span class="token number">128</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">128</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">// row당 하나의 페이지 사용</span></span>
 <span class="line"></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><ul>
 <li>Program 1:</li>
 </ul>
-<div class="language-c line-numbers-mode" data-highlighter="prismjs" data-ext="c"><pre v-pre><code><span class="line"><span class="token keyword">for</span> <span class="token punctuation">(</span>j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> <span class="token number">128</span><span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span></span>
+<div class="language-c line-numbers-mode" data-highlighter="prismjs" data-ext="c"><pre v-pre><code class="language-c"><span class="line"><span class="token keyword">for</span> <span class="token punctuation">(</span>j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> <span class="token number">128</span><span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span></span>
 <span class="line">  <span class="token keyword">for</span> <span class="token punctuation">(</span>i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">128</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span></span>
 <span class="line">    data<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span></span>
 <span class="line"></span></code></pre>
@@ -481,7 +481,7 @@
 <ul>
 <li>Program 2:</li>
 </ul>
-<div class="language-c line-numbers-mode" data-highlighter="prismjs" data-ext="c"><pre v-pre><code><span class="line"><span class="token keyword">for</span> <span class="token punctuation">(</span>i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">128</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span></span>
+<div class="language-c line-numbers-mode" data-highlighter="prismjs" data-ext="c"><pre v-pre><code class="language-c"><span class="line"><span class="token keyword">for</span> <span class="token punctuation">(</span>i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">128</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span></span>
 <span class="line">  <span class="token keyword">for</span> <span class="token punctuation">(</span>j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> <span class="token number">128</span><span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span></span>
 <span class="line">    data<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span></span>
 <span class="line"></span></code></pre>

@@ -92,7 +92,7 @@ M834 80h400000v40h-400000z"/></svg></span></span></span><span class="vlist-s">�
 </li>
 <li>
 <p>예시 요청 큐 (0~199):</p>
-<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code><span class="line">98, 183, 37, 122, 14, 124, 65, 67</span>
+<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code class="language-text"><span class="line">98, 183, 37, 122, 14, 124, 65, 67</span>
 <span class="line"></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div></li>
 <li>
@@ -104,7 +104,7 @@ M834 80h400000v40h-400000z"/></svg></span></span></span><span class="vlist-s">�
 <li><strong>First-Come, First-Served</strong> 디스크 스케줄링 방식</li>
 <li>요청 순서대로 처리함</li>
 <li>단순하지만, seek 이동이 <strong>비효율적</strong></li>
-<li>예시:<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code><span class="line">queue = 98, 183, 37, 122, 14, 124, 65, 67</span>
+<li>예시:<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code class="language-text"><span class="line">queue = 98, 183, 37, 122, 14, 124, 65, 67</span>
 <span class="line">head starts at 53</span>
 <span class="line"></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div></div></div></li>
@@ -186,7 +186,7 @@ SSTF 방식은 가장 가까운 요청부터 차례로 접근<br>
 </ul>
 <h2 id="c-look-cont" tabindex="-1"><a class="header-anchor" href="#c-look-cont"><span>C-LOOK (Cont.)</span></a></h2>
 <ul>
-<li>예시 queue:<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code><span class="line">queue = 98, 183, 37, 122, 14, 124, 65, 67</span>
+<li>예시 queue:<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code class="language-text"><span class="line">queue = 98, 183, 37, 122, 14, 124, 65, 67</span>
 <span class="line">head starts at 53</span>
 <span class="line"></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div></div></div></li>

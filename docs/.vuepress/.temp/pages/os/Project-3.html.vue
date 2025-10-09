@@ -89,7 +89,7 @@
 <li><strong>threetest()</strong>: Multi-Process COW Stress Testing</li>
 <li><strong>filetest()</strong>: System Call Integration with COW (copyout() Compatibility)</li>
 </ul>
-<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code><span class="line">...</span>
+<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code class="language-text"><span class="line">...</span>
 <span class="line">simple: ok</span>
 <span class="line">threetest: ok</span>
 <span class="line">filetest: ok</span>
@@ -218,7 +218,7 @@
 </li>
 <li><strong><code v-pre>concur()</code> - Concurrent Testing</strong></li>
 </ul>
-<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code><span class="line">...</span>
+<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code class="language-text"><span class="line">...</span>
 <span class="line">Start: test symlinks</span>
 <span class="line">test symlinks: OK</span>
 <span class="line">Start: test concurrent symlinks</span>

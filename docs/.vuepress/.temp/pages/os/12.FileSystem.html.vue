@@ -377,7 +377,7 @@
 </li>
 <li>
 <p>특정 파일(game 등)에 대해 적절한 접근 권한 설정:</p>
-<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code><span class="line">chmod 761 game</span>
+<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code class="language-text"><span class="line">chmod 761 game</span>
 <span class="line">chgrp G game</span>
 <span class="line"></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div></div></div></li>

@@ -18,7 +18,7 @@
 <li>프로그램은 여러 개의 Python 소스 파일로 구성될 수 있으나, <strong>진입점은 반드시 <code v-pre>main.py</code></strong> 여야 합니다.</li>
 <li>즉, 다음 명령어로 실행 가능해야 합니다:</li>
 </ul>
-<div class="language-bash line-numbers-mode" data-highlighter="prismjs" data-ext="sh"><pre v-pre><code><span class="line">python main.py</span>
+<div class="language-bash line-numbers-mode" data-highlighter="prismjs" data-ext="sh"><pre v-pre><code class="language-bash"><span class="line">python main.py</span>
 <span class="line"></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h2 id="_1-과제-목표-여러-개의-obj-메쉬를-표시할-수-있는-obj-파일-뷰어-구현" tabindex="-1"><a class="header-anchor" href="#_1-과제-목표-여러-개의-obj-메쉬를-표시할-수-있는-obj-파일-뷰어-구현"><span>1. 과제 목표: 여러 개의 obj 메쉬를 표시할 수 있는 obj 파일 뷰어 구현</span></a></h2>
 <ul>
@@ -30,14 +30,14 @@
 </ul>
 </li>
 </ul>
-<div class="language-python line-numbers-mode" data-highlighter="prismjs" data-ext="py"><pre v-pre><code><span class="line">glfwWindowHint<span class="token punctuation">(</span>GLFW_CONTEXT_VERSION_MAJOR<span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span></span>
+<div class="language-python line-numbers-mode" data-highlighter="prismjs" data-ext="py"><pre v-pre><code class="language-python"><span class="line">glfwWindowHint<span class="token punctuation">(</span>GLFW_CONTEXT_VERSION_MAJOR<span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span></span>
 <span class="line">glfwWindowHint<span class="token punctuation">(</span>GLFW_CONTEXT_VERSION_MINOR<span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span></span>
 <span class="line">glfwWindowHint<span class="token punctuation">(</span>GLFW_OPENGL_PROFILE<span class="token punctuation">,</span> GLFW_OPENGL_CORE_PROFILE<span class="token punctuation">)</span></span>
 <span class="line"></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul>
 <li>셰이더 코드의 첫 줄:</li>
 </ul>
-<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code><span class="line">#version 330 core</span>
+<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code class="language-text"><span class="line">#version 330 core</span>
 <span class="line"></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><ul>
 <li>위 조건을 지키지 않으면, <strong>리포트를 제외한 모든 항목에 점수가 부여되지 않습니다.</strong></li>
@@ -189,7 +189,7 @@
 <ul>
 <li>Python용 glfw에서 <code v-pre>drop_callback</code>은 인자가 다릅니다:</li>
 </ul>
-<div class="language-python line-numbers-mode" data-highlighter="prismjs" data-ext="py"><pre v-pre><code><span class="line"><span class="token keyword">def</span> <span class="token function">drop_callback</span><span class="token punctuation">(</span>window<span class="token punctuation">,</span> paths<span class="token punctuation">)</span><span class="token punctuation">:</span>  <span class="token comment"># paths는 파일 경로 문자열 리스트</span></span>
+<div class="language-python line-numbers-mode" data-highlighter="prismjs" data-ext="py"><pre v-pre><code class="language-python"><span class="line"><span class="token keyword">def</span> <span class="token function">drop_callback</span><span class="token punctuation">(</span>window<span class="token punctuation">,</span> paths<span class="token punctuation">)</span><span class="token punctuation">:</span>  <span class="token comment"># paths는 파일 경로 문자열 리스트</span></span>
 <span class="line"></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><ul>
 <li>obj 포맷 참고: <a href="https://en.wikipedia.org/wiki/Wavefront_.obj_file" target="_blank" rel="noopener noreferrer">Wavefront .obj 파일 포맷 위키백과</a></li>

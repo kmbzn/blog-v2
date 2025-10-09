@@ -1,6 +1,6 @@
 <template><div><h1 id="_10-virtual-memory-1" tabindex="-1"><a class="header-anchor" href="#_10-virtual-memory-1"><span>10. Virtual Memory(1)</span></a></h1>
 <h2 id="size-of-a-logical-address-space" tabindex="-1"><a class="header-anchor" href="#size-of-a-logical-address-space"><span>Size of a Logical Address Space</span></a></h2>
-<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code><span class="line">[stack]</span>
+<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code class="language-text"><span class="line">[stack]</span>
 <span class="line">   ↑</span>
 <span class="line">[heap]</span>
 <span class="line"></span>
@@ -11,7 +11,7 @@
 <span class="line">   0</span>
 <span class="line"></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul>
-<li>32비트 주소의 경우, 최대 주소 공간:<p v-pre class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msup><mn>2</mn><mn>32</mn></msup><mo>−</mo><mn>1</mn><mo>⇒</mo><mn>4</mn><mtext>GB</mtext></mrow><annotation encoding="application/x-tex">2^{32} - 1 \Rightarrow 4 \text{GB} 
+<li>32비트 주소의 경우, 최대 주소 공간:<p v-pre class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msup><mn>2</mn><mn>32</mn></msup><mo>−</mo><mn>1</mn><mo>⇒</mo><mn>4</mn><mtext>GB</mtext></mrow><annotation encoding="application/x-tex"> 2^{32} - 1 \Rightarrow 4 \text{GB} 
 </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.9474em;vertical-align:-0.0833em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">32</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">⇒</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord">4</span><span class="mord text"><span class="mord">GB</span></span></span></span></span></span></p>
 <ul>
 <li>각 프로세스당 최대 4GB 논리 주소 공간</li>
@@ -43,7 +43,7 @@
 </li>
 </ul>
 <h2 id="virtual-memory-larger-than-physical-memory" tabindex="-1"><a class="header-anchor" href="#virtual-memory-larger-than-physical-memory"><span>Virtual Memory Larger than Physical Memory</span></a></h2>
-<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code><span class="line">virtual memory:</span>
+<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code class="language-text"><span class="line">virtual memory:</span>
 <span class="line">  page 0</span>
 <span class="line">  page 1</span>
 <span class="line">  page 2</span>
@@ -159,7 +159,7 @@
 </li>
 </ul>
 <h2 id="steps-in-handling-a-page-fault" tabindex="-1"><a class="header-anchor" href="#steps-in-handling-a-page-fault"><span>Steps in Handling a Page Fault</span></a></h2>
-<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code><span class="line">프로세스가 페이지 참조</span>
+<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code class="language-text"><span class="line">프로세스가 페이지 참조</span>
 <span class="line">        ↓</span>
 <span class="line">해당 페이지가 디스크에만 존재 → trap 발생</span>
 <span class="line">        ↓</span>
@@ -180,7 +180,7 @@
 <li>피연산자 fetch 중: instruction fetch → decode → operand fetch 중 재시작 필요</li>
 <li><strong>최악의 경우</strong>: 명령어가 여러 위치를 갱신할 때
 <ul>
-<li>예: block copy 명령어<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code><span class="line">copy count from_address to_address</span>
+<li>예: block copy 명령어<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code class="language-text"><span class="line">copy count from_address to_address</span>
 <span class="line"></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><ul>
 <li>to_address가 두 블록에 걸쳐 있을 경우</li>
@@ -282,7 +282,7 @@
 <p>예시 reference string:</p>
 </li>
 </ul>
-<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code><span class="line">1, 2, 3, 4, 1, 2, 5, 1, 2, 3, 4, 5</span>
+<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code class="language-text"><span class="line">1, 2, 3, 4, 1, 2, 5, 1, 2, 3, 4, 5</span>
 <span class="line"></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h2 id="graph-of-page-faults-vs-the-number-of-frames" tabindex="-1"><a class="header-anchor" href="#graph-of-page-faults-vs-the-number-of-frames"><span>Graph of Page Faults vs. the Number of Frames</span></a></h2>
 <ul>
@@ -293,12 +293,12 @@
 <ul>
 <li>Reference string:</li>
 </ul>
-<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code><span class="line">1, 2, 3, 4, 1, 2, 5, 1, 2, 3, 4, 5</span>
+<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code class="language-text"><span class="line">1, 2, 3, 4, 1, 2, 5, 1, 2, 3, 4, 5</span>
 <span class="line"></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><ul>
 <li><strong>3 프레임</strong>일 때:</li>
 </ul>
-<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code><span class="line">1 2 3  →  page fault</span>
+<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code class="language-text"><span class="line">1 2 3  →  page fault</span>
 <span class="line">4      →  page fault, replace 1</span>
 <span class="line">1      →  page fault, replace 2</span>
 <span class="line">2      →  page fault, replace 3</span>
@@ -308,7 +308,7 @@
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul>
 <li><strong>4 프레임</strong>일 때:</li>
 </ul>
-<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code><span class="line">page fault 더 많아짐 → 10</span>
+<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code class="language-text"><span class="line">page fault 더 많아짐 → 10</span>
 <span class="line">→ Belady’s Anomaly (프레임이 늘었는데도 page fault가 증가)</span>
 <span class="line"></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="optimal-algorithm" tabindex="-1"><a class="header-anchor" href="#optimal-algorithm"><span>Optimal Algorithm</span></a></h2>
@@ -320,7 +320,7 @@
 <p>예시:</p>
 </li>
 </ul>
-<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code><span class="line">Reference: 1, 2, 3, 4, 1, 2, 5, 1, 2, 3, 4, 5</span>
+<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code class="language-text"><span class="line">Reference: 1, 2, 3, 4, 1, 2, 5, 1, 2, 3, 4, 5</span>
 <span class="line">4개의 프레임 사용 시 → 총 6 page faults</span>
 <span class="line"></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div></div></div><ul>
@@ -331,7 +331,7 @@
 <ul>
 <li>Reference string:</li>
 </ul>
-<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code><span class="line">1, 2, 3, 4, 1, 2, 5, 1, 2, 3, 4, 5</span>
+<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code class="language-text"><span class="line">1, 2, 3, 4, 1, 2, 5, 1, 2, 3, 4, 5</span>
 <span class="line"></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><ul>
 <li><strong>LRU 문제점</strong>:
@@ -379,12 +379,12 @@
 <ul>
 <li>Reference string:</li>
 </ul>
-<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code><span class="line">4 7 0 7 1 0 1 2 7 b</span>
+<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code class="language-text"><span class="line">4 7 0 7 1 0 1 2 7 b</span>
 <span class="line"></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><ul>
 <li>스택 상태 변화:</li>
 </ul>
-<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code><span class="line">stack before:</span>
+<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code class="language-text"><span class="line">stack before:</span>
 <span class="line">top → 2</span>
 <span class="line">       1</span>
 <span class="line">       0</span>
@@ -463,11 +463,11 @@
 <li>시각적 예시:</li>
 </ul>
 <p>(a)</p>
-<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code><span class="line">reference bit: 1 1 0 1 0</span>
+<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code class="language-text"><span class="line">reference bit: 1 1 0 1 0</span>
 <span class="line">next victim → 찾을 때까지 한 칸씩 이동하며 검사</span>
 <span class="line"></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div></div></div><p>(b)</p>
-<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code><span class="line">reference bit가 1인 경우는 무시하고 다음으로 진행</span>
+<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code class="language-text"><span class="line">reference bit가 1인 경우는 무시하고 다음으로 진행</span>
 <span class="line"></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><ul>
 <li>한 바퀴 돌면서 적절한 교체 대상 선택</li>

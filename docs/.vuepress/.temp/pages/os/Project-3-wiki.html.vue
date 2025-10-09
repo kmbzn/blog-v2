@@ -161,7 +161,7 @@
 <code v-pre>pipe</code>와 <code v-pre>fork</code>를 통해 <code v-pre>copyout</code> 동작 중 page fault가 정상적으로 처리되는지를 검증한다. parent의 <code v-pre>buf</code>가 child에 의해 오염되지 않아야 성공이다.</p>
 </li>
 </ul>
-<div class="language-c line-numbers-mode" data-highlighter="prismjs" data-ext="c"><pre v-pre><code><span class="line">uint64 phys_size <span class="token operator">=</span> PHYSTOP <span class="token operator">-</span> KERNBASE<span class="token punctuation">;</span></span>
+<div class="language-c line-numbers-mode" data-highlighter="prismjs" data-ext="c"><pre v-pre><code class="language-c"><span class="line">uint64 phys_size <span class="token operator">=</span> PHYSTOP <span class="token operator">-</span> KERNBASE<span class="token punctuation">;</span></span>
 <span class="line"><span class="token keyword">int</span> sz <span class="token operator">=</span> <span class="token punctuation">(</span>phys_size <span class="token operator">/</span> <span class="token number">3</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">2</span><span class="token punctuation">;</span></span>
 <span class="line"><span class="token keyword">char</span> <span class="token operator">*</span>p <span class="token operator">=</span> <span class="token function">sbrk</span><span class="token punctuation">(</span>sz<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
 <span class="line"><span class="token keyword">int</span> pid <span class="token operator">=</span> <span class="token function">fork</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
@@ -179,7 +179,7 @@
 <li>모든 검사가 통과되면 성공 메시지를 출력하고 <code v-pre>exit</code>한다.</li>
 </ul>
 <p>이 테스트는 doubly-indirect block 기능이 적용된 file system이 실제로 large file을 안정적으로 처리할 수 있는지를 확인하는 데 목적이 있다.</p>
-<div class="language-c line-numbers-mode" data-highlighter="prismjs" data-ext="c"><pre v-pre><code><span class="line">fd <span class="token operator">=</span> <span class="token function">open</span><span class="token punctuation">(</span><span class="token string">"big.file"</span><span class="token punctuation">,</span> O_CREATE <span class="token operator">|</span> O_WRONLY<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<div class="language-c line-numbers-mode" data-highlighter="prismjs" data-ext="c"><pre v-pre><code class="language-c"><span class="line">fd <span class="token operator">=</span> <span class="token function">open</span><span class="token punctuation">(</span><span class="token string">"big.file"</span><span class="token punctuation">,</span> O_CREATE <span class="token operator">|</span> O_WRONLY<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
 <span class="line"><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span></span>
 <span class="line"><span class="token keyword">while</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">{</span></span>
 <span class="line">  <span class="token operator">*</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token operator">*</span><span class="token punctuation">)</span>buf <span class="token operator">=</span> blocks<span class="token punctuation">;</span></span>
@@ -205,7 +205,7 @@
 여러 process가 동시에 <code v-pre>symlink</code>를 생성하고 <code v-pre>unlink</code>를 반복하는 상황을 만들어 race condition이나 consistency 문제가 발생하지 않는지 검증한다. 각 process는 동일한 <code v-pre>target</code>에 대해 반복적으로 <code v-pre>symlink</code>/<code v-pre>unlink</code>를 수행한다.</p>
 </li>
 </ul>
-<div class="language-c line-numbers-mode" data-highlighter="prismjs" data-ext="c"><pre v-pre><code><span class="line">r <span class="token operator">=</span> <span class="token function">symlink</span><span class="token punctuation">(</span><span class="token string">"/testsymlink/a"</span><span class="token punctuation">,</span> <span class="token string">"/testsymlink/b"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<div class="language-c line-numbers-mode" data-highlighter="prismjs" data-ext="c"><pre v-pre><code class="language-c"><span class="line">r <span class="token operator">=</span> <span class="token function">symlink</span><span class="token punctuation">(</span><span class="token string">"/testsymlink/a"</span><span class="token punctuation">,</span> <span class="token string">"/testsymlink/b"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
 <span class="line"><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span></span>
 <span class="line"><span class="token keyword">if</span><span class="token punctuation">(</span>st<span class="token punctuation">.</span>type <span class="token operator">!=</span> T_SYMLINK<span class="token punctuation">)</span></span>
 <span class="line">  <span class="token function">fail</span><span class="token punctuation">(</span><span class="token string">"not a symlink"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
@@ -222,7 +222,7 @@
 <hr>
 <h4 id="_3-1-1-uvmcopy에서-페이지-공유-설정" tabindex="-1"><a class="header-anchor" href="#_3-1-1-uvmcopy에서-페이지-공유-설정"><span>3.1.1. uvmcopy에서 페이지 공유 설정</span></a></h4>
 <p><code v-pre>uvmcopy</code>는 parent의 pagetable을 순회하면서 writable page를 read-only로 바꾸고 <code v-pre>PTE_COW</code> flag를 추가한다. 이후 동일한 physical page를 child pagetable에 매핑하고, ref count를 증가시킨다.</p>
-<div class="language-c line-numbers-mode" data-highlighter="prismjs" data-ext="c"><pre v-pre><code><span class="line"><span class="token comment">// kernel/vm.c</span></span>
+<div class="language-c line-numbers-mode" data-highlighter="prismjs" data-ext="c"><pre v-pre><code class="language-c"><span class="line"><span class="token comment">// kernel/vm.c</span></span>
 <span class="line"><span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">*</span>pte <span class="token operator">&amp;</span> PTE_W<span class="token punctuation">)</span><span class="token punctuation">{</span></span>
 <span class="line">  <span class="token operator">*</span>pte <span class="token operator">&amp;=</span> <span class="token operator">~</span>PTE_W<span class="token punctuation">;</span>     <span class="token comment">// read-only</span></span>
 <span class="line">  <span class="token operator">*</span>pte <span class="token operator">|=</span> PTE_COW<span class="token punctuation">;</span>    <span class="token comment">// cow 표시</span></span>
@@ -240,7 +240,7 @@
 <hr>
 <h4 id="_3-1-2-usertrap에서-write-fault-처리" tabindex="-1"><a class="header-anchor" href="#_3-1-2-usertrap에서-write-fault-처리"><span>3.1.2. usertrap에서 write fault 처리</span></a></h4>
 <p>user mode에서 write fault가 발생하면 <code v-pre>usertrap</code>이 COW 여부를 판정한다. 해당 page가 <code v-pre>PTE_COW</code>이고 공유 ref count가 2 이상이면 새 page를 할당해 내용을 복사한 뒤 child 쪽으로만 writable 매핑을 만든다. ref count가 1이면 같은 page를 그대로 writable로 전환한다.</p>
-<div class="language-c line-numbers-mode" data-highlighter="prismjs" data-ext="c"><pre v-pre><code><span class="line"><span class="token comment">// kernel/trap.c</span></span>
+<div class="language-c line-numbers-mode" data-highlighter="prismjs" data-ext="c"><pre v-pre><code class="language-c"><span class="line"><span class="token comment">// kernel/trap.c</span></span>
 <span class="line"><span class="token keyword">if</span><span class="token punctuation">(</span><span class="token function">r_scause</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">15</span><span class="token punctuation">)</span><span class="token punctuation">{</span>                 <span class="token comment">// store fault</span></span>
 <span class="line">  uint64 va <span class="token operator">=</span> <span class="token function">r_stval</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
 <span class="line">  <span class="token class-name">pte_t</span> <span class="token operator">*</span>pte <span class="token operator">=</span> <span class="token function">walk</span><span class="token punctuation">(</span>p<span class="token operator">-></span>pagetable<span class="token punctuation">,</span> va<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
@@ -264,7 +264,7 @@
 <hr>
 <h4 id="_3-1-3-kalloc-kfree에서-reference-count-관리" tabindex="-1"><a class="header-anchor" href="#_3-1-3-kalloc-kfree에서-reference-count-관리"><span>3.1.3. kalloc / kfree에서 reference count 관리</span></a></h4>
 <p>physical page별 사용 개수를 <code v-pre>ref_counts[]</code> 배열로 관리한다. 새 page를 할당하면 ref count를 1로 설정하고, page를 공유할 때 <code v-pre>inc_ref</code>로 증가시킨다. <code v-pre>kfree</code>는 ref count가 0이 될 때만 실제 free list에 반환한다.</p>
-<div class="language-c line-numbers-mode" data-highlighter="prismjs" data-ext="c"><pre v-pre><code><span class="line"><span class="token comment">// kalloc.c</span></span>
+<div class="language-c line-numbers-mode" data-highlighter="prismjs" data-ext="c"><pre v-pre><code class="language-c"><span class="line"><span class="token comment">// kalloc.c</span></span>
 <span class="line"><span class="token keyword">void</span> <span class="token function">inc_ref</span><span class="token punctuation">(</span><span class="token keyword">void</span> <span class="token operator">*</span>pa<span class="token punctuation">)</span><span class="token punctuation">{</span></span>
 <span class="line">  ref_counts<span class="token punctuation">[</span><span class="token punctuation">(</span>uint64<span class="token punctuation">)</span>pa <span class="token operator">/</span> PGSIZE<span class="token punctuation">]</span><span class="token operator">++</span><span class="token punctuation">;</span></span>
 <span class="line"><span class="token punctuation">}</span></span>
@@ -292,7 +292,7 @@
 <p>large file을 저장하기 위해 inode의 block address 구조를 direct + single indirect + double indirect 3단계로 확장했다. bigfile 테스트가 요구하는 <code v-pre>65803</code>개 block을 정확히 지원하도록 상수를 재조정하고, <code v-pre>bmap</code>와 <code v-pre>itrunc</code>를 수정해 block 할당·해제를 처리한다.</p>
 <hr>
 <h4 id="_3-2-1-핵심-매크로-변경" tabindex="-1"><a class="header-anchor" href="#_3-2-1-핵심-매크로-변경"><span>3.2.1. 핵심 매크로 변경</span></a></h4>
-<div class="language-c line-numbers-mode" data-highlighter="prismjs" data-ext="c"><pre v-pre><code><span class="line"><span class="token comment">// kernel/param.h</span></span>
+<div class="language-c line-numbers-mode" data-highlighter="prismjs" data-ext="c"><pre v-pre><code class="language-c"><span class="line"><span class="token comment">// kernel/param.h</span></span>
 <span class="line"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">FSSIZE</span> <span class="token expression"><span class="token number">262656</span>      </span><span class="token comment">// file system 전체 block 수</span></span></span>
 <span class="line"></span>
 <span class="line"><span class="token comment">// kernel/fs.h</span></span>
@@ -306,7 +306,7 @@
 </ul>
 <hr>
 <h4 id="_3-2-2-dinode-구조" tabindex="-1"><a class="header-anchor" href="#_3-2-2-dinode-구조"><span>3.2.2. dinode 구조</span></a></h4>
-<div class="language-c line-numbers-mode" data-highlighter="prismjs" data-ext="c"><pre v-pre><code><span class="line"><span class="token keyword">struct</span> <span class="token class-name">dinode</span> <span class="token punctuation">{</span></span>
+<div class="language-c line-numbers-mode" data-highlighter="prismjs" data-ext="c"><pre v-pre><code class="language-c"><span class="line"><span class="token keyword">struct</span> <span class="token class-name">dinode</span> <span class="token punctuation">{</span></span>
 <span class="line">  <span class="token keyword">short</span> type<span class="token punctuation">;</span></span>
 <span class="line">  <span class="token keyword">short</span> major<span class="token punctuation">;</span></span>
 <span class="line">  <span class="token keyword">short</span> minor<span class="token punctuation">;</span></span>
@@ -318,7 +318,7 @@
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><hr>
 <h4 id="_3-2-3-bmap-수정" tabindex="-1"><a class="header-anchor" href="#_3-2-3-bmap-수정"><span>3.2.3. <code v-pre>bmap</code> 수정</span></a></h4>
 <p>double indirect 분기를 추가해 두 단계로 block을 할당·탐색한다.</p>
-<div class="language-c line-numbers-mode" data-highlighter="prismjs" data-ext="c"><pre v-pre><code><span class="line"><span class="token comment">// kernel/fs.c (발췌)</span></span>
+<div class="language-c line-numbers-mode" data-highlighter="prismjs" data-ext="c"><pre v-pre><code class="language-c"><span class="line"><span class="token comment">// kernel/fs.c (발췌)</span></span>
 <span class="line">bn <span class="token operator">-=</span> NINDIRECT<span class="token punctuation">;</span></span>
 <span class="line"><span class="token comment">// double indirect</span></span>
 <span class="line"><span class="token keyword">if</span><span class="token punctuation">(</span>bn <span class="token operator">&lt;</span> NINDIRECT <span class="token operator">*</span> NINDIRECT<span class="token punctuation">)</span><span class="token punctuation">{</span></span>
@@ -376,7 +376,7 @@ double indirect는 두 단계에 걸쳐 <code v-pre>bread → loop → bfree</co
 <li><code v-pre>MAX_SYMLINK_LOOPS</code> 상수를 <code v-pre>10</code>으로 정의해 무한 순환을 방지</li>
 <li><code v-pre>stat</code>, <code v-pre>user.h</code>, 시스템콜 번호 테이블에 타입‧함수‧번호를 모두 반영</li>
 </ul>
-<div class="language-c line-numbers-mode" data-highlighter="prismjs" data-ext="c"><pre v-pre><code><span class="line"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">T_SYMLINK</span> <span class="token expression"><span class="token number">4</span>        </span><span class="token comment">// kernel/fs.h, kernel/stat.h</span></span></span>
+<div class="language-c line-numbers-mode" data-highlighter="prismjs" data-ext="c"><pre v-pre><code class="language-c"><span class="line"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">T_SYMLINK</span> <span class="token expression"><span class="token number">4</span>        </span><span class="token comment">// kernel/fs.h, kernel/stat.h</span></span></span>
 <span class="line"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">MAX_SYMLINK_LOOPS</span> <span class="token expression"><span class="token number">10</span></span></span></span>
 <span class="line"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">SYS_symlink</span> <span class="token expression"><span class="token number">22</span>     </span><span class="token comment">// syscall 번호</span></span></span>
 <span class="line"></span></code></pre>
@@ -388,7 +388,7 @@ double indirect는 두 단계에 걸쳐 <code v-pre>bread → loop → bfree</co
 <li><code v-pre>writei</code>로 target 경로 문자열을 inode 데이터 영역에 기록</li>
 <li>작업 실패 시 <code v-pre>iunlockput</code> 후 <code v-pre>-1</code> 반환</li>
 </ol>
-<div class="language-c line-numbers-mode" data-highlighter="prismjs" data-ext="c"><pre v-pre><code><span class="line"><span class="token keyword">if</span><span class="token punctuation">(</span><span class="token punctuation">(</span>ip <span class="token operator">=</span> <span class="token function">create</span><span class="token punctuation">(</span>path<span class="token punctuation">,</span> T_SYMLINK<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span></span>
+<div class="language-c line-numbers-mode" data-highlighter="prismjs" data-ext="c"><pre v-pre><code class="language-c"><span class="line"><span class="token keyword">if</span><span class="token punctuation">(</span><span class="token punctuation">(</span>ip <span class="token operator">=</span> <span class="token function">create</span><span class="token punctuation">(</span>path<span class="token punctuation">,</span> T_SYMLINK<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span></span>
 <span class="line">  <span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span></span>
 <span class="line"><span class="token keyword">if</span><span class="token punctuation">(</span><span class="token function">writei</span><span class="token punctuation">(</span>ip<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>uint64<span class="token punctuation">)</span>target<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token function">strlen</span><span class="token punctuation">(</span>target<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">&lt;</span> <span class="token function">strlen</span><span class="token punctuation">(</span>target<span class="token punctuation">)</span><span class="token punctuation">)</span></span>
 <span class="line">  <span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span></span>
@@ -406,7 +406,7 @@ double indirect는 두 단계에 걸쳐 <code v-pre>bread → loop → bfree</co
 </li>
 <li>depth 초과 시 <em>실패</em></li>
 </ul>
-<div class="language-c line-numbers-mode" data-highlighter="prismjs" data-ext="c"><pre v-pre><code><span class="line"><span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> depth <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> depth <span class="token operator">&lt;</span> MAX_SYMLINK_DEPTH<span class="token punctuation">;</span> depth<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span></span>
+<div class="language-c line-numbers-mode" data-highlighter="prismjs" data-ext="c"><pre v-pre><code class="language-c"><span class="line"><span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> depth <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> depth <span class="token operator">&lt;</span> MAX_SYMLINK_DEPTH<span class="token punctuation">;</span> depth<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span></span>
 <span class="line">  <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token punctuation">(</span>ip <span class="token operator">=</span> <span class="token function">namei</span><span class="token punctuation">(</span>path<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">{</span></span>
 <span class="line">    <span class="token keyword">if</span><span class="token punctuation">(</span>omode <span class="token operator">&amp;</span> O_CREATE<span class="token punctuation">)</span></span>
 <span class="line">      ip <span class="token operator">=</span> <span class="token function">create</span><span class="token punctuation">(</span>path<span class="token punctuation">,</span> T_FILE<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
@@ -560,7 +560,7 @@ double indirect는 두 단계에 걸쳐 <code v-pre>bread → loop → bfree</co
 <li><code v-pre>make qemu</code></li>
 <li>QEMU shell:</li>
 </ol>
-<div class="language-bash line-numbers-mode" data-highlighter="prismjs" data-ext="sh"><pre v-pre><code><span class="line">xv6 kernel is booting</span>
+<div class="language-bash line-numbers-mode" data-highlighter="prismjs" data-ext="sh"><pre v-pre><code class="language-bash"><span class="line">xv6 kernel is booting</span>
 <span class="line"></span>
 <span class="line">init: starting <span class="token function">sh</span></span>
 <span class="line">$ cowtest</span>
@@ -608,13 +608,13 @@ double indirect는 두 단계에 걸쳐 <code v-pre>bread → loop → bfree</co
 <li>parent page는 <code v-pre>PTE_COW</code> + read-only.</li>
 <li>기존 <code v-pre>copyout</code>은 <code v-pre>PTE_W</code>가 꺼진 페이지를 만나면 즉시 <code v-pre>-1</code> 반환 → <code v-pre>pipealloc</code> 실패.</li>
 </ul>
-<div class="language-c line-numbers-mode" data-highlighter="prismjs" data-ext="c"><pre v-pre><code><span class="line"><span class="token comment">// old copyout (excerpt)</span></span>
+<div class="language-c line-numbers-mode" data-highlighter="prismjs" data-ext="c"><pre v-pre><code class="language-c"><span class="line"><span class="token comment">// old copyout (excerpt)</span></span>
 <span class="line"><span class="token keyword">if</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token operator">*</span>pte <span class="token operator">&amp;</span> PTE_W<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span></span>
 <span class="line">  <span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>          <span class="token comment">// write-protect → 즉시 실패</span></span>
 <span class="line"></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4 id="_5-1-4-fix" tabindex="-1"><a class="header-anchor" href="#_5-1-4-fix"><span>5.1.4. Fix</span></a></h4>
 <p><code v-pre>copyout</code>이 <code v-pre>PTE_COW</code> 플래그를 감지하면 직접 COW page 복사 후 재시도.</p>
-<div class="language-c line-numbers-mode" data-highlighter="prismjs" data-ext="c"><pre v-pre><code><span class="line"><span class="token comment">// kernel/vm.c (core patch)</span></span>
+<div class="language-c line-numbers-mode" data-highlighter="prismjs" data-ext="c"><pre v-pre><code class="language-c"><span class="line"><span class="token comment">// kernel/vm.c (core patch)</span></span>
 <span class="line"><span class="token keyword">if</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token operator">*</span>pte <span class="token operator">&amp;</span> PTE_COW<span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> <span class="token operator">!</span><span class="token punctuation">(</span><span class="token operator">*</span>pte <span class="token operator">&amp;</span> PTE_W<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span></span>
 <span class="line">  <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token function">copy_cow_page</span><span class="token punctuation">(</span>pagetable<span class="token punctuation">,</span> va<span class="token punctuation">)</span> <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">)</span></span>
 <span class="line">    <span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span></span>

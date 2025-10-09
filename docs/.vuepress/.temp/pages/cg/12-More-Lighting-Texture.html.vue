@@ -247,7 +247,7 @@ Spherical projection</p>
 <p>Cylindrical projection</p>
 <p>(그림: 실린더 형태로 투영된 텍스처)</p>
 <h2 id="rendering-texture-mapped-objects" tabindex="-1"><a class="header-anchor" href="#rendering-texture-mapped-objects"><span>Rendering Texture-Mapped Objects</span></a></h2>
-<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code><span class="line">for each pixel:</span>
+<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code class="language-text"><span class="line">for each pixel:</span>
 <span class="line">(u, v) = texture coordinates at pixel</span>
 <span class="line">color = texture.get_color(u, v)</span>
 <span class="line">pixel.color = color</span>
@@ -492,7 +492,7 @@ Spherical projection</p>
 <p>설치:</p>
 </li>
 </ul>
-<div class="language-bash line-numbers-mode" data-highlighter="prismjs" data-ext="sh"><pre v-pre><code><span class="line">$ workon cg-course</span>
+<div class="language-bash line-numbers-mode" data-highlighter="prismjs" data-ext="sh"><pre v-pre><code class="language-bash"><span class="line">$ workon cg-course</span>
 <span class="line">$ pip <span class="token function">install</span> pillow</span>
 <span class="line"></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div></div></div><ul>
@@ -505,7 +505,7 @@ https://pillow.readthedocs.io/en/stable/index.html</li>
 <li>프레임을 그리는 코드 제거</li>
 <li>PIL(Pillow) 모듈 import:</li>
 </ul>
-<div class="language-python line-numbers-mode" data-highlighter="prismjs" data-ext="py"><pre v-pre><code><span class="line"><span class="token keyword">from</span> PIL <span class="token keyword">import</span> Image</span>
+<div class="language-python line-numbers-mode" data-highlighter="prismjs" data-ext="py"><pre v-pre><code class="language-python"><span class="line"><span class="token keyword">from</span> PIL <span class="token keyword">import</span> Image</span>
 <span class="line"></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><ul>
 <li>VAO
@@ -515,7 +515,7 @@ https://pillow.readthedocs.io/en/stable/index.html</li>
 </li>
 </ul>
 <p>vertex 배열 구성 예시:</p>
-<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code><span class="line"># positions      # colors         # texture coordinates</span>
+<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code class="language-text"><span class="line"># positions      # colors         # texture coordinates</span>
 <span class="line">0.0,  0.5, 0.0,   1.0, 0.0, 0.0,   0.5, 1.0,</span>
 <span class="line">-0.5, -0.5, 0.0,  0.0, 1.0, 0.0,   0.0, 0.0,</span>
 <span class="line">0.5, -0.5, 0.0,   0.0, 0.0, 1.0,   1.0, 0.0</span>
@@ -524,7 +524,7 @@ https://pillow.readthedocs.io/en/stable/index.html</li>
 <li>VAO 생성 및 활성화</li>
 <li>VBO 생성 및 데이터 복사</li>
 </ul>
-<div class="language-python line-numbers-mode" data-highlighter="prismjs" data-ext="py"><pre v-pre><code><span class="line"><span class="token keyword">def</span> <span class="token function">prepare_vao_triangle</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span></span>
+<div class="language-python line-numbers-mode" data-highlighter="prismjs" data-ext="py"><pre v-pre><code class="language-python"><span class="line"><span class="token keyword">def</span> <span class="token function">prepare_vao_triangle</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span></span>
 <span class="line">    <span class="token comment"># 꼭짓점 위치 속성 설정</span></span>
 <span class="line">    glVertexAttribPointer<span class="token punctuation">(</span>index<span class="token punctuation">,</span> size<span class="token punctuation">,</span> <span class="token builtin">type</span><span class="token punctuation">,</span> normalized<span class="token punctuation">,</span> stride<span class="token punctuation">,</span> pointer<span class="token punctuation">)</span></span>
 <span class="line">    glEnableVertexAttribArray<span class="token punctuation">(</span>index<span class="token punctuation">)</span></span>
@@ -553,7 +553,7 @@ https://pillow.readthedocs.io/en/stable/index.html</li>
 <p>로드한 이미지를 텍스처로 설정: <code v-pre>glTexImage2D</code></p>
 </li>
 </ul>
-<div class="language-python line-numbers-mode" data-highlighter="prismjs" data-ext="py"><pre v-pre><code><span class="line"><span class="token keyword">def</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span></span>
+<div class="language-python line-numbers-mode" data-highlighter="prismjs" data-ext="py"><pre v-pre><code class="language-python"><span class="line"><span class="token keyword">def</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span></span>
 <span class="line">    <span class="token comment"># 텍스처 객체 생성</span></span>
 <span class="line">    texture <span class="token operator">=</span> glGenTextures<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span></span>
 <span class="line">    glBindTexture<span class="token punctuation">(</span>GL_TEXTURE_2D<span class="token punctuation">,</span> texture<span class="token punctuation">)</span></span>
@@ -579,7 +579,7 @@ https://pillow.readthedocs.io/en/stable/index.html</li>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul>
 <li><code v-pre>glTexImage2D</code> 함수 사용 예시 및 설명</li>
 </ul>
-<div class="language-c line-numbers-mode" data-highlighter="prismjs" data-ext="c"><pre v-pre><code><span class="line"><span class="token function">glTexImage2D</span><span class="token punctuation">(</span>GL_TEXTURE_2D<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> GL_RGB<span class="token punctuation">,</span> img<span class="token punctuation">.</span>width<span class="token punctuation">,</span> img<span class="token punctuation">.</span>height<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span></span>
+<div class="language-c line-numbers-mode" data-highlighter="prismjs" data-ext="c"><pre v-pre><code class="language-c"><span class="line"><span class="token function">glTexImage2D</span><span class="token punctuation">(</span>GL_TEXTURE_2D<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> GL_RGB<span class="token punctuation">,</span> img<span class="token punctuation">.</span>width<span class="token punctuation">,</span> img<span class="token punctuation">.</span>height<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span></span>
 <span class="line">             GL_RGB<span class="token punctuation">,</span> GL_UNSIGNED_BYTE<span class="token punctuation">,</span> img<span class="token punctuation">.</span><span class="token function">tobytes</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span></span>
 <span class="line"></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div></div></div><ul>
@@ -596,7 +596,7 @@ https://pillow.readthedocs.io/en/stable/index.html</li>
 </li>
 <li>Vertex Shader 코드</li>
 </ul>
-<div class="language-glsl line-numbers-mode" data-highlighter="prismjs" data-ext="glsl"><pre v-pre><code><span class="line"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">version</span> <span class="token expression"><span class="token number">330</span> core</span></span></span>
+<div class="language-glsl line-numbers-mode" data-highlighter="prismjs" data-ext="glsl"><pre v-pre><code class="language-glsl"><span class="line"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">version</span> <span class="token expression"><span class="token number">330</span> core</span></span></span>
 <span class="line"><span class="token keyword">layout</span> <span class="token punctuation">(</span>location <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token keyword">in</span> <span class="token keyword">vec3</span> vin_pos<span class="token punctuation">;</span></span>
 <span class="line"><span class="token keyword">layout</span> <span class="token punctuation">(</span>location <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token keyword">in</span> <span class="token keyword">vec3</span> vin_color<span class="token punctuation">;</span></span>
 <span class="line"><span class="token keyword">layout</span> <span class="token punctuation">(</span>location <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token keyword">in</span> <span class="token keyword">vec2</span> vin_uv<span class="token punctuation">;</span></span>
@@ -618,7 +618,7 @@ https://pillow.readthedocs.io/en/stable/index.html</li>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul>
 <li>Fragment Shader 코드</li>
 </ul>
-<div class="language-glsl line-numbers-mode" data-highlighter="prismjs" data-ext="glsl"><pre v-pre><code><span class="line"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">version</span> <span class="token expression"><span class="token number">330</span> core</span></span></span>
+<div class="language-glsl line-numbers-mode" data-highlighter="prismjs" data-ext="glsl"><pre v-pre><code class="language-glsl"><span class="line"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">version</span> <span class="token expression"><span class="token number">330</span> core</span></span></span>
 <span class="line"><span class="token keyword">in</span> <span class="token keyword">vec2</span> vout_uv<span class="token punctuation">;</span>          <span class="token comment">// 보간된 텍스처 좌표</span></span>
 <span class="line"><span class="token keyword">in</span> <span class="token keyword">vec3</span> vout_color<span class="token punctuation">;</span></span>
 <span class="line"></span>
@@ -637,7 +637,7 @@ https://pillow.readthedocs.io/en/stable/index.html</li>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul>
 <li>최종 그리기 루프</li>
 </ul>
-<div class="language-python line-numbers-mode" data-highlighter="prismjs" data-ext="py"><pre v-pre><code><span class="line"><span class="token keyword">def</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span></span>
+<div class="language-python line-numbers-mode" data-highlighter="prismjs" data-ext="py"><pre v-pre><code class="language-python"><span class="line"><span class="token keyword">def</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span></span>
 <span class="line">    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span></span>
 <span class="line">    <span class="token keyword">while</span> <span class="token keyword">not</span> glfwWindowShouldClose<span class="token punctuation">(</span>window<span class="token punctuation">)</span><span class="token punctuation">:</span></span>
 <span class="line">        <span class="token comment"># 현재 프레임 기준으로 삼각형을 그림</span></span>
@@ -652,7 +652,7 @@ https://pillow.readthedocs.io/en/stable/index.html</li>
 플랫폼이나 GPU에 따라 명시적으로 지정해주는 것이 안전함</li>
 <li>아래 코드를 추가하여 uniform 바인딩을 명확히 설정:</li>
 </ul>
-<div class="language-c line-numbers-mode" data-highlighter="prismjs" data-ext="c"><pre v-pre><code><span class="line">loc_texture1 <span class="token operator">=</span> <span class="token function">glGetUniformLocation</span><span class="token punctuation">(</span>shader_program<span class="token punctuation">,</span> <span class="token string">"texture1"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<div class="language-c line-numbers-mode" data-highlighter="prismjs" data-ext="c"><pre v-pre><code class="language-c"><span class="line">loc_texture1 <span class="token operator">=</span> <span class="token function">glGetUniformLocation</span><span class="token punctuation">(</span>shader_program<span class="token punctuation">,</span> <span class="token string">"texture1"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
 <span class="line"><span class="token function">glActiveTexture</span><span class="token punctuation">(</span>GL_TEXTURE0<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
 <span class="line"><span class="token function">glBindTexture</span><span class="token punctuation">(</span>GL_TEXTURE_2D<span class="token punctuation">,</span> texture1<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
 <span class="line"><span class="token function">glUniform1i</span><span class="token punctuation">(</span>loc_texture1<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
@@ -663,7 +663,7 @@ https://pillow.readthedocs.io/en/stable/index.html</li>
 <li>vertex 색상과 텍스처를 함께 사용할 수 있음</li>
 <li>예: 텍스처 값에 색상 값을 곱해 시각적 효과 추가</li>
 </ul>
-<div class="language-glsl line-numbers-mode" data-highlighter="prismjs" data-ext="glsl"><pre v-pre><code><span class="line"><span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span></span>
+<div class="language-glsl line-numbers-mode" data-highlighter="prismjs" data-ext="glsl"><pre v-pre><code class="language-glsl"><span class="line"><span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span></span>
 <span class="line">    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span></span>
 <span class="line">    FragColor <span class="token operator">=</span> <span class="token function">texture</span><span class="token punctuation">(</span>texture1<span class="token punctuation">,</span> vout_uv<span class="token punctuation">)</span> <span class="token operator">*</span> vout_color<span class="token punctuation">;</span></span>
 <span class="line"><span class="token punctuation">}</span></span>
@@ -673,7 +673,7 @@ https://pillow.readthedocs.io/en/stable/index.html</li>
 <ul>
 <li>더 큰 삼각형을 그려보자</li>
 </ul>
-<div class="language-python line-numbers-mode" data-highlighter="prismjs" data-ext="py"><pre v-pre><code><span class="line"><span class="token keyword">def</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span></span>
+<div class="language-python line-numbers-mode" data-highlighter="prismjs" data-ext="py"><pre v-pre><code class="language-python"><span class="line"><span class="token keyword">def</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span></span>
 <span class="line">    <span class="token keyword">while</span> <span class="token keyword">not</span> glfwWindowShouldClose<span class="token punctuation">(</span>window<span class="token punctuation">)</span><span class="token punctuation">:</span></span>
 <span class="line">        <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span></span>
 <span class="line">        <span class="token comment"># 모델링 행렬</span></span>
@@ -696,7 +696,7 @@ https://pillow.readthedocs.io/en/stable/index.html</li>
 <li><code v-pre>MIN</code> 필터: 축소 시</li>
 <li><code v-pre>MAG</code> 필터: 확대 시</li>
 </ul>
-<div class="language-python line-numbers-mode" data-highlighter="prismjs" data-ext="py"><pre v-pre><code><span class="line"><span class="token keyword">def</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span></span>
+<div class="language-python line-numbers-mode" data-highlighter="prismjs" data-ext="py"><pre v-pre><code class="language-python"><span class="line"><span class="token keyword">def</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span></span>
 <span class="line">    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span></span>
 <span class="line">    <span class="token comment"># 텍스처 생성</span></span>
 <span class="line">    texture <span class="token operator">=</span> glGenTextures<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span></span>
@@ -726,7 +726,7 @@ https://pillow.readthedocs.io/en/stable/index.html</li>
 </li>
 </ul>
 <p>(이미지 설명: 각 레벨마다 텍스처 해상도가 절반씩 줄어들며, 픽셀 수준의 샘플링이 이루어짐)</p>
-<div class="language-python line-numbers-mode" data-highlighter="prismjs" data-ext="py"><pre v-pre><code><span class="line"><span class="token keyword">def</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span></span>
+<div class="language-python line-numbers-mode" data-highlighter="prismjs" data-ext="py"><pre v-pre><code class="language-python"><span class="line"><span class="token keyword">def</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span></span>
 <span class="line">    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span></span>
 <span class="line">    <span class="token comment"># GL_TEXTURE_MIN_FILTER: 축소 시 필터링 방식</span></span>
 <span class="line">    glTexParameteri<span class="token punctuation">(</span>GL_TEXTURE_2D<span class="token punctuation">,</span> GL_TEXTURE_MIN_FILTER<span class="token punctuation">,</span> GL_LINEAR_MIPMAP_LINEAR<span class="token punctuation">)</span></span>
@@ -758,7 +758,7 @@ https://pillow.readthedocs.io/en/stable/index.html</li>
 </li>
 </ul>
 <p>(이미지 설명: 각각의 wrapping 모드에 따른 시각적 차이 비교)</p>
-<div class="language-python line-numbers-mode" data-highlighter="prismjs" data-ext="py"><pre v-pre><code><span class="line"><span class="token keyword">def</span> <span class="token function">prepare_vao_triangle</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span></span>
+<div class="language-python line-numbers-mode" data-highlighter="prismjs" data-ext="py"><pre v-pre><code class="language-python"><span class="line"><span class="token keyword">def</span> <span class="token function">prepare_vao_triangle</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span></span>
 <span class="line">    vertices <span class="token operator">=</span> glm<span class="token punctuation">.</span>array<span class="token punctuation">(</span>glm<span class="token punctuation">.</span>float32<span class="token punctuation">,</span></span>
 <span class="line">        <span class="token comment"># position        # color       # texture coordinates</span></span>
 <span class="line">         <span class="token number">0.0</span><span class="token punctuation">,</span> <span class="token number">0.0</span><span class="token punctuation">,</span> <span class="token number">0.0</span><span class="token punctuation">,</span>    <span class="token number">1.0</span><span class="token punctuation">,</span> <span class="token number">0.0</span><span class="token punctuation">,</span> <span class="token number">0.0</span><span class="token punctuation">,</span>   <span class="token operator">-</span><span class="token number">0.5</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">0.5</span><span class="token punctuation">,</span>  <span class="token comment"># v0</span></span>
@@ -767,7 +767,7 @@ https://pillow.readthedocs.io/en/stable/index.html</li>
 <span class="line">    <span class="token punctuation">)</span></span>
 <span class="line"></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>(텍스처 좌표가 0~1을 벗어나도록 지정해 wrap 모드에 따른 차이를 실험)</p>
-<div class="language-python line-numbers-mode" data-highlighter="prismjs" data-ext="py"><pre v-pre><code><span class="line"><span class="token keyword">def</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span></span>
+<div class="language-python line-numbers-mode" data-highlighter="prismjs" data-ext="py"><pre v-pre><code class="language-python"><span class="line"><span class="token keyword">def</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span></span>
 <span class="line">    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span></span>
 <span class="line">    <span class="token comment"># 기본값은 GL_REPEAT</span></span>
 <span class="line"></span>
@@ -812,7 +812,7 @@ https://pillow.readthedocs.io/en/stable/index.html</li>
 <li>shader 내부에서 diffuse/ambient는 <code v-pre>texture_diffuse</code>로부터,<br>
 specular은 <code v-pre>texture_specular</code>로부터 샘플링</li>
 </ul>
-<div class="language-python line-numbers-mode" data-highlighter="prismjs" data-ext="py"><pre v-pre><code><span class="line"><span class="token keyword">def</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span></span>
+<div class="language-python line-numbers-mode" data-highlighter="prismjs" data-ext="py"><pre v-pre><code class="language-python"><span class="line"><span class="token keyword">def</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span></span>
 <span class="line">    <span class="token comment"># diffuse texture</span></span>
 <span class="line">    texture_diffuse <span class="token operator">=</span> glGenTextures<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span></span>
 <span class="line">    glBindTexture<span class="token punctuation">(</span>GL_TEXTURE_2D<span class="token punctuation">,</span> texture_diffuse<span class="token punctuation">)</span></span>
@@ -837,7 +837,7 @@ specular은 <code v-pre>texture_specular</code>로부터 샘플링</li>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul>
 <li>Vertex Shader</li>
 </ul>
-<div class="language-glsl line-numbers-mode" data-highlighter="prismjs" data-ext="glsl"><pre v-pre><code><span class="line"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">version</span> <span class="token expression"><span class="token number">330</span> core</span></span></span>
+<div class="language-glsl line-numbers-mode" data-highlighter="prismjs" data-ext="glsl"><pre v-pre><code class="language-glsl"><span class="line"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">version</span> <span class="token expression"><span class="token number">330</span> core</span></span></span>
 <span class="line"><span class="token keyword">layout</span> <span class="token punctuation">(</span>location <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token keyword">in</span> <span class="token keyword">vec3</span> vin_pos<span class="token punctuation">;</span></span>
 <span class="line"><span class="token keyword">layout</span> <span class="token punctuation">(</span>location <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token keyword">in</span> <span class="token keyword">vec3</span> vin_normal<span class="token punctuation">;</span></span>
 <span class="line"><span class="token keyword">layout</span> <span class="token punctuation">(</span>location <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token keyword">in</span> <span class="token keyword">vec2</span> vin_uv<span class="token punctuation">;</span></span>
@@ -861,7 +861,7 @@ specular은 <code v-pre>texture_specular</code>로부터 샘플링</li>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul>
 <li>Fragment Shader</li>
 </ul>
-<div class="language-glsl line-numbers-mode" data-highlighter="prismjs" data-ext="glsl"><pre v-pre><code><span class="line"><span class="token keyword">in</span> <span class="token keyword">vec2</span> vout_uv<span class="token punctuation">;</span></span>
+<div class="language-glsl line-numbers-mode" data-highlighter="prismjs" data-ext="glsl"><pre v-pre><code class="language-glsl"><span class="line"><span class="token keyword">in</span> <span class="token keyword">vec2</span> vout_uv<span class="token punctuation">;</span></span>
 <span class="line"></span>
 <span class="line"><span class="token keyword">uniform</span> <span class="token keyword">sampler2D</span> texture_diffuse<span class="token punctuation">;</span></span>
 <span class="line"><span class="token keyword">uniform</span> <span class="token keyword">sampler2D</span> texture_specular<span class="token punctuation">;</span></span>
@@ -883,7 +883,7 @@ specular은 <code v-pre>texture_specular</code>로부터 샘플링</li>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul>
 <li>큐브를 구성하는 12개의 삼각형에 대해 vertex 데이터 구성</li>
 </ul>
-<div class="language-python line-numbers-mode" data-highlighter="prismjs" data-ext="py"><pre v-pre><code><span class="line"><span class="token keyword">def</span> <span class="token function">prepare_vao_cube</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span></span>
+<div class="language-python line-numbers-mode" data-highlighter="prismjs" data-ext="py"><pre v-pre><code class="language-python"><span class="line"><span class="token keyword">def</span> <span class="token function">prepare_vao_cube</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span></span>
 <span class="line">    vertices <span class="token operator">=</span> glm<span class="token punctuation">.</span>array<span class="token punctuation">(</span>glm<span class="token punctuation">.</span>float32<span class="token punctuation">,</span></span>
 <span class="line">        <span class="token comment"># pos        normal       texcoord</span></span>
 <span class="line">        <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span>  <span class="token number">1</span><span class="token punctuation">,</span>   <span class="token number">0</span><span class="token punctuation">,</span>  <span class="token number">0</span><span class="token punctuation">,</span>  <span class="token number">1</span><span class="token punctuation">,</span>   <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span>  <span class="token comment"># v0</span></span>

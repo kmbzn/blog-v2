@@ -9,7 +9,7 @@
 </ul>
 </li>
 </ul>
-<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code><span class="line">submission.zip</span>
+<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code class="language-text"><span class="line">submission.zip</span>
 <span class="line"> ├─ main.py</span>
 <span class="line"> ├─ ...</span>
 <span class="line"> └─ report.pdf</span>
@@ -18,7 +18,7 @@
 <li>프로그램은 여러 개의 Python 소스 파일로 구성될 수 있습니다.<br>
 하지만 <code v-pre>main.py</code>가 메인 모듈이어야 하며, 실행 명령은 다음과 같아야 합니다.</li>
 </ul>
-<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code><span class="line">python3 main.py</span>
+<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code class="language-text"><span class="line">python3 main.py</span>
 <span class="line"></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h2 id="_1-구현-내용" tabindex="-1"><a class="header-anchor" href="#_1-구현-내용"><span>1. 구현 내용</span></a></h2>
 <p>자신만의 bvh 뷰어를 구현하세요.</p>
@@ -36,14 +36,14 @@
 <ul>
 <li>Python 코드에 다음을 반드시 포함하세요:</li>
 </ul>
-<div class="language-python line-numbers-mode" data-highlighter="prismjs" data-ext="py"><pre v-pre><code><span class="line">glfw<span class="token punctuation">.</span>window_hint<span class="token punctuation">(</span>GLFW_CONTEXT_VERSION_MAJOR<span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span></span>
+<div class="language-python line-numbers-mode" data-highlighter="prismjs" data-ext="py"><pre v-pre><code class="language-python"><span class="line">glfw<span class="token punctuation">.</span>window_hint<span class="token punctuation">(</span>GLFW_CONTEXT_VERSION_MAJOR<span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span></span>
 <span class="line">glfw<span class="token punctuation">.</span>window_hint<span class="token punctuation">(</span>GLFW_CONTEXT_VERSION_MINOR<span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span></span>
 <span class="line">glfw<span class="token punctuation">.</span>window_hint<span class="token punctuation">(</span>GLFW_OPENGL_PROFILE<span class="token punctuation">,</span> GLFW_OPENGL_CORE_PROFILE<span class="token punctuation">)</span></span>
 <span class="line"></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul>
 <li>쉐이더 코드의 첫 줄은 반드시 다음과 같아야 합니다:</li>
 </ul>
-<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code><span class="line">#version 330 core</span>
+<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code class="language-text"><span class="line">#version 330 core</span>
 <span class="line"></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><ul>
 <li><strong>OpenGL 3.3 Core Profile을 사용하지 않으면 (예외: 리포트만 제출 시) 이 프로젝트에 대한 점수를 받을 수 없습니다.</strong></li>
@@ -139,7 +139,7 @@
 </ol>
 </li>
 </ul>
-<div class="language-python line-numbers-mode" data-highlighter="prismjs" data-ext="py"><pre v-pre><code><span class="line"><span class="token comment"># 올바른 방식</span></span>
+<div class="language-python line-numbers-mode" data-highlighter="prismjs" data-ext="py"><pre v-pre><code class="language-python"><span class="line"><span class="token comment"># 올바른 방식</span></span>
 <span class="line"><span class="token builtin">file</span> <span class="token operator">=</span> <span class="token builtin">open</span><span class="token punctuation">(</span>os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>join<span class="token punctuation">(</span><span class="token string">'data'</span><span class="token punctuation">,</span> <span class="token string">'run.bvh'</span><span class="token punctuation">)</span><span class="token punctuation">)</span></span>
 <span class="line"></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div></div></div><ul>

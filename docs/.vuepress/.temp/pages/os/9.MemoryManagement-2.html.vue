@@ -35,7 +35,7 @@
 </li>
 </ul>
 <h2 id="two-level-page-table-scheme" tabindex="-1"><a class="header-anchor" href="#two-level-page-table-scheme"><span>Two-Level Page-Table Scheme</span></a></h2>
-<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code><span class="line">      outer-page</span>
+<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code class="language-text"><span class="line">      outer-page</span>
 <span class="line">        table</span>
 <span class="line">          ↓</span>
 <span class="line">     +----------+       +----------+       +----------+</span>
@@ -68,7 +68,7 @@
 <p>즉, 논리 주소 구성:</p>
 </li>
 </ul>
-<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code><span class="line">page number                page offset</span>
+<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code class="language-text"><span class="line">page number                page offset</span>
 <span class="line">   p₁       p₂                 d</span>
 <span class="line">   10       10                12</span>
 <span class="line"></span></code></pre>
@@ -84,7 +84,7 @@
 <ul>
 <li>2단계 32비트 페이징 구조의 주소 변환 방식:</li>
 </ul>
-<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code><span class="line">logical address:   p₁ | p₂ | d</span>
+<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code class="language-text"><span class="line">logical address:   p₁ | p₂ | d</span>
 <span class="line">                       ↓</span>
 <span class="line">                outer-page table</span>
 <span class="line">                       ↓</span>
@@ -106,7 +106,7 @@
 <li>
 <p>메모리 접근 시간이 5배로 증가하더라도, TLB를 통해 성능은 합리적인 수준으로 유지됨</p>
 <ul>
-<li>4단계 페이지 테이블에서도 TLB 히트율이 98%일 경우,<p v-pre class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>E</mi><mi>A</mi><mi>T</mi><mo>=</mo><mn>0.98</mn><mo>×</mo><mn>120</mn><mo>+</mo><mn>0.02</mn><mo>×</mo><mn>520</mn><mo>=</mo><mn>128</mn><mtext> nanoseconds</mtext></mrow><annotation encoding="application/x-tex">EAT = 0.98 \times 120 + 0.02 \times 520 = 128~\text{nanoseconds} 
+<li>4단계 페이지 테이블에서도 TLB 히트율이 98%일 경우,<p v-pre class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>E</mi><mi>A</mi><mi>T</mi><mo>=</mo><mn>0.98</mn><mo>×</mo><mn>120</mn><mo>+</mo><mn>0.02</mn><mo>×</mo><mn>520</mn><mo>=</mo><mn>128</mn><mtext> nanoseconds</mtext></mrow><annotation encoding="application/x-tex"> EAT = 0.98 \times 120 + 0.02 \times 520 = 128~\text{nanoseconds} 
 </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.05764em;">E</span><span class="mord mathnormal">A</span><span class="mord mathnormal" style="margin-right:0.13889em;">T</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">0.98</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">120</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">0.02</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">520</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord">128</span><span class="mspace nobreak"> </span><span class="mord text"><span class="mord">nanoseconds</span></span></span></span></span></span></p>
 (메모리 접근 시간이 100ns일 때, TLB 접근 시간 = 20ns)</li>
 </ul>
@@ -129,7 +129,7 @@
 </ul>
 </li>
 </ul>
-<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code><span class="line">logical address (P | d)</span>
+<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code class="language-text"><span class="line">logical address (P | d)</span>
 <span class="line">   ↓</span>
 <span class="line">[hash function]</span>
 <span class="line">   ↓</span>
@@ -172,7 +172,7 @@
 </ul>
 </li>
 </ul>
-<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code><span class="line">CPU</span>
+<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code class="language-text"><span class="line">CPU</span>
 <span class="line"> ↓</span>
 <span class="line">[logical address] → [search]</span>
 <span class="line">                         ↓</span>
@@ -186,7 +186,7 @@
 <li>프로그램은 다양한 길이의 세그먼트들로 구성됨</li>
 <li>세그먼트는 논리적 단위 (예: main(), 함수, 전역 변수, 스택, 심볼 테이블, 배열 등)</li>
 </ul>
-<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code><span class="line">User's view of a program:</span>
+<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code class="language-text"><span class="line">User's view of a program:</span>
 <span class="line"></span>
 <span class="line">+--------------+</span>
 <span class="line">| subroutine   |</span>
@@ -231,7 +231,7 @@
 </li>
 </ul>
 <h2 id="example-of-segmentation" tabindex="-1"><a class="header-anchor" href="#example-of-segmentation"><span>Example of Segmentation</span></a></h2>
-<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code><span class="line">User's view:</span>
+<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code class="language-text"><span class="line">User's view:</span>
 <span class="line"></span>
 <span class="line">+--------------+    +--------------+</span>
 <span class="line">| subroutine   |    | segment 0    |</span>
@@ -254,7 +254,7 @@
 ...</li>
 </ul>
 <h2 id="segmentation-hardware" tabindex="-1"><a class="header-anchor" href="#segmentation-hardware"><span>Segmentation Hardware</span></a></h2>
-<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code><span class="line">logical address = (s, d)</span>
+<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code class="language-text"><span class="line">logical address = (s, d)</span>
 <span class="line"></span>
 <span class="line">          +--------+       +----------------+</span>
 <span class="line">CPU  ---> |   s    | ----> |  segment table |</span>
@@ -308,7 +308,7 @@
 </li>
 </ul>
 <h2 id="sharing-of-segments" tabindex="-1"><a class="header-anchor" href="#sharing-of-segments"><span>Sharing of Segments</span></a></h2>
-<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code><span class="line">Process P1:</span>
+<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code class="language-text"><span class="line">Process P1:</span>
 <span class="line">  segment 0 = editor</span>
 <span class="line">  segment 1 = data1</span>
 <span class="line"></span>
@@ -334,11 +334,11 @@
 <p>가상 주소 형식:</p>
 </li>
 </ul>
-<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code><span class="line">Segment number s | Page number p | Displacement d</span>
+<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code class="language-text"><span class="line">Segment number s | Page number p | Displacement d</span>
 <span class="line">→ Virtual address V = (s, p, d)</span>
 <span class="line"></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="segmentation-with-paging-address-translation" tabindex="-1"><a class="header-anchor" href="#segmentation-with-paging-address-translation"><span>Segmentation with Paging: Address Translation</span></a></h2>
-<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code><span class="line">logical address = (s, p, d)</span>
+<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code class="language-text"><span class="line">logical address = (s, p, d)</span>
 <span class="line"></span>
 <span class="line">   ↓</span>
 <span class="line">[STBR]</span>
@@ -357,7 +357,7 @@
 <ul>
 <li>
 <p>가상 주소 구조:</p>
-<p v-pre class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>v</mi><mo>=</mo><mo stretchy="false">(</mo><mi>s</mi><mo separator="true">,</mo><mi>p</mi><mo separator="true">,</mo><mi>d</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">v = (s, p, d) 
+<p v-pre class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>v</mi><mo>=</mo><mo stretchy="false">(</mo><mi>s</mi><mo separator="true">,</mo><mi>p</mi><mo separator="true">,</mo><mi>d</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex"> v = (s, p, d) 
 </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">v</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal">s</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">p</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">d</span><span class="mclose">)</span></span></span></span></span></p>
 <ul>
 <li>s: 세그먼트 번호</li>
@@ -388,11 +388,11 @@
 </li>
 </ul>
 </li>
-<li>페이지 프레임 번호 **p′**와 변위 <strong>d</strong>를 더해 실제 주소 <strong>r</strong>을 계산<p v-pre class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>r</mi><mo>=</mo><mi>p</mi><mtext>′</mtext><mo>+</mo><mi>d</mi></mrow><annotation encoding="application/x-tex">r = p′ + d 
+<li>페이지 프레임 번호 **p′**와 변위 <strong>d</strong>를 더해 실제 주소 <strong>r</strong>을 계산<p v-pre class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>r</mi><mo>=</mo><mi>p</mi><mtext>′</mtext><mo>+</mo><mi>d</mi></mrow><annotation encoding="application/x-tex"> r = p′ + d 
 </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.7778em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">p</span><span class="mord">′</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal">d</span></span></span></span></span></p>
 </li>
 </ol>
-<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code><span class="line">가상주소 v = (s, p, d)</span>
+<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code class="language-text"><span class="line">가상주소 v = (s, p, d)</span>
 <span class="line">    ↓</span>
 <span class="line">TLB에서 (s, p) 조회</span>
 <span class="line">   ├─ 있으면 → p′ 얻음</span>
