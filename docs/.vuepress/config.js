@@ -49,7 +49,7 @@ export default defineUserConfig({
         ]
       },
       {
-        text: '🗂️ Database System',
+        text: '🗄️ Database System',
         collapsible: false,
         children: [
           '/db/1.Introduction',
