@@ -101,7 +101,7 @@ export default defineUserConfig({
           '/cg/11-Curves.md',
           '/cg/12-More-Lighting-Texture',
         ]
-      },
+      }
     ],
     sidebarDepth: 0,
     lastUpdated: true
