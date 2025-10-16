@@ -55,6 +55,7 @@ export const routes = Object.fromEntries([
   ["/wellness/ExtraVirginOliveOil.html", { loader: () => import(/* webpackChunkName: "wellness_ExtraVirginOliveOil.html" */"/Users/kmbzn/blog-v2/docs/.vuepress/.temp/pages/wellness/ExtraVirginOliveOil.html.js"), meta: {"title":"🫒 엑스트라 버진 올리브유 (Extra Virgin Olive Oil)"} }],
   ["/wellness/PsylliumHusk.html", { loader: () => import(/* webpackChunkName: "wellness_PsylliumHusk.html" */"/Users/kmbzn/blog-v2/docs/.vuepress/.temp/pages/wellness/PsylliumHusk.html.js"), meta: {"title":"차전자피(Psyllium Husk)"} }],
   ["/404.html", { loader: () => import(/* webpackChunkName: "404.html" */"/Users/kmbzn/blog-v2/docs/.vuepress/.temp/pages/404.html.js"), meta: {"title":""} }],
+  ["/db/2021024057.html", { loader: () => import(/* webpackChunkName: "db_2021024057.html" */"/Users/kmbzn/blog-v2/docs/.vuepress/.temp/pages/db/2021024057.html.js"), meta: {"title":"Assignment 2-1: DB Schema Design"} }],
 ]);
 
 if (import.meta.webpackHot) {
