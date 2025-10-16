@@ -7,24 +7,22 @@
 </ul>
 <h2 id="database와-dbms" tabindex="-1"><a class="header-anchor" href="#database와-dbms"><span>Database와 DBMS</span></a></h2>
 <ul>
-<li>데이터베이스
+<li>데이터베이스: 관련된 데이터의 논리적 집합
 <ul>
-<li>High level concept: 관련된 데이터의 집합</li>
 <li>주요 목표
 <ul>
-<li>어떻게 관련된 데이터를 '논리적으로 조직화'할 것인가?</li>
+<li>관련된 데이터를 '논리적으로 조직화'하는 것</li>
 <li>데이터 간 관계를 유지하면서</li>
 <li>데이터 중복을 최소화하면서</li>
 </ul>
 </li>
 </ul>
 </li>
-<li>Database Management System(DBMS)
+<li>Database Management System(DBMS): 관련된 데이터를 제공하는 지능적 서비스
 <ul>
-<li>High level concept: 관련된 데이터를 제공하는 지능적 서비스</li>
 <li>주요 목표
 <ul>
-<li>어떻게 관련된 데이터를 '물리적으로 조직화'할 것인가?</li>
+<li>관련된 데이터를 '물리적으로 조직화'하는 것</li>
 <li>인덱스 구조를 사용하여 데이터 접근을 빨리 처리하면서</li>
 <li>데이터 일관성과 통합성을 유지하면서</li>
 <li>어느 정도의 예측 불가한 오류를 용인하면서</li>
@@ -54,10 +52,10 @@
 </ul>
 </li>
 </ul>
-<h2 id="스키마와-인스턴스" tabindex="-1"><a class="header-anchor" href="#스키마와-인스턴스"><span>스키마와 인스턴스</span></a></h2>
+<h2 id="schema와-instance" tabindex="-1"><a class="header-anchor" href="#schema와-instance"><span>Schema와 Instance</span></a></h2>
 <ul>
 <li>프로그래밍 언어에서 variable과 value의 개념과 유사</li>
-<li>논리 스키마: 데이터베이스의 전반적인 논리적 구조 (디자인)
+<li>Logical Schema: 데이터베이스의 전반적인 논리적 구조, 디자인
 <ul>
 <li>예: 그 데이터베이스는 은행 계좌들과 소비자들, 그리고 그들의 관계에 대한 집합에 관한 정보들로 구성되어 있다.
 <ul>
@@ -66,7 +64,7 @@
 </li>
 </ul>
 </li>
-<li>물리 스키마: 데이터베이스의 전반적인 물리적 구조 (디자인)
+<li>물리 스키마: 데이터베이스의 전반적인 물리적 구조, 디자인
 <ul>
 <li>물리적 데이터 독립: 논리적 구조의 변경 없이 물리적 스키마를 수정할 수 있는 ability
 <ul>
@@ -80,17 +78,17 @@
 </ul>
 <h2 id="data-definition-language-ddl-데이터-정의어" tabindex="-1"><a class="header-anchor" href="#data-definition-language-ddl-데이터-정의어"><span>Data Definition Language (DDL, 데이터 정의어)</span></a></h2>
 <ul>
-<li>데이터베이스 스키마를 정의하기 위한 명세적 표기</li>
+<li>Database schema를 정의하기 위한 명세적 표기</li>
 </ul>
 <div class="language-sql line-numbers-mode" data-highlighter="prismjs" data-ext="sql"><pre v-pre><code class="language-sql"><span class="line"><span class="token keyword">create</span> <span class="token keyword">table</span> instructor <span class="token punctuation">(</span></span>
-<span class="line">    ID      <span class="token keyword">char</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">,</span></span>
-<span class="line">    name    <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">,</span></span>
+<span class="line">    ID          <span class="token keyword">char</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">,</span></span>
+<span class="line">    name        <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">,</span></span>
 <span class="line">    dept_name   <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">,</span></span>
 <span class="line">    salary      <span class="token keyword">numeric</span><span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span></span>
 <span class="line"><span class="token punctuation">)</span></span>
 <span class="line"></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul>
-<li>DDL 컴파일러는 데이터 사전에 저장된 테이블 템플릿의 집합을 생성함.</li>
+<li>DDL compiler는 데이터 dictionary에 저장된 테이블 템플릿의 집합을 생성함.</li>
 <li>데이터 사전은 메타 데이터를 포함 (즉, 데이터에 관련된 데이터)
 <ul>
 <li>데이터베이스 스키마</li>
@@ -117,10 +115,10 @@
 <li>어떤 데이터가 필요한지 어떻게 그것을 얻을 것인지 사용자에게 요구함</li>
 </ul>
 </li>
-<li>Declarative DML 선언적 DML
+<li>Declarative DML 선언적, 비절차적 DML
 <ul>
-<li>해당 데이터들을 어떻게 얻을 것인지에 대한 구체화 없이 무엇을 필요로 하는지 사용자에게 요구</li>
-<li>절차적 DML에 비해서 배우고 사용하기 쉬움</li>
+<li>해당 데이터들을 어떻게 얻을 것인지에 대한 구체화 없이 무엇을 필요로 하는지만 사용자에게 요구</li>
+<li>절차적 DML에 비해 배우고 사용하기 쉬움</li>
 <li>비절차적 DML(non-procedural DML)이라고도 불림</li>
 </ul>
 </li>
@@ -141,14 +139,14 @@
 <span class="line"></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul>
 <li>SQL은 튜링 머신과 동등한 언어가 아님</li>
-<li>복잡한 함수 연산을 가능케 하기 위해서, SQL은 주로 더 높은 level의 언어에 삽입되곤 한다.</li>
+<li>복잡한 함수 연산을 가능케 하기 위해서, SQL은 주로 더 높은 level의 언어에 embedded되곤 함.</li>
 </ul>
-<p>애플리케이션 프로그램은 일반적으로 다음 중 하나의 데이터베이스에 접근한다.</p>
+<p>애플리케이션 프로그램은 일반적으로 다음 중 하나의 데이터베이스에 접근</p>
 <ul>
 <li>embedded SQL을 가능하게 하기 위한 언어 확장</li>
-<li>데이터베이스에 SQL 쿼리를 보낼 수 있게끔 하는 애플리케이션 프로그램 인터페이스(ODBC나 JDBC와 같은)</li>
+<li>데이터베이스에 SQL query를 보낼 수 있게끔 하는 애플리케이션 프로그램 인터페이스(ODBC나 JDBC와 같은)</li>
 </ul>
-<h2 id="데이터베이스-디자인" tabindex="-1"><a class="header-anchor" href="#데이터베이스-디자인"><span>데이터베이스 디자인</span></a></h2>
+<h2 id="database-design" tabindex="-1"><a class="header-anchor" href="#database-design"><span>Database design</span></a></h2>
 <p>데이터베이스의 일반적 구조를 디자인하는 과정</p>
 <ul>
 <li>
@@ -156,8 +154,8 @@
 <ul>
 <li>데이터베이스 스키마에서 결정</li>
 <li>데이터베이스 디자인은 관계 스키마에서 &quot;좋은&quot; 집합을 찾을 것을 요구함</li>
-<li>사업적 결정: 데이터베이스에 어떤 속성들을 기록해야 할까?</li>
-<li>컴퓨터 과학적 결정: 어떤 관계 스키마를 가져야 하고 어떻게 다양한 관계 스키마에 그 속성들이 분포되게 할까?</li>
+<li>비즈니스적 결정: 데이터베이스에 어떤 속성들을 기록해야 할까?</li>
+<li>컴퓨터 과학적 결정: 어떤 관계 스키마를 가져야 하고, 어떻게 다양한 관계 스키마에 그 속성들이 분포되게 할까?</li>
 </ul>
 </li>
 <li>
@@ -168,13 +166,13 @@
 </li>
 </ul>
 <h2 id="데이터베이스-엔진" tabindex="-1"><a class="header-anchor" href="#데이터베이스-엔진"><span>데이터베이스 엔진</span></a></h2>
-<p>데이터베이스 시스템은 전체 시스템의 각 책임을 처리하는 모듈로 분할됨</p>
+<p>데이터베이스 시스템은 전체 시스템의 각 책임을 처리하는 module로 분할됨</p>
 <p>데이터베이스 시스템의 기능적 요소는 다음과 같이 구분할 수 있음</p>
-<ul>
+<ol>
 <li>The storage manager</li>
-<li>The query processor component</li>
-<li>The transaction management component</li>
-</ul>
+<li>The query processor</li>
+<li>The transaction management</li>
+</ol>
 <h2 id="storage-manager" tabindex="-1"><a class="header-anchor" href="#storage-manager"><span>Storage Manager</span></a></h2>
 <p>DB의 low-level 데이터와 응용 프로그램과 시스템에 제출된 쿼리를 제공하는 프로그램 모듈</p>
 <p>스토리지 매니저는 다음 작업들에 책임을 져야 한다.</p>
@@ -185,9 +183,9 @@
 <p>스토리지 매니저 구성 요소들은 다음을 포함해야 한다.</p>
 <ul>
 <li>Authorization과 무결성 관리자</li>
-<li>트랜잭션 매니저, 파일 매니저, 버퍼 매니저</li>
+<li>트랜잭션 매니저, 파일 매니저, buffer 매니저</li>
 </ul>
-<p>스토리지 매니저는 물리적 시스템 구현의 부분으로서 다양한 데이터 구조를 구현해야 한다.</p>
+<p>스토리지 매니저는 물리적 시스템 구현의 일부로서 다양한 데이터 구조를 구현해야 한다.</p>
 <ul>
 <li>데이터 파일: 데이터베이스 스스로를 저장</li>
 <li>데이터 dictionary(사전): 데이터베이스의 구조에 관한 메타 데이터 저장, 특히 데이터베이스의 스키마</li>
@@ -199,7 +197,7 @@
 <li>DDL 인터프리터: DDL 구문을 해석하고, 데이터 사전의 정의들을 기록함</li>
 <li>DML 컴파일러: Query language에서 DML 구문을 가져와서 query evaluation 엔진이 이해할 수 있는 low-level 지침에 의해 구성된 evaluation 계획으로 변환
 <ul>
-<li>DML 컴파일러는 다양한 대안들 중 최소 비용 evaluation 계획을 채택하는 쿼리 최적화를 수행한다.</li>
+<li>DML 컴파일러는 다양한 대안들 중 최소 비용 evaluation 계획을 채택하는 쿼리 최적화를 수행</li>
 </ul>
 </li>
 <li>쿼리 해석 엔진은 DML 컴파일러에 의해 생성된 low-level의 지시사항들을 해석함</li>
@@ -207,23 +205,23 @@
 <h2 id="트랜잭션-관리" tabindex="-1"><a class="header-anchor" href="#트랜잭션-관리"><span>트랜잭션 관리</span></a></h2>
 <p>트랜잭션(Transaction)은 데이터베이스 응용 프로그램에서 하나의 논리적 기능을 수행하는 일련의 연산(operations)들의 집합</p>
 <p>트랜잭션의 네 가지 주요 특성</p>
-<ul>
+<ol>
 <li>원자성(Atomicity)</li>
 <li>일관성(Consistency)</li>
 <li>격리성(Isolation)</li>
 <li>지속성(Durability)</li>
-</ul>
-<p>트랜잭션 관리자는 복구 관리자(Recovery Manager)와 병행 제어 관리자(Concurrency Control Manager)로 구성됨</p>
+</ol>
+<p>트랜잭션 관리자는 복구 관리자(Recovery Manager)와 동시성 제어 관리자(Concurrency Control Manager)로 구성됨</p>
 <ul>
 <li>
 <p>복구 관리자(Recovery Manager)</p>
 <ul>
 <li>전원 장애나 운영체제 오류 등 시스템 장애(system failure) 및 트랜잭션 실패(transaction failure)가 발생하더라도 데이터베이스가 일관되고 올바른 상태로 유지되도록 보장</li>
-<li>트랜잭션의 원자성(Atomicity)과 지속성(Durability) 속성을 보장합니다.</li>
+<li>트랜잭션의 원자성(Atomicity)과 지속성(Durability) 속성을 보장</li>
 </ul>
 </li>
 <li>
-<p>병행 제어 관리자(Concurrency-Control Manager)</p>
+<p>동시성 제어 관리자(Concurrency-Control Manager)</p>
 <ul>
 <li>여러 트랜잭션이 동시에 수행될 때 이들 간의 상호 작용을 제어하여 데이터베이스의 일관성(consistency)을 유지</li>
 <li>트랜잭션의 일관성(Consistency)과 격리성(Isolation) 속성을 보장</li>
