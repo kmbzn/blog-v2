@@ -57,6 +57,12 @@ export const routes = Object.fromEntries([
   ["/wellness/ExtraVirginOliveOil.html", { loader: () => import(/* webpackChunkName: "wellness_ExtraVirginOliveOil.html" */"/Users/kmbzn/blog-v2/docs/.vuepress/.temp/pages/wellness/ExtraVirginOliveOil.html.js"), meta: {"title":"🫒 엑스트라 버진 올리브유 (Extra Virgin Olive Oil)"} }],
   ["/wellness/PsylliumHusk.html", { loader: () => import(/* webpackChunkName: "wellness_PsylliumHusk.html" */"/Users/kmbzn/blog-v2/docs/.vuepress/.temp/pages/wellness/PsylliumHusk.html.js"), meta: {"title":"차전자피(Psyllium Husk)"} }],
   ["/404.html", { loader: () => import(/* webpackChunkName: "404.html" */"/Users/kmbzn/blog-v2/docs/.vuepress/.temp/pages/404.html.js"), meta: {"title":""} }],
+  ["/db/3.SQL-1.html", { loader: () => import(/* webpackChunkName: "db_3.SQL-1.html" */"/Users/kmbzn/blog-v2/docs/.vuepress/.temp/pages/db/3.SQL-1.html.js"), meta: {"title":"3. SQL"} }],
+  ["/db/6.E-R_Model.html", { loader: () => import(/* webpackChunkName: "db_6.E-R_Model.html" */"/Users/kmbzn/blog-v2/docs/.vuepress/.temp/pages/db/6.E-R_Model.html.js"), meta: {"title":"6. E-R Model"} }],
+  ["/db/2.Relational_Model.html", { loader: () => import(/* webpackChunkName: "db_2.Relational_Model.html" */"/Users/kmbzn/blog-v2/docs/.vuepress/.temp/pages/db/2.Relational_Model.html.js"), meta: {"title":"2. Relational Model"} }],
+  ["/db/7.Relational_Database_Design-1.html", { loader: () => import(/* webpackChunkName: "db_7.Relational_Database_Design-1.html" */"/Users/kmbzn/blog-v2/docs/.vuepress/.temp/pages/db/7.Relational_Database_Design-1.html.js"), meta: {"title":"7. Relational Database Design (1)"} }],
+  ["/db/13.Data_Storage_Structures.html", { loader: () => import(/* webpackChunkName: "db_13.Data_Storage_Structures.html" */"/Users/kmbzn/blog-v2/docs/.vuepress/.temp/pages/db/13.Data_Storage_Structures.html.js"), meta: {"title":"13. Data Storage Structures"} }],
+  ["/db/7.Relational_Database_Design-2.html", { loader: () => import(/* webpackChunkName: "db_7.Relational_Database_Design-2.html" */"/Users/kmbzn/blog-v2/docs/.vuepress/.temp/pages/db/7.Relational_Database_Design-2.html.js"), meta: {"title":"7. Relational Database Design (2)"} }],
 ]);
 
 if (import.meta.webpackHot) {
