@@ -53,7 +53,7 @@ export default defineUserConfig({
         collapsible: false,
         children: [
           '/db/1.Introduction',
-          '/db/Assignment2-1',
+          '/db/2.Relational_model',
         ]
       },
       {
