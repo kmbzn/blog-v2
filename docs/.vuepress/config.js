@@ -50,7 +50,7 @@ export default defineUserConfig({
       },
       {
         text: '🗄️ Database System',
-        collapsible: false,
+        collapsible: true,
         children: [
           '/db/1.Introduction',
           '/db/2.Relational_Model',
@@ -59,6 +59,19 @@ export default defineUserConfig({
           '/db/7.Relational_Database_Design-1',
           '/db/7.Relational_Database_Design-2',
           '/db/13.Data_Storage_Structures'
+        ]
+      },
+      {
+        text: '🔒 Computer Security',
+        collapsible: false,
+        children: [
+          '/cs/01.Overview',
+          '/cs/02.보안정책',
+          '/cs/03.Cryptography_Tools',
+          '/cs/04.User_Authentication',
+          '/cs/05.Access_Control',
+          '/cs/06.DB_Security',
+          '/cs/07.Malware',
         ]
       },
       {
