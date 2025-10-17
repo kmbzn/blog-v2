@@ -42,7 +42,7 @@ export default defineUserConfig({
         collapsible: true,
         children: [
           '/algorithm/PythonTimeout',
-          '/algorithm/std::vector',
+          '/algorithm/std-vector',
           '/algorithm/vim',
           '/algorithm/1018',
           '/algorithm/1966',
