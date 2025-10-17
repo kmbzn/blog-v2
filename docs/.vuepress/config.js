@@ -67,8 +67,8 @@ export default defineUserConfig({
         children: [
           '/cs/01.Overview',
           '/cs/02.보안정책',
-          '/cs/03.Cryptography_Tools',
-          '/cs/04.User_Authentication',
+          '/cs/03.Cryptographic_Tools',
+          '/cs/04.User_Authentification',
           '/cs/05.Access_Control',
           '/cs/06.DB_Security',
           '/cs/07.Malware',
