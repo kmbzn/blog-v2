@@ -1,4 +1,4 @@
-## 8. Architecture
+# 8. Architecture
 
 ## Learning Goals
 - architectural reasoning(아키텍처 추론)의 abstraction level(추상화 수준) 이해

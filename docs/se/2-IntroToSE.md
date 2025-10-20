@@ -1,4 +1,4 @@
-## 2. Introduction to Software Engineering
+# 2. Introduction to Software Engineering
 
 ## Software is a Skin that Surrounds Our Civilization
 - *Dr. Mark Harman*의 인용구

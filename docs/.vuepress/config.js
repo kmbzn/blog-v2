@@ -57,7 +57,7 @@ export default defineUserConfig({
           '/se/4-ProcessModels',
           '/se/5-Agile',
           '/se/6-Requirements',
-          '/se/7-RequilementElicitation',
+          '/se/7-Requirements-2',
           '/se/8-Architecture',
           
         ]

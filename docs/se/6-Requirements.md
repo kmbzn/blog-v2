@@ -1,4 +1,4 @@
-## 6. Requirements
+# 6. Requirements
 
 ## Learning Goals
 - Software engineering(소프트웨어 공학)에서 requirements(요구사항)의 중요성과 어려움 설명
