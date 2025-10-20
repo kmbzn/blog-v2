@@ -49,6 +49,20 @@ export default defineUserConfig({
         ]
       },
       {
+        text: '📝 Software Engineering',
+        collapsible: false,
+        children: [
+          '/se/2-IntroToSE',
+          '/se/3-Process',
+          '/se/4-ProcessModels',
+          '/se/5-Agile',
+          '/se/6-Requirements',
+          '/se/7-RequilementElicitation',
+          '/se/8-Architecture',
+          
+        ]
+      },
+      {
         text: '🗄️ Database System',
         collapsible: true,
         children: [
@@ -63,7 +77,7 @@ export default defineUserConfig({
       },
       {
         text: '🔒 Computer Security',
-        collapsible: false,
+        collapsible: true,
         children: [
           '/cs/01.Overview',
           '/cs/02.보안정책',
