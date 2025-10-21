@@ -1,15 +1,15 @@
 # 3. Process
 
 ## Learning Goals
-- process(프로세스)의 중요성 인식
-- progress(진행 상황) 측정의 어려움 이해
-- risks(위험) 식별 및 관리
-- planning(계획) 및 progress(진행 상황) 측정을 위한 milestones(마일스톤) 사용
+- Process(프로세스)의 중요성 인식
+- Progress(진행 상황) 측정의 어려움 이해
+- Risks(위험) 식별 및 관리
+- Planning(계획) 및 progress(진행 상황) 측정을 위한 milestones(마일스톤) 사용
 - backlogs(백로그) 및 user stories(사용자 스토리) 이해
 
 ## Software Process
-- “소프트웨어 시스템의 production(생산)으로 이어지는 일련의 관련된 activities(활동)”
-- Ian Sommerville, Software Engineering 10th edition, Pearson, 2016
+> "소프트웨어 시스템의 production(생산)으로 이어지는 일련의 관련된 activities(활동)"  
+> *Ian Sommerville, Software Engineering 10th edition, Pearson, 2016*
 
 ## How to Develop Software?
 1. 작성해야 할 소프트웨어 논의
@@ -26,7 +26,7 @@
 - 보고된 모든 bugs(버그) 추적
 - 요구사항 및 코드 review(검토)
 - 개발을 더 작은 tasks(작업)로 분할하고 schedule(일정)을 잡고 monitor(모니터링)함
-- quality assurance(품질 보증) 계획 및 수행
+- Quality assurance(품질 보증) 계획 및 수행
 - 일일 status(상태) 회의 진행
 - 개발자와 operation(운영) 간 코드 푸시를 위해 Docker containers(컨테이너) 사용
 
@@ -54,7 +54,6 @@
 - Waterfall(폭포수)
 - Spiral(나선형)
 - Agile(애자일)
-- …
 
 ## Estimating Effort
 
@@ -72,7 +71,7 @@
 - 필요시 전체 estimate(추정치) 수정
 
 ## Constructive Cost Model(COCOMO)
-- project history(프로젝트 이력)에 기반한 regression formula(회귀 공식)
+- Project history(프로젝트 이력)에 기반한 regression formula(회귀 공식)
 - 유사한 프로젝트 경험 필요
 - 경험의 documentation(문서화) 장려
 
@@ -84,15 +83,15 @@
 
 ## Bids and Time Estimations
 - 입찰에서 price(가격)과 planned time(계획된 시간) 또는 methods(방법) 간의 관계 없음
-- $C_v = \text{standard deviation} / \text{mean}$
+- $C_v = \frac{\text{(standard deviation)}}{\text{(mean)}}$
 
-## Risk and Uncertainty
+# Risk and Uncertainty
 
 ## Risk Management
-- project manager(프로젝트 관리자)의 핵심 과제
-- risks(위험) 조기 식별 및 평가
+- Project manager(프로젝트 관리자)의 핵심 과제
+- Risks(위험) 조기 식별 및 평가
 - 필요시 mitigation strategies(완화 전략) 계획
-- risk analysis(위험 분석) 결과를 project plan(프로젝트 계획)에 문서화
+- Risk analysis(위험 분석) 결과를 project plan(프로젝트 계획)에 문서화
 - Project risks(프로젝트 위험): scheduling(일정) 및 resources(자원)
     - 예: staff illness/turnover(직원 질병/이직)
 - Product risks(제품 위험): 제품의 quality(품질) 및 functionality(기능성)
@@ -101,7 +100,7 @@
     - 예: 경쟁사가 유사 제품 출시
 
 ## Uncertainty
-- Steve McConnell. 1996. Rapid Development
+- *Steve McConnell. 1996. Rapid Development*
 
 ## Sources of Uncertainty
 - Unpredictable operating environment(예측 불가능한 운영 환경)
@@ -117,9 +116,9 @@
 - 가치 증대를 위해 선택적으로 innovate(혁신)
 - capability(역량) 및 competitiveness(경쟁력) 향상
 - 필요한 곳에 위험 집중
-- precedent(선례)와 convention(관행)(경험)에 의존
+- Precedent(선례)와 convention(관행)(경험)에 의존
 - iteration(반복) 및 feedback(피드백) 사용
-    - prototypes(프로토타입), spiral development(나선형 개발), sprints(스프린트)
+    - Prototypes(프로토타입), spiral development(나선형 개발), sprints(스프린트)
 
 ## Managing Risks
 - 위험 조기 해결
@@ -162,8 +161,6 @@
 - Strategy(전략): 잠재적으로 결함이 있는 구성 요소를 신뢰성이 알려진 bought-in components(구매 구성 요소)로 교체
 - Risk(위험): Requirements changes(요구사항 변경)
 - Strategy(전략): 요구사항 변경 impact(영향)을 평가하기 위한 traceability(추적성) 정보 도출; design(설계)에서 information hiding(정보 은닉) 최대화
-
-## Strategies to Help Manage Risk
 - (표 2)
 - Risk(위험): Organizational restructuring(조직 개편)
 - Strategy(전략): senior management(고위 경영진)에게 프로젝트가 비즈니스 목표에 매우 중요한 기여를 하고 있음을 보여주는 브리핑 문서 준비
@@ -172,14 +169,14 @@
 - Risk(위험): Underestimated development time(과소평가된 개발 시간)
 - Strategy(전략): buying-in components(구성 요소 구매) 조사; program generator(프로그램 생성기) 사용 조사
 
-## Planning(계획)
+# Planning(계획)
 
 ## (Software) Projects
 - 일회성 노력(One-time endeavor); 다음과 관련하여 고유함
     - Goals(목표)
     - time, financial, personal, and other constraints(시간, 재정, 인력 및 기타 제약 조건)
     - differences to other endeavors(다른 노력과의 차이점)
-    - project-specific organization(프로젝트별 조직)
+    - Project-specific organization(프로젝트별 조직)
 - 정의되고 제한된 시간(명확한 시작과 끝)
 - 명확한 goals(목표)
 - Constraints(제약 조건): budget(예산), resources(자원), ...
@@ -192,9 +189,7 @@
 - 소프트웨어 프로젝트는 산업 프로젝트보다 더 자주 실패하는 경향
 
 ## Measuring Progress?
-- "앱이 거의 완성되었습니다. frontend(프론트엔드)는 거의 다 구현되었습니다. backend(백엔드)는 서버를 계속 다운시키는 그 바보 같은 버그 하나만 빼고 완전히 끝났습니다. 그 바보 같은 버그 하나만 찾으면 되는데, 아마 오후면 될 겁니다. 다음 주에 release(배포)할 준비가 될 것입니다."
-
-## Measuring Progress?
+> "앱이 거의 완성되었습니다. frontend(프론트엔드)는 거의 다 구현되었습니다. backend(백엔드)는 서버를 계속 다운시키는 그 빌어 먹을 버그 하나만 빼고 완전히 끝났습니다. 그 빌어 먹을 버그 하나만 찾으면 되는데, 아마 오후면 될 겁니다. 다음 주에 release(배포)할 준비가 될 것입니다."
 - Developer judgment(개발자 판단): x% 완료
 - Lines of code(코드 라인 수)?
 - Functionality(기능성)?
@@ -203,7 +198,7 @@
 ## Milestones and Deliverables(마일스톤 및 인도물)
 - (특히 소프트웨어의) 진행 상황을 observable(관찰 가능)하게 만들기
 - Milestone(마일스톤):(하위) 작업의 명확한 end point(종료점)
-    - project manager(프로젝트 관리자)용
+    - Project manager(프로젝트 관리자)용
     - Reports(보고서), prototypes(프로토타입), completed subprojects(완료된 하위 프로젝트)
     - "80% done"("80% 완료")은 적절한 milestone(마일스톤)이 아님
 - Deliverable(인도물): 고객을 위한 결과
@@ -297,7 +292,7 @@
     - Sprint Review Meeting(스프린트 검토 회의)
 
 ## Product Backlog / Sprint Backlog
-- product backlog(제품 백로그)는 제품을 위한 모든 features(기능)
+- Product backlog(제품 백로그)는 제품을 위한 모든 features(기능)
 - sprint backlog(스프린트 백로그)는 해당 sprint(스프린트)에서 작업할 모든 기능. 이는 개별 tasks(작업)로 분할되어야 함:
     - Fine-grained(세분화됨)
     - Estimated(추정됨)
@@ -316,7 +311,7 @@
 - Sprint Review Meeting
     - Product(제품) 검토
 
-## User Stories
+# User Stories
 
 ## The Card(카드)
 > "As a [role], I want [function], so that [value]" -> "[역할]로서, [가치]를 위해 [기능]을 원한다"
