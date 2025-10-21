@@ -1,10 +1,10 @@
 # 4. Process Models
 
 ## Learning Goals
-- process(프로세스) 고려 사항의 필요성 이해
+- Process(프로세스) 고려 사항의 필요성 이해
 - 주어진 project(프로젝트)에 적합한 process(프로세스) 선택
-- iteration(반복)을 통한 project(프로젝트) 및 engineering(엔지니어링) risks(위험) 해결
-- process quality(프로세스 품질) 보장
+- Iteration(반복)을 통한 project(프로젝트) 및 engineering(엔지니어링) risks(위험) 해결
+- Process quality(프로세스 품질) 보장
 
 ## The Waterfall Model
 - [폭포수 모델 diagram]
@@ -15,7 +15,7 @@
 - [V 모델 diagram]
 
 ## When is Waterfall Appropriate?
-1. requirements(요구사항)가 사전에 알려짐
+1. Requirements(요구사항)가 사전에 알려짐
 2. cost(비용), schedule(일정), performance(성능), safety(안전), security(보안), user interfaces(사용자 인터페이스), organizational impacts(조직적 영향) 등으로 인한 미해결 고위험 risks(위험)가 요구사항에 없음
 3. 요구사항의 nature(본질)이 많이 변경되지 않음
 4. 요구사항이 모든 주요 system stakeholders(시스템 이해관계자)의 기대와 호환됨
@@ -54,7 +54,7 @@
 ## Iteration!
 - 초기 및 빈번한 feedback(피드백)
 - 지속적인 adaptation(적응) 지원
-- risks(위험) 우선 해결
+- Risks(위험) 우선 해결
 
 ## The Spiral Model(Barry Boehm)
 - [나선형 모델 diagram]
@@ -76,7 +76,7 @@
 - Risk-driven process(위험 주도 프로세스)
     - Prioritization(우선순위 지정) 및 prototyping(프로토타이핑)
 - Architecture(아키텍처) 및 design(설계)
-    - risks(위험) 격리/encapsulate(캡슐화)
+    - Risks(위험) 격리/encapsulate(캡슐화)
     - 업계 standards(표준) 준수
 - Design for assurance(보증을 위한 설계)
     - Preventive engineering(예방 공학)
@@ -154,19 +154,19 @@
 
 ## Process Standards
 - [소프트웨어 측정 관련 책 표지]
-- C. Ebert and R. Dumke, Software Measurement,: Establish – Extract – Evaluate – Execute, Springer, 2007
+- *C. Ebert and R. Dumke, Software Measurement,: Establish – Extract – Evaluate – Execute, Springer, 2007*
 
 ## Capability Maturity Model(CMM)
 - customer(고객)는 조직이 원하는 product(제품)를 delivering(제공)할 능력이 있다는 confidence(신뢰)를 얻어야 함
 - US Department of Defense(미국 국방부)는 contractors(계약업체)를 평가하기를 원했음
-    - software processes(소프트웨어 프로세스)의 maturity(성숙도)를 평가할 framework(프레임워크)가 필요했음
+    - Software processes(소프트웨어 프로세스)의 maturity(성숙도)를 평가할 framework(프레임워크)가 필요했음
     - 1986년, Software Engineering Institute(SEI)는 CMM이라 불릴 framework(프레임워크) 개발 시작
 - CMM model(CMM 모델)에서, 조직의 maturity level(성숙도 수준)은 조직이 low cost(저비용), high quality(고품질) 소프트웨어를 얼마나 잘 생산할 수 있는지를 알려줌
 - 현재 maturity level(성숙도 수준)을 알면, 조직은 다음 상위 level(수준)에 도달하기 위해 노력할 수 있음
     - CMM model(CMM 모델)에는 5개의 maturity levels(성숙도 수준)이 있음
 
 ## SEI's Capability Maturity Model(Integration)
-- process(프로세스)가 아닌 meta-process(메타 프로세스)
+- Process(프로세스)가 아닌 meta-process(메타 프로세스)
 - CMM(I)는 회사가 자체 process(프로세스)를 얼마나 잘 measures(측정)하는지 측정
     - 주로 US government(미국 정부)가 software vendors(소프트웨어 공급업체)의 estimates(견적)를 통제하기 위해 사용
     - 더 높고 안정적인 estimate(견적)를 수용하는 것을 선호
@@ -222,7 +222,7 @@ Looks good.
 
 ## Capability Maturity Model(CMM)
 - Capability Maturity Model Integration(CMMI)
-    - software(소프트웨어) 분야(CMM-SW로 알려짐)에서 CMM의 성공적인 적용 이후, 다른 분야의 CMM도 개발됨
+    - Software(소프트웨어) 분야(CMM-SW로 알려짐)에서 CMM의 성공적인 적용 이후, 다른 분야의 CMM도 개발됨
 - Systems Engineering(시스템 공학) CMM
 - Integrated Product Development(통합 제품 개발) CMM
 - Electronic Industry Alliance(전자 산업 연합) 731 CMM
@@ -231,7 +231,7 @@ Looks good.
 - Supplier Source(공급업체 소스) CMM
 
 ## Process Tradeoffs
--(참고: 많은 산업 환경(예: 자동차 산업)에서의 성공 사례)
+- (참고: 많은 산업 환경(예: 자동차 산업)에서의 성공 사례)
 - Process(프로세스) vs product quality(제품 품질)
     - Process Quality(프로세스 품질)는 Product Quality(제품 품질)에 영향을 미치지만, 보장하지는 않음
 - 법적 방어 전략으로서의 "best practices(모범 사례)" 준수
@@ -240,5 +240,5 @@ Looks good.
 ## Summary
 - Sequential process models(순차적 프로세스 모델)은 "coding(코딩) 전 생각"을 강조
 - 종종 너무 rigid(경직)되며, requirements(요구사항)와 environments(환경) 변화
-- risks(위험) 해결을 위한 Iteration(반복)
-- process(프로세스) 측정, 지속적인 process(프로세스) 개선
+- Risks(위험) 해결을 위한 Iteration(반복)
+- Process(프로세스) 측정, 지속적인 process(프로세스) 개선

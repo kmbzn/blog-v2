@@ -75,12 +75,12 @@
 
 ## Planning Poker
 - How to play(게임 방법)
-1. 다음 task(작업) 낭독
-2. task(작업) 토론
-3. Estimate(추정): 모두가 작업의 크기를 나타내는 카드를 선택하고 동시에 점수 공개
-4. Discussion(토론): universal consensus(만장일치)가 아니면, 가장 낮거나 높은 점수를 낸 사람에게 이유 질문
-5. Re-estimate(재추정)
-6. Gain consensus(합의 도달)
+    1. 다음 task(작업) 낭독
+    2. task(작업) 토론
+    3. Estimate(추정): 모두가 작업의 크기를 나타내는 카드를 선택하고 동시에 점수 공개
+    4. Discussion(토론): universal consensus(만장일치)가 아니면, 가장 낮거나 높은 점수를 낸 사람에게 이유 질문
+    5. Re-estimate(재추정)
+    6. Gain consensus(합의 도달)
 - Benefits(장점):
 - task(작업)들을 서로 상대적으로 추정하기 쉬움
 - Equal voice(동등한 발언권)
@@ -93,12 +93,12 @@
 - 더 작은 부분에 대해 collective ownership(공동 소유권) 구현 가능
 
 ## Kanban Board
-[Image of a Kanban board]
+[Image of a Kanban board]  
 - [https://en.wikipedia.org/wiki/Kanban_board](https://en.wikipedia.org/wiki/Kanban_board)
 
 ## Simple Design
-- "모든 것을 한 번만 말하라":
-- 매 순간, design(설계)는 모든 tests(테스트)를 실행하고, programmers(프로그래머)가 전달하고자 하는 모든 것을 전달하며, duplicate code(중복 코드)가 없고, 최소한의 classes(클래스)와 methods(메서드)를 가짐
+- "모든 것을 한 번만 말하라"
+    - 매 순간, design(설계)는 모든 tests(테스트)를 실행하고, programmers(프로그래머)가 전달하고자 하는 모든 것을 전달하며, duplicate code(중복 코드)가 없고, 최소한의 classes(클래스)와 methods(메서드)를 가짐
 
 ## On-site Customer
 - customer(고객)가 team(팀)과 full-time(상시) 함께 자리함
@@ -137,54 +137,90 @@
 - Distractions(집중 방해 요소)
 - Anxiety(불안감)
 
-## Solving Software Development Problems with Agile Practices(1/2)
-- Problem in Software Development(소프트웨어 개발의 문제점): Requirement changes(요구사항 변경)
-- Agile Methods That Mitigate It(완화하는 Agile 방법): Close relation with customer(고객과의 긴밀한 관계), short development cycle(짧은 개발 주기), small releases(소규모 릴리스), planning poker(플래닝 포커), Kanban board(칸반 보드)
-- Problem: Scope creep(범위 증가)
-- Agile Methods: short development cycle, small releases, planning poker
-- Problem: Architecture erosion(아키텍처 침식)
-- Agile Methods: Collective ownership(공동 소유권), pair programming(페어 프로그래밍)
-- Problem: Under- or overestimation(과소 또는 과대 추정)(시간 및 예산), sticking to the plan(계획 고수)
-- Agile Methods: Close relation with customer, planning poker, short development cycle, small releases
-- Problem: Bringing in new developers(신규 개발자 투입)(교육 시간 및 노력), steep learning curve(가파른 학습 곡선)
-- Agile Methods: Collective ownership(장단점), planning poker
-- Problem: Change of management(개발 과정 중 경영진 변경)
-- Agile Methods: Close relationship with customer(고객과의 긴밀한 관계)
-- Problem: Introducing new bugs(소프트웨어 개발 중 새로운 버그 발생)
-- Agile Methods: 40-hour week(주 40시간 근무), collective ownership, short development cycle, small releases, tests(테스트), CI(지속적인 통합), pair programming
+## Software Development Problems and Mitigating Agile Methods
 
-## Solving Software Development Problems with Agile Practices(2/2)
-- Problem in Software Development(소프트웨어 개발의 문제점): Challenge of communication(의사소통의 어려움)
-- Agile Methods That Mitigate It(완화하는 Agile 방법): Close relation with customer(고객과의 긴밀한 관계)
-- Problem: Developer turnover(개발자 이직)
-- Agile Methods: Collective ownership(공동 소유권)(장단점), 40-hour week(주 40시간 근무)
-- Problem: Integration issues(통합 문제)
-- Agile Methods: Collective ownership
-- Problem: Difficulty of tracking bugs(버그 추적의 어려움)
-- Agile Methods: Collective ownership, short development cycle(짧은 개발 주기), small releases(소규모 릴리스), CI(지속적인 통합), tests(테스트)
-- Problem: Disagreement between developers(개발자 간 불일치)
-- Agile Methods: Close relation with customer
-- Problem: Scheduling problems(일정 문제)(global team(글로벌 팀))
-- Agile Methods: Close relation with customer
-- Problem: "Groupthink"(그룹싱크)(개발자들이 서로 동의하는 경향, 공통 사고), fear of hurting the feelings(다른 개발자 감정 상할까 봐 두려움)
-- Agile Methods: Planning poker(플래닝 포커), pair programming(페어 프로그래밍)
-- Problem: Challenges with integrating with legacy code(레거시 코드 통합의 어려움)
-- Agile Methods: Collective ownership
+### Requirement changes(요구사항 변경)
+- Close relation with customer(고객과의 긴밀한 관계)
+- Short development cycle(짧은 개발 주기)
+- Small releases(소규모 릴리스)
+- Planning poker
+- Kanban board
 
-## Scrum
+### Scope creep(범위 증가)
+- Short development cycle
+- Small releases
+- Planning poker
+
+### Architecture erosion(아키텍처 침식)
+- Collective ownership(공동 소유권)
+- Pair programming(페어 프로그래밍)
+
+### Under- or overestimation(과소 또는 과대 추정)(시간 및 예산), sticking to the plan(계획 고수)
+- Close relation with customer
+- Planning poker
+- Short development cycle
+- Small releases
+
+### Bringing in new developers(신규 개발자 투입)(교육 시간 및 노력), steep learning curve(가파른 학습 곡선)
+- Collective ownership
+- Planning poker
+
+### Change of management(개발 과정 중 경영진 변경)
+- Close relationship with customer
+
+### Introducing new bugs(소프트웨어 개발 중 새로운 버그 발생)
+- 40-hour week(주 40시간 근무)
+- Collective ownership
+- Short development cycle
+- Small releases
+- Tests(테스트)
+- CI(지속적인 통합)
+- Pair programming
+
+### Challenge of communication(의사소통의 어려움)
+- Close relation with customer
+
+### Developer turnover(개발자 이직)
+- Collective ownership
+- 40-hour week
+
+### Integration issues(통합 문제)
+- Collective ownership
+
+### Difficulty of tracking bugs(버그 추적의 어려움)
+- Collective ownership
+- Short development cycle
+- Small releases
+- CI
+- Tests
+
+### Disagreement between developers(개발자 간 불일치)
+- Close relation with customer
+
+### Scheduling problems(일정 문제)(global team(글로벌 팀))
+- Close relation with customer
+
+### "Groupthink"(그룹싱크)(개발자들이 서로 동의하는 경향, 공통 사고), fear of hurting the feelings(다른 개발자 감정 상할까 봐 두려움)
+- Planning poker
+- Pair programming
+
+### Challenges with integrating with legacy code(레거시 코드 통합의 어려움)
+- Collective ownership
+
+# Scrum
 
 ## Introduction to Scrum
 - [Image illustrating the Scrum framework]
 
 ## Elements of Scrum
 - Products(산출물):
-- Product Backlog(제품 백로그)
-- Sprint Backlog(스프린트 백로그)
+    - Product Backlog(제품 백로그)
+    - Sprint Backlog(스프린트 백로그)
 - Process(프로세스):
-- Sprint Planning Meeting(스프린트 계획 회의)
-- Daily Scrum Meeting(일일 스크럼 회의)
-- Sprint Retrospective(스프린트 회고)
-- Sprint Review Meeting(스프린트 검토 회의)
+    - Sprint Planning Meeting(스프린트 계획 회의)
+    - Daily Scrum Meeting(일일 스크럼 회의)
+    - Sprint Retrospective(스프린트 회고)
+    - Sprint Review Meeting(스프린트 검토 회의)
 
 ## Product Backlog / Sprint Backlog
 - product backlog(제품 백로그)는 product(제품)를 위한 모든 features(기능)
@@ -195,7 +231,7 @@
 - Acceptance criteria(인수 기준)이 정의되어야 함
 - User Stories(사용자 스토리)가 자주 사용됨
 
-## Backlog – Information Radiators
+# Backlog – Information Radiators
 
 ## Scrum Meetings
 - Sprint Planning Meeting(스프린트 계획 회의)
@@ -212,7 +248,7 @@
 - [Image illustrating the user story format]
 
 ## The Card
-- "As a [role], I want [function], so that [value]" -> "[역할]로서, [가치]를 위해 [기능]을 원한다"
+> "As a [role], I want [function], so that [value]" -> "[역할]로서, [가치]를 위해 [기능]을 원한다"
 - 3x5 카드에 맞아야 함
 
 ## The Conversation

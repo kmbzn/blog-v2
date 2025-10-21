@@ -5,7 +5,7 @@
 - Progress(진행 상황) 측정의 어려움 이해
 - Risks(위험) 식별 및 관리
 - Planning(계획) 및 progress(진행 상황) 측정을 위한 milestones(마일스톤) 사용
-- backlogs(백로그) 및 user stories(사용자 스토리) 이해
+- Backlogs(백로그) 및 user stories(사용자 스토리) 이해
 
 ## Software Process
 > "소프트웨어 시스템의 production(생산)으로 이어지는 일련의 관련된 activities(활동)"  
@@ -129,7 +129,7 @@
 - vendor(공급업체) 및 open-source(오픈소스) components(구성 요소) 기반 구축
     - OS, DB, app server, tooling, backups, information management, …
     - 신뢰할 수 있는 vendors(공급업체) 및 integrators(통합업체) 고수
-- business differentiators(비즈니스 차별화 요소)에 내부 risk-taking(위험 감수) 집중
+- Business differentiators(비즈니스 차별화 요소)에 내부 risk-taking(위험 감수) 집중
     - Web-site features(웹사이트 기능), internal queries(내부 쿼리), decision algorithms(의사 결정 알고리즘)
 - expertise(전문 지식) 접근, 비용 절감, flexibility(유연성) 확보를 위한 Outsource(아웃소싱)
     - Black-box testing(블랙박스 테스트)
@@ -174,8 +174,8 @@
 ## (Software) Projects
 - 일회성 노력(One-time endeavor); 다음과 관련하여 고유함
     - Goals(목표)
-    - time, financial, personal, and other constraints(시간, 재정, 인력 및 기타 제약 조건)
-    - differences to other endeavors(다른 노력과의 차이점)
+    - Time, financial, personal, and other constraints(시간, 재정, 인력 및 기타 제약 조건)
+    - Differences to other endeavors(다른 노력과의 차이점)
     - Project-specific organization(프로젝트별 조직)
 - 정의되고 제한된 시간(명확한 시작과 끝)
 - 명확한 goals(목표)
@@ -269,7 +269,7 @@
     - 특히 특정 작업을 위한 experts(전문가)
 - 일시적인 근무 시간 증가(초과 근무, 휴가 동결)
     - short-term solution(단기적 해결책)일 뿐
-- tooling(도구), methods(방법), processes(프로세스) 개선
+- Tooling(도구), methods(방법), processes(프로세스) 개선
 - Buy(구매), contract(계약), offshore(아웃소싱)
 - 기능 재협상 / 축소
     - Set priorities(우선순위 설정), incremental deployment(증분 배포)
@@ -277,7 +277,7 @@
 - 피할 것: testing(테스트)/quality assurance(품질 보증) 축소
 
 ## Team Productivity
-- Brook's law(브룩스의 법칙): 지연되는 소프트웨어 프로젝트에 인력을 추가하면 더욱 지연됨.
+- Brook's law(브룩의 법칙): 지연되는 소프트웨어 프로젝트에 인력을 추가하면 더욱 지연됨.
 
 ## (Brief) Introduction to Scrum
 
