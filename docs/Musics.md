@@ -18,9 +18,6 @@
 ### 만년설
 <iframe style="border-radius:12px" width="100%" height="152" src="https://www.youtube.com/embed/2L_W8hPpdhg?controls=1&modestbranding=1" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe>
 
-### 오래오래, 우리
-<iframe style="border-radius:12px" width="100%" height="152" src="https://www.youtube.com/embed/9E_dpzOe8L0?controls=1&modestbranding=1" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe>
-
 ### I DO ME
 <iframe style="border-radius:12px" width="100%" height="152" src="https://www.youtube.com/embed/hAEfi_SKTEU?controls=1&modestbranding=1" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe>
 
