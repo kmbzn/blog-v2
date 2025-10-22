@@ -53,6 +53,7 @@ export default defineUserConfig({
         collapsible: false,
         children: [
           '/ai/1-Basics-Linear-Algebra',
+          '/ai/2-Linear-Algebra-Search',
         ]
       },
       {
