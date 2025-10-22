@@ -11,18 +11,18 @@ $$A\mathbf{x} = \lambda\mathbf{x}, \quad \mathbf{x} \neq \mathbf{0}$$
 - 일반적으로 고유벡터는 길이가 1로 정규화(normalized)된 벡터로 가정
 
 ## 고유값 계산
-- 위 식을 $\lambda I - A)\mathbf{x} = \mathbf{0}, \mathbf{x} \neq \mathbf{0}$로 재작성
+- 위 식을 $(\lambda I - A)\mathbf{x} = \mathbf{0},~\mathbf{x} \neq \mathbf{0}$로 재작성
 - 이 식이 0이 아닌 해 $\mathbf{x}$를 갖는 것은 $\lambda I - A$가 비어 있지 않은 영 공간(nonempty nullspace)을 가질 때만 가능, 이는 $\lambda I - A$가 특이 행렬(singular)일 때, 즉 행렬식(determinant)이 0일 때
 $$|\lambda I - A| = 0$$
 - $|\lambda I - A|$를 $\lambda$에 대한 다항식으로 전개 ($n$차) $\Rightarrow$ 행렬 $A$의 특성 다항식 (characteristic polynomial)
-- 이 다항식의 $n$개 근 $\lambda_1, \dots, \lambda_n$이 행렬 $A$의 고유값 ($\lambda_i$는 서로 다를 필요 없음)
-- 고유값 $\lambda_i$에 해당하는 고유벡터는 선형 방정식 $(\lambda_i I - A)\mathbf{x} = \mathbf{0}$을 풀어 구함
+- 이 다항식의 $n$개 근 $\lambda_1, \dots, \lambda_n$이 행렬 $A$의 고유값 ($\lambda_i$는 서로 다를 필요 없음.)
+- 고유값 $\lambda_i$에 해당하는 고유벡터는 선형 방정식 $(\lambda_i I - A)\mathbf{x} = \mathbf{0}$을 풀어 구함.
 
 ## 고유값 및 고유벡터의 속성
 - $\text{tr}(A) = \sum_{i=1}^n \lambda_i$
 - $|A| = \prod_{i=1}^n \lambda_i$
-- $A$의 계수($\text{rank}(A)$)는 0이 아닌 고유값의 수와 같음
-- 대각 행렬 $D = \text{diag}(d_1, \dots, d_n)$의 고유값은 대각 원소 $d_1, \dots, d_n$과 같음
+- $A$의 계수($\text{rank}(A)$)는 0이 아닌 고유값의 수와 같음.
+- 대각 행렬 $D = \text{diag}(d_1, \dots, d_n)$의 고유값은 대각 원소 $d_1, \dots, d_n$과 같음.
 
 ## 대칭 행렬 (Symmetric Matrices)의 고유값과 고유벡터
 - 머신러닝의 대부분 경우, 대칭 실수 행렬(symmetric real matrices)을 다루며, 이 행렬들의 고유값과 고유벡터는 주목할 만한 속성을 가짐 (예: 행렬에서 양방향 그래프(bi-directional graph) 표현)
@@ -33,7 +33,7 @@ $$|\lambda I - A| = 0$$
         - $\mathbf{u}_1, \dots, \mathbf{u}_n$은 단위 벡터(unit vectors)이며 서로 직교(orthogonal)
         - $\mathbf{u}_i$들을 열 벡터로 포함하는 직교 행렬(orthogonal matrix)을 $U$라 할 때, $\Lambda = \text{diag}(\lambda_1, \dots, \lambda_n)$를 사용하여
         $$A = U\Lambda U^T$$
-        - 이는 $A$ 행렬의 대각화 (diagonalization) 또는 고유 분해 (eigendecomposition)라 불림
+        - 이는 $A$ 행렬의 대각화 (diagonalization) 또는 고유 분해 (eigendecomposition)라 불림.
 
 # 특이값 분해 (Singular Value Decomposition, SVD)
 
@@ -57,7 +57,7 @@ $$A = U\Sigma V^T = \sum_{i=1}^r \mathbf{u}_i \sigma_i \mathbf{v}_i^T$$
     - 대칭 (왼쪽 또는 오른쪽 문맥에 관계없이)
 - 잠재 의미 분석 (Latent Semantic Analysis) 키워드 참고
 - 동시 발생 행렬을 SVD로 분해한 후, 가장 큰 특이값에 해당하는 좌측 특이 벡터 $U$의 열들을 추출하여 단어의 워드 벡터(Word Vector)로 사용 가능
-    - 예: `NumPy`를 사용한 파이썬 코드 실행 결과, 2개의 가장 큰 특이값에 해당하는 $U$의 첫 두 열을 출력하여 단어 벡터를 얻음
+    - 예: `NumPy`를 사용한 파이썬 코드 실행 결과, 2개의 가장 큰 특이값에 해당하는 $U$의 첫 두 열을 출력하여 단어 벡터를 얻음.
 
 # 행렬 미적분 (Matrix Calculus)
 
@@ -90,7 +90,7 @@ $$H_{ij} = \frac{\partial^2 f(\mathbf{x})}{\partial x_i \partial x_j}$$
 
 ## 최소 제곱법 (Least Squares)
 - 행렬 $A \in \mathbb{R}^{m \times n}$와 벡터 $\mathbf{b} \in \mathbb{R}^m$이 주어지고, $\mathbf{b} \notin \mathcal{R}(A)$인 경우,
-- $A\mathbf{x} = \mathbf{b}$를 만족하는 벡터 $\mathbf{x} \in \mathbb{R}^n$를 찾을 수 없음
+- $A\mathbf{x} = \mathbf{b}$를 만족하는 벡터 $\mathbf{x} \in \mathbb{R}^n$를 찾을 수 없음.
 - 대신, 유클리드 norm의 제곱 $\Vert A\mathbf{x} - \mathbf{b} \Vert_2^2$으로 측정했을 때, $A\mathbf{x}$가 $\mathbf{b}$에 가능한 한 가장 가깝도록 만드는 벡터 $\mathbf{x}$를 찾고자 함
 - $\Vert \mathbf{x} \Vert_2^2 = \mathbf{x}^T \mathbf{x}$를 사용하여
 $$\Vert A\mathbf{x} - \mathbf{b} \Vert_2^2 = (A\mathbf{x} - \mathbf{b})^T (A\mathbf{x} - \mathbf{b}) = \mathbf{x}^T A^T A\mathbf{x} - 2\mathbf{b}^T A\mathbf{x} + \mathbf{b}^T \mathbf{b}$$
@@ -170,5 +170,5 @@ $$\therefore \mathbf{x} = (A^T A)^{-1} A^T \mathbf{b}$$
 - 예:
     - 깊이 우선 탐색 (DFS)
     - 너비 우선 탐색 (BFS)
-- 한계점: BFS는 정보가 없음 (Has No Information). 목표에 가까운 상태라도 우선적으로 탐색하지 못함.
+- 한계점: BFS는 정보가 없음. (Has No Information). 목표에 가까운 상태라도 우선적으로 탐색하지 못함
 - 개선 방향: 탐색 알고리즘을 더 지능적으로 만들기 $\Rightarrow$ 정보 기반 탐색 (Informed (Heuristic) Search)

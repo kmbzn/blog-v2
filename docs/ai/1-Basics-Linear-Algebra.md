@@ -32,11 +32,11 @@ $$
 
 $$\mathbf{x} = \begin{bmatrix} x_1 \\ x_2 \\ x_3 \\ \vdots \\ x_n \end{bmatrix}$$
 - 실수(real), 이진수(binary), 정수(integer) 등 가능
-- 타입 및 크기 표기 예시: $\mathbf{x} \in \mathbb{R}^n$
+- 타입 및 크기 표기 예: $\mathbf{x} \in \mathbb{R}^n$
 
 ## 행렬 (Matrices)
 - 2차원 숫자 배열(2-D array of numbers)
-- 타입 및 형태(shape) 표기 예시: $m$행 $n$열 행렬 $A \in \mathbb{R}^{m \times n}$
+- 타입 및 형태(shape) 표기 예: $m$행 $n$열 행렬 $A \in \mathbb{R}^{m \times n}$
 - $A$의 $j$번째 열: $\mathbf{a}_j$ 또는 $\mathbf{A}_{:,j}$
 - $A$의 $i$번째 행: $\mathbf{a}_i^T$ 또는 $\mathbf{A}_{i,:}$
 
@@ -139,7 +139,7 @@ $$\Vert \mathbf{x} \Vert_p = \left( \sum_{i} |x_i|^p \right)^{1/p}$$
 
 ## 선형 독립 (Linear Independence)
 - 벡터 집합 $\{\mathbf{x}_1, \mathbf{x}_2, \dots, \mathbf{x}_n\} \subset \mathbb{R}^m$은, 어떤 벡터도 나머지 벡터들의 선형 결합으로 표현될 수 없을 때 선형 독립(linearly independent)
-- 선형 종속(linearly dependent) 예시: $\mathbf{x}_3 = -2\mathbf{x}_1 + \mathbf{x}_2 \to$ 선형 종속
+- 선형 종속(linearly dependent) 예: $\mathbf{x}_3 = -2\mathbf{x}_1 + \mathbf{x}_2 \to$ 선형 종속
 
 ## 계수 (Rank)
 - 행렬 $A \in \mathbb{R}^{m \times n}$의 열 계수(column rank): $A$의 열 벡터 중 선형 독립 집합을 구성하는 가장 큰 부분 집합의 크기
@@ -208,7 +208,7 @@ $$\Vert \mathbf{x} \Vert_p = \left( \sum_{i} |x_i|^p \right)^{1/p}$$
     - 행렬 $A$가 주어졌을 때
     - $A$의 행 벡터 $\mathbf{a}_1, \dots, \mathbf{a}_n \in \mathbb{R}^n$의 가능한 모든 선형 결합으로 형성된 $\mathbb{R}^n$의 점 집합 $S \subset \mathbb{R}^n$ (선형 결합 계수는 모두 0과 1 사이)
 - $A$의 행렬식의 절댓값 $|A|$는 집합 $S$의 "부피(volume)" 측정값
-- 예시: $A = \begin{bmatrix} 1 & 3 \\ 3 & 2 \end{bmatrix}$. $\mathbf{a}_1 = \begin{bmatrix} 1 \\ 3 \end{bmatrix}$, $\mathbf{a}_2 = \begin{bmatrix} 3 \\ 2 \end{bmatrix}$. 행렬식 값 $|A| = -7$. 평행사변형의 넓이는 7
+- 예: $A = \begin{bmatrix} 1 & 3 \\ 3 & 2 \end{bmatrix}$. $\mathbf{a}_1 = \begin{bmatrix} 1 \\ 3 \end{bmatrix}$, $\mathbf{a}_2 = \begin{bmatrix} 3 \\ 2 \end{bmatrix}$. 행렬식 값 $|A| = -7$. 평행사변형의 넓이는 7
 - $|A| = 0$은 $A$가 특이 행렬(singular) (즉, 비가역(non-invertible))인 경우에만 성립
   - $A$가 특이 행렬이면 완전 계수가 아니므로, 열 벡터는 선형 종속
 - 정의
