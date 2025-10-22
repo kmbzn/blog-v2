@@ -58,7 +58,7 @@ export default defineUserConfig({
           '/ai/4-Knowledge-Logic-1',
           '/ai/5-Knowledge-Logic-2',
           '/ai/6-Probability',
-          '/ai/7-Inforamation-Theory',
+          '/ai/7-Information-Theory',
           '/ai/8-Probabilistic-Reasoning-2',
           '/ai/9-Probabilistic-Reasoning-3',
           '/ai/12-Machine-Learning-3',

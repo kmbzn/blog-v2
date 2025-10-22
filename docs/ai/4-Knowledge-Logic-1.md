@@ -1,4 +1,4 @@
-# 4. Knowledge, Logic (1)
+# 4. Knowledge and Logic (1)
 
 ## 지식 기반 에이전트(Knowledge-Based Agents)
 - 지식 기반 에이전트(Knowledge-based agents): 지식의 내부 표현(internal representation of knowledge)에 대한 추론(reasoning) 과정을 통해 취할 행동을 결정
