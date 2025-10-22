@@ -49,8 +49,15 @@ export default defineUserConfig({
         ]
       },
       {
-        text: '📝 Software Engineering',
+        text: '🤖 Artifical Intelligence',
         collapsible: false,
+        children: [
+          '/ai/1-Basics-Linear-Algebra',
+        ]
+      },
+      {
+        text: '📝 Software Engineering',
+        collapsible: true,
         children: [
           '/se/2-IntroToSE',
           '/se/3-Process',
