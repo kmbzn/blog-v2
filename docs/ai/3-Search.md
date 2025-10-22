@@ -25,7 +25,7 @@
 
 ## Greedy Best-First Search (탐욕스러운 최상 우선 탐색)
 - 휴리스틱 함수 $h(n)$에 의해 추정된 대로 목표에 가깝다고 예상되는 노드(즉, $h(n)$ 값이 가장 낮은 노드)를 확장하는 탐색 알고리즘
-- 예: 경로 찾기 문제: $h(n) = straight line distance (직선 거리) to the goal (목표)
+- 예: 경로 찾기 문제: $h(n)$ = straight line distance (직선 거리) to the goal (목표)
 
 ## A* Search (에이 스타 탐색)
 - $g(n) + h(n)$의 값이 가장 낮은 노드를 확장하는 탐색 알고리즘

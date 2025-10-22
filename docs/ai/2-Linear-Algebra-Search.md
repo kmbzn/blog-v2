@@ -82,10 +82,10 @@ $$H_{ij} = \frac{\partial^2 f(\mathbf{x})}{\partial x_i \partial x_j}$$
     - 헤시안은 2차 도함수의 유추
 
 ## 2차 및 선형 함수의 기울기 (Gradients of Quadratic and Linear Functions)
-- $\mathbf{x} \in \mathbb{R}^n$, $f(\mathbf{x}) = \mathbf{b}^T \mathbf{x}$ ($ \mathbf{b} \in \mathbb{R}^n$)에 대해,
+- $\mathbf{x} \in \mathbb{R}^n,~f(\mathbf{x}) = \mathbf{b}^T \mathbf{x}~ ( \mathbf{b} \in \mathbb{R}^n )$에 대해,
     $$f(\mathbf{x}) = \sum_{i=1}^n b_i x_i, \quad \frac{\partial f(\mathbf{x})}{\partial x_k} = \frac{\partial}{\partial x_k} \sum_{i=1}^n b_i x_i = b_k$$
     - $\nabla_{\mathbf{x}} \mathbf{b}^T \mathbf{x} = \mathbf{b}$
-- 2차 함수 $f(\mathbf{x}) = \mathbf{x}^T A \mathbf{x}$ ($A \in \mathbb{S}^n$)에 대해
+- 2차 함수 $f(\mathbf{x}) = \mathbf{x}^T A \mathbf{x}$ ($A \in \mathbb{S}^n$)에 대해,
     - $\nabla_{\mathbf{x}} \mathbf{x}^T A \mathbf{x} = 2A\mathbf{x}$
 
 ## 최소 제곱법 (Least Squares)
