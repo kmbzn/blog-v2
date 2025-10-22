@@ -52,9 +52,16 @@ export default defineUserConfig({
         text: '🤖 Artifical Intelligence',
         collapsible: false,
         children: [
-          '/ai/1-Basics-Linear-Algebra',
+          '/ai/1-Linear-Algebra',
           '/ai/2-Linear-Algebra-Search',
           '/ai/3-Search',
+          '/ai/4-Knowledge-Logic-1',
+          '/ai/5-Knowledge-Logic-2',
+          '/ai/6-Probability',
+          '/ai/7-Inforamation-Theory',
+          '/ai/8-Probabilistic-Reasoning-2',
+          '/ai/9-Probabilistic-Reasoning-3',
+          '/ai/12-Machine-Learning-3',
         ]
       },
       {

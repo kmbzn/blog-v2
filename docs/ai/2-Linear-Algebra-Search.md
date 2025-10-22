@@ -44,7 +44,6 @@ $$|\lambda I - A| = 0$$
 
 ## 공식
 $$A = U\Sigma V^T = \sum_{i=1}^r \mathbf{u}_i \sigma_i \mathbf{v}_i^T$$
-
 - $A \in \mathbb{R}^{m \times n}$: 실수 값 직사각형 행렬
 - $U \in \mathbb{R}^{m \times m}$: 열 벡터($\mathbf{u}_i$)가 $A A^T$의 고유벡터인 직교 행렬 (좌측 특이 벡터, left singular vectors)
 - $\Sigma \in \mathbb{R}^{m \times n}$: 대각 원소($\sigma_i$)가 $A A^T$와 $A^T A$의 고유값의 제곱근인 대각 행렬
@@ -102,7 +101,6 @@ $$\therefore \mathbf{x} = (A^T A)^{-1} A^T \mathbf{b}$$
 # Search
 
 ## 문제 해결 에이전트와 탐색 (Problem-Solving Agents and Search)
-
 - 인공지능 (Artificial Intelligence, AI): 다양한 새로운 상황에서 효과적이고 안전하게 행동하는 방법을 계산할 수 있는 지능적인 에이전트(intelligent agents) 구축에 관심
 - 문제 해결 에이전트 (Problem-solving agents)
     - 취해야 할 올바른 행동이 즉시 명확하지 않을 때, 에이전트는 목표 상태(goal state)에 이르는 경로(path)를 형성하는 일련의 행동(sequence of actions)을 고려하여 미리 계획(plan ahead)할 필요가 있음.
@@ -111,7 +109,6 @@ $$\therefore \mathbf{x} = (A^T A)^{-1} A^T \mathbf{b}$$
     - 에피소드적 (Episodic): 에이전트의 경험이 원자적 에피소드로 나뉨. 각 에피소드에서 에이전트는 지각(percept)을 받고 단일 행동을 수행
 
 ## 탐색 문제의 정의 (Definition of Search Problems)
-
 - 탐색 문제는 다음과 같이 공식적으로 정의 가능:
     - 에이전트 (Agent): 환경을 지각하고 그 환경에 작용하는 개체(entitiy)
     - 상태 (State): 에이전트와 환경의 구성(configuration)
@@ -128,7 +125,6 @@ $$\therefore \mathbf{x} = (A^T A)^{-1} A^T \mathbf{b}$$
 - 이러한 개념들은 강화 학습(reinforcement learning)에서도 널리 사용
 
 ## 그래프 탐색 문제에 대한 naive한 접근 (Naïve Approach for Graph Search Problems)
-
 - 초기 상태를 포함하는 프론티어(frontier)에서 시작
 - 반복:
     - 프론티어가 비어 있으면, 해 없음.
@@ -138,7 +134,6 @@ $$\therefore \mathbf{x} = (A^T A)^{-1} A^T \mathbf{b}$$
 - 문제점: 루프(loops)가 있는 그래프에서 무한 루프 발생 가능
 
 ## 개선된 접근 (Revised Approach)
-
 - 프론티어에 초기 상태를 추가
 - 탐색 완료 집합(explored set)을 빈 상태로 시작
 - 반복:
@@ -149,21 +144,7 @@ $$\therefore \mathbf{x} = (A^T A)^{-1} A^T \mathbf{b}$$
     - 노드를 확장하고, 결과 노드가 이미 프론티어 또는 탐색 완료 집합에 없으면 프론티어에 추가
 - 프론티어의 자료 구조를 스택 (Stack)으로 사용 $\Rightarrow$ 후입선출 (Last-in, First-out, LIFO)
 
-## 깊이 우선 탐색 알고리즘 (Depth-First Search Algorithm, DFS)
-
-- 깊이 우선 탐색 (Depth-First Search, DFS)
-    - 프론티어에서 항상 가장 깊은 노드를 확장하는 탐색 알고리즘
-    - 관련 자료 구조: 스택 (Stack)
-
-## 너비 우선 탐색 알고리즘 (Breadth-First Search Algorithm, BFS)
-
-- 너비 우선 탐색 (Breadth-First Search, BFS)
-    - 프론티어에서 항상 가장 얕은 (shallowest) 노드를 확장하는 탐색 알고리즘
-    - 관련 자료 구조: 큐 (Queue)
-    - 선입선출 (First-in, First-out, FIFO)
-
 ## 무정보 탐색 전략 (Uninformed Search Stratigies)
-
 - 무정보 탐색 알고리즘 (Uninformed Search Algorithms)
     - 문제에 특정한 지식(problem-specific knowledge)을 사용하지 않는 탐색 전략
     - 상태가 목표에 얼마나 가까운지에 대한 단서(clue)가 없음.
