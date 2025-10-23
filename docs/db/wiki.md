@@ -1,6 +1,6 @@
 # Assignment2-2. 도서 관리 시스템 구현 - wiki
 
-### 데이터베이스시스템응용 - 2021024057 김병준
+### 데이터베이스시스템응용: 2021024057 김병준
 
 본 wiki는 도서 관리 시스템 애플리케이션(application)의 주요 기능 구현 사항과, 개발 과정에서 발생한 주요 troubleshooting(troubleshooting) 과정을 포함합니다.
 
@@ -68,3 +68,7 @@
 - Controllers: `controllers/userController.js`, `controllers/categoryController.js`
 - 사용자 관리 (`getUsersPage`) `USER` 테이블을 조회하며, `username`, `name`, `role` 기준의 동적 검색 기능을 구현했습니다.
 - 카테고리 관리 (`postDeleteCategory`) 카테고리 삭제 시, `BOOK_CATEGORY` 테이블에서 해당 `category_id`를 참조하는 레코드를 먼저 `DELETE`하여 외래 키 제약 조건 오류를 방지한 후, `CATEGORY`에서 원본을 삭제합니다. (트랜잭션 처리)
+
+## 5. [Demo] YouTube 영상 link 첨부
+
+[https://youtu.be/rEnQjFZ19rk?si=n0fbnothZE7vTcBF](https://youtu.be/rEnQjFZ19rk?si=n0fbnothZE7vTcBF)
