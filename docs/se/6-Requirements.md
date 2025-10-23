@@ -56,6 +56,8 @@
 ## How to Evaluate User Story?
 [http://dev.one80services.com/user-stories/writing-good-user-stories-hint-its-not-about-writing/](http://dev.one80services.com/user-stories/writing-good-user-stories-hint-its-not-about-writing/)
 
+# INVESTS 원칙
+
 ## Independent(독립적)
 - 순서에 관계없이 일정 계획 가능.
 - 개념적으로 중복되지 않음
