@@ -62,6 +62,7 @@ export default defineUserConfig({
           '/ai/8-Probabilistic-Reasoning-2',
           '/ai/9-Probabilistic-Reasoning-3',
           '/ai/12-Machine-Learning-3',
+          '/ai/13-Linear-Models',
         ]
       },
       {
