@@ -113,8 +113,8 @@ $$
 - 학습 알고리즘은 $Raining$과 $Reservation$에 대한 테스트를 포함하지 않음 (모든 예제를 분류하는 데 필요하지 않기 때문)
 
 ## Choosing Attribute Tests
-- Decision tree learning algorithm은 가장 높은 IMPORTANCE를 가진 속성을 선택
-- Entropy 개념을 사용하여 정의되는 information gain을 사용하여 IMPORTANCE를 측정
+- Decision tree learning algorithm은 가장 높은 `IMPORTANCE`를 가진 속성을 선택
+- Entropy 개념을 사용하여 정의되는 information gain을 사용하여 `IMPORTANCE`를 측정
 ### Entropy 복습
 - Random variable의 불확실성 척도
 - 값 $x$가 확률 $P(x)$를 갖는 확률변수 $X$의 엔트로피
@@ -130,7 +130,7 @@ $$
 - $Remainder(A) = \sum_{k=1}^{d} \frac{p_k + n_k}{p + n} B(\frac{p_k}{p_k+n_k})$
 ### 속성 $A$ 테스트로 인한 information gain
 - $Gain(A) = B(\frac{p}{p+n}) - Remainder(A)$
-- $Gain(A)$가 IMPORTANCE 함수를 구현함
+- $Gain(A)$가 `IMPORTANCE` 함수를 구현함
 - $Gain(Patrons) = 1 - [\frac{2}{12} B(\frac{0}{2}) + \frac{4}{12} B(\frac{4}{4}) + \frac{6}{12} B(\frac{2}{6})] \approx 0.541$ bits
 - $Gain(Type) = 1 - [\frac{2}{12} B(\frac{1}{2}) + \frac{2}{12} B(\frac{1}{2}) + \frac{4}{12} B(\frac{2}{4}) + \frac{4}{12} B(\frac{2}{4})] = 0$ bits
 - $Patrons$가 분할하기 더 좋은 속성이라는 직관을 확인시켜 줌

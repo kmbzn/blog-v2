@@ -61,8 +61,12 @@ export default defineUserConfig({
           '/ai/7-Information-Theory',
           '/ai/8-Probabilistic-Reasoning-2',
           '/ai/9-Probabilistic-Reasoning-3',
+          '/ai/10-Machine-Learning-1',
+          '/ai/11-Machine-Learning-2',
           '/ai/12-Machine-Learning-3',
           '/ai/13-Linear-Models',
+          '/ai/14-Other-Classic-ML-Models',
+          '/ai/15-Deep-Learning-1',
         ]
       },
       {
@@ -76,7 +80,8 @@ export default defineUserConfig({
           '/se/6-Requirements',
           '/se/7-Requirements-2',
           '/se/8-Architecture',
-          
+          '/se/9-UML',
+          '/se/10-Object-Oriented-Analysis',
         ]
       },
       {
@@ -90,6 +95,8 @@ export default defineUserConfig({
           '/db/7.Relational_Database_Design-1',
           '/db/7.Relational_Database_Design-2',
           '/db/13.Data_Storage_Structures',
+          '/db/14.Indexing',
+          '/db/15.Query_Processing',
         ]
       },
       {

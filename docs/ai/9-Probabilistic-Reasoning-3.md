@@ -1,4 +1,4 @@
-# 10. Probabilitc Reasoning (3)
+# 9. Probabilitc Reasoning (3)
 
 ## Approximate Inference
 - Monte Carlo algorithms는 생성된 샘플 수에 따라 정확도가 달라지는 근사적인 (approximate) 해답을 제공
