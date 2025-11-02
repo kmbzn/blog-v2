@@ -1,4 +1,4 @@
-# Linear Models
+# 13. Linear Models
 
 ## Linear Functions
 - 연속값 입력(continuous-valued inputs)을 받는 선형 함수(linear functions)라는 다른 가설 공간(hypothesis space) 사용

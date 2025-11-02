@@ -1,4 +1,4 @@
-# Artificial Intelligence: Other Classic ML Models (2)
+# 15. Artificial Intelligence: Other Classic ML Models (2)
 
 # Support Vector Machines
 

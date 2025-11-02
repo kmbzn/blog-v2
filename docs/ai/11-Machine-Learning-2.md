@@ -1,4 +1,4 @@
-# Machine Learning (2)
+# 11. Machine Learning (2)
 
 ## More Details on (Supervised) Machine Learning
 - 분야 파악에 필요한 핵심 concepts

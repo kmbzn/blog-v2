@@ -1,4 +1,4 @@
-# Other Classic ML Models (1)
+# 14. Other Classic ML Models (1)
 
 # Naïve Bayes
 
