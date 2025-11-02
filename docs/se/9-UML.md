@@ -72,7 +72,7 @@
 - Subject(주체)
 - System Boundary(시스템 경계)
 - Association(연관)
-- Dependency(의존) (<<include>>)
+- Dependency(의존)
 - Actor(행위자)
 
 ## Actor
@@ -143,8 +143,8 @@
 - 각 Use Case가 domain experts(도메인 전문가)와 프로그래머 모두 이해할 수 있는 system 사용의 중요한 chunk(부분)을 설명하도록 보장
 - Use Case를 텍스트로 정의할 때, noun(명사)과 verb(동사)를 정확하고 일관되게 사용하여 interaction diagrams을 위한 objects와 message 도출에 도움
 - 여러 Use Case에 필요한 공통 usage(사용)을 Factor out(분리)
-    - usage이 required(필수적)이면 <<include>> 사용
-    - Base Use Case가 완전하고 usage이 optional일 수 있다면 <<extend>> 사용 고려
+    - usage이 required(필수적)이면 사용
+    - Base Use Case가 완전하고 usage이 optional일 수 있다면 사용 고려
 - Use Case diagram은
     - 동일한 level of abstraction(추상화 수준)의 Use Case만 포함해야 함
     - 필요한 Actor만 포함해야 함
