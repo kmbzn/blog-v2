@@ -38,19 +38,8 @@ export default defineUserConfig({
         ]
       },
       {
-        text: '🧠 Algorithm',
-        collapsible: true,
-        children: [
-          '/algorithm/PythonTimeout',
-          '/algorithm/std-vector',
-          '/algorithm/vim',
-          '/algorithm/1018',
-          '/algorithm/1966',
-        ]
-      },
-      {
         text: '🤖 Artifical Intelligence',
-        collapsible: false,
+        collapsible: true,
         children: [
           '/ai/1-Linear-Algebra',
           '/ai/2-Linear-Algebra-Search',
@@ -70,18 +59,17 @@ export default defineUserConfig({
         ]
       },
       {
-        text: '📝 Software Engineering',
+        text: '🔒 Computer Security',
         collapsible: true,
         children: [
-          '/se/2-IntroToSE',
-          '/se/3-Process',
-          '/se/4-ProcessModels',
-          '/se/5-Agile',
-          '/se/6-Requirements',
-          '/se/7-Requirements-2',
-          '/se/8-Architecture',
-          '/se/9-UML',
-          '/se/10-Object-Oriented-Analysis',
+          '/cs/01.Overview',
+          '/cs/02.보안정책',
+          '/cs/03.Cryptographic_Tools',
+          '/cs/04.User_Authentification',
+          '/cs/05.Access_Control',
+          '/cs/06.DB_Security',
+          '/cs/07.Malware',
+          '/cs/08.Firmware_Analysis',
         ]
       },
       {
@@ -100,64 +88,31 @@ export default defineUserConfig({
         ]
       },
       {
-        text: '🔒 Computer Security',
+        text: '📝 Software Engineering',
         collapsible: true,
         children: [
-          '/cs/01.Overview',
-          '/cs/02.보안정책',
-          '/cs/03.Cryptographic_Tools',
-          '/cs/04.User_Authentification',
-          '/cs/05.Access_Control',
-          '/cs/06.DB_Security',
-          '/cs/07.Malware',
+          '/se/2-IntroToSE',
+          '/se/3-Process',
+          '/se/4-ProcessModels',
+          '/se/5-Agile',
+          '/se/6-Requirements',
+          '/se/7-Requirements-2',
+          '/se/8-Architecture',
+          '/se/9-UML',
+          '/se/10-Object-Oriented-Analysis',
         ]
       },
       {
-        text: '🔣 상공회의소 한자',
+        text: '🧠 Algorithm',
         collapsible: true,
         children: [
-          '/hanja/saja', 
-          '/hanja/8',
-          '/hanja/7',
-          '/hanja/6',
-          '/hanja/5',
-          '/hanja/4',
+          '/algorithm/PythonTimeout',
+          '/algorithm/std-vector',
+          '/algorithm/vim',
+          '/algorithm/1018',
+          '/algorithm/1966',
         ]
       },
-      {
-        text: '💰 Finance',
-        children: [
-          '/finance/Bitcoin',
-        ]
-      },
-      {
-        text: '🏛️ Humanities',
-        collapsible: true,
-        children: [
-          '/humanities/Nordvik',
-          '/humanities/NorthSentinelIsland',
-          '/humanities/Rongorongo',
-        ]
-      },
-      {
-        text: '🏋️ Wellness',
-        collapsible: true,
-        children: [
-          '/wellness/ExtraVirginOliveOil',
-          '/wellness/PsylliumHusk',
-        ]
-      },
-      {
-        text: '🖥️ Computer Graphics',
-        collapsible: true,
-        children: [
-          '/cg/8-Lighting',
-          '/cg/9-Orientation-Rotation',
-          '/cg/10-Character-Animation',
-          '/cg/11-Curves.md',
-          '/cg/12-More-Lighting-Texture',
-        ]
-      }
     ],
     sidebarDepth: 0,
     lastUpdated: true

@@ -1,4 +1,4 @@
-# 15. Artificial Intelligence: Other Classic ML Models (2)
+# 15. Other Classic ML Models (2)
 
 # Support Vector Machines
 
@@ -70,7 +70,7 @@ Number of mislabeled points out of a total 75 points : 4
 - 2010년대 statistical machine learning의 전례 없는 성공은 AI의 다른 모든 접근 방식을 압도했으며, 일부 (특히 비즈니스계)에서는 "artificial intelligence"라는 용어를 "neural network를 사용한 machine learning"을 의미하는 데 사용
 - AI, ML, DL의 계층 구조
 - ML은 보통 AI의 부분집합으로 간주되며, DL은 ML의 특정 부분
-- 그러나 ML이 전적으로 AI에 흡수되는지에 대해서는 여전히 논란이 있음
+- 그러나 ML이 전적으로 AI에 포함되는지에 대해서는 여전히 논란이 있음
 ![alt text](image-28.png)
 
 ## Deep Learning

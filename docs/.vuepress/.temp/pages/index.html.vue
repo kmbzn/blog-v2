@@ -63,20 +63,21 @@
 <h3 id="it-기기-활용-및-디지털-repair" tabindex="-1"><a class="header-anchor" href="#it-기기-활용-및-디지털-repair"><span>IT 기기 활용 및 디지털 repair</span></a></h3>
 <ul>
 <li>다양한 플랫폼 기반 기기 간의 workflow 연동</li>
-<li>Tech 보조기기 활용 및 리뷰</li>
+<li>Tech 보조 기기 활용 및 리뷰</li>
 <li>데이터 복구, 부품 교체 등 종합적인 IT 기기 관리 및 수리</li>
 </ul>
 <h3 id="실생활-관심사" tabindex="-1"><a class="header-anchor" href="#실생활-관심사"><span>실생활 관심사</span></a></h3>
 <ul>
-<li>Watch industry: 브랜드, movement 구조, 디자인, 스타일, 착용 경험</li>
+<li>Watch industry: 브랜드 헤리티지, movements, 디자인, 스타일, 착용 경험</li>
 <li>금융 및 자산 투자: Bitcoin, crypto, blockchain, 미국/국내 주식 및 ETF</li>
-<li>소비자로서의 최적화 경험: 통신 요금제, 신용 카드, 각종 제품과 구독 서비스에 대한 합리적 선택 및 비용 효율화</li>
+<li>소비자로서의 최적화 경험: 통신 요금제, 신용카드, 금융 상품과 구독 서비스에 대한 합리적 선택 및 비용 최적화</li>
 <li>국제 시사 및 사회 이슈: 세계 뉴스, 정치, 경제, 사회적 사건 등 전반적인 동향</li>
-<li>인문학적 관심: 세계사, 언어의 역사, 세계 인문환경 등 문화와 지성의 흐름에 대한 이해</li>
+<li>인문학적 관심: 세계사, 언어의 역사, 세계 인문 환경 등 문화와 지성의 흐름에 대한 이해</li>
 </ul>
 <h3 id="건강-및-영양" tabindex="-1"><a class="header-anchor" href="#건강-및-영양"><span>건강 및 영양</span></a></h3>
 <ul>
-<li>체중 증가를 위한 칼로리 설계, 식습관 및 생활 습관 조절</li>
+<li>건강한 체중 증가를 위한 칼로리 설계, 식습관 및 생활 습관 조절</li>
+<li>뇌 과학과 정신 건강</li>
 <li>소화, FODMAP, 기능성 식품 등 식이 관련 issues</li>
 <li>웨이트 기반 셀프 트레이닝과 기초 체력 관리</li>
 </ul>

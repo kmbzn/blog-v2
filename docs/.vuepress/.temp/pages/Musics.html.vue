@@ -13,8 +13,6 @@
 <iframe style="border-radius:12px" width="100%" height="152" src="https://www.youtube.com/embed/PGADim6UzHE?controls=1&modestbranding=1" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe>
 <h3 id="만년설" tabindex="-1"><a class="header-anchor" href="#만년설"><span>만년설</span></a></h3>
 <iframe style="border-radius:12px" width="100%" height="152" src="https://www.youtube.com/embed/2L_W8hPpdhg?controls=1&modestbranding=1" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe>
-<h3 id="오래오래-우리" tabindex="-1"><a class="header-anchor" href="#오래오래-우리"><span>오래오래, 우리</span></a></h3>
-<iframe style="border-radius:12px" width="100%" height="152" src="https://www.youtube.com/embed/9E_dpzOe8L0?controls=1&modestbranding=1" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe>
 <h3 id="i-do-me" tabindex="-1"><a class="header-anchor" href="#i-do-me"><span>I DO ME</span></a></h3>
 <iframe style="border-radius:12px" width="100%" height="152" src="https://www.youtube.com/embed/hAEfi_SKTEU?controls=1&modestbranding=1" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe>
 <h3 id="멸종위기사랑" tabindex="-1"><a class="header-anchor" href="#멸종위기사랑"><span>멸종위기사랑</span></a></h3>

@@ -10,7 +10,7 @@
 </iframe>
 <ul>
 <li><strong>위치</strong>: 방글라데시 만(Indian Ocean, Bay of Bengal) 안다만 군도 중 하나</li>
-<li><strong>좌표</strong>: 북위 11°34′39″ 동경 92°14′40″</li>
+<li><strong>좌표</strong>: 북위 <code v-pre>11°34′39″</code> 동경 <code v-pre>92°14′40″</code></li>
 <li><strong>면적</strong>: 약 59.67 km²</li>
 <li><strong>길이</strong>: 7.8 km / 폭: 7.0 km</li>
 <li><strong>해안선 길이</strong>: 31.6 km</li>

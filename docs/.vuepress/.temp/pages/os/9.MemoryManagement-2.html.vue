@@ -1,23 +1,17 @@
 <template><div><h1 id="_9-memory-management-2" tabindex="-1"><a class="header-anchor" href="#_9-memory-management-2"><span>9. Memory Management(2)</span></a></h1>
 <h2 id="structure-of-the-page-table" tabindex="-1"><a class="header-anchor" href="#structure-of-the-page-table"><span>Structure of the Page Table</span></a></h2>
 <ul>
-<li>
-<p>Hierarchical Paging</p>
+<li>Hierarchical Paging
 <ul>
 <li>논리 주소 공간을 여러 페이지 테이블로 분할</li>
 </ul>
 </li>
-<li>
-<p>Hashed Page Tables</p>
-</li>
-<li>
-<p>Inverted Page Tables</p>
-</li>
+<li>Hashed Page Tables</li>
+<li>Inverted Page Tables</li>
 </ul>
 <h2 id="two-level-page-table-scheme-hierarchical-paging" tabindex="-1"><a class="header-anchor" href="#two-level-page-table-scheme-hierarchical-paging"><span>Two-Level Page-Table Scheme (Hierarchical Paging)</span></a></h2>
 <ul>
-<li>
-<p>문제: 프로그램이 큰 주소 공간을 가짐</p>
+<li>문제: 프로그램이 큰 주소 공간을 가짐
 <ul>
 <li>32비트 주소와 4KB (<span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>2</mn><mn>12</mn></msup></mrow><annotation encoding="application/x-tex">2^{12}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">12</span></span></span></span></span></span></span></span></span></span></span></span>) 페이지 크기일 때 (m = 32, n = 12)</li>
 <li><span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mo>−</mo><mi>n</mi><mo>=</mo><mn>20</mn></mrow><annotation encoding="application/x-tex">m - n = 20</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6667em;vertical-align:-0.0833em;"></span><span class="mord mathnormal">m</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">20</span></span></span></span>, 즉 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>2</mn><mn>20</mn></msup></mrow><annotation encoding="application/x-tex">2^{20}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">20</span></span></span></span></span></span></span></span></span></span></span></span>개의 논리 페이지</li>
@@ -26,11 +20,10 @@
 <li>4MB 페이지 테이블을 저장하려면, 프로세스당 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>2</mn><mn>10</mn></msup><mo>=</mo><mn>1</mn><mi>K</mi></mrow><annotation encoding="application/x-tex">2^{10} = 1K</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">10</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord">1</span><span class="mord mathnormal" style="margin-right:0.07153em;">K</span></span></span></span>개의 페이지 프레임 필요</li>
 </ul>
 </li>
-<li>
-<p>해결:</p>
+<li>해결:
 <ul>
 <li>전체 페이지 테이블을 디스크에 저장</li>
-<li>페이지 테이블 자체도 페이지 단위로 요청 시 로딩 → <strong>페이지 테이블을 위한 페이지 테이블 필요</strong></li>
+<li>페이지 테이블 자체도 페이지 단위로 요청 시 로딩 → 페이지 테이블을 위한 페이지 테이블 필요</li>
 </ul>
 </li>
 </ul>
@@ -38,35 +31,31 @@
 <div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code class="language-text"><span class="line">      outer-page</span>
 <span class="line">        table</span>
 <span class="line">          ↓</span>
-<span class="line">     +----------+       +----------+       +----------+</span>
-<span class="line">     |    1     | ----> |   500    |       |   page   | → 메모리 내 실제 페이지</span>
-<span class="line">     |    2     | ----> |   100    | →     |   100    |</span>
+<span class="line">     -+       -+       -+</span>
+<span class="line">     |    1     |-> |   500    |       |   page   | → 메모리 내 실제 페이지</span>
+<span class="line">     |    2     |-> |   100    | →     |   100    |</span>
 <span class="line">     |    3     |       |   300    |       |   page   |</span>
 <span class="line">     |   ...    |       |   600    |       |   table  |</span>
-<span class="line">     +----------+       +----------+       +----------+</span>
+<span class="line">     -+       -+       -+</span>
 <span class="line"></span>
 <span class="line">(어디에 논리 페이지에 대한 물리 페이지 번호를 저장하는 페이지 테이블 프레임이 있는가?)</span>
 <span class="line">(어디에 논리 페이지에 해당하는 실제 물리 페이지가 있는가?)</span>
 <span class="line"></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="two-level-paging-example" tabindex="-1"><a class="header-anchor" href="#two-level-paging-example"><span>Two-Level Paging Example</span></a></h2>
 <ul>
-<li>
-<p>논리 주소 (32비트 머신, 4KB 페이지 크기 기준)는 다음과 같이 나뉨:</p>
+<li>논리 주소 (32비트 머신, 4KB 페이지 크기 기준)는 다음과 같이 나뉨:
 <ul>
-<li><strong>페이지 번호</strong> (20비트)</li>
-<li><strong>페이지 오프셋</strong> (12비트)</li>
+<li>페이지 번호 (20비트)</li>
+<li>페이지 오프셋 (12비트)</li>
 </ul>
 </li>
-<li>
-<p>페이지 번호는 두 부분으로 다시 나뉨:</p>
+<li>페이지 번호는 두 부분으로 다시 나뉨:
 <ul>
-<li><strong>10비트 외부 페이지 번호</strong>: outer-page table에 접근</li>
-<li><strong>10비트 내부 페이지 번호</strong>: page table 내에 접근</li>
+<li>10비트 외부 페이지 번호: outer-page table에 접근</li>
+<li>10비트 내부 페이지 번호: page table 내에 접근</li>
 </ul>
 </li>
-<li>
-<p>즉, 논리 주소 구성:</p>
-</li>
+<li>즉, 논리 주소 구성:</li>
 </ul>
 <div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code class="language-text"><span class="line">page number                page offset</span>
 <span class="line">   p₁       p₂                 d</span>
@@ -96,23 +85,20 @@
 <span class="line"></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="multilevel-paging-and-performance" tabindex="-1"><a class="header-anchor" href="#multilevel-paging-and-performance"><span>Multilevel Paging and Performance</span></a></h2>
 <ul>
-<li>
-<p>더 큰 주소 공간의 경우,</p>
+<li>더 큰 주소 공간의 경우,
 <ul>
 <li>세 번째 페이지는 (B-트리처럼) 데이터 블록이 아닌, 또 다른 레벨의 페이지 테이블</li>
 <li>각 레벨이 메모리에 별도로 저장되므로, 논리 주소를 실제 주소로 변환할 때 최대 4회의 메모리 접근이 필요함</li>
 </ul>
 </li>
-<li>
-<p>메모리 접근 시간이 5배로 증가하더라도, TLB를 통해 성능은 합리적인 수준으로 유지됨</p>
+<li>메모리 접근 시간이 5배로 증가하더라도, TLB를 통해 성능은 합리적인 수준으로 유지됨
 <ul>
 <li>4단계 페이지 테이블에서도 TLB 히트율이 98%일 경우,<p v-pre class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>E</mi><mi>A</mi><mi>T</mi><mo>=</mo><mn>0.98</mn><mo>×</mo><mn>120</mn><mo>+</mo><mn>0.02</mn><mo>×</mo><mn>520</mn><mo>=</mo><mn>128</mn><mtext> nanoseconds</mtext></mrow><annotation encoding="application/x-tex"> EAT = 0.98 \times 120 + 0.02 \times 520 = 128~\text{nanoseconds} 
 </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.05764em;">E</span><span class="mord mathnormal">A</span><span class="mord mathnormal" style="margin-right:0.13889em;">T</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">0.98</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">120</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">0.02</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">520</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord">128</span><span class="mspace nobreak"> </span><span class="mord text"><span class="mord">nanoseconds</span></span></span></span></span></span></p>
 (메모리 접근 시간이 100ns일 때, TLB 접근 시간 = 20ns)</li>
 </ul>
 </li>
-<li>
-<p>하지만 64비트 주소 체계에서는 6단계 페이징이 요구됨</p>
+<li>하지만 64비트 주소 체계에서는 6단계 페이징이 요구됨
 <ul>
 <li>현실적으로 부적절함</li>
 <li>현대 64비트 운영체제에서는 48비트 주소를 사용하므로, 보통 4단계 페이징 사용</li>
@@ -137,19 +123,17 @@
 <span class="line"></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="inverted-page-table" tabindex="-1"><a class="header-anchor" href="#inverted-page-table"><span>Inverted Page Table</span></a></h2>
 <ul>
-<li>
-<p>문제: 페이지 테이블이 너무 큼</p>
+<li>문제: 페이지 테이블이 너무 큼
 <ul>
 <li>페이지 테이블의 크기는 전체 페이지 수에 비례</li>
 <li>논리 페이지마다 하나의 테이블 항목이 필요</li>
 <li>그러나 실제로는 동시에 적은 수의 페이지만 메모리에 존재함</li>
 </ul>
 </li>
-<li>
-<p>해결: 논리 페이지가 아닌 <strong>물리적 페이지 프레임당</strong> 하나의 테이블 항목만 유지</p>
+<li>해결: 논리 페이지가 아닌 물리적 페이지 프레임당 하나의 테이블 항목만 유지
 <ul>
 <li>각 항목은 프로세스 ID 포함</li>
-<li><strong>하나의 시스템 전역 페이지 테이블</strong> 사용</li>
+<li>하나의 시스템 전역 페이지 테이블 사용</li>
 <li>필요한 항목 수는 물리 프레임 수와 동일</li>
 <li>모든 프로세스가 공유하는 구조</li>
 </ul>
@@ -157,15 +141,13 @@
 </ul>
 <h2 id="inverted-page-table-architecture" tabindex="-1"><a class="header-anchor" href="#inverted-page-table-architecture"><span>Inverted Page Table Architecture</span></a></h2>
 <ul>
-<li>
-<p>단점:</p>
+<li>단점:
 <ul>
 <li>테이블 전체를 검색해야 함</li>
 <li>페이지 공유 불가능</li>
 </ul>
 </li>
-<li>
-<p>해결책:</p>
+<li>해결책:
 <ul>
 <li>해시 테이블을 사용해 검색 범위 제한 (한 번의 메모리 조회)</li>
 <li>TLB와 병행 사용하여 속도 향상</li>
@@ -176,9 +158,9 @@
 <span class="line"> ↓</span>
 <span class="line">[logical address] → [search]</span>
 <span class="line">                         ↓</span>
-<span class="line">                  +------→ [page table]</span>
+<span class="line">                  → [page table]</span>
 <span class="line">                  |             ↓</span>
-<span class="line">[hash table] -----+         [physical address]</span>
+<span class="line">[hash table]--+         [physical address]</span>
 <span class="line"></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="segmentation" tabindex="-1"><a class="header-anchor" href="#segmentation"><span>Segmentation</span></a></h2>
 <ul>
@@ -188,42 +170,37 @@
 </ul>
 <div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code class="language-text"><span class="line">User's view of a program:</span>
 <span class="line"></span>
-<span class="line">+--------------+</span>
+<span class="line">--+</span>
 <span class="line">| subroutine   |</span>
-<span class="line">+--------------+</span>
+<span class="line">--+</span>
 <span class="line">| stack        |</span>
-<span class="line">+--------------+</span>
+<span class="line">--+</span>
 <span class="line">| symbol table |</span>
-<span class="line">+--------------+</span>
+<span class="line">--+</span>
 <span class="line">| main program |</span>
-<span class="line">+--------------+</span>
+<span class="line">--+</span>
 <span class="line"></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="segmentation-architecture" tabindex="-1"><a class="header-anchor" href="#segmentation-architecture"><span>Segmentation Architecture</span></a></h2>
 <ul>
-<li>
-<p>논리 주소 구조:
-<code v-pre>&lt;segment-number, offset&gt;</code></p>
-</li>
-<li>
-<p>세그먼트 테이블</p>
+<li>논리 주소 구조:
+<code v-pre>&lt;segment-number, offset&gt;</code></li>
+<li>세그먼트 테이블
 <ul>
 <li>논리 주소를 물리 주소로 매핑</li>
 <li>각 항목은 다음 포함:
 <ul>
-<li><strong>base</strong>: 세그먼트가 위치한 시작 물리 주소</li>
-<li><strong>limit</strong>: 세그먼트의 길이</li>
+<li>base: 세그먼트가 위치한 시작 물리 주소</li>
+<li>limit: 세그먼트의 길이</li>
 </ul>
 </li>
 </ul>
 </li>
-<li>
-<p>STBR (Segment-table base register):</p>
+<li>STBR (Segment-table base register):
 <ul>
 <li>세그먼트 테이블의 물리 위치를 가리킴</li>
 </ul>
 </li>
-<li>
-<p>STLR (Segment-table length register):</p>
+<li>STLR (Segment-table length register):
 <ul>
 <li>사용 가능한 세그먼트 수를 나타냄</li>
 <li>유효한 세그먼트 번호 조건: segment number &lt; STLR</li>
@@ -233,17 +210,17 @@
 <h2 id="example-of-segmentation" tabindex="-1"><a class="header-anchor" href="#example-of-segmentation"><span>Example of Segmentation</span></a></h2>
 <div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code class="language-text"><span class="line">User's view:</span>
 <span class="line"></span>
-<span class="line">+--------------+    +--------------+</span>
+<span class="line">--+    --+</span>
 <span class="line">| subroutine   |    | segment 0    |</span>
-<span class="line">+--------------+    +--------------+</span>
+<span class="line">--+    --+</span>
 <span class="line">| stack        |    | segment 3    |</span>
-<span class="line">+--------------+    | segment 4    |</span>
+<span class="line">--+    | segment 4    |</span>
 <span class="line">| symbol table |    | segment 1    |</span>
-<span class="line">+--------------+    | segment 2    |</span>
+<span class="line">--+    | segment 2    |</span>
 <span class="line">| main program |    | segment 5    |</span>
-<span class="line">+--------------+    | segment 6    |</span>
+<span class="line">--+    | segment 6    |</span>
 <span class="line">| segment 1    |    | segment 7    |</span>
-<span class="line">| segment 2    |    +--------------+</span>
+<span class="line">| segment 2    |    --+</span>
 <span class="line">                   physical memory</span>
 <span class="line"></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>세그먼트 테이블:</p>
@@ -256,9 +233,9 @@
 <h2 id="segmentation-hardware" tabindex="-1"><a class="header-anchor" href="#segmentation-hardware"><span>Segmentation Hardware</span></a></h2>
 <div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code class="language-text"><span class="line">logical address = (s, d)</span>
 <span class="line"></span>
-<span class="line">          +--------+       +----------------+</span>
-<span class="line">CPU  ---> |   s    | ----> |  segment table |</span>
-<span class="line">          +--------+       +----------------+</span>
+<span class="line">          --+       -+</span>
+<span class="line">CPU > |   s    |-> |  segment table |</span>
+<span class="line">          --+       -+</span>
 <span class="line">                             |      |</span>
 <span class="line">                             v      v</span>
 <span class="line">                          limit    base</span>
@@ -276,8 +253,7 @@
 <span class="line"></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="segmentation-architecture-cont" tabindex="-1"><a class="header-anchor" href="#segmentation-architecture-cont"><span>Segmentation Architecture (Cont.)</span></a></h2>
 <ul>
-<li>
-<p><strong>보호 (Protection)</strong></p>
+<li>보호 (Protection)
 <ul>
 <li>세그먼트 테이블 항목마다 다음을 포함:
 <ul>
@@ -287,8 +263,7 @@
 </li>
 </ul>
 </li>
-<li>
-<p><strong>공유 (Sharing)</strong></p>
+<li>공유 (Sharing)
 <ul>
 <li>세그먼트 수준에서 공유가 발생</li>
 <li>공유 세그먼트의 경우, 모든 프로세스가 동일한 세그먼트 번호를 사용해야 함
@@ -298,12 +273,11 @@
 </li>
 </ul>
 </li>
-<li>
-<p><strong>할당 (Allocation)</strong></p>
+<li>할당 (Allocation)
 <ul>
 <li>세그먼트의 길이는 가변적이므로, 메모리 할당은 동적 할당 문제</li>
 <li>first fit / best fit 전략 사용</li>
-<li><strong>외부 단편화 발생, 내부 단편화는 없음</strong></li>
+<li>외부 단편화 발생, 내부 단편화는 없음</li>
 </ul>
 </li>
 </ul>
@@ -321,18 +295,13 @@
 <span class="line"></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="segmentation-with-paging" tabindex="-1"><a class="header-anchor" href="#segmentation-with-paging"><span>Segmentation with Paging</span></a></h2>
 <ul>
-<li>
-<p><strong>외부 단편화 문제</strong>는 <strong>세그먼트를 페이지로 나누는 것</strong>으로 해결 가능</p>
-</li>
-<li>
-<p>이 방식은 순수 segmentation과 다름:</p>
+<li>외부 단편화 문제는 세그먼트를 페이지로 나누는 것으로 해결 가능</li>
+<li>이 방식은 순수 segmentation과 다름:
 <ul>
-<li>세그먼트 테이블 항목은 <strong>세그먼트의 base 주소가 아니라, page table의 base 주소를 포함</strong></li>
+<li>세그먼트 테이블 항목은 세그먼트의 base 주소가 아니라, page table의 base 주소를 포함</li>
 </ul>
 </li>
-<li>
-<p>가상 주소 형식:</p>
-</li>
+<li>가상 주소 형식:</li>
 </ul>
 <div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code class="language-text"><span class="line">Segment number s | Page number p | Displacement d</span>
 <span class="line">→ Virtual address V = (s, p, d)</span>
@@ -355,9 +324,7 @@
 <span class="line"></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="segmentation-with-paging-tlb-incorporated" tabindex="-1"><a class="header-anchor" href="#segmentation-with-paging-tlb-incorporated"><span>Segmentation with Paging (TLB incorporated)</span></a></h2>
 <ul>
-<li>
-<p>가상 주소 구조:</p>
-<p v-pre class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>v</mi><mo>=</mo><mo stretchy="false">(</mo><mi>s</mi><mo separator="true">,</mo><mi>p</mi><mo separator="true">,</mo><mi>d</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex"> v = (s, p, d) 
+<li>가상 주소 구조:<p v-pre class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>v</mi><mo>=</mo><mo stretchy="false">(</mo><mi>s</mi><mo separator="true">,</mo><mi>p</mi><mo separator="true">,</mo><mi>d</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex"> v = (s, p, d) 
 </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">v</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal">s</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">p</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">d</span><span class="mclose">)</span></span></span></span></span></p>
 <ul>
 <li>s: 세그먼트 번호</li>
@@ -365,30 +332,28 @@
 <li>d: 변위 (offset)</li>
 </ul>
 </li>
-<li>
-<p>흐름 요약:</p>
-</li>
+<li>흐름 요약:</li>
 </ul>
 <ol>
-<li>세그먼트 테이블 시작점 레지스터가 주소 <strong>b</strong>를 가리킴</li>
-<li>세그먼트 번호 <strong>s</strong>를 더해 해당 세그먼트 항목 주소 <strong>b + s</strong>로 접근</li>
+<li>세그먼트 테이블 시작점 레지스터가 주소 b를 가리킴</li>
+<li>세그먼트 번호 s를 더해 해당 세그먼트 항목 주소 b + s로 접근</li>
 <li>세그먼트 테이블에서:
 <ul>
-<li>페이지 사상표(page table)의 시작 주소 **s′**를 얻음</li>
+<li>페이지 사상표(page table)의 시작 주소 s′를 얻음</li>
 </ul>
 </li>
-<li><strong>(s, p)</strong> 쌍이 TLB(연관 저장 장치)에 있는지 먼저 확인
+<li>(s, p) 쌍이 TLB(연관 저장 장치)에 있는지 먼저 확인
 <ul>
-<li>있으면 TLB에 저장된 <strong>p′</strong> 값으로 바로 매핑</li>
+<li>있으면 TLB에 저장된 p′ 값으로 바로 매핑</li>
 <li>없으면:
 <ul>
-<li>페이지 사상표에서 <strong>p</strong>를 인덱스로 사용하여 페이지 프레임 번호 **p′**를 조회</li>
+<li>페이지 사상표에서 p를 인덱스로 사용하여 페이지 프레임 번호 p′를 조회</li>
 <li>TLB에 새 항목으로 저장 가능</li>
 </ul>
 </li>
 </ul>
 </li>
-<li>페이지 프레임 번호 **p′**와 변위 <strong>d</strong>를 더해 실제 주소 <strong>r</strong>을 계산<p v-pre class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>r</mi><mo>=</mo><mi>p</mi><mtext>′</mtext><mo>+</mo><mi>d</mi></mrow><annotation encoding="application/x-tex"> r = p′ + d 
+<li>페이지 프레임 번호 p′와 변위 d를 더해 실제 주소 r을 계산<p v-pre class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>r</mi><mo>=</mo><mi>p</mi><mtext>′</mtext><mo>+</mo><mi>d</mi></mrow><annotation encoding="application/x-tex"> r = p′ + d 
 </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.7778em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">p</span><span class="mord">′</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal">d</span></span></span></span></span></p>
 </li>
 </ol>
@@ -404,8 +369,7 @@
 <span class="line"></span>
 <span class="line">p′ + d → 실주소 r</span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><hr>
-<h1 id="filesystem-교수님-강의-내용-요약" tabindex="-1"><a class="header-anchor" href="#filesystem-교수님-강의-내용-요약"><span>FileSystem - 교수님 강의 내용 요약</span></a></h1>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h1 id="filesystem" tabindex="-1"><a class="header-anchor" href="#filesystem"><span>FileSystem</span></a></h1>
 <h2 id="페이지-테이블의-한계" tabindex="-1"><a class="header-anchor" href="#페이지-테이블의-한계"><span>페이지 테이블의 한계</span></a></h2>
 <ul>
 <li>하나의 page table이 너무 커질 경우, 연속적인 메모리 공간을 차지하기 어려움</li>
@@ -414,7 +378,7 @@
 <h2 id="다단계-페이지-테이블" tabindex="-1"><a class="header-anchor" href="#다단계-페이지-테이블"><span>다단계 페이지 테이블</span></a></h2>
 <ul>
 <li>페이지 테이블을 계층 구조로 나누어 관리</li>
-<li><strong>Outer Page Table</strong> → <strong>Inner Page Table</strong> → <strong>Data Page</strong></li>
+<li>Outer Page Table → Inner Page Table → Data Page</li>
 <li>각 테이블은 하나의 frame에 1024개 entry를 가짐</li>
 <li>Logical Address: 상위 10비트 (outer index), 중간 10비트 (inner index), 하위 12비트 (offset)</li>
 </ul>
@@ -454,7 +418,6 @@
 <li>Hashing 기반 탐색 구조 사용</li>
 <li>Chain이 없는 hash function 설계가 핵심</li>
 </ul>
-<hr>
 <h1 id="segmentation-1" tabindex="-1"><a class="header-anchor" href="#segmentation-1"><span>Segmentation</span></a></h1>
 <h2 id="개념-1" tabindex="-1"><a class="header-anchor" href="#개념-1"><span>개념</span></a></h2>
 <ul>
@@ -489,7 +452,6 @@
 <li>offset → page index + page offset</li>
 <li>최종적으로 frame 번호 + offset으로 physical address 계산</li>
 </ol>
-<hr>
 <h1 id="정리-주소-변환-과정" tabindex="-1"><a class="header-anchor" href="#정리-주소-변환-과정"><span>정리: 주소 변환 과정</span></a></h1>
 <h2 id="전체-흐름" tabindex="-1"><a class="header-anchor" href="#전체-흐름"><span>전체 흐름</span></a></h2>
 <ul>
@@ -497,7 +459,6 @@
 <li>TLB 실패 시 → segment table/page table 탐색</li>
 <li>frame 번호 획득 후 offset 더하여 physical address 생성</li>
 </ul>
-<hr>
 <h1 id="결론" tabindex="-1"><a class="header-anchor" href="#결론"><span>결론</span></a></h1>
 <ul>
 <li>Multi-level paging, inverted page table, segmentation, segmentation with paging은 각기 다른 상황에서 trade-off를 가지는 메모리 관리 기법</li>
