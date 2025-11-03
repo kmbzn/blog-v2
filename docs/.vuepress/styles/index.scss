@@ -194,7 +194,12 @@ table {
   }
 
   [vp-content] h2, [vp-content] h3, [vp-content] h4, [vp-content] h5, [vp-content] h6 {
-      margin-bottom: .5rem;
+      padding-bottom: 0rem;
+      margin-bottom: 0rem;
+  }
+
+  [vp-content] h1, [vp-content] h2 {
+      margin-top: 1.5rem;
   }
 
   div[class*='language-'] pre code {
