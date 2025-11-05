@@ -2,5 +2,6 @@
   "files.associations": {
     "iostream": "cpp",
     "queue": "cpp"
-  }
+  },
+  "markdown.preview.fontSize": 12
 }
