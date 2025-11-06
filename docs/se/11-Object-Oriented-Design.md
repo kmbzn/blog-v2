@@ -39,7 +39,7 @@
   - 원칙, patterns, heuristics 어휘 확장
   - GRASP patterns를 적용한 설계 책임 할당
   - 설계 간의 tradeoffs 추론
-  - `Coupling` 및 `cohesion` 관점에서의 tradeoffs 논의
+  - Coupling 및 `cohesion` 관점에서의 tradeoffs 논의
 
 # Modeling Implementations with UML
 
@@ -122,9 +122,9 @@ class Book {
 ```javascript
 function newLibraryAccount(id, lateFees) {
     return {
-        borrow: function (book) { … },
-        returnItem: function (book) { … },
-        payFees: function (payment) { … }
+        borrow: function (book) { ... },
+        returnItem: function (book) { ... },
+        payFees: function (payment) { ... }
     }
 }
 ```
@@ -249,6 +249,7 @@ function newLibraryAccount(id, lateFees) {
   - Information expert
   - Creator
   - Controller
+
 ![alt text](image-37.png)
 
 # Design Principle: Low Representational Gap
@@ -267,8 +268,6 @@ function newLibraryAccount(id, lateFees) {
   - 다른 원칙들이 종종 더 중요
 
 # Design Principle: Low Coupling
-
-## Design Principle: Low Coupling
 - Module은 가능한 한 적은 수의 다른 modules에 의존해야 함
   - 이해도 향상 (이해를 위한 설계)
       - Context에 대한 제한된 이해, 고립된 상태에서 이해 용이
@@ -279,12 +278,13 @@ function newLibraryAccount(id, lateFees) {
       - 의존성이 적어 새로운 context에 적응 용이
 
 ## Topologies with Different Coupling
+> *Types of module interconnection structures*
 
-(내용 없음 - 다이어그램 슬라이드로 추정)
+![alt text](image-38.png)
 
 ## High Coupling is Undesirable
 - Low coupling을 가진 element는 적은 수의 다른 elements에 의존
-  - Elements == classes, subsystems, …
+  - Elements == classes, subsystems, ...
   - "적은"은 context에 따라 다름
 - High coupling을 가진 class는 많은 다른 classes에 의존
   - 관련된 classes의 변경이 로컬 변경을 강제; 로컬 class의 변경이 관련된 classes의 변경을 강제 (취약함, 파급 효과)
@@ -302,16 +302,22 @@ function newLibraryAccount(id, lateFees) {
 - 특히: 낯선 이에게 말 걸지 말 것 (Don’t talk to strangers\!)
 - 예: `a.getB().getC().foo()` 금지
 
+```
+for (let i of shipment.getBox().getItems())
+    shipmentWeight += i.getWeight() ...
+```
+> *So don't do this ^ !!*
+
 ## Coupling: Discussion
-- 매우 안정적인 elements에 대한 high coupling은 대개 문제 되지 않음
+- 매우 안정적인 elements에 대한 high coupling은 보통 문제되지 않음
   - 안정적인 interface는 변경될 가능성이 낮고, 잘 이해됨
   - Implementations에 대한 coupling보다 interfaces에 대한 coupling 선호
-- Subclass/superclass coupling은 특히 강함
+- Subclass/superclass coupling은 특히 강력함
   - Protected fields와 methods가 노출됨
   - Subclass는 많은 superclass 변경(예: method signatures 변경, abstract methods 추가)에 취약
-  - **Guideline:** `Coupling`을 줄이기 위해, 상속(inheritance)보다 composition 선호
-- `Coupling`은 많은 원칙 중 하나
-  - `Cohesion`, low repr. gap 및 기타 원칙도 고려
+  - Guideline: Coupling을 줄이기 위해, 상속(inheritance)보다 composition 선호
+- Coupling은 많은 원칙 중 하나
+  - Cohesion, low repr. gap 및 기타 원칙도 고려
 
 ## Design Goals
 - Low coupling이 지원하는 방식 설명:
@@ -344,20 +350,21 @@ function newLibraryAccount(id, lateFees) {
 - Façade design pattern (추후 강의)과 밀접하게 관련됨
 
 ## Controller: Design Tradeoffs
-- `Coupling` 감소
+- Coupling 감소
   - User interface와 domain logic이 서로 분리됨 (decoupled)
 - 이해도: 고립된 상태에서 이해 가능, 다음으로 이어짐:
 - Evolvability (진화 용이성): UI와 domain logic 모두 변경 용이
-  - 둘 다 `controller`에 결합(coupled)되어, `controller`가 중재자(mediator) 역할. 이 `coupling`은 덜 해로움
+  - 둘 다 `controller`에 결합(coupled)되어, `controller`가 중재자(mediator) 역할. 이 coupling은 덜 해로움
   - `Controller`는 더 작고 안정적인 interface
   - Domain logic 변경이 UI가 아닌 `controller`에 영향
   - Domain logic design을 몰라도 UI 변경 가능
 - 재사용성 지원
   - `Controller`는 domain logic에 대한 interface 역할
   - 더 작고 명시적인 interfaces는 evolvability 지원
-- 단, 비대해진(bloated) controllers는 `coupling`을 높이고 `cohesion`을 낮춤; 해당 시 분할
+- 단, 비대해진(bloated) controllers는 coupling을 높이고 `cohesion`을 낮춤; 해당 시 분할
 
 # Design Principle: High Cohesion (OR SINGLE RESPONSIBILITY PRINCIPLE)
+높은 응집도
 
 ## Design Principle: Cohesion
 - Module은 작고 관련된 책임 집합을 가져야 함
@@ -367,24 +374,128 @@ function newLibraryAccount(id, lateFees) {
       - 응집력 있는(cohesive) 책임 집합은 다른 application에서 재발생할 가능성이 높음
 
 ## Example: Low Cohesion
+```
+class DatabaseApplication {
+    public void authorizeOrder(Data data, User currentUser, ...){
+        // check authorization
+        // lock objects for synchronization
+        // validate buffer
+        // log start of operation
+        // perform operation
+        // log end of operation
+        // release lock on objects
+    }
 
-(내용 없음 - 다이어그램 슬라이드로 추정)
+    public void startShipping(OtherData data, User currentUser, ...){
+        // check authorization
+        // lock objects for synchronization
+        // validate buffer
+        // log start of operation
+        // perform operation
+        // log end of operation
+        // release lock on objects
+    }
+}
+```
 
 ## Anti-Pattern: God Object
 
-(내용 없음 - 다이어그램 슬라이드로 추정)
+```
+class Chat {
+    List<String> channels;
+    Map<String, List<Msg>> messages;
+    Map<String, String> accounts;
+    Set<String> bannedUsers;
+    File logFile;
+    File bannedWords;
+    URL serverAddress;
+    Map<String, Int> globalSettings;
+    Map<String, Int> userSettings;
+    Map<String, Graphic> smileys;
+    CryptStrategy encryption;
+    Widget sendButton, messageList;
+}
+```
+
+```
+class Chat {
+    Content content;
+    AccountMgr accounts;
+    File logFile;
+    ConnectionMgr conns;
+}
+
+class ChatUI {
+    Chat chat;
+    Widget sendButton, ...;
+}
+
+class AccountMgr {
+    ... accounts, bannedUsers ...
+}
+```
 
 ## Cohesion in Graph Implementations
+
+```
+class Graph {
+    Node[] nodes;
+    boolean[] isVisited;
+}
+
+class Algorithm {
+    int shortestPath(Graph g, Node n, Node m) {
+        for (int i; ...) {
+            if (!g.isVisited[i]) {
+                ...
+                g.isVisited[i] = true;
+            }
+        }
+        return v;
+    }
+}
+```
+
 - 이것이 좋은 구현인가?
-- 아니오, `graph`가 data뿐만 아니라 알고리즘적 책임까지 맡고 있기 때문
+- No, graph가 data뿐만 아니라 알고리즘적 책임까지 맡고 있기 때문
 
 ## Bluemarble Example
 - 어느 디자인이 더 높은 `cohesion`을 가지는가?
 
+```
+class Player {
+    Board board;
+    /* in code somewhere... */ this.getSquare(n);
+    Square getSquare(String name) { // named squares
+        for (Square s: board.getSquares())
+            if (s.getName().equals(name))
+                return s;
+        return null;
+    }
+}
+```
+
+```
+class Player {
+    Board board;
+    /* in code somewhere... */ board.getSquare(n);
+}
+
+class Board {
+    List<Square> squares;
+    Square getSquare(String name) {
+        for (Square s: squares)
+            if (s.getName().equals(name))
+                return s;
+        return null;
+    }
+}
+```
+
 ## Hints for Identifying Cohesion
 - 개념(concept)당 하나의 색상 사용
-- 해당 concept의 모든 코드를 그 색상으로 강조
-- \=\> Classes/methods는 적은 수의 색상을 가져야 함
+- 해당 concept의 모든 코드를 그 색상으로 강조  
+→ Classes/methods는 적은 수의 색상을 가져야 함
 - "Concept"이 무엇인지 명확한 정의는 없음
 - Concepts는 더 작은 concepts로 분할될 수 있음
   - Graph with search vs.
@@ -393,15 +504,15 @@ function newLibraryAccount(id, lateFees) {
 - 엔지니어링 판단(engineering judgment) 필요
 
 ## Cohesion: Discussion
-- **Very Low Cohesion:** Class가 매우 다른 기능 영역의 많은 것들을 전적으로 책임짐
-- **Low Cohesion:** Class가 하나의 기능 영역에서 복잡한 작업을 전적으로 책임짐
-- **High Cohesion:** Class가 하나의 기능 영역에서 적당한 책임을 가지며, 작업을 수행하기 위해 (다른) classes와 협력
-- **High cohesion의 장점**
+- Very Low Cohesion: Class가 매우 다른 기능 영역의 많은 것들을 전적으로 책임짐
+- Low Cohesion: Class가 하나의 기능 영역에서 복잡한 작업을 전적으로 책임짐
+- High Cohesion: Class가 하나의 기능 영역에서 적당한 책임을 가지며, 작업을 수행하기 위해 (다른) classes와 협력
+- High cohesion의 장점
   - Classes 유지보수 용이
   - 이해 용이
   - 종종 low coupling 지원
   - 세분화된 책임으로 재사용성 지원
-- **경험 법칙 (Rule of thumb):** high cohesion을 가진 class는 상대적으로 적은 수의 고도로 연관된 기능의 methods를 가지며, 너무 많은 작업을 수행하지 않음
+- 경험 법칙 (Rule of thumb): high cohesion을 가진 class는 상대적으로 적은 수의 고도로 연관된 기능의 methods를 가지며, 너무 많은 작업을 수행하지 않음
 
 ## Coupling vs Cohesion (Extreme cases)
 - 모든 코드가 하나의 class/method에
@@ -413,26 +524,33 @@ function newLibraryAccount(id, lateFees) {
 # Design Heuristic: Information Expert
 
 ## Information Expert (Design Heuristic)
-- **Heuristic:** 책임을 수행하는 데 필요한 정보를 가진 class에 책임을 할당
+- Heuristic: 책임을 수행하는 데 필요한 정보를 가진 class에 책임을 할당
   - 일반적으로 공통적인 직관을 따름
 - Domain Model classes 대신 Software classes
   - Software classes가 아직 존재하지 않는 경우, Domain Model에서 적절한 추상화(abstractions)를 찾음 (-\> correspondence)
-- **Design process:** Domain model에서 도출
+- Design process: Domain model에서 도출
   - 핵심 원칙: Low representational gap, low coupling
 
 ## Information Expert: Example 1
 - 어느 class가 shipment의 무게를 계산하는 데 필요한 모든 정보를 가지고 있는가?
 
 ## Information Expert: Example 2
+![alt text](image-39.png)
 - 판매(sale)의 총합(grand total)을 아는 책임은 누구에게 있는가?
 - (다이어그램 71, 72 내용)
-- **Design Class Responsibility**
-  - `Sale`: 판매 총액(sale total)을 앎
-  - `SalesLineItem`: 라인 아이템 소계(line item subtotal)를 앎
-  - `ProductSpecification`: 제품 가격(product price)을 앎
+- Design Class Responsibility
+  - Sale: 판매 총액(sale total)을 앎
+  - SalesLineItem: 라인 아이템 소계(line item subtotal)를 앎
+  - ProductSpecification: 제품 가격(product price)을 앎
+
+| Design Class | Responsibility
+| - | -
+| Sale | Knows sale total
+| SalesLineItem | Knows line item subtotal
+| ProductSpecification | Knows product price
 
 ## Information Expert → "Do It Myself Strategy"
-- `Expert`는 보통 software object가 자신이 나타내는 무생물(inanimate) 실제 세계 사물에 대해 일반적으로 수행되는 작업들을 직접 수행하는 설계로 이어짐
+- Expert는 보통 software object가 자신이 나타내는 무생물(inanimate) 실제 세계 사물에 대해 일반적으로 수행되는 작업들을 직접 수행하는 설계로 이어짐
   - 판매(sale)는 당신에게 총액을 말해주지 않음; 그것은 무생물
 - OO design에서, 모든 software objects는 "살아있고" "생명(animated)"이 있으며, 책임을 맡고 일을 할 수 있음
 - 그들은 자신이 아는 정보와 관련된 일을 함
@@ -440,25 +558,30 @@ function newLibraryAccount(id, lateFees) {
 # Design Heuristic: Creator
 
 ## Creator (Design Heuristic)
-- **Problem:** 누가 A를 생성하는가?
-- **Solution:** 다음과 같은 경우 B에게 class A의 instance 생성 책임 할당
+- Problem: 누가 A를 생성하는가?
+- Solution: 다음과 같은 경우 B에게 class A의 instance 생성 책임 할당
   - B가 A objects를 aggregate, B가 A objects를 포함, B가 A objects의 instances를 기록, B가 A objects를 밀접하게 사용, B가 A objects 생성에 필요한 초기화 data를 가짐 (많을수록 좋음)
   - 선택지가 있는 경우, B가 A objects를 aggregate 하거나 포함하는 것을 선호
-- **Key idea:** `Creator`는 어차피 참조(reference)를 유지해야 하며, 생성된 object를 자주 사용하게 될 것
-- **Process:** Domain model, interaction diagrams에서 추출
+- Key idea: Creator는 어차피 참조(reference)를 유지해야 하며, 생성된 object를 자주 사용하게 될 것
+- Process: Domain model, interaction diagrams에서 추출
   - 핵심 원칙: Low coupling, low representational gap
 
 ## Creator: Example
-- `Beetle` objects 생성 책임은 누구에게 있는가?
-  - `Creator` pattern은 `Tree`를 제안
-- **Interaction diagram:** (다이어그램 내용)
+- Beetle objects 생성 책임은 누구에게 있는가?
+  - Creator pattern은 Tree를 제안
+
+![alt text](image-40.png)
+
+- Interaction diagram:
+
+![alt text](image-41.png)
 
 ## Creator (GRASP)
-- **Problem:** 객체 생성 책임 할당
-  - `Graph`에서 `Nodes`는 누가 생성?
-  - `SalesItem`의 instances는 누가 생성?
-  - Simulation에서 `Children`은 누가 생성?
-  - Bluemarble 게임에서 `Tiles`는 누가 생성?
+- Problem: 객체 생성 책임 할당
+  - Graph에서 Nodes는 누가 생성?
+  - SalesItem의 instances는 누가 생성?
+  - Simulation에서 Children은 누가 생성?
+  - Bluemarble 게임에서 Tiles는 누가 생성?
 - AI? Player? Main class? Board? Meeple (Dog)?
 
 ## Creator: Discussion of Design Goals/Principles
@@ -467,30 +590,30 @@ function newLibraryAccount(id, lateFees) {
   - Objects를 직접 생성하면, object 생성을 위해 다른 class에 의존하는 것을 피함
 - Evolvability (design for change) 증진
   - Object 생성이 숨겨져(hidden), 로컬에서 교체 가능
-- **Contra (반대):** 때때로 objects는 특별한 방식으로 생성되어야 함
+- Contra (반대): 때때로 objects는 특별한 방식으로 생성되어야 함
   - 복잡한 초기화
   - 다른 상황에서 다른 classes를 instantiate
-  - 이 경우, `cohesion`은 생성을 다른 object에 두도록 제안: builder, factory method 같은 design patterns 참고
+  - 이 경우, cohesion은 생성을 다른 object에 두도록 제안: builder, factory method 같은 design patterns 참고
 
 ## Other Design Heuristics
 - (향후 강의):
   - Mutability 최소화
   - Conceptual weight 최소화
   - 상속(Inheritance)보다 composition/delegation 선호
-  - `Coupling`을 줄이기 위해 indirection 사용
+  - Coupling을 줄이기 위해 indirection 사용
   - ...
 
 ## Object-level Artifacts of This Design Process
-- Object interaction diagrams는 objects에 methods를 추가
+- **Object interaction diagrams**는 objects에 methods를 추가
   - 추가적인 data 책임 추론 가능
   - 추가적인 data types 및 architectural patterns 추론 가능
-- Object model은 중요한 설계 결정(design decisions)을 종합(aggregates)
+- **Object model**은 중요한 설계 결정(design decisions)을 종합(aggregates)
   - 구현 가이드(implementation guide) 역할
 
 ## Summary
 - Design은 품질 속성(quality attributes)에 의해 주도됨
-  - Evolvability, separate development, reuse, performance, …
+  - Evolvability, separate development, reuse, performance, ...
 - Design principles는 품질 달성을 위한 지침 제공
-  - Low coupling, high cohesion, high correspondence, …
+  - Low coupling, high cohesion, high correspondence, ...
 - GRASP design heuristics는 이러한 원칙들을 증진
-  - Creator, Expert, Controller, …
+  - Creator, Expert, Controller, ...

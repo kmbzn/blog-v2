@@ -100,6 +100,7 @@ export default defineUserConfig({
           '/se/8-Architecture',
           '/se/9-UML',
           '/se/10-Object-Oriented-Analysis',
+          '/se/11-Object-Oriented-Design',
         ]
       },
       {
