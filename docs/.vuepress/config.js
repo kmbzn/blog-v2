@@ -56,6 +56,7 @@ export default defineUserConfig({
           '/ai/13-Linear-Models',
           '/ai/14-Other-Classic-ML-Models',
           '/ai/15-Deep-Learning-1',
+          '/ai/16-Deep-Learning-2',
         ]
       },
       {
@@ -101,6 +102,8 @@ export default defineUserConfig({
           '/se/9-UML',
           '/se/10-Object-Oriented-Analysis',
           '/se/11-Object-Oriented-Design',
+          '/se/12-DesignPatterns',
+          '/se/13-Intro-To-QA-Testing',
         ]
       },
       {
