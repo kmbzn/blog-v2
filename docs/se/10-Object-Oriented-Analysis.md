@@ -94,13 +94,14 @@
 ![alt text](image-18.png)
 
 ## Visual Notation: UML
-- (UML 표기법 예시 이미지)
+![alt text](image-53.png)
 
 ## Reading Associations
-- (연관 관계(Associations) 읽기 예시 이미지)
+![alt text](image-54.png)
 
 ## Attributes vs. Concepts
-- "실제 세계에서 어떤 개념적 class X를 text나 숫자로 생각하지 않는다면, 그것은 attribute가 아니라 concept일 가능성이 높음"
+![alt text](image-55.png)
+> *"실제 세계에서 어떤 개념적 class X를 text나 숫자로 생각하지 않는다면, 그것은 attribute가 아니라 concept일 가능성이 높다."*
 - Type annotations 회피
 
 ## Modeling a Problem Domain
@@ -108,14 +109,12 @@
 - Communication을 위해 사용
 - 실제 세계 개념에 집중
     - (예: Database 같은 추상적 구현 관심사 아님)
-- Methods/operations 없음
-- 관계(relationships)와 다중성(cardinalities) 표시
+    - Methods/operations 없음
+    - 관계(relationships)와 다중성(cardinalities) 표시
 
 ## Identifying Concepts
-- (도서관 시스템 예시 텍스트에서 개념 식별 예시 - 1차)
-- A public library ... collection of books, movies, or other library items ... people living in a community. Each library member ... library account ... library card ... account’s ID number ... the library. A member’s library account ... items ... member ... due date ... borrowed item. Each type of item ... default rental period ... item’s due date ... item. If a member ... item ... item’s due date, the member ... late fee ... item, an amount of money ... member’s library account
-- (도서관 시스템 예시 텍스트에서 개념 식별 예시 - 2차 정제)
-- A public library ... collection of books, movies, or other library items ... Each library member ... library account ... library card ... ID number ... A member’s library account ... items ... member ... due date ... borrowed item. Each type of item ... default rental period ... item’s due date ... item. If a member ... item ... item’s due date, the member ... late fee ... item, an amount of money ... member’s library account
+> "A public **library** typically stores a collection of **books**, **movies**, or other **library items** available to be borrowed by people living in a community. Each **library member** typically has a **library account** and a **library card** with the account’s **ID number**, which she can use to identify herself to the library.
+> A member’s library account records which items the member has borrowed and the **due date** for each **borrowed item**. Each type of item has a **default rental period**, which determines the item’s due date when the item is borrowed. If a member returns an item after the item’s due date, the member owes a **late fee** specific for that item, an amount of money recorded in the member’s library account 20"
 
 ## Hints for Identifying Concepts
 - 요구사항 명세 읽기, 명사 찾기
@@ -128,7 +127,7 @@
     - 구조, 장치, 조직 단위 등
 - 일반적인 use scenarios 분석, 동작 분석
 - Brainstorming
-- 먼저 수집; 나중에 조직, 필터링, 수정
+- 수집 먼저. 조직, 필터링, 수정은 이후에!
 
 ## One Domain Model for the Library System
 
@@ -154,7 +153,7 @@
 - 설계 준비
     - Domain concepts는 OO classes의 좋은 후보 (-> low representational gap)
 
-## Hints for Object-Oriented Analysis (1)
+## Hints for Object-Oriented Analysis
 - Domain model은 어휘 제공
     - 개발자, 테스터, 고객, domain 전문가 간 communication을 위함
     - 단일 어휘에 동의하고 시각화
@@ -163,12 +162,10 @@
     - 이름 부여, 정의 및 예시 제공 (symbol, intension, extension)
 - 용어집(Glossary) 추가
 - 일부는 classes로 구현될 수도, 아닐 수도 있음
-
-## Hints for Object-Oriented Analysis (2)
 - 많은 선택지가 존재
-- Model이 완벽하게 정확하지 않을 것임
-    - 괜찮음
-    - 부분적인 model로 시작, 필요한 것만 모델링
+- Model이 완벽하게 정확하지 않을 것
+    - 괜찮음.
+    - 부분적인 model로 시작, 필요한 것만 modeling
     - 나중에 추가 정보로 확장
     - 변경 사항 명확히 communicate
     - 그렇지 않으면 "analysis paralysis(분석 마비)" 위험
@@ -183,12 +180,13 @@
 # System Sequence Diagram
 
 ## Understanding System Behavior
-- System sequence diagram: 하나의 use scenario에 대해, system의 경계(boundary)에서 발생하는 이벤트 순서를 보여주는 model
+- **System sequence diagram**: 하나의 use scenario에 대해, system의 경계(boundary)에서 발생하는 이벤트 순서를 보여주는 model
 - 설계 목표: System의 interface 식별 및 정의
     - System 수준의 구성요소만 (예: 사용자와 전체 system)
 
 ## One Example for the Library System
-- Use case 시나리오: Library member가 library card로 kiosk 로그인 후 책 대출. 연체료 미납 확인 후, rental period를 더해 반납 기한 결정. 책과 반납 기한을 member의 account에 기록
+- Use case 시나리오: Library member가 library card로 kiosk 로그인 후 책 대출. 연체료 미납을 확인 후, rental period를 더해 반납 기한 결정. 책과 반납 기한을 member의 account에 기록  
+
     ![alt text](image-20.png)
 
 # Behavioral Contracts

@@ -1,3 +1,5 @@
+# 13. Intro to QA Testing
+
 ## Learning Goals
 - Testing을 (비구조적) 차원에서 coverage를 달성하기 위한 활동으로 간주
 - Usability, reliability, security, robustness (일반 및 아키텍처), performance, integration과 같은 품질 속성 평가를 위한 testing 전략 열거
