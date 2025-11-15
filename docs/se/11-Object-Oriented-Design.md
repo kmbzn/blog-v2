@@ -1,36 +1,5 @@
 # 11. Object-Oriented Design
 
-## From Requirements to Code
-- 사용자 요구사항 (Requirements)
-- 기적? Code
-
-## From Problem to Solution
-- **Problem Space (Domain Model)**
-  - 실제 세계의 개념
-  - 요구사항, 개념
-  - 개념 간의 관계
-  - 문제 해결
-  - 어휘 구축
-- **Solution Space (Object Model)**
-  - 시스템 구현
-  - `Classes`, `objects`
-  - `Objects` 간의 참조 및 상속 계층
-  - 결과 계산
-  - 해결책 찾기
-
-## An Object-Oriented Design Process
-- **OO Analysis: 문제 이해**
-  - 문제 model / diagram 화, 개념 정의
-  - Domain model (a.k.a. conceptual model), 용어집
-- **OO Design: 해결책 정의**
-  - 시스템 행동 정의
-  - 시스템 sequence diagram
-  - 시스템 행동 계약
-  - 객체 책임 할당, 상호작용 정의
-  - 객체 interaction diagrams
-  - 잠재적 해결책 model / diagram 화
-  - Object model
-
 ## Learning Goals
 - Solution Space에서의 UML
   - Object diagrams: 개념에서 classes로
@@ -38,8 +7,8 @@
 - 설계 결정 (Design Decisions)
   - 원칙, patterns, heuristics 어휘 확장
   - GRASP patterns를 적용한 설계 책임 할당
-  - 설계 간의 tradeoffs 추론
-  - Coupling 및 `cohesion` 관점에서의 tradeoffs 논의
+  - 설계 간의 trade-off를 추론
+  - Coupling 및 cohesion 관점에서의 trade-off 논의
 
 # Modeling Implementations with UML
 
@@ -59,6 +28,8 @@
   - 모든 개념이 class가 되어야 하는가?
   - 모든 class가 개념을 나타내야 하는가?
 
+![alt text](image-56.png)
+
 ## Object Diagrams
 - Fields와 methods를 가진 Objects/classes
 - Methods를 가진 Interfaces
@@ -69,7 +40,7 @@
 
 ![alt text](image-22.png)
 
-```
+```java
 class LibraryAccount {
   id: int;
   lateFees: int;
@@ -81,7 +52,7 @@ class LibraryAccount {
 
 ## Object Diagram Notation: Interfaces
 ![alt text](image-24.png)
-```
+```java
 interface LibraryAccount {
   boolean borrow(Book b);
   void returnItem(Book b);
@@ -92,7 +63,7 @@ interface LibraryAccount {
 ## Object Diagram Notation: Associations
 
 ![alt text](image-25.png)
-```
+```java
 class LibraryAccount {
   ...
   List<Book> borrowedBooks;
@@ -119,12 +90,12 @@ class Book {
   - 동일한 shape을 공유하는 많은 objects
 - TypeScript interfaces는 class diagram 표기법과 일치
 
-```javascript
+```js
 function newLibraryAccount(id, lateFees) {
     return {
-        borrow: function (book) { ... },
-        returnItem: function (book) { ... },
-        payFees: function (payment) { ... }
+      borrow: function (book) { ... },
+      returnItem: function (book) { ... },
+      payFees: function (payment) { ... }
     }
 }
 ```
@@ -138,11 +109,11 @@ function newLibraryAccount(id, lateFees) {
 
 ## Object Diagram Notation Requirements
 - 표기법에 대해 매우 엄격하지는 않지만,
-  - Classes/objects, interfaces, concepts에 적합한 2 또는 3 부분으로 된 상자 사용
+  - Classes/objects, interfaces, concepts에 적합한 2 ~ 3 부분으로 된 상자 사용
   - Fields와 methods에 types 포함
   - 적절한 경우 fields가 아닌 associations 사용
   - Association 이름과 cardinalities 사용
-    - "is-a"(상속 관계)를 제외한 화살표 타입은 크게 신경 쓰지 않음
+    - "is-a"(상속 관계)를 제외한 화살표 타입은 **크게 신경 쓰지 않음**
 
 # Modeling Interactions Past the System Boundary
 - **Use case scenario:** 도서관 회원이 도서관 카드를 사용하여 도서관 시스템 키오스크에서 로그인하고 책을 대출
@@ -152,7 +123,7 @@ function newLibraryAccount(id, lateFees) {
 
 ## Interaction Diagrams
 - Objects 간의 상호작용
-- 두 가지 일반적인 표기법: sequence diagrams, communication diagrams
+- 두 가지 일반적인 표기법: Sequence diagrams, Communication diagrams
 - Sequence diagrams는 system sequence diagrams와 유사하지만, objects/classes 간의 상호작용을 묘사
 ![alt text](image-31.png)
 
@@ -165,7 +136,7 @@ function newLibraryAccount(id, lateFees) {
 ![alt text](image-33.png)
 
 ## Interaction Diagrams Help Evaluate Design Alternatives
-- 설계 대안을 명시적으로 고려
+- 설계 대안을 **명시적으로** 고려
 - 각 대안에 대해, 설계 선택에 의해 암시되는 상호작용 스케치
   - 상호작용은 components의 APIs에 해당
 
@@ -219,9 +190,9 @@ function newLibraryAccount(id, lateFees) {
 | Name | Creator
 | - | -
 | Problem | 누가 A를 생성하는가?
-| Solution | 다음 중 하나 이상이 참(많을수록 좋음)일 경우, class B에 class A의 instance 생성 책임을 할당<br>B가 A를 "포함"하거나 복합적으로 aggregate 함<br>B가 A를 기록함<br>B가 A를 긴밀하게 사용함<br>B가 A 생성을 위한 초기화 data를 가짐
+| Solution | 다음 중 하나 이상이 참(많을수록 좋음)일 경우, class B에 class A의 instance 생성 책임을 할당<br>B가 A를 "포함"하거나 복합적으로 집계함<br>B가 A를 기록함<br>B가 A를 긴밀하게 사용함<br>B가 A 생성을 위한 초기화 data를 가짐
 
-## Example: Creator
+### Example: Creator
 ![alt text](image-35.png)
 - Dynamic model에서 Creator pattern 적용
 - Design Model의 DCD에서, `Board`는 `Squares`와 composite aggregation association을 가짐
@@ -270,24 +241,26 @@ function newLibraryAccount(id, lateFees) {
 # Design Principle: Low Coupling
 - Module은 가능한 한 적은 수의 다른 modules에 의존해야 함
   - 이해도 향상 (이해를 위한 설계)
-      - Context에 대한 제한된 이해, 고립된 상태에서 이해 용이
+    - Context에 대한 제한된 이해, 고립된 상태에서 이해 용이
   - 변경 비용 감소 (변경을 위한 설계)
-      - 변경에 필요한 context가 적음
-      - Module interface 변경 시, 영향을 받는 modules가 적음 (파급 효과 감소)
+    - 변경에 필요한 context가 적음
+    - Module interface 변경 시, 영향을 받는 modules가 적음 (파급 효과 감소)
   - 재사용성 향상 (재사용을 위한 설계)
-      - 의존성이 적어 새로운 context에 적응 용이
+    - 의존성이 적어 새로운 context에 적응 용이
 
 ## Topologies with Different Coupling
-> *Types of module interconnection structures*
 
 ![alt text](image-38.png)
 
+> *Types of module interconnection structures*
+
 ## High Coupling is Undesirable
 - Low coupling을 가진 element는 적은 수의 다른 elements에 의존
-  - Elements == classes, subsystems, ...
-  - "적은"은 context에 따라 다름
+  - `Elements == classes, subsystems, ...`
+  - "적은"은 문맥에 따라 다름
 - High coupling을 가진 class는 많은 다른 classes에 의존
-  - 관련된 classes의 변경이 로컬 변경을 강제; 로컬 class의 변경이 관련된 classes의 변경을 강제 (취약함, 파급 효과)
+  - 관련된 classes의 변경이 로컬 변경을 강제.
+    - 로컬 class의 변경이 관련된 classes의 변경을 강제 (취약함, 파급 효과)
   - 고립된 상태에서 이해하기 어려움
   - 다른 의존적 classes의 추가적인 존재를 요구하므로 재사용하기 어려움
   - 확장하기 어려움 – 많은 곳에서 변경 필요
@@ -298,11 +271,12 @@ function newLibraryAccount(id, lateFees) {
 - **Design Heuristics:** (시스템에서 원칙 증진) Law of Demeter, Information expert, Creator, Controller
 
 ## Design Heuristic: Law of Demeter
-- 각 module은 다른 units에 대해 제한된 지식만 가져야 함: 현재 unit과 "밀접하게" 관련된 units만
-- 특히: 낯선 이에게 말 걸지 말 것 (Don’t talk to strangers\!)
-- 예: `a.getB().getC().foo()` 금지
+- 각 module은 다른 units에 대해 제한된 지식만 가져야 함
+  - 현재 unit과 "밀접하게" 관련된 units만
+- 특히, 낯선 이에게 말 걸지 말 것 (Don’t talk to strangers!)
+  - 예: `a.getB().getC().foo()` 금지
 
-```
+```js
 for (let i of shipment.getBox().getItems())
     shipmentWeight += i.getWeight() ...
 ```
@@ -322,14 +296,14 @@ for (let i of shipment.getBox().getItems())
 ## Design Goals
 - Low coupling이 지원하는 방식 설명:
   - **Design for change (변경을 위한 설계)**
-      - 더 적은 수의 다른 objects에 대한 의존성으로 변경이 더 쉬움
-      - 변경이 파급 효과(rippling effects)를 가질 가능성 감소
+    - 더 적은 수의 다른 objects에 대한 의존성으로 변경이 더 쉬움
+    - 변경이 파급 효과(rippling effects)를 가질 가능성 감소
   - **Design for understandability (이해를 위한 설계)**
-      - 이해해야 할 의존성이 적음 (예: `a.getB().getC().foo()`)
+    - 이해해야 할 의존성이 적음 (예: `a.getB().getC().foo()`)
   - **Design for division of labor (분업을 위한 설계)**
-      - 더 작은 interfaces, 분할 용이
+    - 더 작은 interfaces, 분할 용이
   - **Design for reuse (재사용을 위한 설계)**
-      - 복잡한 의존성 없이 재사용 용이
+    - 복잡한 의존성 없이 재사용 용이
 
 ## Design Heuristic: Controller (also Design Pattern: FAÇADE)
 - **Problem:** 어떤 객체가 system operation (event)을 수신하고 조정하는가?
@@ -337,70 +311,71 @@ for (let i of shipment.getBox().getItems())
   - 전체 system, device, 또는 subsystem (façade controller)
   - System event가 발생하는 use case scenario (use case controller)
 - **Process:** System sequence diagram에서 도출 (핵심 원칙: Low representational gap, high cohesion)
-- (다이어그램 53, 54 내용 포함)
+
+![alt text](image-57.png)
 
 ## Controller: Discussion
-- `Controller`는 coordinator
+- Controller는 coordinator
   - 많은 작업을 직접 수행하지 않음
   - 다른 objects에 위임
 - Façade controllers는 system events가 "너무 많지" 않을 때 적합
   - 시스템을 위한 하나의 전체 controller
 - Use case controller는 façade controller가 과도한 책임으로 "비대해질" 때(low cohesion, high coupling) 적합
   - 특정 작업을 위한 여러 개의 작은 controllers
-- Façade design pattern (추후 강의)과 밀접하게 관련됨
+- Façade design pattern (추후 강의)과 밀접하게 관련
 
-## Controller: Design Tradeoffs
+## Controller: Design Trade-off
 - Coupling 감소
   - User interface와 domain logic이 서로 분리됨 (decoupled)
 - 이해도: 고립된 상태에서 이해 가능, 다음으로 이어짐:
 - Evolvability (진화 용이성): UI와 domain logic 모두 변경 용이
-  - 둘 다 `controller`에 결합(coupled)되어, `controller`가 중재자(mediator) 역할. 이 coupling은 덜 해로움
-  - `Controller`는 더 작고 안정적인 interface
-  - Domain logic 변경이 UI가 아닌 `controller`에 영향
+  - 둘 다 controller에 결합(coupled)되어, controller가 중재자(mediator) 역할. 이 coupling은 덜 해로움
+  - Controller는 더 작고 안정적인 interface
+  - Domain logic 변경이 UI가 아닌 controller에 영향
   - Domain logic design을 몰라도 UI 변경 가능
 - 재사용성 지원
-  - `Controller`는 domain logic에 대한 interface 역할
+  - Controller는 domain logic에 대한 interface 역할
   - 더 작고 명시적인 interfaces는 evolvability 지원
-- 단, 비대해진(bloated) controllers는 coupling을 높이고 `cohesion`을 낮춤; 해당 시 분할
+- 단, 비대해진(bloated) controllers는 coupling을 높이고 cohesion을 낮춤; 해당 시 분할
 
-# Design Principle: High Cohesion (OR SINGLE RESPONSIBILITY PRINCIPLE)
-높은 응집도
+# Design Principle: High Cohesion
+### (OR SINGLE RESPONSIBILITY PRINCIPLE)
 
 ## Design Principle: Cohesion
 - Module은 작고 관련된 책임 집합을 가져야 함
   - 이해도 향상 (이해를 위한 설계)
-      - 작은 책임 집합이 이해하기 더 쉬움
+    - 작은 책임 집합이 이해하기 더 쉬움
   - 재사용성 향상 (재사용을 위한 설계)
-      - 응집력 있는(cohesive) 책임 집합은 다른 application에서 재발생할 가능성이 높음
+    - 응집력 있는(cohesive) 책임 집합은 다른 application에서 재발생할 가능성이 높음
 
 ## Example: Low Cohesion
-```
+```java
 class DatabaseApplication {
     public void authorizeOrder(Data data, User currentUser, ...){
-        // check authorization
-        // lock objects for synchronization
-        // validate buffer
-        // log start of operation
-        // perform operation
-        // log end of operation
-        // release lock on objects
+      // check authorization
+      // lock objects for synchronization
+      // validate buffer
+      // log start of operation
+      // perform operation
+      // log end of operation
+      // release lock on objects
     }
 
     public void startShipping(OtherData data, User currentUser, ...){
-        // check authorization
-        // lock objects for synchronization
-        // validate buffer
-        // log start of operation
-        // perform operation
-        // log end of operation
-        // release lock on objects
+      // check authorization
+      // lock objects for synchronization
+      // validate buffer
+      // log start of operation
+      // perform operation
+      // log end of operation
+      // release lock on objects
     }
 }
 ```
 
 ## Anti-Pattern: God Object
 
-```
+```js
 class Chat {
     List<String> channels;
     Map<String, List<Msg>> messages;
@@ -417,7 +392,7 @@ class Chat {
 }
 ```
 
-```
+```js
 class Chat {
     Content content;
     AccountMgr accounts;
@@ -437,7 +412,7 @@ class AccountMgr {
 
 ## Cohesion in Graph Implementations
 
-```
+```js
 class Graph {
     Node[] nodes;
     boolean[] isVisited;
@@ -445,13 +420,13 @@ class Graph {
 
 class Algorithm {
     int shortestPath(Graph g, Node n, Node m) {
-        for (int i; ...) {
-            if (!g.isVisited[i]) {
-                ...
-                g.isVisited[i] = true;
-            }
+      for (int i; ...) {
+        if (!g.isVisited[i]) {
+            ...
+            g.isVisited[i] = true;
         }
-        return v;
+      }
+      return v;
     }
 }
 ```
@@ -460,22 +435,22 @@ class Algorithm {
 - No, graph가 data뿐만 아니라 알고리즘적 책임까지 맡고 있기 때문
 
 ## Bluemarble Example
-- 어느 디자인이 더 높은 `cohesion`을 가지는가?
+- 어느 디자인이 더 높은 cohesion을 가지는가?
 
-```
+```js
 class Player {
     Board board;
     /* in code somewhere... */ this.getSquare(n);
     Square getSquare(String name) { // named squares
-        for (Square s: board.getSquares())
-            if (s.getName().equals(name))
-                return s;
-        return null;
+      for (Square s: board.getSquares())
+        if (s.getName().equals(name))
+            return s;
+      return null;
     }
 }
 ```
 
-```
+```js
 class Player {
     Board board;
     /* in code somewhere... */ board.getSquare(n);
@@ -484,10 +459,10 @@ class Player {
 class Board {
     List<Square> squares;
     Square getSquare(String name) {
-        for (Square s: squares)
-            if (s.getName().equals(name))
-                return s;
-        return null;
+      for (Square s: squares)
+        if (s.getName().equals(name))
+            return s;
+      return null;
     }
 }
 ```
@@ -495,13 +470,13 @@ class Board {
 ## Hints for Identifying Cohesion
 - 개념(concept)당 하나의 색상 사용
 - 해당 concept의 모든 코드를 그 색상으로 강조  
-→ Classes/methods는 적은 수의 색상을 가져야 함
+  → Classes/methods는 적은 수의 색상을 가져야 함
 - "Concept"이 무엇인지 명확한 정의는 없음
 - Concepts는 더 작은 concepts로 분할될 수 있음
   - Graph with search vs.
   - Basic Graph + Search Algorithm vs.
   - Basic Graph + Search Framework + Concrete Search Algorithm, 등
-- 엔지니어링 판단(engineering judgment) 필요
+- 공학적 판단(engineering judgment) 필요
 
 ## Cohesion: Discussion
 - Very Low Cohesion: Class가 매우 다른 기능 영역의 많은 것들을 전적으로 책임짐
@@ -514,12 +489,13 @@ class Board {
   - 세분화된 책임으로 재사용성 지원
 - 경험 법칙 (Rule of thumb): high cohesion을 가진 class는 상대적으로 적은 수의 고도로 연관된 기능의 methods를 가지며, 너무 많은 작업을 수행하지 않음
 
-## Coupling vs Cohesion (Extreme cases)
+## Coupling vs Cohesion (극단적 케이스)
 - 모든 코드가 하나의 class/method에
   - Very low coupling, 그러나 very low cohesion
 - 모든 구문(statement)이 분리됨
   - Very high cohesion, 그러나 very high coupling
-- 좋은 tradeoff를 찾을 것; low representational gap 등 다른 원칙들도 고려
+- 좋은 tradeoff를 찾을 것
+  - low representational gap 등 다른 원칙들도 고려
 
 # Design Heuristic: Information Expert
 
@@ -527,7 +503,7 @@ class Board {
 - Heuristic: 책임을 수행하는 데 필요한 정보를 가진 class에 책임을 할당
   - 일반적으로 공통적인 직관을 따름
 - Domain Model classes 대신 Software classes
-  - Software classes가 아직 존재하지 않는 경우, Domain Model에서 적절한 추상화(abstractions)를 찾음 (-\> correspondence)
+  - Software classes가 아직 존재하지 않는 경우, Domain Model에서 적절한 추상화(abstractions)를 찾음 (→ correspondence)
 - Design process: Domain model에서 도출
   - 핵심 원칙: Low representational gap, low coupling
 
@@ -537,17 +513,12 @@ class Board {
 ## Information Expert: Example 2
 ![alt text](image-39.png)
 - 판매(sale)의 총합(grand total)을 아는 책임은 누구에게 있는가?
-- (다이어그램 71, 72 내용)
-- Design Class Responsibility
-  - Sale: 판매 총액(sale total)을 앎
-  - SalesLineItem: 라인 아이템 소계(line item subtotal)를 앎
-  - ProductSpecification: 제품 가격(product price)을 앎
 
 | Design Class | Responsibility
 | - | -
-| Sale | Knows sale total
-| SalesLineItem | Knows line item subtotal
-| ProductSpecification | Knows product price
+| Sale | 판매 총액(sale total)을 앎
+| SalesLineItem | 라인 아이템 소계(line item subtotal)를 앎
+| ProductSpecification | 제품 가격(product price)을 앎
 
 ## Information Expert → "Do It Myself Strategy"
 - Expert는 보통 software object가 자신이 나타내는 무생물(inanimate) 실제 세계 사물에 대해 일반적으로 수행되는 작업들을 직접 수행하는 설계로 이어짐
@@ -578,11 +549,11 @@ class Board {
 
 ## Creator (GRASP)
 - Problem: 객체 생성 책임 할당
-  - Graph에서 Nodes는 누가 생성?
-  - SalesItem의 instances는 누가 생성?
-  - Simulation에서 Children은 누가 생성?
-  - Bluemarble 게임에서 Tiles는 누가 생성?
-- AI? Player? Main class? Board? Meeple (Dog)?
+  - Graph에서 Nodes는 누가 생성하는가?
+  - `SalesItem`의 instances는 누가 생성하는가?
+  - `Simulation`에서 Children은 누가 생성하는가?
+  - Bluemarble 게임에서 `Tiles`는 누가 생성하는가?
+- AI? Player? Main class? Board? Meeple(Dog)?
 
 ## Creator: Discussion of Design Goals/Principles
 - Low coupling, high cohesion 증진
@@ -590,18 +561,17 @@ class Board {
   - Objects를 직접 생성하면, object 생성을 위해 다른 class에 의존하는 것을 피함
 - Evolvability (design for change) 증진
   - Object 생성이 숨겨져(hidden), 로컬에서 교체 가능
-- Contra (반대): 때때로 objects는 특별한 방식으로 생성되어야 함
+- Contra(반대): 때때로 object는 특별한 방식으로 생성되어야 함
   - 복잡한 초기화
   - 다른 상황에서 다른 classes를 instantiate
-  - 이 경우, cohesion은 생성을 다른 object에 두도록 제안: builder, factory method 같은 design patterns 참고
+  - 이 경우, cohesion은 생성을 다른 object에 두도록 제안
+    - builder, factory method 같은 design patterns 참고
 
 ## Other Design Heuristics
-- (향후 강의):
-  - Mutability 최소화
-  - Conceptual weight 최소화
-  - 상속(Inheritance)보다 composition/delegation 선호
-  - Coupling을 줄이기 위해 indirection 사용
-  - ...
+- Mutability 최소화
+- Conceptual weight 최소화
+- 상속(Inheritance)보다 composition/delegation 선호
+- Coupling을 줄이기 위해 indirection 사용
 
 ## Object-level Artifacts of This Design Process
 - **Object interaction diagrams**는 objects에 methods를 추가
