@@ -135,7 +135,8 @@ th, td {
 }
 
 html[data-theme='dark'] {
-  --vp-c-gutter: #444;
+  --vp-c-gutter: #333;
+  --vp-c-bg: #1e1e1e;
   --vp-c-text: #ddd;
 }
 
@@ -150,6 +151,13 @@ div[class*='language-'].line-numbers-mode:after {
 html[data-theme='light'] div[class*='language-'] span.token {
   filter: invert(1) hue-rotate(180deg);
   display: inline-block;
+}
+
+/* 다크 모드: PNG만 반전 */
+html[data-theme='dark'] img[src$=".png"] {
+  filter: invert(1) hue-rotate(180deg)
+    contrast(0.76)
+    brightness(0.99);
 }
 
 /* ---------------------------------

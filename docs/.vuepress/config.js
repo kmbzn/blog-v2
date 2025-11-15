@@ -28,7 +28,6 @@ export default defineUserConfig({
   ],
   theme: theme({
     logo: '/images/kbz.png',
-    logoDark: '/images/kbz-dark.png',
     colorMode: 'auto',
     sidebar: [
       {
