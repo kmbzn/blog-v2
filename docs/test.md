@@ -49,26 +49,19 @@ print("こんにちは, 世界!")
 
 ### VuePress 스타일 코드 그룹
 
-<CodeGroup>
-  <CodeGroupItem title="Python" active>
-
+:::code-tabs
+@tab Python
 ```python
 def add(x, y):
     return x + y
 ```
-
-  </CodeGroupItem>
-  <CodeGroupItem title="JavaScript">
-
+@tab JavaScript
 ```javascript
 function greet(name) {
   console.log("Hello, " + name);
 }
 ```
-
-  </CodeGroupItem>
-  <CodeGroupItem title="C">
-
+@tab C
 ```c
 #include <stdio.h>
 int main() {
@@ -76,9 +69,7 @@ int main() {
     return 0;
 }
 ```
-
-  </CodeGroupItem>
-</CodeGroup>
+:::
 
 ## 수식 테스트 - Math Test
 

@@ -411,7 +411,7 @@
 <li>위 두 함수 종속성으로부터 <code v-pre>Name</code> <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>→</mo></mrow><annotation encoding="application/x-tex">\rightarrow</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.3669em;"></span><span class="mrel">→</span></span></span></span> <code v-pre>City</code>, <code v-pre>Prefecture</code>가 유</li>
 <li>하지만, 본래의 함수 종속성이었던 <code v-pre>City</code> <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>→</mo></mrow><annotation encoding="application/x-tex">\rightarrow</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.3669em;"></span><span class="mrel">→</span></span></span></span> <code v-pre>Prefecture</code>를 검사하려면 어떻게 해야 할까?
 <ul>
-<li>두 테이블을 <strong>Join</strong> 해야만 확인 가능</li>
+<li>두 테이블을 Join 해야만 확인 가능</li>
 </ul>
 </li>
 <li>결론적으로, 이 분해는 종속성을 보존하지 못함</li>

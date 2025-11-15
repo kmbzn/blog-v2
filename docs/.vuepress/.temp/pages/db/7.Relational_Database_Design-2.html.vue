@@ -251,7 +251,7 @@
 <span class="line">        of the form α1→β1 and α1→β2 with α1→β1β2</span>
 <span class="line">    Find a functional dependency α→β in FC with an extraneous</span>
 <span class="line">        attribute either in α or in β</span>
-<span class="line">        /* Note: test for extraneous attributes done using FC, not F */</span>
+<span class="line">        /- Note: test for extraneous attributes done using FC, not F -/</span>
 <span class="line">    If an extraneous attribute is found, delete it from α→β in FC</span>
 <span class="line">until (FC does not change)</span>
 <span class="line"></span></code></pre>
@@ -422,11 +422,11 @@
 <span class="line">        i := i + 1;</span>
 <span class="line">        Ri := any candidate key for R;</span>
 <span class="line"></span>
-<span class="line">/* Optionally, remove redundant relations */</span>
+<span class="line">/- Optionally, remove redundant relations -/</span>
 <span class="line">repeat</span>
 <span class="line">    if any schema Rj is contained in another schema Rk</span>
 <span class="line">    then</span>
-<span class="line">        /* delete Rj */</span>
+<span class="line">        /- delete Rj -/</span>
 <span class="line">        Rj := Ri;</span>
 <span class="line">        i := i - 1;</span>
 <span class="line">until no more Rjs can be deleted</span>

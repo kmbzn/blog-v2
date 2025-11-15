@@ -132,16 +132,15 @@
 </ul>
 <p><img src="@source/se/image-18.png" alt="alt text"></p>
 <h2 id="visual-notation-uml" tabindex="-1"><a class="header-anchor" href="#visual-notation-uml"><span>Visual Notation: UML</span></a></h2>
-<ul>
-<li>(UML 표기법 예시 이미지)</li>
-</ul>
+<p><img src="@source/se/image-53.png" alt="alt text"></p>
 <h2 id="reading-associations" tabindex="-1"><a class="header-anchor" href="#reading-associations"><span>Reading Associations</span></a></h2>
-<ul>
-<li>(연관 관계(Associations) 읽기 예시 이미지)</li>
-</ul>
+<p><img src="@source/se/image-54.png" alt="alt text"></p>
 <h2 id="attributes-vs-concepts" tabindex="-1"><a class="header-anchor" href="#attributes-vs-concepts"><span>Attributes vs. Concepts</span></a></h2>
+<p><img src="@source/se/image-55.png" alt="alt text"></p>
+<blockquote>
+<p><em>&quot;실제 세계에서 어떤 개념적 class X를 text나 숫자로 생각하지 않는다면, 그것은 attribute가 아니라 concept일 가능성이 높다.&quot;</em></p>
+</blockquote>
 <ul>
-<li>&quot;실제 세계에서 어떤 개념적 class X를 text나 숫자로 생각하지 않는다면, 그것은 attribute가 아니라 concept일 가능성이 높음&quot;</li>
 <li>Type annotations 회피</li>
 </ul>
 <h2 id="modeling-a-problem-domain-1" tabindex="-1"><a class="header-anchor" href="#modeling-a-problem-domain-1"><span>Modeling a Problem Domain</span></a></h2>
@@ -151,18 +150,16 @@
 <li>실제 세계 개념에 집중
 <ul>
 <li>(예: Database 같은 추상적 구현 관심사 아님)</li>
-</ul>
-</li>
 <li>Methods/operations 없음</li>
 <li>관계(relationships)와 다중성(cardinalities) 표시</li>
 </ul>
-<h2 id="identifying-concepts" tabindex="-1"><a class="header-anchor" href="#identifying-concepts"><span>Identifying Concepts</span></a></h2>
-<ul>
-<li>(도서관 시스템 예시 텍스트에서 개념 식별 예시 - 1차)</li>
-<li>A public library ... collection of books, movies, or other library items ... people living in a community. Each library member ... library account ... library card ... account’s ID number ... the library. A member’s library account ... items ... member ... due date ... borrowed item. Each type of item ... default rental period ... item’s due date ... item. If a member ... item ... item’s due date, the member ... late fee ... item, an amount of money ... member’s library account</li>
-<li>(도서관 시스템 예시 텍스트에서 개념 식별 예시 - 2차 정제)</li>
-<li>A public library ... collection of books, movies, or other library items ... Each library member ... library account ... library card ... ID number ... A member’s library account ... items ... member ... due date ... borrowed item. Each type of item ... default rental period ... item’s due date ... item. If a member ... item ... item’s due date, the member ... late fee ... item, an amount of money ... member’s library account</li>
+</li>
 </ul>
+<h2 id="identifying-concepts" tabindex="-1"><a class="header-anchor" href="#identifying-concepts"><span>Identifying Concepts</span></a></h2>
+<blockquote>
+<p>&quot;A public <strong>library</strong> typically stores a collection of <strong>books</strong>, <strong>movies</strong>, or other <strong>library items</strong> available to be borrowed by people living in a community. Each <strong>library member</strong> typically has a <strong>library account</strong> and a <strong>library card</strong> with the account’s <strong>ID number</strong>, which she can use to identify herself to the library.
+A member’s library account records which items the member has borrowed and the <strong>due date</strong> for each <strong>borrowed item</strong>. Each type of item has a <strong>default rental period</strong>, which determines the item’s due date when the item is borrowed. If a member returns an item after the item’s due date, the member owes a <strong>late fee</strong> specific for that item, an amount of money recorded in the member’s library account 20&quot;</p>
+</blockquote>
 <h2 id="hints-for-identifying-concepts" tabindex="-1"><a class="header-anchor" href="#hints-for-identifying-concepts"><span>Hints for Identifying Concepts</span></a></h2>
 <ul>
 <li>요구사항 명세 읽기, 명사 찾기</li>
@@ -178,7 +175,7 @@
 </li>
 <li>일반적인 use scenarios 분석, 동작 분석</li>
 <li>Brainstorming</li>
-<li>먼저 수집; 나중에 조직, 필터링, 수정</li>
+<li>수집 먼저. 조직, 필터링, 수정은 이후에!</li>
 </ul>
 <h2 id="one-domain-model-for-the-library-system" tabindex="-1"><a class="header-anchor" href="#one-domain-model-for-the-library-system"><span>One Domain Model for the Library System</span></a></h2>
 <p><img src="@source/se/image-19.png" alt="alt text"></p>
@@ -219,7 +216,7 @@
 </ul>
 </li>
 </ul>
-<h2 id="hints-for-object-oriented-analysis-1" tabindex="-1"><a class="header-anchor" href="#hints-for-object-oriented-analysis-1"><span>Hints for Object-Oriented Analysis (1)</span></a></h2>
+<h2 id="hints-for-object-oriented-analysis" tabindex="-1"><a class="header-anchor" href="#hints-for-object-oriented-analysis"><span>Hints for Object-Oriented Analysis</span></a></h2>
 <ul>
 <li>Domain model은 어휘 제공
 <ul>
@@ -235,14 +232,11 @@
 </li>
 <li>용어집(Glossary) 추가</li>
 <li>일부는 classes로 구현될 수도, 아닐 수도 있음</li>
-</ul>
-<h2 id="hints-for-object-oriented-analysis-2" tabindex="-1"><a class="header-anchor" href="#hints-for-object-oriented-analysis-2"><span>Hints for Object-Oriented Analysis (2)</span></a></h2>
-<ul>
 <li>많은 선택지가 존재</li>
-<li>Model이 완벽하게 정확하지 않을 것임
+<li>Model이 완벽하게 정확하지 않을 것
 <ul>
-<li>괜찮음</li>
-<li>부분적인 model로 시작, 필요한 것만 모델링</li>
+<li>괜찮음.</li>
+<li>부분적인 model로 시작, 필요한 것만 modeling</li>
 <li>나중에 추가 정보로 확장</li>
 <li>변경 사항 명확히 communicate</li>
 <li>그렇지 않으면 &quot;analysis paralysis(분석 마비)&quot; 위험</li>
@@ -266,7 +260,7 @@
 <h1 id="system-sequence-diagram" tabindex="-1"><a class="header-anchor" href="#system-sequence-diagram"><span>System Sequence Diagram</span></a></h1>
 <h2 id="understanding-system-behavior" tabindex="-1"><a class="header-anchor" href="#understanding-system-behavior"><span>Understanding System Behavior</span></a></h2>
 <ul>
-<li>System sequence diagram: 하나의 use scenario에 대해, system의 경계(boundary)에서 발생하는 이벤트 순서를 보여주는 model</li>
+<li><strong>System sequence diagram</strong>: 하나의 use scenario에 대해, system의 경계(boundary)에서 발생하는 이벤트 순서를 보여주는 model</li>
 <li>설계 목표: System의 interface 식별 및 정의
 <ul>
 <li>System 수준의 구성요소만 (예: 사용자와 전체 system)</li>
@@ -275,8 +269,10 @@
 </ul>
 <h2 id="one-example-for-the-library-system" tabindex="-1"><a class="header-anchor" href="#one-example-for-the-library-system"><span>One Example for the Library System</span></a></h2>
 <ul>
-<li>Use case 시나리오: Library member가 library card로 kiosk 로그인 후 책 대출. 연체료 미납 확인 후, rental period를 더해 반납 기한 결정. 책과 반납 기한을 member의 account에 기록
-<img src="@source/se/image-20.png" alt="alt text"></li>
+<li>
+<p>Use case 시나리오: Library member가 library card로 kiosk 로그인 후 책 대출. 연체료 미납을 확인 후, rental period를 더해 반납 기한 결정. 책과 반납 기한을 member의 account에 기록</p>
+<p><img src="@source/se/image-20.png" alt="alt text"></p>
+</li>
 </ul>
 <h1 id="behavioral-contracts" tabindex="-1"><a class="header-anchor" href="#behavioral-contracts"><span>Behavioral Contracts</span></a></h1>
 <h2 id="formalize-system-at-boundary" tabindex="-1"><a class="header-anchor" href="#formalize-system-at-boundary"><span>Formalize System at Boundary</span></a></h2>

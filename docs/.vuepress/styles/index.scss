@@ -33,6 +33,12 @@ p, li, table {
 
 pre, code, div[class*='language-'] {
   font-family: 'goorm-sans-code', consolas, monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  border: none;
+}
+
+pre {
+  border: 1px solid;
+  border-color: #555;
 }
 
 /* ---------------------------------
@@ -67,6 +73,15 @@ pre, code, div[class*='language-'] {
 
 :root {
   --navbar-height: 3rem;
+  --code-c-line-number: #888;
+  --copy-code-c-hover: transparent;
+  --code-c-text: --vp-c-text;
+}
+
+.vp-copy-code-button {
+  background: var(--vp-c-bg) !important;
+  border: 1px solid;
+  border-color: #555;
 }
 
 img {
@@ -89,7 +104,7 @@ a.header-anchor::before {
 }
 
 th, td {
-    padding: .3em .5em;
+  padding: .3em .5em;
 }
 
 /* ---------------------------------
@@ -111,12 +126,12 @@ th, td {
    Color Variables
 --------------------------------- */
 
+
 :root {
   --vp-c-gutter: #aaa;
-  --vp-c-text: #333;
   --vp-c-accent: #fc6525;
   --vp-c-accent-bg: #fc6525;
-  --code-c-bg: #223;
+  --code-c-bg: transparent;
 }
 
 html[data-theme='dark'] {
@@ -126,6 +141,15 @@ html[data-theme='dark'] {
 
 table {
   --vp-c-bg-alt: transparent;
+}
+
+div[class*='language-'].line-numbers-mode:after {
+  border: none;
+}
+
+html[data-theme='light'] div[class*='language-'] span.token {
+  filter: invert(1) hue-rotate(180deg);
+  display: inline-block;
 }
 
 /* ---------------------------------
@@ -179,6 +203,7 @@ table {
 
   :root {
     --navbar-height: 0;
+    --vp-c-text: #000;
   }
 
   .vp-navbar,
@@ -200,18 +225,5 @@ table {
 
   [vp-content] h1, [vp-content] h2 {
       margin-top: 1.5rem;
-  }
-
-  div[class*='language-'] pre code {
-    color: #333;
-  }
-
-  div[class*='language-'].line-numbers-mode pre {
-    display: block;
-    border-color: var(--vp-c-accent);
-  }
-
-  div[class*='language-'].line-numbers-mode:after {
-    border: none;
   }
 }
