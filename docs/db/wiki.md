@@ -56,10 +56,86 @@
 2. Split: 32개 이상의 레코드 삽입 시 Leaf Page가 분할되고, 새로운 Root가 생성되어 트리의 높이가 증가함을 확인하였다.
 3. Delete (Merge): 대량 삭제 수행 시 Page Merge가 발생하고, Root가 다시 Leaf로 내려오거나 변경되는 과정을 확인하였다.
 
+```sh
+kmbzn@p31:~/workspace/Assignment3_2021024057/bptree1$ rm -f *.db
+kmbzn@p31:~/workspace/Assignment3_2021024057/bptree1$ ./main
+i 1 A
+i 2 B
+i 3 C
+i 4 D
+i 5 E
+i 6 F
+i 7 G
+i 8 H
+i 9 I
+i 10 J
+i 11 K
+i 12 L
+i 13 M
+i 14 N
+i 15 O
+i 16 P
+i 17 Q
+i 18 R
+i 19 S
+i 20 T
+i 21 U
+i 22 V
+i 23 W
+i 24 X
+i 25 Y
+i 26 Z
+i 27 AA
+i 28 BB
+i 29 CC
+i 30 DD
+i 31 EE
+i 32 FF
+f 1
+Key: 1, Value: A
+f 32
+Key: 32, Value: FF
+d 1
+d 2
+d 3
+d 4
+d 5
+d 6
+d 7
+d 8
+d 9
+d 10
+d 11
+d 12
+d 13
+d 14
+d 15
+d 16
+d 17
+f 17
+Not Exists
+f 18
+Key: 18, Value: R
+q
+```
+
 ### 3.3. `bptree2` Execution (Logical Deletion)
 1. Logical Delete: `d 100` 수행 후 `f 100` 시 "Not Exists" 출력 확인하였다. 하지만 물리적 file 크기는 줄어들지 않는다.
 2. Revival: 삭제된 Key 100에 대해 `i 100 world` 수행 시, 새로운 공간을 할당하지 않고 기존 슬롯을 재활용하여 값이 갱신됨을 확인하였다.
 3. Reorganization: `q`를 눌러 종료 시 `db_reorganize`가 호출되어, 삭제된 데이터가 정리된 상태로 DB 파일이 갱신됨을 확인하였다.
+
+```sh
+kmbzn@p31:~/workspace/Assignment3_2021024057/bptree2$ rm -f *.db
+kmbzn@p31:~/workspace/Assignment3_2021024057/bptree2$ ./main
+i 100 hello
+d 100
+f 100
+Not Exists
+i 100 world
+f 100
+Key: 100, Value: world
+q
+```
 
 ## 4. TroubleShooting
 
@@ -70,7 +146,7 @@
 
 ### 4.2. `db_reorganize` Trace Trap Error
 - 문제: `bptree2`에서 재구성(Reorganize) 실행 시 프로그램이 비정상 종료(`Trace Trap`)되었다.
-- 원인: `open_table` 함수 내부에서 전역 변수 `DB_PATH`를 `memset`으로 초기화하는데 `db_reorganize`에서 `open_table(DB_PATH)` 형태로 자기 자신을 인자로 넘기면서 포인터 참조 오류가 발생하였다.
+- 원인: `open_table` 함수 내부에서 전역 변수 `DB_PATH`를 `memset`으로 초기화하는데 `db_reorganize`에서 `open_table(DB_PATH)` 형태로 자기 자신을 argument로 넘기면서 포인터 참조 오류가 발생하였다.
 - 해결: `db_reorganize` 함수 초입에서 `DB_PATH`를 로컬 변수 `original_path`에 `strncpy`로 복사해둔 뒤 이 복사본을 사용하여 `open_table`을 호출하도록 수정하였다.
 
 ## 5. Consideration on `db_reorganize`
