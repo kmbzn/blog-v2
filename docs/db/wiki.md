@@ -1,74 +1,172 @@
-# Assignment2-2. 도서 관리 시스템 구현 - wiki
+# Assignment 3. Implementing Augmented B+tree - wiki
 
-### 데이터베이스시스템응용: 2021024057 김병준
+2021024057 김병준
 
-본 wiki는 도서 관리 시스템 애플리케이션(application)의 주요 기능 구현 사항과, 개발 과정에서 발생한 주요 troubleshooting(troubleshooting) 과정을 포함합니다.
+## 1. Design
 
-## 1. 인증 (Authentication)
-- Controller: `controllers/authController.js`
+### 1.1. Overall Architecture
+해당 과제에서는 Disk-based B+tree를 구현하였다. 모든 노드는 4KB 크기의 page 단위로 디스크에 저장되며, `Header Page`, `Free Page`, `Internal Page`, `Leaf Page`의 네 가지 타입을 가진다.
 
-### 1.1. 핵심 기능
-- 회원가입 (`postRegister`)
-    - `username` (ID), `password`, `name` (실명), `role` (user/admin), `admin_code`를 사용자로부터 입력받습니다.
-    - `role`이 'admin'일 경우 `admin_code` (`2021024057`) 일치 여부를 검증합니다.
-- 비밀번호 암호화:
-    - 개발의 편의를 위해 `salt` (솔트) 없이 `sha512` 알고리즘(algorithm)을 사용하는 단방향 해시(hash) 방식을 채택했습니다. (Node.js 내장 `crypto` 모듈(module) 사용)
-    - DB의 `password` column(column)은 이에 따라 `VARCHAR(128)`로 구성하였습니다.
-- 로그인 (`postLogin`)
-    - `username`과 `password`를 받습니다.
-    - 입력된 `password`를 `sha512`로 즉시 hashing하여 DB에 저장된 해시값과 비교합니다.
-    - 성공 시 `session`에 `userId` (username 값), `username` (name 값), `role`을 저장합니다.
-- 로그아웃 (`logoutAndGetHomePage`)
-    - `req.session.destroy()`를 호출하여 세션을 종료합니다.
+- In-Memory Logic vs On-Disk Structure:
+    메모리 상의 포인터 대신 파일 내의 `offset`을 사용하여 페이지 간의 연결(Link)을 구현하였다. `open_table` 호출 시 `fd`(File Descriptor)를 전역으로 관리하며, `pread`/`pwrite` system call을 사용하여 페이지 단위의 I/O를 수행한다.
 
-### 1.2. 주요 troubleshooting: login의 실패 및 debugging
-- 문제 1: `user_id`와 `pw01` (초기 테스트 암호)을 정확히 입력해도 로그인 세션으로 넘어가지 않았습니다.
-- 과정 1: `postLogin` 함수에 `console.log`를 추가하여 입력값(`req.body`)과 DB 조회 과정을 추적했습니다.
-- 원인 1: 로그(log) 확인 결과, `req.body`에 `user_id`가 아닌 `username`이 들어오고 있었습니다. (`[Debug] 입력된 Body: { username: 'kmbzn', ... }`)
-- 해결 1: 로그인 폼(form) (`login.ejs`)의 `<input>` 태그 `name` 속성(attribute)이 `username`으로 되어있는 것을 확인하고, 서버 로직(`postLogin`)이 `user_id` 대신 `username`을 받도록 수정했습니다.
-- 문제 2: `Column 'user_type' cannot be null` 오류가 회원가입 시 발생했습니다.
-- 원인 2: `postRegister` 컨트롤러(controller)는 `req.body.user_type`을 기대했지만, 폼 (`register.ejs`)의 `<select>` 태그에 `name="user_type"` 속성이 누락되어 서버로 값이 전송되지 않았습니다.
-- 해결 2: `register.ejs` 파일의 User Role 드롭다운(dropdown) `<select>` 태그에 `name="user_type"`을 추가하여 문제를 해결했습니다.
+### 1.2. Data Structures
+- Page Structure: `4096 Bytes` 고정 크기. Header(`128B`)와 Body(Record/Internal Entry)로 구성된다.
+- Leaf Page: Key와 `120B` 크기의 Value를 저장하는 `record` 배열을 가진다. Order(Branching Factor)는 32이다.
+- Internal Page: Key와 자식 페이지의 Offset을 저장하는 `inter_record` 배열을 가진다. Order는 249이다.
+- Bitmap for Logical Deletion (`bptree2`):
+    `bptree2`에서는 물리적 삭제 대신 논리적 삭제를 지원하기 위해, `page` 구조체의 `reserved[104]` 영역을 Bitmap으로 활용하였다. `reserved[i] == 1`인 경우 해당 인덱스의 레코드는 삭제된 것으로 간주한다.
 
-## 2. DB schema 변경
+## 2. Implement
 
-개발 초기, 프로그램의 요구사항과 실제 DB 스키마(schema)의 attribute 이름이 불일치하여 다수의 오류가 발생했습니다. 이를 해결하기 위해 DB 스키마를 변경했습니다.
-- 1. `USER` 테이블의 `user_id` -> `username` 변경 (가장 큰 변경점)
-    - 문제: 프로그램은 로그인 ID로 `username`을 사용하려 했으나, DB의 PK는 `user_id`였습니다.
-    - 과정: `ALTER TABLE USER CHANGE COLUMN user_id username ...` 시도 시 `ERROR 1068 (Multiple primary key defined)` (PK 중복) 및 `ERROR 1553 (Cannot drop index 'PRIMARY')` (외래 키 참조) 오류가 발생했습니다.
-    - 원인: `USER` 테이블의 `user_id` (PK)를 `RENTAL`과 `RESERVATION` 테이블이 `FOREIGN KEY` (외래 키)로 참조하고 있었습니다.
-    - 해결: 11단계 SQL 쿼리(query)를 통해 `FOREIGN_KEY_CHECKS=0`으로 설정하고, `RENTAL`과 `RESERVATION`의 외래 키를 `DROP`한 뒤, `USER`의 PK를 `DROP`하고, 3개 테이블(`USER`, `RENTAL`, `RESERVATION`)의 column명을 `RENAME COLUMN`으로 변경한 후, PK와 외래 키를 다시 설정하여 스키마를 일치시켰습니다. (`postLogin`, `postRegister` 등 모든 관련 코드도 `username`을 사용하도록 수정했습니다.)
-- 2. `USER` 테이블의 `user_type` -> `role` 변경:
-    - `ALTER TABLE USER RENAME COLUMN user_type TO role;` 쿼리를 실행하여 `role`로 명칭을 통일했습니다. (관련 컨트롤러 코드 수정 완료)
-- 3. `USER` 테이블의 `email` 삭제 및 `student_id` 자동화:
-    - 초기 설계 과정에선 사용자 이메일에 대한 저장도 필요할 것으로 판단하여 해당 column을 포함시켰습니다.
-    - `ALTER TABLE USER DROP COLUMN email;`로 `email` column을 삭제했습니다.
-    - `student_id`를 `BIGINT NOT NULL AUTO_INCREMENT UNIQUE KEY`로 변경하고, `AUTO_INCREMENT` 시작값을 `2025000001`로 설정했습니다.
-    - `postRegister` 함수에서 `student_id` 관련 로직을 모두 제거하여 DB가 학번을 자동 부여하도록 수정했습니다. (개발 편의를 위해서)
+### 2.1. Normal B+ tree (`bptree1`)
+기본적인 B+ tree의 삽입, 삭제, 탐색 연산을 구현하였다.
 
-## 3. 도서 관리 (Book Management)
-- Controller: `controllers/bookController.js`
+- Insertion & Splitting:
+    Leaf Page가 가득 찬 상태(`LEAF_MAX = 31`)에서 삽입 시 `insert_into_leaf_after_splitting`이 호출된다. 임시 배열을 생성하여 기존 레코드와 새 레코드를 정렬한 후, 중간 지점(`cut`)을 기준으로 두 개의 페이지로 분할한다. 이후 새 페이지의 첫 번째 Key를 부모로 올리는(`insert_into_parent`) 재귀적 logic을 구현하였다.
 
-### 3.1. 핵심 기능
-- 도서 목록 (`getBooksPage`) 도서 정보와 현재 대출 가능 재고(`available_quantity`) 등을 `JOIN`하여 조회하며, 검색 및 정렬 기능을 지원합니다.
-- 도서 대출 (`postBorrowBook`) 사용자의 연체 여부, 대출 권수(최대 3권), 도서 재고, 중복 대출 여부(동일 `book_id` 불가)를 검증한 후 `RENTAL` 테이블에 추가하고 `BOOK_COPY` 상태를 'on\_loan'으로 변경합니다.
-    - (이전 수정) 중복 대출 검증 로직을 `count > 1` (3권부터 불가)에서 `count >= 2` (2권 보유 시 3권째 불가)로 수정한 바 있습니다.
-- 도서 반납 (`postReturnBook`) `RENTAL`의 `return_date`를 기록하고 `BOOK_COPY` 상태를 'available'로 변경합니다. 연체 반납 시 사용자의 다른 연체 내역이 없다면 `USER`의 `overdue_status`를 `FALSE`로 업데이트합니다.
-- 도서 예약 (`postReserveBook`) `getBookInstances`로 조회 시 대출 가능 재고가 0일 경우 예약을 받습니다. 사용자의 연체 상태, 현재 대출 여부, 중복 예약 여부를 검증한 후 `RESERVATION` 테이블에 추가합니다.
+- Deletion & Merging/Redistribution:
+    `db_delete`는 레코드를 물리적으로 제거(`memmove`)한다. 삭제 후 Key의 개수가 최소 조건 미만(Underflow)이 되면 `get_neighbor_index`를 통해 형제 노드를 탐색한다.
+    - Redistribution: 형제 노드에 여유가 있다면 Key를 하나 빌려와 균형을 맞춘다.
+    - Coalesce (Merge): 형제 노드도 여유가 없다면 두 노드를 병합하고, 부모 노드에서 해당 포인터를 제거(`delete_entry`)하는 과정을 재귀적으로 수행한다.
 
-### 3.2. 주요 troubleshooting: 도서 추가 실패
-- 문제 1: `Error: Column 'author' cannot be null` 오류가 발생했습니다.
-- 원인 1: `add-book.ejs` 폼의 `<select>` 태그 `name` 속성이 `authors` (복수형)로 되어있었으나, `postAddBook` 컨트롤러는 `req.body.author` (단수형)를 참조하고 있었습니다.
-- 해결 1: `add-book.ejs`의 `name="authors"`를 `name="author"`로 수정하여 변수명을 일치시켰습니다.
-- 문제 2: `Error: Incorrect integer value: 'id:5' for column 'category_id'` 오류가 발생했습니다.
-- 원인 2: `Choices.js` 라이브러리(library)가 기존 항목 선택 시 `'id:5'` (문자열)를, 새 항목 입력 시 `'New Category'` (문자열)를 `value`로 전송했습니다. `postAddBook` 함수는 이 문자열을 파싱(parsing)하지 않고 `INT` 타입의 `category_id` column에 `INSERT`하려 했습니다.
-- 해결 2: `postAddBook` 함수 내부에 `getOrCreateAuthorId`와 `getOrCreateCategoryId` 헬퍼 함수를 구현했습니다. 이 함수들은 `value`가 `'id:'`로 시작하면 숫자를 파싱하고, 일반 문자열이면 DB에서 검색하거나 새로 `INSERT`하여 유효한 `ID` 값을 반환하도록 로직을 수정하여 해결했습니다.
+### 2.2. Logical Deletion Applied B+ tree (`bptree2`)
+`bptree1`의 code를 기반으로 하되, 삭제 정책과 구조를 변경하였다.
 
-## 4. 사용자 및 카테고리 (admin)
-- Controllers: `controllers/userController.js`, `controllers/categoryController.js`
-- 사용자 관리 (`getUsersPage`) `USER` 테이블을 조회하며, `username`, `name`, `role` 기준의 동적 검색 기능을 구현했습니다.
-- 카테고리 관리 (`postDeleteCategory`) 카테고리 삭제 시, `BOOK_CATEGORY` 테이블에서 해당 `category_id`를 참조하는 레코드를 먼저 `DELETE`하여 외래 키 제약 조건 오류를 방지한 후, `CATEGORY`에서 원본을 삭제합니다. (트랜잭션 처리)
+- Logical Deletion (`db_delete`)
+    - 물리적인 데이터 이동이나 병합(Merge) 과정을 제거하였다.
+    - 대신 해당 레코드의 인덱스 `i`에 대해 `page->reserved[i] = 1`로 마킹하고 페이지를 디스크에 저장한다.
+    - 이로 인해 삭제 연산의 비용이 $O(\log N) + O(1)$로 크게 감소하였다.
 
-## 5. [Demo] YouTube 영상 link 첨부
+- Revival on Insertion (`db_insert`)
+    - 이미 존재하는 Key에 대한 삽입 요청이 들어왔을 때, 해당 Key가 논리적으로 삭제된 상태(`reserved == 1`)라면 새로운 레코드를 추가하는 대신 기존 위치의 Value를 갱신하고 `reserved = 0`으로 변경하여 데이터를 '부활'시킨다.
 
-[https://youtu.be/rEnQjFZ19rk?si=n0fbnothZE7vTcBF](https://youtu.be/rEnQjFZ19rk?si=n0fbnothZE7vTcBF)
+- Visibility Check (`db_find`)
+    - 탐색 시 Key가 존재하더라도 `reserved == 1`이라면 `NULL`을 반환하여 사용자에게는 삭제된 것처럼 보이도록 구현하였다.
+
+## 3. Result
+
+### 3.1. Test Environment
+- OS: Ubuntu 24.04 LTS
+- Compiler: gcc
+- Tools: Make
+
+### 3.2. `bptree1` Execution
+1. Insert & Find: Key `100`, `50`, `150`을 순서대로 삽입 후 조회 시 정렬되어 출력됨을 확인하였다.
+2. Split: 32개 이상의 레코드 삽입 시 Leaf Page가 분할되고, 새로운 Root가 생성되어 트리의 높이가 증가함을 확인하였다.
+3. Delete (Merge): 대량 삭제 수행 시 Page Merge가 발생하고, Root가 다시 Leaf로 내려오거나 변경되는 과정을 확인하였다.
+
+```sh
+kmbzn@p31:~/workspace/Assignment3_2021024057/bptree1$ rm -f *.db
+kmbzn@p31:~/workspace/Assignment3_2021024057/bptree1$ ./main
+i 1 A
+i 2 B
+i 3 C
+i 4 D
+i 5 E
+i 6 F
+i 7 G
+i 8 H
+i 9 I
+i 10 J
+i 11 K
+i 12 L
+i 13 M
+i 14 N
+i 15 O
+i 16 P
+i 17 Q
+i 18 R
+i 19 S
+i 20 T
+i 21 U
+i 22 V
+i 23 W
+i 24 X
+i 25 Y
+i 26 Z
+i 27 AA
+i 28 BB
+i 29 CC
+i 30 DD
+i 31 EE
+i 32 FF
+f 1
+Key: 1, Value: A
+f 32
+Key: 32, Value: FF
+d 1
+d 2
+d 3
+d 4
+d 5
+d 6
+d 7
+d 8
+d 9
+d 10
+d 11
+d 12
+d 13
+d 14
+d 15
+d 16
+d 17
+f 17
+Not Exists
+f 18
+Key: 18, Value: R
+q
+```
+
+### 3.3. `bptree2` Execution (Logical Deletion)
+1. Logical Delete: `d 100` 수행 후 `f 100` 시 "Not Exists" 출력 확인하였다. 하지만 물리적 file 크기는 줄어들지 않는다.
+2. Revival: 삭제된 Key 100에 대해 `i 100 world` 수행 시, 새로운 공간을 할당하지 않고 기존 슬롯을 재활용하여 값이 갱신됨을 확인하였다.
+3. Reorganization: `q`를 눌러 종료 시 `db_reorganize`가 호출되어, 삭제된 데이터가 정리된 상태로 DB 파일이 갱신됨을 확인하였다.
+
+```sh
+kmbzn@p31:~/workspace/Assignment3_2021024057/bptree2$ rm -f *.db
+kmbzn@p31:~/workspace/Assignment3_2021024057/bptree2$ ./main
+i 100 hello
+d 100
+f 100
+Not Exists
+i 100 world
+f 100
+Key: 100, Value: world
+q
+```
+
+## 4. TroubleShooting
+
+### 4.1. `get_neighbor_index` Segmentation Fault
+- 문제: `bptree1`의 삭제 연산 중, Internal Page가 병합되어 빈 페이지(`num_of_keys == 0`)가 된 상태에서 부모를 탐색할 때 `parent->b_f[0]`에 접근하여 Segmentation Fault가 발생하였다.
+- 원인: `num_of_keys`가 0인 경우 `b_f` 배열이 유효하지 않음에도 접근을 시도하였다.
+- 해결: `parent->num_of_keys > 0` 조건을 추가하여, 키가 있을 때만 `b_f[0]`를 확인하도록 로직을 수정하여 해결하였다.
+
+### 4.2. `db_reorganize` Trace Trap Error
+- 문제: `bptree2`에서 재구성(Reorganize) 실행 시 프로그램이 비정상 종료(`Trace Trap`)되었다.
+- 원인: `open_table` 함수 내부에서 전역 변수 `DB_PATH`를 `memset`으로 초기화하는데 `db_reorganize`에서 `open_table(DB_PATH)` 형태로 자기 자신을 argument로 넘기면서 포인터 참조 오류가 발생하였다.
+- 해결: `db_reorganize` 함수 초입에서 `DB_PATH`를 로컬 변수 `original_path`에 `strncpy`로 복사해둔 뒤 이 복사본을 사용하여 `open_table`을 호출하도록 수정하였다.
+
+## 5. Consideration on `db_reorganize`
+
+### 5.1. 구현 목표
+`db_reorganize`는 논리적으로 삭제된 레코드(Fragmentation)를 제거하고, B+ tree를 물리적으로 재구성하여 검색 성능과 공간 효율성을 최적화하는 것을 목표로 한다.
+
+### 5.2. 채택한 알고리즘
+기존 파일 내에서 빈 공간을 찾아 데이터를 이동시키는 방식(In-place compaction) 대신, 새로운 DB 파일을 생성하여 유효한 데이터만 migrate시키는 방식을 사용하기로 결정하였다.
+
+1. Rename: 현재 사용 중인 DB 파일을 `backup.db`로 이름을 변경한다.
+2. Create New: 원래 이름으로 새로운 빈 DB 파일을 생성한다 (`open_table`).
+3. Migrate:
+    - `backup.db`를 Read-only로 열고, Root부터 시작하여 모든 Leaf Page를 순회한다.
+    - Leaf Page 내에서 `reserved == 0`인(삭제되지 않은) 유효한 레코드만 추출한다.
+    - 추출된 레코드를 새 DB에 `db_insert` 한다.
+4. Cleanup: 작업 완료 후 `backup.db`를 삭제(`unlink`)한다.
+
+### 5.3. 성능상의 이점
+- 이 방식이 갖는 장점들
+    - Sequential I/O: 기존 트리를 순차적으로 읽고(Sequential Read), 새 트리에 순차적으로 씀(Append-only Write)으로써 디스크 헤드 이동을 최소화할 수 있다.
+    - Fragmentation 제거: 새로 생성된 트리는 중간에 빈 공간 없이 꽉 채워지므로(Compacted), 디스크 공간 낭비가 0에 수렴한다고 볼 수 있다.
+    - 안전성: 작업 도중 실패하더라도 원본(`backup.db`)이 보존된 상태이므로 복구가 용이하다.
