@@ -504,8 +504,11 @@ Until relation의 끝까지 총 run의 수를 <span v-pre class="katex"><span cl
 <ol>
 <li>(이미 정렬되지 않았다면) 두 relation을 join attribute 기준으로 정렬</li>
 <li>정렬된 relation을 병합하여 join
-2-1 Join 단계는 sort-merge algorithm의 merge 단계와 유사
-2-2 주요 차이점은 join attribute의 중복 값 처리: join attribute에서 동일한 값을 가진 모든 pair가 일치해야 함</li>
+<ul>
+<li>2-1. Join 단계는 sort-merge algorithm의 merge 단계와 유사</li>
+<li>2-2. 주요 차이점은 join attribute의 중복 값 처리: join attribute에서 동일한 값을 가진 모든 pair가 일치해야 함</li>
+</ul>
+</li>
 </ol>
 <ul>
 <li>Join 단계: 실제 merge-join algorithm
