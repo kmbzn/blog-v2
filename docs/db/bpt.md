@@ -1,4 +1,4 @@
-```
+```c
 // bptree1/src/bpt.c
 
 #include "bpt.h"
