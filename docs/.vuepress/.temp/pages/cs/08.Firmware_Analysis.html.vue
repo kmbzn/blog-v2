@@ -14,7 +14,7 @@
 <li>Insecure Ecosystem Interfaces</li>
 </ol>
 <ul>
-<li>Insecure web, backend API, cloud, …</li>
+<li>Insecure web, backend API, cloud, ...</li>
 </ul>
 <ol start="4">
 <li>Lack of Secure Update Mechanism</li>
@@ -24,7 +24,7 @@
 <li>Lack of Device Management</li>
 </ol>
 <ul>
-<li>Asset management, system monitoring, response, …</li>
+<li>Asset management, system monitoring, response, ...</li>
 </ul>
 <ol start="9">
 <li>Insecure Default Settings</li>
