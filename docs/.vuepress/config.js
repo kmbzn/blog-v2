@@ -70,6 +70,8 @@ export default defineUserConfig({
           '/cs/06.DB_Security',
           '/cs/07.Malware',
           '/cs/08.Firmware_Analysis',
+          '/cs/09.Buffer_Overflow',
+          '/cs/10.String_Security',
         ]
       },
       {
