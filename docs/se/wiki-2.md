@@ -1,4 +1,4 @@
-## $\text{Homework \#1-2}$
+# $\text{Homework \#1-2}$
 - Software Engineering (10780)
 - 학번: 2021024057
 - 이름: 김병준
@@ -9,9 +9,9 @@
 
 | # | 요구사항 | Design Pattern | Design Principle |
 | - | - | - | - |
-| **P1** | `java.io.Writer/Reader`에 암호화/복호화 기능 추가 | Decorator Pattern | Open-Closed Principle (OCP) |
-| **P2** | 다양한 암호화 알고리즘 지원 기능 추가 | Strategy Pattern | Single Responsibility Principle (SRP) |
-| **P3** | Directory 구조에서 keyword 검색 기능 구현 | Visitor Pattern | OCP 및 Dependency Inversion Principle (DIP) |
+| **P1** | `java.io.Writer/Reader`에 암호화/복호화 기능 추가 | Decorator Pattern | OCP |
+| **P2** | 다양한 암호화 알고리즘 지원 기능 추가 | Strategy Pattern | SRP |
+| **P3** | Directory 구조에서 keyword 검색 기능 구현 | Visitor Pattern | OCP and DIP |
 
 ## 2. Design Pattern Implementation and Argument
 
