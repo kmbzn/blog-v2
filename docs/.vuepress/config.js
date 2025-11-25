@@ -56,6 +56,7 @@ export default defineUserConfig({
           '/ai/14-Other-Classic-ML-Models',
           '/ai/15-Deep-Learning-1',
           '/ai/16-Deep-Learning-2',
+          '/ai/17-Deep-Learning-3',
         ]
       },
       {
