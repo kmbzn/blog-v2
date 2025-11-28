@@ -1,5 +1,5 @@
-<template><div><h1 id="heading-level-1" tabindex="-1"><a class="header-anchor" href="#heading-level-1"><span>Heading Level 1</span></a></h1>
-<h2 id="heading-level-2-한국어-제목" tabindex="-1"><a class="header-anchor" href="#heading-level-2-한국어-제목"><span>Heading Level 2 - 한국어 제목</span></a></h2>
+<template><div><h2 id="heading-level-2-한국어-제목" tabindex="-1"><a class="header-anchor" href="#heading-level-2-한국어-제목"><span>Heading Level 2 - 한국어 제목</span></a></h2>
+<h1 id="heading-level-1" tabindex="-1"><a class="header-anchor" href="#heading-level-1"><span>Heading Level 1</span></a></h1>
 <h3 id="heading-level-3-영어와-日本語-조합" tabindex="-1"><a class="header-anchor" href="#heading-level-3-영어와-日本語-조합"><span>Heading Level 3 - 영어와 日本語 조합</span></a></h3>
 <h4 id="heading-level-4-中文-포함标题" tabindex="-1"><a class="header-anchor" href="#heading-level-4-中文-포함标题"><span>Heading Level 4 - 中文 포함标题</span></a></h4>
 <h5 id="heading-level-5-混合語" tabindex="-1"><a class="header-anchor" href="#heading-level-5-混合語"><span>Heading Level 5 - 混合語</span></a></h5>
@@ -14,7 +14,7 @@
 </blockquote>
 </blockquote>
 </blockquote>
-<p>이 문장에는 <strong>굵은 텍스트</strong>, <em>イタリック</em>, 그리고 <em><strong>bold &amp; italic 結合</strong></em>을 포함하고 있습니다.<br>
+<p>이 문장에는 <strong>굵은 텍스트</strong>, <em>イタリック</em>, 그리고 <em><strong>bold &amp; italic 結合</strong></em>을 포함하고 있습니다.
 또한 <code v-pre>inline code</code> 테스트 및 수식 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi><mo>=</mo><mi>m</mi><msup><mi>c</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">E = mc^2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.05764em;">E</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord mathnormal">m</span><span class="mord"><span class="mord mathnormal">c</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span>도 함께 포함되어 있습니다。</p>
 <h2 id="목록-테스트-list-test" tabindex="-1"><a class="header-anchor" href="#목록-테스트-list-test"><span>목록 테스트 - List Test</span></a></h2>
 <ul>
@@ -61,7 +61,7 @@
 <tr>
 <td>李小龙</td>
 <td>28세</td>
-<td>무직（無職）</td>
+<td>무직（無職)</td>
 </tr>
 </tbody>
 </table>
@@ -118,7 +118,7 @@ f(x) &amp;= ax^2 + bx + c \\\\
 <p v-pre class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi mathvariant="bold">F</mi><mo>=</mo><mi>G</mi><mfrac><mrow><msub><mi>m</mi><mn>1</mn></msub><msub><mi>m</mi><mn>2</mn></msub></mrow><msup><mi>r</mi><mn>2</mn></msup></mfrac></mrow><annotation encoding="application/x-tex">\mathbf{F} = G \frac{m_1 m_2}{r^2}
 </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6861em;"></span><span class="mord mathbf">F</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1.7936em;vertical-align:-0.686em;"></span><span class="mord mathnormal">G</span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.1076em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7401em;"><span style="top:-2.989em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathnormal">m</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord"><span class="mord mathnormal">m</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span></p>
 <h2 id="링크-및-이미지-links-images" tabindex="-1"><a class="header-anchor" href="#링크-및-이미지-links-images"><span>링크 및 이미지 - Links &amp; Images</span></a></h2>
-<p><a href="https://www.openai.com" target="_blank" rel="noopener noreferrer">OpenAI 공식 사이트</a><br>
+<p><a href="https://www.openai.com" target="_blank" rel="noopener noreferrer">OpenAI 공식 사이트</a>
 <a href="https://www.baidu.com" target="_blank" rel="noopener noreferrer">百度</a></p>
 <p><img src="https://media.istockphoto.com/id/520700958/ko/사진/아름다운-꽃-배경기술.jpg?s=612x612&amp;w=0&amp;k=20&amp;c=gJx5-O9U1qXKZqKwv4KunrBae7RDNRcdse1nOdSk_0w=" alt="샘플 이미지"></p>
 <h2 id="vuepress-info-tip-블록-테스트" tabindex="-1"><a class="header-anchor" href="#vuepress-info-tip-블록-테스트"><span>VuePress info, tip 블록 테스트</span></a></h2>
@@ -136,15 +136,9 @@ f(x) &amp;= ax^2 + bx + c \\\\
 </div>
 <h2 id="youtube-링크-테스트" tabindex="-1"><a class="header-anchor" href="#youtube-링크-테스트"><span>YouTube 링크 테스트</span></a></h2>
 <ul>
-<li>
-<p>일반 링크: <a href="https://youtu.be/xRU1XXHIpIc?si=tbkDGhA8dCkODn1l" target="_blank" rel="noopener noreferrer">YouTube에서 보기</a></p>
-</li>
-<li>
-<p>직접 주소: https://www.youtube.com/watch?v=xRU1XXHIpIc</p>
-</li>
-<li>
-<p>iframe 형식 (HTML 지원 환경에서만 작동):</p>
-</li>
+<li>일반 링크: <a href="https://youtu.be/xRU1XXHIpIc?si=tbkDGhA8dCkODn1l" target="_blank" rel="noopener noreferrer">YouTube에서 보기</a></li>
+<li>직접 주소: https://www.youtube.com/watch?v=xRU1XXHIpIc</li>
+<li>iframe 형식 (HTML 지원 환경에서만 작동):</li>
 </ul>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/xRU1XXHIpIc" frameborder="0" allowfullscreen></iframe>
 <hr>

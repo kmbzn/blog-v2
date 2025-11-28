@@ -339,35 +339,35 @@
 <li>세그먼트 번호 s를 더해 해당 세그먼트 항목 주소 b + s로 접근</li>
 <li>세그먼트 테이블에서:
 <ul>
-<li>페이지 사상표(page table)의 시작 주소 s′를 얻음</li>
+<li>페이지 사상표(page table)의 시작 주소 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi><mo mathvariant="normal">′</mo></mrow><annotation encoding="application/x-tex">s\prime</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5556em;"></span><span class="mord mathnormal">s</span><span class="mord">′</span></span></span></span>를 얻음</li>
 </ul>
 </li>
 <li>(s, p) 쌍이 TLB(연관 저장 장치)에 있는지 먼저 확인
 <ul>
-<li>있으면 TLB에 저장된 p′ 값으로 바로 매핑</li>
+<li>있으면 TLB에 저장된 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo mathvariant="normal">′</mo></mrow><annotation encoding="application/x-tex">p\prime</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.75em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">p</span><span class="mord">′</span></span></span></span> 값으로 바로 매핑</li>
 <li>없으면:
 <ul>
-<li>페이지 사상표에서 p를 인덱스로 사용하여 페이지 프레임 번호 p′를 조회</li>
+<li>페이지 사상표에서 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi></mrow><annotation encoding="application/x-tex">p</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">p</span></span></span></span>를 인덱스로 사용하여 페이지 프레임 번호 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo mathvariant="normal">′</mo></mrow><annotation encoding="application/x-tex">p\prime</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.75em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">p</span><span class="mord">′</span></span></span></span>를 조회</li>
 <li>TLB에 새 항목으로 저장 가능</li>
 </ul>
 </li>
 </ul>
 </li>
-<li>페이지 프레임 번호 p′와 변위 d를 더해 실제 주소 r을 계산<p v-pre class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>r</mi><mo>=</mo><mi>p</mi><mtext>′</mtext><mo>+</mo><mi>d</mi></mrow><annotation encoding="application/x-tex"> r = p′ + d 
+<li>페이지 프레임 번호 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo mathvariant="normal">′</mo></mrow><annotation encoding="application/x-tex">p\prime</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.75em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">p</span><span class="mord">′</span></span></span></span>와 변위 d를 더해 실제 주소 r을 계산<p v-pre class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>r</mi><mo>=</mo><mi>p</mi><mo mathvariant="normal">′</mo><mo>+</mo><mi>d</mi></mrow><annotation encoding="application/x-tex"> r = p\prime + d 
 </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.7778em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">p</span><span class="mord">′</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal">d</span></span></span></span></span></p>
 </li>
 </ol>
 <div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code class="language-text"><span class="line">가상주소 v = (s, p, d)</span>
 <span class="line">    ↓</span>
 <span class="line">TLB에서 (s, p) 조회</span>
-<span class="line">   ├─ 있으면 → p′ 얻음</span>
+<span class="line">   ├─ 있으면 → $p\prime$ 얻음</span>
 <span class="line">   └─ 없으면</span>
 <span class="line">       └─ 세그먼트 테이블 시작 주소 b + s 접근</span>
-<span class="line">           └─ 세그먼트 s의 page table 주소 s′ 획득</span>
-<span class="line">               └─ page table에서 p 인덱스로 p′ 조회</span>
-<span class="line">                   └─ TLB에 (s, p) → p′ 저장</span>
+<span class="line">           └─ 세그먼트 s의 page table 주소 $s\prime$ 획득</span>
+<span class="line">               └─ page table에서 p 인덱스로 $p\prime$ 조회</span>
+<span class="line">                   └─ TLB에 (s, p) → $p\prime$ 저장</span>
 <span class="line"></span>
-<span class="line">p′ + d → 실주소 r</span>
+<span class="line">p\prime + d → 실주소 r</span>
 <span class="line"></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h1 id="filesystem" tabindex="-1"><a class="header-anchor" href="#filesystem"><span>FileSystem</span></a></h1>
 <h2 id="페이지-테이블의-한계" tabindex="-1"><a class="header-anchor" href="#페이지-테이블의-한계"><span>페이지 테이블의 한계</span></a></h2>

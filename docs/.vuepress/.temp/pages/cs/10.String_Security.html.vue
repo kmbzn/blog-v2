@@ -54,9 +54,9 @@
 <ul>
 <li>Array의 크기는 3</li>
 <li>Trailing null byte는 생략</li>
+<li><code v-pre>const char s[ ] = &quot;abc&quot;;</code></li>
 </ul>
 </li>
-<li><code v-pre>const char s[ ] = &quot;abc&quot;;</code></li>
 </ul>
 <h2 id="strings-in-c" tabindex="-1"><a class="header-anchor" href="#strings-in-c"><span>Strings in C++</span></a></h2>
 <ul>
@@ -75,13 +75,39 @@
 </li>
 </ul>
 <h2 id="character-types" tabindex="-1"><a class="header-anchor" href="#character-types"><span>Character Types</span></a></h2>
-<h2 id="three-types" tabindex="-1"><a class="header-anchor" href="#three-types"><span>three types</span></a></h2>
+<ul>
+<li>three types
 <ul>
 <li><code v-pre>char</code>, <code v-pre>signed char</code>, <code v-pre>unsigned char</code></li>
-<li>Philosophy</li>
+</ul>
+</li>
+<li>Philosophy
+<ul>
+<li>signed char and unsigned char
+<ul>
+<li>작은 정수값에 적합</li>
+</ul>
+</li>
+<li>plain char
+<ul>
+<li>문자열 리터럴의 각각 요소들의 타입</li>
+<li>정수 데이터 대신 문자(character) 데이터를 위해 사용 (부호의 의미가 적은)</li>
+</ul>
+</li>
+</ul>
+</li>
 <li>Example</li>
 </ul>
-<h2 id="int" tabindex="-1"><a class="header-anchor" href="#int"><span>int</span></a></h2>
+<div class="language-c line-numbers-mode" data-highlighter="prismjs" data-ext="c"><pre v-pre><code class="language-c"><span class="line"><span class="token class-name">size_t</span> len<span class="token punctuation">;</span></span>
+<span class="line"><span class="token keyword">char</span> cstr<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">"char string"</span><span class="token punctuation">;</span></span>
+<span class="line"><span class="token keyword">signed</span> <span class="token keyword">char</span> scstr<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">"signed char string"</span><span class="token punctuation">;</span></span>
+<span class="line"><span class="token keyword">unsigned</span> <span class="token keyword">char</span> ucstr<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">"unsigned char string"</span><span class="token punctuation">;</span></span>
+<span class="line"></span>
+<span class="line">len <span class="token operator">=</span> <span class="token function">strlen</span><span class="token punctuation">(</span>cstr<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">len <span class="token operator">=</span> <span class="token function">strlen</span><span class="token punctuation">(</span>scstr<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">/* warns when char is unsigned */</span></span>
+<span class="line">len <span class="token operator">=</span> <span class="token function">strlen</span><span class="token punctuation">(</span>ucstr<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">/* warns when char is signed */</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="int" tabindex="-1"><a class="header-anchor" href="#int"><span><code v-pre>int</code></span></a></h2>
 <ul>
 <li><code v-pre>EOF</code> (음수 값)</li>
 <li>또는 <code v-pre>unsigned char</code>로 해석된 <code v-pre>char data</code></li>
@@ -118,10 +144,7 @@
 <li><code v-pre>fwrite()</code></li>
 <li>Pure binary notation을 사용하여 표현됨이 보장</li>
 </ul>
-<h2 id="unsigned-char-1" tabindex="-1"><a class="header-anchor" href="#unsigned-char-1"><span>unsigned char</span></a></h2>
-<ul>
-<li>Code Example<div class="language-cpp line-numbers-mode" data-highlighter="prismjs" data-ext="cpp"><pre v-pre><code class="language-cpp"><span class="line"><span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span></span>
-<span class="line"><span class="token punctuation">{</span></span>
+<div class="language-cpp line-numbers-mode" data-highlighter="prismjs" data-ext="cpp"><pre v-pre><code class="language-cpp"><span class="line"><span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span></span>
 <span class="line">    <span class="token keyword">unsigned</span> <span class="token keyword">char</span> buf1<span class="token punctuation">[</span><span class="token number">6</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token number">0xff</span><span class="token punctuation">,</span> <span class="token number">0x56</span><span class="token punctuation">,</span> <span class="token number">0x78</span><span class="token punctuation">,</span> <span class="token number">0xfa</span><span class="token punctuation">,</span> <span class="token number">0xf1</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">}</span><span class="token punctuation">;</span></span>
 <span class="line">    <span class="token keyword">unsigned</span> <span class="token keyword">char</span> buf2<span class="token punctuation">[</span><span class="token number">6</span><span class="token punctuation">]</span><span class="token punctuation">;</span></span>
 <span class="line">    FILE <span class="token operator">*</span>stream<span class="token punctuation">;</span></span>
@@ -136,14 +159,12 @@
 <span class="line">    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span></span>
 <span class="line"><span class="token punctuation">}</span></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></li>
-</ul>
-<h2 id="sizing-strings" tabindex="-1"><a class="header-anchor" href="#sizing-strings"><span>Sizing Strings</span></a></h2>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="sizing-strings" tabindex="-1"><a class="header-anchor" href="#sizing-strings"><span>Sizing Strings</span></a></h2>
 <ul>
-<li>Buffer overflows 방지에 필수적</li>
+<li>Buffer overflows를 예방하기 위해 필수</li>
 <li>The CERT C Secure Coding Standard
 <ul>
-<li>STR31-C. strings용 저장 공간이 character data와 null terminator를 위한 충분한 공간을 갖도록 보장</li>
+<li><code v-pre>STR31-C</code>. strings용 저장 공간이 character data와 null terminator를 위한 충분한 공간을 갖도록 보장</li>
 </ul>
 </li>
 <li>용어
@@ -155,54 +176,53 @@
 </li>
 </ul>
 <h2 id="example-1" tabindex="-1"><a class="header-anchor" href="#example-1"><span>Example</span></a></h2>
-<ul>
-<li><code v-pre>strcpy(wide_str2, wide_str1)</code> 사용의 Incorrect solution</li>
-<li>Correct solution <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>→</mo></mrow><annotation encoding="application/x-tex">\to</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.3669em;"></span><span class="mrel">→</span></span></span></span> <code v-pre>wcslen()</code> * <code v-pre>sizeof(wchar_t)</code> 사용 고려</li>
-</ul>
-<h2 id="common-string-manipulation-errors" tabindex="-1"><a class="header-anchor" href="#common-string-manipulation-errors"><span>Common String Manipulation Errors</span></a></h2>
+<div class="language-cpp line-numbers-mode" data-highlighter="prismjs" data-ext="cpp"><pre v-pre><code class="language-cpp"><span class="line"><span class="token keyword">wchar_t</span> wide_str1<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> L”<span class="token number">0123456789</span>”<span class="token punctuation">;</span></span>
+<span class="line"><span class="token keyword">wchar_t</span> <span class="token operator">*</span>wide_str2 <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">wchar_t</span> <span class="token operator">*</span><span class="token punctuation">)</span> <span class="token function">malloc</span> <span class="token punctuation">(</span><span class="token function">strlen</span><span class="token punctuation">(</span>wide_str1<span class="token punctuation">)</span> <span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line"><span class="token keyword">if</span> <span class="token punctuation">(</span>wide_str2 <span class="token operator">==</span> <span class="token constant">NULL</span><span class="token punctuation">)</span> <span class="token punctuation">{</span></span>
+<span class="line">  <span class="token comment">/* handle error */</span></span>
+<span class="line"><span class="token punctuation">}</span></span>
+<span class="line"><span class="token function">strcpy</span><span class="token punctuation">(</span>wide_str2<span class="token punctuation">,</span> wide_str1<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line"><span class="token comment">/* … */</span></span>
+<span class="line"><span class="token function">free</span><span class="token punctuation">(</span>wide_str2<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">wide_str2 <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="common-string-manipulation-errors" tabindex="-1"><a class="header-anchor" href="#common-string-manipulation-errors"><span>Common String Manipulation Errors</span></a></h2>
 <ul>
 <li>4가지 일반적인 오류
 <ul>
-<li>unbounded string copies (무한 string 복사)</li>
-<li>off-by-one errors</li>
+<li><strong>unbounded string copies</strong> (무한 string 복사)</li>
+<li><strong>off-by-one errors</strong></li>
 <li>null-termination errors</li>
 <li>string truncation</li>
 </ul>
 </li>
 </ul>
-<h2 id="common-errors" tabindex="-1"><a class="header-anchor" href="#common-errors"><span>Common Errors</span></a></h2>
-<ul>
-<li>데이터가 source에서 fixed-length character array로 복사될 때 발생
-<ul>
-<li>예: 표준 입력에서 fixed-length buffer로 읽을 때</li>
-</ul>
-</li>
-<li><code v-pre>gets()</code> 함수
-<ul>
-<li>C99에서 deprecated, C11에서 제거</li>
-</ul>
-</li>
-<li>&quot;STR35-C. Do not copy data from an unbounded source to a fixed-length array.&quot; (무한 source에서 fixed-length array로 데이터를 복사하지 마십시오.)</li>
-<li>Example 2.1. Reading from stdin()</li>
-</ul>
 <h2 id="improperly-bounded-string-copies" tabindex="-1"><a class="header-anchor" href="#improperly-bounded-string-copies"><span>Improperly Bounded String Copies</span></a></h2>
 <ul>
-<li>표준 라이브러리 함수
+<li>데이터가 고정된 길이의 문자열로부터 복사될 때
 <ul>
-<li><code v-pre>strcpy()</code>, <code v-pre>strcat()</code>, <code v-pre>sprintf()</code></li>
+<li>예: 고정된 길이 버퍼에 표준 입력으로 읽어오는 경우</li>
 </ul>
 </li>
-<li><code v-pre>int main(int argc, char *argv[ ])</code>
-<ul>
-<li><code v-pre>argv[0]</code> ~ <code v-pre>argv[argc-1]</code>: null-terminated strings에 대한 pointer</li>
-<li><code v-pre>argv[0]</code>를 포함하여 <code v-pre>argv</code> array의 어떤 element도 null이 아니라고 가정하지 마십시오.</li>
+<li><code v-pre>gets()</code> C99에 추가되었으나 C11에서 제거</li>
+<li>&quot;STR35-C. unbounded source에서부터 고정 길이 배열에 복사하지 마십시오.&quot;</li>
 </ul>
-</li>
-<li>Copying and concatenating strings</li>
-</ul>
-<h2 id="improperly-bounded-string-copies-1" tabindex="-1"><a class="header-anchor" href="#improperly-bounded-string-copies-1"><span>Improperly Bounded String Copies</span></a></h2>
-<ul>
-<li><code v-pre>sprintf()</code> 함수
+<div class="language-c line-numbers-mode" data-highlighter="prismjs" data-ext="c"><pre v-pre><code class="language-c"><span class="line"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span></span>
+<span class="line"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdlib.h></span></span></span>
+<span class="line"></span>
+<span class="line"><span class="token keyword">void</span> <span class="token function">get_y_or_n</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span> <span class="token punctuation">{</span></span>
+<span class="line">  <span class="token keyword">char</span> response<span class="token punctuation">[</span><span class="token number">8</span><span class="token punctuation">]</span><span class="token punctuation">;</span></span>
+<span class="line">  <span class="token function">puts</span><span class="token punctuation">(</span><span class="token string">"Continue? [y] n: "</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">  <span class="token function">gets</span><span class="token punctuation">(</span>response<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">  <span class="token keyword">if</span> <span class="token punctuation">(</span>response<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token char">'n'</span><span class="token punctuation">)</span></span>
+<span class="line">    <span class="token function">exit</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">  <span class="token keyword">return</span><span class="token punctuation">;</span></span>
+<span class="line"><span class="token punctuation">}</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><blockquote>
+<p><strong>Example 2.1.</strong> Reading from <code v-pre>stdin()</code></p>
+</blockquote>
+<h2 id="sprintf-function" tabindex="-1"><a class="header-anchor" href="#sprintf-function"><span><code v-pre>sprintf()</code> function</span></a></h2>
 <ul>
 <li>array에 output을 작성</li>
 <li>작성된 character의 끝에 null character가 작성</li>
@@ -210,8 +230,6 @@
 <ul>
 <li>예: <code v-pre>INT_MAX</code> <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>→</mo></mrow><annotation encoding="application/x-tex">\to</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.3669em;"></span><span class="mrel">→</span></span></span></span> 최소 11 characters</li>
 <li>음의 정수, floating-point values는 예측이 더 어려움</li>
-</ul>
-</li>
 </ul>
 </li>
 <li><code v-pre>snprintf()</code> 함수
@@ -223,33 +241,81 @@
 </ul>
 </li>
 </ul>
-<h2 id="improperly-bounded-string-copies-2" tabindex="-1"><a class="header-anchor" href="#improperly-bounded-string-copies-2"><span>Improperly Bounded String Copies</span></a></h2>
+<h2 id="c-의-std-cin" tabindex="-1"><a class="header-anchor" href="#c-의-std-cin"><span>C++의 <code v-pre>std::cin</code></span></a></h2>
 <ul>
-<li>C++의 <code v-pre>std::cin</code>
-<ul>
-<li>문제점 있음</li>
+<li>이 또한 문제점 있음</li>
+</ul>
+<div class="language-cpp line-numbers-mode" data-highlighter="prismjs" data-ext="cpp"><pre v-pre><code class="language-cpp"><span class="line"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span></span>
+<span class="line"></span>
+<span class="line"><span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span> <span class="token punctuation">{</span></span>
+<span class="line">  <span class="token keyword">char</span> buf<span class="token punctuation">[</span><span class="token number">12</span><span class="token punctuation">]</span><span class="token punctuation">;</span></span>
+<span class="line"></span>
+<span class="line">  std<span class="token double-colon punctuation">::</span>cin <span class="token operator">>></span> buf<span class="token punctuation">;</span></span>
+<span class="line">  std<span class="token double-colon punctuation">::</span>cout <span class="token operator">&lt;&lt;</span> <span class="token string">"echo: "</span> <span class="token operator">&lt;&lt;</span> buf <span class="token operator">&lt;&lt;</span> <span class="token char">'\n'</span><span class="token punctuation">;</span></span>
+<span class="line"><span class="token punctuation">}</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul>
 <li>field width를 <code v-pre>ios_base::width</code> 또는 <code v-pre>setw()</code>로 설정 가능</li>
 <li><span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">n-1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6667em;vertical-align:-0.0833em;"></span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span> characters가 추출된 후 null character가 자동으로 추가됨</li>
 </ul>
-</li>
-</ul>
-<h2 id="off-by-one-errors" tabindex="-1"><a class="header-anchor" href="#off-by-one-errors"><span>Off-by-One Errors</span></a></h2>
+<div class="language-cpp line-numbers-mode" data-highlighter="prismjs" data-ext="cpp"><pre v-pre><code class="language-cpp"><span class="line"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span></span>
+<span class="line"></span>
+<span class="line"><span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span> <span class="token punctuation">{</span></span>
+<span class="line">  <span class="token keyword">char</span> buf<span class="token punctuation">[</span><span class="token number">12</span><span class="token punctuation">]</span><span class="token punctuation">;</span></span>
+<span class="line"></span>
+<span class="line">  std<span class="token double-colon punctuation">::</span>cin<span class="token punctuation">.</span><span class="token function">width</span><span class="token punctuation">(</span><span class="token number">12</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">  std<span class="token double-colon punctuation">::</span>cin <span class="token operator">>></span> buf<span class="token punctuation">;</span></span>
+<span class="line">  std<span class="token double-colon punctuation">::</span>cout <span class="token operator">&lt;&lt;</span> <span class="token string">"echo: "</span> <span class="token operator">&lt;&lt;</span> buf <span class="token operator">&lt;&lt;</span> <span class="token char">'\n'</span><span class="token punctuation">;</span></span>
+<span class="line"><span class="token punctuation">}</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="off-by-one-errors" tabindex="-1"><a class="header-anchor" href="#off-by-one-errors"><span>Off-by-One Errors</span></a></h2>
 <ul>
 <li>또 다른 일반적인 문제</li>
 <li>unbounded string copies와 유사</li>
 <li>Example</li>
 </ul>
-<h2 id="off-by-one-errors-1" tabindex="-1"><a class="header-anchor" href="#off-by-one-errors-1"><span>Off-by-One Errors</span></a></h2>
+<div class="language-c line-numbers-mode" data-highlighter="prismjs" data-ext="c"><pre v-pre><code class="language-c"><span class="line"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;string.h></span></span></span>
+<span class="line"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span></span>
+<span class="line"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdlib.h></span></span></span>
+<span class="line"></span>
+<span class="line"><span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span> <span class="token punctuation">{</span></span>
+<span class="line">  <span class="token keyword">char</span> s1<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">"012345678"</span><span class="token punctuation">;</span></span>
+<span class="line">  <span class="token keyword">char</span> s2<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">"0123456789"</span><span class="token punctuation">;</span></span>
+<span class="line">  <span class="token keyword">char</span> <span class="token operator">*</span>dest<span class="token punctuation">;</span></span>
+<span class="line">  <span class="token keyword">int</span> i<span class="token punctuation">;</span></span>
+<span class="line"></span>
+<span class="line">  <span class="token function">strcpy_s</span><span class="token punctuation">(</span>s1<span class="token punctuation">,</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span>s2<span class="token punctuation">)</span><span class="token punctuation">,</span> s2<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">  dest <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">char</span> <span class="token operator">*</span><span class="token punctuation">)</span> <span class="token function">malloc</span> <span class="token punctuation">(</span><span class="token function">strlen</span><span class="token punctuation">(</span>s1<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">  <span class="token keyword">for</span> <span class="token punctuation">(</span>i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> <span class="token number">11</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span></span>
+<span class="line">    dest<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> s1<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span></span>
+<span class="line">  <span class="token punctuation">}</span></span>
+<span class="line">  dest<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token char">'\0'</span><span class="token punctuation">;</span></span>
+<span class="line">  <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"dest = %s"</span><span class="token punctuation">,</span> dest<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">  <span class="token comment">/* ... */</span><span class="token punctuation">;</span></span>
+<span class="line"><span class="token punctuation">}</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="null-termination-errors" tabindex="-1"><a class="header-anchor" href="#null-termination-errors"><span>Null-Termination Errors</span></a></h2>
 <ul>
+<li>Example</li>
+</ul>
+<div class="language-c line-numbers-mode" data-highlighter="prismjs" data-ext="c"><pre v-pre><code class="language-c"><span class="line"><span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span> <span class="token punctuation">{</span></span>
+<span class="line">  <span class="token keyword">char</span> a<span class="token punctuation">[</span><span class="token number">16</span><span class="token punctuation">]</span><span class="token punctuation">;</span></span>
+<span class="line">  <span class="token keyword">char</span> b<span class="token punctuation">[</span><span class="token number">16</span><span class="token punctuation">]</span><span class="token punctuation">;</span></span>
+<span class="line">  <span class="token keyword">char</span> c<span class="token punctuation">[</span><span class="token number">16</span><span class="token punctuation">]</span><span class="token punctuation">;</span></span>
+<span class="line">  <span class="token function">strncpy</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> <span class="token string">"0123456789abcdef"</span><span class="token punctuation">,</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">  <span class="token function">strncpy</span><span class="token punctuation">(</span>b<span class="token punctuation">,</span> <span class="token string">"0123456789abcdef"</span><span class="token punctuation">,</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">  <span class="token function">strncpy</span><span class="token punctuation">(</span>c<span class="token punctuation">,</span> a<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">  <span class="token comment">/* ... */</span></span>
+<span class="line"><span class="token punctuation">}</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul>
 <li><code v-pre>strncpy()</code>는 처음 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">n</span></span></span></span> characters를 복사
 <ul>
 <li>Null-termination을 보장하지 않음</li>
 </ul>
 </li>
-<li>Null-Termination Errors</li>
 </ul>
 <h2 id="string-vulnerabilities-and-exploits" tabindex="-1"><a class="header-anchor" href="#string-vulnerabilities-and-exploits"><span>String Vulnerabilities and Exploits</span></a></h2>
-<h2 id="string-vulnerabilities" tabindex="-1"><a class="header-anchor" href="#string-vulnerabilities"><span>String Vulnerabilities</span></a></h2>
 <ul>
 <li>C 또는 C++에서 String manipulation
 <ul>
@@ -259,12 +325,28 @@
 </li>
 <li>Example</li>
 </ul>
-<h2 id="string-vulnerabilities-1" tabindex="-1"><a class="header-anchor" href="#string-vulnerabilities-1"><span>String Vulnerabilities</span></a></h2>
+<div class="language-c line-numbers-mode" data-highlighter="prismjs" data-ext="c"><pre v-pre><code class="language-c"><span class="line">bool <span class="token function">IsPasswordOK</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span> <span class="token punctuation">{</span></span>
+<span class="line">  <span class="token keyword">char</span> Password<span class="token punctuation">[</span><span class="token number">12</span><span class="token punctuation">]</span><span class="token punctuation">;</span></span>
+<span class="line"></span>
+<span class="line">  <span class="token function">gets</span><span class="token punctuation">(</span>Password<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">  <span class="token keyword">return</span> <span class="token number">0</span> <span class="token operator">==</span> <span class="token function">strcmp</span><span class="token punctuation">(</span>Password<span class="token punctuation">,</span> <span class="token string">"goodpass"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line"><span class="token punctuation">}</span></span>
+<span class="line"></span>
+<span class="line"><span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span> <span class="token punctuation">{</span></span>
+<span class="line">  bool PwStatus<span class="token punctuation">;</span></span>
+<span class="line"></span>
+<span class="line">  <span class="token function">puts</span><span class="token punctuation">(</span><span class="token string">"Enter password: "</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">  PwStatus <span class="token operator">=</span> <span class="token function">IsPasswordOK</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">  <span class="token keyword">if</span> <span class="token punctuation">(</span>PwStatus <span class="token operator">==</span> false<span class="token punctuation">)</span> <span class="token punctuation">{</span></span>
+<span class="line">    <span class="token function">puts</span><span class="token punctuation">(</span><span class="token string">"Access denied"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">    <span class="token function">exit</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">  <span class="token punctuation">}</span></span>
+<span class="line"><span class="token punctuation">}</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="buffer-overflows" tabindex="-1"><a class="header-anchor" href="#buffer-overflows"><span>Buffer Overflows</span></a></h2>
 <ul>
-<li>Buffer Overflows</li>
-</ul>
-<h2 id="string-vulnerabilities-2" tabindex="-1"><a class="header-anchor" href="#string-vulnerabilities-2"><span>String Vulnerabilities</span></a></h2>
-<ul>
+<li>Example
+<img src="@source/cs/image-19.png" alt="alt text"></li>
 <li>C 및 C++가 buffer overflows에 취약한 이유
 <ul>
 <li>strings를 null-terminated arrays of characters로 정의</li>
@@ -272,23 +354,14 @@
 <li>bounds checking을 강제하지 않는 strings에 대한 표준 라이브러리 호출 제공</li>
 </ul>
 </li>
-<li>Buffer Overflows</li>
 </ul>
-<h2 id="buffer-overflows" tabindex="-1"><a class="header-anchor" href="#buffer-overflows"><span>Buffer Overflows</span></a></h2>
-<ul>
-<li>Process Memory Organization
-<ul>
-<li>Text (read-only로 표시 가능)</li>
-<li>Data (초기화된 데이터, 초기화되지 않은 데이터, static variables, global variables)</li>
-<li>Heap (dynamically allocating memory)</li>
-<li>Stack (process execution을 지원)</li>
-</ul>
-</li>
-</ul>
+<h2 id="process-memory-organization" tabindex="-1"><a class="header-anchor" href="#process-memory-organization"><span>Process Memory Organization</span></a></h2>
+<p><img src="@source/cs/image-20.png" alt="alt text"></p>
 <h2 id="programs-and-processes" tabindex="-1"><a class="header-anchor" href="#programs-and-processes"><span>Programs and Processes</span></a></h2>
-<ul>
-<li>Figure 10.4 Program Loading into Process Memory</li>
-</ul>
+<p><img src="@source/cs/image-21.png" alt="alt text"></p>
+<blockquote>
+<p><strong>Figure 10.4</strong> Program Loading into Process Memory</p>
+</blockquote>
 <h2 id="stack-buffer-overflows" tabindex="-1"><a class="header-anchor" href="#stack-buffer-overflows"><span>Stack Buffer Overflows</span></a></h2>
 <ul>
 <li>Buffer가 stack에 위치할 때 발생
@@ -310,14 +383,18 @@
 </li>
 </ul>
 <h2 id="stack-frame-with-functions-p-and-q" tabindex="-1"><a class="header-anchor" href="#stack-frame-with-functions-p-and-q"><span>Stack Frame with Functions P and Q</span></a></h2>
+<p><img src="@source/cs/image-22.png" alt="alt text"></p>
+<blockquote>
+<p><strong>Figure 10.3</strong> Examples Stack Frame with Functions P and Q</p>
+</blockquote>
+<h2 id="stack-management" tabindex="-1"><a class="header-anchor" href="#stack-management"><span>Stack Management</span></a></h2>
 <ul>
-<li>Figure 10.3</li>
-</ul>
-<h2 id="buffer-overflows-1" tabindex="-1"><a class="header-anchor" href="#buffer-overflows-1"><span>Buffer Overflows</span></a></h2>
-<ul>
-<li>Stack Management
-<ul>
-<li>Stack은 automatic process-state data를 유지하여 program execution을 지원</li>
+<li>Stack은 automatic process-state data를 유지하여 program execution을 지원
+<img src="@source/cs/image-23.png" alt="alt text">
+<blockquote>
+<p><strong>Figure 2.6.</strong> Stack management</p>
+</blockquote>
+</li>
 <li>Stack frame의 정보
 <ul>
 <li>return address</li>
@@ -325,35 +402,11 @@
 <li>frame pointer</li>
 </ul>
 </li>
-</ul>
-</li>
-</ul>
-<h2 id="buffer-overflows-2" tabindex="-1"><a class="header-anchor" href="#buffer-overflows-2"><span>Buffer Overflows</span></a></h2>
-<ul>
-<li>Stack Management (Disassembly using Intel Notation)
-<ul>
-<li>MyStrPtr variable</li>
-<li>MyInt variable</li>
-<li><code v-pre>foo()</code> 반환 후</li>
-</ul>
-</li>
-</ul>
-<h2 id="buffer-overflows-3" tabindex="-1"><a class="header-anchor" href="#buffer-overflows-3"><span>Buffer Overflows</span></a></h2>
-<ul>
-<li>Stack Management
-<ul>
+<li>(Disassembly using Intel Notation)
+<img src="@source/cs/image-24.png" alt="alt text"></li>
 <li><code v-pre>foo()</code> 함수 prologue</li>
 <li><code v-pre>foo()</code> 함수 Epilogue</li>
-</ul>
-</li>
-</ul>
-<h2 id="buffer-overflows-4" tabindex="-1"><a class="header-anchor" href="#buffer-overflows-4"><span>Buffer Overflows</span></a></h2>
-<ul>
-<li>Stack Management
-<ul>
 <li><code v-pre>foo()</code> 호출 후 Stack frame</li>
-</ul>
-</li>
 </ul>
 <h2 id="stack-smashing" tabindex="-1"><a class="header-anchor" href="#stack-smashing"><span>Stack Smashing</span></a></h2>
 <ul>
@@ -364,13 +417,7 @@
 </ul>
 </li>
 <li>Example</li>
-</ul>
-<h2 id="stack-smashing-1" tabindex="-1"><a class="header-anchor" href="#stack-smashing-1"><span>Stack Smashing</span></a></h2>
-<ul>
 <li>Corrupted program stack</li>
-</ul>
-<h2 id="stack-smashing-2" tabindex="-1"><a class="header-anchor" href="#stack-smashing-2"><span>Stack Smashing</span></a></h2>
-<ul>
 <li>Carefully crafted input string
 <ul>
 <li><span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>j</mi><mo>=</mo><mn>0</mn><mi>x</mi><mn>6</mn><mi>A</mi></mrow><annotation encoding="application/x-tex">j = 0x6A</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.854em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.05724em;">j</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord">0</span><span class="mord mathnormal">x</span><span class="mord">6</span><span class="mord mathnormal">A</span></span></span></span>, <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>=</mo><mn>0</mn><mi>x</mi><mn>10</mn></mrow><annotation encoding="application/x-tex">= 0x10</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.3669em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">0</span><span class="mord mathnormal">x</span><span class="mord">10</span></span></span></span>, <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∗</mo><mo>=</mo><mn>0</mn><mi>x</mi><mn>2</mn><mi>A</mi></mrow><annotation encoding="application/x-tex">* = 0x2A</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4653em;"></span><span class="mord">∗</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord">0</span><span class="mord mathnormal">x</span><span class="mord">2</span><span class="mord mathnormal">A</span></span></span></span>, <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">!</mo><mo>=</mo><mn>0</mn><mi>x</mi><mn>21</mn></mrow><annotation encoding="application/x-tex">! = 0x21</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mclose">!</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">0</span><span class="mord mathnormal">x</span><span class="mord">21</span></span></span></span></li>
@@ -405,7 +452,7 @@
 </ul>
 <h2 id="code-injection-2" tabindex="-1"><a class="header-anchor" href="#code-injection-2"><span>Code Injection</span></a></h2>
 <ul>
-<li>Example (execve() system call을 이용한 예시)
+<li>Example (<code v-pre>execve()</code> system call을 이용한 예시)
 <ol>
 <li>첫 번째 <code v-pre>mov</code> instruction은 %eax register에 <code v-pre>0xB</code> 할당</li>
 <li><code v-pre>execve()</code> 함수 호출을 위한 세 인수는 후속 세 instructions에서 설정</li>
@@ -513,7 +560,7 @@
 </ul>
 <h2 id="c11-annex-k-1" tabindex="-1"><a class="header-anchor" href="#c11-annex-k-1"><span>C11 Annex K</span></a></h2>
 <ul>
-<li>Example 2.6. gets_s() (Improved)</li>
+<li>Example 2.6. <code v-pre>gets_s()</code> (Improved)</li>
 </ul>
 <h2 id="runtime-constraint-handler-function-1" tabindex="-1"><a class="header-anchor" href="#runtime-constraint-handler-function-1"><span>Runtime-constraint-handler function</span></a></h2>
 <ul>
@@ -658,7 +705,7 @@
 </ul>
 </li>
 </ul>
-<h2 id="fgets-and-getchar" tabindex="-1"><a class="header-anchor" href="#fgets-and-getchar"><span>fgets() and getchar()</span></a></h2>
+<h2 id="fgets-and-getchar" tabindex="-1"><a class="header-anchor" href="#fgets-and-getchar"><span><code v-pre>fgets()</code> and <code v-pre>getchar()</code></span></a></h2>
 <ul>
 <li><code v-pre>fgets()</code>
 <ul>
@@ -676,7 +723,7 @@
 </ul>
 <h2 id="string-handling-functions-3" tabindex="-1"><a class="header-anchor" href="#string-handling-functions-3"><span>String-Handling Functions</span></a></h2>
 <ul>
-<li>Example 2.10. getchar()
+<li>Example 2.10. <code v-pre>getchar()</code>
 <ul>
 <li><code v-pre>int type</code> (not char type) 사용</li>
 </ul>
@@ -791,7 +838,7 @@
 </li>
 <li>결과 string이 잘릴 때 status code 없음</li>
 </ul>
-<h2 id="strncpy-s-and-strncat-s" tabindex="-1"><a class="header-anchor" href="#strncpy-s-and-strncat-s"><span>strncpy_s() and strncat_s()</span></a></h2>
+<h2 id="strncpy-s-and-strncat-s" tabindex="-1"><a class="header-anchor" href="#strncpy-s-and-strncat-s"><span><code v-pre>strncpy_s()</code> and <code v-pre>strncat_s()</code></span></a></h2>
 <ul>
 <li><code v-pre>strncpy_s()</code>
 <ul>
@@ -803,7 +850,7 @@
 </ul>
 </li>
 </ul>
-<h2 id="strncpy-s" tabindex="-1"><a class="header-anchor" href="#strncpy-s"><span>strncpy_s()</span></a></h2>
+<h2 id="strncpy-s" tabindex="-1"><a class="header-anchor" href="#strncpy-s"><span><code v-pre>strncpy_s()</code></span></a></h2>
 <ul>
 <li>Example
 <ul>
@@ -813,7 +860,7 @@
 </ul>
 </li>
 </ul>
-<h2 id="summary-of-strcpy-and-strcat" tabindex="-1"><a class="header-anchor" href="#summary-of-strcpy-and-strcat"><span>Summary of strcpy() and strcat()</span></a></h2>
+<h2 id="summary-of-strcpy-and-strcat" tabindex="-1"><a class="header-anchor" href="#summary-of-strcpy-and-strcat"><span>Summary of <code v-pre>strcpy()</code> and <code v-pre>strcat()</code></span></a></h2>
 <ul>
 <li>요약 tables</li>
 </ul>

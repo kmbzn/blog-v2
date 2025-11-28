@@ -1,29 +1,23 @@
 {
   "name": "blog-v2",
   "description": "VuePress v2 blog",
-  "version": "0.0.1",
+  "version": "1.0",
   "license": "UNLICENSED",
   "type": "module",
   "scripts": {
-    "docs:build": "vuepress build docs",
-    "docs:clean-dev": "vuepress dev docs --clean-cache",
-    "docs:dev": "vuepress dev docs",
-    "docs:update-package": "npx vp-update",
-    "dev": "vuepress dev docs",
+    "dev": "vuepress dev docs --port 3000",
     "build": "vuepress build docs"
   },
   "devDependencies": {
     "@vuepress/bundler-vite": "^2.0.0-rc.23",
-    "@vuepress/plugin-markdown-math": "^2.0.0-rc.103",
+    "@vuepress/client": "^2.0.0-rc.26",
+    "@vuepress/plugin-markdown-math": "^2.0.0-rc.118",
     "@vuepress/theme-default": "^2.0.0-rc.23",
     "katex": "^0.16.22",
     "mathjax-full": "^3.2.2",
     "sass-embedded": "^1.86.0",
     "typescript": "^5.8.3",
     "vue": "^3.5.13",
-    "vuepress": "^2.0.0-rc.23"
-  },
-  "dependencies": {
-    "markdown-it-katex": "^2.0.3"
+    "vuepress": "^2.0.0-rc.26"
   }
 }

@@ -1,5 +1,5 @@
 import comp from "/Users/kmbzn/blog-v2/docs/.vuepress/.temp/pages/cs/10.String_Security.html.vue"
-const data = JSON.parse("{\"path\":\"/cs/10.String_Security.html\",\"title\":\"10. String Security\",\"lang\":\"ko-KR\",\"frontmatter\":{},\"git\":{},\"filePathRelative\":\"cs/10.String_Security.md\"}")
+const data = JSON.parse("{\"path\":\"/cs/10.String_Security.html\",\"title\":\"10. String Security\",\"lang\":\"ko-KR\",\"frontmatter\":{},\"git\":{\"updatedTime\":1764081817000,\"contributors\":[{\"name\":\"kmbzn\",\"username\":\"kmbzn\",\"email\":\"kmbzn24@gmail.com\",\"commits\":2,\"url\":\"https://github.com/kmbzn\"}],\"changelog\":[{\"hash\":\"eccceaaadcd967d6c9ccd932a5897280a0f9ecdf\",\"time\":1764081817000,\"email\":\"kmbzn24@gmail.com\",\"author\":\"kmbzn\",\"message\":\"Add homework documentation for Software Engineering course, including design pattern analysis and implementation details\"},{\"hash\":\"f377a812e180df33ea730c65a8d2dbad7fb4a33e\",\"time\":1763946767000,\"email\":\"kmbzn24@gmail.com\",\"author\":\"kmbzn\",\"message\":\"Refactor code structure for improved readability and maintainability\"}]},\"filePathRelative\":\"cs/10.String_Security.md\"}")
 export { comp, data }
 
 if (import.meta.webpackHot) {

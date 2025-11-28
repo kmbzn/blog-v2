@@ -29,8 +29,7 @@
    Base Font Assignments
 --------------------------------- */
 
-body, .built-with, .vp-footer .copyright,
-.vp-sidebar, .vp-sidebar-item {
+body, .built-with, .vp-footer .copyright, .vp-sidebar, .vp-sidebar-item {
   font-family: 'Pretendard';
 }
 
@@ -39,8 +38,7 @@ p, li, table {
 }
 
 pre, code, div[class*='language-'] {
-  font-family: 'goorm-sans-code', consolas, monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-  border: none;
+  font-family: 'goorm-sans-code' monospace;
 }
 
 pre {
@@ -61,6 +59,15 @@ pre {
   --code-c-line-number: #888;
   --code-c-text: --vp-c-text;
   --copy-code-c-hover: transparent;
+  --code-line-number-width: 1.2rem;
+}
+
+div[class*=language-].line-numbers-mode .line-numbers {
+    counter-reset: line-number;
+    position: absolute;
+    top: 0;
+    left: 0rem;
+    text-align: left;
 }
 
 .vp-page [vp-content] {
@@ -72,9 +79,13 @@ pre {
 }
 
 .vp-navbar {
-  position: absolute;
+  position: fixed;
   display: flex;
   align-items: center;
+}
+
+.vp-back-to-top-button {
+    bottom: 1rem;
 }
 
 .vp-toggle-sidebar-button {
@@ -91,7 +102,6 @@ pre {
 
 .vp-copy-code-button {
   background: var(--vp-c-bg) !important;
-  border: 1px solid;
   border-color: #555;
 }
 
@@ -119,7 +129,7 @@ a.header-anchor::before {
 }
 
 th, td {
-  padding: .3em .5em;
+  padding: .3em .4em;
 }
 
 /* ---------------------------------
@@ -244,5 +254,10 @@ html[data-theme='dark'] img[src$=".png"] {
     padding-top: 0rem;
     margin-bottom: 1rem;
     padding-bottom: 0rem;
+  }
+
+  [vp-content] h2 {
+    margin-top: 0rem;
+    padding-top: 1em;
   }
 }
