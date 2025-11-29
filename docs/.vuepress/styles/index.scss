@@ -68,11 +68,8 @@ pre {
 }
 
 div[class*=language-].line-numbers-mode .line-numbers {
-    counter-reset: line-number;
-    position: absolute;
-    top: 0;
-    left: .8rem;
-    text-align: right;
+  text-align: right;
+  left: -0.5rem;
 }
 
 .vp-page [vp-content] {
@@ -153,7 +150,7 @@ th, td {
 }
 
 .vp-code-tab-nav {
-  color: #888;
+  color: #999;
 }
 
 .vp-code-tab-nav.active {
@@ -185,7 +182,7 @@ html[data-theme='light'] div[class*='language-'] span.token {
 
 html[data-theme='dark'] img[src$=".png"] {
   filter:
-    invert(1) hue-rotate(180deg) contrast(0.9) brightness(1.25);
+    invert(1) hue-rotate(180deg) contrast(0.9) brightness(1.3);
 }
 
 /* ---------------------------------
@@ -194,14 +191,11 @@ html[data-theme='dark'] img[src$=".png"] {
 
 @media (max-width: 419px) {
   #content > .vp-code-tabs .vp-code-tabs-nav,
-  pre,
-  div[class^="language-"] {
-    margin-inline: -1rem !important;
+  pre, div[class^="language-"] {
+    margin-inline: -0.5rem !important;
   }
-
   div[class*=language-].line-numbers-mode pre {
-    margin-left: 3rem !important;
-    margin-right: 0 !important;
+    margin-left: 1rem !important;
   }
 }
 

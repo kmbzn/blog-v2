@@ -1,3 +1,16 @@
 import comp from "/Users/kmbzn/blog-v2/docs/.vuepress/.temp/pages/hanja/saja.html.vue"
 const data = JSON.parse("{\"path\":\"/hanja/saja.html\",\"title\":\"사자성어 정리\",\"lang\":\"ko-KR\",\"frontmatter\":{},\"git\":{\"updatedTime\":1759425720000,\"contributors\":[{\"name\":\"kmbzn\",\"username\":\"kmbzn\",\"email\":\"kmbzn24@gmail.com\",\"commits\":3,\"url\":\"https://github.com/kmbzn\"}],\"changelog\":[{\"hash\":\"9f8137e379ff5b96002179167a658d46246ba44c\",\"time\":1759425720000,\"email\":\"kmbzn24@gmail.com\",\"author\":\"kmbzn\",\"message\":\"Update saja.md\"},{\"hash\":\"7302bd675fa5157e1f29546f4b5434933e0a983f\",\"time\":1759423418000,\"email\":\"kmbzn24@gmail.com\",\"author\":\"kmbzn\",\"message\":\"update saja\"},{\"hash\":\"8252330262f0cbc0de6e51fa182dca162ca69102\",\"time\":1759423031000,\"email\":\"kmbzn24@gmail.com\",\"author\":\"kmbzn\",\"message\":\"saja\"}]},\"filePathRelative\":\"hanja/saja.md\"}")
 export { comp, data }
+
+if (import.meta.webpackHot) {
+  import.meta.webpackHot.accept()
+  if (__VUE_HMR_RUNTIME__.updatePageData) {
+    __VUE_HMR_RUNTIME__.updatePageData(data)
+  }
+}
+
+if (import.meta.hot) {
+  import.meta.hot.accept(({ data }) => {
+    __VUE_HMR_RUNTIME__.updatePageData(data)
+  })
+}
