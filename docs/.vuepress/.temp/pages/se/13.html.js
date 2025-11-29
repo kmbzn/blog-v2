@@ -1,16 +1,3 @@
 import comp from "/Users/kmbzn/blog-v2/docs/.vuepress/.temp/pages/se/13.html.vue"
-const data = JSON.parse("{\"path\":\"/se/13.html\",\"title\":\"13. Intro to QA Testing\",\"lang\":\"ko-KR\",\"frontmatter\":{},\"git\":{},\"filePathRelative\":\"se/13.md\"}")
+const data = JSON.parse("{\"path\":\"/se/13.html\",\"title\":\"13. Intro to QA Testing\",\"lang\":\"ko-KR\",\"frontmatter\":{},\"git\":{\"updatedTime\":1764305376000,\"contributors\":[{\"name\":\"kmbzn\",\"username\":\"kmbzn\",\"email\":\"kmbzn24@gmail.com\",\"commits\":3,\"url\":\"https://github.com/kmbzn\"}],\"changelog\":[{\"hash\":\"f81f9042e7888855a506f92261c74aaa2d86aa2a\",\"time\":1764305376000,\"email\":\"kmbzn24@gmail.com\",\"author\":\"kmbzn\",\"message\":\"update npm\"},{\"hash\":\"58c6bc5240203e74ef2e574994ccb1e6a1bf5568\",\"time\":1763157653000,\"email\":\"kmbzn24@gmail.com\",\"author\":\"kmbzn\",\"message\":\"Refactor code structure for improved readability and maintainability\"},{\"hash\":\"6120a63360466143831636b40c0f1ff3226d9d3e\",\"time\":1763149723000,\"email\":\"kmbzn24@gmail.com\",\"author\":\"kmbzn\",\"message\":\"Refactor code structure for improved readability and maintainability\"}]},\"filePathRelative\":\"se/13.md\"}")
 export { comp, data }
-
-if (import.meta.webpackHot) {
-  import.meta.webpackHot.accept()
-  if (__VUE_HMR_RUNTIME__.updatePageData) {
-    __VUE_HMR_RUNTIME__.updatePageData(data)
-  }
-}
-
-if (import.meta.hot) {
-  import.meta.hot.accept(({ data }) => {
-    __VUE_HMR_RUNTIME__.updatePageData(data)
-  })
-}

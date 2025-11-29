@@ -33,8 +33,13 @@ body, .built-with, .vp-footer .copyright, .vp-sidebar, .vp-sidebar-item {
   font-family: 'Pretendard';
 }
 
-p, li, table {
+p, li {
   font-family: 'Tmoney RoundWind';
+}
+
+table {
+  font-family: 'Pretendard';
+  font-size: 0.9em;
 }
 
 pre, code, div[class*='language-'] {
@@ -43,7 +48,7 @@ pre, code, div[class*='language-'] {
 
 pre {
   border: 1px solid;
-  border-color: #555;
+  border-color: #e555;
 }
 
 /* ---------------------------------
@@ -56,7 +61,7 @@ pre {
   --vp-c-accent: #fc6525;
   --vp-c-accent-bg: #fc6525;
   --code-c-bg: transparent;
-  --code-c-line-number: #888;
+  --code-c-line-number: #777;
   --code-c-text: --vp-c-text;
   --copy-code-c-hover: transparent;
   --code-line-number-width: 1.2rem;
@@ -66,8 +71,8 @@ div[class*=language-].line-numbers-mode .line-numbers {
     counter-reset: line-number;
     position: absolute;
     top: 0;
-    left: 0rem;
-    text-align: left;
+    left: .8rem;
+    text-align: right;
 }
 
 .vp-page [vp-content] {
@@ -258,6 +263,6 @@ html[data-theme='dark'] img[src$=".png"] {
 
   [vp-content] h2 {
     margin-top: 0rem;
-    padding-top: 1em;
+    padding-top: .5rem;
   }
 }

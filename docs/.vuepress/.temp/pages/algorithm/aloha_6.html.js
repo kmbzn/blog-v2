@@ -1,16 +1,3 @@
 import comp from "/Users/kmbzn/blog-v2/docs/.vuepress/.temp/pages/algorithm/aloha_6.html.vue"
 const data = JSON.parse("{\"path\":\"/algorithm/aloha_6.html\",\"title\":\"중급반 6주차 - 위상 정렬\",\"lang\":\"ko-KR\",\"frontmatter\":{},\"git\":{\"updatedTime\":1762215120000,\"contributors\":[{\"name\":\"kmbzn\",\"username\":\"kmbzn\",\"email\":\"kmbzn24@gmail.com\",\"commits\":1,\"url\":\"https://github.com/kmbzn\"}],\"changelog\":[{\"hash\":\"f2b1333223e680a4a9acadfa922206c7ceda33f4\",\"time\":1762215120000,\"email\":\"kmbzn24@gmail.com\",\"author\":\"kmbzn\",\"message\":\"Add settings.json for file associations in VSCode and create documentation for Topological Sort algorithm\"}]},\"filePathRelative\":\"algorithm/aloha_6.md\"}")
 export { comp, data }
-
-if (import.meta.webpackHot) {
-  import.meta.webpackHot.accept()
-  if (__VUE_HMR_RUNTIME__.updatePageData) {
-    __VUE_HMR_RUNTIME__.updatePageData(data)
-  }
-}
-
-if (import.meta.hot) {
-  import.meta.hot.accept(({ data }) => {
-    __VUE_HMR_RUNTIME__.updatePageData(data)
-  })
-}

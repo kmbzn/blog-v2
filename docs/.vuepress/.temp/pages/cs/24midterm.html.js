@@ -1,16 +1,3 @@
 import comp from "/Users/kmbzn/blog-v2/docs/.vuepress/.temp/pages/cs/24midterm.html.vue"
 const data = JSON.parse("{\"path\":\"/cs/24midterm.html\",\"title\":\"2024 Midterm Exam\",\"lang\":\"ko-KR\",\"frontmatter\":{},\"git\":{\"updatedTime\":1760847506000,\"contributors\":[{\"name\":\"kmbzn\",\"username\":\"kmbzn\",\"email\":\"kmbzn24@gmail.com\",\"commits\":1,\"url\":\"https://github.com/kmbzn\"}],\"changelog\":[{\"hash\":\"c0cb3b91fa1c2fcaa826192998101336bb02bbee\",\"time\":1760847506000,\"email\":\"kmbzn24@gmail.com\",\"author\":\"kmbzn\",\"message\":\"2024 중간고사 문서 추가 및 보안 용어 정의 업데이트\"}]},\"filePathRelative\":\"cs/24midterm.md\"}")
 export { comp, data }
-
-if (import.meta.webpackHot) {
-  import.meta.webpackHot.accept()
-  if (__VUE_HMR_RUNTIME__.updatePageData) {
-    __VUE_HMR_RUNTIME__.updatePageData(data)
-  }
-}
-
-if (import.meta.hot) {
-  import.meta.hot.accept(({ data }) => {
-    __VUE_HMR_RUNTIME__.updatePageData(data)
-  })
-}

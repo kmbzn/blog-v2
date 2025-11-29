@@ -1,0 +1,471 @@
+<template><div><h1 id="_15-inspections-code-reviews" tabindex="-1"><a class="header-anchor" href="#_15-inspections-code-reviews"><span>15. Inspections / Code Reviews</span></a></h1>
+<h2 id="learning-goals" tabindex="-1"><a class="header-anchor" href="#learning-goals"><span>Learning Goals</span></a></h2>
+<ul>
+<li>다양한 Formality level을 가진 Peer review의 형태 이해</li>
+<li>Commit review system을 사용한 건설적인 Modern code review 참여</li>
+<li>Code review에서 좋은 Checklists의 이점과 속성 설명</li>
+<li>Code review의 사회적, 문화적 문제 완화</li>
+<li>현대 기술 기업의 Commit review 동기와 이점 대조</li>
+</ul>
+<h2 id="intuition" tabindex="-1"><a class="header-anchor" href="#intuition"><span>Intuition</span></a></h2>
+<blockquote>
+<p><em>&quot;Many eyes make all bugs shallow&quot;</em><br>
+<em>(많은 눈이 있으면 모든 버그는 얕아진다)</em><br>
+<strong>Linus' law</strong></p>
+</blockquote>
+<blockquote>
+<p><em>&quot;Have peers, rather than customers, find defects&quot;</em><br>
+<em>(고객이 아닌 동료가 결함을 찾게 하라)</em><br>
+<strong>Karl Wiegers</strong></p>
+</blockquote>
+<h2 id="isn-t-testing-sufficient" tabindex="-1"><a class="header-anchor" href="#isn-t-testing-sufficient"><span>Isn’t Testing Sufficient?</span></a></h2>
+<ul>
+<li>오류가 다른 오류를 은폐할 수 있음</li>
+<li>완성된 구현만 테스트 가능 (특히 Scalability, Performance)</li>
+<li>Design documents는 테스트 불가</li>
+<li>Tests는 Code quality를 확인하지 않음</li>
+<li>많은 품질 속성(예: Security, Compliance, Scalability)은 테스트하기 어려움</li>
+</ul>
+<h2 id="a-second-pair-of-eyes" tabindex="-1"><a class="header-anchor" href="#a-second-pair-of-eyes"><span>A Second Pair of Eyes</span></a></h2>
+<ul>
+<li>다른 배경과 경험 보유</li>
+<li>정답에 대한 선입견 없음(No preconceived idea)</li>
+<li>&quot;의도했던 것&quot;에 편향되지 않음</li>
+</ul>
+<h1 id="software-code-reviews" tabindex="-1"><a class="header-anchor" href="#software-code-reviews"><span>Software Code Reviews</span></a></h1>
+<h2 id="code-reviews-in-github" tabindex="-1"><a class="header-anchor" href="#code-reviews-in-github"><span>Code Reviews in GitHub</span></a></h2>
+<ul>
+<li>Pull requests를 통해 [Git] repository에 Push한 변경 사항 공유</li>
+<li>Pull request가 열리면 Collaborators와 잠재적 변경 사항을 논의하고 검토하며 Repository에 Merge 되기 전 후속 Commits 추가 가능</li>
+<li>다른 기여자들은 제안된 변경 사항 검토, Review comments 추가, PR 토론 참여, PR에 Commits 추가 가능</li>
+</ul>
+<h2 id="code-reviews-in-vs-team" tabindex="-1"><a class="header-anchor" href="#code-reviews-in-vs-team"><span>Code Reviews in VS Team</span></a></h2>
+<ul>
+<li>Code check-in 전 Visual Studio를 사용해 팀원에게 리뷰 요청 가능</li>
+<li>요청은 Team Explorer의 &quot;My Work&quot; 페이지에 표시됨</li>
+</ul>
+<h2 id="google-s-code-review-flow" tabindex="-1"><a class="header-anchor" href="#google-s-code-review-flow"><span>Google's Code Review Flow</span></a></h2>
+<ol>
+<li>사용자가 변경 사항 작성 후 Snapshot(Patch 및 설명)을 Code review tool에 업로드</li>
+<li>Author는 초기 Patch를 사용해 Automated review comments 적용 또는 Self-review 수행</li>
+<li>Author가 Diff에 만족하면 하나 이상의 Reviewers에게 메일 발송 (알림 및 코멘트 요청)</li>
+<li>Reviewers는 Tool에서 변경 사항을 열고 Diff에 Comments 게시 (명시적 해결 요청 또는 단순 정보성)</li>
+<li>Author는 피드백 기반으로 수정 및 새 Snapshots 업로드 후 답변 (4, 5단계 반복 가능)</li>
+<li>Reviewers가 최신 상태에 만족하면 &quot;LGTM&quot;(Looks Good To Me)으로 수락 (보통 1개의 LGTM 필요하나 관례상 전원 동의 요구 가능)</li>
+<li>LGTM 후 Author는 모든 Comments를 해결하고 승인받은 경우 Codebase에 변경 사항 Commit</li>
+</ol>
+<h2 id="code-review-goals" tabindex="-1"><a class="header-anchor" href="#code-review-goals"><span>Code Review Goals</span></a></h2>
+<ul>
+<li>Finding defects
+<ul>
+<li>Low-level 및 High-level issue 모두 포함 (Requirements/Design/Code)</li>
+</ul>
+</li>
+<li>Code improvement
+<ul>
+<li>Readability, Formatting, Commenting, Consistency, Dead code 제거, Naming, Coding standards</li>
+</ul>
+</li>
+<li>대안 솔루션 식별</li>
+<li>Knowledge transfer
+<ul>
+<li>API 사용법, 라이브러리, Best practices, Team conventions, System design, &quot;Tricks&quot;, 특히 Junior developers 교육</li>
+</ul>
+</li>
+<li>Team awareness 및 Transparency
+<ul>
+<li>다른 사람이 변경 사항 &quot;Double check&quot;, 특정 개발자 또는 전체 팀에 공지(&quot;FYI&quot;)</li>
+</ul>
+</li>
+<li>Shared code ownership
+<ul>
+<li>비판과 변경에 대한 개방성, 개발자가 자신의 코드에 대해 덜 방어적이게 됨</li>
+</ul>
+</li>
+</ul>
+<h2 id="developers-expectations" tabindex="-1"><a class="header-anchor" href="#developers-expectations"><span>Developers’ Expectations</span></a></h2>
+<p><img src="@source/se/image-69.png" alt="alt text"></p>
+<h2 id="actual-outcomes" tabindex="-1"><a class="header-anchor" href="#actual-outcomes"><span>Actual Outcomes</span></a></h2>
+<p><img src="@source/se/image-75.png" alt="alt text"></p>
+<ul>
+<li>가장 빈번함: Code improvements (29%)
+<ul>
+<li>58 Better coding practices</li>
+<li>55 Removing unused/dead code</li>
+<li>52 Improving readability</li>
+</ul>
+</li>
+<li>보통: Defect finding (14%)
+<ul>
+<li>65 Logical issues (복잡하지 않은 논리 오류, 예: Corner cases, 설정 값, 연산자 우선순위)</li>
+<li>6 High-level issues</li>
+<li>5 Security issues</li>
+<li>3 Wrong exception handling</li>
+</ul>
+</li>
+<li>드묾: Knowledge transfer
+<ul>
+<li>12 내부/외부 문서 포인터 등</li>
+</ul>
+</li>
+</ul>
+<h2 id="expectation-vs-outcomes" tabindex="-1"><a class="header-anchor" href="#expectation-vs-outcomes"><span>Expectation vs Outcomes</span></a></h2>
+<ul>
+<li>기대와 결과 사이에 불일치 존재</li>
+</ul>
+<h2 id="expectation-outcome-mismatch" tabindex="-1"><a class="header-anchor" href="#expectation-outcome-mismatch"><span>Expectation/Outcome Mismatch</span></a></h2>
+<ul>
+<li>Code reviews의 낮은 품질
+<ul>
+<li>Reviewers가 쉬운 오류(Formatting 등)만 찾음</li>
+<li>심각한 오류 놓침</li>
+</ul>
+</li>
+<li>Understanding(이해)이 주된 과제
+<ul>
+<li>변경 이유 이해</li>
+<li>Code 및 Context 이해</li>
+<li>질문을 위한 Feedback channels 필요</li>
+</ul>
+</li>
+<li>결과물에 대한 Quality assurance 부재</li>
+</ul>
+<h1 id="formal-inspection" tabindex="-1"><a class="header-anchor" href="#formal-inspection"><span>Formal Inspection</span></a></h1>
+<ul>
+<li>70년대 IBM에서 아이디어 대중화</li>
+<li>80년대 널리 채택, 많은 연구 진행 (때로는 Component testing 대체)</li>
+<li>개발자 그룹이 Code나 다른 Artifacts를 공식적으로 검토하기 위해 만남</li>
+<li>버그를 찾는 가장 효과적인 접근법
+<ul>
+<li>일반적으로 Inspections로 60-90%의 버그 발견</li>
+</ul>
+</li>
+<li>비용이 많이 들고 노동 집약적</li>
+</ul>
+<h2 id="inspection-team-and-roles" tabindex="-1"><a class="header-anchor" href="#inspection-team-and-roles"><span>Inspection Team and Roles</span></a></h2>
+<ul>
+<li>보통 4-5명 (최소 3명)</li>
+<li>Author: 작성자</li>
+<li>Inspector(s): 결함(Faults) 및 광범위한 issue 발견</li>
+<li>Reader: 회의에서 Code나 Document 제시</li>
+<li>Scribe: 결과 기록</li>
+<li>Moderator: 프로세스 관리, 진행(Facilitates), 보고</li>
+</ul>
+<h2 id="inspection-process" tabindex="-1"><a class="header-anchor" href="#inspection-process"><span>Inspection Process</span></a></h2>
+<p><img src="@source/se/image-76.png" alt="alt text"></p>
+<ol>
+<li>Planning</li>
+<li>Overview</li>
+<li>Preparation</li>
+<li>Meeting</li>
+<li>Rework</li>
+<li>Follow-up</li>
+</ol>
+<ul>
+<li>참여자
+<ul>
+<li>Author</li>
+<li>Moderator</li>
+<li>Inspectors (Scribe, Reader, Verifier 포함)</li>
+</ul>
+</li>
+</ul>
+<h2 id="inspection-steps" tabindex="-1"><a class="header-anchor" href="#inspection-steps"><span>Inspection Steps</span></a></h2>
+<ul>
+<li>Planning (Moderator 선정)</li>
+<li>Overview (간략): Author가 회의에서 Context 제시</li>
+<li>Preparation (1-2시간): 모든 Reviewer가 개별적으로 Code 검사</li>
+<li>Meeting (1시간)
+<ul>
+<li>Reader가 Code 제시</li>
+<li>모든 Reviewers가 issue 식별</li>
+<li>회의에서는 issue 발견만 하고, 솔루션 토의나 실제 issue 여부는 논쟁하지 않음</li>
+</ul>
+</li>
+<li>Rework</li>
+<li>Follow-up (Verifier가 변경 사항 확인)</li>
+</ul>
+<h2 id="checklists" tabindex="-1"><a class="header-anchor" href="#checklists"><span>Checklists</span></a></h2>
+<ul>
+<li>무엇을 찾아야 할지 상기시킴</li>
+<li>과거에 발견된 issue 포함</li>
+<li>소수의 중요한 항목에 집중하는 것이 좋음</li>
+<li>예시:
+<ul>
+<li>사용 전 모든 변수 초기화 여부</li>
+<li>모든 변수 사용 여부</li>
+<li>If/While 문의 조건 정확성</li>
+<li>각 Loop의 종료 여부</li>
+<li>Function parameters의 올바른 타입 및 순서</li>
+<li>Linked lists의 효율적 순회</li>
+<li>동적 할당된 메모리 해제</li>
+<li>예기치 않은 입력으로 인한 Corruption 가능성</li>
+<li>모든 가능한 Error conditions 처리 여부</li>
+<li>Strings의 올바른 Sanitization 여부</li>
+</ul>
+</li>
+</ul>
+<h2 id="perspective-based-inspections" tabindex="-1"><a class="header-anchor" href="#perspective-based-inspections"><span>Perspective-based Inspections</span></a></h2>
+<ul>
+<li>서로 다른 전문 분야나 Focus/Checklists를 가진 Inspectors 배치
+<ul>
+<li>대안적 사고 패턴 장려</li>
+</ul>
+</li>
+<li>Reviewers가 문서의 다른 위치에서 시작하도록 함
+<ul>
+<li>같은 위치에서 집중력을 잃는 것 방지</li>
+</ul>
+</li>
+<li>특히 Preparation 단계에서 유효</li>
+<li>출판된 데이터는 적지만 효과적인 관행으로 간주됨</li>
+</ul>
+<h2 id="process-details" tabindex="-1"><a class="header-anchor" href="#process-details"><span>Process Details</span></a></h2>
+<ul>
+<li>Authors는 Code를 설명하거나 방어하지 않음 (객관적이지 않음)
+<ul>
+<li>Author <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo mathvariant="normal">≠</mo></mrow><annotation encoding="application/x-tex">\neq</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mrel"><span class="mrel"><span class="mord vbox"><span class="thinbox"><span class="rlap"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="inner"><span class="mord"><span class="mrel"></span></span></span><span class="fix"></span></span></span></span></span><span class="mrel">=</span></span></span></span></span> Moderator <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo mathvariant="normal">≠</mo></mrow><annotation encoding="application/x-tex">\neq</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mrel"><span class="mrel"><span class="mord vbox"><span class="thinbox"><span class="rlap"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="inner"><span class="mord"><span class="mrel"></span></span></span><span class="fix"></span></span></span></span></span><span class="mrel">=</span></span></span></span></span>  Scribe, <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo mathvariant="normal">≠</mo></mrow><annotation encoding="application/x-tex">\neq</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mrel"><span class="mrel"><span class="mord vbox"><span class="thinbox"><span class="rlap"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="inner"><span class="mord"><span class="mrel"></span></span></span><span class="fix"></span></span></span></span></span><span class="mrel">=</span></span></span></span></span>  Reader</li>
+<li>Author는 질문과 오해를 관찰하고 필요시 issue를 명확히 하기 위해 회의 참석</li>
+</ul>
+</li>
+<li>Reader(optional)는 Code를 한 줄씩 읽으며 설명
+<ul>
+<li>Code를 소리 내어 읽으면 더 깊은 이해 필요</li>
+<li>해석을 언어화(Verbalizes)하여 해석의 차이 관찰 가능</li>
+</ul>
+</li>
+</ul>
+<h2 id="social-issues-egos-in-inspections" tabindex="-1"><a class="header-anchor" href="#social-issues-egos-in-inspections"><span>Social Issues: Egos in Inspections</span></a></h2>
+<ul>
+<li>Artifacts에 대한 Author의 자존감(Self-worth)</li>
+<li>결함을 식별하되 대안 제시는 지양, Authors를 비판하지 않음
+<ul>
+<li>&quot;너는 변수 <code v-pre>a</code>를 초기화하지 않았어&quot; <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>→</mo></mrow><annotation encoding="application/x-tex">\rightarrow</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.3669em;"></span><span class="mrel">→</span></span></span></span> &quot;나는 변수 <code v-pre>a</code>가 어디서 초기화되는지 못 찾겠어&quot;</li>
+</ul>
+</li>
+<li>Code 방어 회피, 솔루션/대안 토론 회피</li>
+<li>Reviewers는 자신이 더 낫거나 똑똑함을 과시하지 말 것</li>
+<li>Guidelines가 없다면 Style 토론 회피</li>
+<li>결함 해결 방식은 Author가 결정</li>
+</ul>
+<h2 id="social-issues-inspection-incentive" tabindex="-1"><a class="header-anchor" href="#social-issues-inspection-incentive"><span>Social Issues: Inspection Incentive</span></a></h2>
+<ul>
+<li>Moderator는 토론을 진행하고 충돌 해결해야 함</li>
+<li>회의에 경영진(Management) 포함 금지</li>
+<li>HR 평가에 사용 금지
+<ul>
+<li>&quot;Inspection 중 5개 이상 버그 발견 시 Author에게 불이익&quot; 같은 경우</li>
+<li>회피, 분할 제출, 결함 지적 회피, Pre-reviews 개최 등으로 이어짐</li>
+</ul>
+</li>
+<li>Quality에 대한 책임은 Reviewers가 아닌 Authors에게 있음
+<ul>
+<li>&quot;왜 고쳐, Reviewers가 찾을 텐데&quot;라는 태도 방지</li>
+</ul>
+</li>
+</ul>
+<h2 id="root-cause-analysis" tabindex="-1"><a class="header-anchor" href="#root-cause-analysis"><span>Root Cause Analysis</span></a></h2>
+<ul>
+<li>당면한 퍼즐 너머를 봄</li>
+<li>이 문제를 피하기 위해 개발 프로세스를 개선하는 방법
+<ul>
+<li>개발 프로세스 재구조화</li>
+<li>새로운 Policies</li>
+<li>새로운 개발 도구</li>
+<li>새로운 언어</li>
+<li>새로운 분석 도구</li>
+</ul>
+</li>
+</ul>
+<h2 id="when-to-inspect" tabindex="-1"><a class="header-anchor" href="#when-to-inspect"><span>When to Inspect</span></a></h2>
+<ul>
+<li>Milestones 이전</li>
+<li>개발 중 점진적(Incremental) Inspections
+<ul>
+<li>나중보다 초기가 좋음
+<ul>
+<li>더 작은 조각, 향후 개발에 영향 줄 기회</li>
+</ul>
+</li>
+<li>대규모 Code bases는 리뷰 비용이 높고 좌절감 유발 가능</li>
+</ul>
+</li>
+<li>분할 정복(Break down, divide and conquer)</li>
+<li>중요 Components 집중</li>
+<li>첫 세션의 Defect density를 식별하여 추가 Inspections 필요성 가이드</li>
+</ul>
+<h2 id="reviews-as-part-of-a-milestone" tabindex="-1"><a class="header-anchor" href="#reviews-as-part-of-a-milestone"><span>Reviews as Part of a Milestone</span></a></h2>
+<p><img src="@source/se/image-70.png" alt="alt text"></p>
+<ul>
+<li>Task X, Task Y 수행 후 Review 진행</li>
+<li>Milestone 도달 전 적절한 시점인지 확인</li>
+<li>Rework 과정을 거쳐 Milestone 달성</li>
+</ul>
+<h2 id="guidelines-for-inspections" tabindex="-1"><a class="header-anchor" href="#guidelines-for-inspections"><span>Guidelines for Inspections</span></a></h2>
+<ul>
+<li>다수 기업의 프로젝트 및 실험에서 수집됨</li>
+<li>쉽게 측정 가능한 몇 가지 Metrics
+<ul>
+<li>Effort, Issues found, Lines of code inspected 등</li>
+</ul>
+</li>
+</ul>
+<h2 id="focus-fatigue" tabindex="-1"><a class="header-anchor" href="#focus-fatigue"><span>Focus Fatigue</span></a></h2>
+<p><img src="@source/se/image-74.png" alt="alt text"></p>
+<ul>
+<li>권장 사항: 세션당 60분 초과 금지</li>
+</ul>
+<h2 id="inspection-speed" tabindex="-1"><a class="header-anchor" href="#inspection-speed"><span>Inspection Speed</span></a></h2>
+<p><img src="@source/se/image-73.png" alt="alt text"></p>
+<ul>
+<li>400 LOC/h 이상 시 리뷰가 얕아짐(Shallow)</li>
+<li>권장 사항: 1시간 리뷰 세션에 400 LOC 미만 일정 잡기</li>
+</ul>
+<h2 id="importance-of-context" tabindex="-1"><a class="header-anchor" href="#importance-of-context"><span>Importance of Context</span></a></h2>
+<ul>
+<li>Context dependencies가 적은 Code가 리뷰하기 쉬움</li>
+<li>Reviewers는 관련 파일 확인 필요</li>
+<li>Modularity (Small interfaces, High cohesion, Low coupling 등) 필요</li>
+</ul>
+<h2 id="are-meetings-required" tabindex="-1"><a class="header-anchor" href="#are-meetings-required"><span>Are Meetings Required</span></a></h2>
+<p><img src="@source/se/image-72.png" alt="alt text"></p>
+<ul>
+<li>대부분의 issue는 Meeting이 아닌 Preparation 단계에서 발견됨</li>
+<li>제안된 시너지 효과는 낮은 영향만 미침</li>
+<li>주장: Meetings에서 발견되는 결함은 종종 더 미묘함(Subtle)</li>
+</ul>
+<h2 id="false-positives" tabindex="-1"><a class="header-anchor" href="#false-positives"><span>False Positives</span></a></h2>
+<ul>
+<li>발견된 issue의 약 25%는 False positives</li>
+<li>Meeting 중 토론 회피</li>
+<li>Meeting 중 혼란은 문서가 더 명확해야 한다는 지표(Indicator)</li>
+</ul>
+<h2 id="self-checks-can-find-half-the-issues" tabindex="-1"><a class="header-anchor" href="#self-checks-can-find-half-the-issues"><span>Self-checks Can Find Half the Issues</span></a></h2>
+<p><img src="@source/se/image-71.png" alt="alt text"></p>
+<ul>
+<li>Authors가 Inspection 전 문서를 Self-check함</li>
+</ul>
+<h2 id="the-goal-is-not-to-be-right-it-s-to-save" tabindex="-1"><a class="header-anchor" href="#the-goal-is-not-to-be-right-it-s-to-save"><span>The Goal Is Not To Be “Right” (it’s to save $)</span></a></h2>
+<blockquote>
+<p><em>&quot;피로스의 승리(Pyrrhic victory)는 승리자에게 막대한 대가를 치르게 하여 패배와 다름없는 승리이다.<br>
+장기적 발전을 저해하거나 진정한 성취감을 무효화한다.&quot;</em></p>
+</blockquote>
+<ul>
+<li>옳다는 것(Being right)이 항상 중요한 것은 아님</li>
+<li>&quot;내 코드가 작동하지 않는다&quot;는 말을 들었을 때 고려할 사고방식
+<ul>
+<li>&quot;이 사람에게 왜 틀렸는지 말해줘야지&quot; (X)</li>
+<li>&quot;내 코드가 왜 작동하는지 명확히 해야겠다&quot; (O)</li>
+</ul>
+</li>
+</ul>
+<h2 id="inspections-vs-reviews-costs" tabindex="-1"><a class="header-anchor" href="#inspections-vs-reviews-costs"><span>Inspections vs Reviews: Costs</span></a></h2>
+<ul>
+<li>Formal inspections 및 Modern code reviews
+<ul>
+<li>Formal inspections는 매우 비쌈 (세션당 약 1 Developer-day)</li>
+<li>Passaround review는 분산형, 비동기적(Asynchronous)</li>
+</ul>
+</li>
+<li>Code reviews 대 Testing
+<ul>
+<li>Code reviews가 비용 효율적이라 주장됨</li>
+</ul>
+</li>
+<li>Code reviews 대 버그를 찾지 못하는 비용 비교</li>
+</ul>
+<h2 id="code-review-by-formality" tabindex="-1"><a class="header-anchor" href="#code-review-by-formality"><span>Code Review by Formality</span></a></h2>
+<ol>
+<li>Inspection (가장 formal함)</li>
+<li>Walkthrough</li>
+<li>Pair Programming</li>
+<li>Passaround (&quot;Modern code reviews&quot;)</li>
+<li>Ad hoc review</li>
+</ol>
+<h2 id="differences-among-peer-review-types" tabindex="-1"><a class="header-anchor" href="#differences-among-peer-review-types"><span>Differences Among Peer Review Types</span></a></h2>
+<table>
+<thead>
+<tr>
+<th>Review Type</th>
+<th>Planning</th>
+<th>Preparation</th>
+<th>Meeting</th>
+<th>Correction</th>
+<th>Verification</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Inspection</td>
+<td>O</td>
+<td>O</td>
+<td>O</td>
+<td>O</td>
+<td>O</td>
+</tr>
+<tr>
+<td>Walkthrough</td>
+<td>O</td>
+<td>O</td>
+<td>O</td>
+<td>O</td>
+<td>X</td>
+</tr>
+<tr>
+<td>Pair Programming</td>
+<td>O</td>
+<td>X</td>
+<td>Continuous</td>
+<td>O</td>
+<td>O</td>
+</tr>
+<tr>
+<td>Passaround</td>
+<td>X</td>
+<td>O</td>
+<td>Rarely</td>
+<td>O</td>
+<td>X</td>
+</tr>
+<tr>
+<td>Ad Hoc</td>
+<td>X</td>
+<td>X</td>
+<td>O</td>
+<td>O</td>
+<td>X</td>
+</tr>
+</tbody>
+</table>
+<h2 id="experience-studies-claims" tabindex="-1"><a class="header-anchor" href="#experience-studies-claims"><span>Experience (Studies/Claims)</span></a></h2>
+<ul>
+<li>Raytheon
+<ul>
+<li>&quot;Rework&quot; 비용 41%에서 20%로 감소</li>
+<li>Integration effort 80% 감소</li>
+</ul>
+</li>
+<li>Paulk et al. : Space shuttle software 수정 비용
+<ul>
+<li>Inspection 중 발견 시 $1</li>
+<li>System test 중 발견 시 $13</li>
+<li>Delivery 후 발견 시 $92</li>
+</ul>
+</li>
+<li>IBM
+<ul>
+<li>Inspection 1시간이 Testing 20시간 절약</li>
+</ul>
+</li>
+<li>R. Grady, HP의 효율성 데이터 (Defects/h)
+<ul>
+<li>System use: <code v-pre>0.21</code></li>
+<li>Black box testing: <code v-pre>0.28</code></li>
+<li>White box testing: <code v-pre>0.32</code></li>
+<li>Reading/inspection: <code v-pre>1.06</code></li>
+</ul>
+</li>
+</ul>
+</div></template>
+
+
