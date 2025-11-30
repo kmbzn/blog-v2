@@ -10,7 +10,6 @@ export default defineUserConfig({
       type: 'katex',
     }),
   ],
-  
   description: 'Summarizing key concepts from CS lectures.',
   base: '/',
   head: [
@@ -27,26 +26,34 @@ export default defineUserConfig({
     ['link', { rel: 'stylesheet', href: 'https://cdn.jsdelivr.net/gh/orioncactus/victor-mono@latest/dist/index.css' }],
     ['link', { rel: 'stylesheet', href: 'https://cdn.jsdelivr.net/npm/pretendard@1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css' }]
   ],
-  
   theme: theme({
     logo: '/images/kbz.png',
     colorMode: 'auto',
     sidebar: [
       {
         children: [
-          '/Mindscape',
-          '/Musics',
+          '/Mindscape', '/Musics',
         ]
       },
       {
         text: '🧠 Algorithm',
         collapsible: true,
         children: [
-          '/algorithm/PythonTimeout',
-          '/algorithm/std-vector',
-          '/algorithm/vim',
-          '/algorithm/1018',
-          '/algorithm/1966',
+          '/a/pytimeout', '/a/stdvector', '/a/vim', '/a/1018', '/a/1966',
+        ]
+      },
+      {
+        text: '🗂️ Database System',
+        collapsible: true,
+        children: [
+          '/db/1', '/db/2', '/db/3', '/db/6', '/db/7-1', '/db/7-2', '/db/13', '/db/14', '/db/15', '/db/16', '/db/17', '/db/18',
+        ]
+      },
+      {
+        text: '🐧 Operating System',
+        collapsible: true,
+        children: [
+          '/os/7', '/os/8', '/os/9', '/os/10', '/os/11', '/os/12', '/os/13', '/os/14',
         ]
       },
     ],

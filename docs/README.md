@@ -8,36 +8,31 @@
 
 ## 👤 About Me
 
-| Field  | Info                                         |
-|--------|----------------------------------------------|
-| Region | Seoul, South Korea                           |
-| GitHub | [github.com/kmbzn](https://github.com/kmbzn) |
-| IG     | [@kmbzn](https://instagram.com/kmbzn)        |
-| Univ.  | *Hanyang Univ.* (Class of '21)               |
-| Major  | *Dept. of* Computer Science                  |
-| HS     | *Joongdong High,* 112th                      |
+| Field | Info
+| - | -
+| Region | Seoul, South Korea                          
+| GitHub | [github.com/kmbzn](https://github.com/kmbzn)
+| IG     | [@kmbzn](https://instagram.com/kmbzn)       
+| Univ.  | *Hanyang Univ.* (Class of '21)              
+| Major  | *Dept. of* Computer Science                 
+| HS     | *Joongdong High,* 112th                     
 
 <img src="https://ghchart.rshah.org/kmbzn" alt="GitHub chart">
 
 ## 📚 Topics
-
 다음과 같은 주제에 대해 다루고자 합니다.
 
-### 컴퓨터 공학 (Computer Science)
-- 운영체제: Linux, xv6, CPU scheduling, system call
-- 컴퓨터 구조: RISC-V, pipeline, cache, OoO execution
-- 프로그래밍 언어: Python, C, C++, Java, Objective-C, C#, SmallTalk, Ruby
-- 알고리즘 문제 풀이: Online Judge 기반 학습
-- 컴퓨터 그래픽스: rendering, transformation matrix, lighting model, OpenGL
+### Computer Science
+- 운영체제: `Linux`, `xv6`, CPU scheduling, System call, Virtual Memory
+- 데이터베이스: SQL, Transaction, Query Optimization, E-R Model, Concurrency
+- 자료 구조: Stack & Queue, Binary Search Tree, Hash table, Graph
+- 네트워크: `TCP/IP`, `HTTP`/`HTTPS`, DNS, Socket
 
-### 웹 개발
-- VuePress 기반 정적 사이트 구성부터 전반적인 웹 frontend customizing
-- Markdown 문서화, 코드 highlighting, 수식 rendering 등 콘텐츠 중심 개발
-
-### 디자인
+### Design
 - 로고 디자인 및 visual identity 구성
 - Typography, layout 설계, UI styling
-- 산업디자인 및 제품 디자인 전반에 대한 관심: 형태, 기능, 사용성, 사용자 경험 중심의 디자인 분석
+- 산업디자인 및 제품 디자인 전반에 대한 관심
+  - 형태, 기능, 사용성, 사용자 경험 중심의 디자인 분석 및 평가
 
 ### IT 기기 활용 및 디지털 repair
 - 다양한 플랫폼 기반 기기 간의 workflow 연동
@@ -52,9 +47,8 @@
 - 인문학적 관심: 세계사, 언어의 역사, 세계 인문 환경 등 문화와 지성의 흐름에 대한 이해
 
 ### 건강 및 영양
-- 건강한 체중 증가를 위한 칼로리 설계, 식습관 및 생활 습관 조절
+- 건강한 체중 증가를 위한 식습관 및 생활 습관 설계, 개선 노력
 - 뇌 과학과 정신 건강
-- 소화, FODMAP, 기능성 식품 등 식이 관련 issues
 - 웨이트 기반 셀프 트레이닝과 기초 체력 관리
 
 > *전공 기반의 기술적 분석부터 시각적 표현, 실생활의 경험, 인문학적 관점까지 다양한 관심사를 자유롭게 정리하고 공유하는 공간입니다.*
