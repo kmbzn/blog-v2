@@ -76,6 +76,14 @@ div[class*=language-].line-numbers-mode .line-numbers {
   padding: 0 1rem;
 }
 
+.theme-default-content img:not([src^="http"]) {
+  height: 360px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+}
+
 .hint-container {
   margin: 0;
 }
