@@ -76,10 +76,9 @@ div[class*=language-].line-numbers-mode .line-numbers {
   padding: 0 1rem;
 }
 
-.theme-default-content img:not([src^="http"]) {
-  max-height: 300px;
+[vp-content] img:not([src^="http"]) {
+  max-height: 320px;
   height: auto;
-  max-width: 100%; 
 }
 
 .hint-container {
