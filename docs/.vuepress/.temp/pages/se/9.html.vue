@@ -1,4 +1,4 @@
-<template><div><h1 id="_9-unified-modelling-language" tabindex="-1"><a class="header-anchor" href="#_9-unified-modelling-language"><span>9. Unified Modelling Language</span></a></h1>
+<template><div><h1 id="_9-uml" tabindex="-1"><a class="header-anchor" href="#_9-uml"><span>9. UML</span></a></h1>
 <h2 id="learning-goals" tabindex="-1"><a class="header-anchor" href="#learning-goals"><span>Learning Goals</span></a></h2>
 <ul>
 <li>UML (Unified Modeling Language)이 무엇인지, 왜 필요한지 이해</li>

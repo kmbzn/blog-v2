@@ -36,24 +36,31 @@ export default defineUserConfig({
         ]
       },
       {
-        text: '🧠 Algorithm',
+        text: '🤖 Artificial Intelligence',
         collapsible: true,
         children: [
-          '/a/pytimeout', '/a/stdvector', '/a/vim', '/a/1018', '/a/1966',
+          '/ai/1', '/ai/2', '/ai/3', '/ai/4', '/ai/5', '/ai/6', '/ai/7', '/ai/8', '/ai/9', '/ai/10', '/ai/11', '/ai/12', '/ai/13', '/ai/14', '/ai/15', '/ai/16', '/ai/17', '/ai/18', '/ai/19',
+        ]
+      },
+      {
+        text: '🔐 Computer Security',
+        collapsible: true,
+        children: [
+          '/cs/7', '/cs/8', '/cs/9', '/cs/10',
         ]
       },
       {
         text: '🗂️ Database System',
         collapsible: true,
         children: [
-          '/db/1', '/db/2', '/db/3', '/db/6', '/db/7-1', '/db/7-2', '/db/13', '/db/14', '/db/15', '/db/16', '/db/17', '/db/18',
+          '/db/1', '/db/2', '/db/3', '/db/6', '/db/7-1', '/db/7-2', '/db/13', '/db/14', '/db/15', '/db/16', '/db/17', '/db/18', '/db/19',
         ]
       },
       {
-        text: '🐧 Operating System',
+        text: '🧑‍💻 Software Engineering',
         collapsible: true,
         children: [
-          '/os/7', '/os/8', '/os/9', '/os/10', '/os/11', '/os/12', '/os/13', '/os/14',
+          '/se/9', '/se/10', '/se/11', '/se/12', '/se/13', '/se/14', '/se/15', '/se/16', '/se/17',
         ]
       },
     ],
