@@ -57,6 +57,7 @@ pre {
 
 :root {
   --navbar-height: 3rem;
+  --vp-c-text: #000;
   --vp-c-gutter: #aaa;
   --vp-c-accent: #fc6525;
   --vp-c-accent-bg: #fc6525;
@@ -170,8 +171,9 @@ th, td {
 
 html[data-theme='dark'] {
   --vp-c-bg: #111;
-  --vp-c-text: #ddd;
-  --vp-c-gutter: #333;
+  --vp-c-text: #eee;
+  --vp-c-gutter: #444;
+  --vp-c-text-mute: #bbb;
 }
 
 table {
@@ -234,7 +236,6 @@ html[data-theme='dark'] img[src$=".png"]:not([src^="http"]) {
 
   :root {
     --navbar-height: 0;
-    --vp-c-text: #000;
   }
 
   .vp-navbar,
@@ -257,7 +258,6 @@ html[data-theme='dark'] img[src$=".png"]:not([src^="http"]) {
   }
 
   [vp-content] h2 {
-    margin-top: 0rem;
-    padding-top: .5rem;
+    padding-top: 1rem;
   }
 }
