@@ -37,7 +37,7 @@
 <li>모든 데이터: 처리 전후 memory에 위치</li>
 <li>모든 instructions: 실행 위해 memory에 위치</li>
 <li>Memory management: CPU utilization 및 response time 최적화</li>
-<li>활동:
+<li>활동
 <ul>
 <li>Memory 사용 현황 및 사용자 추적</li>
 <li>Process (또는 그 일부) 및 데이터의 memory 이동 결정</li>
@@ -64,8 +64,8 @@
 <li>OS가 제공하는 서비스에 대한 programming interface</li>
 <li>일반적으로 high-level language (C or C++)로 작성</li>
 <li>직접 system call 사용보다 high-level API (Application 프로그램 Interface) 통해 접근</li>
-<li>open(): system call</li>
-<li>fopen(): API (C language library)</li>
+<li><code v-pre>open()</code>: system call</li>
+<li><code v-pre>fopen()</code>: API (C language library)</li>
 <li>3대 API: Win32 (Windows), POSIX (UNIX, Linux, Mac OS X), Java (JVM)</li>
 <li>API 사용 이유: Portability, Ease of use</li>
 </ul>
@@ -84,7 +84,7 @@
 </ul>
 <h2 id="standard-c-library-example" tabindex="-1"><a class="header-anchor" href="#standard-c-library-example"><span>Standard C Library Example</span></a></h2>
 <ul>
-<li>C program: print<code v-pre>f()</code> (library call) 호출 -&gt; write() (system call) 호출</li>
+<li>C program: <code v-pre>printf()</code> (library call) 호출 -&gt; <code v-pre>write()</code> (system call) 호출</li>
 </ul>
 <h2 id="examples-of-windows-and-unix-system-calls" tabindex="-1"><a class="header-anchor" href="#examples-of-windows-and-unix-system-calls"><span>Examples of Windows and Unix System Calls</span></a></h2>
 <h1 id="buffer-overflow" tabindex="-1"><a class="header-anchor" href="#buffer-overflow"><span>Buffer Overflow</span></a></h1>
@@ -114,7 +114,7 @@
 <li>인접 memory 위치 덮어쓰기</li>
 <li>덮어쓰는 위치: 프로그램 variables, parameters, 프로그램 control flow 데이터</li>
 <li>Buffer 위치: stack, heap, 데이터 section</li>
-<li>결과 (Consequences):
+<li>결과 (Consequences)
 <ul>
 <li>프로그램 데이터 손상</li>
 <li>예기치 않은 control 전송</li>
@@ -135,13 +135,13 @@
 </blockquote>
 <h2 id="buffer-overflow-attacks" tabindex="-1"><a class="header-anchor" href="#buffer-overflow-attacks"><span>Buffer Overflow Attacks</span></a></h2>
 <ul>
-<li>Exploit 필요 조건:
+<li>Exploit 필요 조건
 <ul>
 <li>Attacker 제어 하의 데이터로 trigger 가능한 buffer overflow 취약점 식별</li>
 <li>Buffer 저장 방식 이해, 손상 가능성 판단</li>
 </ul>
 </li>
-<li>취약 프로그램 식별 방법:
+<li>취약 프로그램 식별 방법
 <ul>
 <li>프로그램 source 검사</li>
 <li>Oversized input 처리 시 프로그램 실행 추적</li>
@@ -160,7 +160,7 @@
 <li>Buffer가 stack에 위치할 때 발생 (stack smashing)</li>
 <li>Morris Worm이 사용 (unchecked buffer overflow exploit)</li>
 <li>여전히 널리 exploit 됨</li>
-<li>Stack frame:
+<li>Stack frame
 <ul>
 <li>함수 호출 시 return address 저장</li>
 <li>호출된 함수로 전달될 parameter 저장</li>
@@ -293,7 +293,7 @@
 <table>
 <thead>
 <tr>
-<th>Shellcode functions:</th>
+<th>Shellcode functions</th>
 </tr>
 </thead>
 <tbody>
@@ -317,7 +317,7 @@
 <h2 id="buffer-overflow-defenses" tabindex="-1"><a class="header-anchor" href="#buffer-overflow-defenses"><span>Buffer Overflow Defenses</span></a></h2>
 <ul>
 <li>Buffer overflow: 널리 exploit 됨</li>
-<li>2가지 방어 접근:
+<li>2가지 방어 접근
 <ul>
 <li>Compile-time: 새 프로그램에서 attack 저항하도록 강화</li>
 <li>Run-time: 기존 프로그램에서 attack 탐지 및 중단</li>
@@ -326,13 +326,13 @@
 </ul>
 <h2 id="compile-time-defenses-programming-language" tabindex="-1"><a class="header-anchor" href="#compile-time-defenses-programming-language"><span>Compile-Time Defenses: Programming Language</span></a></h2>
 <ul>
-<li>Modern high-level language 사용:
+<li>Modern high-level language 사용
 <ul>
 <li>Buffer overflow attack에 취약하지 않음</li>
 <li>Compiler가 range checks 및 변수 operation 강제</li>
 </ul>
 </li>
-<li>단점:
+<li>단점
 <ul>
 <li>Run time check 위한 추가 code 실행</li>
 <li>유연성/안전성 vs resource 사용 비용</li>
@@ -381,13 +381,13 @@
 <h2 id="compile-time-defenses-stack-protection" tabindex="-1"><a class="header-anchor" href="#compile-time-defenses-stack-protection"><span>Compile-Time Defenses: Stack Protection</span></a></h2>
 <ul>
 <li>Function entry, exit code 추가 -&gt; stack 손상 징후 check</li>
-<li>Random canary 사용:
+<li>Random canary 사용
 <ul>
 <li>예측 불가능해야 함</li>
 <li>다양한 시스템들과 달라야 함</li>
 </ul>
 </li>
-<li>Stackshield, Return Address Defender (RAD):
+<li>Stackshield, Return Address Defender (RAD)
 <ul>
 <li>GCC extensions
 <ul>
@@ -550,22 +550,31 @@
 </ul>
 <h2 id="rop-without-returns-9" tabindex="-1"><a class="header-anchor" href="#rop-without-returns-9"><span>ROP without Returns [9]</span></a></h2>
 <ul>
-<li>Features:</li>
+<li><strong>Features</strong>:
+<ul>
 <li>Return address 보호 countermeasure bypass</li>
 <li>Intel <code v-pre>x86</code>, ARM 등 적용</li>
 <li>Turing-complete gadget set (without return instruction)</li>
-<li>Approaches:</li>
+</ul>
+</li>
+<li><strong>Approaches</strong>:
+<ul>
 <li>Return-like sequences 사용 (Candidates: indirect jumps)</li>
-<li>Intel: jmp *<code v-pre>%eax</code></li>
-<li>ARM: blx r3</li>
-<li>Constraints:</li>
+<li>Intel: <code v-pre>jmp *%eax</code></li>
+<li>ARM: <code v-pre>blx r3</code></li>
+</ul>
+</li>
+<li><strong>Constraints</strong>:
+<ul>
 <li><code v-pre>%eax</code>, r3 등 register 사전 초기화 필요</li>
 <li>Stack pointer: return 자동 update, indirect jump 아님</li>
+</ul>
+</li>
 </ul>
 <h2 id="rop-without-returns" tabindex="-1"><a class="header-anchor" href="#rop-without-returns"><span>ROP without Returns</span></a></h2>
 <ul>
 <li>Return-like Sequences:</li>
-<li>Intel: pop <code v-pre>%eax</code>; jmp *<code v-pre>%eax</code></li>
+<li>Intel: <code v-pre>pop %eax</code>; <code v-pre>jmp *%eax</code></li>
 <li>
 <ol>
 <li>Target address pop (into <code v-pre>%eax</code>)</li>
@@ -573,12 +582,12 @@
 </li>
 <li>
 <ol start="2">
-<li>pop: stack pointer 4 bytes 증가 (return과 유사)</li>
+<li><code v-pre>pop</code>: stack pointer 4 bytes 증가 (<code v-pre>return</code>과 유사)</li>
 </ol>
 </li>
 <li>
 <ol start="3">
-<li>jmp: <code v-pre>%eax</code> 저장 address로</li>
+<li><code v-pre>jmp</code>: <code v-pre>%eax</code> 저장 address로</li>
 </ol>
 </li>
 <li>ARM:</li>
@@ -586,17 +595,17 @@
 <li>Update-Load-Branch Sequence 사용</li>
 <li>
 <ol>
-<li>(Update) { adds r6,#4 }</li>
+<li>(Update) { <code v-pre>adds r6,#4</code> }</li>
 </ol>
 </li>
 <li>
 <ol start="2">
-<li>(Load) { ldr r5, [r6] }</li>
+<li>(Load) { <code v-pre>ldr r5, [r6]</code> }</li>
 </ol>
 </li>
 <li>
 <ol start="3">
-<li>(Branch) { blx r5 }</li>
+<li>(Branch) { <code v-pre>blx r5</code> }</li>
 </ol>
 </li>
 <li>Problems: Return-like sequences 찾기 어려움</li>

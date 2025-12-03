@@ -8,14 +8,14 @@
 <p>하지만 10년이 지난 2025년 현재 비트코인의 가격은 10만 달러를 넘어선 상태이다. 이제는 세계 최대 자산 운용사들과 국가 단위의 정책에까지 영향을 미치는 자산으로 성장하였다. 나는 현재 <code v-pre>0.1 BTC</code>를 보유하고 있으며, 이는 단순한 호기심이나 철학적 관심을 넘어서 <strong>실질적인 수익 기대 및 미래 금융 시스템 변화 가능성에 대한 참여의 의미</strong>로 받아들이고 있다.</p>
 <h2 id="비트코인의-실체는-무엇이며-왜-주목받는가" tabindex="-1"><a class="header-anchor" href="#비트코인의-실체는-무엇이며-왜-주목받는가"><span>비트코인의 실체는 무엇이며 왜 주목받는가</span></a></h2>
 <p>비트코인은 단순한 디지털 자산이 아니다. 이는 블록체인(Blockchain) 기술을 기반으로 동작하는 <strong>탈중앙화된 분산 원장(元帳) 시스템</strong>이며, 제3자나 중앙 기관 없이도 가치의 전송과 소유권 증명이 가능하게 설계된 <strong>P2P 전자 화폐 시스템</strong>이다.</p>
-<p>거래는 다음과 같은 절차를 통해 처리된다:</p>
+<p>거래는 다음과 같은 절차를 통해 처리된다.</p>
 <ul>
 <li>거래는 네트워크 참가자들이 검증하며, 유효한 거래는 <strong>블록 단위로 묶여 체인 형태로 연결</strong>된다.</li>
 <li>각 블록은 <strong>이전 블록의 해시값, 현재 블록의 트랜잭션 데이터, 난이도 기준에 맞는 nonce 값</strong>을 포함한다.</li>
 <li>새로운 블록은 작업증명(PoW, Proof of Work)이라는 메커니즘을 통해 생성되며, 이 과정에서 채굴자(miner)는 컴퓨팅 자원을 사용해 수학적 퍼즐을 해결한다.</li>
 <li>네트워크 과반수 이상이 해당 블록을 인정하면 블록체인에 추가되며, 이로써 거래는 ‘불변성’을 갖는다.</li>
 </ul>
-<p>비트코인의 핵심 기술적 특성은 다음과 같다:</p>
+<p>비트코인의 핵심 기술적 특성은 다음과 같다.</p>
 <ul>
 <li><strong>분산 합의(Distributed Consensus)</strong>: 중앙 서버 없이, 전 세계 노드들이 동일한 원장 상태를 유지하며 합의를 도출함</li>
 <li><strong>불변성(Immutability)</strong>: 블록에 포함된 거래 내역은 누구도 변경할 수 없음. 과거 데이터 위조가 <strong>사실상 불가능함</strong></li>
@@ -27,7 +27,7 @@
 <p>이러한 구조적 특성 덕분에 많은 기술자와 경제학자들은 비트코인을 단순한 디지털 자산이 아니라, <strong>금융 시스템 전반에 대한 근본적인 재설계 가능성을 품은 기술적 혁신</strong>으로 보고 있다.</p>
 <h2 id="비트코인은-왜-인플레이션-헷지-수단이-되는가" tabindex="-1"><a class="header-anchor" href="#비트코인은-왜-인플레이션-헷지-수단이-되는가"><span>비트코인은 왜 인플레이션 헷지 수단이 되는가?</span></a></h2>
 <p>비트코인이 인플레이션에 강하다고 평가받는 핵심 이유는 그 <strong>공급량이 고정되어 있기 때문</strong>이다. 중앙은행이 발행하는 법정화폐는 경제 상황에 따라 공급량을 조절할 수 있으나, 비트코인은 프로토콜 수준에서 최대 발행량이 2,100만 개로 제한되어 있다.</p>
-<p>경제학적으로 화폐의 구매력은 다음과 같은 관계로 설명된다:</p>
+<p>경제학적으로 화폐의 구매력은 다음과 같은 관계로 설명된다.</p>
 <p v-pre class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mtext>Purchasing Power</mtext><mo>∝</mo><mfrac><mn>1</mn><mtext>Money Supply</mtext></mfrac></mrow><annotation encoding="application/x-tex">\text{Purchasing~Power} \propto \frac{1}{\text{Money~Supply}}
 </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord text"><span class="mord">Purchasing</span><span class="mord nobreak"> </span><span class="mord">Power</span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">∝</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:2.2019em;vertical-align:-0.8804em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.3214em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord text"><span class="mord">Money</span><span class="mord nobreak"> </span><span class="mord">Supply</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.8804em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span></p>
 <p>즉, 공급량이 많아질수록 화폐의 실질 가치는 하락한다. 실제로 많은 국가들이 경기 부양을 위해 화폐를 대량 발행한 결과, 인플레이션이 가속된 사례가 있다. 이와 달리 비트코인의 공급은 수학적 규칙에 의해 정해져 있어 <strong>화폐 발행의 자의적 조작이 불가능하다.</strong></p>
@@ -47,7 +47,7 @@
 </blockquote>
 <p>현재 비트코인 시장은 ‘4년 주기 사이클설’에 따라 움직여 왔다. 4년에 한 번 채굴 보상이 반으로 줄어드는 ‘반감기’를 기준으로 가격이 급등하고 조정을 받는 패턴이 반복되어 왔다. 실제로 2012, 2016, 2020년에 반감기 이후 강한 상승장이 이어졌고, 다시 조정 국면에 진입하는 흐름이 나타났다. 현재는 2024년의 반감기를 지난 시점이며, 많은 투자자들이 곧 다가올 상승 주기를 기대하고 있다.</p>
 <p>다만 이 사이클 이론에 대해서는 비트맥시(BitMaxi)들 사이에서 회의적인 시각이 존재한다. 이들은 이러한 주기적 패턴이 <strong>후행적 데이터에 기반한 일종의 '끼워 맞추기'에 불과하다</strong>고 지적한다. 실제로 시장은 점점 더 복잡해지고 있으며, 단순한 수학적 주기로 가격이 예측되기에는 너무 많은 변수들이 작용하고 있다는 주장도 설득력을 가진다.</p>
-<p>그럼에도 불구하고 나는 지금까지의 비트코인 시장 흐름에서 이 주기가 어느 정도 설명력을 가지고 있었다고 판단하며, 당분간은 유효하다고 생각한다. 하지만 궁극적으로는 가격 예측 모델이 아니라, <strong>비트코인이 어떤 철학과 구조적 특성을 지닌 자산인가에 더 집중해야 한다고 본다.</strong></p>
+<p>그럼에도 불구하고 나는 지금까지의 비트코인 시장 흐름에서 이 주기가 어느 정도 설득력을 가지고 있었다고 판단하며, 당분간은 유효하다고 생각한다. 하지만 궁극적으로는 가격 예측 모델이 아니라, <strong>비트코인이 어떤 철학과 구조적 특성을 지닌 자산인가에 더 집중해야 한다고 본다.</strong></p>
 <p>정책 측면에서도 변화가 나타나고 있다. 특히 최근 도널드 트럼프 대통령은 재출마를 준비하는 과정에서 비트코인을 일종의 ‘전략적 비축자산’으로 활용하겠다는 입장을 밝힌 바 있다. 이는 비트코인을 미국의 국가적 차원에서 다루겠다는 의도로 해석될 수 있으며, 제도권의 인정이 점차 확대되고 있음을 시사한다.</p>
 <p>비트코인에 대한 시선은 여전히 엇갈린다. 일부는 이를 극단적으로 신봉하며 모든 화폐가 결국 비트코인으로 대체될 것이라 믿고, 반대로 일부는 단순한 투기 수단이나 일시적 유행 정도로 치부한다. 필자 역시 비트맥시까지는 아니지만, 장기적으로는 그들과 유사한 철학적 기반에 공감하고 있다. <strong>비트코인은 단순한 ‘코인’이 아니라 금융 시스템의 구조를 바꾸려는 기술적·철학적 시도</strong>이며, 나는 그것이 충분히 유의미한 방향이라고 믿는다.</p>
 <p>투자의 관점에서는 높은 변동성이라는 위험 요소가 분명 존재하지만, 동시에 <strong>기존 금융 질서와는 다른 방향성을 제시할 수 있는 유력한 대안</strong>이기도 하다. 전문가들은 포트폴리오의 일부(1~5%) 수준에서 비트코인을 보유할 것을 권장하는 편이다. 내가 보유 중인 <code v-pre>0.1 BTC</code> 역시 그러한 분산적 접근의 일환이지만, 단지 수익을 기대한 투자가 아니라 <strong>이 기술과 철학이 궁극적으로 어디까지 확장될 수 있는지를 지켜보는 참여적 시도</strong>이기도 하다.</p>

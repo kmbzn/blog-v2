@@ -79,6 +79,8 @@ div[class*=language-].line-numbers-mode .line-numbers {
 [vp-content] img:not([src^="http"]) {
   max-height: 320px;
   height: auto;
+  display: block;
+  margin: 0 auto;
 }
 
 .hint-container {
@@ -180,14 +182,8 @@ div[class*='language-'].line-numbers-mode:after {
   border: none;
 }
 
-html[data-theme='light'] div[class*='language-'] span.token {
-  display: inline-block;
-  filter: invert(1) hue-rotate(180deg);
-}
-
-html[data-theme='dark'] img[src$=".png"] {
-  filter:
-    invert(1) hue-rotate(180deg) contrast(0.9) brightness(1.3);
+html[data-theme='dark'] img[src$=".png"]:not([src^="http"]) {
+  filter: invert(1) hue-rotate(180deg) contrast(0.9) brightness(1.3);
 }
 
 /* ---------------------------------

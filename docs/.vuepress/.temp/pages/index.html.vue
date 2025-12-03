@@ -41,24 +41,22 @@
 <img src="https://ghchart.rshah.org/kmbzn" alt="GitHub chart">
 <h2 id="📚-topics" tabindex="-1"><a class="header-anchor" href="#📚-topics"><span>📚 Topics</span></a></h2>
 <p>다음과 같은 주제에 대해 다루고자 합니다.</p>
-<h3 id="컴퓨터-공학-computer-science" tabindex="-1"><a class="header-anchor" href="#컴퓨터-공학-computer-science"><span>컴퓨터 공학 (Computer Science)</span></a></h3>
+<h3 id="computer-science" tabindex="-1"><a class="header-anchor" href="#computer-science"><span>Computer Science</span></a></h3>
 <ul>
-<li>운영체제: Linux, xv6, CPU scheduling, system call</li>
-<li>컴퓨터 구조: RISC-V, pipeline, cache, OoO execution</li>
-<li>프로그래밍 언어: Python, C, C++, Java, Objective-C, C#, SmallTalk, Ruby</li>
-<li>알고리즘 문제 풀이: Online Judge 기반 학습</li>
-<li>컴퓨터 그래픽스: rendering, transformation matrix, lighting model, OpenGL</li>
+<li>운영체제: <code v-pre>Linux</code>, <code v-pre>xv6</code>, CPU scheduling, System call, Virtual Memory</li>
+<li>데이터베이스: SQL, Transaction, Query Optimization, E-R Model, Concurrency</li>
+<li>자료 구조: Stack &amp; Queue, Binary Search Tree, Hash table, Graph</li>
+<li>네트워크: <code v-pre>TCP/IP</code>, <code v-pre>HTTP</code>/<code v-pre>HTTPS</code>, DNS, Socket</li>
 </ul>
-<h3 id="웹-개발" tabindex="-1"><a class="header-anchor" href="#웹-개발"><span>웹 개발</span></a></h3>
-<ul>
-<li>VuePress 기반 정적 사이트 구성부터 전반적인 웹 frontend customizing</li>
-<li>Markdown 문서화, 코드 highlighting, 수식 rendering 등 콘텐츠 중심 개발</li>
-</ul>
-<h3 id="디자인" tabindex="-1"><a class="header-anchor" href="#디자인"><span>디자인</span></a></h3>
+<h3 id="design" tabindex="-1"><a class="header-anchor" href="#design"><span>Design</span></a></h3>
 <ul>
 <li>로고 디자인 및 visual identity 구성</li>
 <li>Typography, layout 설계, UI styling</li>
-<li>산업디자인 및 제품 디자인 전반에 대한 관심: 형태, 기능, 사용성, 사용자 경험 중심의 디자인 분석</li>
+<li>산업디자인 및 제품 디자인 전반에 대한 관심
+<ul>
+<li>형태, 기능, 사용성, 사용자 경험 중심의 디자인 분석 및 평가</li>
+</ul>
+</li>
 </ul>
 <h3 id="it-기기-활용-및-디지털-repair" tabindex="-1"><a class="header-anchor" href="#it-기기-활용-및-디지털-repair"><span>IT 기기 활용 및 디지털 repair</span></a></h3>
 <ul>
@@ -76,9 +74,8 @@
 </ul>
 <h3 id="건강-및-영양" tabindex="-1"><a class="header-anchor" href="#건강-및-영양"><span>건강 및 영양</span></a></h3>
 <ul>
-<li>건강한 체중 증가를 위한 칼로리 설계, 식습관 및 생활 습관 조절</li>
+<li>건강한 체중 증가를 위한 식습관 및 생활 습관 설계, 개선 노력</li>
 <li>뇌 과학과 정신 건강</li>
-<li>소화, FODMAP, 기능성 식품 등 식이 관련 issues</li>
 <li>웨이트 기반 셀프 트레이닝과 기초 체력 관리</li>
 </ul>
 <blockquote>

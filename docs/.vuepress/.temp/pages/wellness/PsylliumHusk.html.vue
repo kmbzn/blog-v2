@@ -3,39 +3,37 @@
   <img src="https://drvegan.com/cdn/shop/files/Psyllium_Husk.jpg?v=1689267974&width=1200" width="240" alt="Main Logo" />
 </p>
 <h2 id="차전자피란" tabindex="-1"><a class="header-anchor" href="#차전자피란"><span>차전자피란?</span></a></h2>
-<p>차전자피는 <strong>Plantago ovata</strong> 식물의 씨앗 껍질(husk)에서 추출한 수용성 식이섬유입니다. 수분을 머금으면 팽창하는 성질이 있어, 장 건강을 비롯한 다양한 신체 기능에 도움을 줍니다.</p>
+<ul>
+<li>차전자피는 <strong>Plantago ovata</strong> 식물의 씨앗 껍질(husk)에서 추출한 수용성 식이섬유입니다.</li>
+<li>수분을 머금으면 팽창하는 성질이 있어, 장 건강을 비롯한 다양한 신체 기능에 도움을 줍니다.</li>
+</ul>
 <h2 id="주요-효능" tabindex="-1"><a class="header-anchor" href="#주요-효능"><span>주요 효능</span></a></h2>
 <ul>
-<li>
-<p><strong>장 건강 개선</strong></p>
+<li><strong>장 건강 개선</strong>
 <ul>
 <li>장 내에서 수분을 흡수해 부피를 키워 <strong>변을 부드럽게 하고 배변을 촉진</strong></li>
 <li><strong>변비 완화</strong>와 <strong>장내 환경 개선</strong>에 효과적</li>
 </ul>
 </li>
-<li>
-<p><strong>혈당 조절</strong></p>
+<li><strong>혈당 조절</strong>
 <ul>
 <li>장에서 당 흡수를 지연시켜 <strong>식후 혈당 상승 억제</strong></li>
 <li><strong>인슐린 반응 안정화</strong>에 기여</li>
 </ul>
 </li>
-<li>
-<p><strong>콜레스테롤 저하</strong></p>
+<li><strong>콜레스테롤 저하</strong>
 <ul>
 <li><strong>담즙산과 결합</strong>해 배출되며, 간에서 더 많은 콜레스테롤 사용을 유도</li>
 <li><strong>LDL 콜레스테롤 감소</strong> 효과</li>
 </ul>
 </li>
-<li>
-<p><strong>체중 관리</strong></p>
+<li><strong>체중 관리</strong>
 <ul>
 <li>팽창성으로 인해 <strong>포만감 유도</strong></li>
 <li>식사량 조절에 도움</li>
 </ul>
 </li>
-<li>
-<p><strong>과민성 대장증후군(IBS) 완화</strong></p>
+<li><strong>과민성 대장증후군(IBS) 완화</strong>
 <ul>
 <li>자극이 적은 수용성 섬유로, <strong>설사형·변비형·혼합형 모두에 적용 가능</strong></li>
 <li><strong>복부 팽만, 복통, 배변 불균형</strong> 증상 완화</li>

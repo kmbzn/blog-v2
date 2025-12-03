@@ -2,754 +2,754 @@
 <table>
 <thead>
 <tr>
-<th style="text-align:left">한자</th>
-<th style="text-align:left">뜻/음</th>
+<th>한자</th>
+<th>뜻/음</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align:left">脚</td>
-<td style="text-align:left">다리 각</td>
+<td>脚</td>
+<td>다리 각</td>
 </tr>
 <tr>
-<td style="text-align:left">敢</td>
-<td style="text-align:left">감히 감</td>
+<td>敢</td>
+<td>감히 감</td>
 </tr>
 <tr>
-<td style="text-align:left">講</td>
-<td style="text-align:left">익힐 강</td>
+<td>講</td>
+<td>익힐 강</td>
 </tr>
 <tr>
-<td style="text-align:left">降</td>
-<td style="text-align:left">내릴 강, 항복할 항</td>
+<td>降</td>
+<td>내릴 강, 항복할 항</td>
 </tr>
 <tr>
-<td style="text-align:left">皆</td>
-<td style="text-align:left">다 개</td>
+<td>皆</td>
+<td>다 개</td>
 </tr>
 <tr>
-<td style="text-align:left">更</td>
-<td style="text-align:left">다시 갱, 고칠 경</td>
+<td>更</td>
+<td>다시 갱, 고칠 경</td>
 </tr>
 <tr>
-<td style="text-align:left">居</td>
-<td style="text-align:left">살 거</td>
+<td>居</td>
+<td>살 거</td>
 </tr>
 <tr>
-<td style="text-align:left">堅</td>
-<td style="text-align:left">굳을 견</td>
+<td>堅</td>
+<td>굳을 견</td>
 </tr>
 <tr>
-<td style="text-align:left">潔</td>
-<td style="text-align:left">깨끗할 결</td>
+<td>潔</td>
+<td>깨끗할 결</td>
 </tr>
 <tr>
-<td style="text-align:left">庚</td>
-<td style="text-align:left">일곱째 천간 경, 별 경</td>
+<td>庚</td>
+<td>일곱째 천간 경, 별 경</td>
 </tr>
 <tr>
-<td style="text-align:left">耕</td>
-<td style="text-align:left">밭 갈 경</td>
+<td>耕</td>
+<td>밭 갈 경</td>
 </tr>
 <tr>
-<td style="text-align:left">驚</td>
-<td style="text-align:left">놀랄 경</td>
+<td>驚</td>
+<td>놀랄 경</td>
 </tr>
 <tr>
-<td style="text-align:left">溪</td>
-<td style="text-align:left">시내 계</td>
+<td>溪</td>
+<td>시내 계</td>
 </tr>
 <tr>
-<td style="text-align:left">癸</td>
-<td style="text-align:left">열째 천간 계, 북방 계</td>
+<td>癸</td>
+<td>열째 천간 계, 북방 계</td>
 </tr>
 <tr>
-<td style="text-align:left">穀</td>
-<td style="text-align:left">곡식 곡</td>
+<td>穀</td>
+<td>곡식 곡</td>
 </tr>
 <tr>
-<td style="text-align:left">困</td>
-<td style="text-align:left">곤할 곤</td>
+<td>困</td>
+<td>곤할 곤</td>
 </tr>
 <tr>
-<td style="text-align:left">關</td>
-<td style="text-align:left">빗장 관, 관계할 관</td>
+<td>關</td>
+<td>빗장 관, 관계할 관</td>
 </tr>
 <tr>
-<td style="text-align:left">橋</td>
-<td style="text-align:left">다리 교</td>
+<td>橋</td>
+<td>다리 교</td>
 </tr>
 <tr>
-<td style="text-align:left">舊</td>
-<td style="text-align:left">예 구, 옛 구</td>
+<td>舊</td>
+<td>예 구, 옛 구</td>
 </tr>
 <tr>
-<td style="text-align:left">勸</td>
-<td style="text-align:left">권할 권</td>
+<td>勸</td>
+<td>권할 권</td>
 </tr>
 <tr>
-<td style="text-align:left">均</td>
-<td style="text-align:left">고를 균</td>
+<td>均</td>
+<td>고를 균</td>
 </tr>
 <tr>
-<td style="text-align:left">極</td>
-<td style="text-align:left">다할 극, 극진할 극</td>
+<td>極</td>
+<td>다할 극, 극진할 극</td>
 </tr>
 <tr>
-<td style="text-align:left">及</td>
-<td style="text-align:left">미칠 급</td>
+<td>及</td>
+<td>미칠 급</td>
 </tr>
 <tr>
-<td style="text-align:left">給</td>
-<td style="text-align:left">공급할 급, 줄 급</td>
+<td>給</td>
+<td>공급할 급, 줄 급</td>
 </tr>
 <tr>
-<td style="text-align:left">幾</td>
-<td style="text-align:left">기미 기, 몇 기</td>
+<td>幾</td>
+<td>기미 기, 몇 기</td>
 </tr>
 <tr>
-<td style="text-align:left">旣</td>
-<td style="text-align:left">이미 기</td>
+<td>旣</td>
+<td>이미 기</td>
 </tr>
 <tr>
-<td style="text-align:left">暖</td>
-<td style="text-align:left">따뜻할 난</td>
+<td>暖</td>
+<td>따뜻할 난</td>
 </tr>
 <tr>
-<td style="text-align:left">乃</td>
-<td style="text-align:left">이에 내</td>
+<td>乃</td>
+<td>이에 내</td>
 </tr>
 <tr>
-<td style="text-align:left">但</td>
-<td style="text-align:left">다만 단, 거짓 탄</td>
+<td>但</td>
+<td>다만 단, 거짓 탄</td>
 </tr>
 <tr>
-<td style="text-align:left">端</td>
-<td style="text-align:left">단정할 단, 끝 단</td>
+<td>端</td>
+<td>단정할 단, 끝 단</td>
 </tr>
 <tr>
-<td style="text-align:left">待</td>
-<td style="text-align:left">기다릴 대</td>
+<td>待</td>
+<td>기다릴 대</td>
 </tr>
 <tr>
-<td style="text-align:left">徒</td>
-<td style="text-align:left">무리 도</td>
+<td>徒</td>
+<td>무리 도</td>
 </tr>
 <tr>
-<td style="text-align:left">浪</td>
-<td style="text-align:left">물결 랑</td>
+<td>浪</td>
+<td>물결 랑</td>
 </tr>
 <tr>
-<td style="text-align:left">郞</td>
-<td style="text-align:left">사내 랑</td>
+<td>郞</td>
+<td>사내 랑</td>
 </tr>
 <tr>
-<td style="text-align:left">凉</td>
-<td style="text-align:left">서늘할 량</td>
+<td>凉</td>
+<td>서늘할 량</td>
 </tr>
 <tr>
-<td style="text-align:left">練</td>
-<td style="text-align:left">익힐 련</td>
+<td>練</td>
+<td>익힐 련</td>
 </tr>
 <tr>
-<td style="text-align:left">烈</td>
-<td style="text-align:left">세찰 렬, 매울 렬</td>
+<td>烈</td>
+<td>세찰 렬, 매울 렬</td>
 </tr>
 <tr>
-<td style="text-align:left">領</td>
-<td style="text-align:left">거느릴 령</td>
+<td>領</td>
+<td>거느릴 령</td>
 </tr>
 <tr>
-<td style="text-align:left">倫</td>
-<td style="text-align:left">인륜 륜</td>
+<td>倫</td>
+<td>인륜 륜</td>
 </tr>
 <tr>
-<td style="text-align:left">莫</td>
-<td style="text-align:left">없을 막</td>
+<td>莫</td>
+<td>없을 막</td>
 </tr>
 <tr>
-<td style="text-align:left">晩</td>
-<td style="text-align:left">저물 만, 늦을 만</td>
+<td>晩</td>
+<td>저물 만, 늦을 만</td>
 </tr>
 <tr>
-<td style="text-align:left">忘</td>
-<td style="text-align:left">잊을 망</td>
+<td>忘</td>
+<td>잊을 망</td>
 </tr>
 <tr>
-<td style="text-align:left">忙</td>
-<td style="text-align:left">바쁠 망</td>
+<td>忙</td>
+<td>바쁠 망</td>
 </tr>
 <tr>
-<td style="text-align:left">妹</td>
-<td style="text-align:left">손아랫누이 매, 누이 매</td>
+<td>妹</td>
+<td>손아랫누이 매, 누이 매</td>
 </tr>
 <tr>
-<td style="text-align:left">麥</td>
-<td style="text-align:left">보리 맥</td>
+<td>麥</td>
+<td>보리 맥</td>
 </tr>
 <tr>
-<td style="text-align:left">免</td>
-<td style="text-align:left">면할 면</td>
+<td>免</td>
+<td>면할 면</td>
 </tr>
 <tr>
-<td style="text-align:left">眠</td>
-<td style="text-align:left">쉴 면, 잘 면</td>
+<td>眠</td>
+<td>쉴 면, 잘 면</td>
 </tr>
 <tr>
-<td style="text-align:left">暮</td>
-<td style="text-align:left">저물 모</td>
+<td>暮</td>
+<td>저물 모</td>
 </tr>
 <tr>
-<td style="text-align:left">妙</td>
-<td style="text-align:left">묘할 묘</td>
+<td>妙</td>
+<td>묘할 묘</td>
 </tr>
 <tr>
-<td style="text-align:left">戊</td>
-<td style="text-align:left">다섯째 천간 무</td>
+<td>戊</td>
+<td>다섯째 천간 무</td>
 </tr>
 <tr>
-<td style="text-align:left">茂</td>
-<td style="text-align:left">무성할 무</td>
+<td>茂</td>
+<td>무성할 무</td>
 </tr>
 <tr>
-<td style="text-align:left">墨</td>
-<td style="text-align:left">먹 묵</td>
+<td>墨</td>
+<td>먹 묵</td>
 </tr>
 <tr>
-<td style="text-align:left">勿</td>
-<td style="text-align:left">말 물</td>
+<td>勿</td>
+<td>말 물</td>
 </tr>
 <tr>
-<td style="text-align:left">尾</td>
-<td style="text-align:left">꼬리 미</td>
+<td>尾</td>
+<td>꼬리 미</td>
 </tr>
 <tr>
-<td style="text-align:left">杯</td>
-<td style="text-align:left">잔 배</td>
+<td>杯</td>
+<td>잔 배</td>
 </tr>
 <tr>
-<td style="text-align:left">伐</td>
-<td style="text-align:left">칠 벌</td>
+<td>伐</td>
+<td>칠 벌</td>
 </tr>
 <tr>
-<td style="text-align:left">凡</td>
-<td style="text-align:left">무릇 범</td>
+<td>凡</td>
+<td>무릇 범</td>
 </tr>
 <tr>
-<td style="text-align:left">丙</td>
-<td style="text-align:left">남녘 병</td>
+<td>丙</td>
+<td>남녘 병</td>
 </tr>
 <tr>
-<td style="text-align:left">伏</td>
-<td style="text-align:left">엎드릴 복</td>
+<td>伏</td>
+<td>엎드릴 복</td>
 </tr>
 <tr>
-<td style="text-align:left">逢</td>
-<td style="text-align:left">맞이할 봉, 만날 봉</td>
+<td>逢</td>
+<td>맞이할 봉, 만날 봉</td>
 </tr>
 <tr>
-<td style="text-align:left">浮</td>
-<td style="text-align:left">뜰 부</td>
+<td>浮</td>
+<td>뜰 부</td>
 </tr>
 <tr>
-<td style="text-align:left">部</td>
-<td style="text-align:left">떼 부, 나눌 부, 거느릴 부</td>
+<td>部</td>
+<td>떼 부, 나눌 부, 거느릴 부</td>
 </tr>
 <tr>
-<td style="text-align:left">悲</td>
-<td style="text-align:left">슬플 비</td>
+<td>悲</td>
+<td>슬플 비</td>
 </tr>
 <tr>
-<td style="text-align:left">貧</td>
-<td style="text-align:left">가난할 빈</td>
+<td>貧</td>
+<td>가난할 빈</td>
 </tr>
 <tr>
-<td style="text-align:left">舍</td>
-<td style="text-align:left">집 사</td>
+<td>舍</td>
+<td>집 사</td>
 </tr>
 <tr>
-<td style="text-align:left">傷</td>
-<td style="text-align:left">상처 상, 다칠 상</td>
+<td>傷</td>
+<td>상처 상, 다칠 상</td>
 </tr>
 <tr>
-<td style="text-align:left">常</td>
-<td style="text-align:left">항상 상, 떳떳할 상</td>
+<td>常</td>
+<td>항상 상, 떳떳할 상</td>
 </tr>
 <tr>
-<td style="text-align:left">霜</td>
-<td style="text-align:left">서리 상</td>
+<td>霜</td>
+<td>서리 상</td>
 </tr>
 <tr>
-<td style="text-align:left">惜</td>
-<td style="text-align:left">아낄 석</td>
+<td>惜</td>
+<td>아낄 석</td>
 </tr>
 <tr>
-<td style="text-align:left">昔</td>
-<td style="text-align:left">옛 석, 섞일 착</td>
+<td>昔</td>
+<td>옛 석, 섞일 착</td>
 </tr>
 <tr>
-<td style="text-align:left">舌</td>
-<td style="text-align:left">혀 설</td>
+<td>舌</td>
+<td>혀 설</td>
 </tr>
 <tr>
-<td style="text-align:left">盛</td>
-<td style="text-align:left">성할 성</td>
+<td>盛</td>
+<td>성할 성</td>
 </tr>
 <tr>
-<td style="text-align:left">續</td>
-<td style="text-align:left">잇닿을 속, 이을 속</td>
+<td>續</td>
+<td>잇닿을 속, 이을 속</td>
 </tr>
 <tr>
-<td style="text-align:left">壽</td>
-<td style="text-align:left">목숨 수</td>
+<td>壽</td>
+<td>목숨 수</td>
 </tr>
 <tr>
-<td style="text-align:left">愁</td>
-<td style="text-align:left">근심 수</td>
+<td>愁</td>
+<td>근심 수</td>
 </tr>
 <tr>
-<td style="text-align:left">誰</td>
-<td style="text-align:left">누구 수</td>
+<td>誰</td>
+<td>누구 수</td>
 </tr>
 <tr>
-<td style="text-align:left">雖</td>
-<td style="text-align:left">비록 수</td>
+<td>雖</td>
+<td>비록 수</td>
 </tr>
 <tr>
-<td style="text-align:left">須</td>
-<td style="text-align:left">모름지기 수</td>
+<td>須</td>
+<td>모름지기 수</td>
 </tr>
 <tr>
-<td style="text-align:left">叔</td>
-<td style="text-align:left">아재비 숙, 아저씨 숙</td>
+<td>叔</td>
+<td>아재비 숙, 아저씨 숙</td>
 </tr>
 <tr>
-<td style="text-align:left">純</td>
-<td style="text-align:left">순수할 순</td>
+<td>純</td>
+<td>순수할 순</td>
 </tr>
 <tr>
-<td style="text-align:left">戌</td>
-<td style="text-align:left">개 술</td>
+<td>戌</td>
+<td>개 술</td>
 </tr>
 <tr>
-<td style="text-align:left">拾</td>
-<td style="text-align:left">주울 습, 열 십</td>
+<td>拾</td>
+<td>주울 습, 열 십</td>
 </tr>
 <tr>
-<td style="text-align:left">乘</td>
-<td style="text-align:left">탈 승</td>
+<td>乘</td>
+<td>탈 승</td>
 </tr>
 <tr>
-<td style="text-align:left">承</td>
-<td style="text-align:left">이을 승</td>
+<td>承</td>
+<td>이을 승</td>
 </tr>
 <tr>
-<td style="text-align:left">試</td>
-<td style="text-align:left">시험할 시, 시험 시</td>
+<td>試</td>
+<td>시험할 시, 시험 시</td>
 </tr>
 <tr>
-<td style="text-align:left">申</td>
-<td style="text-align:left">펼 신, 거듭 신</td>
+<td>申</td>
+<td>펼 신, 거듭 신</td>
 </tr>
 <tr>
-<td style="text-align:left">深</td>
-<td style="text-align:left">깊을 심</td>
+<td>深</td>
+<td>깊을 심</td>
 </tr>
 <tr>
-<td style="text-align:left">甚</td>
-<td style="text-align:left">심할 심</td>
+<td>甚</td>
+<td>심할 심</td>
 </tr>
 <tr>
-<td style="text-align:left">顔</td>
-<td style="text-align:left">얼굴 안</td>
+<td>顔</td>
+<td>얼굴 안</td>
 </tr>
 <tr>
-<td style="text-align:left">巖</td>
-<td style="text-align:left">바위 암</td>
+<td>巖</td>
+<td>바위 암</td>
 </tr>
 <tr>
-<td style="text-align:left">仰</td>
-<td style="text-align:left">우러를 앙</td>
+<td>仰</td>
+<td>우러를 앙</td>
 </tr>
 <tr>
-<td style="text-align:left">揚</td>
-<td style="text-align:left">날릴 양</td>
+<td>揚</td>
+<td>날릴 양</td>
 </tr>
 <tr>
-<td style="text-align:left">讓</td>
-<td style="text-align:left">사양할 양</td>
+<td>讓</td>
+<td>사양할 양</td>
 </tr>
 <tr>
-<td style="text-align:left">憶</td>
-<td style="text-align:left">생각할 억</td>
+<td>憶</td>
+<td>생각할 억</td>
 </tr>
 <tr>
-<td style="text-align:left">余</td>
-<td style="text-align:left">나 여</td>
+<td>余</td>
+<td>나 여</td>
 </tr>
 <tr>
-<td style="text-align:left">汝</td>
-<td style="text-align:left">너 여</td>
+<td>汝</td>
+<td>너 여</td>
 </tr>
 <tr>
-<td style="text-align:left">與</td>
-<td style="text-align:left">줄 여, 더불 여</td>
+<td>與</td>
+<td>줄 여, 더불 여</td>
 </tr>
 <tr>
-<td style="text-align:left">餘</td>
-<td style="text-align:left">남을 여</td>
+<td>餘</td>
+<td>남을 여</td>
 </tr>
 <tr>
-<td style="text-align:left">亦</td>
-<td style="text-align:left">또 역</td>
+<td>亦</td>
+<td>또 역</td>
 </tr>
 <tr>
-<td style="text-align:left">悅</td>
-<td style="text-align:left">기쁠 열</td>
+<td>悅</td>
+<td>기쁠 열</td>
 </tr>
 <tr>
-<td style="text-align:left">迎</td>
-<td style="text-align:left">맞을 영</td>
+<td>迎</td>
+<td>맞을 영</td>
 </tr>
 <tr>
-<td style="text-align:left">吾</td>
-<td style="text-align:left">나 오</td>
+<td>吾</td>
+<td>나 오</td>
 </tr>
 <tr>
-<td style="text-align:left">悟</td>
-<td style="text-align:left">깨달음 오, 깨달을 오</td>
+<td>悟</td>
+<td>깨달음 오, 깨달을 오</td>
 </tr>
 <tr>
-<td style="text-align:left">誤</td>
-<td style="text-align:left">그릇할 오, 그르칠 오</td>
+<td>誤</td>
+<td>그릇할 오, 그르칠 오</td>
 </tr>
 <tr>
-<td style="text-align:left">瓦</td>
-<td style="text-align:left">기와 와</td>
+<td>瓦</td>
+<td>기와 와</td>
 </tr>
 <tr>
-<td style="text-align:left">臥</td>
-<td style="text-align:left">엎드릴 와, 누울 와</td>
+<td>臥</td>
+<td>엎드릴 와, 누울 와</td>
 </tr>
 <tr>
-<td style="text-align:left">欲</td>
-<td style="text-align:left">바랄 욕, 하고자 할 욕</td>
+<td>欲</td>
+<td>바랄 욕, 하고자 할 욕</td>
 </tr>
 <tr>
-<td style="text-align:left">于</td>
-<td style="text-align:left">어조사 우</td>
+<td>于</td>
+<td>어조사 우</td>
 </tr>
 <tr>
-<td style="text-align:left">尤</td>
-<td style="text-align:left">더욱 우</td>
+<td>尤</td>
+<td>더욱 우</td>
 </tr>
 <tr>
-<td style="text-align:left">憂</td>
-<td style="text-align:left">근심할 우, 근심 우</td>
+<td>憂</td>
+<td>근심할 우, 근심 우</td>
 </tr>
 <tr>
-<td style="text-align:left">遇</td>
-<td style="text-align:left">만날 우</td>
+<td>遇</td>
+<td>만날 우</td>
 </tr>
 <tr>
-<td style="text-align:left">云</td>
-<td style="text-align:left">이를 운</td>
+<td>云</td>
+<td>이를 운</td>
 </tr>
 <tr>
-<td style="text-align:left">怨</td>
-<td style="text-align:left">원망할 원</td>
+<td>怨</td>
+<td>원망할 원</td>
 </tr>
 <tr>
-<td style="text-align:left">偉</td>
-<td style="text-align:left">훌륭할 위, 클 위</td>
+<td>偉</td>
+<td>훌륭할 위, 클 위</td>
 </tr>
 <tr>
-<td style="text-align:left">危</td>
-<td style="text-align:left">위태할 위</td>
+<td>危</td>
+<td>위태할 위</td>
 </tr>
 <tr>
-<td style="text-align:left">威</td>
-<td style="text-align:left">위엄 위</td>
+<td>威</td>
+<td>위엄 위</td>
 </tr>
 <tr>
-<td style="text-align:left">唯</td>
-<td style="text-align:left">오직 유</td>
+<td>唯</td>
+<td>오직 유</td>
 </tr>
 <tr>
-<td style="text-align:left">幼</td>
-<td style="text-align:left">어릴 유</td>
+<td>幼</td>
+<td>어릴 유</td>
 </tr>
 <tr>
-<td style="text-align:left">柔</td>
-<td style="text-align:left">부드러울 유</td>
+<td>柔</td>
+<td>부드러울 유</td>
 </tr>
 <tr>
-<td style="text-align:left">猶</td>
-<td style="text-align:left">오히려 유</td>
+<td>猶</td>
+<td>오히려 유</td>
 </tr>
 <tr>
-<td style="text-align:left">遊</td>
-<td style="text-align:left">놀 유</td>
+<td>遊</td>
+<td>놀 유</td>
 </tr>
 <tr>
-<td style="text-align:left">酉</td>
-<td style="text-align:left">닭 유</td>
+<td>酉</td>
+<td>닭 유</td>
 </tr>
 <tr>
-<td style="text-align:left">乙</td>
-<td style="text-align:left">새 을</td>
+<td>乙</td>
+<td>새 을</td>
 </tr>
 <tr>
-<td style="text-align:left">吟</td>
-<td style="text-align:left">읊을 음</td>
+<td>吟</td>
+<td>읊을 음</td>
 </tr>
 <tr>
-<td style="text-align:left">陰</td>
-<td style="text-align:left">그늘 음</td>
+<td>陰</td>
+<td>그늘 음</td>
 </tr>
 <tr>
-<td style="text-align:left">泣</td>
-<td style="text-align:left">소리없이 울 읍, 울 읍</td>
+<td>泣</td>
+<td>소리없이 울 읍, 울 읍</td>
 </tr>
 <tr>
-<td style="text-align:left">依</td>
-<td style="text-align:left">의지할 의</td>
+<td>依</td>
+<td>의지할 의</td>
 </tr>
 <tr>
-<td style="text-align:left">矣</td>
-<td style="text-align:left">어조사 의</td>
+<td>矣</td>
+<td>어조사 의</td>
 </tr>
 <tr>
-<td style="text-align:left">已</td>
-<td style="text-align:left">이미 이</td>
+<td>已</td>
+<td>이미 이</td>
 </tr>
 <tr>
-<td style="text-align:left">而</td>
-<td style="text-align:left">말이을 이</td>
+<td>而</td>
+<td>말이을 이</td>
 </tr>
 <tr>
-<td style="text-align:left">寅</td>
-<td style="text-align:left">동방 인</td>
+<td>寅</td>
+<td>동방 인</td>
 </tr>
 <tr>
-<td style="text-align:left">壬</td>
-<td style="text-align:left">북방 임</td>
+<td>壬</td>
+<td>북방 임</td>
 </tr>
 <tr>
-<td style="text-align:left">姊</td>
-<td style="text-align:left">손윗누이 자, 손위누이 자</td>
+<td>姊</td>
+<td>손윗누이 자, 손위누이 자</td>
 </tr>
 <tr>
-<td style="text-align:left">慈</td>
-<td style="text-align:left">사랑 자</td>
+<td>慈</td>
+<td>사랑 자</td>
 </tr>
 <tr>
-<td style="text-align:left">壯</td>
-<td style="text-align:left">장할 장</td>
+<td>壯</td>
+<td>장할 장</td>
 </tr>
 <tr>
-<td style="text-align:left">哉</td>
-<td style="text-align:left">어조사 재</td>
+<td>哉</td>
+<td>어조사 재</td>
 </tr>
 <tr>
-<td style="text-align:left">栽</td>
-<td style="text-align:left">심을 재</td>
+<td>栽</td>
+<td>심을 재</td>
 </tr>
 <tr>
-<td style="text-align:left">低</td>
-<td style="text-align:left">낮을 저</td>
+<td>低</td>
+<td>낮을 저</td>
 </tr>
 <tr>
-<td style="text-align:left">著</td>
-<td style="text-align:left">나타날 저</td>
+<td>著</td>
+<td>나타날 저</td>
 </tr>
 <tr>
-<td style="text-align:left">敵</td>
-<td style="text-align:left">원수 적, 대적할 적</td>
+<td>敵</td>
+<td>원수 적, 대적할 적</td>
 </tr>
 <tr>
-<td style="text-align:left">適</td>
-<td style="text-align:left">맞을 적</td>
+<td>適</td>
+<td>맞을 적</td>
 </tr>
 <tr>
-<td style="text-align:left">丁</td>
-<td style="text-align:left">넷째 천간 정, 고무래 정</td>
+<td>丁</td>
+<td>넷째 천간 정, 고무래 정</td>
 </tr>
 <tr>
-<td style="text-align:left">停</td>
-<td style="text-align:left">머무를 정</td>
+<td>停</td>
+<td>머무를 정</td>
 </tr>
 <tr>
-<td style="text-align:left">淨</td>
-<td style="text-align:left">깨끗할 정</td>
+<td>淨</td>
+<td>깨끗할 정</td>
 </tr>
 <tr>
-<td style="text-align:left">貞</td>
-<td style="text-align:left">곧을 정</td>
+<td>貞</td>
+<td>곧을 정</td>
 </tr>
 <tr>
-<td style="text-align:left">靜</td>
-<td style="text-align:left">고요할 정</td>
+<td>靜</td>
+<td>고요할 정</td>
 </tr>
 <tr>
-<td style="text-align:left">頂</td>
-<td style="text-align:left">정수리 정</td>
+<td>頂</td>
+<td>정수리 정</td>
 </tr>
 <tr>
-<td style="text-align:left">祭</td>
-<td style="text-align:left">제사 제</td>
+<td>祭</td>
+<td>제사 제</td>
 </tr>
 <tr>
-<td style="text-align:left">諸</td>
-<td style="text-align:left">모두 제</td>
+<td>諸</td>
+<td>모두 제</td>
 </tr>
 <tr>
-<td style="text-align:left">除</td>
-<td style="text-align:left">덜 제</td>
+<td>除</td>
+<td>덜 제</td>
 </tr>
 <tr>
-<td style="text-align:left">從</td>
-<td style="text-align:left">좇을 종</td>
+<td>從</td>
+<td>좇을 종</td>
 </tr>
 <tr>
-<td style="text-align:left">卽</td>
-<td style="text-align:left">곧 즉</td>
+<td>卽</td>
+<td>곧 즉</td>
 </tr>
 <tr>
-<td style="text-align:left">曾</td>
-<td style="text-align:left">거듭 증, 일찍 증</td>
+<td>曾</td>
+<td>거듭 증, 일찍 증</td>
 </tr>
 <tr>
-<td style="text-align:left">證</td>
-<td style="text-align:left">증거 증</td>
+<td>證</td>
+<td>증거 증</td>
 </tr>
 <tr>
-<td style="text-align:left">執</td>
-<td style="text-align:left">잡을 집</td>
+<td>執</td>
+<td>잡을 집</td>
 </tr>
 <tr>
-<td style="text-align:left">且</td>
-<td style="text-align:left">버금 차, 또 차</td>
+<td>且</td>
+<td>버금 차, 또 차</td>
 </tr>
 <tr>
-<td style="text-align:left">借</td>
-<td style="text-align:left">빌릴 차</td>
+<td>借</td>
+<td>빌릴 차</td>
 </tr>
 <tr>
-<td style="text-align:left">此</td>
-<td style="text-align:left">이를 차, 이 차</td>
+<td>此</td>
+<td>이를 차, 이 차</td>
 </tr>
 <tr>
-<td style="text-align:left">採</td>
-<td style="text-align:left">캘 채</td>
+<td>採</td>
+<td>캘 채</td>
 </tr>
 <tr>
-<td style="text-align:left">菜</td>
-<td style="text-align:left">나물 채</td>
+<td>菜</td>
+<td>나물 채</td>
 </tr>
 <tr>
-<td style="text-align:left">尺</td>
-<td style="text-align:left">자 척</td>
+<td>尺</td>
+<td>자 척</td>
 </tr>
 <tr>
-<td style="text-align:left">淺</td>
-<td style="text-align:left">얕을 천</td>
+<td>淺</td>
+<td>얕을 천</td>
 </tr>
 <tr>
-<td style="text-align:left">晴</td>
-<td style="text-align:left">갤 청</td>
+<td>晴</td>
+<td>갤 청</td>
 </tr>
 <tr>
-<td style="text-align:left">招</td>
-<td style="text-align:left">부를 초</td>
+<td>招</td>
+<td>부를 초</td>
 </tr>
 <tr>
-<td style="text-align:left">推</td>
-<td style="text-align:left">밀 추, 밀 퇴</td>
+<td>推</td>
+<td>밀 추, 밀 퇴</td>
 </tr>
 <tr>
-<td style="text-align:left">吹</td>
-<td style="text-align:left">불 취</td>
+<td>吹</td>
+<td>불 취</td>
 </tr>
 <tr>
-<td style="text-align:left">就</td>
-<td style="text-align:left">나아갈 취</td>
+<td>就</td>
+<td>나아갈 취</td>
 </tr>
 <tr>
-<td style="text-align:left">探</td>
-<td style="text-align:left">찾을 탐</td>
+<td>探</td>
+<td>찾을 탐</td>
 </tr>
 <tr>
-<td style="text-align:left">篇</td>
-<td style="text-align:left">책 편</td>
+<td>篇</td>
+<td>책 편</td>
 </tr>
 <tr>
-<td style="text-align:left">布</td>
-<td style="text-align:left">베 포, 펼 포, 보시 보</td>
+<td>布</td>
+<td>베 포, 펼 포, 보시 보</td>
 </tr>
 <tr>
-<td style="text-align:left">抱</td>
-<td style="text-align:left">안을 포</td>
+<td>抱</td>
+<td>안을 포</td>
 </tr>
 <tr>
-<td style="text-align:left">彼</td>
-<td style="text-align:left">저 피</td>
+<td>彼</td>
+<td>저 피</td>
 </tr>
 <tr>
-<td style="text-align:left">匹</td>
-<td style="text-align:left">짝 필</td>
+<td>匹</td>
+<td>짝 필</td>
 </tr>
 <tr>
-<td style="text-align:left">何</td>
-<td style="text-align:left">어찌 하</td>
+<td>何</td>
+<td>어찌 하</td>
 </tr>
 <tr>
-<td style="text-align:left">賀</td>
-<td style="text-align:left">하례 하, 하례할 하</td>
+<td>賀</td>
+<td>하례 하, 하례할 하</td>
 </tr>
 <tr>
-<td style="text-align:left">恒</td>
-<td style="text-align:left">항상 항</td>
+<td>恒</td>
+<td>항상 항</td>
 </tr>
 <tr>
-<td style="text-align:left">虛</td>
-<td style="text-align:left">빌 허</td>
+<td>虛</td>
+<td>빌 허</td>
 </tr>
 <tr>
-<td style="text-align:left">刑</td>
-<td style="text-align:left">형벌 형</td>
+<td>刑</td>
+<td>형벌 형</td>
 </tr>
 <tr>
-<td style="text-align:left">乎</td>
-<td style="text-align:left">어조사 호</td>
+<td>乎</td>
+<td>어조사 호</td>
 </tr>
 <tr>
-<td style="text-align:left">呼</td>
-<td style="text-align:left">부를 호</td>
+<td>呼</td>
+<td>부를 호</td>
 </tr>
 <tr>
-<td style="text-align:left">戶</td>
-<td style="text-align:left">지게 호, 집 호</td>
+<td>戶</td>
+<td>지게 호, 집 호</td>
 </tr>
 <tr>
-<td style="text-align:left">或</td>
-<td style="text-align:left">혹시 혹</td>
+<td>或</td>
+<td>혹시 혹</td>
 </tr>
 <tr>
-<td style="text-align:left">混</td>
-<td style="text-align:left">섞일 혼, 섞을 혼</td>
+<td>混</td>
+<td>섞일 혼, 섞을 혼</td>
 </tr>
 <tr>
-<td style="text-align:left">歡</td>
-<td style="text-align:left">기뻐할 환, 기쁠 환</td>
+<td>歡</td>
+<td>기뻐할 환, 기쁠 환</td>
 </tr>
 <tr>
-<td style="text-align:left">厚</td>
-<td style="text-align:left">두터울 후</td>
+<td>厚</td>
+<td>두터울 후</td>
 </tr>
 <tr>
-<td style="text-align:left">胸</td>
-<td style="text-align:left">가슴 흉</td>
+<td>胸</td>
+<td>가슴 흉</td>
 </tr>
 </tbody>
 </table>

@@ -15,7 +15,7 @@
 <li><code v-pre>kernel/proc.c</code> 내의 관련 함수들을 수정하여 커널 수준 스레드가 올바르게 동작하도록 할 것</li>
 </ul>
 <h2 id="special-characteristics-특성" tabindex="-1"><a class="header-anchor" href="#special-characteristics-특성"><span>Special Characteristics 특성</span></a></h2>
-<p>이 xv6 커널 수준 스레드는 기존의 일반적인 스레드와 다음과 같은 차이점이 있다:</p>
+<p>이 xv6 커널 수준 스레드는 기존의 일반적인 스레드와 다음과 같은 차이점이 있다</p>
 <ul>
 <li>각 스레드는 <code v-pre>clone</code> 시점에 부모 프로세스의 파일 descriptor 테이블을 복사하여 소유한다</li>
 <li>메인 스레드가 <code v-pre>exit()</code>을 호출하면 모든 스레드가 종료된다 (프로세스 전체 종료)</li>
@@ -59,7 +59,7 @@
 <h2 id="system-call-modifications-시스템-콜-수정" tabindex="-1"><a class="header-anchor" href="#system-call-modifications-시스템-콜-수정"><span>System Call Modifications 시스템 콜 수정</span></a></h2>
 <ul>
 <li>
-<p>다음 시스템 호출들이 스레드와 함께 정상 작동하도록 보장해야 함:</p>
+<p>다음 시스템 호출들이 스레드와 함께 정상 작동하도록 보장해야 함</p>
 <ul>
 <li><code v-pre>fork</code>: 스레드도 주소 공간을 복사해서 정상적으로 호출되어야 함</li>
 <li><code v-pre>exec</code>: 모든 스레드를 정리하고 새 프로세스를 시작</li>
