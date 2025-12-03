@@ -1,4 +1,4 @@
-<template><div><h1 id="_1static-analysis" tabindex="-1"><a class="header-anchor" href="#_1static-analysis"><span>1Static Analysis</span></a></h1>
+<template><div><h1 id="_16-static-analysis" tabindex="-1"><a class="header-anchor" href="#_16-static-analysis"><span>16. Static Analysis</span></a></h1>
 <h2 id="learning-goals" tabindex="-1"><a class="header-anchor" href="#learning-goals"><span>Learning Goals</span></a></h2>
 <ul>
 <li>한 문장으로 정적 분석 정의 및 정적 분석이 목표로 하는 Bug 유형 설명</li>
@@ -289,13 +289,7 @@
 </ul>
 </li>
 <li>Entry부터 Exit까지의 흐름도 표현</li>
-</ul>
-<h2 id="example-of-a-cfg-1" tabindex="-1"><a class="header-anchor" href="#example-of-a-cfg-1"><span>Example of a CFG</span></a></h2>
-<ul>
 <li>동일한 <code v-pre>foo()</code> 함수의 흐름도 표현 반복</li>
-</ul>
-<h2 id="example-of-a-cfg-2" tabindex="-1"><a class="header-anchor" href="#example-of-a-cfg-2"><span>Example of a CFG</span></a></h2>
-<ul>
 <li><code v-pre>while (rv &gt; 0)</code> 루프가 포함된 변형된 <code v-pre>foo()</code> 함수 예제 및 흐름도</li>
 </ul>
 <h2 id="control-dataflow-analysis-1" tabindex="-1"><a class="header-anchor" href="#control-dataflow-analysis-1"><span>Control/Dataflow Analysis</span></a></h2>
@@ -510,9 +504,6 @@ Join</li>
 <li>1차 반복(Iteration)</li>
 <li>각 라인별 상태(NZ, Z, MZ) 변화 추적</li>
 <li>Join 적용 결과</li>
-</ul>
-<h2 id="example-2" tabindex="-1"><a class="header-anchor" href="#example-2"><span>Example</span></a></h2>
-<ul>
 <li>2차 반복(Iteration)</li>
 <li>상태 변화 및 Join 적용 결과</li>
 <li><span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mo>→</mo><mi>M</mi><mi>Z</mi></mrow><annotation encoding="application/x-tex">y → MZ</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.07153em;">MZ</span></span></span></span> 등 상태 업데이트</li>
