@@ -149,8 +149,7 @@
 <h2 id="database-design" tabindex="-1"><a class="header-anchor" href="#database-design"><span>Database design</span></a></h2>
 <p>데이터베이스의 일반적 구조를 디자인하는 과정</p>
 <ul>
-<li>
-<p>논리적 디자인</p>
+<li>논리적 디자인
 <ul>
 <li>데이터베이스 스키마에서 결정</li>
 <li>데이터베이스 디자인은 관계 스키마에서 &quot;좋은&quot; 집합을 찾을 것을 요구함</li>
@@ -158,8 +157,7 @@
 <li>컴퓨터 과학적 결정: 어떤 관계 스키마를 가져야 하고, 어떻게 다양한 관계 스키마에 그 속성들이 분포되게 할까?</li>
 </ul>
 </li>
-<li>
-<p>물리적 디자인</p>
+<li>물리적 디자인
 <ul>
 <li>데이터베이스의 물리적 레이아웃에서의 결정</li>
 </ul>
@@ -174,7 +172,9 @@
 <li>The transaction management</li>
 </ol>
 <h2 id="storage-manager" tabindex="-1"><a class="header-anchor" href="#storage-manager"><span>Storage Manager</span></a></h2>
-<p>DB의 low-level 데이터와 응용 프로그램과 시스템에 제출된 쿼리를 제공하는 프로그램 모듈</p>
+<ul>
+<li>DB의 low-level 데이터와 응용 프로그램과 시스템에 제출된 쿼리를 제공하는 프로그램 모듈</li>
+</ul>
 <p>스토리지 매니저는 다음 작업들에 책임을 져야 한다.</p>
 <ul>
 <li>OS 파일 매니저와의 상호작용</li>
@@ -213,15 +213,13 @@
 </ol>
 <p>트랜잭션 관리자는 복구 관리자(Recovery Manager)와 동시성 제어 관리자(Concurrency Control Manager)로 구성됨</p>
 <ul>
-<li>
-<p>복구 관리자(Recovery Manager)</p>
+<li>복구 관리자(Recovery Manager)
 <ul>
 <li>전원 장애나 운영체제 오류 등 시스템 장애(system failure) 및 트랜잭션 실패(transaction failure)가 발생하더라도 데이터베이스가 일관되고 올바른 상태로 유지되도록 보장</li>
 <li>트랜잭션의 원자성(Atomicity)과 지속성(Durability) 속성을 보장</li>
 </ul>
 </li>
-<li>
-<p>동시성 제어 관리자(Concurrency-Control Manager)</p>
+<li>동시성 제어 관리자(Concurrency-Control Manager)
 <ul>
 <li>여러 트랜잭션이 동시에 수행될 때 이들 간의 상호 작용을 제어하여 데이터베이스의 일관성(consistency)을 유지</li>
 <li>트랜잭션의 일관성(Consistency)과 격리성(Isolation) 속성을 보장</li>
