@@ -22,8 +22,7 @@
 <li>이후 Standish group(스탠디시 그룹)에 의해 유사한 결과 보고됨.</li>
 </ul>
 </li>
-<li>원인</li>
-</ul>
+<li>원인
 <ol>
 <li>Incomplete requirements(불완전한 요구사항)(13.1%)</li>
 <li>Lack of user involvement(사용자 참여 부족)(12.4%)</li>
@@ -34,6 +33,8 @@
 <li>Lack of planning(계획 부족)(8.1%)</li>
 <li>System no longer needed(시스템이 더 이상 필요하지 않음)(7.5%) .</li>
 </ol>
+</li>
+</ul>
 <h2 id="why-is-this-hard" tabindex="-1"><a class="header-anchor" href="#why-is-this-hard"><span>Why Is This Hard?</span></a></h2>
 <h2 id="communication-problem" tabindex="-1"><a class="header-anchor" href="#communication-problem"><span>Communication Problem</span></a></h2>
 <ul>

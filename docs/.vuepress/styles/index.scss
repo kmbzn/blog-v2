@@ -23,6 +23,8 @@
     font-display: swap;
 }
 
+@import url('//cdn.jsdelivr.net/gh/wan2land/d2coding/d2coding-ligature-full.css');
+
 @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
 
 /* ---------------------------------
@@ -43,7 +45,7 @@ table {
 }
 
 pre, code, div[class*='language-'] {
-  font-family: 'goorm-sans-code' monospace;
+  font-family: 'D2Coding Ligature', 'D2Coding', monospace;
 }
 
 pre {
@@ -66,11 +68,14 @@ pre {
   --code-c-text: --vp-c-text;
   --copy-code-c-hover: transparent;
   --code-line-number-width: 1.2rem;
+  --code-line-height: 0.95rem;
+  --code-font-size: 0.9rem;
 }
 
 div[class*=language-].line-numbers-mode .line-numbers {
   text-align: right;
   left: -0.5rem;
+  --code-font-size: 0.7rem;
 }
 
 .vp-page [vp-content] {
@@ -236,6 +241,7 @@ html[data-theme='dark'] img[src$=".png"]:not([src^="http"]) {
 
   :root {
     --navbar-height: 0;
+    --code-line-number-width: 0rem;
   }
 
   .vp-navbar,
@@ -259,5 +265,9 @@ html[data-theme='dark'] img[src$=".png"]:not([src^="http"]) {
 
   [vp-content] h2 {
     padding-top: 1rem;
+  }
+
+  div[class*=language-].line-numbers-mode .line-numbers {
+    visibility: hidden;
   }
 }

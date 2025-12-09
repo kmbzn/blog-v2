@@ -6,7 +6,7 @@
 <li>간단한 예제에 대해 기본적인 Control Flow Graph를 수작업으로 작성</li>
 <li>Control-flow 분석과 Dataflow 분석의 구별, 코드 예제에서의 정의 및 단계별 수행</li>
 <li>Dataflow Analysis 구현</li>
-<li>정적 분석이 왜 Sound, Complete, Terminating할 수 없는지에 대한 고차원적 설명 및 분석 설계의 트레이드오프 평가</li>
+<li>정적 분석이 왜 Sound, Complete, Terminating할 수 없는지에 대한 고차원적 설명 및 분석 설계의 trade-off 평가</li>
 <li>정적 분석을 수행하는 도구의 특성 파악 및 선택</li>
 </ul>
 <h2 id="goto-fail" tabindex="-1"><a class="header-anchor" href="#goto-fail"><span><code v-pre>goto fail;</code></span></a></h2>
@@ -22,7 +22,7 @@
 <span class="line">    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>err <span class="token operator">=</span> SSLHashSHA1<span class="token punctuation">.</span><span class="token function">final</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>hashCtx<span class="token punctuation">,</span> <span class="token operator">&amp;</span>hashOut<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">!=</span> <span class="token number">0</span><span class="token punctuation">)</span></span>
 <span class="line">        <span class="token keyword">goto</span> fail<span class="token punctuation">;</span></span>
 <span class="line">    …</span>
-<span class="line">    fail<span class="token operator">:</span></span>
+<span class="line">    fail</span>
 <span class="line">    <span class="token function">SSLFreeBuffer</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>signedHashes<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
 <span class="line">    <span class="token function">SSLFreeBuffer</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>hashCtx<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
 <span class="line">    <span class="token keyword">return</span> err<span class="token punctuation">;</span></span>
@@ -67,7 +67,7 @@
 </ul>
 <h2 id="defects-static-analysis-can-catch" tabindex="-1"><a class="header-anchor" href="#defects-static-analysis-can-catch"><span>Defects Static Analysis Can Catch</span></a></h2>
 <ul>
-<li>단순하고 기계적인 설계 규칙을 일관되게 따르지 않음으로 인해 발생하는 결함
+<li>단순하고 기계적인 설계 규칙을 일관되게 따르지 않음으로 인해 발생하는 결함.
 <ul>
 <li>Security: Buffer 오버런, 부적절하게 검증된 입력</li>
 <li>Memory safety: Null 역참조, 초기화되지 않은 데이터</li>
@@ -101,16 +101,39 @@
 </li>
 </ul>
 <h2 id="the-bad-news-rice-s-theorem" tabindex="-1"><a class="header-anchor" href="#the-bad-news-rice-s-theorem"><span>The Bad News: Rice’s Theorem</span></a></h2>
+<blockquote>
+<p>&quot;튜링 머신에 의해 인식되는 언어에 대한 비자명한 속성은 결정 불가능하다&quot; (Henry Gordon Rice, 1953)</p>
+</blockquote>
 <ul>
-<li>&quot;튜링 머신에 의해 인식되는 언어에 대한 비자명한 속성은 결정 불가능하다&quot; (Henry Gordon Rice, 1953)</li>
 <li>모든 정적 분석은 필연적으로 Incomplete하거나 Unsound하거나 Undecidable함 (혹은 이것들의 복합)</li>
 </ul>
 <h2 id="soundness-and-completeness" tabindex="-1"><a class="header-anchor" href="#soundness-and-completeness"><span>Soundness and Completeness</span></a></h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>에러 존재</th>
+<th>에러 존재하지 않음</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>에러 보고됨</td>
+<td>True positive<br>(correct analysis result)</td>
+<td>False positive</td>
+</tr>
+<tr>
+<td>에러 보고되지 않음</td>
+<td>False negative</td>
+<td>True negative<br>(correct analysis result)</td>
+</tr>
+</tbody>
+</table>
 <ul>
 <li>Sound Analysis
 <ul>
 <li>모든 결함을 보고</li>
-<li>False negative 없음</li>
+<li>False negative가 없음</li>
 <li>일반적으로 과대 근사(Overapproximated)</li>
 </ul>
 </li>
@@ -121,36 +144,36 @@
 <li>일반적으로 과소 근사(Underapproximated)</li>
 </ul>
 </li>
-<li>Error 존재 여부와 보고 여부에 따른 분류
-<ul>
-<li>Error 존재함 + Error 보고됨: True positive (올바른 분석 결과)</li>
-<li>Error 존재 안함 + Error 보고됨: False positive</li>
-<li>Error 존재함 + Error 보고 안됨: False negative</li>
-<li>Error 존재 안함 + Error 보고 안됨: True negative (올바른 분석 결과)</li>
 </ul>
-</li>
-</ul>
-<h2 id="soundness-and-completeness-1" tabindex="-1"><a class="header-anchor" href="#soundness-and-completeness-1"><span>Soundness and Completeness</span></a></h2>
+<p><img src="@source/se/image-92.png" alt="alt text"></p>
 <h1 id="simple-syntactic-and-structural-analyses" tabindex="-1"><a class="header-anchor" href="#simple-syntactic-and-structural-analyses"><span>Simple Syntactic and Structural Analyses</span></a></h1>
 <h2 id="syntactic-analysis" tabindex="-1"><a class="header-anchor" href="#syntactic-analysis"><span>Syntactic Analysis</span></a></h2>
 <ul>
 <li>특정 패턴의 모든 발생 찾기</li>
-<li>예시 코드:<div class="language-java line-numbers-mode" data-highlighter="prismjs" data-ext="java"><pre v-pre><code class="language-java"><span class="line"><span class="token keyword">public</span> <span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span></span>
-<span class="line"> …</span>
-<span class="line"> logger<span class="token punctuation">.</span><span class="token function">debug</span><span class="token punctuation">(</span>“<span class="token class-name">We</span> have ” <span class="token operator">+</span> conn <span class="token operator">+</span> “connections<span class="token punctuation">.</span>”<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+</ul>
+<div class="language-java line-numbers-mode" data-highlighter="prismjs" data-ext="java"><pre v-pre><code class="language-java"><span class="line"><span class="token keyword">public</span> <span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span></span>
+<span class="line">  …</span>
+<span class="line">  logger<span class="token punctuation">.</span><span class="token function">debug</span><span class="token punctuation">(</span>“<span class="token class-name">We</span> have ” <span class="token operator">+</span> conn <span class="token operator">+</span> “connections<span class="token punctuation">.</span>”<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
 <span class="line"><span class="token punctuation">}</span> </span>
 <span class="line"><span class="token keyword">public</span> <span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span></span>
-<span class="line"> …</span>
-<span class="line"><span class="token keyword">if</span> <span class="token punctuation">(</span>logger<span class="token punctuation">.</span><span class="token function">inDebug</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span></span>
-<span class="line"> logger<span class="token punctuation">.</span><span class="token function">debug</span><span class="token punctuation">(</span>“<span class="token class-name">We</span> have ” <span class="token operator">+</span> conn <span class="token operator">+</span> “connections<span class="token punctuation">.</span>”<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
-<span class="line"><span class="token punctuation">}</span></span>
+<span class="line">  …</span>
+<span class="line">    <span class="token keyword">if</span> <span class="token punctuation">(</span>logger<span class="token punctuation">.</span><span class="token function">inDebug</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span></span>
+<span class="line">    logger<span class="token punctuation">.</span><span class="token function">debug</span><span class="token punctuation">(</span>“<span class="token class-name">We</span> have ” <span class="token operator">+</span> conn <span class="token operator">+</span> “connections<span class="token punctuation">.</span>”<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">    <span class="token punctuation">}</span></span>
 <span class="line"><span class="token punctuation">}</span></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></li>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul>
 <li>Grep 명령어 예시: <code v-pre>grep &quot;if \(logger\.Debug\(&quot; . -r</code></li>
 </ul>
-<h1 id="type-analysis" tabindex="-1"><a class="header-anchor" href="#type-analysis"><span>Type Analysis</span></a></h1>
-<h2 id="abstraction-abstract-syntax-tree" tabindex="-1"><a class="header-anchor" href="#abstraction-abstract-syntax-tree"><span>Abstraction: Abstract Syntax Tree</span></a></h2>
+<h2 id="type-analysis" tabindex="-1"><a class="header-anchor" href="#type-analysis"><span>Type Analysis</span></a></h2>
+<div class="language-java line-numbers-mode" data-highlighter="prismjs" data-ext="java"><pre v-pre><code class="language-java"><span class="line"><span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span></span>
+<span class="line">    <span class="token keyword">int</span> a <span class="token operator">=</span> <span class="token function">computeSomething</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line"></span>
+<span class="line">    <span class="token keyword">if</span> <span class="token punctuation">(</span>a <span class="token operator">==</span> <span class="token string">"5"</span><span class="token punctuation">)</span></span>
+<span class="line">        <span class="token function">doMoreStuff</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line"><span class="token punctuation">}</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="abstraction-abstract-syntax-tree" tabindex="-1"><a class="header-anchor" href="#abstraction-abstract-syntax-tree"><span>Abstraction: Abstract Syntax Tree</span></a></h2>
 <ul>
 <li>소스 코드의 구문 구조를 트리로 표현
 <ul>
@@ -191,16 +214,17 @@
 <li>Logger 클래스 구조
 <ul>
 <li><code v-pre>boolean inDebug() {…}</code></li>
-<li><code v-pre>void debug(String msg) {…}</code></li>
+<li><code v-pre>void debug(String msg) {…}</code>
+<img src="@source/se/image-93.png" alt="alt text"></li>
 </ul>
 </li>
 </ul>
 <h2 id="abstract-syntax-tree-walker" tabindex="-1"><a class="header-anchor" href="#abstract-syntax-tree-walker"><span>Abstract Syntax Tree Walker</span></a></h2>
 <ul>
-<li>Logger.inDebug 체크 외부에서 디버깅 로그를 표시하지 않는지 확인</li>
+<li><code v-pre>Logger.inDebug</code> 체크 외부에서 디버깅 로그를 표시하지 않는지 확인</li>
 <li>Abstraction
 <ul>
-<li>Logger.debug() 호출만 확인</li>
+<li><code v-pre>Logger.debug()</code> 호출만 확인</li>
 <li>모두 <code v-pre>if (Logger.inDebug())</code>로 감싸져 있는지 확인</li>
 </ul>
 </li>
@@ -213,7 +237,8 @@
 </ul>
 </li>
 </ul>
-<h1 id="structural-analysis" tabindex="-1"><a class="header-anchor" href="#structural-analysis"><span>Structural Analysis</span></a></h1>
+<h2 id="structural-analysis" tabindex="-1"><a class="header-anchor" href="#structural-analysis"><span>Structural Analysis</span></a></h2>
+<p><img src="@source/se/image-93.png" alt="alt text"></p>
 <h1 id="bug-finding" tabindex="-1"><a class="header-anchor" href="#bug-finding"><span>Bug Finding</span></a></h1>
 <h2 id="structural-analysis-to-detect-goto-fail" tabindex="-1"><a class="header-anchor" href="#structural-analysis-to-detect-goto-fail"><span>Structural Analysis to Detect goto fail;?</span></a></h2>
 <ul>
@@ -233,8 +258,27 @@
 </ul>
 <h2 id="tools-compilers" tabindex="-1"><a class="header-anchor" href="#tools-compilers"><span>Tools: Compilers</span></a></h2>
 <ul>
-<li>Type checking, 적절한 초기화 API, 올바른 API 사용</li>
-<li>높은 경고 레벨로 컴파일
+<li>
+<p>Type checking, 적절한 초기화 API, 올바른 API 사용</p>
+</li>
+<li>
+<p>프로그램</p>
+<div class="language-c line-numbers-mode" data-highlighter="prismjs" data-ext="c"><pre v-pre><code class="language-c"><span class="line"><span class="token keyword">int</span> <span class="token function">add</span><span class="token punctuation">(</span><span class="token keyword">int</span> x<span class="token punctuation">,</span> <span class="token keyword">int</span> y<span class="token punctuation">)</span> <span class="token punctuation">{</span></span>
+<span class="line">    <span class="token keyword">return</span> x <span class="token operator">+</span> y<span class="token punctuation">;</span></span>
+<span class="line"><span class="token punctuation">}</span></span>
+<span class="line"></span>
+<span class="line"><span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span></span>
+<span class="line">    <span class="token function">add</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line"><span class="token punctuation">}</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></li>
+<li>
+<p>컴파일러 출력</p>
+<div class="language-bash line-numbers-mode" data-highlighter="prismjs" data-ext="sh"><pre v-pre><code class="language-bash"><span class="line">$<span class="token operator">></span> error: too few arguments to <span class="token keyword">function</span> <span class="token string">'int add(int, int)'</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div></li>
+<li>
+<p>높은 경고 레벨로 컴파일</p>
 <ul>
 <li>예: <code v-pre>$ gcc -Wall</code></li>
 </ul>
@@ -246,7 +290,7 @@
 <li>Control Flow Graph를 통한 경로로 모든 가능한 실행에 대해 추론
 <ul>
 <li>모든 프로그램 지점에서 관심 있는 속성과 관련된 정보 추적</li>
-<li>Exception 처리, 함수 호출 등 포함</li>
+<li>Exception 처리, 함수 호출 등 포함.</li>
 </ul>
 </li>
 <li>관심 있는 속성과 관련된 값/상태만 포착하는 Abstract domain 정의</li>
@@ -263,18 +307,26 @@
 <li>엣지(Edges)는 노드 간의 제어 흐름 옵션 표현</li>
 <li>Intra-procedural: 단일 함수 내 (cf. Inter-procedural)</li>
 </ul>
-<h2 id="control-flow-graphs-cfg" tabindex="-1"><a class="header-anchor" href="#control-flow-graphs-cfg"><span>Control Flow Graphs (CFG)</span></a></h2>
-<ul>
-<li>코드 예제:</li>
-</ul>
 <div class="language-c line-numbers-mode" data-highlighter="prismjs" data-ext="c"><pre v-pre><code class="language-c"><span class="line">a <span class="token operator">=</span> <span class="token number">5</span> <span class="token operator">+</span> <span class="token punctuation">(</span><span class="token number">2</span> <span class="token operator">+</span> <span class="token number">3</span><span class="token punctuation">)</span></span>
 <span class="line"><span class="token keyword">if</span> <span class="token punctuation">(</span>b <span class="token operator">></span> <span class="token number">10</span><span class="token punctuation">)</span></span>
 <span class="line">    a <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span></span>
 <span class="line"><span class="token keyword">return</span> a<span class="token punctuation">;</span></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><img src="@source/se/image-94.png" alt="alt text"></p>
+<ul>
 <li>노드 0~6으로 구성된 그래프 구조</li>
 </ul>
+<h2 id="control-flow-graphs-cfg" tabindex="-1"><a class="header-anchor" href="#control-flow-graphs-cfg"><span>Control Flow Graphs (CFG)</span></a></h2>
+<div class="language-java line-numbers-mode" data-highlighter="prismjs" data-ext="java"><pre v-pre><code class="language-java"><span class="line"><span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span></span>
+<span class="line">    <span class="token function">doStuff</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line"></span>
+<span class="line">    <span class="token keyword">return</span> <span class="token number">3</span><span class="token punctuation">;</span></span>
+<span class="line"></span>
+<span class="line">    <span class="token function">doMoreStuff</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">    <span class="token keyword">return</span> <span class="token number">4</span><span class="token punctuation">;</span></span>
+<span class="line"><span class="token punctuation">}</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><img src="@source/se/image-95.png" alt="alt text"></p>
 <h2 id="a-bug-in-the-old-linux-kernel-1" tabindex="-1"><a class="header-anchor" href="#a-bug-in-the-old-linux-kernel-1"><span>A Bug in the Old Linux Kernel</span></a></h2>
 <ul>
 <li>리눅스 RAID 드라이버(<code v-pre>raid5.c</code>)의 <code v-pre>get_free_buffer</code> 함수 코드</li>
@@ -290,14 +342,14 @@
 </li>
 <li>Entry부터 Exit까지의 흐름도 표현</li>
 <li>동일한 <code v-pre>foo()</code> 함수의 흐름도 표현 반복</li>
-<li><code v-pre>while (rv &gt; 0)</code> 루프가 포함된 변형된 <code v-pre>foo()</code> 함수 예제 및 흐름도</li>
 </ul>
+<p><img src="@source/se/image-96.png" alt="alt text"></p>
 <h2 id="control-dataflow-analysis-1" tabindex="-1"><a class="header-anchor" href="#control-dataflow-analysis-1"><span>Control/Dataflow Analysis</span></a></h2>
 <ul>
 <li>Control Flow Graph를 통한 경로로 모든 가능한 실행에 대해 추론
 <ul>
 <li>모든 프로그램 지점에서 관심 있는 속성과 관련된 정보 추적</li>
-<li>Exception 처리, 함수 호출 등 포함</li>
+<li>Exception 처리, 함수 호출 등 포함.</li>
 </ul>
 </li>
 <li>관심 있는 속성과 관련된 값/상태만 포착하는 Abstract domain 정의</li>
@@ -311,7 +363,7 @@
 <li><span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>S</mi></mrow><annotation encoding="application/x-tex">S</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.05764em;">S</span></span></span></span>는 요소들의 집합(무한할 수 있음)</li>
 </ul>
 </li>
-<li><span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>S</mi></mrow><annotation encoding="application/x-tex">S</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.05764em;">S</span></span></span></span>는 유일한 최대 요소(Top)와 최소 요소(Bottom)를 반드시 포함해야 함
+<li><span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>S</mi></mrow><annotation encoding="application/x-tex">S</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.05764em;">S</span></span></span></span>는 유일한 최대 요소(Top)와 최소 요소(Bottom)를 반드시 포함해야 함.
 <ul>
 <li><span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi></mrow><annotation encoding="application/x-tex">r</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span></span></span></span>은 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>S</mi></mrow><annotation encoding="application/x-tex">S</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.05764em;">S</span></span></span></span>의 요소들에 대한 이항 관계</li>
 </ul>
@@ -325,10 +377,12 @@
 </ul>
 <h2 id="example-of-a-lattice" tabindex="-1"><a class="header-anchor" href="#example-of-a-lattice"><span>Example of a Lattice</span></a></h2>
 <ul>
-<li><span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi><mo>=</mo><mo stretchy="false">(</mo><msup><mn>2</mn><mrow><mo stretchy="false">{</mo><mi>x</mi><mo separator="true">,</mo><mi>y</mi><mo separator="true">,</mo><mi>z</mi><mo stretchy="false">}</mo></mrow></msup><mo separator="true">,</mo><mo>⊆</mo><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">D = (2^{\{x,y,z\}}, \subseteq)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">D</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1.138em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.888em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mopen mtight">{</span><span class="mord mathnormal mtight">x</span><span class="mpunct mtight">,</span><span class="mord mathnormal mtight" style="margin-right:0.03588em;">y</span><span class="mpunct mtight">,</span><span class="mord mathnormal mtight" style="margin-right:0.04398em;">z</span><span class="mclose mtight">}</span></span></span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">⊆</span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mclose">)</span></span></span></span>
+<li>
+<p><span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi><mo>=</mo><mo stretchy="false">(</mo><msup><mn>2</mn><mrow><mo stretchy="false">{</mo><mi>x</mi><mo separator="true">,</mo><mi>y</mi><mo separator="true">,</mo><mi>z</mi><mo stretchy="false">}</mo></mrow></msup><mo separator="true">,</mo><mo>⊆</mo><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">D = (2^{\{x,y,z\}}, \subseteq)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">D</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1.138em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.888em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mopen mtight">{</span><span class="mord mathnormal mtight">x</span><span class="mpunct mtight">,</span><span class="mord mathnormal mtight" style="margin-right:0.03588em;">y</span><span class="mpunct mtight">,</span><span class="mord mathnormal mtight" style="margin-right:0.04398em;">z</span><span class="mclose mtight">}</span></span></span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">⊆</span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mclose">)</span></span></span></span></p>
 <ul>
 <li><span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>2</mn><mrow><mo stretchy="false">{</mo><mi>x</mi><mo separator="true">,</mo><mi>y</mi><mo separator="true">,</mo><mi>z</mi><mo stretchy="false">}</mo></mrow></msup><mo>=</mo><mo stretchy="false">{</mo><mi mathvariant="normal">∅</mi><mo separator="true">,</mo><mo stretchy="false">{</mo><mi>x</mi><mo stretchy="false">}</mo><mo separator="true">,</mo><mo stretchy="false">{</mo><mi>y</mi><mo stretchy="false">}</mo><mo separator="true">,</mo><mo stretchy="false">{</mo><mi>z</mi><mo stretchy="false">}</mo><mo separator="true">,</mo><mo>…</mo><mo separator="true">,</mo><mo stretchy="false">{</mo><mi>x</mi><mo separator="true">,</mo><mi>y</mi><mo separator="true">,</mo><mi>z</mi><mo stretchy="false">}</mo><mo stretchy="false">}</mo></mrow><annotation encoding="application/x-tex">2^{\{x,y,z\}} = \{\emptyset, \{x\}, \{y\}, \{z\}, \dots, \{x, y, z\}\}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.888em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.888em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mopen mtight">{</span><span class="mord mathnormal mtight">x</span><span class="mpunct mtight">,</span><span class="mord mathnormal mtight" style="margin-right:0.03588em;">y</span><span class="mpunct mtight">,</span><span class="mord mathnormal mtight" style="margin-right:0.04398em;">z</span><span class="mclose mtight">}</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">{</span><span class="mord">∅</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mopen">{</span><span class="mord mathnormal">x</span><span class="mclose">}</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mopen">{</span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="mclose">}</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mopen">{</span><span class="mord mathnormal" style="margin-right:0.04398em;">z</span><span class="mclose">}</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="minner">…</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mopen">{</span><span class="mord mathnormal">x</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.04398em;">z</span><span class="mclose">}}</span></span></span></span></li>
 </ul>
+<p><img src="@source/se/image-97.png" alt="alt text"></p>
 </li>
 </ul>
 <h2 id="say-what-why-we-need-it" tabindex="-1"><a class="header-anchor" href="#say-what-why-we-need-it"><span>Say What? Why We Need It?</span></a></h2>
@@ -342,57 +396,95 @@
 </ul>
 </li>
 </ul>
-<h1 id="abstract-domain-interrupt-checker" tabindex="-1"><a class="header-anchor" href="#abstract-domain-interrupt-checker"><span>Abstract Domain: Interrupt Checker</span></a></h1>
-<h2 id="reasoning-about-a-cfg" tabindex="-1"><a class="header-anchor" href="#reasoning-about-a-cfg"><span>Reasoning about a CFG</span></a></h2>
+<h2 id="abstract-domain-interrupt-checker" tabindex="-1"><a class="header-anchor" href="#abstract-domain-interrupt-checker"><span>Abstract Domain: Interrupt Checker</span></a></h2>
+<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code class="language-text"><span class="line">      maybe-enabled</span>
+<span class="line">    /               \</span>
+<span class="line">enabled          disabled</span>
+<span class="line">      \          /</span>
+<span class="line">            ?</span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="reasoning-about-a-cfg" tabindex="-1"><a class="header-anchor" href="#reasoning-about-a-cfg"><span>Reasoning about a CFG</span></a></h2>
 <ul>
-<li>분석은 프로그램 지점(노드 사이의 지점)에서 상태를 업데이트함</li>
-<li>각 노드에 대해:
+<li>분석은 프로그램 지점(노드 사이의 지점)에서 상태를 업데이트함.</li>
+<li>각 노드에 대해
 <ul>
 <li>선행 노드(Predecessors)의 상태를 검사/결합하여 진입 시 상태 결정</li>
 <li>연산(Transfer)의 효과에 기반하여 노드 종료 시 상태 평가</li>
 </ul>
 </li>
 <li>각 프로그램 지점의 상태가 변하지 않을 때까지 후행 노드(Successors)와 전체 그래프를 통해 반복</li>
-<li>Output: 각 프로그램 지점에서의 상태</li>
+<li><strong>Output: 각 프로그램 지점에서의 상태</strong></li>
 </ul>
 <h2 id="an-interrupt-checker" tabindex="-1"><a class="header-anchor" href="#an-interrupt-checker"><span>An Interrupt Checker</span></a></h2>
 <ul>
-<li>Abstraction
+<li><strong>Abstraction</strong>
 <ul>
-<li>3가지 Abstract states: Enabled, Disabled, Maybe-enabled</li>
-<li>Interrupt가 비활성화된 상태로 함수 끝에 도달할 수 있는지 경고</li>
+<li>3가지 Abstract states: <strong>Enabled, Disabled, Maybe-enabled</strong></li>
+<li>Interrupt가 disable된 상태로 함수 끝에 도달할 수 있는지 alarm을 줌.</li>
 </ul>
 </li>
 <li>Transfer function
 <ul>
-<li>Basic block에 <code v-pre>cli()</code> 호출이 포함된 경우, 분석 상태를 Enabled에서 Disabled로 변경</li>
-<li>Basic block에 <code v-pre>restore_flags()</code> 호출이 포함된 경우, 분석 상태를 Disabled에서 Enabled로 변경</li>
+<li>Basic block에 <code v-pre>cli()</code> 호출이 포함된 경우, 분석 상태를 <strong>Enabled</strong>에서 <strong>Disabled</strong>로 변경</li>
+<li>Basic block에 <code v-pre>restore_flags()</code> 호출이 포함된 경우, 분석 상태를 <strong>Disabled</strong>에서 <strong>Enabled</strong>로 변경</li>
 </ul>
 </li>
 </ul>
 <h2 id="transfer-function" tabindex="-1"><a class="header-anchor" href="#transfer-function"><span>Transfer Function</span></a></h2>
 <ul>
-<li>가정: 블록 전 프로그램 지점의 Interrupt enabled</li>
-<li><code v-pre>cli();</code> 수행</li>
+<li>가정: 블록 전 프로그램 지점의 Interrupt enabled<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code class="language-text"><span class="line">        ↓</span>
+<span class="line">┏━━━━━━━━━━━━━━━━━━━┓</span>
+<span class="line">┃ // do_stuff       ┃</span>
+<span class="line">┃ restore_flags();  ┃</span>
+<span class="line">┗━━━━━━━━━━━━━━━━━━━┛</span>
+<span class="line">        ↓</span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></li>
 <li>블록 후 프로그램 지점: Interrupt disabled</li>
 </ul>
-<h2 id="transfer-function-1" tabindex="-1"><a class="header-anchor" href="#transfer-function-1"><span>Transfer Function</span></a></h2>
+<h2 id="join" tabindex="-1"><a class="header-anchor" href="#join"><span>Join</span></a></h2>
 <ul>
 <li>가정: 블록 전 프로그램 지점의 Interrupt disabled</li>
-<li><code v-pre>// do_stuff</code>, <code v-pre>restore_flags();</code> 수행</li>
-<li>블록 후 프로그램 지점: Interrupt enabled</li>
 </ul>
-<h1 id="join" tabindex="-1"><a class="header-anchor" href="#join"><span>Join</span></a></h1>
-<h2 id="join-branching" tabindex="-1"><a class="header-anchor" href="#join-branching"><span>Join/Branching</span></a></h2>
+<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code class="language-text"><span class="line">                    ┏━━━━━━━━━━━━┓</span>
+<span class="line">                    ┃ if(rv > 0) ┃</span>
+<span class="line">                    ┗━━━━━━┳━━━━━┛</span>
+<span class="line">          ┌────────────────┴────────────────┐</span>
+<span class="line">          │                                 │</span>
+<span class="line">          ▼                                 ▼</span>
+<span class="line">  True branch:                          False branch:</span>
+<span class="line">  interrupts disabled                   interrupts disabled</span>
+<span class="line"></span>
+<span class="line">┏━━━━━━━━━━━━━━━━━━━┓                 ┏━━━━━━━━━━━━━━━━━━━━━━┓</span>
+<span class="line">┃ // do_stuff       ┃                 ┃ Handle_error_case(); ┃</span>
+<span class="line">┃ Restore_flags();  ┃                 ┗━━━━━━━━━━┳━━━━━━━━━━━┛</span>
+<span class="line">┗━━━━━━━━━┳━━━━━━━━━┛                            │</span>
+<span class="line">          │                                      │</span>
+<span class="line">  interrupts enabled                    interrupts disabled</span>
+<span class="line">          │                                      │</span>
+<span class="line">          └────────────────┬─────────────────────┘</span>
+<span class="line">                           ▼</span>
+<span class="line">                    ┏━━━━━━━━━━━━┓</span>
+<span class="line">                    ┃ return rv; ┃</span>
+<span class="line">                    ┗━━━━━━━━━━━━┛</span>
+<span class="line"></span>
+<span class="line">                   interrupts...???</span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="join-branching" tabindex="-1"><a class="header-anchor" href="#join-branching"><span>Join/Branching</span></a></h2>
 <ul>
 <li>다수의 이전 상태로부터 오는/가는 정보를 어떻게 처리할 것인가</li>
 <li>분기(Branch)에 도달했을 때 수행할 작업
-각 경로를 개별적으로 탐색
+<ol>
+<li>각 경로를 개별적으로 탐색
 <ul>
 <li>각 경로에 대한 가장 정확한 정보</li>
 <li>그러나 경로의 수가 무수히 많을 수 있음</li>
-<li>상태 폭발(State explosion) 발생, 루프는 무한성 문제 추가
-Join</li>
+<li>상태 폭발(State explosion) 발생, 루프는 무한성 문제 추가</li>
+</ul>
+</li>
+<li>Join!</li>
+</ol>
+<ul>
 <li>경로를 다시 하나로 결합</li>
 <li>덜 정확하며 정보 손실 발생 (Rice's theorem)</li>
 <li>그러나 상태 폭발이 없으며 종료됨 (Terminate)</li>
@@ -410,10 +502,10 @@ Join</li>
 </li>
 <li>Join: Basic block의 선행 노드 중 적어도 하나가 Interrupt enabled이고 적어도 하나가 Disabled인 경우
 <ul>
-<li>Join(Enabled, Enabled) -&gt; Enabled</li>
-<li>Join(Disabled, Disabled) -&gt; Disabled</li>
-<li>Join(Disabled, Enabled) -&gt; Maybe-enabled</li>
-<li>Join(Maybe-enabled, *) -&gt; Maybe-enabled</li>
+<li>Join(Enabled, Enabled) → Enabled</li>
+<li>Join(Disabled, Disabled) → Disabled</li>
+<li>Join(Disabled, Enabled) → Maybe-enabled</li>
+<li>Join(Maybe-enabled, *) → Maybe-enabled</li>
 </ul>
 </li>
 </ul>
@@ -421,11 +513,12 @@ Join</li>
 <ul>
 <li><code v-pre>foo()</code> 함수 예제에 대한 분석 추적</li>
 <li>각 단계별 상태 변화 (<span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>σ</mi><mo>→</mo></mrow><annotation encoding="application/x-tex">\sigma →</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">σ</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">→</span></span></span></span> Enabled/Disabled)</li>
-<li>문제 발생 지점: <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>σ</mi><mo>→</mo></mrow><annotation encoding="application/x-tex">\sigma →</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">σ</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">→</span></span></span></span> Maybe-enabled</li>
+<li>문제 발생 지점: <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>σ</mi><mo>→</mo></mrow><annotation encoding="application/x-tex">\sigma →</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">σ</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">→</span></span></span></span> Maybe-enabled
+<img src="@source/se/image-98.png" alt="alt text"></li>
 </ul>
 <h2 id="abstraction" tabindex="-1"><a class="header-anchor" href="#abstraction"><span>Abstraction</span></a></h2>
 <ul>
-<li>간단한 코드 예제:
+<li>간단한 코드 예제
 <ul>
 <li><code v-pre>cli();</code></li>
 <li><code v-pre>if (*)</code> 분기 내 <code v-pre>restore_flags();</code></li>
@@ -435,7 +528,7 @@ Join</li>
 </ul>
 <h2 id="too-simple" tabindex="-1"><a class="header-anchor" href="#too-simple"><span>Too Simple?</span></a></h2>
 <ul>
-<li>함수당 전역 상태(Control flow analysis)만 추적하는 것도 유용함
+<li>함수당 전역 상태(Control flow analysis)만 추적하는 것도 유용함.
 <ul>
 <li>예: 다수 컴파일러(예: Java)의 Dead-code 감지</li>
 <li>결정 지점 전후의 동적 분석을 위한 Instrumentation, 루프 감지</li>
@@ -445,7 +538,7 @@ Join</li>
 <li>복잡성을 한 단계 높이는 것은 변수당 상태를 추적하는 것 (Dataflow analysis)</li>
 <li>예: 변수 x가 0이 될 수 있는가
 <ul>
-<li>원본 Domain: <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span></span></span></span>은 모든 변수를 정수로 매핑. 가능한 구체적 상태 수는 거대함
+<li>원본 Domain: <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span></span></span></span>은 모든 변수를 정수로 매핑. 가능한 구체적 상태 수는 거대함.
 <ul>
 <li><span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">n</span></span></span></span>개의 32비트 변수는 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>2</mn><mrow><mn>32</mn><mo>∗</mo><mi>n</mi></mrow></msup></mrow><annotation encoding="application/x-tex">2^{32*n}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">32</span><span class="mbin mtight">∗</span><span class="mord mathnormal mtight">n</span></span></span></span></span></span></span></span></span></span></span></span>개의 상태 초래</li>
 <li>루프가 있으면 상태가 무한히 변할 수 있음</li>
@@ -465,7 +558,7 @@ Join</li>
 <ul>
 <li>변수 x가 0이 될 수 있는가?
 <ul>
-<li>어떤 종류의 오류를 확인할 수 있는가?</li>
+<li>(어떤 종류의 오류를 확인할 수 있는가?)</li>
 </ul>
 </li>
 <li>원본 Domain: <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span></span></span></span>은 모든 변수를 정수로 매핑</li>
@@ -473,20 +566,17 @@ Join</li>
 </ul>
 <h2 id="zero-analysis-transfer" tabindex="-1"><a class="header-anchor" href="#zero-analysis-transfer"><span>Zero Analysis Transfer</span></a></h2>
 <ul>
-<li>어떤 연산이 관련되어 있는가</li>
-<li>변수를 업데이트할 수 있는 모든 연산</li>
+<li>어떤 연산이 관련되어 있는가?</li>
+<li>변수를 업데이트할 수 있는 모든 연산!</li>
 </ul>
 <h2 id="zero-analysis-join-per-variable" tabindex="-1"><a class="header-anchor" href="#zero-analysis-join-per-variable"><span>Zero Analysis Join (per Variable)</span></a></h2>
 <ul>
-<li>Join(Zero, Zero) -&gt; Zero</li>
-<li>Join(Not-zero, Not-zero) -&gt; Not-zero</li>
-<li>Join(Zero, Not-zero) -&gt; Maybe-zero</li>
-<li>Join(Maybe-zero, *) -&gt; Maybe-zero</li>
+<li>Join(Zero, Zero) → Zero</li>
+<li>Join(Not-zero, Not-zero) → Not-zero</li>
+<li>Join(Zero, Not-zero) → Maybe-zero</li>
+<li>Join(Maybe-zero, *) → Maybe-zero</li>
 </ul>
 <h2 id="example" tabindex="-1"><a class="header-anchor" href="#example"><span>Example</span></a></h2>
-<ul>
-<li>다음 프로그램 고려:</li>
-</ul>
 <div class="language-c line-numbers-mode" data-highlighter="prismjs" data-ext="c"><pre v-pre><code class="language-c"><span class="line">x <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span></span>
 <span class="line">y <span class="token operator">=</span> x<span class="token punctuation">;</span></span>
 <span class="line">z <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span></span>
@@ -497,27 +587,33 @@ Join</li>
 <span class="line"><span class="token punctuation">}</span></span>
 <span class="line"></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul>
-<li>나눗셈에서 y가 0이 될 수 있는지 확인하기 위해 Zero analysis 사용</li>
-</ul>
-<h2 id="example-1" tabindex="-1"><a class="header-anchor" href="#example-1"><span>Example</span></a></h2>
+<li>나눗셈에서 y가 0이 될 수 있는지 확인하기 위해 <strong>Zero analysis</strong> 사용</li>
+<li>1차 반복
 <ul>
-<li>1차 반복(Iteration)</li>
 <li>각 라인별 상태(NZ, Z, MZ) 변화 추적</li>
 <li>Join 적용 결과</li>
-<li>2차 반복(Iteration)</li>
+</ul>
+</li>
+<li>2차 반복
+<ul>
 <li>상태 변화 및 Join 적용 결과</li>
 <li><span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mo>→</mo><mi>M</mi><mi>Z</mi></mrow><annotation encoding="application/x-tex">y → MZ</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.07153em;">MZ</span></span></span></span> 등 상태 업데이트</li>
-<li>3차 반복(Iteration)</li>
-<li>이전 상태와 비교하여 변경 사항 없음 (Fixed point 도달)</li>
-<li>경고: 가능한 0으로 나누기(Div-by-zero) 오류</li>
+</ul>
+</li>
+<li>3차 반복
+<ul>
+<li>이전 상태와 비교하여 변경 사항 없음 (Stable, Fixed point 도달)</li>
+<li>경고: Div-by-zero 오류 발생 가능</li>
+</ul>
+</li>
 </ul>
 <h2 id="abstraction-at-work" tabindex="-1"><a class="header-anchor" href="#abstraction-at-work"><span>Abstraction at Work</span></a></h2>
 <ul>
-<li>가능한 상태의 수는 거대함
+<li>가능한 상태의 수는 거대함.
 <ul>
-<li><span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">n</span></span></span></span>개의 32비트 변수는 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>2</mn><mrow><mn>32</mn><mo>∗</mo><mi>n</mi></mrow></msup></mrow><annotation encoding="application/x-tex">2^{32*n}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">32</span><span class="mbin mtight">∗</span><span class="mord mathnormal mtight">n</span></span></span></span></span></span></span></span></span></span></span></span>개의 상태</li>
+<li><span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">n</span></span></span></span>개의 32비트 변수는 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>2</mn><mrow><mn>32</mn><mo>∗</mo><mi>n</mi></mrow></msup></mrow><annotation encoding="application/x-tex">2^{32*n}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">32</span><span class="mbin mtight">∗</span><span class="mord mathnormal mtight">n</span></span></span></span></span></span></span></span></span></span></span></span>개의 가능한 상태</li>
 <li><span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>2</mn><mrow><mn>32</mn><mo>∗</mo><mn>3</mn></mrow></msup><mo>=</mo><msup><mn>2</mn><mn>96</mn></msup><mo>≈</mo><mn>7.92</mn><mo>×</mo><msup><mn>10</mn><mn>28</mn></msup></mrow><annotation encoding="application/x-tex">2^{32*3} = 2^{96} \approx 7.92 \times 10^{28}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">32</span><span class="mbin mtight">∗</span><span class="mord mtight">3</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">96</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≈</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">7.92</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">28</span></span></span></span></span></span></span></span></span></span></span></span></li>
-<li>루프가 있으면 상태가 무한히 변할 수 있음</li>
+<li>Loop가 있으면 상태가 무한히 변할 수 있음</li>
 </ul>
 </li>
 <li>Zero Analysis는 상태 공간을 좁힘
@@ -531,6 +627,7 @@ Join</li>
 </ul>
 <h2 id="termination-intuition" tabindex="-1"><a class="header-anchor" href="#termination-intuition"><span>Termination Intuition</span></a></h2>
 <ul>
+<li>Termination을 항상 보장하지는 않음. 수렴(fixed point)하지 않을 수 있음.</li>
 <li>전체 프로그램에 대해 정보가 변하지 않을 때까지 원하는 순서대로 명령어를 처리할 수 있음
 <ul>
 <li>계산되지 않은 모든 상태의 초기 상태로 특별한 값 사용</li>
@@ -538,52 +635,40 @@ Join</li>
 </li>
 <li>함수의 고정점(Fixed point)은 함수가 자신에게 매핑하는 데이터 값 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ν</mi></mrow><annotation encoding="application/x-tex">\nu</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal" style="margin-right:0.06366em;">ν</span></span></span></span>임
 <ul>
-<li><span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false">(</mo><mi>v</mi><mo stretchy="false">)</mo><mo>=</mo><mi>v</mi></mrow><annotation encoding="application/x-tex">f(v) = v</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.03588em;">v</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">v</span></span></span></span></li>
+<li><span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>−</mo><mi>f</mi><mo stretchy="false">(</mo><mi>v</mi><mo stretchy="false">)</mo><mo>=</mo><mi>v</mi></mrow><annotation encoding="application/x-tex">-f(v) = v</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">−</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.03588em;">v</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">v</span></span></span></span></li>
 </ul>
 </li>
 <li>Flow function은 수학적 함수임</li>
 <li>각 고정점에서의 Dataflow analysis 상태는 데이터 값임</li>
 </ul>
 <h2 id="the-bad-news-rice-s-theorem-1" tabindex="-1"><a class="header-anchor" href="#the-bad-news-rice-s-theorem-1"><span>The Bad News: Rice’s Theorem</span></a></h2>
+<blockquote>
+<p><strong>&quot;튜링 머신에 의해 인식되는 언어에 대한 비자명한 속성은 결정 불가능하다&quot;  (Henry Gordon Rice, 1953)</strong></p>
+</blockquote>
 <ul>
-<li>&quot;튜링 머신에 의해 인식되는 언어에 대한 비자명한 속성은 결정 불가능하다&quot; (Henry Gordon Rice, 1953)</li>
 <li>모든 정적 분석은 필연적으로 Incomplete하거나 Unsound하거나 Undecidable함 (혹은 이것들의 복합)</li>
 </ul>
 <h2 id="computability-theory-says" tabindex="-1"><a class="header-anchor" href="#computability-theory-says"><span>Computability Theory says…</span></a></h2>
 <ul>
 <li>정지 문제(Halting problem): 주어진 프로그램이 주어진 입력에 대해 정지/종료할지 결정하는 문제</li>
-<li>이 문제를 해결하는 일반적인 알고리즘은 불가능함
+<li>이 문제를 해결하는 일반적인 알고리즘은 불가능
 <ul>
-<li>더 구체적으로: 결정 불가능함 (Yes 답은 얻을 수 있지만, No 답은 얻을 수 없음)</li>
+<li>더 구체적으로, 결정 불가능함 (Yes 답은 얻을 수 있지만, No 답은 얻을 수 없음)</li>
 </ul>
 </li>
 <li>때때로 휴리스틱을 사용할 수 있지만, 모든 프로그램에 대해 일반적으로 해결하는 것은 여전히 불가능</li>
 </ul>
-<h2 id="ok-so" tabindex="-1"><a class="header-anchor" href="#ok-so"><span>OK, So?</span></a></h2>
+<div class="language-python line-numbers-mode" data-highlighter="prismjs" data-ext="py"><pre v-pre><code class="language-python"><span class="line"><span class="token keyword">def</span> <span class="token function">g</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span></span>
+<span class="line">  <span class="token keyword">if</span> halts<span class="token punctuation">(</span>g<span class="token punctuation">)</span><span class="token punctuation">:</span></span>
+<span class="line">    loop_forever<span class="token punctuation">(</span><span class="token punctuation">)</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="ok-so" tabindex="-1"><a class="header-anchor" href="#ok-so"><span>OK, So?</span></a></h2>
 <ul>
 <li>어떤 프로그램이 비자명한 속성(절대 Null 역참조 안 함, 항상 모든 파일 핸들 해제 등)을 갖는지 정적으로 항상 알 수 있다면, 정지 문제도 일반적으로 해결할 수 있음</li>
-<li>그러나 정지 문제는 명백히 불가능함</li>
-<li>따라서: 완벽한 정적 분석은 없음. 항상 False positive나 False negative(또는 둘 다)를 가짐</li>
-<li>모든 도구는 트레이드오프를 가짐</li>
+<li>...그러나 정지 문제는 명백히 불가능함.</li>
+<li>따라서, 완벽한 정적 분석은 없음. 항상 False positive나 False negative(또는 둘 다)를 가짐</li>
+<li>모든 도구는 trade-off를 가짐</li>
 </ul>
-<h2 id="soundness-and-completeness-2" tabindex="-1"><a class="header-anchor" href="#soundness-and-completeness-2"><span>Soundness and Completeness</span></a></h2>
-<ul>
-<li>Sound Analysis:
-<ul>
-<li>모든 결함을 보고</li>
-<li>False negative 없음</li>
-<li>일반적으로 과대 근사(Overapproximated)</li>
-</ul>
-</li>
-<li>Complete Analysis:
-<ul>
-<li>보고된 모든 결함이 실제 결함임</li>
-<li>False positive 없음</li>
-<li>일반적으로 과소 근사(Underapproximated)</li>
-</ul>
-</li>
-</ul>
-<h1 id="soundness-and-completeness-3" tabindex="-1"><a class="header-anchor" href="#soundness-and-completeness-3"><span>Soundness and Completeness</span></a></h1>
 <h2 id="sound-vs-heuristic-analysis-vs-reality" tabindex="-1"><a class="header-anchor" href="#sound-vs-heuristic-analysis-vs-reality"><span>Sound vs. Heuristic Analysis vs. Reality</span></a></h2>
 <ul>
 <li>Heuristic Analysis
@@ -599,28 +684,35 @@ Join</li>
 <li>Sound Abstraction, False positive를 줄이기 위한 정밀한 분석</li>
 </ul>
 </li>
-<li>그러나 실제로는: 언어가 복잡하며, 모든 도구는 내부적으로 무엇을 모델링할지/실제 Abstraction을 어떻게 할지에 대한 결정이 필요함</li>
+<li>그러나 실제로는, 언어가 복잡하며, 모든 도구는 내부적으로 무엇을 모델링할지/실제 abstraction을 어떻게 할지에 대한 결정이 필요함.</li>
 </ul>
 <h2 id="example-null-pointers" tabindex="-1"><a class="header-anchor" href="#example-null-pointers"><span>Example: Null Pointers</span></a></h2>
-<ul>
-<li><code v-pre>int foo()</code> 함수 내 <code v-pre>Integer</code> 객체 생성 및 null 체크 로직 예제 코드</li>
-</ul>
+<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code class="language-text"><span class="line">int foo() {</span>
+<span class="line">    Integer x = new Integer(6);</span>
+<span class="line"></span>
+<span class="line">}</span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><img src="@source/se/image-99.png" alt="alt text"></p>
 <h2 id="what-about-that-function-call" tabindex="-1"><a class="header-anchor" href="#what-about-that-function-call"><span>What About that Function Call?</span></a></h2>
 <ul>
-<li>몇 가지 간단한 옵션:
+<li>몇 가지 간단한 옵션
 <ul>
 <li>완전히 엉뚱한 Control Flow(Exception, Longjumps)가 우려된다면, 더 복잡한 Control Flow Graph로 모델링 가능</li>
-<li>모든 함수가 반환된다고 가정하고 &quot;프로그램이 종료된다고 가정할 때, 분석이 Sound하게 계산됨...&quot;이라고 주장하며 무시</li>
+<li>모든 함수가 반환된다고 가정하고 &quot;프로그램이 종료된다고 가정할 때, 분석이 Sound하게 계산됨...&quot;이라고 주장하며 무시
+<ul>
+<li>대부분의 사람들은 신경 쓰지 않으며 기본적으로 가정함.</li>
 </ul>
 </li>
-<li>대부분의 사람들은 신경 쓰지 않으며 기본적으로 가정함</li>
-<li>Interprocedural 분석이 존재하지만 확장하기 어렵고 본 강의 범위를 벗어남
+</ul>
+</li>
+<li>Interprocedural 분석이 존재하지만 확장하기 어렵고 본 강의 범위를 벗어남.
 <ul>
 <li>예: 단일의 큰 그래프 구축 또는 메서드 레벨에서의 추상화; 종종 도움을 주기 위한 수동 주석(Annotation) 사용</li>
 </ul>
 </li>
 </ul>
-<h1 id="try-catch" tabindex="-1"><a class="header-anchor" href="#try-catch"><span>Try-Catch?</span></a></h1>
+<h2 id="try-catch" tabindex="-1"><a class="header-anchor" href="#try-catch"><span>Try-Catch?</span></a></h2>
+<p><img src="@source/se/image-100.png" alt="alt text"></p>
 <h2 id="design-choices-representation-and-abstract-domain" tabindex="-1"><a class="header-anchor" href="#design-choices-representation-and-abstract-domain"><span>Design Choices: Representation and Abstract Domain</span></a></h2>
 <ul>
 <li>Try/catch를 모델링하지 않는다면 어떠한가</li>
@@ -634,7 +726,7 @@ Join</li>
 </ul>
 <h2 id="upshot-analysis-as-approximation" tabindex="-1"><a class="header-anchor" href="#upshot-analysis-as-approximation"><span>Upshot: Analysis as Approximation</span></a></h2>
 <ul>
-<li>분석은 실제적으로 근사(Approximate)해야 함
+<li>분석은 실제적으로 근사(Approximate)해야 함.
 <ul>
 <li>False positives: 실제로는 오류가 없는 곳에 오류 보고 가능</li>
 <li>False negatives: 실제로 존재하는 오류를 보고하지 않을 수 있음</li>
@@ -643,10 +735,13 @@ Join</li>
 </li>
 <li>Approximation 전략
 <ul>
-<li>올바른 코드를 위한 패턴 P 찾기</li>
+<li>올바른 코드를 위한 패턴 P 찾기
+<ul>
 <li>확인하기 실행 가능하며(분석이 빨리 종료됨),</li>
 <li>실제 대부분의 올바른 코드를 커버하고(낮은 False positive),</li>
 <li>오류가 없음을 의미함(False negative 없음)</li>
+</ul>
+</li>
 </ul>
 </li>
 <li>분석은 실제적으로 꽤 훌륭할 수 있음
@@ -664,14 +759,14 @@ Join</li>
 <ul>
 <li>정적 분석: 프로그램을 실행하지 않고 프로그램 소스를 체계적으로 자동 분석</li>
 <li>Structural 분석은 코드 내 패턴을 찾음</li>
-<li>Control-flow 분석은 모든 가능한 경로 분석 (전역 속성)</li>
-<li>Data-flow 분석은 모든 경로에서 변수의 가능한 (Abstract) 값 분석
+<li>Control-flow 분석은 모든 가능한 경로 분석 (global 속성)</li>
+<li>Data-flow 분석은 모든 경로에서 변수의 가능한 (abstract) 값 분석
 <ul>
 <li>Abstraction, Transfer function, Join</li>
-<li>Fix point 계산; Termination</li>
+<li>Fix point 계산. termination</li>
 </ul>
 </li>
-<li>분석은 Unsound하거나 Incomplete하거나 둘 다임</li>
+<li>분석은 Unsound하거나 Incomplete하거나 둘 다임.</li>
 </ul>
 </div></template>
 

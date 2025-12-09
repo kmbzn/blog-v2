@@ -1,0 +1,211 @@
+<template><div><h1 id="assignment-4-implementation-of-natural-join-on-tree" tabindex="-1"><a class="header-anchor" href="#assignment-4-implementation-of-natural-join-on-tree"><span>Assignment 4: Implementation of Natural Join on <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>B</mi><mo>+</mo></msup></mrow><annotation encoding="application/x-tex">B^+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7713em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.05017em;">B</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7713em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mbin mtight">+</span></span></span></span></span></span></span></span></span></span></span>-Tree</span></a></h1>
+<h3 id="_2021024057-김병준" tabindex="-1"><a class="header-anchor" href="#_2021024057-김병준"><span>2021024057 김병준</span></a></h3>
+<h2 id="_1-design" tabindex="-1"><a class="header-anchor" href="#_1-design"><span>1. Design</span></a></h2>
+<ul>
+<li>본 과제의 목표는 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>B</mi><mo>+</mo></msup></mrow><annotation encoding="application/x-tex">B^+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7713em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.05017em;">B</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7713em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mbin mtight">+</span></span></span></span></span></span></span></span></span></span></span>-tree index 구조로 저장된 두 개의 데이터 테이블(Table 1, Table 2)에 대하여 Natural join 연산을 수행하는 알고리즘을 구현하는 것입니다. 각 테이블의 레코드는 <code v-pre>&lt;Key, Value&gt;</code> pair로 구성되며, Key는 8-byte의 정수(<code v-pre>int64_t</code>), Value는 최대 120-byte의 문자열으로 주어졌습니다. 명세에 따라 Key는 중복되지 않는 Unique key로 가정합니다.</li>
+<li>효율적인 join 연산을 구현하기 위해 다음과 같은 알고리즘적 사고 과정을 거쳤습니다.</li>
+</ul>
+<h3 id="_1-1-naive-approach-nested-loop-join" tabindex="-1"><a class="header-anchor" href="#_1-1-naive-approach-nested-loop-join"><span>1.1. Naive Approach: Nested loop join</span></a></h3>
+<ul>
+<li>가장 직관적인(naive한) 방법으로는 이중 반복문을 사용하는 것을 떠올려볼 수 있을 것입니다.
+<ul>
+<li>동작: Table 1(Outer relation)의 모든 tuple을 순차적으로 스캔하면서, 각 tuple의 key값을 기준으로 Table 2(Inner relation)의 모든 tuple을 처음부터 끝까지 스캔하여 매칭되는지 확인합니다.</li>
+<li>분석: 이 방식은 두 테이블의 레코드 수가 각각 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mo separator="true">,</mo><mi>M</mi></mrow><annotation encoding="application/x-tex">N, M</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8778em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">M</span></span></span></span>일 때, <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>N</mi><mo>×</mo><mi>M</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(N \times M)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">M</span><span class="mclose">)</span></span></span></span>의 시간복잡도를 갖습니다. 이에 따라 데이터의 크기가 커질수록 성능이 기하급수적으로 저하될 것이므로, 해당 과제와 같이 대용량 처리를 가정할 수 있는 시스템에서는 <strong>적합하지 않은</strong> 알고리즘이라고 판단하였습니다.</li>
+</ul>
+</li>
+</ul>
+<h3 id="_1-2-sort-merge-join" tabindex="-1"><a class="header-anchor" href="#_1-2-sort-merge-join"><span>1.2. Sort-Merge Join?</span></a></h3>
+<ul>
+<li>Join의 성능을 개선하기 위한 또 다른 idea는 두 테이블을 key값을 기준으로 sort한 후 merge하는 것입니다.
+<ul>
+<li>동작: Quick sort와 같이 (기존에 효율적이라고) 알려져 있는 알고리즘들을 사용하여 메모리 내에 불러온 두 테이블들을 정렬합니다. 정렬된 두 테이블에 각각 포인터를 두고, key값을 비교하며 포인터를 이동시키는 방식으로 한 번의 스캔만으로 join을 완료할 수 있는 idea입니다.</li>
+<li>분석: 정렬 과정에 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>N</mi><mi>log</mi><mo>⁡</mo><mi>N</mi><mo>+</mo><mi>M</mi><mi>log</mi><mo>⁡</mo><mi>M</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(N \log N + M \log M)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">M</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">M</span><span class="mclose">)</span></span></span></span>이 소요되며, 이후 병합 과정은 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>N</mi><mo>+</mo><mi>M</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(N + M)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">M</span><span class="mclose">)</span></span></span></span>이 소요됩니다. 하지만 본 과제에서는 메모리 사용량이 <code v-pre>4 MiB</code>로 제한되어 있습니다. 전체 데이터를 메모리에 적재하여 정렬하는 것은 불가능하며, External merge sort 등을 고려해야 하므로 구현 복잡도와 디스크 I/O의 비용이 증가할 우려가 있습니다.</li>
+</ul>
+</li>
+</ul>
+<h3 id="_1-3-final-design-tree-based-merge-join" tabindex="-1"><a class="header-anchor" href="#_1-3-final-design-tree-based-merge-join"><span>1.3. Final Design: <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>B</mi><mo>+</mo></msup></mrow><annotation encoding="application/x-tex">B^+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7713em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.05017em;">B</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7713em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mbin mtight">+</span></span></span></span></span></span></span></span></span></span></span>-Tree Based Merge Join</span></a></h3>
+<ul>
+<li>본 과제의 데이터 파일은 이미 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>B</mi><mo>+</mo></msup></mrow><annotation encoding="application/x-tex">B^+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7713em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.05017em;">B</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7713em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mbin mtight">+</span></span></span></span></span></span></span></span></span></span></span>-tree 구조로 관리되고 있다는 점을 고려하였습니다.</li>
+<li><span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>B</mi><mo>+</mo></msup></mrow><annotation encoding="application/x-tex">B^+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7713em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.05017em;">B</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7713em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mbin mtight">+</span></span></span></span></span></span></span></span></span></span></span>-tree의 leaf node들은 Key 순서대로 정렬되어 있으며, linked list 형태로 서로 연결되어 있습니다. 이는 별도의 추가적인 정렬 알고리즘을 도입하지 않아도 이미 데이터가 sorted state라는 것을 의미합니다.</li>
+<li>따라서 최종적으로 다음과 같은 최적화된 설계를 도출할 수 있었습니다.</li>
+</ul>
+<ol>
+<li>각 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>B</mi><mo>+</mo></msup></mrow><annotation encoding="application/x-tex">B^+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7713em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.05017em;">B</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7713em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mbin mtight">+</span></span></span></span></span></span></span></span></span></span></span>-tree의 가장 leftmost에 해당하는 leaf page부터 접근을 시작합니다.</li>
+<li>두 테이블의 현재 레코드를 가리키는 커서(Cursor)를 도입하여 유지하면서, 두 key값의 크기를 서로 비교합니다.
+<ul>
+<li><code v-pre>Key1 == Key2</code>인 경우: 두 Key가 일치하므로 join 결과를 출력하고, 두 커서를 모두 다음 레코드로 이동합니다.</li>
+<li><code v-pre>Key1 &lt; Key2</code>인 경우: Table 1의 Key가 작으므로, Table 1의 커서를 다음으로 이동하여 더 큰 Key를 탐색합니다.</li>
+<li><code v-pre>Key1 &gt; Key2</code>인 경우: Table 2의 Key가 작으므로, Table 2의 커서를 다음으로 이동합니다.</li>
+</ul>
+</li>
+<li>Page Traversal: 현재 leaf page의 모든 레코드를 탐색하면, <code v-pre>Right Sibling Page Number</code>를 참조하여 다음 leaf page를 디스크에서 load합니다.</li>
+</ol>
+<h4 id="_1-3-1-결론" tabindex="-1"><a class="header-anchor" href="#_1-3-1-결론"><span>1.3.1. 결론</span></a></h4>
+<ul>
+<li>이 설계를 통해 별도의 정렬 비용 없이 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>N</mi><mo>+</mo><mi>M</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(N + M)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">M</span><span class="mclose">)</span></span></span></span>의 시간복잡도로 효율적인 natural join을 수행할 수 있으로 기대합니다.</li>
+<li>또한, 한 번에 필요한 leaf page만 메모리에 적재하게 되므로 <code v-pre>4 MiB</code> 메모리 제약 조건을 충분히 준수할 수 있습니다.</li>
+</ul>
+<h2 id="_2-implement" tabindex="-1"><a class="header-anchor" href="#_2-implement"><span>2. Implement</span></a></h2>
+<ul>
+<li>앞에서 설계한 알고리즘을 바탕으로 기존의 single 테이블 처리 구조를 확장하여 두 개의 테이블을 동시에 처리할 수 있도록 구현하였습니다.</li>
+</ul>
+<h3 id="_2-1-global-variable-structure-extension" tabindex="-1"><a class="header-anchor" href="#_2-1-global-variable-structure-extension"><span>2.1. Global Variable &amp; Structure Extension</span></a></h3>
+<ul>
+<li>두 개의 테이블을 동시에 불러올 수 있도록 하기 위해 전역 변수를 하나씩 추가하였습니다. 기존의 단일 <code v-pre>fd</code>, <code v-pre>hp</code>(Header Page), <code v-pre>rt</code>(Root Page) 변수 외에 두 번째 테이블을 위한 변수들을 추가로 선언하여 독립적인 파일 접근이 가능하도록 하였습니다.</li>
+</ul>
+<div class="language-c line-numbers-mode" data-highlighter="prismjs" data-ext="c"><pre v-pre><code class="language-c"><span class="line"><span class="token comment">// Global variables for handling two tables</span></span>
+<span class="line">H_P <span class="token operator">*</span>hp<span class="token punctuation">,</span> <span class="token operator">*</span>hp2<span class="token punctuation">;</span>          <span class="token comment">// Header pages</span></span>
+<span class="line">page <span class="token operator">*</span>rt <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">,</span> <span class="token operator">*</span>rt2 <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span> <span class="token comment">// Root pages</span></span>
+<span class="line"><span class="token keyword">int</span> fd <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> fd2 <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>  <span class="token comment">// File descriptors</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_2-2-modification-of-open-table" tabindex="-1"><a class="header-anchor" href="#_2-2-modification-of-open-table"><span>2.2. Modification of <code v-pre>open_table</code></span></a></h3>
+<ul>
+<li>기존의 <code v-pre>open_table</code> 함수는 하나의 경로만 입력받았으나, join 연산을 위해서는 두 개의 파일 경로가 필요할 것입니다.. 이를 위해 기존 logic을 <code v-pre>open_single_table</code>이라는 내부 함수로 분리하고, 새로운 <code v-pre>open_table</code> 함수는 이를 두 번 호출하는 wrapper와 같은 형태로 재구현하였습니다.
+<ul>
+<li><code v-pre>open_single_table</code>: 단일 DB 파일을 열고 fd, header, root 정보를 설정합니다.</li>
+<li><code v-pre>open_table</code>: 두 개의 경로(<code v-pre>pathname1</code>, <code v-pre>pathname2</code>)를 입력받아 각각 <code v-pre>open_single_table</code>을 호출하고, 두 호출의 결과값을 합산하여 반환함으로써 예외 상황을 전파합니다.</li>
+</ul>
+</li>
+</ul>
+<div class="language-c line-numbers-mode" data-highlighter="prismjs" data-ext="c"><pre v-pre><code class="language-c"><span class="line"><span class="token keyword">int</span> <span class="token function">open_table</span><span class="token punctuation">(</span><span class="token keyword">char</span> <span class="token operator">*</span> pathname1<span class="token punctuation">,</span> <span class="token keyword">char</span> <span class="token operator">*</span> pathname2<span class="token punctuation">)</span> <span class="token punctuation">{</span></span>
+<span class="line">    <span class="token keyword">int</span> ret1 <span class="token operator">=</span> <span class="token function">open_single_table</span><span class="token punctuation">(</span>pathname1<span class="token punctuation">,</span> <span class="token operator">&amp;</span>fd<span class="token punctuation">,</span> <span class="token operator">&amp;</span>hp<span class="token punctuation">,</span> <span class="token operator">&amp;</span>rt<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">    <span class="token keyword">int</span> ret2 <span class="token operator">=</span> <span class="token function">open_single_table</span><span class="token punctuation">(</span>pathname2<span class="token punctuation">,</span> <span class="token operator">&amp;</span>fd2<span class="token punctuation">,</span> <span class="token operator">&amp;</span>hp2<span class="token punctuation">,</span> <span class="token operator">&amp;</span>rt2<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line"></span>
+<span class="line">    <span class="token keyword">return</span> ret1 <span class="token operator">+</span> ret2<span class="token punctuation">;</span></span>
+<span class="line"><span class="token punctuation">}</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_2-3-analysis-of-existing-api-modification" tabindex="-1"><a class="header-anchor" href="#_2-3-analysis-of-existing-api-modification"><span>2.3. Analysis of Existing API Modification</span></a></h3>
+<ul>
+<li>이제, 기존에 구현되어 있는 <code v-pre>db_find</code>, <code v-pre>db_insert</code>, <code v-pre>db_delete</code> 함수들을 수정해야 할 필요성에 대해 검토해보도록 하겠습니다.
+<ul>
+<li>현재 구조에서 <code v-pre>open_table</code>을 통해 두 개의 테이블을 열더라도, 기존의 <code v-pre>insert</code>, <code v-pre>delete</code>, <code v-pre>find</code> 함수들은 전역 변수로 선언된 첫 번째 테이블(<code v-pre>fd</code>, <code v-pre>rt</code> 등)을 대상으로만 동작하도록 구현되어 있습니다.
+<ul>
+<li>이에 따라서 table 2에 대한 조작이 불가능하다는 한계점이 존재합니다.</li>
+</ul>
+</li>
+<li>하지만 본 과제의 명세는 두 테이블 간의 join 연산 구현에 있으며, 다중 테이블에 대한 동시 트랜잭션 처리나 관리는 과제의 범위와 무관한 내용일 것입니다.</li>
+<li>Join 알고리즘은 read-only 방식으로만 index 구조를 순회하는 방식이므로 기존 함수들의 수정 없이도 구현이 가능합니다.</li>
+</ul>
+</li>
+</ul>
+<h3 id="_2-4-implementation-of-db-join" tabindex="-1"><a class="header-anchor" href="#_2-4-implementation-of-db-join"><span>2.4. Implementation of <code v-pre>db_join</code></span></a></h3>
+<ul>
+<li>핵심 logic에 해당하는 <code v-pre>db_join</code> 함수는 다음과 같은 순서로 동작하게 됩니다.</li>
+</ul>
+<ol>
+<li>두 테이블 중 하나라도 비어있는 경우(<code v-pre>rpo == 0</code>), join 결과는 공집합일 것이므로 즉시 함수를 종료하여 불필요한 추가적인 연산을 방지합니다. (성능 향상을 위한 조치)<div class="language-c line-numbers-mode" data-highlighter="prismjs" data-ext="c"><pre v-pre><code class="language-c"><span class="line"><span class="token keyword">void</span> <span class="token function">db_join</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span></span>
+<span class="line">    <span class="token comment">// 각 테이블이 비어있는지 확인</span></span>
+<span class="line">    <span class="token keyword">if</span> <span class="token punctuation">(</span>hp<span class="token operator">-></span>rpo <span class="token operator">==</span> <span class="token number">0</span> <span class="token operator">||</span> hp2<span class="token operator">-></span>rpo <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span></span>
+<span class="line">        <span class="token keyword">return</span><span class="token punctuation">;</span> <span class="token comment">// 바로 종료</span></span>
+<span class="line">    <span class="token punctuation">}</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></li>
+<li>Initialization: <code v-pre>find_leaf</code> logic을 활용하여 각 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>B</mi><mo>+</mo></msup></mrow><annotation encoding="application/x-tex">B^+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7713em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.05017em;">B</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7713em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mbin mtight">+</span></span></span></span></span></span></span></span></span></span></span>-tree의 가장 왼쪽 leaf page를 찾아 메모리에 load합니다.</li>
+<li>Merge loop: 두 leaf page의 레코드를 순회하는 <code v-pre>while</code> 루프를 실행합니다.
+<ul>
+<li>현재 가리키고 있는 두 레코드의 Key(<code v-pre>key1</code>, <code v-pre>key2</code>)를 비교합니다.</li>
+<li>Match (<code v-pre>key1 == key2</code>): <code v-pre>printf</code>를 통해 <code v-pre>key, value1, value2</code> 형식으로 결과를 출력합니다. Key는 Unique 하므로 두 인덱스(<code v-pre>idx1</code>, <code v-pre>idx2</code>)를 모두 증가시킵니다.</li>
+<li>Compare (<code v-pre>key1 &lt; key2</code>): Table 1의 현재 Key가 작으므로, <code v-pre>idx1</code>을 증가시켜 Table 1에서 더 큰 Key를 찾습니다.</li>
+<li>Compare (<code v-pre>key1 &gt; key2</code>): Table 2의 현재 Key가 작으므로, <code v-pre>idx2</code>를 증가시킵니다.</li>
+</ul>
+<div class="language-c line-numbers-mode" data-highlighter="prismjs" data-ext="c"><pre v-pre><code class="language-c"><span class="line">    <span class="token comment">// 현재 가리키고 있는 key값 각각 불러오기</span></span>
+<span class="line">    <span class="token class-name">int64_t</span> key1 <span class="token operator">=</span> p1<span class="token operator">-></span>records<span class="token punctuation">[</span>idx1<span class="token punctuation">]</span><span class="token punctuation">.</span>key<span class="token punctuation">;</span></span>
+<span class="line">    <span class="token class-name">int64_t</span> key2 <span class="token operator">=</span> p2<span class="token operator">-></span>records<span class="token punctuation">[</span>idx2<span class="token punctuation">]</span><span class="token punctuation">.</span>key<span class="token punctuation">;</span></span>
+<span class="line"></span>
+<span class="line">    <span class="token comment">// Key 비교 및 join</span></span>
+<span class="line">    <span class="token keyword">if</span> <span class="token punctuation">(</span>key1 <span class="token operator">==</span> key2<span class="token punctuation">)</span> <span class="token punctuation">{</span></span>
+<span class="line">        <span class="token comment">// 출력 형식에 따라서  출력</span></span>
+<span class="line">        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%lld,%s,%s\n"</span><span class="token punctuation">,</span> key1<span class="token punctuation">,</span> p1<span class="token operator">-></span>records<span class="token punctuation">[</span>idx1<span class="token punctuation">]</span><span class="token punctuation">.</span>value<span class="token punctuation">,</span> p2<span class="token operator">-></span>records<span class="token punctuation">[</span>idx2<span class="token punctuation">]</span><span class="token punctuation">.</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">        </span>
+<span class="line">        <span class="token comment">// Unique Key이기 때문에, 둘 다 다음으로 이동</span></span>
+<span class="line">        idx1<span class="token operator">++</span><span class="token punctuation">;</span></span>
+<span class="line">        idx2<span class="token operator">++</span><span class="token punctuation">;</span></span>
+<span class="line">    <span class="token punctuation">}</span></span>
+<span class="line">    <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>key1 <span class="token operator">&lt;</span> key2<span class="token punctuation">)</span> <span class="token punctuation">{</span></span>
+<span class="line">        <span class="token comment">// Table 1의 키가 작으면 Table 1의 포인터를 증가</span></span>
+<span class="line">        idx1<span class="token operator">++</span><span class="token punctuation">;</span></span>
+<span class="line">    <span class="token punctuation">}</span></span>
+<span class="line">    <span class="token keyword">else</span> <span class="token punctuation">{</span></span>
+<span class="line">        <span class="token comment">// Table 2의 키가 작으면 Table 2 포인터 증가</span></span>
+<span class="line">        idx2<span class="token operator">++</span><span class="token punctuation">;</span></span>
+<span class="line">    <span class="token punctuation">}</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></li>
+<li>Page Transition: 인덱스가 현재 Page의 레코드 수를 초과하면, 해당 Page의 <code v-pre>right_sibling</code>의 offset을 확인합니다.
+<ul>
+<li><code v-pre>right_sibling</code>이 0이 아니면 해당 페이지를 <code v-pre>load_page</code> 함수로 읽어오고 인덱스를 0으로 초기화합니다.</li>
+<li><code v-pre>right_sibling</code>이 0이면(마지막 Page), 탐색을 종료합니다.</li>
+</ul>
+</li>
+<li>Memory Release: 사용이 끝난 Page 메모리를 <code v-pre>free</code>하여 자원 누수를 방지합니다.<div class="language-c line-numbers-mode" data-highlighter="prismjs" data-ext="c"><pre v-pre><code class="language-c"><span class="line">    <span class="token keyword">if</span> <span class="token punctuation">(</span>p1 <span class="token operator">!=</span> <span class="token constant">NULL</span><span class="token punctuation">)</span> <span class="token function">free</span><span class="token punctuation">(</span>p1<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">    <span class="token keyword">if</span> <span class="token punctuation">(</span>p2 <span class="token operator">!=</span> <span class="token constant">NULL</span><span class="token punctuation">)</span> <span class="token function">free</span><span class="token punctuation">(</span>p2<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div></div></div></li>
+</ol>
+<ul>
+<li>이 구현은 디스크 I/O를 최소화하고 필요한 시점에만 page를 로딩하는 on-demand 방식을 따르고 있습니다.</li>
+</ul>
+<h2 id="_3-result" tabindex="-1"><a class="header-anchor" href="#_3-result"><span>3. Result</span></a></h2>
+<ul>
+<li>구현된 join 기능의 정확성 및 성능을 검증하기 위해 수행한 테스트에 대해서 다루고자 합니다.</li>
+</ul>
+<h3 id="_3-1-test-environment-setup" tabindex="-1"><a class="header-anchor" href="#_3-1-test-environment-setup"><span>3.1. Test Environment Setup</span></a></h3>
+<ul>
+<li>대량의 데이터를 통한 검증을 위해 python 스크립트를 작성하여 테스트 케이스를 생성하였습니다.
+<ul>
+<li>Data Generation: <code v-pre>-10000</code>부터 <code v-pre>10000</code>까지의 범위를 갖는 Key와 랜덤한 String Value를 포함하는 두 개의 입력 파일(<code v-pre>input1.txt</code>, <code v-pre>input2.txt</code>)을 생성했습니다. 두 파일은 일부 Key가 겹치도록 설정하여 join 결과가 명확히 나타나도록 했습니다.</li>
+</ul>
+</li>
+</ul>
+<p><img src="@source/db/image-37.png" alt=""></p>
+<h3 id="_3-2-execution-procedure" tabindex="-1"><a class="header-anchor" href="#_3-2-execution-procedure"><span>3.2. Execution Procedure</span></a></h3>
+<ul>
+<li>
+<p>현재 <code v-pre>db_insert</code> 기능은 단일 파일에 대해서만 삽입이 가능한 상태이므로(추가적으로 변경하지 않았으므로), 다음과 같이 다소 우회적인 방식으로 두 개의 DB 파일을 구축하도록 하였습니다.</p>
+<ol>
+<li><code v-pre>input1.txt</code>를 이용하여 <code v-pre>test1.db</code>에 데이터를 insert한다.</li>
+<li>생성된 <code v-pre>test1.db</code>의 파일명을 <code v-pre>test2.db</code>로 변경한다.</li>
+<li>프로그램을 재실행하여 빈 <code v-pre>test1.db</code>를 생성하고, <code v-pre>input2.txt</code>를 이용하여 데이터를 삽입한다.</li>
+<li>결과적으로 <code v-pre>test1.db</code>와 <code v-pre>test2.db</code> 두 개의 완성된 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>B</mi><mo>+</mo></msup></mrow><annotation encoding="application/x-tex">B^+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7713em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.05017em;">B</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7713em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mbin mtight">+</span></span></span></span></span></span></span></span></span></span></span>-tree 파일을 확보하였다.</li>
+</ol>
+</li>
+</ul>
+<h3 id="_3-3-verification" tabindex="-1"><a class="header-anchor" href="#_3-3-verification"><span>3.3. Verification</span></a></h3>
+<ul>
+<li>구축된 두 DB에 대해 <code v-pre>j</code> (Join) 명령어를 수행하도록 합니다.</li>
+<li>터미널 출력 결과를 확인한 결과, key값이 일치하는 튜플들에 대해서만 정확하게 <code v-pre>Key, Value1, Value2</code> 형식이 출력됨을 확인하였습니다.</li>
+<li><span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>N</mi><mo>+</mo><mi>M</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(N+M)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">M</span><span class="mclose">)</span></span></span></span> 알고리즘이 적용되어, 약 1만 건 이상의 데이터에 대해서도 큰 지연 없이(대략 0.1초 이내에) 즉각적인 결과가 도출됨을 확인하였습니다.</li>
+</ul>
+<p><img src="@source/db/image-38.png" alt=""></p>
+<h2 id="_4-troubleshooting" tabindex="-1"><a class="header-anchor" href="#_4-troubleshooting"><span>4. Troubleshooting</span></a></h2>
+<ul>
+<li>구현 과정에서 중대한 어려움은 없었습니다.</li>
+<li>하지만 test 과정에서 약간의 착오가 발생한 부분을 기술하고자 합니다.</li>
+</ul>
+<h3 id="_4-1-issue-misinterpretation-of-memory-usage" tabindex="-1"><a class="header-anchor" href="#_4-1-issue-misinterpretation-of-memory-usage"><span>4.1. Issue: Misinterpretation of Memory Usage</span></a></h3>
+<h4 id="_4-1-1-문제-상황" tabindex="-1"><a class="header-anchor" href="#_4-1-1-문제-상황"><span>4.1.1. 문제 상황</span></a></h4>
+<div class="language-bash line-numbers-mode" data-highlighter="prismjs" data-ext="sh"><pre v-pre><code class="language-bash"><span class="line"><span class="token punctuation">..</span>.</span>
+<span class="line"><span class="token number">996</span>,variable,ethernet</span>
+<span class="line"><span class="token number">997</span>,quince,key</span>
+<span class="line"><span class="token number">999</span>,node,quince</span>
+<span class="line">Join execution time: <span class="token number">0.000866</span> sec</span>
+<span class="line">Memory usage: <span class="token number">1277952</span> KB</span>
+<span class="line">Warning: Memory Limit Exceeded<span class="token operator">!</span> <span class="token punctuation">(</span>Limit: <span class="token number">4096</span> KB<span class="token punctuation">)</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul>
+<li>과제의 핵심 제약사항인 메모리 사용량 <code v-pre>4 MiB</code> 이하를 준수하는지 확인하기 위해 로컬 환경(macOS)에서 메모리 사용량을 모니터링하였습니다. 테스트 도중 프로세스의 메모리 사용량이 예상했던 것보다 훨씬 큰 수치로 확인되어, 메모리 leak이 발생했거나 page 관리에 문제가 있는 것이라고 판단(오해)하여 약간의 혼란을 겪었습니다.</li>
+</ul>
+<h4 id="_4-1-2-해결-과정" tabindex="-1"><a class="header-anchor" href="#_4-1-2-해결-과정"><span>4.1.2. 해결 과정</span></a></h4>
+<ol>
+<li><code v-pre>valgrind</code>를 사용할 수 없는 macOS 환경이라 시스템 모니터와 터미널 명령어를 통해 확인했습니다.</li>
+<li>원인을 분석하던 도중 macOS의 일부 메모리 모니터링 도구가 메모리 단위를 <code v-pre>KB</code>가 아닌 <code v-pre>Bytes</code> 단위로, 혹은 Page 단위로 다르게 표시할 수 있다는 점을 이해하였습니다.</li>
+<li>단위를 보정하여 다시 계산해본 결과, 실제 사용량은 허용 범위인 <code v-pre>4 MiB</code> 이내임을 확인하였습니다.</li>
+<li>또한, <code v-pre>db_join</code> 함수 내에서 <code v-pre>malloc</code>으로 할당한 <code v-pre>page</code> 구조체들이 loop 종료 후 또는 함수 return 전에 올바르게 <code v-pre>free</code> 되는지 코드를 재검토하여 안전성을 확보했습니다.</li>
+</ol>
+<h4 id="_4-1-3-결론" tabindex="-1"><a class="header-anchor" href="#_4-1-3-결론"><span>4.1.3. 결론</span></a></h4>
+<ul>
+<li>단순한 메모리 수치 해석의 오류였으며, 실제 구현된 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>B</mi><mo>+</mo></msup></mrow><annotation encoding="application/x-tex">B^+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7713em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.05017em;">B</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7713em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mbin mtight">+</span></span></span></span></span></span></span></span></span></span></span>-tree 기반의 join 알고리즘은 필요한 페이지만을 메모리에 적재하게 되므로 메모리 제약 조건을 충분히 만족하고 있음을 확인하였습니다.</li>
+</ul>
+</div></template>
+
+

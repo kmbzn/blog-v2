@@ -1,13 +1,18 @@
 <template><div><h1 id="_9-uml" tabindex="-1"><a class="header-anchor" href="#_9-uml"><span>9. UML</span></a></h1>
-<h2 id="learning-goals" tabindex="-1"><a class="header-anchor" href="#learning-goals"><span>Learning Goals</span></a></h2>
+<h2 id="학습-목표" tabindex="-1"><a class="header-anchor" href="#학습-목표"><span>학습 목표</span></a></h2>
 <ul>
 <li>UML (Unified Modeling Language)이 무엇인지, 왜 필요한지 이해</li>
-<li>기본 UML notation(표기법)을 사용하여 design(설계)을 전달</li>
-<li>다양한 유형의 UML diagram(다이어그램)의 표기법과 목적 이해</li>
+<li>기본 UML 표기법을 사용하여 설계를 전달</li>
+<li>다양한 유형의 UML diagram의 표기법과 목적 이해</li>
 </ul>
 <h2 id="what-could-the-arrow-mean-revisited" tabindex="-1"><a class="header-anchor" href="#what-could-the-arrow-mean-revisited"><span>What Could the Arrow Mean? (Revisited)</span></a></h2>
+<div class="language-diagram line-numbers-mode" data-highlighter="prismjs" data-ext="diagram"><pre v-pre><code class="language-diagram"><span class="line">┌───┐   ┌───┐</span>
+<span class="line">│ A ├──►│ B │</span>
+<span class="line">└───┘   └───┘</span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul>
+<li>많은 가능성 존재
 <ul>
-<li>많은 가능성 존재</li>
 <li>A가 B로 control(제어)을 전달</li>
 <li>A가 B로 data(데이터)를 전달</li>
 <li>A가 B로부터 value(값)을 가져옴</li>
@@ -16,6 +21,8 @@
 <li>A가 B를 create(생성)</li>
 <li>A가 B보다 먼저 발생</li>
 <li>B가 A로부터 전기를 공급받음.</li>
+</ul>
+</li>
 </ul>
 <h2 id="what-is-uml" tabindex="-1"><a class="header-anchor" href="#what-is-uml"><span>What is UML?</span></a></h2>
 <ul>
@@ -38,7 +45,7 @@
 </ul>
 <h2 id="favorite-uml-diagram-types" tabindex="-1"><a class="header-anchor" href="#favorite-uml-diagram-types"><span>Favorite UML diagram types</span></a></h2>
 <ul>
-<li>widely used(널리 사용됨): 출처의 60% 이상</li>
+<li>Widely used(널리 사용됨): 출처의 60% 이상</li>
 <li>Scarcely used(거의 사용되지 않음): 출처의 40% 이하</li>
 <li>(참고: Riggo et al., What are the used UML diagrams? A Preliminary Survey, EESSMod, 2013)</li>
 </ul>
@@ -386,12 +393,40 @@
 </li>
 </ul>
 <h2 id="states-상태" tabindex="-1"><a class="header-anchor" href="#states-상태"><span>States 상태</span></a></h2>
-<ul>
+<div class="language-diagram line-numbers-mode" data-highlighter="prismjs" data-ext="diagram"><pre v-pre><code class="language-diagram"><span class="line">                     ┌───────────────── State ────────────────┐             </span>
+<span class="line">                     │                    │                   │             </span>
+<span class="line">                     ▼                    ▼                   ▼             </span>
+<span class="line"> ┌─┐turn PC on┌─────────┐            ┌─────────┐terminate┌──────────┐  ┌───┐</span>
+<span class="line"> │ ├─────────►│ Booting ├───────────►│ Working ├────────►│ Shutting ├─►│ ┼ │</span>
+<span class="line"> └─┘          └─────────┘            └─────┬───┘         │  Down    │  └───┘</span>
+<span class="line">Initial                  keyStrock or    ▲ │             └──────────┘   ▲   </span>
+<span class="line"> State                   mouseMovement   │ │ [is Timeout]/              │   </span>
+<span class="line">                                         │ ▼ popUpScreenShot()   Final State</span>
+<span class="line">                                      ┌──┴─────┐                            </span>
+<span class="line">                                      │ Screen │◄─── State                       </span>
+<span class="line">                                      │ Saving │                            </span>
+<span class="line">                                      └────────┘                            </span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul>
 <li>State: object의 수명 동안의 condition(조건) 또는 situation(상황)</li>
 <li>어떤 condition을 만족하거나, 어떤 activity를 수행하거나, 어떤 event를 기다림</li>
 </ul>
 <h2 id="event-and-action" tabindex="-1"><a class="header-anchor" href="#event-and-action"><span>Event and Action</span></a></h2>
-<ul>
+<div class="language-diagram line-numbers-mode" data-highlighter="prismjs" data-ext="diagram"><pre v-pre><code class="language-diagram"><span class="line">                                                    Event                  </span>
+<span class="line">                                                     │                     </span>
+<span class="line">                                                     ▼                     </span>
+<span class="line">┌─┐turn PC   ┌─────────┐            ┌─────────┐terminate┌──────────┐  ┌───┐</span>
+<span class="line">│ ├─────────►│ Booting ├───────────►│ Working ├────────►│ Shutting ├─►│ ┼ │</span>
+<span class="line">└─┘on        └─────────┘            └─────┬───┘         │  Down    │  └───┘</span>
+<span class="line">                        keyStrock or    ▲ │             └──────────┘       </span>
+<span class="line">                        mouseMovement   │ │ [is Timeout]/◄──Guard Condition</span>
+<span class="line">                          ▲             │ ▼ popUpScreenShot()              </span>
+<span class="line">                          │          ┌──┴─────┐     ▲                      </span>
+<span class="line">                      Event          │ Screen │     │                      </span>
+<span class="line">                                     │ Saving │     │                      </span>
+<span class="line">                                     └────────┘    Action                  </span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul>
 <li>Event: Object가 State를 변경하도록 유발하는 Stimulus(자극)</li>
 <li>Action: Signal 또는 operation call의 Output
 <img src="@source/se/image-13.png" alt="alt text"></li>
