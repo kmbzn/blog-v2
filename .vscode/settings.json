@@ -7,5 +7,6 @@
   },
   "markdown.preview.fontSize": 12,
   "editor.fontSize": 15,
-  "editor.fontFamily": "구름 산스 코드"
+  "editor.fontFamily": "D2Coding",
+  "markdown.preview.fontFamily": "Pretendard, d2coding"
 }
