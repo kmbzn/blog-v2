@@ -1,4 +1,4 @@
-import comp from "/Users/kmbzn/blog-v2/docs/.vuepress/.temp/pages/humanities/NorthSentinelIsland.html.vue"
+import comp from "/home/kmbzn/workspace/blog-v2/docs/.vuepress/.temp/pages/humanities/NorthSentinelIsland.html.vue"
 const data = JSON.parse("{\"path\":\"/humanities/NorthSentinelIsland.html\",\"title\":\"North Sentinel Island\",\"lang\":\"ko-KR\",\"frontmatter\":{},\"git\":{\"updatedTime\":1762085426000,\"contributors\":[{\"name\":\"kmbzn\",\"username\":\"kmbzn\",\"email\":\"kmbzn24@gmail.com\",\"commits\":3,\"url\":\"https://github.com/kmbzn\"}],\"changelog\":[{\"hash\":\"d83fc4a25cd5d5561807c9b76848bd32cf88f34b\",\"time\":1762085426000,\"email\":\"kmbzn24@gmail.com\",\"author\":\"kmbzn\",\"message\":\"docs: 수정된 좌표 표기법 및 UML 의존성 설명 개선\"},{\"hash\":\"e3e5343312fbd8ffce849661685f5bb7d47a5677\",\"time\":1750364798000,\"email\":\"kmbzn24@gmail.com\",\"author\":\"kmbzn\",\"message\":\"update rongo\"},{\"hash\":\"58eee05ec08ac729f44f1d668ca4165dd21413eb\",\"time\":1750363573000,\"email\":\"kmbzn24@gmail.com\",\"author\":\"kmbzn\",\"message\":\"NorthSentinelIsland\"}]},\"filePathRelative\":\"humanities/NorthSentinelIsland.md\"}")
 export { comp, data }
 

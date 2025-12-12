@@ -377,7 +377,7 @@ Until relation의 끝까지 총 run의 수를 <span v-pre class="katex"><span cl
 <li>비용 추정에 기반한 선택</li>
 <li>예제는 다음 정보 사용
 <ul>
-<li>Studen<span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>t</mi><mi>r</mi></msub></mrow><annotation encoding="application/x-tex">t_r</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7651em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">t</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.02778em;">r</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>ecord 수: 5,000 / <code v-pre>takes</code> 레코드 수: 10,000</li>
+<li>Student_record 수: 5,000 / <code v-pre>takes</code> 레코드 수: 10,000</li>
 <li>Student block 수: 100 / <code v-pre>takes</code> block 수: 400</li>
 </ul>
 </li>

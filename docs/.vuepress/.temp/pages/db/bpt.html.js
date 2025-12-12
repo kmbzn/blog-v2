@@ -1,4 +1,4 @@
-import comp from "/Users/kmbzn/blog-v2/docs/.vuepress/.temp/pages/db/bpt.html.vue"
+import comp from "/home/kmbzn/workspace/blog-v2/docs/.vuepress/.temp/pages/db/bpt.html.vue"
 const data = JSON.parse("{\"path\":\"/db/bpt.html\",\"title\":\"\",\"lang\":\"ko-KR\",\"frontmatter\":{},\"git\":{\"updatedTime\":1763626622000,\"contributors\":[{\"name\":\"kmbzn\",\"username\":\"kmbzn\",\"email\":\"kmbzn24@gmail.com\",\"commits\":2,\"url\":\"https://github.com/kmbzn\"}],\"changelog\":[{\"hash\":\"e1588204c171cbae93dfd80169721931ca36e2ed\",\"time\":1763626622000,\"email\":\"kmbzn24@gmail.com\",\"author\":\"kmbzn\",\"message\":\"c\"},{\"hash\":\"db59f13412c70dbd49dd7fa6dd23398d0d3044bc\",\"time\":1763626450000,\"email\":\"kmbzn24@gmail.com\",\"author\":\"kmbzn\",\"message\":\"bpt code update\"}]},\"filePathRelative\":\"db/bpt.md\"}")
 export { comp, data }
 

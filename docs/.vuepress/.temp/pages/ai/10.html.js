@@ -1,4 +1,4 @@
-import comp from "/Users/kmbzn/blog-v2/docs/.vuepress/.temp/pages/ai/10.html.vue"
+import comp from "/home/kmbzn/workspace/blog-v2/docs/.vuepress/.temp/pages/ai/10.html.vue"
 const data = JSON.parse("{\"path\":\"/ai/10.html\",\"title\":\"10. Machine Learning (1)\",\"lang\":\"ko-KR\",\"frontmatter\":{},\"git\":{\"updatedTime\":1764305376000,\"contributors\":[{\"name\":\"kmbzn\",\"username\":\"kmbzn\",\"email\":\"kmbzn24@gmail.com\",\"commits\":2,\"url\":\"https://github.com/kmbzn\"}],\"changelog\":[{\"hash\":\"f81f9042e7888855a506f92261c74aaa2d86aa2a\",\"time\":1764305376000,\"email\":\"kmbzn24@gmail.com\",\"author\":\"kmbzn\",\"message\":\"update npm\"},{\"hash\":\"a27e909c0d21df160523dc93c606d67a02928235\",\"time\":1762083707000,\"email\":\"kmbzn24@gmail.com\",\"author\":\"kmbzn\",\"message\":\"chore: clean up code structure and remove redundant sections\"}]},\"filePathRelative\":\"ai/10.md\"}")
 export { comp, data }
 
