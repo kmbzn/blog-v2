@@ -6,18 +6,18 @@
 <li>Low representational gap 설계 원칙의 장점 및 한계 논의</li>
 </ul>
 <h2 id="from-requirements-to-code" tabindex="-1"><a class="header-anchor" href="#from-requirements-to-code"><span>From Requirements to Code</span></a></h2>
-<div class="language-diagram line-numbers-mode" data-highlighter="prismjs" data-ext="diagram"><pre v-pre><code class="language-diagram"><span class="line">┌──────────────┐           ┌───────┐</span>
-<span class="line">│  User Needs  ├──────────►│       │</span>
-<span class="line">│(Requirements)│  Miracle? │ Code  │</span>
-<span class="line">└──────────────┘           └───────┘</span>
-<span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="from-problem-to-solution" tabindex="-1"><a class="header-anchor" href="#from-problem-to-solution"><span>From Problem to Solution</span></a></h2>
-<div class="language-diagram line-numbers-mode" data-highlighter="prismjs" data-ext="diagram"><pre v-pre><code class="language-diagram"><span class="line">┌──────────────┐      ┌──────────────┐</span>
-<span class="line">│Problem space │      │Solution space│</span>
-<span class="line">│(Domain model)├─────►│(Object model)│</span>
-<span class="line">└──────────────┘      └──────────────┘</span>
-<span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul>
+<pre><code>┌──────────────┐           ┌───────┐
+│  User Needs  ├──────────►│       │
+│(Requirements)│  Miracle? │ Code  │
+└──────────────┘           └───────┘
+</code></pre>
+<h2 id="from-problem-to-solution" tabindex="-1"><a class="header-anchor" href="#from-problem-to-solution"><span>From Problem to Solution</span></a></h2>
+<pre><code>┌──────────────┐      ┌──────────────┐
+│Problem space │      │Solution space│
+│(Domain model)├─────►│(Object model)│
+└──────────────┘      └──────────────┘
+</code></pre>
+<ul>
 <li>Problem Space (Domain Model)
 <ul>
 <li>실제 세계의 개념</li>
@@ -143,54 +143,58 @@
 </ul>
 <h2 id="glossary-용어집" tabindex="-1"><a class="header-anchor" href="#glossary-용어집"><span>Glossary 용어집</span></a></h2>
 <ul>
-<li>핵심 개념 식별 및 정의</li>
-<li>개발자와 고객 간의 공유된 이해 보장</li>
+<li>
+<p>핵심 개념 식별 및 정의</p>
+</li>
+<li>
+<p>개발자와 고객 간의 공유된 이해 보장</p>
+<pre><code>       ┌─── 모호할 수 있는 개념 정의 ──────┐   
+</code></pre>
+<p>┌────────▼───────────────────────────────────┼──┐
+│Library item: Any item that is indexed and  │  │
+│can be borrowed from the library            │  │
+│Library member: Person who can borrow from  ▼  │
+│library, identified by a card with an ID number│
+│Book                                           │
+└─▲─────────────────────────────────────────────┘
+└─명백한 개념에 대해선 설명할 필요 없음.</p>
+</li>
 </ul>
-<div class="language-uml line-numbers-mode" data-highlighter="prismjs" data-ext="uml"><pre v-pre><code class="language-uml"><span class="line">         ┌─── 모호할 수 있는 개념 정의 ──────┐   </span>
-<span class="line">┌────────▼───────────────────────────────────┼──┐</span>
-<span class="line">│Library item: Any item that is indexed and  │  │</span>
-<span class="line">│can be borrowed from the library            │  │</span>
-<span class="line">│Library member: Person who can borrow from  ▼  │</span>
-<span class="line">│library, identified by a card with an ID number│</span>
-<span class="line">│Book                                           │</span>
-<span class="line">└─▲─────────────────────────────────────────────┘</span>
-<span class="line">  └─명백한 개념에 대해선 설명할 필요 없음.</span>
-<span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="visual-notation-uml" tabindex="-1"><a class="header-anchor" href="#visual-notation-uml"><span>Visual Notation: UML</span></a></h2>
-<div class="language-uml line-numbers-mode" data-highlighter="prismjs" data-ext="uml"><pre v-pre><code class="language-uml"><span class="line"> Name of real-world concept   Multiplicities/cardinalities</span>
-<span class="line"> (not software cases)       ┌─indicate &quot;how many&quot;         </span>
-<span class="line">   │                        │                             </span>
-<span class="line">┌──▼────────────┐           │┌───────┐                    </span>
-<span class="line">│Library Account│           ││Book   │                    </span>
-<span class="line">├───────────────┤   borrow  │├───────┤                    </span>
-<span class="line">│accountID      ├─────▲─────▼┤title  │                    </span>
-<span class="line">│lateFees       │1    │     *│author │                    </span>
-<span class="line">└▲──────────────┘     │      └───────┘                    </span>
-<span class="line"> └─Properties     Associations                            </span>
-<span class="line">   of concept     between concepts                        </span>
-<span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="reading-associations" tabindex="-1"><a class="header-anchor" href="#reading-associations"><span>Reading Associations</span></a></h2>
-<div class="language-uml line-numbers-mode" data-highlighter="prismjs" data-ext="uml"><pre v-pre><code class="language-uml"><span class="line">────────────────────────────────────────►       </span>
-<span class="line">One library account can borrow many books       </span>
-<span class="line">┌───────────────┐            ┌───────┐          </span>
-<span class="line">│Library Account│            │Book   │          </span>
-<span class="line">├───────────────┤   borrow   ├───────┤          </span>
-<span class="line">│accountID      ├────────────┤title  │          </span>
-<span class="line">│lateFees       │1          *│author │          </span>
-<span class="line">└───────────────┘            └───────┘          </span>
-<span class="line">One book can be borrowed by one library account </span>
-<span class="line">◄──────────────────────────────────────────────</span>
-<span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="attributes-vs-concepts" tabindex="-1"><a class="header-anchor" href="#attributes-vs-concepts"><span>Attributes vs. Concepts</span></a></h2>
-<div class="language-uml line-numbers-mode" data-highlighter="prismjs" data-ext="uml"><pre v-pre><code class="language-uml"><span class="line">┌───────────────┐      ┌───────────────┐          ┌───────┐</span>
-<span class="line">│Library Account│      │Library Account│          │Book   │</span>
-<span class="line">├───────────────┤      ├───────────────┤  borrow  ├───────┤</span>
-<span class="line">│accountID      │ vs.  │accountID      ├──────────┤title  │</span>
-<span class="line">│lateFees       │      │lateFees       │1        *│author │</span>
-<span class="line">│borrowedBooks  │      └───────────────┘          └───────┘</span>
-<span class="line">└───────────────┘                                          </span>
-<span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><blockquote>
+<h2 id="visual-notation-uml" tabindex="-1"><a class="header-anchor" href="#visual-notation-uml"><span>Visual Notation: UML</span></a></h2>
+<pre><code> Name of real-world concept   Multiplicities/cardinalities
+ (not software cases)       ┌─indicate &quot;how many&quot;         
+   │                        │                             
+┌──▼────────────┐           │┌───────┐                    
+│Library Account│           ││Book   │                    
+├───────────────┤   borrow  │├───────┤                    
+│accountID      ├─────▲─────▼┤title  │                    
+│lateFees       │1    │     *│author │                    
+└▲──────────────┘     │      └───────┘                    
+ └─Properties     Associations                            
+   of concept     between concepts                        
+</code></pre>
+<h2 id="reading-associations" tabindex="-1"><a class="header-anchor" href="#reading-associations"><span>Reading Associations</span></a></h2>
+<pre><code>────────────────────────────────────────►       
+One library account can borrow many books       
+┌───────────────┐            ┌───────┐          
+│Library Account│            │Book   │          
+├───────────────┤   borrow   ├───────┤          
+│accountID      ├────────────┤title  │          
+│lateFees       │1          *│author │          
+└───────────────┘            └───────┘          
+One book can be borrowed by one library account 
+◄──────────────────────────────────────────────
+</code></pre>
+<h2 id="attributes-vs-concepts" tabindex="-1"><a class="header-anchor" href="#attributes-vs-concepts"><span>Attributes vs. Concepts</span></a></h2>
+<pre><code>┌───────────────┐      ┌───────────────┐          ┌───────┐
+│Library Account│      │Library Account│          │Book   │
+├───────────────┤      ├───────────────┤  borrow  ├───────┤
+│accountID      │ vs.  │accountID      ├──────────┤title  │
+│lateFees       │      │lateFees       │1        *│author │
+│borrowedBooks  │      └───────────────┘          └───────┘
+└───────────────┘                                          
+</code></pre>
+<blockquote>
 <p><em>&quot;실제 세계에서 어떤 개념적 class X를 text나 숫자로 생각하지 않는다면, 그것은 attribute가 아니라 concept일 가능성이 높다.&quot;</em></p>
 </blockquote>
 <ul>
@@ -231,39 +235,39 @@ A member’s library account records which items the member has borrowed and the
 <li>수집 먼저. 조직, 필터링, 수정은 이후에!</li>
 </ul>
 <h2 id="one-domain-model-for-the-library-system" tabindex="-1"><a class="header-anchor" href="#one-domain-model-for-the-library-system"><span>One Domain Model for the Library System</span></a></h2>
-<div class="language-uml line-numbers-mode" data-highlighter="prismjs" data-ext="uml"><pre v-pre><code class="language-uml"><span class="line">┌───────────────┐              ┌─────────────┐       </span>
-<span class="line">│    Library    │&lt;&gt;-1-----0*..&gt;│    Item     │       </span>
-<span class="line">└───────┬───────┘   has many   ├─────────────┤       </span>
-<span class="line">        │                      │rentalPeriod │       </span>
-<span class="line">        │has many              │lateFee      │       </span>
-<span class="line">        1                      └───────▲─────┘       </span>
-<span class="line">        │                              │is a         </span>
-<span class="line">        │                      ┌───────┴─────┐       </span>
-<span class="line">┌───────▼───────┐          ┌───┴──┐     ┌────┴──┐    </span>
-<span class="line">│ LibraryMember │&lt;&gt;-1-has-1│ Book │     │ Movie │    </span>
-<span class="line">├───────────────┤          └──────┘     └───────┘    </span>
-<span class="line">│has            │has                                 </span>
-<span class="line">1               1                                    </span>
-<span class="line">┌───────▼───────┐  ┌───────────────────────────┐     </span>
-<span class="line">│  LibraryCard  │&lt;-│-------1──────────────┐    │     </span>
-<span class="line">├───────────────┤  │associated with       │    │     </span>
-<span class="line">│idNumbers      │  │                      1    │     </span>
-<span class="line">└───────┬───────┘  │                ┌─────▼────▼────┐</span>
-<span class="line">        └──────────│───────────────&gt;│LibraryAccount │</span>
-<span class="line">          1        │                ├───────────────┤</span>
-<span class="line">                   │                │idNumbers      │</span>
-<span class="line">                   │                │lateFeeOwed    │</span>
-<span class="line">                   │                └─────┬─────────┘</span>
-<span class="line">                   │                      │has many  </span>
-<span class="line">                   │                      1          </span>
-<span class="line">                   │                ┌─────▼─────────┐</span>
-<span class="line">                   └----------0..*&lt;&gt;│ BorrowedItem  │</span>
-<span class="line">                                    ├───────────────┤</span>
-<span class="line">                                    │dueDate        │</span>
-<span class="line">                                    │item           │</span>
-<span class="line">                                    └───────────────┘</span>
-<span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="notes-on-the-library-domain-model" tabindex="-1"><a class="header-anchor" href="#notes-on-the-library-domain-model"><span>Notes on the Library Domain Model</span></a></h2>
+<pre><code>┌───────────────┐              ┌─────────────┐       
+│    Library    │&lt;&gt;-1-----0*..&gt;│    Item     │       
+└───────┬───────┘   has many   ├─────────────┤       
+        │                      │rentalPeriod │       
+        │has many              │lateFee      │       
+        1                      └───────▲─────┘       
+        │                              │is a         
+        │                      ┌───────┴─────┐       
+┌───────▼───────┐          ┌───┴──┐     ┌────┴──┐    
+│ LibraryMember │&lt;&gt;-1-has-1│ Book │     │ Movie │    
+├───────────────┤          └──────┘     └───────┘    
+│has            │has                                 
+1               1                                    
+┌───────▼───────┐  ┌───────────────────────────┐     
+│  LibraryCard  │&lt;-│-------1──────────────┐    │     
+├───────────────┤  │associated with       │    │     
+│idNumbers      │  │                      1    │     
+└───────┬───────┘  │                ┌─────▼────▼────┐
+        └──────────│───────────────&gt;│LibraryAccount │
+          1        │                ├───────────────┤
+                   │                │idNumbers      │
+                   │                │lateFeeOwed    │
+                   │                └─────┬─────────┘
+                   │                      │has many  
+                   │                      1          
+                   │                ┌─────▼─────────┐
+                   └----------0..*&lt;&gt;│ BorrowedItem  │
+                                    ├───────────────┤
+                                    │dueDate        │
+                                    │item           │
+                                    └───────────────┘
+</code></pre>
+<h2 id="notes-on-the-library-domain-model" tabindex="-1"><a class="header-anchor" href="#notes-on-the-library-domain-model"><span>Notes on the Library Domain Model</span></a></h2>
 <ul>
 <li>모든 개념은 프로그래머가 아니어도 접근 가능</li>
 <li>UML 표기법은 다소 비공식적. 관계는 종종 단어로 설명됨</li>
@@ -352,38 +356,38 @@ A member’s library account records which items the member has borrowed and the
 </li>
 </ul>
 <h2 id="one-example-for-the-library-system" tabindex="-1"><a class="header-anchor" href="#one-example-for-the-library-system"><span>One Example for the Library System</span></a></h2>
+<pre><code>┌─────┐        ┌───────┐
+│User │        │System │
+└──┬──┘        └───┬───┘
+   │    login(card)│    
+   ├──────────────►│    
+   │◄--------------│    
+   │               │    
+   │   borrow(book)│    
+   ├──────────────►│    
+   │◄--------------│    
+   │success?       │    
+   │due date       │    
+</code></pre>
 <ul>
 <li>Use case 시나리오: Library member가 library card로 kiosk 로그인 후 책 대출. 연체료 미납을 확인 후, rental period를 더해 반납 기한 결정. 책과 반납 기한을 member의 account에 기록</li>
 </ul>
-<div class="language-diagram line-numbers-mode" data-highlighter="prismjs" data-ext="diagram"><pre v-pre><code class="language-diagram"><span class="line">┌─────┐        ┌───────┐</span>
-<span class="line">│User │        │System │</span>
-<span class="line">└──┬──┘        └───┬───┘</span>
-<span class="line">   │    login(card)│    </span>
-<span class="line">   ├──────────────►│    </span>
-<span class="line">   │◄--------------│    </span>
-<span class="line">   │               │    </span>
-<span class="line">   │   borrow(book)│    </span>
-<span class="line">   ├──────────────►│    </span>
-<span class="line">   │◄--------------│    </span>
-<span class="line">   │success?       │    </span>
-<span class="line">   │due date       │    </span>
-<span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h1 id="behavioral-contracts" tabindex="-1"><a class="header-anchor" href="#behavioral-contracts"><span>Behavioral Contracts</span></a></h1>
+<h1 id="behavioral-contracts" tabindex="-1"><a class="header-anchor" href="#behavioral-contracts"><span>Behavioral Contracts</span></a></h1>
 <h2 id="formalize-system-at-boundary" tabindex="-1"><a class="header-anchor" href="#formalize-system-at-boundary"><span>Formalize System at Boundary</span></a></h2>
-<div class="language-diagram line-numbers-mode" data-highlighter="prismjs" data-ext="diagram"><pre v-pre><code class="language-diagram"><span class="line">┌─────┐        ┌───────┐</span>
-<span class="line">│User │        │System │</span>
-<span class="line">└──┬──┘        └───┬───┘</span>
-<span class="line">   │    login(card)│    </span>
-<span class="line">   ├──────────────►│    </span>
-<span class="line">   │◄--------------│    </span>
-<span class="line">   │               │    </span>
-<span class="line">   │   borrow(book)│    </span>
-<span class="line">   ├──────────────►│    </span>
-<span class="line">   │◄--------------│    </span>
-<span class="line">   │success?       │    </span>
-<span class="line">   │due date       │    </span>
-<span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul>
+<pre><code>┌─────┐        ┌───────┐
+│User │        │System │
+└──┬──┘        └───┬───┘
+   │    login(card)│    
+   ├──────────────►│    
+   │◄--------------│    
+   │               │    
+   │   borrow(book)│    
+   ├──────────────►│    
+   │◄--------------│    
+   │success?       │    
+   │due date       │    
+</code></pre>
+<ul>
 <li>System behavioral contract
 <ul>
 <li>System sequence diagrams에서 식별된 특정 operation에 대한 pre-conditions와 post-conditions 기술</li>

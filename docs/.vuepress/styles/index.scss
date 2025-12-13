@@ -68,8 +68,17 @@ pre {
   --code-c-text: --vp-c-text;
   --copy-code-c-hover: transparent;
   --code-line-number-width: 1.2rem;
-  --code-line-height: 0.95rem;
+  --code-line-height: 1.2rem;
   --code-font-size: 0.9rem;
+}
+
+pre:not([copy-code]) {
+  line-height: 0.9rem;
+  padding: 16px;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
 }
 
 div[class*=language-].line-numbers-mode .line-numbers {
@@ -191,6 +200,10 @@ div[class*='language-'].line-numbers-mode:after {
 
 html[data-theme='dark'] img[src$=".png"]:not([src^="http"]) {
   filter: invert(1) hue-rotate(180deg) contrast(0.9) brightness(1.3);
+}
+
+html[data-theme="light"] .token {
+    filter: invert(1) hue-rotate(180deg) contrast(1.5) brightness(0.9);
 }
 
 /* ---------------------------------

@@ -31,18 +31,38 @@
 <li>Lack of Physical Hardening</li>
 </ol>
 <h2 id="펌웨어-분석-프로세스" tabindex="-1"><a class="header-anchor" href="#펌웨어-분석-프로세스"><span>펌웨어 분석 프로세스</span></a></h2>
-<ul>
-<li><strong>펌웨어 획득 및 추출</strong>: 제조사 제공, 패킷 스니핑, 플래시 메모리 덤프, JTAG 이용, UART 연결</li>
-<li><strong>정적 분석</strong>: 펌웨어 구조 분석, 파일 시스템 분석</li>
-<li><strong>동적 분석</strong>:
-<ul>
-<li>검증 vector 선정: 인터페이스 분석, 네트워크 패킷 분석</li>
-<li>검증 vector 탐색</li>
-<li>검증 vector 평가 및 선정</li>
-</ul>
-</li>
-<li><strong>분석 환경 조성</strong>: 의존성 문제 해결, 동적 분석 수행</li>
-</ul>
+<pre><code>┌──────────────────────┐          ┌──────────────────────┐          ┌─────────────────────┐
+│ 펌웨어 획득 및 추출  │          │   검증 벡터 선정     │          │      정적 분석      │
+└──────────┬───────────┘          └──────────┬───────────┘          └─────┬───────────────┘
+           │                       ▲         │                            │
+           │                       │         │                            │
+  ┌────────┴────────┐              └─────────┼────────────────────────────┤
+  │  제조사 제공    │                        │                            │
+  │     펌웨어      │             ┌──────────┴───────────┐          ┌─────┴──────┐
+  ├─────────────────┤             │    검증 벡터 탐색    │          │  펌웨어    │
+  │   패킷 스니핑   │             └─────┬──────────┬─────┘          │ 구조 분석  │
+  ├─────────────────┤                   │          │                ├────────────┤
+  │  플래시 메모리  │          ┌────────┴───┐  ┌───┴────────┐       │ 파일시스템 │
+  │      덤프       │          │ 인터페이스 │  │  네트워크  │       │    분석    │
+  ├─────────────────┤          │    분석    │  │ 패킷 분석  │       └────────────┘
+  │    JTAG 이용    │          └────────┬───┘  └───┬────────┘
+  ├─────────────────┤                   │          │
+  │    UART 연결    │              ┌────┴──────────┴────┐           ┌─────────────────────┐
+  └─────────────────┘              │     검증 벡터      │           │      동적 분석      │
+                                   │    평가 및 선정    │           └─────┬───────────────┘
+                                   └────────────────────┘                 │
+                                                                          │
+                                                                    ┌─────┴──────┐
+                                                                    │  분석 환경 │
+                                                                    │    조성    │
+                                                                    ├────────────┤
+                                                                    │   의존성   │
+                                                                    │  문제 해결 │
+                                                                    ├────────────┤
+                                                                    │  동적 분석 │
+                                                                    │    수행    │
+                                                                    └────────────┘
+</code></pre>
 <h2 id="펌웨어-이미지-획득" tabindex="-1"><a class="header-anchor" href="#펌웨어-이미지-획득"><span>펌웨어 이미지 획득</span></a></h2>
 <ul>
 <li><strong>제조사 제공 펌웨어</strong>: 제조사 홈페이지에서 업데이트 등의 지원을 위해 제공</li>
@@ -57,20 +77,41 @@
 <li><strong>동적 분석 환경</strong>: QEMU와 같은 emulator 이용. 대상 디바이스와 동일 환경 구현. GDB 등 디버거로 동적 분석 수행. 하드웨어 의존성 문제 해결 필요</li>
 </ul>
 <h2 id="펌웨어-구조-분석-펌웨어-분석" tabindex="-1"><a class="header-anchor" href="#펌웨어-구조-분석-펌웨어-분석"><span>펌웨어 구조 분석 펌웨어 분석</span></a></h2>
+<pre><code> ┌──────────┐     ┌───────────┐     ┌──────────┐
+ │          │     │Bootloader │     │          │
+ │          │     ├───────────┤     │  Linux   │
+ │          │     │  Kernel   │     │ ┌──────┐ │
+ │ Firmware ├──┬─►├───────────┼──┬─►│ │ Ex2  │ │
+ │  Image   │  |  │File System│  |  │ │ File │ │
+ │          │  |  ├───────────┤  |  │ │System│ │
+ │          │  |  │User Level │  |  │ └──────┘ │
+ └──────────┘  |  └───────────┘  |  └──────────┘
+               |                 |              
+     Image offset analysis   File system dump   
+     (signiture based)        &amp; mounting        
+</code></pre>
 <ul>
-<li><strong>펌웨어 구조 분석</strong>: Bootloader / kernel 이미지 / filesystem 등의 offset 파악 필요. 대표 도구: Firmware Mod Kit, <code v-pre>binwalk</code></li>
-<li><strong>파일 시스템 추출 및 분석</strong>: 펌웨어 이미지에서 filesystem 덤프. 지원 운영체제에서 mount (예: <code v-pre>sudo mount –v –o loop –t ext2 filesys.img /tmp/fs</code>). Mount된 파일 시스템 내 실행 코드 파일 추출 및 분석</li>
+<li><strong>펌웨어 구조 분석</strong>: Bootloader / kernel 이미지 / filesystem 등의 offset 파악 필요.
+<ul>
+<li>대표 도구: Firmware Mod Kit, <code v-pre>binwalk</code></li>
+</ul>
+</li>
+<li><strong>파일 시스템 추출 및 분석</strong>: 펌웨어 이미지에서 filesystem 덤프.
+<ul>
+<li>지원 운영체제에서 mount (예: <code v-pre>sudo mount –v –o loop –t ext2 filesys.img /tmp/fs</code>). Mount된 파일 시스템 내 실행 코드 파일 추출 및 분석</li>
+</ul>
+</li>
 </ul>
 <h2 id="이미지-파일-분석-펌웨어-분석" tabindex="-1"><a class="header-anchor" href="#이미지-파일-분석-펌웨어-분석"><span>이미지 파일 분석 펌웨어 분석</span></a></h2>
 <ul>
-<li><strong>펌웨어 이미지 파일 구조 분석</strong>:
+<li><strong>펌웨어 이미지 파일 구조 분석</strong>
 <ul>
 <li>Bootloader: 시스템 하드웨어 초기화 및 kernel을 메모리에 적재</li>
 <li>Kernel: 하드웨어와 소프트웨어 간 중간자</li>
 <li>File system: 크기 문제로 압축되어 있음</li>
 </ul>
 </li>
-<li><strong>펌웨어 무결성 검증 방법</strong>:
+<li><strong>펌웨어 무결성 검증 방법</strong>
 <ul>
 <li>해시 값이나 체크섬 값 이용</li>
 <li>검증 과정 변조 시 무력화</li>
@@ -80,7 +121,7 @@
 </ul>
 <h2 id="소스코드-분석-–-정적-분석-펌웨어-분석" tabindex="-1"><a class="header-anchor" href="#소스코드-분석-–-정적-분석-펌웨어-분석"><span>소스코드 분석 – 정적 분석 펌웨어 분석</span></a></h2>
 <ul>
-<li><strong>펌웨어 소스코드/바이너리 분석 예</strong>:
+<li><strong>펌웨어 소스코드/바이너리 분석 예</strong>
 <ul>
 <li><code v-pre>Buffer overflow</code> 발생 가능 취약 함수 검사 (예: <code v-pre>strcpy()</code>, <code v-pre>sprint()</code>)</li>
 <li>Debugging code 포함 여부 검사</li>
@@ -101,7 +142,7 @@
 <ul>
 <li><strong>펌웨어 획득</strong>: 제조사 홈페이지 제공 (버전 5592, 릴리즈 2015.08.08)</li>
 <li><strong>기본 인터페이스</strong>: 기본 관리자 계정 없음. 리눅스를 브라우저 기반 OS로 customizing</li>
-<li><strong>제조사 웹페이지 제공 펌웨어 이미지 분석 시도</strong>:
+<li><strong>제조사 웹페이지 제공 펌웨어 이미지 분석 시도</strong>
 <ul>
 <li>FMK 이용</li>
 <li>의미 있는 filesystem 탐색 불가능</li>
@@ -118,13 +159,13 @@
 </ul>
 <h2 id="nas-펌웨어-분석-결과-취약점-분석-사례" tabindex="-1"><a class="header-anchor" href="#nas-펌웨어-분석-결과-취약점-분석-사례"><span>NAS 펌웨어 분석 결과 취약점 분석 사례</span></a></h2>
 <ul>
-<li><strong>일반 사용자 디버깅용 백도어 접근 및 활용</strong>:
+<li><strong>일반 사용자 디버깅용 백도어 접근 및 활용</strong>
 <ol>
 <li><code v-pre>help.cgi</code>는 <code v-pre>d</code> 인자가 999인지 확인. 참이면 디버깅용 백도어 루틴 실행 허용</li>
 <li>백도어 루틴은 <code v-pre>votmdnjem</code> 인자의 값이 <code v-pre>!@elqjrld&amp;*</code> 인지 비교. 동일하면 명령 실행 및 결과 출력</li>
 </ol>
 </li>
-<li><strong>디버깅용 백도어 활용 명령어 실행 예시</strong>:
+<li><strong>디버깅용 백도어 활용 명령어 실행 예시</strong>
 <ol>
 <li><strong>백도어 접속</strong>: NAS 일반 사용자 로그인 후, <code v-pre>[IP]/help.cgi?d=999</code> 로 접속</li>
 <li><strong><code v-pre>id</code> 명령어 실행</strong>: <code v-pre>!@elqjrld&amp;*</code> 입력</li>
@@ -140,7 +181,7 @@
 </ul>
 <h2 id="스마트-스피커-분석-스마트-스피커-분석" tabindex="-1"><a class="header-anchor" href="#스마트-스피커-분석-스마트-스피커-분석"><span>스마트 스피커 분석 스마트 스피커 분석</span></a></h2>
 <ul>
-<li><strong>스마트 스피커의 물리적 구조 확인 (NUGU 스피커)</strong>:
+<li><strong>스마트 스피커의 물리적 구조 확인 (NUGU 스피커)</strong>
 <ul>
 <li>접근 쉬운 위치(고무커버 밑)에 UART, USB 추정 테스트 포트 발견</li>
 <li>USB 포트의 D-pair 연결 확인 (USB 통한 공격 가능)</li>
@@ -148,13 +189,13 @@
 </ul>
 </li>
 <li><strong>스마트 스피커의 분해 사진자료 (SKT NUGU)</strong>: (사진 자료: USB N.C.되지 않음, 메인보드 집적회로, 기판 뒷면 마이크, 밑면 테스팅 포트)</li>
-<li><strong>NUGU candle 해체</strong>:
+<li><strong>NUGU candle 해체</strong>
 <ul>
 <li>하단 부분 해체 시 UART 핀 노출</li>
 <li><code v-pre>UART_RX</code>, <code v-pre>UART_TX</code>, <code v-pre>GND</code>, <code v-pre>DC_IN_PW</code> 핀 확인</li>
 </ul>
 </li>
-<li><strong>UART (Universal Asynchronous Receiver / Transmitter) 핀 역할</strong>:
+<li><strong>UART (Universal Asynchronous Receiver / Transmitter) 핀 역할</strong>
 <ul>
 <li><code v-pre>TX</code>: 데이터 송신</li>
 <li><code v-pre>RX</code>: 데이터 수신</li>
@@ -165,26 +206,26 @@
 </ul>
 <h2 id="uart-포트-접속-및-분석-스마트-스피커-분석" tabindex="-1"><a class="header-anchor" href="#uart-포트-접속-및-분석-스마트-스피커-분석"><span>UART 포트 접속 및 분석 스마트 스피커 분석</span></a></h2>
 <ul>
-<li><strong>방법 1: 케이블 전원 공급 후 아두이노 이용 연결</strong>:
+<li><strong>방법 1: 케이블 전원 공급 후 아두이노 이용 연결</strong>
 <ul>
 <li>AI 스피커용 케이블로 전원 공급 후 아두이노로 UART 연결</li>
 <li>결과: 읽을 수 없는 문자열만 출력</li>
 </ul>
 </li>
-<li><strong>방법 2: 케이블 전원 공급 후 UART to USB 이용 연결</strong>:
+<li><strong>방법 2: 케이블 전원 공급 후 UART to USB 이용 연결</strong>
 <ul>
 <li>AI 스피커용 케이블로 전원 공급 후 UART to USB로 연결</li>
 <li>주로 사용되는 baud rate 모두 시도</li>
 <li>결과: 읽을 수 없는 문자열 출력</li>
 </ul>
 </li>
-<li><strong>방법 3: 신호분석기를 통한 UART 핀 분석</strong>:
+<li><strong>방법 3: 신호분석기를 통한 UART 핀 분석</strong>
 <ul>
 <li>Baud rate 115200일 때 부팅 메시지 출력 확인</li>
 <li>Python script 작성 분석 결과, 부팅 메시지 정상 출력 확인</li>
 </ul>
 </li>
-<li><strong>방법 4: FT232RL USB to UART converter</strong>:
+<li><strong>방법 4: FT232RL USB to UART converter</strong>
 <ul>
 <li>Baud rate 115200으로 설정</li>
 <li>연결 케이블 재확인</li>
@@ -212,7 +253,7 @@
 </ul>
 <h2 id="firmware-analysis" tabindex="-1"><a class="header-anchor" href="#firmware-analysis"><span>Firmware Analysis</span></a></h2>
 <ul>
-<li><strong><code v-pre>strings</code> command options</strong>:
+<li><strong><code v-pre>strings</code> command options</strong>
 <ul>
 <li><code v-pre>-n</code>: 최소 글자 수</li>
 <li><code v-pre>-e</code>: 인코딩 타입</li>
@@ -236,7 +277,7 @@
 <li><code v-pre>of</code>: output file</li>
 </ul>
 </li>
-<li><strong>커널 파일 확인</strong>:
+<li><strong>커널 파일 확인</strong>
 <ul>
 <li><code v-pre>file kernel.lzma</code></li>
 <li><code v-pre>unlzma kernel.lzma</code></li>
@@ -248,37 +289,19 @@
 </ul>
 <h2 id="firmware-modification-kit-fmk" tabindex="-1"><a class="header-anchor" href="#firmware-modification-kit-fmk"><span>firmware modification kit (FMK)</span></a></h2>
 <ul>
-<li><strong>사이트</strong>:
+<li><strong>사이트</strong>
 <ul>
 <li><a href="https://www.kali.org/tools/firmware-mod-kit/#firmware-mod-kit" target="_blank" rel="noopener noreferrer">https://www.kali.org/tools/firmware-mod-kit/#firmware-mod-kit</a></li>
 <li><a href="https://github.com/rampageX/firmware-mod-kit" target="_blank" rel="noopener noreferrer">https://github.com/rampageX/firmware-mod-kit</a></li>
 </ul>
 </li>
-<li><strong>설치 (Ubuntu 20.04 and newer)</strong>:
+<li><strong>설치 (Ubuntu 20.04 and newer)</strong>
 <ul>
 <li><code v-pre>sudo apt-get install git build-essential zlib1g-dev liblzma-dev python3-magic autoconf python-is-python3</code> (에러 시 <code v-pre>sudo apt update</code> 후 재시도)</li>
 <li>Git Clone: <code v-pre>git clone https://github.com/rampageX/firmware-mod-kit</code></li>
 </ul>
 </li>
 <li><strong>펌웨어 추출</strong>: <code v-pre>./extract-firmware.sh ****.bin</code></li>
-</ul>
-<h2 id="firmware-analysis-과제" tabindex="-1"><a class="header-anchor" href="#firmware-analysis-과제"><span>Firmware analysis 과제</span></a></h2>
-<ul>
-<li><strong>Procedure</strong>:
-<ul>
-<li>Download 펌웨어 from the Internet</li>
-<li>Try to find hardcoded passwords</li>
-<li>Extract the file system of the firmware</li>
-<li>Analyze the file system (Directory hierarchy, Analyze important files)</li>
-</ul>
-</li>
-<li><strong>Your report must include</strong>:
-<ul>
-<li>Where/how you download the firmware</li>
-<li>Screenshots of the above procedure steps</li>
-<li>Detailed explanation of the screenshots</li>
-</ul>
-</li>
 </ul>
 </div></template>
 
