@@ -7,7 +7,7 @@
 ### fuzzing technique
 - 소프트웨어의 잠재적 보안 취약점을 발견하기 위해 무작위의 유효하지 않거나 기형적 데이터를 입력값으로 주입하여 충돌/오작동을 모니터링하는 테스팅 기법
 ### ASLR(Address Space Layout Randomization)  
-- 공격자가 메모리 주소를 예측하는 것을 방지하기 위해 process 실행 시마다 stack, heap 등 주요 데이터 구조의 메모리 위치를 무작위로 재배치하는 기법
+- 공격자가 메모리 주소를 예측하는 것을 방지하기 위해 stack, heap 등 주요 데이터 구조의 메모리 위치를 무작위로 재배치하는 기법
 ### $W \oplus X$ policy
 - 메모리 페이지가 write 권한과 execute 권한을 동시에 가질 수 없도록 강제하는 보안 정책
 
@@ -91,7 +91,7 @@
 - Buffer overflow로 인해 값이 바뀌었다면 공격으로 간주하고 프로그램 실행 중단
 
 ## 12. Explain the ROP(Return-Oriented Programming) attack method with picture. Explain how the `libc` library binary file is used in the ROP attack. [5점]
-- Method: 메모리에 이미 로드된 코드 중 `ret`(return) 명령어로 끝나는 작은 코드 조각(gadget)들을 체인처럼 연결하여 공격자가 원하는 동작을 수행하게 하는 기법. (Stack에 gadget들의 주소를 연속으로 배치하여 `ret` 실행 시 다음 gadget으로 이동)
+- Method: 메모리에 이미 로드된 코드 중 `ret`(return) 명령어로 끝나는 작은 코드 조각(Sequence)들을 체인처럼 gadget으로 연결하여 공격자가 원하는 동작을 수행하게 하는 기법. (Stack에 gadget들의 주소를 연속으로 배치하여 `ret` 실행 시 다음 gadget으로 이동)
 - `libc` usage: `libc` 라이브러리는 프로그램 실행 시 메모리에 로드되며, 매우 방대한 코드를 포함하고 있음. 공격자는 `libc` 내부에 다양한 기계어 코드 조각(gadget)들을 조합하여 거의 모든 로직(Turing complete)을 구성할 수 있어, NX bit(실행 방지) 보호 기법을 우회하는데 사용됨.
 
 ## 13. Answer the following questions on DDoS attacks. [6점]
@@ -131,8 +131,8 @@ char dst[16];
 char src[] = "0123456789";
 strncpy(dst, src, sizeof(dst));
 ```
-- Safe but inefficient
-    - `src`의 길이(10)가 `dst`의 크기(16)보다 작습니다. `strncpy`는 남은 공간을 모두 `NULL`로 채우므로(Zero-padding), 안전하게 Null-terminated 되지만 불필요한 연산이 발생합니다.
+- Safe. but inefficient
+    - `src`의 길이(10)가 `dst`의 크기(16)보다 작습니다. `strncpy`는 남은 공간을 모두 `NULL`로 채우므로(Zero-padding), 안전하게 Null-terminated되지만 불필요한 연산이 발생합니다.
 
 ### 예제 2
 ```
