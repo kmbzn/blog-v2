@@ -39,7 +39,7 @@ export default defineUserConfig({
         text: '🤖 Artificial Intelligence',
         collapsible: true,
         children: [
-          '/ai/1', '/ai/2', '/ai/3', '/ai/4', '/ai/5', '/ai/6', '/ai/7', '/ai/8', '/ai/9', '/ai/10', '/ai/11', '/ai/12', '/ai/13', '/ai/14', '/ai/15', '/ai/16', '/ai/17', '/ai/18', '/ai/19', '/ai/20',
+          '/ai/15', '/ai/16', '/ai/17', '/ai/20', '/ai/21', '/ai/24', '/ai/25', '/ai/26', '/ai/27', '/ai/28', 
         ]
       },
       {
