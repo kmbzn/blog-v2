@@ -1,0 +1,58 @@
+<template><div><h1 id="우분투-wine-카카오톡-스크린샷-붙여넣기-문제-해결-wayland-환경" tabindex="-1"><a class="header-anchor" href="#우분투-wine-카카오톡-스크린샷-붙여넣기-문제-해결-wayland-환경"><span>우분투 Wine 카카오톡 스크린샷 붙여넣기 문제 해결 (Wayland 환경)</span></a></h1>
+<h2 id="서론" tabindex="-1"><a class="header-anchor" href="#서론"><span>서론</span></a></h2>
+<p>필자는 평상시에 우분투로 카톡할 때 흥미로운 기사나 썸네일 이미지를 스크랩해서 즉시 친구들과 단체 채팅방에 전송하는 일이 잦은데, 기존의 우분투 22.04 환경에서 제공하는 기본 스크린샷 도구는 물론이고, 유명한 외부 캡쳐 툴조차 Wine 환경 내의 카카오톡으로 이미지 전송을 전혀 지원하지 않아 답답함을 느껴왔다.
+해외 커뮤니티에서는 카카오톡을 쓰지 않으니 당연히 이에 대한 논의가 없고, 국내 사용자분들 또한 이 문제를 해결하지 못해 그냥 저장된 이미지를 일일히 전송하는 방식을 사용하고 계신 것으로 안다.</p>
+<p>이미지를 파일로 저장하고, 카톡에서 파일 전송 버튼을 누르고, 파일을 찾아 보내는 과정은 너무나 번거롭다. <code v-pre>Ctrl+V</code> 한 번이면 되어야 할 일을 우분투를 쓴다는 이유로 왜 못하고 있을까?</p>
+<p>이 글에서는 원인을 집요하게 파고들어, 어떤 캡쳐 도구를 쓰더라도 Wine 카카오톡에 이미지를 바로 붙여넣을 수 있는 완벽한 해결책을 공유하기 위해 작성했다. 국내 커뮤니티에서 그동안 명확한 해결책을 찾기 힘들었던 분들에게 도움이 되길 바란다.</p>
+<h2 id="왜-붙여넣기가-안-될까" tabindex="-1"><a class="header-anchor" href="#왜-붙여넣기가-안-될까"><span>왜 붙여넣기가 안 될까?</span></a></h2>
+<p>우분투 22.04(Wayland)의 최신 스크린샷 도구들은 캡쳐한 이미지를 클립보드에 담을 때 주로 <code v-pre>image/png</code> 포맷을 사용한다. 하지만 Wine 위에서 돌아가는 윈도우용 카카오톡은 매우 까다로운 식성을 가지고 있었다.</p>
+<p>터미널에서 <code v-pre>xclip</code> 명령어로 클립보드 내부를 뜯어본 결과는 다음과 같았다.</p>
+<ul>
+<li>작동하지 않는 도구들: <code v-pre>image/png</code> 만 제공</li>
+<li>유일하게 작동했던 구형 도구(<code v-pre>gnome-screenshot</code>): <code v-pre>image/bmp</code>, <code v-pre>image/x-MS-bmp</code> 등 비트맵 형식을 함께 제공</li>
+</ul>
+<p>여기서 힌트를 얻었는데, 즉, Wine 카카오톡은 'PNG'가 아닌 'BMP(비트맵)' 형식을 원했던 것이다. 최신 도구들이 PNG 형식만 건네주니 카톡은 나 이거 몰라 하고 입을 닫아버린 셈이다.</p>
+<h2 id="해결-방법-강제-형변환-파이프라인-구축" tabindex="-1"><a class="header-anchor" href="#해결-방법-강제-형변환-파이프라인-구축"><span>해결 방법: 강제 형변환 파이프라인 구축</span></a></h2>
+<p>원인을 알았으니 이제 해결책은 간단하다.</p>
+<p>스크린샷을 찍고 -&gt; PNG를 BMP로 변환해서 -&gt; 클립보드에 찔러 넣어주는 명령어 세트를 만들면 된다.</p>
+<h3 id="_1-필수-패키지-설치" tabindex="-1"><a class="header-anchor" href="#_1-필수-패키지-설치"><span>1. 필수 패키지 설치</span></a></h3>
+<p>이미지 변환을 위한 <code v-pre>imagemagick</code>과 Wayland 클립보드 제어를 위한 <code v-pre>wl-clipboard</code>, 그리고 스크린샷 도구가 필요하다.</p>
+<div class="language-bash line-numbers-mode" data-highlighter="prismjs" data-ext="sh"><pre v-pre><code class="language-bash"><span class="line"><span class="token function">sudo</span> <span class="token function">apt</span> update</span>
+<span class="line"><span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> imagemagick wl-clipboard gnome-screenshot</span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_2-명령어" tabindex="-1"><a class="header-anchor" href="#_2-명령어"><span>2. 명령어</span></a></h3>
+<p>여러 시행착오 끝에 완성된 명령어이다. 이 한 줄로 캡쳐와 동시에 변환, 복사가 모두 이루어지게 된다.</p>
+<div class="language-bash line-numbers-mode" data-highlighter="prismjs" data-ext="sh"><pre v-pre><code class="language-bash"><span class="line">gnome-screenshot <span class="token parameter variable">-a</span> <span class="token parameter variable">-f</span> /tmp/screen.png <span class="token operator">&amp;&amp;</span> convert /tmp/screen.png bmp:- <span class="token operator">|</span> wl-copy <span class="token parameter variable">-t</span> image/bmp</span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><ul>
+<li><code v-pre>gnome-screenshot -a -f ...</code>: 영역을 선택해 캡쳐하고 임시 파일로 저장한다.</li>
+<li><code v-pre>convert ... bmp:-</code>: 저장된 PNG 파일을 읽어 BMP 데이터로 실시간 변환한다.</li>
+<li><code v-pre>wl-copy -t image/bmp</code>: 변환된 데이터를 '이건 BMP야!'라고 명찰(<code v-pre>-t</code>)을 붙여 클립보드에 넣는다.</li>
+</ul>
+<h3 id="_3-단축키-shortcut-설정하기" tabindex="-1"><a class="header-anchor" href="#_3-단축키-shortcut-설정하기"><span>3. 단축키(Shortcut) 설정하기</span></a></h3>
+<div class="hint-container warning">
+<p class="hint-container-title">경고</p>
+<p>이 명령어를 우분투 설정(<code v-pre>Settings</code>) &gt; <code v-pre>Keyboard</code> &gt; <code v-pre>View and Customize Shortcuts</code> &gt; <code v-pre>Custom Shortcuts</code>에 그대로 넣으면 작동하지 않는다. 파이프(<code v-pre>|</code>)나 <code v-pre>&amp;&amp;</code> 같은 쉘 연산자를 단축키 실행기가 해석하지 못하기 때문이다.</p>
+</div>
+<p>따라서 쉘(<code v-pre>sh</code>)을 호출하여 실행하도록 따옴표로 감싸주어야 한다.</p>
+<ul>
+<li>
+<p>Name: <em>(원하는 대로)</em></p>
+</li>
+<li>
+<p>Command:</p>
+<div class="language-bash line-numbers-mode" data-highlighter="prismjs" data-ext="sh"><pre v-pre><code class="language-bash"><span class="line"><span class="token function">sh</span> <span class="token parameter variable">-c</span> gnome-screenshot <span class="token parameter variable">-a</span> <span class="token parameter variable">-f</span> /tmp/screen.png <span class="token operator">&amp;&amp;</span> convert /tmp/screen.png bmp:- <span class="token operator">|</span> wl-copy <span class="token parameter variable">-t</span> image/bmp</span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div></li>
+<li>
+<p>Shortcut: <code v-pre>Ctrl</code> + <code v-pre>Shift</code> + <code v-pre>Print</code> (원하는 키 조합)</p>
+</li>
+</ul>
+<h2 id="결과" tabindex="-1"><a class="header-anchor" href="#결과"><span>결과</span></a></h2>
+<p><img src="@source/os/image.png" alt="alt text">
+이제 설정한 단축키를 누르고 영역을 드래그한 뒤, Wine 카카오톡 입력창에 <code v-pre>Ctrl + V</code>를 눌러보자. 거짓말처럼 이미지가 척 하고 붙는 것을 볼 수 있다.</p>
+<p>이 방법은 중간에 <code v-pre>convert</code> 과정을 거치기 때문에, 굳이 <code v-pre>gnome-screenshot</code>이 아니더라도 <code v-pre>flameshot</code>이나 다른 도구를 응용해서도 충분히 구현 가능하다.</p>
+<p>우분투 환경에서 카톡 쓰기가 한결 쾌적해졌다. 이제 짤 전송을 멈추지 말자.</p>
+</div></template>
+
+

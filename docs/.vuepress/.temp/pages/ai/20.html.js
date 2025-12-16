@@ -1,16 +1,3 @@
 import comp from "/home/kmbzn/workspace/blog-v2/docs/.vuepress/.temp/pages/ai/20.html.vue"
-const data = JSON.parse("{\"path\":\"/ai/20.html\",\"title\":\"20. Attention Mechanism and Self-Attention\",\"lang\":\"ko-KR\",\"frontmatter\":{},\"git\":{\"updatedTime\":1764816563000,\"contributors\":[{\"name\":\"kmbzn\",\"username\":\"kmbzn\",\"email\":\"kmbzn24@gmail.com\",\"commits\":1,\"url\":\"https://github.com/kmbzn\"}],\"changelog\":[{\"hash\":\"bfeb60299ef7624d2ca5d88bdbe6945ba7f492af\",\"time\":1764816563000,\"email\":\"kmbzn24@gmail.com\",\"author\":\"kmbzn\",\"message\":\"update ai/20\"}]},\"filePathRelative\":\"ai/20.md\"}")
+const data = JSON.parse("{\"path\":\"/ai/20.html\",\"title\":\"20. Neural Networks and Deep Learning (2)\",\"lang\":\"ko-KR\",\"frontmatter\":{},\"git\":{\"updatedTime\":1765873247000,\"contributors\":[{\"name\":\"kmbzn\",\"username\":\"kmbzn\",\"email\":\"kmbzn24@gmail.com\",\"commits\":2,\"url\":\"https://github.com/kmbzn\"}],\"changelog\":[{\"hash\":\"1575f6ad96bf7e9c912c484e30ece1bb27003476\",\"time\":1765873247000,\"email\":\"kmbzn24@gmail.com\",\"author\":\"kmbzn\",\"message\":\"ai update\"},{\"hash\":\"bfeb60299ef7624d2ca5d88bdbe6945ba7f492af\",\"time\":1764816563000,\"email\":\"kmbzn24@gmail.com\",\"author\":\"kmbzn\",\"message\":\"update ai/20\"}]},\"filePathRelative\":\"ai/20.md\"}")
 export { comp, data }
-
-if (import.meta.webpackHot) {
-  import.meta.webpackHot.accept()
-  if (__VUE_HMR_RUNTIME__.updatePageData) {
-    __VUE_HMR_RUNTIME__.updatePageData(data)
-  }
-}
-
-if (import.meta.hot) {
-  import.meta.hot.accept(({ data }) => {
-    __VUE_HMR_RUNTIME__.updatePageData(data)
-  })
-}

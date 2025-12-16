@@ -39,14 +39,7 @@ export default defineUserConfig({
         text: '🤖 Artificial Intelligence',
         collapsible: true,
         children: [
-          '/ai/15', '/ai/16', '/ai/17', '/ai/20', '/ai/21', '/ai/24', '/ai/25', '/ai/26', '/ai/27', '/ai/28', 
-        ]
-      },
-      {
-        text: '🔐 Computer Security',
-        collapsible: true,
-        children: [
-          '/cs/7', '/cs/8', '/cs/9', '/cs/10',
+          '/ai/15', '/ai/16', '/ai/17', '/ai/20', '/ai/21', '/ai/24', '/ai/25', '/ai/26', '/ai/27', 
         ]
       },
       {
@@ -54,13 +47,6 @@ export default defineUserConfig({
         collapsible: true,
         children: [
           '/db/1', '/db/2', '/db/3', '/db/6', '/db/7-1', '/db/7-2', '/db/13', '/db/14', '/db/15', '/db/16', '/db/17', '/db/18', '/db/19',
-        ]
-      },
-      {
-        text: '🧑‍💻 Software Engineering',
-        collapsible: true,
-        children: [
-          '/se/9', '/se/10', '/se/11', '/se/12', '/se/13', '/se/14', '/se/15', '/se/16', '/se/17',
         ]
       },
     ],

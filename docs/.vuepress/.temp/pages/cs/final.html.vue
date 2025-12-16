@@ -10,7 +10,7 @@
 </ul>
 <h3 id="aslr-address-space-layout-randomization" tabindex="-1"><a class="header-anchor" href="#aslr-address-space-layout-randomization"><span>ASLR(Address Space Layout Randomization)</span></a></h3>
 <ul>
-<li>공격자가 메모리 주소를 예측하는 것을 방지하기 위해 process 실행 시마다 stack, heap 등 주요 데이터 구조의 메모리 위치를 무작위로 재배치하는 기법</li>
+<li>공격자가 메모리 주소를 예측하는 것을 방지하기 위해 stack, heap 등 주요 데이터 구조의 메모리 위치를 무작위로 재배치하는 기법</li>
 </ul>
 <h3 id="policy" tabindex="-1"><a class="header-anchor" href="#policy"><span><span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>W</mi><mo>⊕</mo><mi>X</mi></mrow><annotation encoding="application/x-tex">W \oplus X</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7667em;vertical-align:-0.0833em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">W</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">⊕</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.07847em;">X</span></span></span></span> policy</span></a></h3>
 <ul>
@@ -129,7 +129,7 @@
 </ul>
 <h2 id="_12-explain-the-rop-return-oriented-programming-attack-method-with-picture-explain-how-the-libc-library-binary-file-is-used-in-the-rop-attack-5점" tabindex="-1"><a class="header-anchor" href="#_12-explain-the-rop-return-oriented-programming-attack-method-with-picture-explain-how-the-libc-library-binary-file-is-used-in-the-rop-attack-5점"><span>12. Explain the ROP(Return-Oriented Programming) attack method with picture. Explain how the <code v-pre>libc</code> library binary file is used in the ROP attack. [5점]</span></a></h2>
 <ul>
-<li>Method: 메모리에 이미 로드된 코드 중 <code v-pre>ret</code>(return) 명령어로 끝나는 작은 코드 조각(gadget)들을 체인처럼 연결하여 공격자가 원하는 동작을 수행하게 하는 기법. (Stack에 gadget들의 주소를 연속으로 배치하여 <code v-pre>ret</code> 실행 시 다음 gadget으로 이동)</li>
+<li>Method: 메모리에 이미 로드된 코드 중 <code v-pre>ret</code>(return) 명령어로 끝나는 작은 코드 조각(Sequence)들을 체인처럼 gadget으로 연결하여 공격자가 원하는 동작을 수행하게 하는 기법. (Stack에 gadget들의 주소를 연속으로 배치하여 <code v-pre>ret</code> 실행 시 다음 gadget으로 이동)</li>
 <li><code v-pre>libc</code> usage: <code v-pre>libc</code> 라이브러리는 프로그램 실행 시 메모리에 로드되며, 매우 방대한 코드를 포함하고 있음. 공격자는 <code v-pre>libc</code> 내부에 다양한 기계어 코드 조각(gadget)들을 조합하여 거의 모든 로직(Turing complete)을 구성할 수 있어, NX bit(실행 방지) 보호 기법을 우회하는데 사용됨.</li>
 </ul>
 <h2 id="_13-answer-the-following-questions-on-ddos-attacks-6점" tabindex="-1"><a class="header-anchor" href="#_13-answer-the-following-questions-on-ddos-attacks-6점"><span>13. Answer the following questions on DDoS attacks. [6점]</span></a></h2>
@@ -183,9 +183,9 @@
 <span class="line"><span class="token function">strncpy</span><span class="token punctuation">(</span>dst<span class="token punctuation">,</span> src<span class="token punctuation">,</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span>dst<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
 <span class="line"></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul>
-<li>Safe but inefficient
+<li>Safe. but inefficient
 <ul>
-<li><code v-pre>src</code>의 길이(10)가 <code v-pre>dst</code>의 크기(16)보다 작습니다. <code v-pre>strncpy</code>는 남은 공간을 모두 <code v-pre>NULL</code>로 채우므로(Zero-padding), 안전하게 Null-terminated 되지만 불필요한 연산이 발생합니다.</li>
+<li><code v-pre>src</code>의 길이(10)가 <code v-pre>dst</code>의 크기(16)보다 작습니다. <code v-pre>strncpy</code>는 남은 공간을 모두 <code v-pre>NULL</code>로 채우므로(Zero-padding), 안전하게 Null-terminated되지만 불필요한 연산이 발생합니다.</li>
 </ul>
 </li>
 </ul>
