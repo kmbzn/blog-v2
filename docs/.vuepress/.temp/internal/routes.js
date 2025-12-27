@@ -25,24 +25,7 @@ export const routes = Object.fromEntries([
   ["/cg/9-Orientation-Rotation.html", { loader: () => import(/* webpackChunkName: "cg_9-Orientation-Rotation.html" */"/home/kmbzn/workspace/blog-v2/docs/.vuepress/.temp/pages/cg/9-Orientation-Rotation.html.js"), meta: {"title":"9 - Orientation & Rotation"} }],
   ["/cg/Project-2.html", { loader: () => import(/* webpackChunkName: "cg_Project-2.html" */"/home/kmbzn/workspace/blog-v2/docs/.vuepress/.temp/pages/cg/Project-2.html.js"), meta: {"title":"Computer Graphics Project 2: Obj viewer"} }],
   ["/cg/Project-3.html", { loader: () => import(/* webpackChunkName: "cg_Project-3.html" */"/home/kmbzn/workspace/blog-v2/docs/.vuepress/.temp/pages/cg/Project-3.html.js"), meta: {"title":"Computer Graphics Project 3: Bvh Viewer"} }],
-  ["/cs/1.html", { loader: () => import(/* webpackChunkName: "cs_1.html" */"/home/kmbzn/workspace/blog-v2/docs/.vuepress/.temp/pages/cs/1.html.js"), meta: {"title":"01. Overview"} }],
-  ["/cs/10.html", { loader: () => import(/* webpackChunkName: "cs_10.html" */"/home/kmbzn/workspace/blog-v2/docs/.vuepress/.temp/pages/cs/10.html.js"), meta: {"title":"10. String Security"} }],
-  ["/cs/2.html", { loader: () => import(/* webpackChunkName: "cs_2.html" */"/home/kmbzn/workspace/blog-v2/docs/.vuepress/.temp/pages/cs/2.html.js"), meta: {"title":"02. 정보보안정책 및 법규"} }],
-  ["/cs/24midterm.html", { loader: () => import(/* webpackChunkName: "cs_24midterm.html" */"/home/kmbzn/workspace/blog-v2/docs/.vuepress/.temp/pages/cs/24midterm.html.js"), meta: {"title":"2024 Midterm Exam"} }],
-  ["/cs/3.html", { loader: () => import(/* webpackChunkName: "cs_3.html" */"/home/kmbzn/workspace/blog-v2/docs/.vuepress/.temp/pages/cs/3.html.js"), meta: {"title":"03. Cryptographic Tools"} }],
-  ["/cs/4.html", { loader: () => import(/* webpackChunkName: "cs_4.html" */"/home/kmbzn/workspace/blog-v2/docs/.vuepress/.temp/pages/cs/4.html.js"), meta: {"title":"04. User Authentication"} }],
-  ["/cs/5.html", { loader: () => import(/* webpackChunkName: "cs_5.html" */"/home/kmbzn/workspace/blog-v2/docs/.vuepress/.temp/pages/cs/5.html.js"), meta: {"title":"05. Access Control"} }],
-  ["/cs/6.html", { loader: () => import(/* webpackChunkName: "cs_6.html" */"/home/kmbzn/workspace/blog-v2/docs/.vuepress/.temp/pages/cs/6.html.js"), meta: {"title":"06. Database Security"} }],
-  ["/cs/7.html", { loader: () => import(/* webpackChunkName: "cs_7.html" */"/home/kmbzn/workspace/blog-v2/docs/.vuepress/.temp/pages/cs/7.html.js"), meta: {"title":"07. Malicious Software"} }],
-  ["/cs/8.html", { loader: () => import(/* webpackChunkName: "cs_8.html" */"/home/kmbzn/workspace/blog-v2/docs/.vuepress/.temp/pages/cs/8.html.js"), meta: {"title":"08. Firmware Analysis"} }],
-  ["/cs/9.html", { loader: () => import(/* webpackChunkName: "cs_9.html" */"/home/kmbzn/workspace/blog-v2/docs/.vuepress/.temp/pages/cs/9.html.js"), meta: {"title":"09. Buffer Overflow"} }],
-  ["/cs/final.html", { loader: () => import(/* webpackChunkName: "cs_final.html" */"/home/kmbzn/workspace/blog-v2/docs/.vuepress/.temp/pages/cs/final.html.js"), meta: {"title":"2024 Computer Security Final Exam"} }],
-  ["/cs/tmp.html", { loader: () => import(/* webpackChunkName: "cs_tmp.html" */"/home/kmbzn/workspace/blog-v2/docs/.vuepress/.temp/pages/cs/tmp.html.js"), meta: {"title":"Payload – Information"} }],
-  ["/cs/wiki.html", { loader: () => import(/* webpackChunkName: "cs_wiki.html" */"/home/kmbzn/workspace/blog-v2/docs/.vuepress/.temp/pages/cs/wiki.html.js"), meta: {"title":"Firmware Analysis Report"} }],
   ["/finance/Bitcoin.html", { loader: () => import(/* webpackChunkName: "finance_Bitcoin.html" */"/home/kmbzn/workspace/blog-v2/docs/.vuepress/.temp/pages/finance/Bitcoin.html.js"), meta: {"title":"비트코인(Bitcoin)"} }],
-  ["/hanja/4.html", { loader: () => import(/* webpackChunkName: "hanja_4.html" */"/home/kmbzn/workspace/blog-v2/docs/.vuepress/.temp/pages/hanja/4.html.js"), meta: {"title":"상공회의소 한자 4급"} }],
-  ["/hanja/5.html", { loader: () => import(/* webpackChunkName: "hanja_5.html" */"/home/kmbzn/workspace/blog-v2/docs/.vuepress/.temp/pages/hanja/5.html.js"), meta: {"title":"상공회의소 한자 5급"} }],
-  ["/hanja/6.html", { loader: () => import(/* webpackChunkName: "hanja_6.html" */"/home/kmbzn/workspace/blog-v2/docs/.vuepress/.temp/pages/hanja/6.html.js"), meta: {"title":"상공회의소 한자 6급"} }],
   ["/ai/1.html", { loader: () => import(/* webpackChunkName: "ai_1.html" */"/home/kmbzn/workspace/blog-v2/docs/.vuepress/.temp/pages/ai/1.html.js"), meta: {"title":"1. Basics; Linear Algebra"} }],
   ["/ai/10.html", { loader: () => import(/* webpackChunkName: "ai_10.html" */"/home/kmbzn/workspace/blog-v2/docs/.vuepress/.temp/pages/ai/10.html.js"), meta: {"title":"10. Machine Learning (1)"} }],
   ["/ai/11.html", { loader: () => import(/* webpackChunkName: "ai_11.html" */"/home/kmbzn/workspace/blog-v2/docs/.vuepress/.temp/pages/ai/11.html.js"), meta: {"title":"11. Machine Learning (2)"} }],
@@ -65,6 +48,23 @@ export const routes = Object.fromEntries([
   ["/ai/8.html", { loader: () => import(/* webpackChunkName: "ai_8.html" */"/home/kmbzn/workspace/blog-v2/docs/.vuepress/.temp/pages/ai/8.html.js"), meta: {"title":"8. Probabilitc Reasoning (2)"} }],
   ["/ai/9.html", { loader: () => import(/* webpackChunkName: "ai_9.html" */"/home/kmbzn/workspace/blog-v2/docs/.vuepress/.temp/pages/ai/9.html.js"), meta: {"title":"9. Probabilitc Reasoning (3)"} }],
   ["/ai/midterm.html", { loader: () => import(/* webpackChunkName: "ai_midterm.html" */"/home/kmbzn/workspace/blog-v2/docs/.vuepress/.temp/pages/ai/midterm.html.js"), meta: {"title":""} }],
+  ["/cs/1.html", { loader: () => import(/* webpackChunkName: "cs_1.html" */"/home/kmbzn/workspace/blog-v2/docs/.vuepress/.temp/pages/cs/1.html.js"), meta: {"title":"01. Overview"} }],
+  ["/cs/10.html", { loader: () => import(/* webpackChunkName: "cs_10.html" */"/home/kmbzn/workspace/blog-v2/docs/.vuepress/.temp/pages/cs/10.html.js"), meta: {"title":"10. String Security"} }],
+  ["/cs/2.html", { loader: () => import(/* webpackChunkName: "cs_2.html" */"/home/kmbzn/workspace/blog-v2/docs/.vuepress/.temp/pages/cs/2.html.js"), meta: {"title":"02. 정보보안정책 및 법규"} }],
+  ["/cs/24midterm.html", { loader: () => import(/* webpackChunkName: "cs_24midterm.html" */"/home/kmbzn/workspace/blog-v2/docs/.vuepress/.temp/pages/cs/24midterm.html.js"), meta: {"title":"2024 Midterm Exam"} }],
+  ["/cs/3.html", { loader: () => import(/* webpackChunkName: "cs_3.html" */"/home/kmbzn/workspace/blog-v2/docs/.vuepress/.temp/pages/cs/3.html.js"), meta: {"title":"03. Cryptographic Tools"} }],
+  ["/cs/4.html", { loader: () => import(/* webpackChunkName: "cs_4.html" */"/home/kmbzn/workspace/blog-v2/docs/.vuepress/.temp/pages/cs/4.html.js"), meta: {"title":"04. User Authentication"} }],
+  ["/cs/5.html", { loader: () => import(/* webpackChunkName: "cs_5.html" */"/home/kmbzn/workspace/blog-v2/docs/.vuepress/.temp/pages/cs/5.html.js"), meta: {"title":"05. Access Control"} }],
+  ["/cs/6.html", { loader: () => import(/* webpackChunkName: "cs_6.html" */"/home/kmbzn/workspace/blog-v2/docs/.vuepress/.temp/pages/cs/6.html.js"), meta: {"title":"06. Database Security"} }],
+  ["/cs/7.html", { loader: () => import(/* webpackChunkName: "cs_7.html" */"/home/kmbzn/workspace/blog-v2/docs/.vuepress/.temp/pages/cs/7.html.js"), meta: {"title":"07. Malicious Software"} }],
+  ["/cs/8.html", { loader: () => import(/* webpackChunkName: "cs_8.html" */"/home/kmbzn/workspace/blog-v2/docs/.vuepress/.temp/pages/cs/8.html.js"), meta: {"title":"08. Firmware Analysis"} }],
+  ["/cs/9.html", { loader: () => import(/* webpackChunkName: "cs_9.html" */"/home/kmbzn/workspace/blog-v2/docs/.vuepress/.temp/pages/cs/9.html.js"), meta: {"title":"09. Buffer Overflow"} }],
+  ["/cs/final.html", { loader: () => import(/* webpackChunkName: "cs_final.html" */"/home/kmbzn/workspace/blog-v2/docs/.vuepress/.temp/pages/cs/final.html.js"), meta: {"title":"2024 Computer Security Final Exam"} }],
+  ["/cs/tmp.html", { loader: () => import(/* webpackChunkName: "cs_tmp.html" */"/home/kmbzn/workspace/blog-v2/docs/.vuepress/.temp/pages/cs/tmp.html.js"), meta: {"title":"Payload – Information"} }],
+  ["/cs/wiki.html", { loader: () => import(/* webpackChunkName: "cs_wiki.html" */"/home/kmbzn/workspace/blog-v2/docs/.vuepress/.temp/pages/cs/wiki.html.js"), meta: {"title":"Firmware Analysis Report"} }],
+  ["/hanja/4.html", { loader: () => import(/* webpackChunkName: "hanja_4.html" */"/home/kmbzn/workspace/blog-v2/docs/.vuepress/.temp/pages/hanja/4.html.js"), meta: {"title":"상공회의소 한자 4급"} }],
+  ["/hanja/5.html", { loader: () => import(/* webpackChunkName: "hanja_5.html" */"/home/kmbzn/workspace/blog-v2/docs/.vuepress/.temp/pages/hanja/5.html.js"), meta: {"title":"상공회의소 한자 5급"} }],
+  ["/hanja/6.html", { loader: () => import(/* webpackChunkName: "hanja_6.html" */"/home/kmbzn/workspace/blog-v2/docs/.vuepress/.temp/pages/hanja/6.html.js"), meta: {"title":"상공회의소 한자 6급"} }],
   ["/humanities/Nordvik.html", { loader: () => import(/* webpackChunkName: "humanities_Nordvik.html" */"/home/kmbzn/workspace/blog-v2/docs/.vuepress/.temp/pages/humanities/Nordvik.html.js"), meta: {"title":"Nordvik, Russia"} }],
   ["/humanities/NorthSentinelIsland.html", { loader: () => import(/* webpackChunkName: "humanities_NorthSentinelIsland.html" */"/home/kmbzn/workspace/blog-v2/docs/.vuepress/.temp/pages/humanities/NorthSentinelIsland.html.js"), meta: {"title":"North Sentinel Island"} }],
   ["/humanities/Rongorongo.html", { loader: () => import(/* webpackChunkName: "humanities_Rongorongo.html" */"/home/kmbzn/workspace/blog-v2/docs/.vuepress/.temp/pages/humanities/Rongorongo.html.js"), meta: {"title":"롱고롱고(Rongorongo)"} }],
@@ -105,8 +105,9 @@ export const routes = Object.fromEntries([
   ["/os/Project-3-ko.html", { loader: () => import(/* webpackChunkName: "os_Project-3-ko.html" */"/home/kmbzn/workspace/blog-v2/docs/.vuepress/.temp/pages/os/Project-3-ko.html.js"), meta: {"title":"프로젝트 03"} }],
   ["/os/Project-3-wiki.html", { loader: () => import(/* webpackChunkName: "os_Project-3-wiki.html" */"/home/kmbzn/workspace/blog-v2/docs/.vuepress/.temp/pages/os/Project-3-wiki.html.js"), meta: {"title":"Project 3: Virtual Memory & File system - wiki"} }],
   ["/os/Project-3.html", { loader: () => import(/* webpackChunkName: "os_Project-3.html" */"/home/kmbzn/workspace/blog-v2/docs/.vuepress/.temp/pages/os/Project-3.html.js"), meta: {"title":"Project 03"} }],
-  ["/os/clipboard_image_kakaotalk_ubuntu.html", { loader: () => import(/* webpackChunkName: "os_clipboard_image_kakaotalk_ubuntu.html" */"/home/kmbzn/workspace/blog-v2/docs/.vuepress/.temp/pages/os/clipboard_image_kakaotalk_ubuntu.html.js"), meta: {"title":"우분투 Wine 카카오톡 스크린샷 붙여넣기 문제 해결 (Wayland 환경)"} }],
+  ["/os/clipboard_image_kakaotalk_ubuntu.html", { loader: () => import(/* webpackChunkName: "os_clipboard_image_kakaotalk_ubuntu.html" */"/home/kmbzn/workspace/blog-v2/docs/.vuepress/.temp/pages/os/clipboard_image_kakaotalk_ubuntu.html.js"), meta: {"title":"Wine 카카오톡 스크린샷 붙여넣기 문제 해결 (Wayland 환경)"} }],
   ["/os/wiki.html", { loader: () => import(/* webpackChunkName: "os_wiki.html" */"/home/kmbzn/workspace/blog-v2/docs/.vuepress/.temp/pages/os/wiki.html.js"), meta: {"title":"Project 02: xv6 RISC-V Kernel-Level Threads Implementation - wiki"} }],
+  ["/os/wine_without_explorer.html", { loader: () => import(/* webpackChunkName: "os_wine_without_explorer.html" */"/home/kmbzn/workspace/blog-v2/docs/.vuepress/.temp/pages/os/wine_without_explorer.html.js"), meta: {"title":"Wine 환경에서 카카오톡 실행 시 explorer.exe 뜨지 않게 하는 법"} }],
   ["/wellness/ExtraVirginOliveOil.html", { loader: () => import(/* webpackChunkName: "wellness_ExtraVirginOliveOil.html" */"/home/kmbzn/workspace/blog-v2/docs/.vuepress/.temp/pages/wellness/ExtraVirginOliveOil.html.js"), meta: {"title":"🫒 엑스트라 버진 올리브유 (Extra Virgin Olive Oil)"} }],
   ["/wellness/PsylliumHusk.html", { loader: () => import(/* webpackChunkName: "wellness_PsylliumHusk.html" */"/home/kmbzn/workspace/blog-v2/docs/.vuepress/.temp/pages/wellness/PsylliumHusk.html.js"), meta: {"title":"차전자피(Psyllium Husk)"} }],
   ["/se/10.html", { loader: () => import(/* webpackChunkName: "se_10.html" */"/home/kmbzn/workspace/blog-v2/docs/.vuepress/.temp/pages/se/10.html.js"), meta: {"title":"10. Object-Oriented Analysis"} }],
@@ -132,3 +133,20 @@ export const routes = Object.fromEntries([
   ["/se/wiki.html", { loader: () => import(/* webpackChunkName: "se_wiki.html" */"/home/kmbzn/workspace/blog-v2/docs/.vuepress/.temp/pages/se/wiki.html.js"), meta: {"title":""} }],
   ["/404.html", { loader: () => import(/* webpackChunkName: "404.html" */"/home/kmbzn/workspace/blog-v2/docs/.vuepress/.temp/pages/404.html.js"), meta: {"title":""} }],
 ]);
+
+if (import.meta.webpackHot) {
+  import.meta.webpackHot.accept()
+  if (__VUE_HMR_RUNTIME__.updateRoutes) {
+    __VUE_HMR_RUNTIME__.updateRoutes(routes)
+  }
+  if (__VUE_HMR_RUNTIME__.updateRedirects) {
+    __VUE_HMR_RUNTIME__.updateRedirects(redirects)
+  }
+}
+
+if (import.meta.hot) {
+  import.meta.hot.accept(({ routes, redirects }) => {
+    __VUE_HMR_RUNTIME__.updateRoutes(routes)
+    __VUE_HMR_RUNTIME__.updateRedirects(redirects)
+  })
+}

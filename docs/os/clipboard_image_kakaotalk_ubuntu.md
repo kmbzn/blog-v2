@@ -1,4 +1,9 @@
-# 우분투 Wine 카카오톡 스크린샷 붙여넣기 문제 해결 (Wayland 환경)
+# Wine 카카오톡 스크린샷 붙여넣기 문제 해결 (Wayland 환경)
+
+:::info
+Ubuntu 22.04 LTS  
+wine 10.0
+:::
 
 ## 서론
 

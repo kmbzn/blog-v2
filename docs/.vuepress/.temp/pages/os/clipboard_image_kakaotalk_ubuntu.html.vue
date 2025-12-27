@@ -1,4 +1,9 @@
-<template><div><h1 id="우분투-wine-카카오톡-스크린샷-붙여넣기-문제-해결-wayland-환경" tabindex="-1"><a class="header-anchor" href="#우분투-wine-카카오톡-스크린샷-붙여넣기-문제-해결-wayland-환경"><span>우분투 Wine 카카오톡 스크린샷 붙여넣기 문제 해결 (Wayland 환경)</span></a></h1>
+<template><div><h1 id="wine-카카오톡-스크린샷-붙여넣기-문제-해결-wayland-환경" tabindex="-1"><a class="header-anchor" href="#wine-카카오톡-스크린샷-붙여넣기-문제-해결-wayland-환경"><span>Wine 카카오톡 스크린샷 붙여넣기 문제 해결 (Wayland 환경)</span></a></h1>
+<div class="hint-container info">
+<p class="hint-container-title">정보</p>
+<p>Ubuntu 22.04 LTS<br>
+wine 10.0</p>
+</div>
 <h2 id="서론" tabindex="-1"><a class="header-anchor" href="#서론"><span>서론</span></a></h2>
 <p>필자는 평상시에 우분투로 카톡할 때 흥미로운 기사나 썸네일 이미지를 스크랩해서 즉시 친구들과 단체 채팅방에 전송하는 일이 잦은데, 기존의 우분투 22.04 환경에서 제공하는 기본 스크린샷 도구는 물론이고, 유명한 외부 캡쳐 툴조차 Wine 환경 내의 카카오톡으로 이미지 전송을 전혀 지원하지 않아 답답함을 느껴왔다.
 해외 커뮤니티에서는 카카오톡을 쓰지 않으니 당연히 이에 대한 논의가 없고, 국내 사용자분들 또한 이 문제를 해결하지 못해 그냥 저장된 이미지를 일일히 전송하는 방식을 사용하고 계신 것으로 안다.</p>

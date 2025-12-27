@@ -36,10 +36,11 @@ export default defineUserConfig({
         ]
       },
       {
-        text: '🤖 Artificial Intelligence',
-        collapsible: true,
+        text: 'Ubuntu',
+        collapsible: false,
         children: [
-          '/ai/15', '/ai/16', '/ai/17', '/ai/20', '/ai/21', '/ai/24', '/ai/25', '/ai/26', '/ai/27', 
+          '/os/wine_without_explorer',
+          '/os/clipboard_image_kakaotalk_ubuntu',
         ]
       },
       {
