@@ -1,4 +1,4 @@
-# 차전자피(Psyllium Husk)
+# 차전자피 (Psyllium Husk)
 
 <p align="center">
   <img src="https://drvegan.com/cdn/shop/files/Psyllium_Husk.jpg?v=1689267974&width=1200" width="240" alt="Main Logo" />

@@ -41,6 +41,25 @@ export default defineUserConfig({
         children: [
           '/os/wine_without_explorer',
           '/os/clipboard_image_kakaotalk_ubuntu',
+          '/os/winemoji',
+        ]
+      },
+      {
+        text: 'Wellness',
+        collapsible: false,
+        children: [
+          '/wellness/PsylliumHusk',
+          '/wellness/ExtraVirginOliveOil',
+          '/wellness/NasalIrrigation',
+        ]
+      },
+      {
+        text: 'Humanities',
+        collapsible: false,
+        children: [
+          '/humanities/Nordvik',
+          '/humanities/NorthSentinelIsland',
+          '/humanities/Rongorongo',
         ]
       },
       {
