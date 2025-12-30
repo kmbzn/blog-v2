@@ -1,6 +1,6 @@
 <template><div><h1 id="wine-카카오톡-이모지-깨짐-문제-해결" tabindex="-1"><a class="header-anchor" href="#wine-카카오톡-이모지-깨짐-문제-해결"><span>Wine 카카오톡 이모지 깨짐 문제 해결</span></a></h1>
 <p align="center">
-  <img src="@source/os/logo.png" width="192" alt="Main Logo" />
+  <img src="@source/os/logo.webp" width="192" alt="Main Logo" />
 </p>
 <p>GitHub 링크: <a href="https://github.com/kmbzn/project-winemoji" target="_blank" rel="noopener noreferrer">https://github.com/kmbzn/project-winemoji</a></p>
 <h3 id="winemoji-specialized-font-for-resolving-emoji-rendering-errors-in-wine-environments" tabindex="-1"><a class="header-anchor" href="#winemoji-specialized-font-for-resolving-emoji-rendering-errors-in-wine-environments"><span>Winemoji: Specialized font for resolving emoji rendering errors in wine environments</span></a></h3>
