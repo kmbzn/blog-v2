@@ -1,12 +1,12 @@
 # Wine 카카오톡 이모지 깨짐 문제 해결
 
 <p align="center">
-  <img src="logo.png" width="192" alt="Main Logo" />
+  <img src="@source/os/logo.png" width="192" alt="Main Logo" />
 </p>
 
 GitHub 링크: [https://github.com/kmbzn/project-winemoji](https://github.com/kmbzn/project-winemoji)
 
-## Winemoji: Specialized font for resolving emoji rendering errors in wine environments
+### Winemoji: Specialized font for resolving emoji rendering errors in wine environments
 
 🍷😂 **Winemoji**는 리눅스의 Wine 환경에서 카카오톡과 같은 윈도우 기반 앱을 사용할 때 이모지 폰트가 깨지는(tofu) 문제를 해결하기 위해 제작된 특수 목적 폰트입니다. 기존에 이러한 문제로 불편함을 겪고 있던 분들에게 최적의 사용 환경을 제공하는 것을 목표로 시작되었습니다.
 
@@ -15,6 +15,11 @@ GitHub 링크: [https://github.com/kmbzn/project-winemoji](https://github.com/km
 ![tofu](tofu.png)
 
 ## 설치 방법
+
+:::info
+Ubuntu 22.04 LTS  
+wine 10.0
+:::
 
 1. [github repository](https://github.com/kmbzn/project-winemoji)에서 `Winemoji-NBG.ttf` 파일을 다운로드합니다.
 2. 리눅스 시스템의 폰트 폴더로 파일을 이동합니다.
@@ -37,7 +42,9 @@ GitHub 링크: [https://github.com/kmbzn/project-winemoji](https://github.com/km
 
 ![](restart.png)
 
-> 해당 구현 방식의 한계로 low surrogate 영역에 해당하는 1,024개의 이모지만 사용 가능합니다. Apple의 자체 조합형 이모지나 일부 최신 이모지들의 경우 **여전히 표시되지 않을 수** 있습니다.
+:::warning
+해당 구현 방식의 한계로 low surrogate 영역에 해당하는 1,024개 이하의 이모지만 사용 가능합니다. Apple의 자체 조합형 이모지나 일부 최신 이모지들의 경우 **여전히 표시되지 않을 수** 있습니다.
+:::
 ![chat](chat.png)
 
 ## Why not color emojis?
@@ -71,8 +78,11 @@ sudo apt install fontforge
 1. **준비:** **FontForge**를 설치하고 베이스가 될 폰트와 소스 이모지 폰트를 준비합니다.
 2. **이름 변경:** 라이선스 준수 및 시스템 충돌 방지를 위해 **Font Info**에서 폰트 이름을 고유한 이름(예: `MyEmoji-NBG`)으로 변경합니다.
 3. **스크립트 실행:** 아래의 FontForge python script를 실행하여 이모지를 Low Surrogate 영역으로 복사합니다.
-    - Priority 함수를 통해 🤣(U+1F923)와 같은 이모지가 🔣(U+1F523)와 같은 이모지들에 비해 higher priority를 갖도록 설정하는 것이 도움이 될 수 있습니다.
 4. **크기 조정:** 복사된 이모지들을 전체 선택하여 **Element → Transformations** 메뉴에서 베이스 폰트의 EM Size에 맞게 크기를 조절합니다.
+
+:::tip
+Priority 함수를 통해 🤣(U+1F923)와 같이 주로 사용되는 이모지가 🔣(U+1F523)와 같이 잘 사용되지 않는 이모지들에 비해 higher priority를 갖도록 수동으로 설정하는 것이 도움이 될 수 있습니다.
+:::
 
 ## Fontforge Paste Python Script
 ```py

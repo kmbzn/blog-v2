@@ -5,7 +5,7 @@
 wine 10.0</p>
 </div>
 <p><img src="@source/os/image-1.png" alt="alt text"></p>
-<p>리눅스 GNOME 환경에서 wine을 통해 카카오톡을 사용하다 보면, 실행할 때마다 정체를 알 수 없는 하얀색 <code v-pre>explorer.exe</code> 창이 함께 떠서 일일이 닫아줘야 하는 번거로움이 있습니다. 이는 본래 윈도우 작업 표시줄에 작게 뜨는 카카오톡 아이콘에 해당하는 것으로, 눌러서 빠르게 카카오톡 창에 접근할 수 있는 기능을 제공합니다. 하지만 wine은 우분투 환경에서 이를 구현하기 위해 Wine explorer의 별도의 창을 띄우는 방식을 채택하였는데, 사실 저와 같은 일반 사용자들에게는 매번 이 창을 닫아줘야 해서 거슬림으로 다가왔습니다.</p>
+<p>리눅스 GNOME 환경에서 wine을 통해 카카오톡을 사용하다 보면, 실행할 때마다 정체를 알 수 없는 <code v-pre>explorer.exe</code> 창이 함께 떠서 일일이 닫아줘야 하는 번거로움이 있습니다. 이는 본래 윈도우 작업 표시줄에 작게 뜨는 카카오톡 아이콘에 해당하는 것으로, 눌러서 빠르게 카카오톡 창에 접근할 수 있는 기능을 제공합니다. 하지만 wine은 우분투 환경에서 이를 구현하기 위해 Wine explorer의 별도의 창을 띄우는 방식을 채택하였는데, 사실 저와 같은 일반 사용자들에게는 매번 이 창을 닫아줘야 해서 거슬림으로 다가왔습니다.</p>
 <p><code v-pre>.desktop</code> 파일을 수정해서 shell 스크립트를 불러오게 하여 <code v-pre>pkill explorer.exe</code>로 프로세스를 죽여버리는 방법도 있겠지만, 이렇게 하면 우분투와 wine 환경 사이의 클립보드 복사/붙여넣기가 작동하지 않게 됩니다. 따라서 쉘 스크립트를 활용해 프로세스는 유지하면서 창만 자동으로 닫는 방법을 소개하려 합니다.</p>
 <h2 id="_1-사전-준비" tabindex="-1"><a class="header-anchor" href="#_1-사전-준비"><span>1. 사전 준비</span></a></h2>
 <p>창 제어 도구인 <code v-pre>wmctrl</code>이 필요합니다. 터미널에서 아래 명령어로 설치해 주세요.</p>
@@ -22,8 +22,8 @@ wine 10.0</p>
 <span class="line"><span class="token comment"># 2. 카카오톡 실행 (nohup으로 프로세스 보호 및 로그 무시)</span></span>
 <span class="line"><span class="token function">nohup</span> wine <span class="token string">"/home/사용자명/.wine/drive_c/Program Files/Kakao/KakaoTalk/KakaoTalk.exe"</span> <span class="token operator">></span> /dev/null <span class="token operator"><span class="token file-descriptor important">2</span>></span><span class="token file-descriptor important">&amp;1</span> <span class="token operator">&amp;</span></span>
 <span class="line"></span>
-<span class="line"><span class="token comment"># 3. 창이 생성될 때까지 대기 (시스템 사양에 따라 5~7초 권장)</span></span>
-<span class="line"><span class="token function">sleep</span> <span class="token number">6</span></span>
+<span class="line"><span class="token comment"># 3. 창이 생성될 때까지 대기 (시스템 사양에 따라 6~8초 권장)</span></span>
+<span class="line"><span class="token function">sleep</span> <span class="token number">7</span></span>
 <span class="line"></span>
 <span class="line"><span class="token comment"># 4. explorer.exe 프로세스를 찾아서 '창'만 닫기</span></span>
 <span class="line"><span class="token comment"># pkill 대신 wmctrl을 사용하여 클립보드와 트레이 기능을 보존합니다.</span></span>
@@ -48,8 +48,10 @@ wine 10.0</p>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h2 id="마치며" tabindex="-1"><a class="header-anchor" href="#마치며"><span>마치며</span></a></h2>
 <p>이 방법을 사용하면 리눅스에서도 윈도우와 다름없는 쾌적한 카카오톡 환경을 누릴 수 있습니다. 핵심은 프로세스(PID)를 찾아 창(Window ID)만 타격하는 것입니다.</p>
 <p>이제 더 이상 거슬리는 빈 창을 직접 닫지 마세요.</p>
-<h2 id="💡-팁-하나-더" tabindex="-1"><a class="header-anchor" href="#💡-팁-하나-더"><span>💡 팁 하나 더</span></a></h2>
-<p>스크립트를 실행했는데도 창이 안 닫힌다면 <code v-pre>sleep 6</code> 부분의 숫자를 조금 더 늘려보세요. 값이 너무 크면 창이 닫히는 데 딜레이가 발생하고, 값이 너무 작으면 창이 열리기도 전에 명령어가 지나가버릴 수도 있기 때문입니다.</p>
+<div class="hint-container tip">
+<p class="hint-container-title">팁</p>
+<p>스크립트를 실행했는데도 창이 안 닫힌다면 <code v-pre>sleep 7</code> 부분의 숫자를 조금 더 늘려보세요. 값이 너무 크면 창이 닫히는 데 딜레이가 발생하고, 값이 너무 작으면 창이 열리기도 전에 명령어가 지나가버릴 수도 있기 때문입니다.</p>
+</div>
 </div></template>
 
 

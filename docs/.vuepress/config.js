@@ -51,6 +51,7 @@ export default defineUserConfig({
           '/wellness/PsylliumHusk',
           '/wellness/ExtraVirginOliveOil',
           '/wellness/NasalIrrigation',
+          '/wellness/ht08',
         ]
       },
       {

@@ -1,5 +1,5 @@
 import comp from "/home/kmbzn/workspace/blog-v2/docs/.vuepress/.temp/pages/os/wine_without_explorer.html.vue"
-const data = JSON.parse("{\"path\":\"/os/wine_without_explorer.html\",\"title\":\"Wine 환경에서 카카오톡 실행 시 explorer.exe 뜨지 않게 하는 법\",\"lang\":\"ko-KR\",\"frontmatter\":{},\"git\":{},\"filePathRelative\":\"os/wine_without_explorer.md\"}")
+const data = JSON.parse("{\"path\":\"/os/wine_without_explorer.html\",\"title\":\"Wine 환경에서 카카오톡 실행 시 explorer.exe 뜨지 않게 하는 법\",\"lang\":\"ko-KR\",\"frontmatter\":{},\"git\":{\"updatedTime\":1766864553000,\"contributors\":[{\"name\":\"kmbzn\",\"username\":\"kmbzn\",\"email\":\"kmbzn24@gmail.com\",\"commits\":1,\"url\":\"https://github.com/kmbzn\"}],\"changelog\":[{\"hash\":\"f6684f1f7a5eb18e27611d7a52685340be3257c2\",\"time\":1766864553000,\"email\":\"kmbzn24@gmail.com\",\"author\":\"kmbzn\",\"message\":\"update 1228\"}]},\"filePathRelative\":\"os/wine_without_explorer.md\"}")
 export { comp, data }
 
 if (import.meta.webpackHot) {
