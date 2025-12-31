@@ -29,7 +29,7 @@ wine 10.0
 
 원인을 알았으니 이제 해결책은 간단하다.
 
-스크린샷을 찍고 -> PNG를 BMP로 변환해서 -> 클립보드에 찔러 넣어주는 명령어 세트를 만들면 된다.
+스크린샷을 찍고 → PNG를 BMP로 변환해서 → 클립보드에 찔러 넣어주는 명령어 세트를 만들면 된다.
 
 ### 1. 필수 패키지 설치
 
@@ -69,7 +69,7 @@ gnome-screenshot -a -f /tmp/screen.png && convert /tmp/screen.png bmp:- | wl-cop
 - Shortcut: `Ctrl` + `Shift` + `Print` (원하는 키 조합)
 
 ## 결과
-![alt text](image.png)
+![alt text](paste.webp)
 이제 설정한 단축키를 누르고 영역을 드래그한 뒤, Wine 카카오톡 입력창에 `Ctrl + V`를 눌러보자. 거짓말처럼 이미지가 척 하고 붙는 것을 볼 수 있다.
 
 이 방법은 중간에 `convert` 과정을 거치기 때문에, 굳이 `gnome-screenshot`이 아니더라도 `flameshot`이나 다른 도구를 응용해서도 충분히 구현 가능하다.
