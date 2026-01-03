@@ -1,16 +1,3 @@
 import comp from "/home/kmbzn/workspace/blog-v2/docs/.vuepress/.temp/pages/ai/midterm.html.vue"
 const data = JSON.parse("{\"path\":\"/ai/midterm.html\",\"title\":\"\",\"lang\":\"ko-KR\",\"frontmatter\":{},\"git\":{\"updatedTime\":1761209458000,\"contributors\":[{\"name\":\"kmbzn\",\"username\":\"kmbzn\",\"email\":\"kmbzn24@gmail.com\",\"commits\":1,\"url\":\"https://github.com/kmbzn\"}],\"changelog\":[{\"hash\":\"ee235297a4f05a9ef6a2dbb4b9392ac5cfc1a052\",\"time\":1761209458000,\"email\":\"kmbzn24@gmail.com\",\"author\":\"kmbzn\",\"message\":\"Add comprehensive guidelines for Assignment 2-2 on Web Application Development, including objectives, submission methods, implementation details, deployment recommendations, demo video requirements, and wiki content specifications.\"}]},\"filePathRelative\":\"ai/midterm.md\"}")
 export { comp, data }
-
-if (import.meta.webpackHot) {
-  import.meta.webpackHot.accept()
-  if (__VUE_HMR_RUNTIME__.updatePageData) {
-    __VUE_HMR_RUNTIME__.updatePageData(data)
-  }
-}
-
-if (import.meta.hot) {
-  import.meta.hot.accept(({ data }) => {
-    __VUE_HMR_RUNTIME__.updatePageData(data)
-  })
-}

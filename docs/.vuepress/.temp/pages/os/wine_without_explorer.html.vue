@@ -4,7 +4,7 @@
 <p>Ubuntu 22.04 LTS<br>
 wine 10.0</p>
 </div>
-<p><img src="@source/os/image-1.png" alt="alt text"></p>
+<p><img src="@source/os/explorer.webp" alt="alt text"></p>
 <p>리눅스 GNOME 환경에서 wine을 통해 카카오톡을 사용하다 보면, 실행할 때마다 정체를 알 수 없는 <code v-pre>explorer.exe</code> 창이 함께 떠서 일일이 닫아줘야 하는 번거로움이 있습니다. 이는 본래 윈도우 작업 표시줄에 작게 뜨는 카카오톡 아이콘에 해당하는 것으로, 눌러서 빠르게 카카오톡 창에 접근할 수 있는 기능을 제공합니다. 하지만 wine은 우분투 환경에서 이를 구현하기 위해 Wine explorer의 별도의 창을 띄우는 방식을 채택하였는데, 사실 저와 같은 일반 사용자들에게는 매번 이 창을 닫아줘야 해서 거슬림으로 다가왔습니다.</p>
 <p><code v-pre>.desktop</code> 파일을 수정해서 shell 스크립트를 불러오게 하여 <code v-pre>pkill explorer.exe</code>로 프로세스를 죽여버리는 방법도 있겠지만, 이렇게 하면 우분투와 wine 환경 사이의 클립보드 복사/붙여넣기가 작동하지 않게 됩니다. 따라서 쉘 스크립트를 활용해 프로세스는 유지하면서 창만 자동으로 닫는 방법을 소개하려 합니다.</p>
 <h2 id="_1-사전-준비" tabindex="-1"><a class="header-anchor" href="#_1-사전-준비"><span>1. 사전 준비</span></a></h2>

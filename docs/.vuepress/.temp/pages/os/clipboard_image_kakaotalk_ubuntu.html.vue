@@ -19,7 +19,7 @@ wine 10.0</p>
 <p>여기서 힌트를 얻었는데, 즉, Wine 카카오톡은 'PNG'가 아닌 'BMP(비트맵)' 형식을 원했던 것이다. 최신 도구들이 PNG 형식만 건네주니 카톡은 나 이거 몰라 하고 입을 닫아버린 셈이다.</p>
 <h2 id="해결-방법-강제-형변환-파이프라인-구축" tabindex="-1"><a class="header-anchor" href="#해결-방법-강제-형변환-파이프라인-구축"><span>해결 방법: 강제 형변환 파이프라인 구축</span></a></h2>
 <p>원인을 알았으니 이제 해결책은 간단하다.</p>
-<p>스크린샷을 찍고 -&gt; PNG를 BMP로 변환해서 -&gt; 클립보드에 찔러 넣어주는 명령어 세트를 만들면 된다.</p>
+<p>스크린샷을 찍고 → PNG를 BMP로 변환해서 → 클립보드에 찔러 넣어주는 명령어 세트를 만들면 된다.</p>
 <h3 id="_1-필수-패키지-설치" tabindex="-1"><a class="header-anchor" href="#_1-필수-패키지-설치"><span>1. 필수 패키지 설치</span></a></h3>
 <p>이미지 변환을 위한 <code v-pre>imagemagick</code>과 Wayland 클립보드 제어를 위한 <code v-pre>wl-clipboard</code>, 그리고 스크린샷 도구가 필요하다.</p>
 <div class="language-bash line-numbers-mode" data-highlighter="prismjs" data-ext="sh"><pre v-pre><code class="language-bash"><span class="line"><span class="token function">sudo</span> <span class="token function">apt</span> update</span>
@@ -54,7 +54,7 @@ wine 10.0</p>
 </li>
 </ul>
 <h2 id="결과" tabindex="-1"><a class="header-anchor" href="#결과"><span>결과</span></a></h2>
-<p><img src="@source/os/image.png" alt="alt text">
+<p><img src="@source/os/paste.webp" alt="alt text">
 이제 설정한 단축키를 누르고 영역을 드래그한 뒤, Wine 카카오톡 입력창에 <code v-pre>Ctrl + V</code>를 눌러보자. 거짓말처럼 이미지가 척 하고 붙는 것을 볼 수 있다.</p>
 <p>이 방법은 중간에 <code v-pre>convert</code> 과정을 거치기 때문에, 굳이 <code v-pre>gnome-screenshot</code>이 아니더라도 <code v-pre>flameshot</code>이나 다른 도구를 응용해서도 충분히 구현 가능하다.</p>
 <p>우분투 환경에서 카톡 쓰기가 한결 쾌적해졌다. 이제 짤 전송을 멈추지 말자.</p>

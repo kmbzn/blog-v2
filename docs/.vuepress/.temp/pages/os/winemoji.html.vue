@@ -6,7 +6,7 @@
 <h3 id="winemoji-specialized-font-for-resolving-emoji-rendering-errors-in-wine-environments" tabindex="-1"><a class="header-anchor" href="#winemoji-specialized-font-for-resolving-emoji-rendering-errors-in-wine-environments"><span>Winemoji: Specialized font for resolving emoji rendering errors in wine environments</span></a></h3>
 <p>🍷😂 <strong>Winemoji</strong>는 리눅스의 Wine 환경에서 카카오톡과 같은 윈도우 기반 앱을 사용할 때 이모지 폰트가 깨지는(tofu) 문제를 해결하기 위해 제작된 특수 목적 폰트입니다. 기존에 이러한 문제로 불편함을 겪고 있던 분들에게 최적의 사용 환경을 제공하는 것을 목표로 시작되었습니다.</p>
 <p><strong>Winemoji</strong> is a specialized font designed to resolve the issue of broken emoji fonts (tofu) when using Windows-based applications like KakaoTalk within the Wine environment on Linux systems. It was created with the goal of providing an optimal user experience for those who have previously encountered inconvenience due to this problem.</p>
-<p><img src="@source/os/tofu.png" alt="tofu"></p>
+<p><img src="@source/os/tofu.webp" alt="tofu"></p>
 <h2 id="설치-방법" tabindex="-1"><a class="header-anchor" href="#설치-방법"><span>설치 방법</span></a></h2>
 <div class="hint-container info">
 <p class="hint-container-title">정보</p>
@@ -24,18 +24,18 @@ wine 10.0</p>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div></li>
 </ol>
 <h3 id="💬-카카오톡-적용-방법" tabindex="-1"><a class="header-anchor" href="#💬-카카오톡-적용-방법"><span>💬 카카오톡 적용 방법</span></a></h3>
-<p><img src="@source/os/settings.png" alt="settings"></p>
+<p><img src="@source/os/settings.webp" alt="settings"></p>
 <ol>
 <li>⚙️ → <strong>설정</strong> → <strong>화면</strong> → <strong>기본</strong> → <strong>글씨체</strong> 메뉴로 이동합니다.</li>
 <li>글씨체 선택에서 <strong>Winemoji NBG</strong> (or <strong>와인모지 NBG</strong>)를 선택합니다.</li>
 <li>카카오톡을 재시작하면 한글과 이모지가 정상적으로 출력되는 것을 확인할 수 있습니다.</li>
 </ol>
-<p><img src="@source/os/restart.png" alt=""></p>
+<p><img src="@source/os/restart.webp" alt=""></p>
 <div class="hint-container warning">
 <p class="hint-container-title">경고</p>
 <p>해당 구현 방식의 한계로 low surrogate 영역에 해당하는 1,024개 이하의 이모지만 사용 가능합니다. Apple의 자체 조합형 이모지나 일부 최신 이모지들의 경우 <strong>여전히 표시되지 않을 수</strong> 있습니다.</p>
 </div>
-<p><img src="@source/os/chat.png" alt="chat"></p>
+<p><img src="@source/os/chat.webp" alt="chat"></p>
 <h2 id="why-not-color-emojis" tabindex="-1"><a class="header-anchor" href="#why-not-color-emojis"><span>Why not color emojis?</span></a></h2>
 <p>본 프로젝트에서 컬러 이모지(Noto Color Emoji 등)를 사용하지 않고 흑백(Noto Emoji)을 선택한 이유는 다음과 같습니다.</p>
 <ul>

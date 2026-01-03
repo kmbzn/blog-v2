@@ -33,7 +33,7 @@
           </div>
           <p class="copyright">
             All trademarks and logos are property of their respective owners.<br>
-            © 2025 kmbzn ·
+            © 2026 kmbzn ·
             <a href="https://github.com/kmbzn/blog/blob/master/LICENSE" target="_blank">MIT License</a><br>
           </p>
         </div>
