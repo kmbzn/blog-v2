@@ -1,3 +1,16 @@
 import comp from "/home/kmbzn/workspace/blog-v2/docs/.vuepress/.temp/pages/db/18.html.vue"
 const data = JSON.parse("{\"path\":\"/db/18.html\",\"title\":\"18. Concurrency Control\",\"lang\":\"ko-KR\",\"frontmatter\":{},\"git\":{\"updatedTime\":1765203537000,\"contributors\":[{\"name\":\"kmbzn\",\"username\":\"kmbzn\",\"email\":\"kmbzn24@gmail.com\",\"commits\":7,\"url\":\"https://github.com/kmbzn\"}],\"changelog\":[{\"hash\":\"5f43b14e6f4ac97ce78384a77f3488bb7203dee9\",\"time\":1765203537000,\"email\":\"kmbzn24@gmail.com\",\"author\":\"kmbzn\",\"message\":\"add wiki\"},{\"hash\":\"e2bf6baa185a14d1de91459530140be5722a8321\",\"time\":1764684745000,\"email\":\"kmbzn24@gmail.com\",\"author\":\"kmbzn\",\"message\":\"add /db/19.md\"},{\"hash\":\"2c07b156de97dea5b57c1f275c3e48e0dd7643ea\",\"time\":1764457873000,\"email\":\"kmbzn24@gmail.com\",\"author\":\"kmbzn\",\"message\":\"update db/18\"},{\"hash\":\"3252b4327997e1b87f9011505633d9f1d9e8b9b3\",\"time\":1764457304000,\"email\":\"kmbzn24@gmail.com\",\"author\":\"kmbzn\",\"message\":\"db 18\"},{\"hash\":\"2541819b0c7ed9426070835ede2f1a435d04b367\",\"time\":1764447622000,\"email\":\"kmbzn24@gmail.com\",\"author\":\"kmbzn\",\"message\":\"update db\"},{\"hash\":\"f81f9042e7888855a506f92261c74aaa2d86aa2a\",\"time\":1764305376000,\"email\":\"kmbzn24@gmail.com\",\"author\":\"kmbzn\",\"message\":\"update npm\"},{\"hash\":\"eccceaaadcd967d6c9ccd932a5897280a0f9ecdf\",\"time\":1764081817000,\"email\":\"kmbzn24@gmail.com\",\"author\":\"kmbzn\",\"message\":\"Add homework documentation for Software Engineering course, including design pattern analysis and implementation details\"}]},\"filePathRelative\":\"db/18.md\"}")
 export { comp, data }
+
+if (import.meta.webpackHot) {
+  import.meta.webpackHot.accept()
+  if (__VUE_HMR_RUNTIME__.updatePageData) {
+    __VUE_HMR_RUNTIME__.updatePageData(data)
+  }
+}
+
+if (import.meta.hot) {
+  import.meta.hot.accept(({ data }) => {
+    __VUE_HMR_RUNTIME__.updatePageData(data)
+  })
+}

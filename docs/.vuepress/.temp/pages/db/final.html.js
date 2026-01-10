@@ -1,3 +1,16 @@
 import comp from "/home/kmbzn/workspace/blog-v2/docs/.vuepress/.temp/pages/db/final.html.vue"
 const data = JSON.parse("{\"path\":\"/db/final.html\",\"title\":\"암기 노트\",\"lang\":\"ko-KR\",\"frontmatter\":{},\"git\":{\"updatedTime\":1765490557000,\"contributors\":[{\"name\":\"Byungjun Kim\",\"username\":\"\",\"email\":\"kmbzn24@gmail.com\",\"commits\":1}],\"changelog\":[{\"hash\":\"4803658c3d1a310eb04dd4cddd8242ad9591eff8\",\"time\":1765490557000,\"email\":\"kmbzn24@gmail.com\",\"author\":\"Byungjun Kim\",\"message\":\"update db final\"}]},\"filePathRelative\":\"db/final.md\"}")
 export { comp, data }
+
+if (import.meta.webpackHot) {
+  import.meta.webpackHot.accept()
+  if (__VUE_HMR_RUNTIME__.updatePageData) {
+    __VUE_HMR_RUNTIME__.updatePageData(data)
+  }
+}
+
+if (import.meta.hot) {
+  import.meta.hot.accept(({ data }) => {
+    __VUE_HMR_RUNTIME__.updatePageData(data)
+  })
+}
