@@ -36,6 +36,13 @@ export default defineUserConfig({
         ]
       },
       {
+        text: 'Algorithm',
+        collapsible: false,
+        children: [
+          '/a/1018', '/a/1966', '/a/pytimeout', '/a/stdvector', '/a/vim', 
+        ]
+      },
+      {
         text: 'Ubuntu',
         collapsible: false,
         children: [
@@ -46,7 +53,7 @@ export default defineUserConfig({
       },
       {
         text: 'Wellness',
-        collapsible: false,
+        collapsible: true,
         children: [
           '/wellness/PsylliumHusk',
           '/wellness/ExtraVirginOliveOil',
@@ -56,18 +63,11 @@ export default defineUserConfig({
       },
       {
         text: 'Humanities',
-        collapsible: false,
+        collapsible: true,
         children: [
           '/humanities/Nordvik',
           '/humanities/NorthSentinelIsland',
           '/humanities/Rongorongo',
-        ]
-      },
-      {
-        text: '🗂️ Database System',
-        collapsible: true,
-        children: [
-          '/db/1', '/db/2', '/db/3', '/db/6', '/db/7-1', '/db/7-2', '/db/13', '/db/14', '/db/15', '/db/16', '/db/17', '/db/18', '/db/19',
         ]
       },
     ],
