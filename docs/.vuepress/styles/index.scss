@@ -204,7 +204,7 @@ html[data-theme='dark'] img[src$=".png"]:not([src^="http"]) {
 }
 
 html[data-theme="light"] .token {
-    filter: invert(1) hue-rotate(180deg) contrast(1.5) brightness(0.9);
+    filter: invert(1) hue-rotate(180deg) contrast(1.5) brightness(0.7);
 }
 
 /* ---------------------------------
