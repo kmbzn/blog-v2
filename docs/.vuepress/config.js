@@ -46,6 +46,7 @@ export default defineUserConfig({
         text: 'Ubuntu',
         collapsible: false,
         children: [
+          '/os/terminus',
           '/os/wine_without_explorer',
           '/os/clipboard_image_kakaotalk_ubuntu',
           '/os/winemoji',

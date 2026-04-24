@@ -1,77 +1,41 @@
-# Wine 카카오톡 스크린샷 붙여넣기 문제 해결 (Wayland 환경)
+# Wayland 스크린샷 카카오톡(Wine) 붙여넣기 완벽 해결법
 
 :::info
-Ubuntu 22.04 LTS  
-wine 10.0
+Ubuntu 26.04 LTS  
+wine 11.0
 :::
 
-## 서론
+> *핵심 아이디어: Wine 기반 카카오톡은 **BMP 포맷**만 클립보드 인식이 가능합니다.*
 
-필자는 평상시에 우분투로 카톡할 때 흥미로운 기사나 썸네일 이미지를 스크랩해서 즉시 친구들과 단체 채팅방에 전송하는 일이 잦은데, 기존의 우분투 22.04 환경에서 제공하는 기본 스크린샷 도구는 물론이고, 유명한 외부 캡쳐 툴조차 Wine 환경 내의 카카오톡으로 이미지 전송을 전혀 지원하지 않아 답답함을 느껴왔다.
-해외 커뮤니티에서는 카카오톡을 쓰지 않으니 당연히 이에 대한 논의가 없고, 국내 사용자분들 또한 이 문제를 해결하지 못해 그냥 저장된 이미지를 일일히 전송하는 방식을 사용하고 계신 것으로 안다.
+리눅스(GNOME Wayland) 환경에서 캡처한 이미지가 카카오톡에 붙여넣기(Ctrl+V) 되지 않아 당황하셨나요? 
 
-이미지를 파일로 저장하고, 카톡에서 파일 전송 버튼을 누르고, 파일을 찾아 보내는 과정은 너무나 번거롭다. `Ctrl+V` 한 번이면 되어야 할 일을 우분투를 쓴다는 이유로 왜 못하고 있을까?
+Wine 위에서 돌아가는 카카오톡은 구조적으로 **PNG를 인식하지 못하고 오직 BMP 형식만 받아들입니다.** 이를 해결하기 위해 캡처와 동시에 파일을 저장하고, 클립보드에 BMP 데이터를 주입하는 최적의 명령어를 공유합니다.
 
-이 글에서는 원인을 집요하게 파고들어, 어떤 캡쳐 도구를 쓰더라도 Wine 카카오톡에 이미지를 바로 붙여넣을 수 있는 완벽한 해결책을 공유하기 위해 작성했다. 국내 커뮤니티에서 그동안 명확한 해결책을 찾기 힘들었던 분들에게 도움이 되길 바란다.
+### 1. 핵심 기능
+- **Wine 카카오톡 호환성 확보**: 클립보드에 BMP 데이터를 강제로 쏴주어 카톡 복붙 문제를 원천 해결합니다.
+- **Wayland 지연 시간 해결**: `wl-paste`를 연동하여 데이터 유실 없는 안정적인 캡처가 가능합니다.
+- **자동 백업**: 별도 저장 버튼 없이도 `Pictures/Screenshots` 폴더에 PNG 파일이 자동 저장됩니다.
+- **Flameshot 순정 상태 유지**: 도구 설정 변경 없이 명령어 한 줄로 모든 기능을 수행합니다.
 
-## 왜 붙여넣기가 안 될까?
-
-우분투 22.04(Wayland)의 최신 스크린샷 도구들은 캡쳐한 이미지를 클립보드에 담을 때 주로 `image/png` 포맷을 사용한다. 하지만 Wine 위에서 돌아가는 윈도우용 카카오톡은 매우 까다로운 식성을 가지고 있었다.
-
-터미널에서 `xclip` 명령어로 클립보드 내부를 뜯어본 결과는 다음과 같았다.
-
-- 작동하지 않는 도구들: `image/png` 만 제공
-- 유일하게 작동했던 구형 도구(`gnome-screenshot`): `image/bmp`, `image/x-MS-bmp` 등 비트맵 형식을 함께 제공
-
-여기서 힌트를 얻었는데, 즉, Wine 카카오톡은 'PNG'가 아닌 'BMP(비트맵)' 형식을 원했던 것이다. 최신 도구들이 PNG 형식만 건네주니 카톡은 나 이거 몰라 하고 입을 닫아버린 셈이다.
-
-## 해결 방법: 강제 형변환 파이프라인 구축
-
-원인을 알았으니 이제 해결책은 간단하다.
-
-스크린샷을 찍고 → PNG를 BMP로 변환해서 → 클립보드에 찔러 넣어주는 명령어 세트를 만들면 된다.
-
-### 1. 필수 패키지 설치
-
-이미지 변환을 위한 `imagemagick`과 Wayland 클립보드 제어를 위한 `wl-clipboard`, 그리고 스크린샷 도구가 필요하다.
+### 2. 사전 준비
+터미널에서 아래 패키지들을 먼저 설치해 주세요.
 
 ```bash
-sudo apt update
-sudo apt install imagemagick wl-clipboard gnome-screenshot
+sudo apt install flameshot wl-clipboard imagemagick copyq
 ```
 
-### 2. 명령어
-
-여러 시행착오 끝에 완성된 명령어이다. 이 한 줄로 캡쳐와 동시에 변환, 복사가 모두 이루어지게 된다.
+### 3. 최종 명령어 (단축키 등록용)
+설정(Settings) -> 키보드(Keyboard) -> 단축키(Shortcuts)에 아래 명령어를 등록하세요.
 
 ```bash
-gnome-screenshot -a -f /tmp/screen.png && convert /tmp/screen.png bmp:- | wl-copy -t image/bmp
+sh -c 'flameshot gui; dir="$HOME/Pictures/Screenshots"; mkdir -p "$dir"; f="$dir/screenshot_$(date +%Y%m%d_%H%M%S).png"; wl-paste -t image/png | magick png:- "$f" && [ -s "$f" ] && magick "$f" bmp:- | copyq copy image/x-MS-bmp -'
 ```
 
-- `gnome-screenshot -a -f ...`: 영역을 선택해 캡쳐하고 임시 파일로 저장한다.
-- `convert ... bmp:-`: 저장된 PNG 파일을 읽어 BMP 데이터로 실시간 변환한다.
-- `wl-copy -t image/bmp`: 변환된 데이터를 '이건 BMP야!'라고 명찰(`-t`)을 붙여 클립보드에 넣는다.
+### 4. 왜 이 명령어를 써야 합니까?
+- **카카오톡은 왜 안 붙여넣어졌을까?**: Wine 환경의 카카오톡은 클립보드에서 `.PNG` 형식을 찾지 못합니다. 이 명령어는 `magick`과 `copyq`를 이용해 **`image/x-MS-bmp`** 타입을 생성하여 카톡이 바로 인식하도록 만듭니다.
+- **`magick`의 역할**: 단순히 파일만 저장하는 게 아니라, 캡처된 데이터를 실시간으로 변환하여 확장자를 다양하게 쏴주는 엔진 역할을 합니다.
+- **`wl-paste` 활용**: Wayland 환경에서 발생하는 클립보드 호출 오류를 방지하는 핵심 장치입니다.
 
-### 3. 단축키(Shortcut) 설정하기
-
-:::warning
-이 명령어를 우분투 설정(`Settings`) > `Keyboard` > `View and Customize Shortcuts` > `Custom Shortcuts`에 그대로 넣으면 작동하지 않는다. 파이프(`|`)나 `&&` 같은 쉘 연산자를 단축키 실행기가 해석하지 못하기 때문이다.
-:::
-
-따라서 쉘(`sh`)을 호출하여 실행하도록 따옴표로 감싸주어야 한다.
-
-- Name: *(원하는 대로)*
-- Command:
-    ```bash
-    sh -c gnome-screenshot -a -f /tmp/screen.png && convert /tmp/screen.png bmp:- | wl-copy -t image/bmp
-    ```
-
-- Shortcut: `Ctrl` + `Shift` + `Print` (원하는 키 조합)
-
-## 결과
-![alt text](paste.webp)
-이제 설정한 단축키를 누르고 영역을 드래그한 뒤, Wine 카카오톡 입력창에 `Ctrl + V`를 눌러보자. 거짓말처럼 이미지가 척 하고 붙는 것을 볼 수 있다.
-
-이 방법은 중간에 `convert` 과정을 거치기 때문에, 굳이 `gnome-screenshot`이 아니더라도 `flameshot`이나 다른 도구를 응용해서도 충분히 구현 가능하다.
-
-우분투 환경에서 카톡 쓰기가 한결 쾌적해졌다. 이제 짤 전송을 멈추지 말자.
+![](paste.webp)
+> *이제 캡처 후 바로 카카오톡 대화창에서 `Ctrl+V`를 눌러보세요.*  
+> ***깔끔하게 전송**되는 것을 확인하실 수 있습니다.*
