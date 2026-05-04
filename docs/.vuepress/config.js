@@ -50,6 +50,7 @@ export default defineUserConfig({
           '/os/wine_without_explorer',
           '/os/clipboard_image_kakaotalk_ubuntu',
           '/os/winemoji',
+          '/os/no_animation',
         ]
       },
       {
