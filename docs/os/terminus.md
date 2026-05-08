@@ -1,21 +1,16 @@
-# 리눅스 GRUB 폰트 크기 조절
-
-:::info
-Ubuntu 26.04 LTS  
-wine 11.0
-:::
+# 리눅스 우분투 GRUB 폰트 변경
 
 우분투에서 가독성 좋은 비트맵 폰트인 **Terminus** 폰트를 사용하여 GRUB 메뉴 폰트 크기를 `32pt`로 키우는 방법입니다.
 
 ## 실행 스크립트
-아래 명령어를 터미널에 순서대로 입력하거나, 스크립트 파일로 만들어 실행하세요.
+아래 명령어를 터미널에 순서대로 입력하거나, 스크립트 파일로 만들어 실행해볼 수 있습니다.
 
-```bash
+```sh
 # 1. 폰트 설치
 sudo apt update
 sudo apt install -y fonts-terminus
 
-# 2. 폰트 버전에 상관없이 32pt 폰트 생성
+# 2. 폰트 버전에 상관없이 32pt의 폰트 생성
 sudo grub-mkfont -s 32 -o /boot/grub/fonts/terminus32.pf2 /usr/share/fonts/truetype/terminus/TerminusTTF-*.ttf
 
 # 3. GRUB 설정 파일 자동 업데이트
