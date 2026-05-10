@@ -1,17 +1,12 @@
-<template><div><h1 id="리눅스-grub-폰트-크기-조절" tabindex="-1"><a class="header-anchor" href="#리눅스-grub-폰트-크기-조절"><span>리눅스 GRUB 폰트 크기 조절</span></a></h1>
-<div class="hint-container info">
-<p class="hint-container-title">정보</p>
-<p>Ubuntu 26.04 LTS<br>
-wine 11.0</p>
-</div>
+<template><div><h1 id="리눅스-우분투-grub-폰트-변경" tabindex="-1"><a class="header-anchor" href="#리눅스-우분투-grub-폰트-변경"><span>리눅스 우분투 GRUB 폰트 변경</span></a></h1>
 <p>우분투에서 가독성 좋은 비트맵 폰트인 <strong>Terminus</strong> 폰트를 사용하여 GRUB 메뉴 폰트 크기를 <code v-pre>32pt</code>로 키우는 방법입니다.</p>
 <h2 id="실행-스크립트" tabindex="-1"><a class="header-anchor" href="#실행-스크립트"><span>실행 스크립트</span></a></h2>
-<p>아래 명령어를 터미널에 순서대로 입력하거나, 스크립트 파일로 만들어 실행하세요.</p>
+<p>아래 명령어를 터미널에 순서대로 입력하거나, 스크립트 파일로 만들어 실행해볼 수 있습니다.</p>
 <div class="language-bash line-numbers-mode" data-highlighter="prismjs" data-ext="sh"><pre v-pre><code class="language-bash"><span class="line"><span class="token comment"># 1. 폰트 설치</span></span>
 <span class="line"><span class="token function">sudo</span> <span class="token function">apt</span> update</span>
 <span class="line"><span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> <span class="token parameter variable">-y</span> fonts-terminus</span>
 <span class="line"></span>
-<span class="line"><span class="token comment"># 2. 폰트 버전에 상관없이 32pt 폰트 생성</span></span>
+<span class="line"><span class="token comment"># 2. 폰트 버전에 상관없이 32pt의 폰트 생성</span></span>
 <span class="line"><span class="token function">sudo</span> grub-mkfont <span class="token parameter variable">-s</span> <span class="token number">32</span> <span class="token parameter variable">-o</span> /boot/grub/fonts/terminus32.pf2 /usr/share/fonts/truetype/terminus/TerminusTTF-*.ttf</span>
 <span class="line"></span>
 <span class="line"><span class="token comment"># 3. GRUB 설정 파일 자동 업데이트</span></span>
