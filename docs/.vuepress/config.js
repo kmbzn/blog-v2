@@ -73,6 +73,22 @@ export default defineUserConfig({
           '/humanities/Rongorongo',
         ]
       },
+      {
+        text: 'Programming Languages',
+        collapsible: true,
+        children: [
+          '/pl/8-0-Statement-Level-Control-Structures',
+          '/pl/8-Subprogram',
+          '/pl/9-Implementing-Subprogram',
+          '/pl/10-1-Abstract-Data-Types-and-Encapsulation-Constructs',
+          '/pl/10-2-Support-for-Object-Oriented-Programming',
+          '/pl/11-Concurrency',
+          '/pl/12-FPL-(1)',
+          '/pl/13-FPL-(2)',
+          '/pl/14-Exception-Handling-and-Event-Handling',
+          '/pl/final',
+        ]
+      },
     ],
     sidebarDepth: 0,
     lastUpdated: true
