@@ -91,7 +91,12 @@ export default defineUserConfig({
       },
     ],
     sidebarDepth: 0,
-    lastUpdated: true
+    lastUpdated: true,
+    themePlugins: {
+      git: {
+        createdTime: true,
+      }
+    }
   }),
   bundler: viteBundler()
 })
