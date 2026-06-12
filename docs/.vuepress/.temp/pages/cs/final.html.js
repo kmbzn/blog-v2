@@ -1,3 +1,16 @@
 import comp from "/home/kmbzn/blog-v2/docs/.vuepress/.temp/pages/cs/final.html.vue"
 const data = JSON.parse("{\"path\":\"/cs/final.html\",\"title\":\"2024 Computer Security Final Exam\",\"lang\":\"ko-KR\",\"frontmatter\":{\"description\":\"2024 Computer Security Final Exam\",\"head\":[[\"script\",{\"type\":\"application/ld+json\"},\"{\\\"@context\\\":\\\"https://schema.org\\\",\\\"@type\\\":\\\"Article\\\",\\\"headline\\\":\\\"2024 Computer Security Final Exam\\\",\\\"image\\\":[\\\"https://kmbzn.com/images/og.png\\\"],\\\"dateModified\\\":\\\"2025-12-14T22:17:46.000Z\\\",\\\"author\\\":[]}\"],[\"meta\",{\"property\":\"og:url\",\"content\":\"https://kmbzn.com/cs/final.html\"}],[\"meta\",{\"property\":\"og:title\",\"content\":\"2024 Computer Security Final Exam\"}],[\"meta\",{\"property\":\"og:description\",\"content\":\"2024 Computer Security Final Exam\"}],[\"meta\",{\"property\":\"og:type\",\"content\":\"article\"}],[\"meta\",{\"property\":\"og:image\",\"content\":\"https://kmbzn.com/images/og.png\"}],[\"meta\",{\"property\":\"og:locale\",\"content\":\"ko-KR\"}],[\"meta\",{\"property\":\"og:updated_time\",\"content\":\"2025-12-14T22:17:46.000Z\"}],[\"meta\",{\"property\":\"article:modified_time\",\"content\":\"2025-12-14T22:17:46.000Z\"}]]},\"git\":{\"createdTime\":1765654172000,\"updatedTime\":1765750666000,\"contributors\":[{\"name\":\"kmbzn\",\"username\":\"kmbzn\",\"email\":\"kmbzn24@gmail.com\",\"commits\":2,\"url\":\"https://github.com/kmbzn\"}],\"changelog\":[{\"hash\":\"5b33905e1b606ce983d8be59799c26d0a7c9de87\",\"time\":1765750666000,\"email\":\"kmbzn24@gmail.com\",\"author\":\"kmbzn\",\"message\":\"final.md 업데이트\"},{\"hash\":\"fbc761248c4632f2dc6fe5fc2afee172914eca6c\",\"time\":1765654172000,\"email\":\"kmbzn24@gmail.com\",\"author\":\"kmbzn\",\"message\":\"update security\"}]},\"filePathRelative\":\"cs/final.md\",\"autoDesc\":true}")
 export { comp, data }
+
+if (import.meta.webpackHot) {
+  import.meta.webpackHot.accept()
+  if (__VUE_HMR_RUNTIME__.updatePageData) {
+    __VUE_HMR_RUNTIME__.updatePageData(data)
+  }
+}
+
+if (import.meta.hot) {
+  import.meta.hot.accept(({ data }) => {
+    __VUE_HMR_RUNTIME__.updatePageData(data)
+  })
+}

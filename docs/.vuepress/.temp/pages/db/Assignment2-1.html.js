@@ -1,3 +1,16 @@
 import comp from "/home/kmbzn/blog-v2/docs/.vuepress/.temp/pages/db/Assignment2-1.html.vue"
 const data = JSON.parse("{\"path\":\"/db/Assignment2-1.html\",\"title\":\"Assignment #2. Web Application Development\",\"lang\":\"ko-KR\",\"frontmatter\":{\"description\":\"Assignment #2. Web Application Development\",\"head\":[[\"script\",{\"type\":\"application/ld+json\"},\"{\\\"@context\\\":\\\"https://schema.org\\\",\\\"@type\\\":\\\"Article\\\",\\\"headline\\\":\\\"Assignment #2. Web Application Development\\\",\\\"image\\\":[\\\"https://kmbzn.com/images/og.png\\\"],\\\"dateModified\\\":\\\"2025-10-09T14:54:33.000Z\\\",\\\"author\\\":[]}\"],[\"meta\",{\"property\":\"og:url\",\"content\":\"https://kmbzn.com/db/Assignment2-1.html\"}],[\"meta\",{\"property\":\"og:title\",\"content\":\"Assignment #2. Web Application Development\"}],[\"meta\",{\"property\":\"og:description\",\"content\":\"Assignment #2. Web Application Development\"}],[\"meta\",{\"property\":\"og:type\",\"content\":\"article\"}],[\"meta\",{\"property\":\"og:image\",\"content\":\"https://kmbzn.com/images/og.png\"}],[\"meta\",{\"property\":\"og:locale\",\"content\":\"ko-KR\"}],[\"meta\",{\"property\":\"og:updated_time\",\"content\":\"2025-10-09T14:54:33.000Z\"}],[\"meta\",{\"property\":\"article:modified_time\",\"content\":\"2025-10-09T14:54:33.000Z\"}]]},\"git\":{\"createdTime\":1760021673000,\"updatedTime\":1760021673000,\"contributors\":[{\"name\":\"kmbzn\",\"username\":\"kmbzn\",\"email\":\"kmbzn24@gmail.com\",\"commits\":1,\"url\":\"https://github.com/kmbzn\"}],\"changelog\":[{\"hash\":\"f98c134d2294a5b7b7b87b9b9db2db636e468f5d\",\"time\":1760021673000,\"email\":\"kmbzn24@gmail.com\",\"author\":\"kmbzn\",\"message\":\"update db assignment\"}]},\"filePathRelative\":\"db/Assignment2-1.md\",\"autoDesc\":true}")
 export { comp, data }
+
+if (import.meta.webpackHot) {
+  import.meta.webpackHot.accept()
+  if (__VUE_HMR_RUNTIME__.updatePageData) {
+    __VUE_HMR_RUNTIME__.updatePageData(data)
+  }
+}
+
+if (import.meta.hot) {
+  import.meta.hot.accept(({ data }) => {
+    __VUE_HMR_RUNTIME__.updatePageData(data)
+  })
+}

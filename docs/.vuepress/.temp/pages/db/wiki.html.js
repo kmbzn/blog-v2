@@ -1,3 +1,16 @@
 import comp from "/home/kmbzn/blog-v2/docs/.vuepress/.temp/pages/db/wiki.html.vue"
 const data = JSON.parse("{\"path\":\"/db/wiki.html\",\"title\":\"Assignment 3. Implementing Augmented B+tree - wiki\",\"lang\":\"ko-KR\",\"frontmatter\":{\"description\":\"Assignment 3. Implementing Augmented B+tree - wiki\",\"head\":[[\"script\",{\"type\":\"application/ld+json\"},\"{\\\"@context\\\":\\\"https://schema.org\\\",\\\"@type\\\":\\\"Article\\\",\\\"headline\\\":\\\"Assignment 3. Implementing Augmented B+tree - wiki\\\",\\\"image\\\":[\\\"https://kmbzn.com/images/og.png\\\"],\\\"dateModified\\\":\\\"2025-11-20T13:17:48.000Z\\\",\\\"author\\\":[]}\"],[\"meta\",{\"property\":\"og:url\",\"content\":\"https://kmbzn.com/db/wiki.html\"}],[\"meta\",{\"property\":\"og:title\",\"content\":\"Assignment 3. Implementing Augmented B+tree - wiki\"}],[\"meta\",{\"property\":\"og:description\",\"content\":\"Assignment 3. Implementing Augmented B+tree - wiki\"}],[\"meta\",{\"property\":\"og:type\",\"content\":\"article\"}],[\"meta\",{\"property\":\"og:image\",\"content\":\"https://kmbzn.com/images/og.png\"}],[\"meta\",{\"property\":\"og:locale\",\"content\":\"ko-KR\"}],[\"meta\",{\"property\":\"og:updated_time\",\"content\":\"2025-11-20T13:17:48.000Z\"}],[\"meta\",{\"property\":\"article:modified_time\",\"content\":\"2025-11-20T13:17:48.000Z\"}]]},\"git\":{\"createdTime\":1761260557000,\"updatedTime\":1763644668000,\"contributors\":[{\"name\":\"kmbzn\",\"username\":\"kmbzn\",\"email\":\"kmbzn24@gmail.com\",\"commits\":5,\"url\":\"https://github.com/kmbzn\"}],\"changelog\":[{\"hash\":\"3abf20ba32f746af427949e9e0ec821f4aebd2ff\",\"time\":1763644668000,\"email\":\"kmbzn24@gmail.com\",\"author\":\"kmbzn\",\"message\":\"Remove unnecessary .DS_Store file and update wiki documentation with execution examples and troubleshooting details\"},{\"hash\":\"f5be8501c77bc7d73cad74e340f5cf90eaed99e2\",\"time\":1763642791000,\"email\":\"kmbzn24@gmail.com\",\"author\":\"kmbzn\",\"message\":\"Refactor wiki documentation for B+ tree implementation\"},{\"hash\":\"db59f13412c70dbd49dd7fa6dd23398d0d3044bc\",\"time\":1763626450000,\"email\":\"kmbzn24@gmail.com\",\"author\":\"kmbzn\",\"message\":\"bpt code update\"},{\"hash\":\"31dabd91062ae4097bbcb6f7bebeb609ae905ae8\",\"time\":1761263576000,\"email\":\"kmbzn24@gmail.com\",\"author\":\"kmbzn\",\"message\":\"위키 문서 수정: 데이터베이스 시스템 응용 제목 형식 변경 및 데모 영상 링크 추가\"},{\"hash\":\"8600b20ab0a31871d0a8ab1f33077cca06e672d9\",\"time\":1761260557000,\"email\":\"kmbzn24@gmail.com\",\"author\":\"kmbzn\",\"message\":\"위키 문서 추가: 도서 관리 시스템 구현 및 인증 기능에 대한 상세 설명 포함\"}]},\"filePathRelative\":\"db/wiki.md\",\"autoDesc\":true}")
 export { comp, data }
+
+if (import.meta.webpackHot) {
+  import.meta.webpackHot.accept()
+  if (__VUE_HMR_RUNTIME__.updatePageData) {
+    __VUE_HMR_RUNTIME__.updatePageData(data)
+  }
+}
+
+if (import.meta.hot) {
+  import.meta.hot.accept(({ data }) => {
+    __VUE_HMR_RUNTIME__.updatePageData(data)
+  })
+}

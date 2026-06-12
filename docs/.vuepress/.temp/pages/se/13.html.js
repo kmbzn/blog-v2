@@ -1,3 +1,16 @@
 import comp from "/home/kmbzn/blog-v2/docs/.vuepress/.temp/pages/se/13.html.vue"
 const data = JSON.parse("{\"path\":\"/se/13.html\",\"title\":\"13. Intro to QA Testing\",\"lang\":\"ko-KR\",\"frontmatter\":{\"description\":\"13. Intro to QA Testing\",\"head\":[[\"script\",{\"type\":\"application/ld+json\"},\"{\\\"@context\\\":\\\"https://schema.org\\\",\\\"@type\\\":\\\"Article\\\",\\\"headline\\\":\\\"13. Intro to QA Testing\\\",\\\"image\\\":[\\\"https://kmbzn.com/images/og.png\\\"],\\\"dateModified\\\":\\\"2025-11-28T04:49:36.000Z\\\",\\\"author\\\":[]}\"],[\"meta\",{\"property\":\"og:url\",\"content\":\"https://kmbzn.com/se/13.html\"}],[\"meta\",{\"property\":\"og:title\",\"content\":\"13. Intro to QA Testing\"}],[\"meta\",{\"property\":\"og:description\",\"content\":\"13. Intro to QA Testing\"}],[\"meta\",{\"property\":\"og:type\",\"content\":\"article\"}],[\"meta\",{\"property\":\"og:image\",\"content\":\"https://kmbzn.com/images/og.png\"}],[\"meta\",{\"property\":\"og:locale\",\"content\":\"ko-KR\"}],[\"meta\",{\"property\":\"og:updated_time\",\"content\":\"2025-11-28T04:49:36.000Z\"}],[\"meta\",{\"property\":\"article:modified_time\",\"content\":\"2025-11-28T04:49:36.000Z\"}]]},\"git\":{\"createdTime\":1763149723000,\"updatedTime\":1764305376000,\"contributors\":[{\"name\":\"kmbzn\",\"username\":\"kmbzn\",\"email\":\"kmbzn24@gmail.com\",\"commits\":3,\"url\":\"https://github.com/kmbzn\"}],\"changelog\":[{\"hash\":\"f81f9042e7888855a506f92261c74aaa2d86aa2a\",\"time\":1764305376000,\"email\":\"kmbzn24@gmail.com\",\"author\":\"kmbzn\",\"message\":\"update npm\"},{\"hash\":\"58c6bc5240203e74ef2e574994ccb1e6a1bf5568\",\"time\":1763157653000,\"email\":\"kmbzn24@gmail.com\",\"author\":\"kmbzn\",\"message\":\"Refactor code structure for improved readability and maintainability\"},{\"hash\":\"6120a63360466143831636b40c0f1ff3226d9d3e\",\"time\":1763149723000,\"email\":\"kmbzn24@gmail.com\",\"author\":\"kmbzn\",\"message\":\"Refactor code structure for improved readability and maintainability\"}]},\"filePathRelative\":\"se/13.md\",\"autoDesc\":true}")
 export { comp, data }
+
+if (import.meta.webpackHot) {
+  import.meta.webpackHot.accept()
+  if (__VUE_HMR_RUNTIME__.updatePageData) {
+    __VUE_HMR_RUNTIME__.updatePageData(data)
+  }
+}
+
+if (import.meta.hot) {
+  import.meta.hot.accept(({ data }) => {
+    __VUE_HMR_RUNTIME__.updatePageData(data)
+  })
+}

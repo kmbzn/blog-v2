@@ -47,7 +47,7 @@ export default defineUserConfig({
     ['link', { rel: 'stylesheet', href: 'https://cdn.jsdelivr.net/gh/orioncactus/victor-mono@latest/dist/index.css' }],
     ['link', { rel: 'stylesheet', href: 'https://cdn.jsdelivr.net/npm/pretendard@1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css' }],
     ['link', { rel: 'stylesheet', href: 'https://unpkg.com/applause-button/dist/applause-button.css' }],
-    ['script', { src: 'https://unpkg.com/applause-button/dist/applause-button.js' }]
+    ['script', { src: 'https://unpkg.com/applause-button/dist/applause-button.js' }],
   ],
   theme: theme({
     logo: '/images/kbz.png',

@@ -1,3 +1,16 @@
 import comp from "/home/kmbzn/blog-v2/docs/.vuepress/.temp/pages/ai/midterm.html.vue"
 const data = JSON.parse("{\"path\":\"/ai/midterm.html\",\"title\":\"\",\"lang\":\"ko-KR\",\"frontmatter\":{\"description\":\"문제 및 답안 (간결 버전) 확률의 3요소 확률의 3요소는 무엇인가? 확률의 3요소는 표본 공간 (Sample Space, Ω), 사건 집합 (Event Space, F), 확률 측도 (Probability Measure, P)이다. 엔트로피(Entropy) 엔트로피(Entropy)에 대해 수식과 특징 개념 등을 포...\",\"head\":[[\"script\",{\"type\":\"application/ld+json\"},\"{\\\"@context\\\":\\\"https://schema.org\\\",\\\"@type\\\":\\\"Article\\\",\\\"headline\\\":\\\"\\\",\\\"image\\\":[\\\"https://kmbzn.com/images/og.png\\\"],\\\"dateModified\\\":\\\"2025-10-23T08:50:58.000Z\\\",\\\"author\\\":[]}\"],[\"meta\",{\"property\":\"og:url\",\"content\":\"https://kmbzn.com/ai/midterm.html\"}],[\"meta\",{\"property\":\"og:description\",\"content\":\"문제 및 답안 (간결 버전) 확률의 3요소 확률의 3요소는 무엇인가? 확률의 3요소는 표본 공간 (Sample Space, Ω), 사건 집합 (Event Space, F), 확률 측도 (Probability Measure, P)이다. 엔트로피(Entropy) 엔트로피(Entropy)에 대해 수식과 특징 개념 등을 포...\"}],[\"meta\",{\"property\":\"og:type\",\"content\":\"article\"}],[\"meta\",{\"property\":\"og:image\",\"content\":\"https://kmbzn.com/images/og.png\"}],[\"meta\",{\"property\":\"og:locale\",\"content\":\"ko-KR\"}],[\"meta\",{\"property\":\"og:updated_time\",\"content\":\"2025-10-23T08:50:58.000Z\"}],[\"meta\",{\"property\":\"article:modified_time\",\"content\":\"2025-10-23T08:50:58.000Z\"}]]},\"git\":{\"createdTime\":1761209458000,\"updatedTime\":1761209458000,\"contributors\":[{\"name\":\"kmbzn\",\"username\":\"kmbzn\",\"email\":\"kmbzn24@gmail.com\",\"commits\":1,\"url\":\"https://github.com/kmbzn\"}],\"changelog\":[{\"hash\":\"ee235297a4f05a9ef6a2dbb4b9392ac5cfc1a052\",\"time\":1761209458000,\"email\":\"kmbzn24@gmail.com\",\"author\":\"kmbzn\",\"message\":\"Add comprehensive guidelines for Assignment 2-2 on Web Application Development, including objectives, submission methods, implementation details, deployment recommendations, demo video requirements, and wiki content specifications.\"}]},\"filePathRelative\":\"ai/midterm.md\",\"autoDesc\":true}")
 export { comp, data }
+
+if (import.meta.webpackHot) {
+  import.meta.webpackHot.accept()
+  if (__VUE_HMR_RUNTIME__.updatePageData) {
+    __VUE_HMR_RUNTIME__.updatePageData(data)
+  }
+}
+
+if (import.meta.hot) {
+  import.meta.hot.accept(({ data }) => {
+    __VUE_HMR_RUNTIME__.updatePageData(data)
+  })
+}

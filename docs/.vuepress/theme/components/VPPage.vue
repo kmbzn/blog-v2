@@ -1,9 +1,11 @@
 <template>
   <ParentPage>
     <template #bottom>
-      <div class="applause-wrapper">
-        <ApplauseWrapper :url="pageUrl" />
-      </div>
+      <ClientOnly>
+        <div class="applause-wrapper">
+          <applause-button :key="pageUrl" :url="pageUrl" style="width: 52px; height: 52px;" />
+        </div>
+      </ClientOnly>
       <div class="vp-footer-wrapper">
         <hr />
         <div class="vp-footer">
