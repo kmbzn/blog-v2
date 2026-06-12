@@ -107,6 +107,12 @@ export default defineUserConfig({
     themePlugins: {
       git: {
         createdTime: true,
+      },
+      prismjs: {
+        themes: {
+          light: 'ghcolors',
+          dark: 'ghcolors',
+        }
       }
     }
   }),
