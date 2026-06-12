@@ -1,0 +1,120 @@
+<template><div><h1 id="nomos-glashutte" tabindex="-1"><a class="header-anchor" href="#nomos-glashutte"><span>NOMOS Glashütte</span></a></h1>
+<DateMeta />
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/2/24/NOMOS_Glashuette_logo.png" alt="NOMOS Glashütte Logo"></p>
+<p>NOMOS Glashütte(노모스 글라스휘테)는 독일 작센주 글라슈테(Glashütte)에 본사를 둔 독립 시계 브랜드이다. 1990년 독일 통일 직후 설립되었으며, 바우하우스(Bauhaus) 미학을 기반으로 한 절제된 디자인과 높은 수준의 인하우스 무브먼트 제작 능력으로 전 세계 시계 애호가들에게 깊은 인상을 남기고 있다.</p>
+<h2 id="브랜드-개요-및-역사적-가치" tabindex="-1"><a class="header-anchor" href="#브랜드-개요-및-역사적-가치"><span>브랜드 개요 및 역사적 가치</span></a></h2>
+<p>글라슈테는 19세기부터 독일 최고급 시계 산업의 성지였다. A. Lange &amp; Söhne를 비롯한 역사적인 공방들이 이 작은 마을에 뿌리를 두고 있었으나, 제2차 세계대전 이후 동독 시절 국유화를 거치며 그 전통의 맥이 사실상 단절되었다.</p>
+<p>NOMOS는 통일 직후인 1990년, 이 무너진 유산 위에서 새롭게 출발했다. 놀라운 점은 <strong>1990년에 설립되어 다른 명문가에 비해 의외로 역사가 매우 짧음에도 불구하고, 불과 십수 년 만에 완벽한 매뉴팩처(자체 생산 무브먼트 보유 제조사)로 거듭났다</strong>는 사실이다.</p>
+<p>이러한 공격적인 기술적 도전과 장인정신이 가능했던 근본적인 배경은 바로 구조에 있다. NOMOS는 외부 주주나 거대 패션 리치몬트·스위치 그룹의 눈치를 봐야 하는 상장회사가 아니라, 창립자와 소수의 파트너들이 운영하는 독립 기업(Owner-operated, Family-run business)이다. 주주 가치나 단기적 이윤 추구 대신, 번 돈을 고스란히 기술 개발에 재투자(Reinvest)할 수 있었기에 짧은 역사 속에서도 독보적인 제조 자급률을 달성할 수 있었다.</p>
+<h2 id="엄격한-글라슈테-룰-glashutte-regulation" tabindex="-1"><a class="header-anchor" href="#엄격한-글라슈테-룰-glashutte-regulation"><span>엄격한 '글라슈테 룰 (Glashütte Regulation)'</span></a></h2>
+<p>시계 다이얼에 'Glashütte'라는 문구를 새기기 위해서는 이 지역만의 엄격한 법적 보호령인 일명 '글라슈테 룰'을 충족해야 한다. 과거 관례로 존재하던 이 규칙은 2022년 독일 연방의회를 통해 정식 법령(Lex Glashütte)으로 발효되었다.</p>
+<blockquote>
+<p><strong>글라슈테 룰</strong>
+무브먼트(칼리버) 부가가치의 <strong>최소 50% 이상이 반드시 글라슈테 현지에서 생산 및 가공</strong>되어야만 다이얼에 이 이름을 표기할 수 있다. 이는 프랑스의 '샴페인'이나 스위스의 '스위스 메이드'와 같은 강력한 지리적 표시 보호제다.</p>
+</blockquote>
+<p>NOMOS는 이 기준을 단순 충족하는 수준을 넘어, <strong>자체 무브먼트 부품의 최대 95%를 글라슈테 현지 공방에서 수작업 및 정밀 공정으로 직접 제조</strong>하며 법적 기준을 압도적으로 상회하고 있다.</p>
+<h2 id="디자인적-dna와-공통-특징" tabindex="-1"><a class="header-anchor" href="#디자인적-dna와-공통-특징"><span>디자인적 DNA와 공통 특징</span></a></h2>
+<p>NOMOS의 시계들은 멀리서 봐도 한눈에 알아볼 수 있는 몇 가지 뚜렷한 설계 철학을 공유한다.</p>
+<ul>
+<li><strong>6시 방향 스몰 세컨즈(Small Seconds):</strong> 메인 시·분침과 분리되어 6시 방향에 독립된 작은 원으로 작동하는 보조 초침은 NOMOS 정체성의 핵심이다. 군더더기 없는 바우하우스 다이얼에 클래식하면서도 입체적인 균형감을 부여한다.</li>
+<li><strong>길게 뻗은 러그(Lugs):</strong> NOMOS 케이스의 가장 큰 호불호 요소이자 독특한 특징은 시계줄을 연결하는 러그의 길이가 직경 대비 유독 길다는 점이다. 이 때문에 표기된 케이스 사이즈(예: 38mm)만 보고 시계를 골랐다가는 긴 러그(Lug-to-Lug length) 때문에 손목 위에서 시계가 뜨는 현상이 발생할 수 있어, 반드시 실착해 보아야 하는 브랜드로 꼽힌다.</li>
+<li><strong>호윈 사의 쉘 코도반(Horween Genuine Shell Cordovan) 스트랩:</strong> NOMOS는 기본 스트랩으로 말 엉덩이 가죽을 사용한 최고급 '쉘 코도반' 가죽을 고집한다. 미국의 유명 태너리인 호윈(Horween) 사에서 공급받는 이 가죽은 일반 소가죽과 달리 모공이 치밀해 부드러운 광택이 나며, 가죽 내부의 밀도 높은 섬유층 덕분에 수분과 스크래치에 매우 강한 내구성을 자랑한다. 에이징 될수록 특유의 깊은 멋이 살아나는 것이 특징이다.</li>
+</ul>
+<h2 id="주요-컬렉션" tabindex="-1"><a class="header-anchor" href="#주요-컬렉션"><span>주요 컬렉션</span></a></h2>
+<h3 id="tangente-탕겐테" tabindex="-1"><a class="header-anchor" href="#tangente-탕겐테"><span>Tangente (탕겐테)</span></a></h3>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/2/2b/NOMOS_Glashütte_Tangente.jpg" alt="NOMOS Glashütte Tangente"></p>
+<p>브랜드의 얼굴이자 바우하우스 미학의 정수다. 칼로 자른 듯 각진 칼라트라바 타입의 케이스와 타이포그래피 인덱스가 특징이다.</p>
+<h3 id="ludwig-루드빅" tabindex="-1"><a class="header-anchor" href="#ludwig-루드빅"><span>Ludwig (루드빅)</span></a></h3>
+<p>탕겐테와 달리 부드러운 라운드 케이스를 사용했으며, 로마자 인덱스를 채택해 드레스 워치로서 한층 더 고전적인 분위기를 낸다.</p>
+<p><em>(※ 참고: 본 가이드의 필자가 현재 실제 소유하고 애용 중인 모델 역시 <strong>루드빅 35mm 수동 모델</strong>이다.)</em></p>
+<h3 id="orion-오리온" tabindex="-1"><a class="header-anchor" href="#orion-오리온"><span>Orion (오리온)</span></a></h3>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/c/c7/NOMOS_Glashütte_Orion.jpg" alt="NOMOS Glashütte Orion"></p>
+<p>볼록한 돔형 사파이어 크리스탈 글라스와 유려하게 흐르는 곡선의 케이스를 가진 모델이다. 다이얼의 군더더기를 가장 극단적으로 덜어내어 미니멀리즘의 정점을 보여준다.</p>
+<h3 id="club-클럽" tabindex="-1"><a class="header-anchor" href="#club-클럽"><span>Club (클럽)</span></a></h3>
+<p>가장 스포티하고 캐주얼한 라인업으로, NOMOS 제품군 중 진입 장벽이 가장 낮아 입문자들에게 큰 사랑을 받는다.
+특히 <strong>클럽 캠퍼스(Club Campus)</strong> 라인업은 이름에서 알 수 있듯이 대학 졸업이라는 인생의 중요한 이정표에서 유래되었다.</p>
+<p>학업을 마치고 사회로 첫발을 내딛는 대학생들이 인생의 새로운 시작을 기념할 수 있도록 이 시계를 기획하였으며, 젊은 층의 감각에 맞춘 스포티하고 캐주얼한 디자인, 다채로운 다이얼 컬러, 그리고 야광 기능을 더해 활기찬 분위기를 담아냈다.</p>
+<h3 id="tetra-테트라" tabindex="-1"><a class="header-anchor" href="#tetra-테트라"><span>Tetra (테트라)</span></a></h3>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/e/ea/NOMOS_Glashütte_Tetra.jpg" alt="NOMOS Glashütte Tetra"></p>
+<p>NOMOS 라인업 중 유일하게 정사각형 케이스를 가진 개성 넘치는 모델이다. 다만, 시계 마니아들 사이에서는 <strong>케이스는 완벽한 사각형인데 정작 사파이어 백케이스를 통해 들여다보는 무브먼트는 여전히 둥근 원형 무브먼트(Alpha 등)가 그대로 탑재되어 있어, 모서리 공간의 일체감이 떨어진다는 점이 다소 아쉬운 지점</strong>으로 지적받기도 한다.</p>
+<h2 id="인하우스-무브먼트-자체-칼리버" tabindex="-1"><a class="header-anchor" href="#인하우스-무브먼트-자체-칼리버"><span>인하우스 무브먼트 (자체 칼리버)</span></a></h2>
+<p>외부 에보슈(ETA 등) 무브먼트 수정에 의존하던 과거를 청산하고, NOMOS는 현재 모든 라인업에 인하우스 무브먼트를 탑재한다. 특히 2014년에는 스위스 거대 기업들이 독점하던 핵심 부품 '이스케이프먼트(탈진기)'를 7년간의 연구 끝에 자체 개발하여 '노모스 스윙 시스템(NOMOS Swing System)'이라는 이름으로 전량 독립 생산하고 있다.</p>
+<table>
+<thead>
+<tr>
+<th>칼리버</th>
+<th>구동 방식</th>
+<th>특징</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Alpha (알파)</strong></td>
+<td>수동감기</td>
+<td>NOMOS의 기초를 다진 가장 표준적이고 신뢰성 높은 기본 수동 무브먼트.</td>
+</tr>
+<tr>
+<td><strong>DUW 3001</strong></td>
+<td>자동감기</td>
+<td>스윙 시스템 탑재. 두께가 3.2mm에 불과해 자동식인데도 극도로 얇은 두께 구현.</td>
+</tr>
+<tr>
+<td><strong>DUW 6101</strong></td>
+<td>자동감기</td>
+<td>neomatik 41 등 대형 모델에 탑재. 양방향 퀵세트 데이트 메커니즘 특허 보유.</td>
+</tr>
+<tr>
+<td><strong>DUW 4101 / 4301</strong></td>
+<td>수동감기</td>
+<td>알파 무브먼트를 기반으로 각각 데이트(Date) 기능과 파워리저브 인디케이터 기능을 추가한 버전.</td>
+</tr>
+<tr>
+<td><strong>Epsilon (입실론)</strong></td>
+<td>자동감기</td>
+<td>초기에 사용되던 인하우스 자동 무브먼트의 시초 격 칼리버.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="가격대" tabindex="-1"><a class="header-anchor" href="#가격대"><span>가격대</span></a></h2>
+<p>독일 글라슈테의 최고급 시계 제조 철학(A. Lange &amp; Söhne, Glashütte Original 등)을 수천만 원이 아닌 백 ~ 천만 원 미만의 가격대에서 경험할 수 있다는 점에서 여전히 '가장 합리적인 럭셔리 매뉴팩처'로 평가받는다.</p>
+<table>
+<thead>
+<tr>
+<th>모델</th>
+<th>USD</th>
+<th>KRW (국내 공식 판매처 기준)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Club (수동)</td>
+<td>$1,400 ~</td>
+<td>239만원 ~</td>
+</tr>
+<tr>
+<td>Tangente (수동)</td>
+<td>$1,600 ~</td>
+<td>329만원 ~</td>
+</tr>
+<tr>
+<td>Ludwig (수동)</td>
+<td>$1,700 ~</td>
+<td>349만원 ~</td>
+</tr>
+<tr>
+<td>Orion (수동)</td>
+<td>$1,700 ~</td>
+<td>349만원 ~</td>
+</tr>
+<tr>
+<td>Neomatik (자동) 계열</td>
+<td>$2,500 ~</td>
+<td>669만원 ~</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<p><em>이미지 출처: Wikimedia Commons, CC BY-SA 4.0</em></p>
+</div></template>
+
+

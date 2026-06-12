@@ -1,9 +1,9 @@
 <template><div><h1 id="우분투-wine-카카오톡-사진-이미지-스크린샷-붙여넣기" tabindex="-1"><a class="header-anchor" href="#우분투-wine-카카오톡-사진-이미지-스크린샷-붙여넣기"><span>우분투 Wine 카카오톡 사진 이미지 스크린샷 붙여넣기</span></a></h1>
 <DateMeta />
 <div class="hint-container info">
-<p class="hint-container-title">정보</p>
-<p>환경: Ubuntu 24.04 LTS<br>
-대상: Wine 11.0 기반 카카오톡 PC버전</p>
+<p class="hint-container-title">버전 정보</p>
+<p>Ubuntu 24.04 LTS<br>
+Wine 11.0</p>
 </div>
 <blockquote>
 <p><em>핵심 아이디어: Wine 기반 카카오톡은 BMP 포맷만 클립보드 인식이 가능합니다.</em></p>

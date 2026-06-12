@@ -170,7 +170,7 @@
 </ul>
 </li>
 <li>
-<p>**예시 파일(sample bvh)**은 이 항목에서 사용 불가</p>
+<p><strong>예시 파일</strong>(sample bvh)은 이 항목에서 사용 불가</p>
 </li>
 <li>
 <p>영상은 <strong>공개 접근 가능</strong>해야 점수 부여</p>

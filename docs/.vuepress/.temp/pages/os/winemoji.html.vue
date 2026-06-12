@@ -10,7 +10,7 @@
 <p><img src="@source/os/tofu.webp" alt="tofu"></p>
 <h2 id="설치-방법" tabindex="-1"><a class="header-anchor" href="#설치-방법"><span>설치 방법</span></a></h2>
 <div class="hint-container info">
-<p class="hint-container-title">정보</p>
+<p class="hint-container-title">버전 정보</p>
 <p>Ubuntu 22.04 LTS<br>
 wine 10.0</p>
 </div>

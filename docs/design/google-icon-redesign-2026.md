@@ -1,4 +1,4 @@
-# 구글의 아이콘 대개편 — 6년 만의 실수 인정
+# 구글의 아이콘 대개편: 6년 만의 실수 인정
 
 ![Google Workspace 새 아이콘](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgq4vEyIdFIDKnNv0qBck2KKKjXM7uzWyYHtGCuKaiv81yMfQbbIUsC05UaR9Xmjkcmd9dq3PKx6v9g3nZ0vlt4yGKhcCcyaFAvhqrWiXCaZsM7IhsXom_nUMqFSvbJJsG_QNhHtDxECFgKLqTrySYj_Oq4525A0VBcVEAD9YBT0FRUtjJsXU3LQE4ukpk/s2000/Introducing%20a%20fresh%20visual%20identity%20for%20Google%20Workspace%20app%20icons.png)
 
@@ -12,7 +12,7 @@
 
 의도는 이해할 수 있다. 어떤 앱을 열어도 "이건 Google 제품"이라는 인상을 즉각적으로 전달하겠다는 브랜딩 전략이었다. 그러나 결과는 반대였다.
 
-Gmail, Meet, Chat, Drive, Docs, Sheets, Slides — 이 모든 앱의 아이콘이 동일한 4가지 색을 서로 다른 배치로 쪼개 담은 형태가 되었다. 배경색도 유사했고, 크기를 줄이면 구분이 사실상 불가능했다. 16×16px 파비콘(favicon) 크기에서는 네 가지 색 덩어리로 붕괴되어, 브라우저 탭을 구분하려면 아이콘을 "읽어야" 했다.
+Gmail, Meet, Chat, Drive, Docs, Sheets, Slides 등 모든 앱의 아이콘이 동일한 4가지 색을 서로 다른 배치로 쪼개 담은 형태가 되었다. 배경색도 유사했고, 크기를 줄이면 구분이 사실상 불가능했다. 16×16px 파비콘(favicon) 크기에서는 네 가지 색 덩어리로 붕괴되어, 브라우저 탭을 구분하려면 아이콘을 "읽어야" 했다.
 
 사용자들의 반응은 즉각적이었다. 공개 직후부터 "Gmail이 어디 있는지 모르겠다"는 불만이 쏟아졌고, 이는 단순한 낯섦 때문이 아니라 **설계 원칙 자체의 오류**에서 비롯된 것이었다.
 

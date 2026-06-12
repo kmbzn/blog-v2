@@ -1,6 +1,9 @@
 <template>
   <ParentPage>
     <template #bottom>
+      <div class="applause-wrapper">
+        <ApplauseWrapper :url="pageUrl" />
+      </div>
       <div class="vp-footer-wrapper">
         <hr />
         <div class="vp-footer">
@@ -44,9 +47,22 @@
 
 <script setup>
 import ParentPage from '@vuepress/theme-default/lib/client/components/VPPage.vue'
+import { useRoute } from 'vue-router'
+import { computed } from 'vue'
+
+const route = useRoute()
+const pageUrl = computed(() => `https://kmbzn.com${route.path}`)
 </script>
 
 <style scoped>
+.applause-wrapper {
+  max-width: 800px;
+  margin: 2rem auto 0;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: center;
+}
+
 .vp-footer-wrapper {
   max-width: 800px;
   margin: 0 auto;

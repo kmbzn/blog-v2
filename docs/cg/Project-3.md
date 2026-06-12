@@ -131,7 +131,7 @@ file = open(os.path.join('data', 'run.bvh'))
      - http://mocap.cs.sfu.ca/  
      - http://dancebci.eu/main/performances
 
-   - **예시 파일(sample bvh)**은 이 항목에서 사용 불가  
+   - **예시 파일**(sample bvh)은 이 항목에서 사용 불가  
    - 영상은 **공개 접근 가능**해야 점수 부여
 
 - 리포트는 간결하게 작성 (영어 또는 한국어)

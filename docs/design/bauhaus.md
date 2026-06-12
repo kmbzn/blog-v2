@@ -1,4 +1,4 @@
-# 바우하우스 — 현대 디자인의 원점
+# 바우하우스: 현대 디자인의 원점
 
 ![바우하우스 데사우 건물](https://upload.wikimedia.org/wikipedia/commons/9/98/Dessau_Bauhaus_neu.JPG)
 
@@ -85,7 +85,7 @@
 
 ## 바우하우스와 현재
 
-바우하우스의 원칙은 디지털 세계에서도 살아 있다. Google의 Material Design, Apple의 Human Interface Guidelines, 스칸디나비아 미니멀리즘 인테리어 — 모두 "형태는 기능을 따른다"는 원칙 위에 있다.
+바우하우스의 원칙은 디지털 세계에서도 살아 있다. Google의 Material Design, Apple의 Human Interface Guidelines, 스칸디나비아 미니멀리즘 인테리어 등 모두 "형태는 기능을 따른다"는 원칙 위에 있다.
 
 설립 100주년인 2019년에는 데사우·베를린·바이마르 세 도시에서 대규모 기념 행사와 전시가 열렸고, 유네스코와 독일 정부가 공동으로 바우하우스 유산의 디지털 아카이브화 프로젝트를 진행했다.
 

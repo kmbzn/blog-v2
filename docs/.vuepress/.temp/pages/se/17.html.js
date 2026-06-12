@@ -1,16 +1,3 @@
 import comp from "/home/kmbzn/blog-v2/docs/.vuepress/.temp/pages/se/17.html.vue"
-const data = JSON.parse("{\"path\":\"/se/17.html\",\"title\":\"17. Software Testing\",\"lang\":\"ko-KR\",\"frontmatter\":{},\"git\":{\"createdTime\":1764739843000,\"updatedTime\":1764739843000,\"contributors\":[{\"name\":\"kmbzn\",\"username\":\"kmbzn\",\"email\":\"kmbzn24@gmail.com\",\"commits\":1,\"url\":\"https://github.com/kmbzn\"}],\"changelog\":[{\"hash\":\"a18467c3297cbc3b4098d4fe9f825eb168d9ad83\",\"time\":1764739843000,\"email\":\"kmbzn24@gmail.com\",\"author\":\"kmbzn\",\"message\":\"add se/17\"}]},\"filePathRelative\":\"se/17.md\"}")
+const data = JSON.parse("{\"path\":\"/se/17.html\",\"title\":\"17. Software Testing\",\"lang\":\"ko-KR\",\"frontmatter\":{\"description\":\"17. Software Testing\",\"head\":[[\"script\",{\"type\":\"application/ld+json\"},\"{\\\"@context\\\":\\\"https://schema.org\\\",\\\"@type\\\":\\\"Article\\\",\\\"headline\\\":\\\"17. Software Testing\\\",\\\"image\\\":[\\\"https://kmbzn.com/images/og.png\\\"],\\\"dateModified\\\":\\\"2025-12-03T05:30:43.000Z\\\",\\\"author\\\":[]}\"],[\"meta\",{\"property\":\"og:url\",\"content\":\"https://kmbzn.com/se/17.html\"}],[\"meta\",{\"property\":\"og:title\",\"content\":\"17. Software Testing\"}],[\"meta\",{\"property\":\"og:description\",\"content\":\"17. Software Testing\"}],[\"meta\",{\"property\":\"og:type\",\"content\":\"article\"}],[\"meta\",{\"property\":\"og:image\",\"content\":\"https://kmbzn.com/images/og.png\"}],[\"meta\",{\"property\":\"og:locale\",\"content\":\"ko-KR\"}],[\"meta\",{\"property\":\"og:updated_time\",\"content\":\"2025-12-03T05:30:43.000Z\"}],[\"meta\",{\"property\":\"article:modified_time\",\"content\":\"2025-12-03T05:30:43.000Z\"}]]},\"git\":{\"createdTime\":1764739843000,\"updatedTime\":1764739843000,\"contributors\":[{\"name\":\"kmbzn\",\"username\":\"kmbzn\",\"email\":\"kmbzn24@gmail.com\",\"commits\":1,\"url\":\"https://github.com/kmbzn\"}],\"changelog\":[{\"hash\":\"a18467c3297cbc3b4098d4fe9f825eb168d9ad83\",\"time\":1764739843000,\"email\":\"kmbzn24@gmail.com\",\"author\":\"kmbzn\",\"message\":\"add se/17\"}]},\"filePathRelative\":\"se/17.md\",\"autoDesc\":true}")
 export { comp, data }
-
-if (import.meta.webpackHot) {
-  import.meta.webpackHot.accept()
-  if (__VUE_HMR_RUNTIME__.updatePageData) {
-    __VUE_HMR_RUNTIME__.updatePageData(data)
-  }
-}
-
-if (import.meta.hot) {
-  import.meta.hot.accept(({ data }) => {
-    __VUE_HMR_RUNTIME__.updatePageData(data)
-  })
-}

@@ -1,8 +1,8 @@
 <template><div><h1 id="wine-환경에서-카카오톡-실행-시-explorer-exe-뜨지-않게-하는-법" tabindex="-1"><a class="header-anchor" href="#wine-환경에서-카카오톡-실행-시-explorer-exe-뜨지-않게-하는-법"><span>Wine 환경에서 카카오톡 실행 시 <code v-pre>explorer.exe</code> 뜨지 않게 하는 법</span></a></h1>
 <DateMeta />
 <div class="hint-container info">
-<p class="hint-container-title">정보</p>
-<p>Ubuntu 22.04 LTS
+<p class="hint-container-title">버전 정보</p>
+<p>Ubuntu 22.04 LTS<br>
 wine 11.0</p>
 </div>
 <p><img src="@source/os/explorer.webp" alt=""></p>

@@ -1,5 +1,7 @@
 # 롱고롱고(Rongorongo)
 
+![Rongorongo 문자가 새겨진 목판](https://upload.wikimedia.org/wikipedia/en/thumb/2/2d/Rongorongo_B-v_Aruku-Kurenga_%28color%29_edit1.jpg/500px-Rongorongo_B-v_Aruku-Kurenga_%28color%29_edit1.jpg)
+
 ## 개요
 
 - Rongorongo는 🇨🇱 칠레 이스터 섬(Rapa Nui)에서 발견된 미해독 문자 체계
@@ -40,12 +42,6 @@
 
 - 태블릿 종류: London Tablet, Santiago Staff, Mamari Tablet 등
 - Santiago Staff는 가장 긴 텍스트가 포함되어 있으며, 약 2,300개의 기호가 새겨져 있음
-
-## 이미지
-
-![Rongorongo 문자가 새겨진 목판](https://upload.wikimedia.org/wikipedia/en/thumb/2/2d/Rongorongo_B-v_Aruku-Kurenga_%28color%29_edit1.jpg/500px-Rongorongo_B-v_Aruku-Kurenga_%28color%29_edit1.jpg)
-
-*출처: Wikipedia*
 
 ## 관련 위치 (Google Maps)
 

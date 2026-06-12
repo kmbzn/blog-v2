@@ -1,0 +1,128 @@
+<template><div><h1 id="에스트라-aestura" tabindex="-1"><a class="header-anchor" href="#에스트라-aestura"><span>에스트라 (AESTURA)</span></a></h1>
+<DateMeta />
+<p>에스트라(AESTURA)는 아모레퍼시픽 그룹 산하의 더마코스메틱(Dermacosmetic) 브랜드다. 단순한 화장품이 아닌 피부과학(dermatology) + 화장품(cosmetics)의 결합, 즉 코스메슈티컬(cosmeceutical)을 지향하며, 주로 민감성·건성·트러블성 피부를 타겟으로 한다.</p>
+<h2 id="브랜드-개요" tabindex="-1"><a class="header-anchor" href="#브랜드-개요"><span>브랜드 개요</span></a></h2>
+<p>에스트라의 뿌리는 태평양제약의 피부과학 연구에 있다. 아모레퍼시픽이 태평양제약의 피부과학 유산을 이어받아 론칭한 브랜드로, 의약품 제조 수준의 품질 관리 시스템(GMP 기반)을 화장품에 적용하는 것이 핵심 철학이다. &quot;피부과 전문의 수준의 처방&quot;을 일반 소비자에게 제공하겠다는 포지셔닝이다.</p>
+<p>브랜드명 에스트라(AESTURA)는 <strong>Aesthetic(미적)</strong> + **Stura(이탈리아어로 '막힌 것을 뚫다'는 의미)**의 합성어로, 막힌 피부 문제를 해결한다는 의미를 담고 있다.</p>
+<h2 id="주요-제품-라인" tabindex="-1"><a class="header-anchor" href="#주요-제품-라인"><span>주요 제품 라인</span></a></h2>
+<h3 id="아토베리어365-atobarrier365" tabindex="-1"><a class="header-anchor" href="#아토베리어365-atobarrier365"><span>아토베리어365 (ATOBARRIER365)</span></a></h3>
+<p>에스트라의 대표 라인. 극건성·민감성·아토피성 피부를 위한 세라마이드(Ceramide) 기반 장벽 강화 제품군이다.</p>
+<p><strong>아토베리어365 크림</strong>은 에스트라의 시그니처 제품으로, 7가지 세라마이드와 히알루론산, 판테놀을 배합해 손상된 피부 장벽을 복구한다. 자극이 적어 아토피 환자나 유아에게도 사용 가능하며, 피부과·소아과에서 추천 제품으로 자주 언급된다.</p>
+<table>
+<thead>
+<tr>
+<th>제품</th>
+<th>주요 성분</th>
+<th>특징</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>아토베리어365 크림</td>
+<td>세라마이드 7종, 히알루론산, 판테놀</td>
+<td>피부장벽 복구, 저자극</td>
+</tr>
+<tr>
+<td>아토베리어365 로션</td>
+<td>세라마이드, 나이아신아마이드</td>
+<td>가벼운 보습, 빠른 흡수</td>
+</tr>
+<tr>
+<td>아토베리어365 클렌저</td>
+<td>세라마이드, 글리세린</td>
+<td>세정 후 당김 최소화</td>
+</tr>
+<tr>
+<td>아토베리어365 선크림</td>
+<td>세라마이드, SPF50+/PA++++</td>
+<td>민감성 피부 자외선 차단</td>
+</tr>
+</tbody>
+</table>
+<h3 id="테라크네365-theracne365" tabindex="-1"><a class="header-anchor" href="#테라크네365-theracne365"><span>테라크네365 (THERACNE365)</span></a></h3>
+<p>트러블성·지성 피부를 위한 라인. 살리실산(BHA), 나이아신아마이드, 아젤라산 등 트러블 케어에 검증된 성분을 활용한다. 피지 조절과 모공 관리에 초점을 맞추며, 피부과 시술 전후 케어 용도로도 활용된다.</p>
+<h3 id="리제덤-rx-regederm-rx" tabindex="-1"><a class="header-anchor" href="#리제덤-rx-regederm-rx"><span>리제덤 RX (REGEDERM RX)</span></a></h3>
+<p>시술 후 피부 진정·재생을 위한 메디컬 라인. 피부과·성형외과에서 레이저, 필링, 시술 직후 처방하는 제품군으로, 의료진 전용(병원 전용) 채널로 유통된다. 마데카소사이드(Madecassoside), EGF(표피성장인자) 유사 성분 등이 주요 성분이다.</p>
+<h3 id="a-cica365" tabindex="-1"><a class="header-anchor" href="#a-cica365"><span>A-CICA365</span></a></h3>
+<p>병풀(Centella Asiatica) 추출물 기반 진정 라인. 피부 자극 후 즉각 진정이 필요한 상황에 사용하며, 최근 피부과 시술 후 관리 제품으로 주목받고 있다.</p>
+<h3 id="derma-uv365" tabindex="-1"><a class="header-anchor" href="#derma-uv365"><span>DERMA UV365</span></a></h3>
+<p>자외선 차단에 특화된 더마 선케어 라인. 일반 선크림 대비 피부 자극 유발 성분을 최소화하고, 민감성 피부에서도 백탁 현상 없이 사용할 수 있도록 설계되었다.</p>
+<h2 id="유통-채널" tabindex="-1"><a class="header-anchor" href="#유통-채널"><span>유통 채널</span></a></h2>
+<table>
+<thead>
+<tr>
+<th>채널</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>공식 온라인몰</td>
+<td>aestura.com</td>
+</tr>
+<tr>
+<td>아모레몰</td>
+<td>amoremall.com</td>
+</tr>
+<tr>
+<td>약국·드럭스토어</td>
+<td>올리브영, 롭스 등</td>
+</tr>
+<tr>
+<td>병원 전용</td>
+<td>피부과·성형외과 (RX 라인)</td>
+</tr>
+<tr>
+<td>쿠팡·네이버쇼핑</td>
+<td>주요 온라인 플랫폼</td>
+</tr>
+<tr>
+<td>해외</td>
+<td>세포라(Sephora) — 미국 시장 독점 파트너십</td>
+</tr>
+</tbody>
+</table>
+<p>2023년 아모레퍼시픽은 에스트라를 글로벌 세포라와의 독점 파트너십을 통해 미국 시장에 공식 진출시켰다. 한국 더마코스메틱 브랜드가 세포라에 단독 입점한 것은 이례적인 사례다.</p>
+<h2 id="포지셔닝" tabindex="-1"><a class="header-anchor" href="#포지셔닝"><span>포지셔닝</span></a></h2>
+<p>에스트라는 국내 더마코스메틱 시장에서 **닥터지(Dr.G), 라로슈포제(La Roche-Posay), 세타필(Cetaphil)**과 경쟁한다.</p>
+<table>
+<thead>
+<tr>
+<th>브랜드</th>
+<th>원산지</th>
+<th>주요 강점</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>에스트라</td>
+<td>한국 (아모레퍼시픽)</td>
+<td>세라마이드 처방, GMP 품질관리</td>
+</tr>
+<tr>
+<td>라로슈포제</td>
+<td>프랑스 (L'Oréal)</td>
+<td>온천수(Thermal Water), 광범위 라인업</td>
+</tr>
+<tr>
+<td>세타필</td>
+<td>미국 (Galderma)</td>
+<td>무향·저자극, 피부과 처방 전통</td>
+</tr>
+<tr>
+<td>닥터지</td>
+<td>한국</td>
+<td>비타C·레티놀 안티에이징 강점</td>
+</tr>
+</tbody>
+</table>
+<p>에스트라의 차별점은 한국 피부과학 연구 기반의 세라마이드 처방과, 의료용에 준하는 제조 기준이다. 특히 아토베리어 라인은 국내 아토피 케어 시장에서 인지도가 높다.</p>
+<h2 id="구매-시-참고사항" tabindex="-1"><a class="header-anchor" href="#구매-시-참고사항"><span>구매 시 참고사항</span></a></h2>
+<ul>
+<li>아토베리어365 크림은 용량 대비 가성비가 높아 대용량(450ml) 구매가 유리하다</li>
+<li>피부 트러블이 심한 경우 테라크네365보다 아토베리어365 먼저 사용 후 장벽을 안정시키는 것이 권장된다</li>
+<li>리제덤 RX 라인은 온라인 직구보다 피부과 처방을 통해 구입하는 것이 정품 보장 측면에서 안전하다</li>
+</ul>
+</div></template>
+
+

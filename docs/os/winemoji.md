@@ -16,7 +16,7 @@ GitHub 링크: [https://github.com/kmbzn/project-winemoji](https://github.com/km
 
 ## 설치 방법
 
-:::info
+:::info 버전 정보
 Ubuntu 22.04 LTS  
 wine 10.0
 :::

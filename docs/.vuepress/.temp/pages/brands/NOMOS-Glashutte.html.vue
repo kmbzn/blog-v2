@@ -1,6 +1,6 @@
 <template><div><h1 id="nomos-glashutte" tabindex="-1"><a class="header-anchor" href="#nomos-glashutte"><span>NOMOS Glashütte</span></a></h1>
 <DateMeta />
-<p><img src="https://upload.wikimedia.org/wikipedia/commons/2/24/NOMOS_Glashuette_logo.png" alt="NOMOS Glashütte Logo"></p>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Nomos_Glashütte.svg" alt="NOMOS Glashütte Logo"></p>
 <p>NOMOS Glashütte는 독일 작센주 글라스휘테(Glashütte)에 본사를 둔 독립 시계 브랜드다. 1990년 독일 통일 직후 설립되었으며, 바우하우스(Bauhaus) 미학을 기반으로 한 절제된 디자인과 자체 제작 무브먼트로 전 세계 시계 애호가들에게 높은 평가를 받고 있다.</p>
 <h2 id="브랜드-개요" tabindex="-1"><a class="header-anchor" href="#브랜드-개요"><span>브랜드 개요</span></a></h2>
 <p>글라스휘테는 19세기부터 독일 시계 산업의 심장부였다. A. Lange &amp; Söhne를 비롯한 명문 시계 공방들이 이 작은 마을에 뿌리를 두고 있었지만, 동독 시절 국유화를 거치며 그 전통이 단절되었다. NOMOS는 통일 후 이 유산을 이어받아 새롭게 출발한 브랜드로, 설립 초기부터 외부 무브먼트 의존을 최소화하고 자체 칼리버 개발에 집중했다.</p>

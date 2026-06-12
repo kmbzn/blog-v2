@@ -1,0 +1,109 @@
+<template><div><h1 id="구글의-아이콘-대개편-6년-만의-실수-인정" tabindex="-1"><a class="header-anchor" href="#구글의-아이콘-대개편-6년-만의-실수-인정"><span>구글의 아이콘 대개편: 6년 만의 실수 인정</span></a></h1>
+<DateMeta />
+<p><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgq4vEyIdFIDKnNv0qBck2KKKjXM7uzWyYHtGCuKaiv81yMfQbbIUsC05UaR9Xmjkcmd9dq3PKx6v9g3nZ0vlt4yGKhcCcyaFAvhqrWiXCaZsM7IhsXom_nUMqFSvbJJsG_QNhHtDxECFgKLqTrySYj_Oq4525A0VBcVEAD9YBT0FRUtjJsXU3LQE4ukpk/s2000/Introducing a fresh visual identity for Google Workspace app icons.png" alt="Google Workspace 새 아이콘"></p>
+<p>2026년 5월, Google은 Gmail·Drive·Calendar·Meet·Chat 등 Workspace 앱 전반의 아이콘을 대대적으로 교체했다. 단순한 리프레시가 아니다. 이번 개편은 2020년에 강행한 아이콘 시스템이 실패였음을 사실상 인정한 것이다.</p>
+<h2 id="_2020년-개편-무엇이-문제였나" tabindex="-1"><a class="header-anchor" href="#_2020년-개편-무엇이-문제였나"><span>2020년 개편: 무엇이 문제였나</span></a></h2>
+<p>2020년 Google은 Workspace 전체 아이콘을 통일된 원칙 아래 재설계했다. 핵심 규칙은 하나였다.</p>
+<blockquote>
+<p><strong>모든 아이콘에 Google의 4가지 색상(빨강·노랑·초록·파랑)을 모두 담아라.</strong></p>
+</blockquote>
+<p>의도는 이해할 수 있다. 어떤 앱을 열어도 &quot;이건 Google 제품&quot;이라는 인상을 즉각적으로 전달하겠다는 브랜딩 전략이었다. 그러나 결과는 반대였다.</p>
+<p>Gmail, Meet, Chat, Drive, Docs, Sheets, Slides 등 모든 앱의 아이콘이 동일한 4가지 색을 서로 다른 배치로 쪼개 담은 형태가 되었다. 배경색도 유사했고, 크기를 줄이면 구분이 사실상 불가능했다. 16×16px 파비콘(favicon) 크기에서는 네 가지 색 덩어리로 붕괴되어, 브라우저 탭을 구분하려면 아이콘을 &quot;읽어야&quot; 했다.</p>
+<p>사용자들의 반응은 즉각적이었다. 공개 직후부터 &quot;Gmail이 어디 있는지 모르겠다&quot;는 불만이 쏟아졌고, 이는 단순한 낯섦 때문이 아니라 <strong>설계 원칙 자체의 오류</strong>에서 비롯된 것이었다.</p>
+<h3 id="왜-6년이-걸렸나" tabindex="-1"><a class="header-anchor" href="#왜-6년이-걸렸나"><span>왜 6년이 걸렸나</span></a></h3>
+<p>기술적으로 문제를 파악하는 데 6년이 필요했던 것은 아니다. DesignRush의 분석이 지적하듯, 이 문제가 장기간 유지될 수 있었던 이유는 조직적 관성이었다. 한 번 공식적으로 채택된 디자인 시스템은 그것이 틀렸음을 내부에서 주장하기 어렵다. 특히 글로벌 브랜딩 캠페인과 함께 론칭된 디자인이라면 더욱.</p>
+<p>결국 외부의 지속적인 비판, 그리고 AI 제품군 확장이라는 새로운 명분이 맞물리면서 개편의 계기가 마련되었다.</p>
+<h2 id="_2026년-개편-무엇이-달라졌나" tabindex="-1"><a class="header-anchor" href="#_2026년-개편-무엇이-달라졌나"><span>2026년 개편: 무엇이 달라졌나</span></a></h2>
+<p>새 아이콘 시스템은 2020년 원칙을 정반대로 뒤집었다.</p>
+<h3 id="_4색-의무-폐기" tabindex="-1"><a class="header-anchor" href="#_4색-의무-폐기"><span>4색 의무 폐기</span></a></h3>
+<p>각 앱은 이제 하나의 지배적인 색상을 갖는다. Gmail은 빨강, Drive는 초록·노랑·파랑, Meet는 노랑, Chat은 초록. 4가지 색을 모두 담아야 한다는 규칙은 사라졌다.</p>
+<h3 id="그래디언트-도입" tabindex="-1"><a class="header-anchor" href="#그래디언트-도입"><span>그래디언트 도입</span></a></h3>
+<p>평면 단색·구획 배색 대신 부드러운 그래디언트를 적용했다. Google G 로고, Gemini, Photos, Maps에서 이미 사용하던 방향성을 Workspace 전체로 확장한 것이다.</p>
+<h3 id="형태로-구분" tabindex="-1"><a class="header-anchor" href="#형태로-구분"><span>형태로 구분</span></a></h3>
+<p>색상만으로 구분하던 방식에서 벗어나, 아이콘의 <strong>형태(shape)</strong> 자체가 식별 신호로 작동하도록 설계했다. 색이 흐려지거나 흑백 환경에서도 앱을 구분할 수 있어야 한다는 기본 원칙으로의 회귀다.</p>
+<h3 id="앱별-변경-요약" tabindex="-1"><a class="header-anchor" href="#앱별-변경-요약"><span>앱별 변경 요약</span></a></h3>
+<table>
+<thead>
+<tr>
+<th>앱</th>
+<th>2020년</th>
+<th>2026년</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Gmail</td>
+<td>4색 분할 봉투</td>
+<td>빨강 그래디언트 봉투</td>
+</tr>
+<tr>
+<td>Calendar</td>
+<td>4색 균등 배분</td>
+<td>파랑 위주, 플립 캘린더 형태</td>
+</tr>
+<tr>
+<td>Drive</td>
+<td>4색 삼각형</td>
+<td>초록·노랑·파랑, 컨테이너 제거</td>
+</tr>
+<tr>
+<td>Meet</td>
+<td>4색 카메라</td>
+<td>노랑 위주 카메라</td>
+</tr>
+<tr>
+<td>Chat</td>
+<td>4색 버블</td>
+<td>초록 버블, 표정 모티프</td>
+</tr>
+<tr>
+<td>Docs</td>
+<td>종이 + 4색</td>
+<td>파랑 단일 계열</td>
+</tr>
+<tr>
+<td>Sheets</td>
+<td>종이 + 4색</td>
+<td>초록, 가로 방향 변경</td>
+</tr>
+<tr>
+<td>Slides</td>
+<td>종이 + 4색</td>
+<td>노랑, 가로 방향 변경</td>
+</tr>
+</tbody>
+</table>
+<h3 id="롤아웃-타임라인" tabindex="-1"><a class="header-anchor" href="#롤아웃-타임라인"><span>롤아웃 타임라인</span></a></h3>
+<p>2026년 5월 18일부터 Chrome 새 탭, 웹 앱 런처를 시작으로 iOS·Android 전체로 순차 배포되었다. 사용자 선택의 여지 없이 일괄 적용되었다.</p>
+<h2 id="사용자-반응" tabindex="-1"><a class="header-anchor" href="#사용자-반응"><span>사용자 반응</span></a></h2>
+<p>반응은 양분되었다.</p>
+<p><strong>긍정적 평가</strong></p>
+<ul>
+<li>앱 간 구분이 명확해졌다</li>
+<li>아이콘이 한눈에 스캔된다</li>
+<li>현대적인 비주얼로 정리된 느낌</li>
+</ul>
+<p><strong>부정적 평가</strong></p>
+<ul>
+<li>그래디언트가 저해상도에서 뭉개진다</li>
+<li>Sheets, Keep, Drive가 오히려 더 찾기 어렵다는 의견 존재</li>
+<li>&quot;저렴한 서드파티 아이콘 같다&quot;는 반응</li>
+<li>브랜드 일관성을 잃었다는 지적</li>
+</ul>
+<p>흥미로운 점은 비판의 방향이 2020년과 <strong>정반대</strong>라는 것이다. 2020년에는 &quot;너무 똑같이 생겼다&quot;가 핵심 불만이었고, 2026년에는 &quot;너무 달라졌다&quot;는 반응이 나온다. 이는 디자인 변경 자체가 유발하는 낯섦과, 실제 사용성 문제를 구분해서 봐야 한다는 것을 시사한다.</p>
+<h2 id="분석-이번-개편이-의미하는-것" tabindex="-1"><a class="header-anchor" href="#분석-이번-개편이-의미하는-것"><span>분석: 이번 개편이 의미하는 것</span></a></h2>
+<h3 id="브랜딩-vs-가용성의-충돌" tabindex="-1"><a class="header-anchor" href="#브랜딩-vs-가용성의-충돌"><span>브랜딩 vs. 가용성의 충돌</span></a></h3>
+<p>2020년 개편은 &quot;Google답게&quot;를 우선했다. 2026년 개편은 &quot;찾기 쉽게&quot;를 우선했다. 둘 다 정당한 디자인 목표지만, 전자가 후자를 완전히 압도했을 때 어떤 결과가 나오는지를 6년간의 실험이 보여줬다.</p>
+<p>아이콘은 본질적으로 <strong>내비게이션 도구</strong>다. 아름답고 일관되게 보이는 것보다, 원하는 앱을 0.1초 안에 찾을 수 있어야 한다는 기능이 먼저다.</p>
+<h3 id="material-3-expressive와의-연계" tabindex="-1"><a class="header-anchor" href="#material-3-expressive와의-연계"><span>Material 3 Expressive와의 연계</span></a></h3>
+<p>이번 개편은 Google의 새 디자인 언어 <strong>Material 3 Expressive</strong>와 맞닿아 있다. M3 Expressive는 감성적 표현과 개성을 강조하는 방향으로, 이전 Material You의 색상 추출 시스템보다 브랜드 아이덴티티를 더 전면에 내세운다. Workspace 아이콘의 그래디언트화는 이 흐름의 일환이다.</p>
+<h3 id="ai-시대의-시각적-통합" tabindex="-1"><a class="header-anchor" href="#ai-시대의-시각적-통합"><span>AI 시대의 시각적 통합</span></a></h3>
+<p>Gemini, Google AI 관련 제품들이 모두 그래디언트 기반 비주얼을 사용하고 있다. Workspace 아이콘을 같은 계열로 정렬함으로써, 향후 AI 기능이 각 앱에 통합될 때 시각적 연속성을 확보하려는 전략으로 읽힌다.</p>
+<h2 id="결론" tabindex="-1"><a class="header-anchor" href="#결론"><span>결론</span></a></h2>
+<p>이번 개편은 단순한 미적 업데이트가 아니다. 브랜딩 논리가 사용성을 압도하면 어떤 결과가 발생하는지를 6년에 걸쳐 경험하고, 그것을 공식적으로 되돌린 사례다.</p>
+<p>디자인 시스템에서 일관성은 중요하지만, 그 일관성이 <strong>식별성을 희생시킬 때</strong> 시스템은 오히려 역기능한다. 구글의 이번 결정은 그 원칙을 뒤늦게나마 복원한 것이다.</p>
+<hr>
+<p><em>참고: <a href="https://9to5google.com/2026/04/26/gmail-google-gradient-redesign/" target="_blank" rel="noopener noreferrer">9to5Google</a> · <a href="https://www.androidpolice.com/googles-new-icons-are-rolling-out/" target="_blank" rel="noopener noreferrer">Android Police</a> · <a href="https://www.designrush.com/best-designs/apps/trends/google-workspace-icons-redesign" target="_blank" rel="noopener noreferrer">DesignRush</a></em></p>
+</div></template>
+
+
