@@ -90,6 +90,13 @@ export default defineUserConfig({
         ]
       },
       {
+        text: 'Design',
+        collapsible: true,
+        children: [
+          '/design/Google-Icon-Redesign-2026',
+        ]
+      },
+      {
         text: 'Brands',
         collapsible: true,
         children: [
