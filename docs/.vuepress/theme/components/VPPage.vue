@@ -12,28 +12,28 @@
           <p class="built-with">BUILT WITH</p>
           <div class="tech-logos">
             <a href="https://www.cloudflare.com/" target="_blank">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cloudflare/cloudflare-original.svg" alt="Cloudflare" />
+              <img loading="lazy" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cloudflare/cloudflare-original.svg" alt="Cloudflare" />
             </a>
             <a href="https://nodejs.org/" target="_blank">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js" />
+              <img loading="lazy" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js" />
             </a>
             <a href="https://github.com/kmbzn" target="_blank">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" />
+              <img loading="lazy" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" />
             </a>
             <a href="https://git-scm.com/" target="_blank">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" />
+              <img loading="lazy" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" />
             </a>
             <a href="https://vuejs.org/" target="_blank">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg" alt="Vue.js" />
+              <img loading="lazy" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg" alt="Vue.js" />
             </a>
             <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" />
+              <img loading="lazy" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" />
             </a>
             <a href="https://code.visualstudio.com/" target="_blank">
-              <img src="https://blog.kakaocdn.net/dn/lTWD3/btsMdkdWJqP/b4aSv2aa6c425THE40jKB1/img.png" alt="VSCode" />
+              <img loading="lazy" src="https://blog.kakaocdn.net/dn/lTWD3/btsMdkdWJqP/b4aSv2aa6c425THE40jKB1/img.png" alt="VSCode" />
             </a>
             <a href="https://www.npmjs.com/" target="_blank">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/d/db/Npm-logo.svg" alt="npm" />
+              <img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/d/db/Npm-logo.svg" alt="npm" />
             </a>
           </div>
           <p class="copyright">

@@ -1,5 +1,9 @@
 <template><div><h1 id="제럴드-젠타-럭셔리-스포츠-워치의-창시자" tabindex="-1"><a class="header-anchor" href="#제럴드-젠타-럭셔리-스포츠-워치의-창시자"><span>제럴드 젠타: 럭셔리 스포츠 워치의 창시자</span></a></h1>
 <DateMeta />
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/6/6e/Patek-Philippe-Nautilus-3700-1A.jpg" alt="Patek Philippe Nautilus Ref. 3700 (1976)"></p>
+<blockquote>
+<p><em>Patek Philippe Nautilus, 1976</em></p>
+</blockquote>
 <p>제럴드 젠타(Gérald Charles Genta, 1931–2011)는 20세기 시계 디자인의 가장 결정적인 인물 중 한 명이다. Royal Oak, Nautilus, IWC Ingenieur 등 오늘날 시계 시장에서 가장 높은 가격을 형성하는 스포츠 워치 카테고리가 모두 그의 손에서 탄생했다. 그는 단순히 시계를 디자인한 것이 아니라, <strong>럭셔리 스포츠 워치</strong>라는 장르 자체를 발명했다.</p>
 <h2 id="생애" tabindex="-1"><a class="header-anchor" href="#생애"><span>생애</span></a></h2>
 <p>1931년 5월 1일, 스위스 제네바에서 스위스인 어머니와 이탈리아 피에몬테 출신 아버지 사이에서 태어났다. 20세에 스위스 연방 금세공사 자격증을 취득하고, 이후 독립 디자이너로 활동하며 IWC, Omega, Universal Genève, Patek Philippe, Audemars Piguet 등 거의 모든 주요 시계 브랜드와 협업했다.</p>
@@ -20,7 +24,6 @@
 <li>무브먼트: Cal. 2121 (Jaeger-LeCoultre 기반)</li>
 </ul>
 <h3 id="patek-philippe-nautilus-1976" tabindex="-1"><a class="header-anchor" href="#patek-philippe-nautilus-1976"><span>Patek Philippe Nautilus (1976)</span></a></h3>
-<p><img src="https://upload.wikimedia.org/wikipedia/commons/6/6e/Patek-Philippe-Nautilus-3700-1A.jpg" alt="Patek Philippe Nautilus Ref. 3700 (1976)"></p>
 <p>Royal Oak의 성공에 자극을 받은 Patek Philippe가 젠타에게 같은 방향의 디자인을 의뢰했다. 그는 대서양 정기선의 현창(porthole)에서 영감을 얻어 Nautilus를 설계했다.</p>
 <p><img src="https://upload.wikimedia.org/wikipedia/commons/7/74/Patek-Philippe-Nautilus-5711.jpg" alt="Patek Philippe Nautilus Ref. 5711"></p>
 <p>Nautilus는 Royal Oak과 비교해 보다 수평적이고 유선형인 케이스가 특징이다. 가로로 늘어난 팔각형 베젤, 수평 엠보싱 다이얼, 통합 브레이슬릿이 독자적인 정체성을 만들었다.</p>

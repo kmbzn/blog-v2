@@ -44,7 +44,6 @@ export default defineUserConfig({
     ['link', { rel: 'icon', type: 'image/png', sizes: '192x192', href: '/images/android-chrome-192x192.png' }],
     ['link', { rel: 'icon', type: 'image/png', sizes: '512x512', href: '/images/android-chrome-512x512.png' }],
     ['link', { rel: 'manifest', href: '/manifest.json' }],
-    ['link', { rel: 'stylesheet', href: 'https://cdn.jsdelivr.net/gh/orioncactus/victor-mono@latest/dist/index.css' }],
     ['link', { rel: 'stylesheet', href: 'https://cdn.jsdelivr.net/npm/pretendard@1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css' }],
     ['link', { rel: 'stylesheet', href: 'https://unpkg.com/applause-button/dist/applause-button.css' }],
     ['script', { src: 'https://unpkg.com/applause-button/dist/applause-button.js' }],
@@ -148,22 +147,6 @@ export default defineUserConfig({
           '/products/cleansing-milk',
           '/products/fidget-toy',
           '/products/thinkpad',
-        ]
-      },
-      {
-        text: 'Programming Languages',
-        collapsible: true,
-        children: [
-          '/pl/8-0-Statement-Level-Control-Structures',
-          '/pl/8-Subprogram',
-          '/pl/9-Implementing-Subprogram',
-          '/pl/10-1-Abstract-Data-Types-and-Encapsulation-Constructs',
-          '/pl/10-2-Support-for-Object-Oriented-Programming',
-          '/pl/11-Concurrency',
-          '/pl/12-FPL-(1)',
-          '/pl/13-FPL-(2)',
-          '/pl/14-Exception-Handling-and-Event-Handling',
-          '/pl/final',
         ]
       },
     ],

@@ -1,9 +1,12 @@
 # 제럴드 젠타: 럭셔리 스포츠 워치의 창시자
 
+![Patek Philippe Nautilus Ref. 3700 (1976)](https://upload.wikimedia.org/wikipedia/commons/6/6e/Patek-Philippe-Nautilus-3700-1A.jpg)
+
+> *Patek Philippe Nautilus, 1976*  
+
 제럴드 젠타(Gérald Charles Genta, 1931–2011)는 20세기 시계 디자인의 가장 결정적인 인물 중 한 명이다. Royal Oak, Nautilus, IWC Ingenieur 등 오늘날 시계 시장에서 가장 높은 가격을 형성하는 스포츠 워치 카테고리가 모두 그의 손에서 탄생했다. 그는 단순히 시계를 디자인한 것이 아니라, **럭셔리 스포츠 워치**라는 장르 자체를 발명했다.
 
 ## 생애
-
 1931년 5월 1일, 스위스 제네바에서 스위스인 어머니와 이탈리아 피에몬테 출신 아버지 사이에서 태어났다. 20세에 스위스 연방 금세공사 자격증을 취득하고, 이후 독립 디자이너로 활동하며 IWC, Omega, Universal Genève, Patek Philippe, Audemars Piguet 등 거의 모든 주요 시계 브랜드와 협업했다.
 
 평생 10만 건 이상의 디자인을 남긴 것으로 알려져 있으며, 정작 본인은 손목시계를 착용하지 않았다고 전해진다. 2011년 8월 17일, 80세의 나이로 별세했다.
@@ -31,8 +34,6 @@
 - 무브먼트: Cal. 2121 (Jaeger-LeCoultre 기반)
 
 ### Patek Philippe Nautilus (1976)
-
-![Patek Philippe Nautilus Ref. 3700 (1976)](https://upload.wikimedia.org/wikipedia/commons/6/6e/Patek-Philippe-Nautilus-3700-1A.jpg)
 
 Royal Oak의 성공에 자극을 받은 Patek Philippe가 젠타에게 같은 방향의 디자인을 의뢰했다. 그는 대서양 정기선의 현창(porthole)에서 영감을 얻어 Nautilus를 설계했다.
 
