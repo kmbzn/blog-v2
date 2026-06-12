@@ -74,6 +74,10 @@ export default defineUserConfig({
           '/wellness/ExtraVirginOliveOil',
           '/wellness/NasalIrrigation',
           '/wellness/ht08',
+          '/wellness/Concerta',
+          '/wellness/Inderal',
+          '/wellness/Sertraline',
+          '/wellness/Melatonin',
         ]
       },
       {

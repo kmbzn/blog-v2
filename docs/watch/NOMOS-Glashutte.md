@@ -1,5 +1,7 @@
 # NOMOS Glashütte
 
+![NOMOS Glashütte Logo](https://upload.wikimedia.org/wikipedia/commons/2/24/NOMOS_Glashuette_logo.png)
+
 NOMOS Glashütte는 독일 작센주 글라스휘테(Glashütte)에 본사를 둔 독립 시계 브랜드다. 1990년 독일 통일 직후 설립되었으며, 바우하우스(Bauhaus) 미학을 기반으로 한 절제된 디자인과 자체 제작 무브먼트로 전 세계 시계 애호가들에게 높은 평가를 받고 있다.
 
 ## 브랜드 개요
