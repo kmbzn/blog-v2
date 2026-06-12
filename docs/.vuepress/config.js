@@ -87,6 +87,8 @@ export default defineUserConfig({
           '/wellness/inderal',
           '/wellness/sertraline',
           '/wellness/melatonin',
+          '/wellness/cervical-abrasion',
+          '/wellness/barbell-squat',
         ]
       },
       {
@@ -118,6 +120,8 @@ export default defineUserConfig({
           '/brands/aestrua',
           '/brands/jinhao',
           '/brands/herman-miller',
+          '/brands/desker',
+          '/brands/musinsa-standard',
         ]
       },
       {
@@ -141,6 +145,7 @@ export default defineUserConfig({
           '/products/cx31993-dac',
           '/products/cleansing-milk',
           '/products/fidget-toy',
+          '/products/thinkpad',
         ]
       },
       {
