@@ -1,4 +1,5 @@
 <template><div><h1 id="_3-search-2" tabindex="-1"><a class="header-anchor" href="#_3-search-2"><span>3. Search (2)</span></a></h1>
+<DateMeta />
 <h2 id="uninformed-search-algorithms-비정보-탐색-알고리즘" tabindex="-1"><a class="header-anchor" href="#uninformed-search-algorithms-비정보-탐색-알고리즘"><span>Uninformed Search Algorithms (비정보 탐색 알고리즘)</span></a></h2>
 <ul>
 <li>문제 관련 지식(problem-specific knowledge)을 사용하지 않는 탐색 전략</li>

@@ -1,4 +1,5 @@
 <template><div><h1 id="project-02-test-code" tabindex="-1"><a class="header-anchor" href="#project-02-test-code"><span>Project 02: Test Code</span></a></h1>
+<DateMeta />
 <p>Implementing a simple kernel-level thread</p>
 <p>Due date<br>
 2025. 05. 28. 23:59</p>

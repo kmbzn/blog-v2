@@ -1,4 +1,5 @@
 <template><div><h1 id="project-3-virtual-memory-file-system-wiki" tabindex="-1"><a class="header-anchor" href="#project-3-virtual-memory-file-system-wiki"><span>Project 3: Virtual Memory &amp; File system - wiki</span></a></h1>
+<DateMeta />
 <h2 id="_1-design" tabindex="-1"><a class="header-anchor" href="#_1-design"><span>1. Design</span></a></h2>
 <h3 id="_1-1-project-overview" tabindex="-1"><a class="header-anchor" href="#_1-1-project-overview"><span>1.1. Project overview</span></a></h3>
 <p>이 wiki는 xv6-riscv 기반 운영체제에 가상 메모리와 파일 시스템 기능을 확장한 과정을 정리한다.<br>

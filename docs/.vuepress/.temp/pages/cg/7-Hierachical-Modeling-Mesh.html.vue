@@ -1,4 +1,5 @@
 <template><div><h1 id="_7-hierarchical-modeling-mesh" tabindex="-1"><a class="header-anchor" href="#_7-hierarchical-modeling-mesh"><span>7 - Hierarchical Modeling, Mesh</span></a></h1>
+<DateMeta />
 <h2 id="midterm-exam-announcement" tabindex="-1"><a class="header-anchor" href="#midterm-exam-announcement"><span>Midterm Exam Announcement</span></a></h2>
 <ul>
 <li>일시: 5월 7일 (수) 오후 6:30 ~ 7:30</li>

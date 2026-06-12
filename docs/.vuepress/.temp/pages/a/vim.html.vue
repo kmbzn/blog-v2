@@ -1,4 +1,5 @@
 <template><div><h1 id="vim-사용-매뉴얼" tabindex="-1"><a class="header-anchor" href="#vim-사용-매뉴얼"><span>Vim 사용 매뉴얼</span></a></h1>
+<DateMeta />
 <h3 id="_1-vim-실행" tabindex="-1"><a class="header-anchor" href="#_1-vim-실행"><span>1. Vim 실행</span></a></h3>
 <div class="language-bash line-numbers-mode" data-highlighter="prismjs" data-ext="sh"><pre v-pre><code class="language-bash"><span class="line"><span class="token function">vim</span> <span class="token punctuation">[</span>filename<span class="token punctuation">]</span></span>
 <span class="line"></span></code></pre>

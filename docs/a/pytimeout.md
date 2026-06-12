@@ -1,7 +1,7 @@
 # Python 시간 초과 방지를 위한 팁
 
 <p align="center">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1869px-Python-logo-notext.svg.png" width="180" alt="Bitcoin logo" />
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/3840px-Python-logo-notext.svg.png" width="180" alt="Python logo" />
 </p>
 
 필자는 최근 교내 알고리즘 대회에 참가하여 평상시 가장 익숙한 언어인 **Python**으로 문제를 풀었다.  

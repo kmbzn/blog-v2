@@ -1,4 +1,5 @@
 <template><div><h1 id="_2-introduction-to-software-engineering" tabindex="-1"><a class="header-anchor" href="#_2-introduction-to-software-engineering"><span>2. Introduction to Software Engineering</span></a></h1>
+<DateMeta />
 <h2 id="software-is-a-skin-that-surrounds-our-civilization" tabindex="-1"><a class="header-anchor" href="#software-is-a-skin-that-surrounds-our-civilization"><span>Software is a Skin that Surrounds Our Civilization</span></a></h2>
 <ul>
 <li><em>Dr. Mark Harman</em>의 인용구</li>

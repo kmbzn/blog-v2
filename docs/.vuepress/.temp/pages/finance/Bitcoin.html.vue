@@ -1,4 +1,5 @@
 <template><div><h1 id="비트코인-bitcoin" tabindex="-1"><a class="header-anchor" href="#비트코인-bitcoin"><span>비트코인(Bitcoin)</span></a></h1>
+<DateMeta />
 <p align="center">
   <img src="https://bitcoin.org/img/icons/opengraph.png" width="180" alt="Bitcoin logo" />
 </p>

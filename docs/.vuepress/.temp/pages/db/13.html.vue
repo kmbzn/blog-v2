@@ -1,4 +1,5 @@
 <template><div><h1 id="_13-data-storage-structures" tabindex="-1"><a class="header-anchor" href="#_13-data-storage-structures"><span>13. Data Storage Structures</span></a></h1>
+<DateMeta />
 <h2 id="file-organization" tabindex="-1"><a class="header-anchor" href="#file-organization"><span>File Organization</span></a></h2>
 <ul>
 <li>데이터베이스는 파일(file)의 집합으로 저장</li>

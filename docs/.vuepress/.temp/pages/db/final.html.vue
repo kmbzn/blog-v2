@@ -1,4 +1,5 @@
 <template><div><h1 id="암기-노트" tabindex="-1"><a class="header-anchor" href="#암기-노트"><span>암기 노트</span></a></h1>
+<DateMeta />
 <h2 id="무손실-조인-lossless-join-의-조건" tabindex="-1"><a class="header-anchor" href="#무손실-조인-lossless-join-의-조건"><span>무손실 조인(lossless join)의 조건</span></a></h2>
 <ul>
 <li>공통 속성(교집합)이 적어도 한 쪽의 superkey여야 한다.</li>

@@ -1,4 +1,5 @@
 <template><div><h1 id="_3-process" tabindex="-1"><a class="header-anchor" href="#_3-process"><span>3. Process</span></a></h1>
+<DateMeta />
 <h2 id="learning-goals" tabindex="-1"><a class="header-anchor" href="#learning-goals"><span>Learning Goals</span></a></h2>
 <ul>
 <li>Process(프로세스)의 중요성 인식</li>

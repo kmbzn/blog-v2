@@ -1,4 +1,5 @@
 <template><div><h1 id="mindscape-🔥" tabindex="-1"><a class="header-anchor" href="#mindscape-🔥"><span>Mindscape 🔥</span></a></h1>
+<DateMeta />
 <p align="center">
   <img src="https://kmbzn.com/images/android-chrome-512x512.png" width="180" alt="Main Logo" />
 </p>

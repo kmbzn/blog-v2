@@ -1,4 +1,5 @@
 <template><div><h1 id="_18-concurrency-control" tabindex="-1"><a class="header-anchor" href="#_18-concurrency-control"><span>18. Concurrency Control</span></a></h1>
+<DateMeta />
 <h2 id="overview" tabindex="-1"><a class="header-anchor" href="#overview"><span>Overview</span></a></h2>
 <blockquote>
 <p>Concurrency Control(동시성 제어): 충돌하는 명령 간의 실행 순서를 변경하지 않으면서, 동시성 레벨을 가능한 한 높게 만드는 스케줄 생성

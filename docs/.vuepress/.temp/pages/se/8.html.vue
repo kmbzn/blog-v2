@@ -1,4 +1,5 @@
 <template><div><h1 id="_8-architecture" tabindex="-1"><a class="header-anchor" href="#_8-architecture"><span>8. Architecture</span></a></h1>
+<DateMeta />
 <h2 id="learning-goals" tabindex="-1"><a class="header-anchor" href="#learning-goals"><span>Learning Goals</span></a></h2>
 <ul>
 <li>architectural reasoning(아키텍처 추론)의 abstraction level(추상화 수준) 이해</li>

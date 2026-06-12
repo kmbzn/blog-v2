@@ -1,4 +1,5 @@
 <template><div><h1 id="web-application-development" tabindex="-1"><a class="header-anchor" href="#web-application-development"><span>Web Application Development</span></a></h1>
+<DateMeta />
 <h2 id="목차" tabindex="-1"><a class="header-anchor" href="#목차"><span>목차</span></a></h2>
 <ul>
 <li><code v-pre>Node.js</code></li>

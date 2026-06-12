@@ -1,0 +1,1078 @@
+<template><div><h1 id="_12-fpl-1" tabindex="-1"><a class="header-anchor" href="#_12-fpl-1"><span>12. FPL (1)</span></a></h1>
+<DateMeta />
+<h2 id="functional-programming-languages" tabindex="-1"><a class="header-anchor" href="#functional-programming-languages"><span>Functional Programming Languages</span></a></h2>
+<p>What do we study in this chapter?</p>
+<ul>
+<li>Introduction</li>
+<li>Mathematical Functions</li>
+<li>Fundamentals of Functional Programming Languages</li>
+<li>The First Functional Programming Language: Lisp Introduction to Scheme</li>
+<li>Common Lisp</li>
+<li>ML</li>
+<li>Haskell</li>
+<li>F#</li>
+<li>Support for Functional Programming in Primarily Imperative Languages</li>
+<li>Comparison of Functional and Imperative Languages</li>
+</ul>
+<h2 id="introduction" tabindex="-1"><a class="header-anchor" href="#introduction"><span>Introduction</span></a></h2>
+<p>The design of imperative language</p>
+<ul>
+<li>Based on von Neumann architecture</li>
+<li>이 구조에서는 프로그램과 데이터가 같은 메모리에 저장되고, 프로세서가 명령어를 순차적으로 실행함</li>
+<li>Primary concern: efficiency (rather than suitability for SW development)</li>
+<li>초기 명령형 언어의 목적은 개발자의 편의성보다 실행 효율성을 우선시</li>
+<li>하드웨어 자원을 최대한 효율적으로 쓰는 것이 중요했기 때문에, 직관적이지 않은 저수준 연산이 많고, 에러 유발 가능성도 높음</li>
+<li>Reliance on the underlying architecture is thought by some to be an unnecessary restriction</li>
+<li>Uses of variables are important</li>
+<li>How program's state change</li>
+<li>변수 값이 바뀌면서 상태가 변하므로, 큰 프로그램에서는 상태의 흐름을 추적하는 것이 매우 어렵고 복잡해짐</li>
+<li>→ This is a daunting task for a large program</li>
+</ul>
+<p>The design of functional language</p>
+<ul>
+<li>Based on mathematical functions</li>
+<li>입력 → 함수 → 출력의 관계로, 상태 변경 없이 결과를 계산하는 것이 핵심</li>
+<li>Solid theoretical basis (oriented more to particular programming paradigms or methodologies than to efficiency)</li>
+<li>함수형 언어는 람다 계산법(<span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>λ</mi></mrow><annotation encoding="application/x-tex">\lambda</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal">λ</span></span></span></span>-calculus) 같은 이론적 기반이 튼튼</li>
+<li>효율성보다 명확한 패러다임(모듈성, 불변성, 재귀 등)에 초점을 둠</li>
+<li>Closer to user (relatively less concerned with machine architecture)</li>
+<li>함수형 언어는 기계의 작동 방식에 덜 의존하고, 개발자의 사고 흐름에 더 가까움</li>
+<li>명령형 언어처럼 상태(state)를 추적하지 않아도 됨</li>
+<li>LISP: began as pure functional language (1950년대 개발)</li>
+<li>But, acquired some important imperative features</li>
+<li>명령형 특성(루프, 변수 할당 등, (ex.) <code v-pre>set!</code>, <code v-pre>loop</code>, <code v-pre>progn</code>)</li>
+<li>Used in knowledge representation, machine learning, intelligent training systems, and the modeling of speech</li>
+<li>Common LISP is a dialects of LISP (다양한 LISP 방언을 통합한 표준화된 버전)</li>
+<li>Scheme is a small, static-scoped dialect of LISP</li>
+<li>ML, Haskell, OCaml, and F#: typed functional programming languages</li>
+</ul>
+<h2 id="mathematical-functions" tabindex="-1"><a class="header-anchor" href="#mathematical-functions"><span>Mathematical Functions</span></a></h2>
+<p>Mapping member of domain(정의역) set to range(치역) set</p>
+<ul>
+<li>Function definition specifies domain and range sets</li>
+<li>Along with mapping described by expression or table</li>
+<li>Functions are applied to elements of domain set to yield elements of range set</li>
+<li>Fundamental characteristics of mathematical functions</li>
+<li>Evaluation order is controlled by recursion and conditional expressions</li>
+<li>Rather than sequencing and iterative repetition</li>
+<li>명령형 언어처럼 <code v-pre>for</code>, <code v-pre>while</code> 같은 반복문에 의존하지 않음</li>
+<li>No side effects and cannot depend on any external values</li>
+<li>같은 입력에 대해 항상 같은 출력 → 참조 투명성(referential transparency) 보장</li>
+<li>No concept of stage of function</li>
+<li>명령형 언어처럼 함수가 중간 상태(stage)를 갖지 않음</li>
+<li>함수는 그 자체로 완결된 계산 단위이며, 이전 상태를 기억하지 않음</li>
+</ul>
+<p>Function definitions are written</p>
+<ul>
+<li>Name, list of parameters in parentheses and mapping expression</li>
+<li>“함수 이름 + 괄호 속 매개변수 + 정의 수식”의 형태로 정의됨</li>
+<li>[EX] <code v-pre>cube(x) ≡ x * x * x</code></li>
+<li><code v-pre>≡</code>: “is defined as” (cube는 함수 이름, x는 매개변수(parameter), x * x * x는 함수가 수행하는 계산을 나타냄) (수학적으로 &quot;…로 정의된다&quot;를 의미함)</li>
+<li>Parameter x can be any member of domain set but fixed during evaluation</li>
+<li>평가 과정에서는 고정됨 → 특정 값으로 바인딩(binding) 됨</li>
+<li>[EX] <code v-pre>cube(2.0) = 2.0 * 2.0 * 2.0 = 8</code></li>
+<li>x is bound to 2.0 during the evaluation and there are no unbound parameters</li>
+<li>평가 중에는 모든 변수들이 값에 묶여 있으며, 따라서 명확하고 예측 가능한 결과를 보장함</li>
+</ul>
+<p>Early theoretical work on functions separated the task of defining a function from that of naming the function → 함수를 정의할 수 있지만 꼭 이름을 붙일 필요는 없다는 개념이 생김 → nameless function</p>
+<ul>
+<li>Lambda expression specifies parameter(s) and mapping functions</li>
+<li>[EX] <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>λ</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mi>x</mi><mo>∗</mo><mi>x</mi><mo>∗</mo><mi>x</mi></mrow><annotation encoding="application/x-tex">\lambda(x) x * x * x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">λ</span><span class="mopen">(</span><span class="mord mathnormal">x</span><span class="mclose">)</span><span class="mord mathnormal">x</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.4653em;"></span><span class="mord mathnormal">x</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">x</span></span></span></span> (<span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>λ</mi></mrow><annotation encoding="application/x-tex">\lambda</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal">λ</span></span></span></span>(변수) 식) vs <code v-pre>cube(x) ≡ x * x * x</code> (이름 있음)</li>
+<li>잠깐 쓸 함수인데 굳이 이름 붙이기 싫을 때</li>
+<li><code v-pre>numbers = [1, 2, 3]</code></li>
+<li><code v-pre>doubled = map(lambda x: x * 2, numbers)</code> # 함수 이름 없이 사용</li>
+<li>다른 함수에 함수를 전달할 때</li>
+<li>이름 없이 함수를 바로 정의해서 전달 가능</li>
+<li>함수가 일회성일 때 매우 유용</li>
+</ul>
+<p>Formal computation model using lambda expressions → lambda calculus</p>
+<ul>
+<li>“계산을 함수로만 표현하자”는 수학적 모델</li>
+<li>모든 계산을 함수 정의와 적용으로 설명할 수 있는 이론적 기초 제공</li>
+<li>→ &quot;계산이라는 건 결국, 어떤 값을 함수에 넣고, 결과를 얻는 과정일 뿐이다.&quot;</li>
+<li>모든 계산을 다음 두 가지만으로 설명하려고 함</li>
+<li>함수를 정의하기</li>
+<li>그 함수에 값을 적용하기</li>
+<li>함수형 프로그래밍 언어의 이론적 뿌리</li>
+<li>Can be typed or untyped</li>
+<li>Untyped lambda calculus: 모든 표현을 자유롭게 사용</li>
+<li>Typed lambda calculus: 타입 제약 존재 (→ Haskell, ML 등 함수형 언어로 발전)</li>
+</ul>
+<p>Are applied to parameter(s) by placing the parameter(s) after the expression</p>
+<ul>
+<li>[EX] <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mi>λ</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mi>x</mi><mo>∗</mo><mi>x</mi><mo>∗</mo><mi>x</mi><mo stretchy="false">)</mo><mo stretchy="false">(</mo><mn>2</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(\lambda(x) x * x * x) (2)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal">λ</span><span class="mopen">(</span><span class="mord mathnormal">x</span><span class="mclose">)</span><span class="mord mathnormal">x</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.4653em;"></span><span class="mord mathnormal">x</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">x</span><span class="mclose">)</span><span class="mopen">(</span><span class="mord">2</span><span class="mclose">)</span></span></span></span></li>
+<li><code v-pre>= 8</code></li>
+<li><span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>λ</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mi>x</mi><mo>∗</mo><mi>x</mi><mo>∗</mo><mi>x</mi></mrow><annotation encoding="application/x-tex">\lambda(x) x * x * x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">λ</span><span class="mopen">(</span><span class="mord mathnormal">x</span><span class="mclose">)</span><span class="mord mathnormal">x</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.4653em;"></span><span class="mord mathnormal">x</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">x</span></span></span></span>는 익명 함수</li>
+<li><code v-pre>(2)</code>는 인자 적용(application)</li>
+</ul>
+<h2 id="functional-forms" tabindex="-1"><a class="header-anchor" href="#functional-forms"><span>Functional forms</span></a></h2>
+<p>A higher-order function, or functional form</p>
+<ul>
+<li>함수도 숫자처럼 다룰 수 있다면… 고차함수</li>
+<li>Takes functions as parameters</li>
+<li>Yields a function as its result</li>
+<li>Or both above</li>
+<li>고차 함수는 함수형 프로그래밍의 핵심 도구</li>
+<li>코드를 더 유연하고 재사용 가능하게 만듦</li>
+</ul>
+<p>Functional composition</p>
+<ul>
+<li>A functional form that takes two functions as parameters</li>
+<li>Yields a function whose value is the first actual parameter function</li>
+<li>applied to the application of the second</li>
+<li>[EX] Form: <code v-pre>h ≡ f ˚ g</code> (<code v-pre>˚</code> is operator for function composition)</li>
+<li>means <code v-pre>h(x) ≡ f(g(x))</code></li>
+<li>for <code v-pre>f(x) ≡ x + 2</code>, <code v-pre>g(x) ≡ 3*x</code>, <code v-pre>h ≡ f ˚ g</code> yields <code v-pre>(3*x) + 2</code></li>
+</ul>
+<div class="language-python line-numbers-mode" data-highlighter="prismjs" data-ext="py"><pre v-pre><code class="language-python"><span class="line"><span class="token keyword">def</span> <span class="token function">compose</span><span class="token punctuation">(</span>f<span class="token punctuation">,</span> g<span class="token punctuation">)</span><span class="token punctuation">:</span></span>
+<span class="line">    <span class="token keyword">return</span> <span class="token keyword">lambda</span> x<span class="token punctuation">:</span> f<span class="token punctuation">(</span>g<span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">)</span></span>
+<span class="line"></span>
+<span class="line"><span class="token keyword">def</span> <span class="token function">square</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token keyword">return</span> x <span class="token operator">*</span> x</span>
+<span class="line"><span class="token keyword">def</span> <span class="token function">add_one</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token keyword">return</span> x <span class="token operator">+</span> <span class="token number">1</span></span>
+<span class="line"></span>
+<span class="line">new_func <span class="token operator">=</span> compose<span class="token punctuation">(</span>square<span class="token punctuation">,</span> add_one<span class="token punctuation">)</span></span>
+<span class="line"><span class="token keyword">print</span><span class="token punctuation">(</span>new_func<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment"># 결과: square(add_one(3)) → square(4) = 16</span></span>
+<span class="line"></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>Apply-to-all</p>
+<ul>
+<li>A functional form that takes a single function as a parameter</li>
+<li>Yields a list of values obtained by applying the given function to each element of a list of parameters</li>
+<li>Form: <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>α</mi></mrow><annotation encoding="application/x-tex">\alpha</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal" style="margin-right:0.0037em;">α</span></span></span></span></li>
+<li>For <code v-pre>h(x) ≡ x * x</code></li>
+<li><span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>α</mi><mo stretchy="false">(</mo><mi>h</mi><mo separator="true">,</mo><mo stretchy="false">(</mo><mn>2</mn><mo separator="true">,</mo><mn>3</mn><mo separator="true">,</mo><mn>4</mn><mo stretchy="false">)</mo><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\alpha(h, (2, 3, 4))</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.0037em;">α</span><span class="mopen">(</span><span class="mord mathnormal">h</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mopen">(</span><span class="mord">2</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">3</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">4</span><span class="mclose">))</span></span></span></span> yields <code v-pre>(4, 9, 16)</code></li>
+</ul>
+<div class="language-python line-numbers-mode" data-highlighter="prismjs" data-ext="py"><pre v-pre><code class="language-python"><span class="line"><span class="token keyword">def</span> <span class="token function">h</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">:</span></span>
+<span class="line">    <span class="token keyword">return</span> x <span class="token operator">*</span> x</span>
+<span class="line"></span>
+<span class="line">numbers <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">]</span></span>
+<span class="line">result <span class="token operator">=</span> <span class="token builtin">list</span><span class="token punctuation">(</span><span class="token builtin">map</span><span class="token punctuation">(</span>h<span class="token punctuation">,</span> numbers<span class="token punctuation">)</span><span class="token punctuation">)</span></span>
+<span class="line"><span class="token keyword">print</span><span class="token punctuation">(</span>result<span class="token punctuation">)</span> <span class="token comment"># [4, 9, 16]</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment"># with 람다 표현식</span></span>
+<span class="line">result <span class="token operator">=</span> <span class="token builtin">list</span><span class="token punctuation">(</span><span class="token builtin">map</span><span class="token punctuation">(</span><span class="token keyword">lambda</span> x<span class="token punctuation">:</span> x <span class="token operator">*</span> x<span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span></span>
+<span class="line"></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="fundamentals-of-functional-programming-languages" tabindex="-1"><a class="header-anchor" href="#fundamentals-of-functional-programming-languages"><span>Fundamentals of Functional Programming Languages</span></a></h2>
+<p>Objective of design of FPL</p>
+<ul>
+<li>Mimic mathematical functions</li>
+<li>입력이 주어지면 항상 같은 결과를 반환하고 중간 상태나 변수 없이 계산이 이뤄짐 → 예측 가능하고 안전한 계산</li>
+<li>The basic process of computation is fundamentally different from imperative language</li>
+<li>In imperative</li>
+<li>컴퓨터에게 &quot;어떻게(how)&quot; 계산할지 명령을 내리는 방식</li>
+<li>Operations are done → results are stored in variables</li>
+<li>Management of variable is concern and course of complexity</li>
+<li>[EX] <code v-pre>(x+y)/(a-b)</code></li>
+<li>Value of <code v-pre>(x+y)</code> is computed and stored while <code v-pre>(a-b)</code> is evaluated</li>
+<li>In FPL</li>
+<li>&quot;무엇을(what)&quot; 계산할지를 선언(declare)하는 방식</li>
+<li>계산 순서나 중간 변수에 신경 쓰지 않고, 모든 것이 표현식(expression)으로 구성됨</li>
+<li>[EX] <code v-pre>(x+y)/(a-b)</code></li>
+<li>변수 값이 주어지면, 내부적으로 계산이 자동으로 진행됨 중간 상태 없이, 결과만 반환됨</li>
+<li>Variables and assignments are not necessary (as in math)</li>
+<li>수학에서 <code v-pre>x = 3</code>라고 하면, <code v-pre>x</code>는 절대 바뀌지 않는 값</li>
+<li>반면 명령형 언어에선 <code v-pre>x = x + 1</code> 같은 문장이 가능</li>
+<li>함수형 언어에선 값이 한 번 정해지면 절대 바뀌지 않음 → 변수가 아니라 상수에 가까움</li>
+<li>→ Freeing programmer from concerns of memory cells</li>
+<li>Iterative construct → recursion</li>
+<li>상태(state)를 바꾸는 반복 대신 순수한 함수 호출로 해결</li>
+<li>Referential Transparency - Evaluation of a function always produces the same result given the same parameters</li>
+<li>같은 입력 → 항상 같은 출력</li>
+<li>외부 상태에 영향을 받지 않음 = 순수 함수</li>
+<li>이런 성질이 있으면 디버깅이 훨씬 쉽고, 테스트도 간단함</li>
+<li>Makes semantics of FPL far simpler than imperative</li>
+<li>변수 변화 없음, 순수 함수만 존재, 상태도 없음</li>
+<li>A set of primitive functions are provided (smaller number is good)</li>
+<li>FPL은 보통 적은 수의 기본 함수만 제공하고, 그걸 조합해서 복잡한 동작을 만들게 유도함.</li>
+</ul>
+<h2 id="original-lisp" tabindex="-1"><a class="header-anchor" href="#original-lisp"><span>Original Lisp</span></a></h2>
+<p>The first functional language</p>
+<ul>
+<li>LISt Processing의 줄임말 → 리스트 기반 데이터 구조를 다루기 아주 좋음</li>
+<li>No longer represents the latest design concepts for functional languages</li>
+<li>Represent well the fundamental concepts of functional programming</li>
+<li>LISP는 람다 표현식, 재귀, 함수 자체를 값처럼 다루는 방식 등 함수형 프로그래밍의 핵심 개념을 담고 있음</li>
+<li>Therefore worthy of study</li>
+<li>All LISP dialects include imperative-language features</li>
+<li>Imperative-style variables, assignment statements, and iteration</li>
+</ul>
+<h2 id="lisp-data-types-and-structures" tabindex="-1"><a class="header-anchor" href="#lisp-data-types-and-structures"><span>Lisp Data Types and Structures</span></a></h2>
+<p>Data object types: originally only atoms and lists</p>
+<ul>
+<li>(1) Atom (원자): 쪼갤 수 없는 단일 값</li>
+<li>숫자, 기호(symbol), 문자 등이 포함</li>
+<li>예: <code v-pre>A</code>, <code v-pre>42</code>, <code v-pre>'hello</code>”</li>
+<li>(2) List (리스트)</li>
+<li>괄호로 둘러싸인 원자와 리스트의 집합</li>
+<li>리스트 안에는 다른 리스트도 포함될 수 있어 (중첩 가능)</li>
+<li>List form: parenthesized collections of sublists and/or atoms</li>
+<li>[EX] <code v-pre>(A (B C) D (E (F G)))</code></li>
+<li>첫 번째 원소: <code v-pre>A</code> (atom)</li>
+<li>두 번째: <code v-pre>(B C)</code> (sublist)</li>
+<li>세 번째: <code v-pre>D</code> (atom)</li>
+<li>네 번째: <code v-pre>(E (F G))</code> (sublist 안에 또 sublist)</li>
+</ul>
+<p>Originally, Lisp was a typeless language</p>
+<ul>
+<li>초기 Lisp에서는 모든 값이 리스트 또는 atom으로 표현됨</li>
+<li>정수, 문자열, 불리언 같은 타입 구분이 명확하지 않았음</li>
+<li>나중에 Common Lisp 등에서 다양한 타입이 추가됨 (예: <code v-pre>integer</code>, <code v-pre>float</code>, <code v-pre>string</code> 등)</li>
+<li>Lisp lists are stored internally as singlelinked lists</li>
+<li><code v-pre>(A B C)</code></li>
+<li><code v-pre>[A] → [B] → [C] → NIL</code></li>
+</ul>
+<h2 id="lisp-interpretation" tabindex="-1"><a class="header-anchor" href="#lisp-interpretation"><span>Lisp Interpretation</span></a></h2>
+<p>The first requirement for the universal LISP function</p>
+<ul>
+<li>The first Lisp interpreter appeared only as a demonstration of the universality of the computational capabilities of the notation</li>
+<li>Lisp의 핵심 철학 중 하나인 코드와 데이터의 동일한 표현 (Code-as-Data)</li>
+<li>Notation allowing functions to be expressed in the same way data expressed</li>
+<li>[EX] <code v-pre>(A B C)</code> , [ex] <code v-pre>(+ 2 3)</code> ; → 5</li>
+<li>[1] 데이터로 해석: Can be interpreted as a simple list of three atoms</li>
+<li>원자 A, B, C가 들어 있는 리스트</li>
+<li>[2] 코드로 해석: Can be interpreted as if function named A is applied to two parameters</li>
+<li>함수 A가 B와 C를 인자로 받아 호출되는 것</li>
+<li>코드도 데이터처럼</li>
+<li>프로그램이 자기 자신을 분석하거나 수정할 수 있음 → 메타프로그래밍 가능</li>
+<li><code v-pre>(eval '(+ 1 2))</code></li>
+<li>컴파일러, 인터프리터, 매크로 시스템 등을 언어 내부에서 구현할 수 있음</li>
+</ul>
+<p>Specified in a prefix list form (Cambridge Polish or Cambridge prefix)</p>
+<ul>
+<li>수식이나 함수 호출을 항상 앞에서부터 읽음</li>
+<li><code v-pre>(function_name argument1 … argumentn)</code></li>
+<li>앞에 함수 이름이 오는 형식(prefix)을 씀</li>
+<li><code v-pre>(+ 5 7)</code></li>
+<li><code v-pre>(+ 3 4 7 6)</code></li>
+<li>Lambda notation is used to specify functions and function definitions</li>
+<li>함수를 만들 때 LAMBDA라는 키워드를 사용</li>
+<li><code v-pre>(function_name (LAMBDA (arg1 ... argn) expression))</code></li>
+<li>이건 &quot;이름이 있는 함수&quot;를 정의하는 방식</li>
+<li><code v-pre>(define square (lambda (x) (* x x)))</code></li>
+<li>square라는 이름의 함수 정의</li>
+<li><code v-pre>(lambda (x) (* x x))</code> → x를 받아서 x * x를 계산하는 함수</li>
+<li><code v-pre>((lambda (x) (* x x)) 5)</code> ; → 25</li>
+<li>이름 없는 함수도 가능</li>
+<li>함수에 이름 없이 바로 정의하고, 5를 넣어 실행함</li>
+</ul>
+<p>All LISP structures, both data and code, were called S-expression</p>
+<ul>
+<li>S-expressions became LISP’s only notation</li>
+<li>괄호로 둘러싸인 리스트 구조</li>
+<li>이 안에 데이터든 함수 호출이든 다 표현</li>
+<li><code v-pre>(+ 2 3)</code> ; 함수 호출, 실행 가능한 함수 호출</li>
+<li><code v-pre>(A (B C) D)</code> ; 데이터 리스트, 단순한 리스트 데이터</li>
+</ul>
+<p>McCarthy successfully developed a universal function (EVAL) that could evaluate any other function</p>
+<ul>
+<li>어떤 코드든 실행할 수 있는 함수</li>
+<li>Implementation of EVAL could serve as a LISP interpreter</li>
+<li>EVAL은 S-expression을 받아서 실제로 실행시킴</li>
+<li>Lisp 코드 자체를 입력값으로 받아 처리함</li>
+<li><code v-pre>(eval '(+ 2 3))</code> ; → 5</li>
+<li>존 매카시(John McCarthy)는 이 EVAL 함수 하나로 모든 Lisp 프로그램을 실행할 수 있게 만듦 → Lisp 인터프리터 자체를 Lisp로 구현할 수 있게 됨</li>
+<li>Before 1975, dialects of LISP are dynamic scoping</li>
+<li>Contemporary dialects use static scoping or can choose static or dynamic.</li>
+</ul>
+<h2 id="origins-of-scheme" tabindex="-1"><a class="header-anchor" href="#origins-of-scheme"><span>Origins of Scheme</span></a></h2>
+<p>A mid-1970s dialect of Lisp, designed to be a cleaner, more modern, and simpler version than the contemporary dialects of Lisp</p>
+<ul>
+<li>Uses only static scoping (이전 Lisp은 동적 스코핑 사용)</li>
+<li>Functions are first-class entities</li>
+<li>A first-class object refers to an object that supports all operations that are generally applicable to other objects</li>
+<li>They can be the values of expressions and elements of lists</li>
+<li>They can be assigned to variables, passed as parameters, and returned from functions</li>
+</ul>
+<h2 id="the-scheme-interpreter" tabindex="-1"><a class="header-anchor" href="#the-scheme-interpreter"><span>The Scheme Interpreter</span></a></h2>
+<p>Scheme의 인터프리터 동작 방식</p>
+<ul>
+<li>In interactive mode, the Scheme interpreter is an infinite read-evaluate-print loop (REPL)</li>
+<li>→ Read (읽기) → Eval (평가) → Print (출력) → 반복</li>
+<li>→ 사용자가 입력한 식(expression)을 읽고, 평가하고, 그 결과를 출력한 뒤 다시 대기</li>
+<li>This form of interpreter is also used by Python and Ruby (현대 스크립트 언어)</li>
+<li>Expressions are interpreted by the function EVAL (주어진 식을 해석하고 실행하는 기능)</li>
+<li>Literals evaluate to themselves</li>
+<li>If typing a number to interpreter → simply display the number</li>
+<li>EVAL은 Scheme 내부에서 표현식을 받아 실행 결과를 반환하는 함수</li>
+<li>Scheme에서는 코드도 일종의 리스트 구조(S-expression)이기 때문에, 리스트로 표현된 코드를 그대로 실행시킬 수 있음</li>
+<li><code v-pre>&gt; (eval '(+ 2 3))</code></li>
+<li><code v-pre>5</code></li>
+<li>보통은 직접 eval을 자주 쓰진 않지만, 다음과 같은 상황에서 유용</li>
+<li>사용자가 입력한 문자열을 코드로 실행하고 싶을 때</li>
+<li>메타프로그래밍 (코드를 조작하는 코드)을 구현할 때</li>
+<li>REPL을 구현할 때 (eval이 핵심 함수)</li>
+</ul>
+<h2 id="primitive-function-evaluation" tabindex="-1"><a class="header-anchor" href="#primitive-function-evaluation"><span>Primitive Function Evaluation</span></a></h2>
+<p>Primitive Function Evaluation의 과정</p>
+<ul>
+<li>[인자평가] Parameters are evaluated, in no particular order</li>
+<li>→ 인자 간 부작용(side effect)이 있다면 결과가 달라질 수 있음</li>
+<li>→ 순수 함수 사용이 권장됨</li>
+<li>[전달] The values of the parameters are passed into the function body</li>
+<li>전달된 인자 값을 이용해 함수 로직 수행</li>
+<li>[분문 실행] The function body is evaluated</li>
+<li>[반환] The value of the last expression in the body is the value of the function</li>
+<li>Scheme에서는 마지막 식의 결과값이 전체 함수의 반환값</li>
+</ul>
+<h2 id="primitive-functions-lambda-expressions" tabindex="-1"><a class="header-anchor" href="#primitive-functions-lambda-expressions"><span>Primitive Functions &amp; LAMBDA Expressions</span></a></h2>
+<p>Primitive Arithmetic Functions: <code v-pre>+</code>, <code v-pre>-</code>, <code v-pre>*</code> , <code v-pre>/</code>, <code v-pre>MODULO</code>, <code v-pre>ROUND</code>, <code v-pre>MAX</code>, <code v-pre>MIN</code>, <code v-pre>LOG</code>, <code v-pre>SIN</code>, and <code v-pre>SQRT</code></p>
+<ul>
+<li>접두(prefix) 표기법을 사용</li>
+<li>If no parameters are given for <code v-pre>*</code>, 1 is returned (곱셉의 항등원)</li>
+<li>If no parameters are given to <code v-pre>+</code>, 0 is returned (덧셈의 항등원)</li>
+<li>Use uppercase letters for all reserved words and predefined functions</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Expression</th>
+<th>Value</th>
+<th>Expression</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>42</td>
+<td>42</td>
+<td><code v-pre>(SQRT 9)</code></td>
+<td>3.0</td>
+</tr>
+<tr>
+<td><code v-pre>(* 3 7)</code></td>
+<td>21</td>
+<td><code v-pre>(MODULO 17 5)</code></td>
+<td>2</td>
+</tr>
+<tr>
+<td><code v-pre>(+ 5 7 8)</code></td>
+<td>20</td>
+<td><code v-pre>(ROUND 3.6)</code></td>
+<td>4</td>
+</tr>
+<tr>
+<td><code v-pre>(− 5 6)</code></td>
+<td>−1</td>
+<td><code v-pre>(MAX 3 8 2 9 1)</code></td>
+<td>9</td>
+</tr>
+<tr>
+<td><code v-pre>(− 15 7 2)</code></td>
+<td>6</td>
+<td><code v-pre>(MIN 3 8 2 9 1)</code></td>
+<td>1</td>
+</tr>
+<tr>
+<td><code v-pre>(− 24 (* 4 3))</code></td>
+<td>12</td>
+<td><code v-pre>(SIN (/ PI 2))</code></td>
+<td>1.0</td>
+</tr>
+</tbody>
+</table>
+<p>Lambda Expressions</p>
+<ul>
+<li>Nameless function actually includes the word LAMBDA</li>
+<li>Form is based on <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>λ</mi></mrow><annotation encoding="application/x-tex">\lambda</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal">λ</span></span></span></span> notation</li>
+<li>[EX] <code v-pre>(LAMBDA (x) (* x x))</code></li>
+<li>이 식 자체는 함수 객체(function object)를 반환</li>
+<li>Lambda expressions can be applied to parameters</li>
+<li>[EX] <code v-pre>((LAMBDA (x) (* x x)) 7)</code></li>
+<li>x is called a bound variable (never change after being bound)</li>
+<li>Lambda expressions can have any number of parameters</li>
+<li>[EX] <code v-pre>(LAMBDA (a b x) (+ (* a x x) (* b x)))</code></li>
+</ul>
+<h2 id="special-form-function-define" tabindex="-1"><a class="header-anchor" href="#special-form-function-define"><span>Special Form Function: DEFINE</span></a></h2>
+<p>DEFINE - Two forms:</p>
+<ul>
+<li>The evaluation process (interpreted by EVAL) for DEFINE is different!</li>
+<li>[1] To bind a symbol to an expression (어떤 이름에 값을 &quot;정의&quot;하는 방식)</li>
+<li>[EX] <code v-pre>(DEFINE pi 3.141593)</code></li>
+<li>pi는 3.141593에 바인딩됨</li>
+<li>[EX of use] <code v-pre>(DEFINE two_pi (* 2 pi))</code></li>
+<li>two_pi는 (* 2 pi)의 평가 결과인 6.283186에 바인딩됨</li>
+<li>These symbols are not variables – they are like the names bound by Java’s <code v-pre>final</code> declarations</li>
+<li>→ 다시 DEFINE하지 않는 이상 변경 불가</li>
+<li>[2] To bind names to lambda expressions (LAMBDA is implicit)</li>
+<li>이 경우 LAMBDA가 암묵적으로 포함됨</li>
+<li>[EX] <code v-pre>(DEFINE (square x) (* x x))</code> → <code v-pre>(DEFINE square (LAMBDA (x) (* x x)))</code></li>
+<li>[EX of use] <code v-pre>(square 5)</code></li>
+<li>The first parameter is never evaluated</li>
+<li>The second parameter is evaluated and bound to the first parameter</li>
+</ul>
+<h2 id="output-functions" tabindex="-1"><a class="header-anchor" href="#output-functions"><span>Output Functions</span></a></h2>
+<p>Usually not needed</p>
+<ul>
+<li>Because interpreter always displays the result of a function evaluated at the top level (not nested)</li>
+<li>단, 이건 최상위 수준에서만 해당됨. 함수 내부에서 출력을 원할 경우 명시적 출력 함수값이 필요함</li>
+<li>Scheme has <code v-pre>PRINTF</code>, which is similar to the <code v-pre>printf</code> function of C</li>
+<li>대부분의 표준 Scheme에는 없고, 일부 구현에서만 지원</li>
+</ul>
+<h2 id="display-and-read-functions" tabindex="-1"><a class="header-anchor" href="#display-and-read-functions"><span>Display and Read Functions</span></a></h2>
+<p>DISPLAY function: simply prints the arguments</p>
+<ul>
+<li><code v-pre>(DISPLAY 21)</code>
+21</li>
+<li><code v-pre>(DISPLAY &quot;hello&quot;)</code>
+hello</li>
+</ul>
+<p>READ function: enter what we type on the keyboard</p>
+<ul>
+<li><code v-pre>(DEFINE x (READ))</code>
+7</li>
+</ul>
+<h2 id="numeric-predicate-functions" tabindex="-1"><a class="header-anchor" href="#numeric-predicate-functions"><span>Numeric Predicate Functions</span></a></h2>
+<p>A predicate function is one that returns a Boolean value</p>
+<ul>
+<li><code v-pre>#T</code> (or <code v-pre>#t</code>) is true and <code v-pre>#F</code> (or <code v-pre>#f</code>) is false</li>
+<li><code v-pre>(= 3 3)</code> ; → <code v-pre>#t</code></li>
+<li><code v-pre>(&lt; 3 5)</code> ; → <code v-pre>#t</code></li>
+<li><code v-pre>(&gt; 7 10)</code> ; → <code v-pre>#f</code></li>
+<li>Sometimes <code v-pre>()</code> is used for false</li>
+<li>주요 판별 연산자 (<code v-pre>=</code>, <code v-pre>&lt;&gt;</code>, <code v-pre>&gt;</code>, <code v-pre>&lt;</code>, <code v-pre>&gt;=</code>, <code v-pre>&lt;=</code>)</li>
+<li>숫자 관련 판별 함수 (<code v-pre>EVEN?</code>, <code v-pre>ODD?</code>, <code v-pre>ZERO?</code>, <code v-pre>NEGATIVE?</code>)</li>
+<li>Notice that the names for all predefined predicate functions that have words for names end with question marks</li>
+<li>The NOT function inverts the logic of a Boolean expression</li>
+<li><code v-pre>(NOT #t)</code> ; → <code v-pre>#f</code></li>
+<li><code v-pre>(NOT #f)</code> ; → <code v-pre>#t</code></li>
+<li><code v-pre>(NOT (EVEN? 3))</code> ; → <code v-pre>#t</code></li>
+<li><code v-pre>(DEFINE x 11)</code></li>
+<li><code v-pre>(= x 11)</code> returns <code v-pre>#T</code></li>
+<li><code v-pre>(&gt; x 11)</code> returns <code v-pre>()</code></li>
+<li><code v-pre>(&lt; x 15)</code> return <code v-pre>#T</code></li>
+<li><code v-pre>(EVEN? x)</code> returns <code v-pre>()</code></li>
+<li><code v-pre>(ODD? x)</code> returns <code v-pre>#T</code></li>
+</ul>
+<h2 id="control-flow" tabindex="-1"><a class="header-anchor" href="#control-flow"><span>Control Flow</span></a></h2>
+<p>Selection- the special form, IF (two-way selector function)</p>
+<ul>
+<li><code v-pre>(IF predicate then_exp else_exp)</code></li>
+</ul>
+<div class="language-scheme line-numbers-mode" data-highlighter="prismjs" data-ext="scheme"><pre v-pre><code class="language-scheme"><span class="line"><span class="token punctuation">(</span><span class="token function">IF</span> <span class="token punctuation">(</span><span class="token operator">></span> <span class="token number">3</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token symbol">'yes</span> <span class="token symbol">'no</span><span class="token punctuation">)</span></span>
+<span class="line"><span class="token comment">; returns yes</span></span>
+<span class="line"></span>
+<span class="line"><span class="token punctuation">(</span><span class="token function">DEFINE</span> x <span class="token number">7</span><span class="token punctuation">)</span></span>
+<span class="line"><span class="token punctuation">(</span><span class="token function">DEFINE</span> y <span class="token number">10</span><span class="token punctuation">)</span></span>
+<span class="line"><span class="token punctuation">(</span><span class="token function">IF</span> <span class="token punctuation">(</span><span class="token operator">></span> x y<span class="token punctuation">)</span></span>
+<span class="line">    <span class="token punctuation">(</span><span class="token operator">-</span> x y<span class="token punctuation">)</span></span>
+<span class="line">    <span class="token punctuation">(</span><span class="token operator">-</span> y x<span class="token punctuation">)</span><span class="token punctuation">)</span></span>
+<span class="line"><span class="token comment">; returns 3</span></span>
+<span class="line"></span>
+<span class="line"><span class="token punctuation">(</span><span class="token function">DEFINE</span> <span class="token punctuation">(</span><span class="token function">test</span> x<span class="token punctuation">)</span></span>
+<span class="line">  <span class="token punctuation">(</span><span class="token function">IF</span> <span class="token punctuation">(</span><span class="token operator">>=</span> x <span class="token number">70</span><span class="token punctuation">)</span></span>
+<span class="line">      <span class="token punctuation">(</span><span class="token function">DISPLAY</span> <span class="token string">"pass"</span><span class="token punctuation">)</span></span>
+<span class="line">      <span class="token punctuation">(</span><span class="token function">DISPLAY</span> <span class="token string">"fail"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span></span>
+<span class="line"><span class="token punctuation">(</span><span class="token function">test</span> <span class="token number">75</span><span class="token punctuation">)</span> <span class="token comment">; returns pass</span></span>
+<span class="line"></span>
+<span class="line"><span class="token punctuation">(</span><span class="token function">DEFINE</span> <span class="token punctuation">(</span><span class="token function">factorial</span> n<span class="token punctuation">)</span></span>
+<span class="line">  <span class="token punctuation">(</span><span class="token function">IF</span> <span class="token punctuation">(</span><span class="token operator">&lt;=</span> n <span class="token number">1</span><span class="token punctuation">)</span></span>
+<span class="line">      <span class="token number">1</span></span>
+<span class="line">      <span class="token punctuation">(</span><span class="token operator">*</span> n <span class="token punctuation">(</span><span class="token function">factorial</span> <span class="token punctuation">(</span><span class="token function">−</span> n <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span></span>
+<span class="line"></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>Recall from Chapter 8 the COND function (multiple selection):</p>
+<div class="language-scheme line-numbers-mode" data-highlighter="prismjs" data-ext="scheme"><pre v-pre><code class="language-scheme"><span class="line"><span class="token punctuation">(</span><span class="token function">DEFINE</span> <span class="token punctuation">(</span><span class="token function">admissionfee</span> age<span class="token punctuation">)</span></span>
+<span class="line">  <span class="token punctuation">(</span><span class="token function">COND</span></span>
+<span class="line">    <span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token operator">&lt;=</span> age <span class="token number">6</span><span class="token punctuation">)</span> <span class="token number">0</span><span class="token punctuation">)</span></span>
+<span class="line">    <span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token operator">&lt;</span> age <span class="token number">60</span><span class="token punctuation">)</span> <span class="token number">5000</span><span class="token punctuation">)</span></span>
+<span class="line">    <span class="token punctuation">(</span><span class="token function">ELSE</span> <span class="token number">2500</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span></span>
+<span class="line"><span class="token punctuation">(</span><span class="token function">admissionfee</span> <span class="token number">65</span><span class="token punctuation">)</span> <span class="token comment">; returns 2500</span></span>
+<span class="line"></span>
+<span class="line"><span class="token punctuation">(</span><span class="token function">DEFINE</span> <span class="token punctuation">(</span><span class="token function">leap?</span> year<span class="token punctuation">)</span></span>
+<span class="line">  <span class="token punctuation">(</span><span class="token function">COND</span></span>
+<span class="line">    <span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token function">ZERO?</span> <span class="token punctuation">(</span><span class="token function">MODULO</span> year <span class="token number">400</span><span class="token punctuation">)</span><span class="token punctuation">)</span> #T<span class="token punctuation">)</span></span>
+<span class="line">    <span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token function">ZERO?</span> <span class="token punctuation">(</span><span class="token function">MODULO</span> year <span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">)</span> #F<span class="token punctuation">)</span></span>
+<span class="line">    <span class="token punctuation">(</span><span class="token function">ELSE</span> <span class="token punctuation">(</span><span class="token function">ZERO?</span> <span class="token punctuation">(</span><span class="token function">MODULO</span> year <span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span></span>
+<span class="line"><span class="token punctuation">(</span><span class="token function">leap?</span> <span class="token number">2024</span><span class="token punctuation">)</span> <span class="token comment">; returns #T</span></span>
+<span class="line"></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="list-functions" tabindex="-1"><a class="header-anchor" href="#list-functions"><span>List Functions</span></a></h2>
+<p>QUOTE - takes one parameter; returns the parameter without evaluation</p>
+<ul>
+<li>QUOTE is required because the Scheme interpreter, named EVAL, always evaluates parameters to function applications before applying the function</li>
+<li>QUOTE is used to avoid parameter evaluation when it is not appropriate</li>
+<li>평가를 막고, 원래 모양 그대로 넘김</li>
+<li>QUOTE can be abbreviated with the apostrophe prefix operator</li>
+<li><code v-pre>'(A B)</code> is equivalent to <code v-pre>(QUOTE (A B))</code></li>
+<li>만약 QUOTE 없이 그냥 <code v-pre>(A B)</code>를 쓰면, Scheme은 A라는 함수를 B에 적용하려고 시도함 → 오류 발생 가능</li>
+<li>Recall that CAR, CDR, and CONS were covered in Chapter 6</li>
+</ul>
+<p><code v-pre>CAR</code> and <code v-pre>CDR</code> operations:</p>
+<ul>
+<li>
+<p><code v-pre>(CAR '(A B C))</code> returns <code v-pre>A</code></p>
+</li>
+<li>
+<p><code v-pre>(CAR ′((A B) C D))</code> returns <code v-pre>(A B)</code></p>
+</li>
+<li>
+<p><code v-pre>(CAR ′A)</code> is an error because A is not a list</p>
+</li>
+<li>
+<p><code v-pre>(CAR '(A))</code> returns <code v-pre>A</code></p>
+</li>
+<li>
+<p>Names lies in the first implementation (IBM 704) of LISP</p>
+</li>
+<li>
+<p>IBM 704는 하나의 레지스터를 두 개의 필드로 나누어 사용</p>
+</li>
+<li>
+<p>CAR (contents of the address part of a register) - 헤드를 표현</p>
+</li>
+<li>
+<p>CDR (contents of the decrement part of a register) - 꼬리를 표현</p>
+</li>
+<li>
+<p><code v-pre>(CAR '())</code> is an error</p>
+</li>
+<li>
+<p><code v-pre>(CDR '(A B C))</code> returns <code v-pre>(B C)</code></p>
+</li>
+<li>
+<p><code v-pre>(CDR ′((A B) C D))</code> returns <code v-pre>(C D)</code></p>
+</li>
+<li>
+<p><code v-pre>(CDR ′A)</code> is an error</p>
+</li>
+<li>
+<p><code v-pre>(CDR ′(A))</code> returns <code v-pre>()</code></p>
+</li>
+<li>
+<p><code v-pre>(CDR '())</code> is an error</p>
+</li>
+</ul>
+<p>Combine CAR and CDR</p>
+<ul>
+<li><code v-pre>(DEFINE (second a_list) (CAR (CDR a_list)))</code></li>
+<li><code v-pre>(second '(A B C))</code> returns <code v-pre>B</code></li>
+<li>[함수 합성 축약형 (Built-in Compositions)] Some of the most commonly used functional compositions in Scheme are built in as single functions</li>
+<li><code v-pre>(CAAR x)</code> is equivalent to <code v-pre>(CAR(CAR x))</code></li>
+<li><code v-pre>(CADR x)</code> is equivalent to <code v-pre>(CAR (CDR x))</code></li>
+<li><code v-pre>(CADDAR x)</code> is equivalent to <code v-pre>(CAR (CDR (CDR (CAR x))))</code></li>
+</ul>
+<p>CONS: inverse of CAR and CDR</p>
+<ul>
+<li>Two parameters to CONS: CAR and CDR of the new list</li>
+<li><code v-pre>(CONS (CAR a_list) (CDR a_list))</code> returns <code v-pre>a_list</code></li>
+<li><code v-pre>(CONS 'A '())</code> returns <code v-pre>(A)</code></li>
+<li><code v-pre>(CONS 'A '(B C))</code> returns <code v-pre>(A B C)</code></li>
+<li><code v-pre>(CONS ′() ′(A B))</code> returns <code v-pre>(() A B)</code></li>
+<li><code v-pre>(CONS ′(A B) ′(C D))</code> returns <code v-pre>((A B) C D)</code></li>
+</ul>
+<p>LIST is a function for building a list from any number of parameters</p>
+<ul>
+<li><code v-pre>(LIST ′apple ′orange ′grape)</code> returns <code v-pre>(apple orange grape)</code></li>
+<li><code v-pre>= (CONS 'apple (CONS 'orange (CONS 'grape '())))</code></li>
+<li>내부적으로는 CONS를 여러 번 중첩해서 리스트를 만드는 것과 같음</li>
+</ul>
+<h2 id="predicate-function" tabindex="-1"><a class="header-anchor" href="#predicate-function"><span>Predicate Function</span></a></h2>
+<p>Predicate Function: EQ? (객체의 동일성(identity)을 비교)</p>
+<ul>
+<li>EQ? takes two expressions as parameters (usually two atoms);</li>
+<li>It returns #T if both parameters have the same pointer value; otherwise #F</li>
+<li>두 객체가 동일한 메모리 주소(= 포인터)를 참조하는가를 검사</li>
+<li><code v-pre>(EQ? 'A 'A)</code> yields <code v-pre>#T</code></li>
+<li><code v-pre>(EQ? 'A 'B)</code> yields <code v-pre>#F</code></li>
+<li><code v-pre>(EQ? 'A '(A B))</code> yields <code v-pre>#F</code></li>
+<li><code v-pre>(EQ? '(A B) '(A B))</code> yields <code v-pre>#T</code> or <code v-pre>#F</code></li>
+<li>서로 구조가 같아도 다른 객체일 수 있음 (리스트는 매번 새로 생성됨)</li>
+<li><code v-pre>(EQ? 3.4 (+ 3 0.4))</code> yields <code v-pre>#T</code> or <code v-pre>#F</code></li>
+<li>부동소수점 연산 결과가 내부적으로 같아도 객체는 다를 수 있음</li>
+</ul>
+<p>Predicate Function: EQV?</p>
+<ul>
+<li>EQ? works for symbolic atoms but does not necessarily work for numeric atoms</li>
+<li><code v-pre>=</code> predicate works for numeric atoms but not symbolic atoms</li>
+<li>값(value)이 같은지를 비교하는 predicate 함수</li>
+<li>EQV? is like EQ?, except that it works for both symbolic and numeric atoms</li>
+<li>EQ?와 비슷하지만, 더 유연하고 넓은 범위의 타입에 대해 잘 작동</li>
+<li>It is a value comparison, not a pointer comparison</li>
+<li><code v-pre>(EQV? 3 3)</code> yields <code v-pre>#T</code></li>
+<li><code v-pre>(EQV? 'A 3)</code> yields <code v-pre>#F</code></li>
+<li><code v-pre>(EQV 3.4 (+ 3 0.4))</code> yields <code v-pre>#T</code></li>
+<li><code v-pre>(EQV? 3.0 3)</code> yields <code v-pre>#F</code> (floats and integers are different)</li>
+<li>Primary reason to use EQ? or <code v-pre>=</code></li>
+<li>Faster than EQV?</li>
+</ul>
+<p>Predicate Functions: LIST? and NULL?</p>
+<ul>
+<li>LIST? takes one parameter;</li>
+<li>It returns #T if the parameter is a list; otherwise #F</li>
+<li>x가 리스트인지 확인</li>
+<li><code v-pre>(LIST? '(X Y))</code> returns <code v-pre>#T</code></li>
+<li><code v-pre>(LIST? 'X)</code> returns <code v-pre>#F</code> ; 단순 심볼</li>
+<li><code v-pre>(LIST? '())</code> yields <code v-pre>#T</code> ; 빈 리스트도 리스트임</li>
+<li>NULL? takes one parameter;</li>
+<li>It returns #T if the parameter is the empty list; otherwise #F</li>
+<li>x 가 빈 리스트인지 확인</li>
+<li><code v-pre>(NULL? '(A B))</code> returns <code v-pre>#F</code></li>
+<li><code v-pre>(NULL? '())</code> returns <code v-pre>#T</code></li>
+<li><code v-pre>(NULL? 'A)</code> returns <code v-pre>#F</code> ; 심볼은 리스트도, 빈 리스트도 아님</li>
+<li><code v-pre>(NULL? '(()))</code> yields <code v-pre>#F</code> ; 요소로 빈 리스트를 가진 리스트 → 비어있지 않음</li>
+</ul>
+<h2 id="example-scheme-function-sort" tabindex="-1"><a class="header-anchor" href="#example-scheme-function-sort"><span>Example Scheme Function: sort</span></a></h2>
+<div class="language-scheme line-numbers-mode" data-highlighter="prismjs" data-ext="scheme"><pre v-pre><code class="language-scheme"><span class="line"><span class="token punctuation">(</span><span class="token function">DEFINE</span> <span class="token punctuation">(</span><span class="token function">insert</span> atm lst<span class="token punctuation">)</span></span>
+<span class="line">  <span class="token punctuation">(</span><span class="token function">COND</span></span>
+<span class="line">    <span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token function">NULL?</span> lst<span class="token punctuation">)</span> <span class="token punctuation">(</span><span class="token function">CONS</span> atm <span class="token punctuation">'</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span></span>
+<span class="line">    <span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token operator">&lt;</span> atm <span class="token punctuation">(</span><span class="token function">CAR</span> lst<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">(</span><span class="token function">CONS</span> atm lst<span class="token punctuation">)</span><span class="token punctuation">)</span></span>
+<span class="line">    <span class="token punctuation">(</span><span class="token function">ELSE</span> <span class="token punctuation">(</span><span class="token function">CONS</span> <span class="token punctuation">(</span><span class="token function">CAR</span> lst<span class="token punctuation">)</span> <span class="token punctuation">(</span><span class="token function">insert</span> atm <span class="token punctuation">(</span><span class="token function">CDR</span> lst<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span></span>
+<span class="line"></span>
+<span class="line"><span class="token punctuation">(</span><span class="token function">DEFINE</span> <span class="token punctuation">(</span><span class="token function">sort</span> lst<span class="token punctuation">)</span></span>
+<span class="line">  <span class="token punctuation">(</span><span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">NULL?</span> lst<span class="token punctuation">)</span></span>
+<span class="line">      <span class="token punctuation">'</span><span class="token punctuation">(</span><span class="token punctuation">)</span></span>
+<span class="line">      <span class="token punctuation">(</span><span class="token function">insert</span> <span class="token punctuation">(</span><span class="token function">CAR</span> lst<span class="token punctuation">)</span> <span class="token punctuation">(</span><span class="token function">sort</span> <span class="token punctuation">(</span><span class="token function">CDR</span> lst<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span></span>
+<span class="line"></span>
+<span class="line"><span class="token punctuation">(</span><span class="token function">sort</span> <span class="token punctuation">'</span><span class="token punctuation">(</span><span class="token number">3</span> <span class="token number">7</span> <span class="token number">5</span> <span class="token number">1</span> <span class="token number">9</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">; returns (1 3 5 7 9)</span></span>
+<span class="line"></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul>
+<li>
+<ol>
+<li><code v-pre>(insert atm lst)</code></li>
+</ol>
+</li>
+<li>
+<p>목적: 숫자 하나 atm을 정렬된 리스트 lst에 알맞은 위치에 삽입</p>
+</li>
+<li>
+<p>작동 방식:</p>
+</li>
+<li>
+<p>리스트가 비었으면 → 단독 리스트로 만들기</p>
+</li>
+<li>
+<p>atm이 리스트의 첫 원소보다 작으면 → 앞에 넣기</p>
+</li>
+<li>
+<p>아니면 → 리스트의 나머지에 재귀적으로 삽입</p>
+</li>
+<li>
+<ol start="2">
+<li><code v-pre>(sort lst)</code></li>
+</ol>
+</li>
+<li>
+<p>목적: 리스트 lst를 오름차순으로 정렬</p>
+</li>
+<li>
+<p>작동 방식:</p>
+</li>
+<li>
+<p>리스트가 비었으면 → 빈 리스트 반환</p>
+</li>
+<li>
+<p>아니면 → 첫 원소는 빼서 sort로 정렬한 나머지에 insert함수로 삽입</p>
+</li>
+</ul>
+<h2 id="example-c-function-sort" tabindex="-1"><a class="header-anchor" href="#example-c-function-sort"><span>Example C Function: sort</span></a></h2>
+<div class="language-c line-numbers-mode" data-highlighter="prismjs" data-ext="c"><pre v-pre><code class="language-c"><span class="line"><span class="token comment">// insert: 정렬된 리스트에 value 삽입</span></span>
+<span class="line">Node<span class="token operator">*</span> <span class="token function">insert</span><span class="token punctuation">(</span><span class="token keyword">int</span> value<span class="token punctuation">,</span> Node<span class="token operator">*</span> lst<span class="token punctuation">)</span> <span class="token punctuation">{</span></span>
+<span class="line">    <span class="token keyword">if</span> <span class="token punctuation">(</span>lst <span class="token operator">==</span> <span class="token constant">NULL</span> <span class="token operator">||</span> value <span class="token operator">&lt;</span> lst<span class="token operator">-></span>value<span class="token punctuation">)</span> <span class="token punctuation">{</span></span>
+<span class="line">        Node<span class="token operator">*</span> new_node <span class="token operator">=</span> <span class="token function">create_node</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">        new_node<span class="token operator">-></span>next <span class="token operator">=</span> lst<span class="token punctuation">;</span></span>
+<span class="line">        <span class="token keyword">return</span> new_node<span class="token punctuation">;</span></span>
+<span class="line">    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span></span>
+<span class="line">        lst<span class="token operator">-></span>next <span class="token operator">=</span> <span class="token function">insert</span><span class="token punctuation">(</span>value<span class="token punctuation">,</span> lst<span class="token operator">-></span>next<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">        <span class="token keyword">return</span> lst<span class="token punctuation">;</span></span>
+<span class="line">    <span class="token punctuation">}</span></span>
+<span class="line"><span class="token punctuation">}</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment">// sort: 삽입 정렬</span></span>
+<span class="line">Node<span class="token operator">*</span> <span class="token function">sort</span><span class="token punctuation">(</span>Node<span class="token operator">*</span> lst<span class="token punctuation">)</span> <span class="token punctuation">{</span></span>
+<span class="line">    <span class="token keyword">if</span> <span class="token punctuation">(</span>lst <span class="token operator">==</span> <span class="token constant">NULL</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token constant">NULL</span><span class="token punctuation">;</span></span>
+<span class="line">    Node<span class="token operator">*</span> sorted <span class="token operator">=</span> <span class="token function">sort</span><span class="token punctuation">(</span>lst<span class="token operator">-></span>next<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">    <span class="token keyword">return</span> <span class="token function">insert</span><span class="token punctuation">(</span>lst<span class="token operator">-></span>value<span class="token punctuation">,</span> sorted<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line"><span class="token punctuation">}</span></span>
+<span class="line"></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul>
+<li>
+<ol>
+<li><code v-pre>insert(int value, Node* lst)</code></li>
+</ol>
+</li>
+<li>
+<p>목적: 숫자 하나 value을 정렬된 리스트 lst에 알맞은 위치에 삽입</p>
+</li>
+<li>
+<p>작동 방식:</p>
+</li>
+<li>
+<p>리스트가 비었거나, value가 리스트의 첫 원소보다 작으면 → 앞에 넣기</p>
+</li>
+<li>
+<p>아니면 → 리스트의 나머지에 재귀적으로 삽입</p>
+</li>
+<li>
+<ol start="2">
+<li><code v-pre>sort(Node* lst)</code></li>
+</ol>
+</li>
+<li>
+<p>목적: 리스트 lst를 오름차순으로 정렬</p>
+</li>
+<li>
+<p>작동 방식:</p>
+</li>
+<li>
+<p>리스트가 비었으면 → 빈 리스트 반환</p>
+</li>
+<li>
+<p>아니면 → 첫 원소는 빼서 sort로 정렬한 나머지에 insert함수로 삽입</p>
+</li>
+</ul>
+<h2 id="example-scheme-function-member" tabindex="-1"><a class="header-anchor" href="#example-scheme-function-member"><span>Example Scheme Function: member</span></a></h2>
+<div class="language-scheme line-numbers-mode" data-highlighter="prismjs" data-ext="scheme"><pre v-pre><code class="language-scheme"><span class="line"><span class="token punctuation">(</span><span class="token function">DEFINE</span> <span class="token punctuation">(</span><span class="token builtin">member</span> atm a_list<span class="token punctuation">)</span></span>
+<span class="line">  <span class="token punctuation">(</span><span class="token function">COND</span></span>
+<span class="line">    <span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token function">NULL?</span> a_list<span class="token punctuation">)</span> #F<span class="token punctuation">)</span> <span class="token comment">; 리스트가 비었으면 찾을 수 없음</span></span>
+<span class="line">    <span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token function">EQ?</span> atm <span class="token punctuation">(</span><span class="token function">CAR</span> a_list<span class="token punctuation">)</span><span class="token punctuation">)</span> #T<span class="token punctuation">)</span> <span class="token comment">; 첫 원소가 같으면 찾았음</span></span>
+<span class="line">    <span class="token punctuation">(</span><span class="token function">ELSE</span> <span class="token punctuation">(</span><span class="token builtin">member</span> atm <span class="token punctuation">(</span><span class="token function">CDR</span> a_list<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">; 아니면 나머지에서 계속 찾기</span></span>
+<span class="line"></span>
+<span class="line"><span class="token punctuation">(</span><span class="token builtin">member</span> <span class="token symbol">'B</span> <span class="token punctuation">'</span><span class="token punctuation">(</span>A B C<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">; returns #T</span></span>
+<span class="line"><span class="token punctuation">(</span><span class="token builtin">member</span> <span class="token symbol">'B</span> <span class="token punctuation">'</span><span class="token punctuation">(</span>A C D E<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">; returns #F</span></span>
+<span class="line"></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><div class="language-c line-numbers-mode" data-highlighter="prismjs" data-ext="c"><pre v-pre><code class="language-c"><span class="line"><span class="token comment">// 리스트에 해당 값이 있는지 검사 (member 함수)</span></span>
+<span class="line">bool <span class="token function">member</span><span class="token punctuation">(</span><span class="token keyword">const</span> <span class="token keyword">char</span><span class="token operator">*</span> atom<span class="token punctuation">,</span> Node<span class="token operator">*</span> list<span class="token punctuation">)</span> <span class="token punctuation">{</span></span>
+<span class="line">    <span class="token keyword">if</span> <span class="token punctuation">(</span>list <span class="token operator">==</span> <span class="token constant">NULL</span><span class="token punctuation">)</span> <span class="token keyword">return</span> false<span class="token punctuation">;</span></span>
+<span class="line">    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">strcmp</span><span class="token punctuation">(</span>atom<span class="token punctuation">,</span> list<span class="token operator">-></span>value<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span></span>
+<span class="line">        <span class="token keyword">return</span> true<span class="token punctuation">;</span></span>
+<span class="line">    <span class="token keyword">return</span> <span class="token function">member</span><span class="token punctuation">(</span>atom<span class="token punctuation">,</span> list<span class="token operator">-></span>next<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line"><span class="token punctuation">}</span></span>
+<span class="line"></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="example-scheme-function-equalsimp" tabindex="-1"><a class="header-anchor" href="#example-scheme-function-equalsimp"><span>Example Scheme Function: equalsimp</span></a></h2>
+<ul>
+<li>equalsimp takes two simple lists as parameters; returns #T if the two simple lists are equal; #F otherwise</li>
+</ul>
+<div class="language-scheme line-numbers-mode" data-highlighter="prismjs" data-ext="scheme"><pre v-pre><code class="language-scheme"><span class="line"><span class="token punctuation">(</span><span class="token function">DEFINE</span> <span class="token punctuation">(</span><span class="token function">equalsimp</span> list1 list2<span class="token punctuation">)</span></span>
+<span class="line">  <span class="token punctuation">(</span><span class="token function">COND</span></span>
+<span class="line">    <span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token function">NULL?</span> list1<span class="token punctuation">)</span> <span class="token punctuation">(</span><span class="token function">NULL?</span> list2<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">; 둘 다 빈 리스트면 같음</span></span>
+<span class="line">    <span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token function">NULL?</span> list2<span class="token punctuation">)</span> #F<span class="token punctuation">)</span> <span class="token comment">; list1만 비었고 list2는 안 비었으면 다름</span></span>
+<span class="line">    <span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token function">EQ?</span> <span class="token punctuation">(</span><span class="token function">CAR</span> list1<span class="token punctuation">)</span> <span class="token punctuation">(</span><span class="token function">CAR</span> list2<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">; 첫 원소가 같으면</span></span>
+<span class="line">     <span class="token punctuation">(</span><span class="token function">equalsimp</span> <span class="token punctuation">(</span><span class="token function">CDR</span> list1<span class="token punctuation">)</span> <span class="token punctuation">(</span><span class="token function">CDR</span> list2<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">; 나머지를 재귀적으로 비교</span></span>
+<span class="line">    <span class="token punctuation">(</span><span class="token function">ELSE</span> #F<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">; 첫 원소가 다르면 다름</span></span>
+<span class="line"></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul>
+<li>*Simple list: 리스트 안에 또 다른 리스트가 없는 구조. 모든 요소가 원자(atom) 또는 심볼(symbol) 같은 단순한 값</li>
+</ul>
+<div class="language-c line-numbers-mode" data-highlighter="prismjs" data-ext="c"><pre v-pre><code class="language-c"><span class="line"><span class="token comment">// equalsimp 함수: 두 리스트가 같은지 비교</span></span>
+<span class="line">bool <span class="token function">equalsimp</span><span class="token punctuation">(</span>Node<span class="token operator">*</span> list1<span class="token punctuation">,</span> Node<span class="token operator">*</span> list2<span class="token punctuation">)</span> <span class="token punctuation">{</span></span>
+<span class="line">    <span class="token keyword">if</span> <span class="token punctuation">(</span>list1 <span class="token operator">==</span> <span class="token constant">NULL</span> <span class="token operator">&amp;&amp;</span> list2 <span class="token operator">==</span> <span class="token constant">NULL</span><span class="token punctuation">)</span></span>
+<span class="line">        <span class="token keyword">return</span> true<span class="token punctuation">;</span></span>
+<span class="line">    <span class="token keyword">if</span> <span class="token punctuation">(</span>list1 <span class="token operator">==</span> <span class="token constant">NULL</span> <span class="token operator">||</span> list2 <span class="token operator">==</span> <span class="token constant">NULL</span><span class="token punctuation">)</span></span>
+<span class="line">        <span class="token keyword">return</span> false<span class="token punctuation">;</span></span>
+<span class="line">    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">strcmp</span><span class="token punctuation">(</span>list1<span class="token operator">-></span>value<span class="token punctuation">,</span> list2<span class="token operator">-></span>value<span class="token punctuation">)</span> <span class="token operator">!=</span> <span class="token number">0</span><span class="token punctuation">)</span></span>
+<span class="line">        <span class="token keyword">return</span> false<span class="token punctuation">;</span></span>
+<span class="line">    <span class="token keyword">return</span> <span class="token function">equalsimp</span><span class="token punctuation">(</span>list1<span class="token operator">-></span>next<span class="token punctuation">,</span> list2<span class="token operator">-></span>next<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line"><span class="token punctuation">}</span></span>
+<span class="line"></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="example-scheme-function-equal" tabindex="-1"><a class="header-anchor" href="#example-scheme-function-equal"><span>Example Scheme Function: equal</span></a></h2>
+<ul>
+<li>equal takes two general lists as parameters;</li>
+<li>Complex than simple list case because sublist must be traced (리스트 안에 sublist가 있어도 비교 가능)</li>
+<li>Returns #T if the two lists are equal; #F otherwise (두 리스트가 모양과 값 모두 같은지를 판단)</li>
+</ul>
+<div class="language-scheme line-numbers-mode" data-highlighter="prismjs" data-ext="scheme"><pre v-pre><code class="language-scheme"><span class="line"><span class="token punctuation">(</span><span class="token function">DEFINE</span> <span class="token punctuation">(</span><span class="token function">equal</span> list1 list2<span class="token punctuation">)</span></span>
+<span class="line">  <span class="token punctuation">(</span><span class="token function">COND</span></span>
+<span class="line">    <span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token function">NOT</span> <span class="token punctuation">(</span><span class="token function">LIST?</span> list1<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">(</span><span class="token function">EQ?</span> list1 list2<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">; Handle the situation where either of the parameters is an atom instead of a list</span></span>
+<span class="line">    <span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token function">NOT</span> <span class="token punctuation">(</span><span class="token function">LIST?</span> list2<span class="token punctuation">)</span><span class="token punctuation">)</span> #F<span class="token punctuation">)</span></span>
+<span class="line">    <span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token function">NULL?</span> list1<span class="token punctuation">)</span> <span class="token punctuation">(</span><span class="token function">NULL?</span> list2<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">; Handle the situation where one or both lists are empty</span></span>
+<span class="line">    <span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token function">NULL?</span> list2<span class="token punctuation">)</span> #F<span class="token punctuation">)</span></span>
+<span class="line">    <span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token function">equal</span> <span class="token punctuation">(</span><span class="token function">CAR</span> list1<span class="token punctuation">)</span> <span class="token punctuation">(</span><span class="token function">CAR</span> list2<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">; 첫 원소 비교</span></span>
+<span class="line">     <span class="token punctuation">(</span><span class="token function">equal</span> <span class="token punctuation">(</span><span class="token function">CDR</span> list1<span class="token punctuation">)</span> <span class="token punctuation">(</span><span class="token function">CDR</span> list2<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">; 나머지 비교</span></span>
+<span class="line">    <span class="token punctuation">(</span><span class="token function">ELSE</span> #F<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span></span>
+<span class="line"></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul>
+<li>equal is equivalent to <code v-pre>EQUAL?</code> (but slower than <code v-pre>EQ?</code> and <code v-pre>EQV?</code>)</li>
+</ul>
+<h2 id="example-scheme-function-append" tabindex="-1"><a class="header-anchor" href="#example-scheme-function-append"><span>Example Scheme Function: append</span></a></h2>
+<ul>
+<li>append takes two lists as parameters;</li>
+<li>Returns the first parameter list with the elements of the second parameter list appended at the end</li>
+<li><code v-pre>(append '(A B) '(C D R))</code> returns <code v-pre>(A B C D R)</code></li>
+<li><code v-pre>(append '((A B) C) '(D (E F)))</code> returns <code v-pre>((A B) C D (E F))</code></li>
+</ul>
+<div class="language-scheme line-numbers-mode" data-highlighter="prismjs" data-ext="scheme"><pre v-pre><code class="language-scheme"><span class="line"><span class="token punctuation">(</span><span class="token function">DEFINE</span> <span class="token punctuation">(</span><span class="token builtin">append</span> list1 list2<span class="token punctuation">)</span></span>
+<span class="line">  <span class="token punctuation">(</span><span class="token function">COND</span></span>
+<span class="line">    <span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token function">NULL?</span> list1<span class="token punctuation">)</span> list2<span class="token punctuation">)</span> <span class="token comment">; list1이 비었으면, list2 그대로 반환</span></span>
+<span class="line">    <span class="token punctuation">(</span><span class="token function">ELSE</span> <span class="token punctuation">(</span><span class="token function">CONS</span> <span class="token punctuation">(</span><span class="token function">CAR</span> list1<span class="token punctuation">)</span> <span class="token comment">; list1의 첫 원소를 유지하고</span></span>
+<span class="line">                <span class="token punctuation">(</span><span class="token builtin">append</span> <span class="token punctuation">(</span><span class="token function">CDR</span> list1<span class="token punctuation">)</span> list2<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">; 나머지(list1의 꼬리)와 list2를 재귀적으로 이어붙임</span></span>
+<span class="line"></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="example-scheme-function-guess" tabindex="-1"><a class="header-anchor" href="#example-scheme-function-guess"><span>Example Scheme Function: guess</span></a></h2>
+<ul>
+<li>guess takes two lists as parameters;</li>
+<li>Yields a simple list that contains the common elements of its two parameter lists</li>
+<li>두 리스트 간의 공통 요소를 찾아내는 함수</li>
+</ul>
+<div class="language-scheme line-numbers-mode" data-highlighter="prismjs" data-ext="scheme"><pre v-pre><code class="language-scheme"><span class="line"><span class="token punctuation">(</span><span class="token function">DEFINE</span> <span class="token punctuation">(</span><span class="token function">guess</span> list1 list2<span class="token punctuation">)</span></span>
+<span class="line">  <span class="token punctuation">(</span><span class="token function">COND</span></span>
+<span class="line">    <span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token function">NULL?</span> list1<span class="token punctuation">)</span> <span class="token punctuation">'</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">; list1이 비었으면 공통 요소도 없으므로 빈 리스트 반환</span></span>
+<span class="line">    <span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token builtin">member</span> <span class="token punctuation">(</span><span class="token function">CAR</span> list1<span class="token punctuation">)</span> list2<span class="token punctuation">)</span> <span class="token comment">; list1의 첫 원소가 list2에 포함되면</span></span>
+<span class="line">     <span class="token punctuation">(</span><span class="token function">CONS</span> <span class="token punctuation">(</span><span class="token function">CAR</span> list1<span class="token punctuation">)</span> <span class="token punctuation">(</span><span class="token function">guess</span> <span class="token punctuation">(</span><span class="token function">CDR</span> list1<span class="token punctuation">)</span> list2<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">; 그 원소를 결과에 추가하고 나머지 재귀 호출</span></span>
+<span class="line">    <span class="token punctuation">(</span><span class="token function">ELSE</span> <span class="token punctuation">(</span><span class="token function">guess</span> <span class="token punctuation">(</span><span class="token function">CDR</span> list1<span class="token punctuation">)</span> list2<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">; 포함되지 않으면 그냥 나머지에서 계속 탐색</span></span>
+<span class="line"></span>
+<span class="line"><span class="token punctuation">(</span><span class="token function">guess</span> <span class="token punctuation">'</span><span class="token punctuation">(</span>A B C D<span class="token punctuation">)</span> <span class="token punctuation">'</span><span class="token punctuation">(</span>B D F<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">; → (B D)</span></span>
+<span class="line"></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="example-scheme-function-adder" tabindex="-1"><a class="header-anchor" href="#example-scheme-function-adder"><span>Example Scheme Function: adder</span></a></h2>
+<ul>
+<li>adder takes lists as parameters;</li>
+<li>Yields sum of the lists (숫자로만 구성된 리스트의 합을 계산하는 함수)</li>
+</ul>
+<div class="language-scheme line-numbers-mode" data-highlighter="prismjs" data-ext="scheme"><pre v-pre><code class="language-scheme"><span class="line"><span class="token punctuation">(</span><span class="token function">DEFINE</span> <span class="token punctuation">(</span><span class="token function">adder</span> a_list<span class="token punctuation">)</span></span>
+<span class="line">  <span class="token punctuation">(</span><span class="token function">COND</span></span>
+<span class="line">    <span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token function">NULL?</span> a_list<span class="token punctuation">)</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token comment">; 리스트가 비었으면 합은 0</span></span>
+<span class="line">    <span class="token punctuation">(</span><span class="token function">ELSE</span> <span class="token punctuation">(</span><span class="token operator">+</span> <span class="token punctuation">(</span><span class="token function">CAR</span> a_list<span class="token punctuation">)</span> <span class="token punctuation">(</span><span class="token function">adder</span> <span class="token punctuation">(</span><span class="token function">CDR</span> a_list<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">; 첫 원소와 나머지의 합을 더함</span></span>
+<span class="line"></span>
+<span class="line"><span class="token punctuation">(</span><span class="token function">adder</span> <span class="token punctuation">'</span><span class="token punctuation">(</span><span class="token number">1</span> <span class="token number">2</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">)</span> returns <span class="token number">6</span></span>
+<span class="line"><span class="token punctuation">(</span><span class="token function">adder</span> <span class="token punctuation">'</span><span class="token punctuation">(</span><span class="token number">1</span> <span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">)</span> returns error</span>
+<span class="line"></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><div class="language-c line-numbers-mode" data-highlighter="prismjs" data-ext="c"><pre v-pre><code class="language-c"><span class="line"><span class="token keyword">int</span> <span class="token function">adder</span><span class="token punctuation">(</span>Node<span class="token operator">*</span> list<span class="token punctuation">)</span> <span class="token punctuation">{</span></span>
+<span class="line">    <span class="token keyword">if</span> <span class="token punctuation">(</span>list <span class="token operator">==</span> <span class="token constant">NULL</span><span class="token punctuation">)</span></span>
+<span class="line">        <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span></span>
+<span class="line">    <span class="token keyword">return</span> list<span class="token operator">-></span>value <span class="token operator">+</span> <span class="token function">adder</span><span class="token punctuation">(</span>list<span class="token operator">-></span>next<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line"><span class="token punctuation">}</span></span>
+<span class="line"></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul>
+<li>Resolved! (중첩 리스트(nested list)까지 모두 순회해서 안에 있는 숫자를 전부 합산)</li>
+</ul>
+<div class="language-scheme line-numbers-mode" data-highlighter="prismjs" data-ext="scheme"><pre v-pre><code class="language-scheme"><span class="line"><span class="token punctuation">(</span><span class="token function">DEFINE</span> <span class="token punctuation">(</span><span class="token function">adder</span> a_list<span class="token punctuation">)</span></span>
+<span class="line">  <span class="token punctuation">(</span><span class="token function">COND</span></span>
+<span class="line">    <span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token function">NULL?</span> a_list<span class="token punctuation">)</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token comment">; 리스트가 비었으면 0 반환</span></span>
+<span class="line">    <span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token function">LIST?</span> <span class="token punctuation">(</span><span class="token function">CAR</span> lst<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">; 첫 원소가 리스트이면</span></span>
+<span class="line">     <span class="token punctuation">(</span><span class="token operator">+</span> <span class="token punctuation">(</span><span class="token function">adder</span> <span class="token punctuation">(</span><span class="token function">CAR</span> lst<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">(</span><span class="token function">adder</span> <span class="token punctuation">(</span><span class="token function">CDR</span> lst<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">; 그 리스트와 나머지를 재귀적으로 더함</span></span>
+<span class="line">    <span class="token punctuation">(</span><span class="token function">ELSE</span> <span class="token punctuation">(</span><span class="token operator">+</span> <span class="token punctuation">(</span><span class="token function">CAR</span> a_list<span class="token punctuation">)</span> <span class="token punctuation">(</span><span class="token function">adder</span> <span class="token punctuation">(</span><span class="token function">CDR</span> a_list<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">; 숫자면 그대로 더하고 나머지 재귀 호출</span></span>
+<span class="line"></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><div class="language-c line-numbers-mode" data-highlighter="prismjs" data-ext="c"><pre v-pre><code class="language-c"><span class="line"><span class="token keyword">int</span> <span class="token function">adder</span><span class="token punctuation">(</span>Node<span class="token operator">*</span> list<span class="token punctuation">)</span> <span class="token punctuation">{</span></span>
+<span class="line">    <span class="token keyword">if</span> <span class="token punctuation">(</span>list <span class="token operator">==</span> <span class="token constant">NULL</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span></span>
+<span class="line">    Element e <span class="token operator">=</span> list<span class="token operator">-></span>value<span class="token punctuation">;</span></span>
+<span class="line">    <span class="token keyword">int</span> head_sum <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span></span>
+<span class="line">    <span class="token keyword">if</span> <span class="token punctuation">(</span>e<span class="token punctuation">.</span>type <span class="token operator">==</span> NUMBER<span class="token punctuation">)</span> <span class="token punctuation">{</span></span>
+<span class="line">        head_sum <span class="token operator">=</span> e<span class="token punctuation">.</span>number<span class="token punctuation">;</span></span>
+<span class="line">    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>e<span class="token punctuation">.</span>type <span class="token operator">==</span> LIST<span class="token punctuation">)</span> <span class="token punctuation">{</span></span>
+<span class="line">        head_sum <span class="token operator">=</span> <span class="token function">adder</span><span class="token punctuation">(</span>e<span class="token punctuation">.</span>list<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 중첩 리스트 재귀 호출</span></span>
+<span class="line">    <span class="token punctuation">}</span></span>
+<span class="line">    <span class="token keyword">return</span> head_sum <span class="token operator">+</span> <span class="token function">adder</span><span class="token punctuation">(</span>list<span class="token operator">-></span>next<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line"><span class="token punctuation">}</span></span>
+<span class="line"></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="example-scheme-function-let" tabindex="-1"><a class="header-anchor" href="#example-scheme-function-let"><span>Example Scheme Function: LET</span></a></h2>
+<ul>
+<li>LET is actually shorthand for a LAMBDA expression applied to a parameter</li>
+<li>LET은 이름에 값을 임시로 바인딩하고, 그 값을 표현식 안에서 사용하는 구조</li>
+<li>실제로는 LAMBDA + 즉시 호출로 구현된 문법적 편의(syntactic sugar)</li>
+<li><code v-pre>(LET ((alpha 7)) (* 5 alpha))</code> ; → 35</li>
+<li>is the same as: <code v-pre>((LAMBDA (alpha) (* 5 alpha)) 7)</code></li>
+<li>alpha라는 매개변수를 받아 (* 5 alpha)를 수행 인자 7이 alpha에 전달됨</li>
+<li>LET creates a local scope in which names are temporarily bound to the values of expressions</li>
+<li>These names can then be used in the evaluation of another expression, but they cannot be rebound to new values in LET.</li>
+<li>LET 내부에서 바인딩된 이름은 다시 <code v-pre>SET!</code> 등으로 바꿀 수 없음</li>
+<li>변수 재정의는 불가능: 단순히 값 하나를 일시적으로 할당할 뿐</li>
+</ul>
+<h2 id="let-example" tabindex="-1"><a class="header-anchor" href="#let-example"><span>LET Example</span></a></h2>
+<ul>
+<li>이차방정식의 근의 공식을 이용해 두 근을 구하는 함수</li>
+</ul>
+<div class="language-scheme line-numbers-mode" data-highlighter="prismjs" data-ext="scheme"><pre v-pre><code class="language-scheme"><span class="line"><span class="token punctuation">(</span><span class="token function">DEFINE</span> <span class="token punctuation">(</span><span class="token function">quadratic_roots</span> a b c<span class="token punctuation">)</span></span>
+<span class="line">  <span class="token punctuation">(</span><span class="token function">LET</span> <span class="token punctuation">(</span></span>
+<span class="line">        <span class="token comment">; 판별식의 제곱근을 2a로 나눈 부분</span></span>
+<span class="line">        <span class="token punctuation">(</span><span class="token function">root_part_over_2a</span></span>
+<span class="line">         <span class="token punctuation">(</span><span class="token operator">/</span> <span class="token punctuation">(</span><span class="token function">SQRT</span> <span class="token punctuation">(</span><span class="token operator">-</span> <span class="token punctuation">(</span><span class="token operator">*</span> b b<span class="token punctuation">)</span> <span class="token punctuation">(</span><span class="token operator">*</span> <span class="token number">4</span> a c<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">(</span><span class="token operator">*</span> <span class="token number">2</span> a<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span></span>
+<span class="line">        <span class="token punctuation">(</span><span class="token function">minus_b_over_2a</span> <span class="token punctuation">(</span><span class="token operator">/</span> <span class="token punctuation">(</span><span class="token operator">-</span> <span class="token number">0</span> b<span class="token punctuation">)</span> <span class="token punctuation">(</span><span class="token operator">*</span> <span class="token number">2</span> a<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span></span>
+<span class="line">    <span class="token comment">; 결과를 리스트로 반환: 두 근</span></span>
+<span class="line">    <span class="token punctuation">(</span><span class="token function">LIST</span> <span class="token punctuation">(</span><span class="token operator">+</span> minus_b_over_2a root_part_over_2a<span class="token punctuation">)</span></span>
+<span class="line">          <span class="token punctuation">(</span><span class="token operator">-</span> minus_b_over_2a root_part_over_2a<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span></span>
+<span class="line"></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="tail-recursion-in-scheme" tabindex="-1"><a class="header-anchor" href="#tail-recursion-in-scheme"><span>Tail Recursion in Scheme</span></a></h2>
+<ul>
+<li>Definition: A function is tail recursive if its recursive call is the last operation in the function → 즉, 재귀 호출 뒤에 아무 연산도 남지 않아야 함</li>
+<li>A tail recursive function can be automatically converted by a compiler to use iteration, making it faster</li>
+<li>컴파일러가 스택 프레임을 유지하지 않고, 반복문처럼 처리할 수 있음 → 메모리 낭비 없음, 성능 향상, 스택 오버플로우 방지</li>
+<li>Scheme language definition requires that Scheme language systems convert all tail recursive functions to use iteration</li>
+<li>Scheme 컴파일러 또는 인터프리터는 tail call을 자동으로 최적화해야 함</li>
+</ul>
+<div class="language-scheme line-numbers-mode" data-highlighter="prismjs" data-ext="scheme"><pre v-pre><code class="language-scheme"><span class="line"><span class="token punctuation">(</span><span class="token function">DEFINE</span> <span class="token punctuation">(</span><span class="token builtin">member</span> atm a_list<span class="token punctuation">)</span></span>
+<span class="line">  <span class="token punctuation">(</span><span class="token function">COND</span></span>
+<span class="line">    <span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token function">NULL?</span> a_list<span class="token punctuation">)</span> #F<span class="token punctuation">)</span></span>
+<span class="line">    <span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token function">EQ?</span> atm <span class="token punctuation">(</span><span class="token function">CAR</span> a_list<span class="token punctuation">)</span><span class="token punctuation">)</span> #T<span class="token punctuation">)</span></span>
+<span class="line">    <span class="token punctuation">(</span><span class="token function">ELSE</span> <span class="token punctuation">(</span><span class="token builtin">member</span> atm <span class="token punctuation">(</span><span class="token function">CDR</span> a_list<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span></span>
+<span class="line"></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul>
+<li>Example of rewriting a function to make it tail recursive, using helper a function</li>
+</ul>
+<div class="language-scheme line-numbers-mode" data-highlighter="prismjs" data-ext="scheme"><pre v-pre><code class="language-scheme"><span class="line"><span class="token comment">; Original</span></span>
+<span class="line"><span class="token punctuation">(</span><span class="token function">DEFINE</span> <span class="token punctuation">(</span><span class="token function">factorial</span> n<span class="token punctuation">)</span></span>
+<span class="line">  <span class="token punctuation">(</span><span class="token function">IF</span> <span class="token punctuation">(</span><span class="token operator">&lt;=</span> n <span class="token number">0</span><span class="token punctuation">)</span></span>
+<span class="line">      <span class="token number">1</span></span>
+<span class="line">      <span class="token punctuation">(</span><span class="token operator">*</span> n <span class="token punctuation">(</span><span class="token function">factorial</span> <span class="token punctuation">(</span><span class="token operator">-</span> n <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment">; Tail recursive</span></span>
+<span class="line"><span class="token punctuation">(</span><span class="token function">DEFINE</span> <span class="token punctuation">(</span><span class="token function">factorial</span> n<span class="token punctuation">)</span></span>
+<span class="line">  <span class="token punctuation">(</span><span class="token function">DEFINE</span> <span class="token punctuation">(</span><span class="token function">facthelper</span> n factpartial<span class="token punctuation">)</span></span>
+<span class="line">    <span class="token punctuation">(</span><span class="token function">IF</span> <span class="token punctuation">(</span><span class="token operator">&lt;=</span> n <span class="token number">0</span><span class="token punctuation">)</span></span>
+<span class="line">        factpartial</span>
+<span class="line">        <span class="token punctuation">(</span><span class="token function">facthelper</span> <span class="token punctuation">(</span><span class="token operator">-</span> n <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">(</span><span class="token operator">*</span> n factpartial<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span></span>
+<span class="line">  <span class="token punctuation">(</span><span class="token function">facthelper</span> n <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span></span>
+<span class="line"></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="functional-form-composition" tabindex="-1"><a class="header-anchor" href="#functional-form-composition"><span>Functional Form - Composition</span></a></h2>
+<ul>
+<li>If h is the composition of f and g, <code v-pre>h(x) = f(g(x))</code> (두 함수 f와 g를 합쳐서 새로운 함수 h를 만드는 것)</li>
+</ul>
+<div class="language-scheme line-numbers-mode" data-highlighter="prismjs" data-ext="scheme"><pre v-pre><code class="language-scheme"><span class="line"><span class="token punctuation">(</span><span class="token function">DEFINE</span> <span class="token punctuation">(</span><span class="token function">g</span> x<span class="token punctuation">)</span> <span class="token punctuation">(</span><span class="token operator">*</span> <span class="token number">3</span> x<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">; g(x) = 3 * x</span></span>
+<span class="line"><span class="token punctuation">(</span><span class="token function">DEFINE</span> <span class="token punctuation">(</span><span class="token function">f</span> x<span class="token punctuation">)</span> <span class="token punctuation">(</span><span class="token operator">+</span> <span class="token number">2</span> x<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">; f(x) = x + 2</span></span>
+<span class="line"><span class="token punctuation">(</span><span class="token function">DEFINE</span> <span class="token punctuation">(</span><span class="token function">h</span> x<span class="token punctuation">)</span> <span class="token punctuation">(</span><span class="token function">f</span> <span class="token punctuation">(</span><span class="token function">g</span> x<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">; 함수 합성</span></span>
+<span class="line"><span class="token punctuation">(</span><span class="token function">DEFINE</span> <span class="token punctuation">(</span><span class="token function">h</span> x<span class="token punctuation">)</span> <span class="token punctuation">(</span><span class="token operator">+</span> <span class="token number">2</span> <span class="token punctuation">(</span><span class="token operator">*</span> <span class="token number">3</span> x<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">; (The composition) ; f(g(x)) 직접 계산</span></span>
+<span class="line"></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul>
+<li>In Scheme, the functional composition function compose can be written:</li>
+<li>합성용 고차 함수 compose를 직접 정의할 수도 있음</li>
+</ul>
+<div class="language-scheme line-numbers-mode" data-highlighter="prismjs" data-ext="scheme"><pre v-pre><code class="language-scheme"><span class="line"><span class="token punctuation">(</span><span class="token function">DEFINE</span> <span class="token punctuation">(</span><span class="token function">compose</span> f g<span class="token punctuation">)</span></span>
+<span class="line">  <span class="token punctuation">(</span><span class="token function">LAMBDA</span> <span class="token punctuation">(</span><span class="token function">x</span><span class="token punctuation">)</span></span>
+<span class="line">    <span class="token punctuation">(</span><span class="token function">f</span> <span class="token punctuation">(</span><span class="token function">g</span> x<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span></span>
+<span class="line"></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul>
+<li>
+<p>compose는 두 함수를 받아서 새로운 합성 함수를 만들어 반환</p>
+</li>
+<li>
+<p><code v-pre>(compose f g)</code>는 수학적으로 <code v-pre>f(g(x))</code>와 같음</p>
+</li>
+<li>
+<p><code v-pre>((compose CAR CDR) '((a b) c d))</code> yields <code v-pre>c</code> → CADR</p>
+</li>
+<li>
+<p>CDR → <code v-pre>((a b) c d)</code>의 꼬리: <code v-pre>(c d)</code></p>
+</li>
+<li>
+<p>CAR → <code v-pre>(c d)</code>의 첫 원소: <code v-pre>c</code></p>
+</li>
+<li>
+<p>결과: <code v-pre>c</code> → 즉, CADR</p>
+</li>
+<li>
+<p><code v-pre>((compose CDR CAR) '((a b) c d))</code> yields <code v-pre>(b)</code> → CDAR</p>
+</li>
+<li>
+<p>CAR → <code v-pre>((a b) c d)</code>의 첫 원소: <code v-pre>(a b)</code></p>
+</li>
+<li>
+<p>CDR → <code v-pre>(a b)</code>의 꼬리: <code v-pre>(b)</code></p>
+</li>
+<li>
+<p>결과: <code v-pre>(b)</code> → 즉, CDAR</p>
+</li>
+<li>
+<p><code v-pre>(DEFINE (third a_list)</code>
+<code v-pre>((compose CAR (compose CDR CDR)) a_list))</code>
+is equivalent to CADDR</p>
+</li>
+<li>
+<p><code v-pre>(compose CDR CDR)</code> → CDDR</p>
+</li>
+<li>
+<p><code v-pre>compose CAR ...</code> → <code v-pre>CAR(CDDR(x))</code> → 즉, CADDR</p>
+</li>
+</ul>
+<h2 id="functional-form-–-apply-to-all" tabindex="-1"><a class="header-anchor" href="#functional-form-–-apply-to-all"><span>Functional Form – Apply-to-All</span></a></h2>
+<ul>
+<li>Apply to All - one form in Scheme is map</li>
+<li>Applies the given function to all elements of the given list</li>
+<li>리스트의 모든 요소에 어떤 함수를 적용해서 새로운 리스트를 만드는 함수</li>
+</ul>
+<div class="language-scheme line-numbers-mode" data-highlighter="prismjs" data-ext="scheme"><pre v-pre><code class="language-scheme"><span class="line"><span class="token punctuation">(</span><span class="token function">DEFINE</span> <span class="token punctuation">(</span><span class="token builtin">map</span> fun a_list<span class="token punctuation">)</span></span>
+<span class="line">  <span class="token punctuation">(</span><span class="token function">COND</span> <span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token function">NULL?</span> a_list<span class="token punctuation">)</span> <span class="token punctuation">'</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">; 리스트가 비었으면 빈 리스트 반환</span></span>
+<span class="line">        <span class="token punctuation">(</span><span class="token function">ELSE</span> <span class="token punctuation">(</span><span class="token function">CONS</span> <span class="token punctuation">(</span><span class="token function">fun</span> <span class="token punctuation">(</span><span class="token function">CAR</span> a_list<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">; 현재 원소에 함수 적용</span></span>
+<span class="line">                    <span class="token punctuation">(</span><span class="token builtin">map</span> fun <span class="token punctuation">(</span><span class="token function">CDR</span> a_list<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">; 나머지 리스트에 재귀적으로 map</span></span>
+<span class="line"></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul>
+<li><code v-pre>(map (LAMBDA (num) (* num num num)) '(3 4 2 6))</code> yields <code v-pre>(27 64 8 216)</code></li>
+<li><code v-pre>(cons 27 (cons 64 (cons 8 (cons 216 '()))))</code> → <code v-pre>(27 64 8 216)</code></li>
+</ul>
+<p>FOLD – 누적 계산</p>
+<div class="language-scheme line-numbers-mode" data-highlighter="prismjs" data-ext="scheme"><pre v-pre><code class="language-scheme"><span class="line"><span class="token punctuation">(</span><span class="token function">DEFINE</span> <span class="token punctuation">(</span><span class="token function">FOLD</span> F BASE A_LIST<span class="token punctuation">)</span></span>
+<span class="line">  <span class="token punctuation">(</span><span class="token function">COND</span></span>
+<span class="line">    <span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token function">NULL?</span> A_LIST<span class="token punctuation">)</span> BASE<span class="token punctuation">)</span> <span class="token comment">; 리스트 끝 → 누적값 반환</span></span>
+<span class="line">    <span class="token punctuation">(</span><span class="token function">ELSE</span> <span class="token punctuation">(</span><span class="token function">F</span> <span class="token punctuation">(</span><span class="token function">CAR</span> A_LIST<span class="token punctuation">)</span> <span class="token punctuation">(</span><span class="token function">FOLD</span> F BASE <span class="token punctuation">(</span><span class="token function">CDR</span> A_LIST<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">; 재귀적으로 누적 계산</span></span>
+<span class="line"></span>
+<span class="line"><span class="token punctuation">(</span><span class="token function">FOLD</span> + <span class="token number">0</span> <span class="token punctuation">'</span><span class="token punctuation">(</span><span class="token number">1</span> <span class="token number">2</span> <span class="token number">3</span> <span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">; → 10</span></span>
+<span class="line"><span class="token punctuation">(</span><span class="token function">FOLD</span> * <span class="token number">1</span> <span class="token punctuation">'</span><span class="token punctuation">(</span><span class="token number">2</span> <span class="token number">3</span> <span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">; → 24</span></span>
+<span class="line"></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>FILTER – 조건에 맞는 값만 걸러내는 함수</p>
+<div class="language-scheme line-numbers-mode" data-highlighter="prismjs" data-ext="scheme"><pre v-pre><code class="language-scheme"><span class="line"><span class="token punctuation">(</span><span class="token function">DEFINE</span> <span class="token punctuation">(</span><span class="token function">FILTER</span> PRED A_LIST<span class="token punctuation">)</span></span>
+<span class="line">  <span class="token punctuation">(</span><span class="token function">COND</span></span>
+<span class="line">    <span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token function">NULL?</span> A_LIST<span class="token punctuation">)</span> <span class="token punctuation">'</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">; 리스트가 비었으면 종료</span></span>
+<span class="line">    <span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token function">PRED</span> <span class="token punctuation">(</span><span class="token function">CAR</span> A_LIST<span class="token punctuation">)</span><span class="token punctuation">)</span></span>
+<span class="line">     <span class="token punctuation">(</span><span class="token function">CONS</span> <span class="token punctuation">(</span><span class="token function">CAR</span> A_LIST<span class="token punctuation">)</span> <span class="token punctuation">(</span><span class="token function">FILTER</span> PRED <span class="token punctuation">(</span><span class="token function">CDR</span> A_LIST<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">; 현재 원소가 조건 만족 → 포함 + 나머지 재귀</span></span>
+<span class="line">    <span class="token punctuation">(</span><span class="token function">ELSE</span> <span class="token punctuation">(</span><span class="token function">FILTER</span> PRED <span class="token punctuation">(</span><span class="token function">CDR</span> A_LIST<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">; 조건 불만족 → 건너뛰기</span></span>
+<span class="line"></span>
+<span class="line"><span class="token punctuation">(</span><span class="token function">FILTER</span> EVEN? <span class="token punctuation">'</span><span class="token punctuation">(</span><span class="token number">1</span> <span class="token number">2</span> <span class="token number">3</span> <span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">; → (2 4)</span></span>
+<span class="line"></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="functions-that-build-code" tabindex="-1"><a class="header-anchor" href="#functions-that-build-code"><span>Functions That Build Code</span></a></h2>
+<p>It is possible in Scheme to define a function that builds Scheme code and requests its interpretation</p>
+<ul>
+<li>Scheme은 “코드를 데이터처럼” 다룰 수 있는 언어</li>
+<li>그래서 코드를 생성하는 함수를 만들고, 그 코드를 해석해서 실행할 수도 있음.</li>
+<li>Scheme이 가진 메타프로그래밍 능력 중 하나</li>
+<li>This is possible because the interpreter is a user-available function, EVAL</li>
+<li>Scheme에서는 코드 구조가 리스트(S-expression) 표현</li>
+<li>프로그램 안에서 코드를 조립하고, EVAL을 통해 그걸 실제로 실행할 수 있음</li>
+</ul>
+<div class="language-scheme line-numbers-mode" data-highlighter="prismjs" data-ext="scheme"><pre v-pre><code class="language-scheme"><span class="line"><span class="token punctuation">(</span><span class="token function">DEFINE</span> <span class="token punctuation">(</span><span class="token function">make-def</span> name val<span class="token punctuation">)</span></span>
+<span class="line">  <span class="token punctuation">(</span><span class="token function">LIST</span> <span class="token symbol">'DEFINE</span> name val<span class="token punctuation">)</span><span class="token punctuation">)</span></span>
+<span class="line"></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul>
+<li>함수 <code v-pre>make-def</code>는 실제로 정의문(DEFINE x 42)를 &quot;데이터&quot;로 만든 다음, EVAL을 통해 실행시켜 → 실제로 변수를 정의함</li>
+<li><code v-pre>(make-def 'x 42)</code> ; → <code v-pre>'(DEFINE x 42)</code></li>
+<li><code v-pre>(EVAL (make-def 'x 42) (interaction-environment))</code></li>
+<li><code v-pre>x</code> ; → 42</li>
+</ul>
+<h2 id="adding-a-list-of-numbers" tabindex="-1"><a class="header-anchor" href="#adding-a-list-of-numbers"><span>Adding a List of Numbers</span></a></h2>
+<p>The parameter is a list of numbers to be added;</p>
+<ul>
+<li>Cannot apply <code v-pre>+</code> directly on the list, because <code v-pre>+</code> can take only atomic parameters</li>
+<li>Write a function that repeatedly adds the CAR of the list to the sum of its CDR, using recursion</li>
+</ul>
+<div class="language-scheme line-numbers-mode" data-highlighter="prismjs" data-ext="scheme"><pre v-pre><code class="language-scheme"><span class="line"><span class="token punctuation">(</span><span class="token function">DEFINE</span> <span class="token punctuation">(</span><span class="token function">adder</span> a_list<span class="token punctuation">)</span></span>
+<span class="line">  <span class="token punctuation">(</span><span class="token function">COND</span></span>
+<span class="line">    <span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token function">NULL?</span> a_list<span class="token punctuation">)</span> <span class="token number">0</span><span class="token punctuation">)</span></span>
+<span class="line">    <span class="token punctuation">(</span><span class="token function">ELSE</span> <span class="token punctuation">(</span><span class="token operator">+</span> <span class="token punctuation">(</span><span class="token function">CAR</span> a_list<span class="token punctuation">)</span> <span class="token punctuation">(</span><span class="token function">adder</span> <span class="token punctuation">(</span><span class="token function">CDR</span> a_list<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span></span>
+<span class="line"></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul>
+<li>adder inserts a <code v-pre>+</code> operator and evaluates the resulting list</li>
+<li>Use CONS to insert the atom <code v-pre>+</code> into the list of numbers.</li>
+<li>Be sure that <code v-pre>+</code> is quoted to prevent evaluation</li>
+<li>Submit the new list to EVAL for evaluation</li>
+</ul>
+<div class="language-scheme line-numbers-mode" data-highlighter="prismjs" data-ext="scheme"><pre v-pre><code class="language-scheme"><span class="line"><span class="token punctuation">(</span><span class="token function">DEFINE</span> <span class="token punctuation">(</span><span class="token function">adder</span> a_list<span class="token punctuation">)</span></span>
+<span class="line">  <span class="token punctuation">(</span><span class="token function">COND</span></span>
+<span class="line">    <span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token function">NULL?</span> a_list<span class="token punctuation">)</span> <span class="token number">0</span><span class="token punctuation">)</span></span>
+<span class="line">    <span class="token punctuation">(</span><span class="token function">ELSE</span> <span class="token punctuation">(</span><span class="token function">EVAL</span> <span class="token punctuation">(</span><span class="token function">CONS</span> <span class="token symbol">'+</span> a_list<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span></span>
+<span class="line"></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul>
+<li>리스트의 숫자들을 다 더해야 하는데, <code v-pre>+</code> 연산자를 리스트 앞에 붙여서 하나의 Scheme 코드로 만든 뒤, 그걸 EVAL로 실행하는 방식</li>
+</ul>
+</div></template>
+
+

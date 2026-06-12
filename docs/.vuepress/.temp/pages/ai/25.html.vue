@@ -1,4 +1,5 @@
 <template><div><h1 id="_25-language-modeling-and-recurrent-neural-networks" tabindex="-1"><a class="header-anchor" href="#_25-language-modeling-and-recurrent-neural-networks"><span>25. Language Modeling and Recurrent Neural Networks</span></a></h1>
+<DateMeta />
 <h1 id="language-modeling" tabindex="-1"><a class="header-anchor" href="#language-modeling"><span>Language Modeling</span></a></h1>
 <p>Classic <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">n</span></span></span></span>-gram 모델</p>
 <h2 id="language-modeling-1" tabindex="-1"><a class="header-anchor" href="#language-modeling-1"><span>Language Modeling</span></a></h2>

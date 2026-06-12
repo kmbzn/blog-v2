@@ -1,4 +1,5 @@
 <template><div><h1 id="_16-query-optimization" tabindex="-1"><a class="header-anchor" href="#_16-query-optimization"><span>16. Query Optimization</span></a></h1>
+<DateMeta />
 <h2 id="introduction" tabindex="-1"><a class="header-anchor" href="#introduction"><span>Introduction</span></a></h2>
 <ul>
 <li>주어진 query 평가를 위한 대안적 방법들</li>

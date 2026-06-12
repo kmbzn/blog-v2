@@ -1,4 +1,5 @@
 <template><div><h1 id="_12-machine-learning-3" tabindex="-1"><a class="header-anchor" href="#_12-machine-learning-3"><span>12. Machine Learning (3)</span></a></h1>
+<DateMeta />
 <h2 id="error-rate-and-two-different-datasets-recap" tabindex="-1"><a class="header-anchor" href="#error-rate-and-two-different-datasets-recap"><span>Error Rate and Two Different Datasets (Recap)</span></a></h2>
 <ul>
 <li>Optimal fit은 Error Rate를 최소화하는 hypothesis

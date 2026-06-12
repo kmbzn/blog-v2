@@ -1,4 +1,5 @@
 <template><div><h1 id="_14-indexing" tabindex="-1"><a class="header-anchor" href="#_14-indexing"><span>14. Indexing</span></a></h1>
+<DateMeta />
 <ul>
 <li>
 <p><strong>Indexing</strong>: 원하는 데이터에 대한 접근 속도를 높이는 데 사용되는 메커니즘</p>

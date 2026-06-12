@@ -1,4 +1,5 @@
 <template><div><h1 id="assignment-3-implementing-augmented-b-tree-wiki" tabindex="-1"><a class="header-anchor" href="#assignment-3-implementing-augmented-b-tree-wiki"><span>Assignment 3. Implementing Augmented B+tree - wiki</span></a></h1>
+<DateMeta />
 <p>2021024057 김병준</p>
 <h2 id="_1-design" tabindex="-1"><a class="header-anchor" href="#_1-design"><span>1. Design</span></a></h2>
 <h3 id="_1-1-overall-architecture" tabindex="-1"><a class="header-anchor" href="#_1-1-overall-architecture"><span>1.1. Overall Architecture</span></a></h3>

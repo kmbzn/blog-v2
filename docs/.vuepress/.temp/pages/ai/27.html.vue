@@ -1,4 +1,5 @@
 <template><div><h1 id="_27-transformers" tabindex="-1"><a class="header-anchor" href="#_27-transformers"><span>27. Transformers</span></a></h1>
+<DateMeta />
 <h1 id="self-attention" tabindex="-1"><a class="header-anchor" href="#self-attention"><span>Self-Attention</span></a></h1>
 <p>Modeling sequence without recurrence</p>
 <h2 id="review-sequence-to-sequence-with-attention" tabindex="-1"><a class="header-anchor" href="#review-sequence-to-sequence-with-attention"><span>Review: Sequence-to-Sequence with Attention</span></a></h2>

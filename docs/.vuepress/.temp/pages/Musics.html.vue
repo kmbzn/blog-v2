@@ -1,4 +1,5 @@
 <template><div><h1 id="playlist-🎧" tabindex="-1"><a class="header-anchor" href="#playlist-🎧"><span>Playlist 🎧</span></a></h1>
+<DateMeta />
 <div class="hint-container info">
 <p class="hint-container-title">정보</p>
 <p>최근 개인적으로 즐겨 듣고 있는 곡들을 정리해둔 공간입니다.<br>
@@ -17,8 +18,8 @@
 <iframe style="border-radius:12px" width="100%" height="152" src="https://www.youtube.com/embed/Gbb2A5m7d_4?controls=1&modestbranding=1" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe>
 <h2 id="wicked" tabindex="-1"><a class="header-anchor" href="#wicked"><span>WICKED</span></a></h2>
 <iframe style="border-radius:12px" width="100%" height="152" src="https://www.youtube.com/embed/mhKCRnUKp5U?controls=1&modestbranding=1" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe>
-<h2 id="my-romance" tabindex="-1"><a class="header-anchor" href="#my-romance"><span>My Romance</span></a></h2>
-<iframe style="border-radius:12px" width="100%" height="152" src="https://www.youtube.com/embed/ywjfQohQDVM?controls=1&modestbranding=1" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+<h2 id="it-s-me" tabindex="-1"><a class="header-anchor" href="#it-s-me"><span>It's Me</span></a></h2>
+<iframe style="border-radius:12px" width="100%" height="152" src="https://www.youtube.com/embed/RwUKqYWyzNc?controls=1&modestbranding=1" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe>
 <h2 id="famous" tabindex="-1"><a class="header-anchor" href="#famous"><span>FAMOUS</span></a></h2>
 <iframe style="border-radius:12px" width="100%" height="152" src="https://www.youtube.com/embed/VjvzYjU1mY0?controls=1&modestbranding=1" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe>
 <h2 id="interlude" tabindex="-1"><a class="header-anchor" href="#interlude"><span>Interlude</span></a></h2>

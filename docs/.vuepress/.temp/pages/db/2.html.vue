@@ -1,4 +1,5 @@
 <template><div><h1 id="_2-relational-model" tabindex="-1"><a class="header-anchor" href="#_2-relational-model"><span>2. Relational Model</span></a></h1>
+<DateMeta />
 <h2 id="relational-database-and-relational-model" tabindex="-1"><a class="header-anchor" href="#relational-database-and-relational-model"><span>Relational Database and Relational Model</span></a></h2>
 <ul>
 <li>Relational Database(관계형 데이터베이스)는 &quot;Tables&quot;의 모음</li>

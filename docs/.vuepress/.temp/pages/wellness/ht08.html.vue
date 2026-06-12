@@ -1,4 +1,5 @@
 <template><div><h1 id="qcy-ht08-melobuds-pro-plus" tabindex="-1"><a class="header-anchor" href="#qcy-ht08-melobuds-pro-plus"><span>QCY HT08 (MeloBuds Pro Plus)</span></a></h1>
+<DateMeta />
 <p align="center">
 <img src="https://www.qcykorea.com/bizdemo51786/component/board/board_7/u_image/84/829332017_QCY-HT08.jpg" width="100%"/>
 </p>

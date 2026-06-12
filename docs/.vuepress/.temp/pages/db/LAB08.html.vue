@@ -1,4 +1,5 @@
 <template><div><h1 id="b-tree" tabindex="-1"><a class="header-anchor" href="#b-tree"><span>B+tree</span></a></h1>
+<DateMeta />
 <h2 id="b-tree-operation-deletion" tabindex="-1"><a class="header-anchor" href="#b-tree-operation-deletion"><span>B+tree Operation : Deletion</span></a></h2>
 <ul>
 <li>Function <code v-pre>delete(value K, pointer P)</code>

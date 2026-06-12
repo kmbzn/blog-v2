@@ -1,4 +1,5 @@
 <template><div><h1 id="_17-software-testing" tabindex="-1"><a class="header-anchor" href="#_17-software-testing"><span>17. Software Testing</span></a></h1>
+<DateMeta />
 <h2 id="what-is-test-automation" tabindex="-1"><a class="header-anchor" href="#what-is-test-automation"><span>What is Test Automation?</span></a></h2>
 <blockquote>
 <p>The use of software to control the <strong>execution</strong> of tests, the <strong>comparison</strong> of actual outcomes to predicted outcomes, the <strong>setting up</strong> of test preconditions, and other test <strong>control</strong> and test <strong>reporting</strong> functions<br>

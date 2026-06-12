@@ -75,6 +75,7 @@
 <li>분산 제어 메커니즘은 단일 장애점(single point of failure)을 피하기 위해 P2P protocol을 사용</li>
 </ul>
 <h1 id="payload-–-information" tabindex="-1"><a class="header-anchor" href="#payload-–-information"><span>Payload – Information</span></a></h1>
+<DateMeta />
 <h2 id="theft-keyloggers-and-spyware" tabindex="-1"><a class="header-anchor" href="#theft-keyloggers-and-spyware"><span>Theft Keyloggers and Spyware</span></a></h2>
 <ul>
 <li>키로거(Keylogger)

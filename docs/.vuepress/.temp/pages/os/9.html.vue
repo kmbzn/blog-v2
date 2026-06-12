@@ -1,4 +1,5 @@
 <template><div><h1 id="_9-memory-management-2" tabindex="-1"><a class="header-anchor" href="#_9-memory-management-2"><span>9. Memory Management (2)</span></a></h1>
+<DateMeta />
 <h2 id="structure-of-the-page-table" tabindex="-1"><a class="header-anchor" href="#structure-of-the-page-table"><span>Structure of the Page Table</span></a></h2>
 <ul>
 <li>Hierarchical Paging

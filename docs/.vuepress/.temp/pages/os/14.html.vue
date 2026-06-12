@@ -1,4 +1,5 @@
 <template><div><h1 id="_14-i-o-systems" tabindex="-1"><a class="header-anchor" href="#_14-i-o-systems"><span>14. I/O Systems</span></a></h1>
+<DateMeta />
 <h2 id="i-o-hardware" tabindex="-1"><a class="header-anchor" href="#i-o-hardware"><span>I/O Hardware</span></a></h2>
 <ul>
 <li>다양한 I/O 장치 존재</li>

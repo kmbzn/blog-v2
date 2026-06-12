@@ -1,4 +1,5 @@
 <template><div><h1 id="_04-user-authentication" tabindex="-1"><a class="header-anchor" href="#_04-user-authentication"><span>04. User Authentication</span></a></h1>
+<DateMeta />
 <h3 id="rfc-2828-사용자-인증의-정의" tabindex="-1"><a class="header-anchor" href="#rfc-2828-사용자-인증의-정의"><span>RFC 2828. 사용자 인증의 정의</span></a></h3>
 <blockquote>
 <p>시스템 개체에 의해 또는 시스템 개체를 위해 주장된 신원을 검증하는 과정</p>

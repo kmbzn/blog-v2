@@ -1,4 +1,5 @@
 <template><div><h1 id="implementing-augmented-b-tree" tabindex="-1"><a class="header-anchor" href="#implementing-augmented-b-tree"><span>Implementing Augmented B+tree</span></a></h1>
+<DateMeta />
 <ul>
 <li>이번 과제의 목표: 다음 두 가지 B+ tree 구현</li>
 </ul>

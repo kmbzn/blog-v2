@@ -1,4 +1,5 @@
 <template><div><h1 id="_21-neural-networks-and-deep-learning-3" tabindex="-1"><a class="header-anchor" href="#_21-neural-networks-and-deep-learning-3"><span>21. Neural Networks and Deep Learning (3)</span></a></h1>
+<DateMeta />
 <h2 id="training-of-feedforward-nets" tabindex="-1"><a class="header-anchor" href="#training-of-feedforward-nets"><span>Training of Feedforward Nets</span></a></h2>
 <h2 id="a-graphical-illustration-on-softmax" tabindex="-1"><a class="header-anchor" href="#a-graphical-illustration-on-softmax"><span>A Graphical Illustration on Softmax</span></a></h2>
 <p><img src="@source/ai/image-38.png" alt="alt text"></p>

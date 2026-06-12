@@ -1,4 +1,5 @@
 <template><div><h1 id="ubuntu-윈도우-애니메이션-끄기" tabindex="-1"><a class="header-anchor" href="#ubuntu-윈도우-애니메이션-끄기"><span>Ubuntu 윈도우 애니메이션 끄기</span></a></h1>
+<DateMeta />
 <p>우분투를 설치한 후 시스템이 묘하게 무겁거나, 더 빠릿한 창 전환을 원하신다면 <strong>애니메이션 효과</strong>를 끄는 것을 시도해볼 수 있습니다.</p>
 <div class="hint-container warning">
 <p class="hint-container-title">경고</p>

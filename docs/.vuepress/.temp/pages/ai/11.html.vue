@@ -1,4 +1,5 @@
 <template><div><h1 id="_11-machine-learning-2" tabindex="-1"><a class="header-anchor" href="#_11-machine-learning-2"><span>11. Machine Learning (2)</span></a></h1>
+<DateMeta />
 <h2 id="more-details-on-supervised-machine-learning" tabindex="-1"><a class="header-anchor" href="#more-details-on-supervised-machine-learning"><span>More Details on (Supervised) Machine Learning</span></a></h2>
 <ul>
 <li>분야 파악에 필요한 핵심 concepts</li>

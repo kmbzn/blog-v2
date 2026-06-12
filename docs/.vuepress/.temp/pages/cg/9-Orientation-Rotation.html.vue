@@ -1,4 +1,5 @@
 <template><div><h1 id="_9-orientation-rotation" tabindex="-1"><a class="header-anchor" href="#_9-orientation-rotation"><span>9 - Orientation &amp; Rotation</span></a></h1>
+<DateMeta />
 <h2 id="outline" tabindex="-1"><a class="header-anchor" href="#outline"><span>Outline</span></a></h2>
 <ul>
 <li>

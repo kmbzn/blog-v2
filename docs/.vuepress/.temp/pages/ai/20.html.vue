@@ -1,4 +1,5 @@
 <template><div><h1 id="_20-neural-networks-and-deep-learning-2" tabindex="-1"><a class="header-anchor" href="#_20-neural-networks-and-deep-learning-2"><span>20. Neural Networks and Deep Learning (2)</span></a></h1>
+<DateMeta />
 <h1 id="more-details-on-feedforward-networks" tabindex="-1"><a class="header-anchor" href="#more-details-on-feedforward-networks"><span>More Details on Feedforward Networks</span></a></h1>
 <h2 id="computation-of-feedforward-networks-review" tabindex="-1"><a class="header-anchor" href="#computation-of-feedforward-networks-review"><span>Computation of Feedforward Networks (Review)</span></a></h2>
 <ul>

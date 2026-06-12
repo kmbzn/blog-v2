@@ -1,4 +1,5 @@
 <template><div><h1 id="_2-basics-linear-algebra-2-search-1" tabindex="-1"><a class="header-anchor" href="#_2-basics-linear-algebra-2-search-1"><span>2. Basics; Linear Algebra (2), Search (1)</span></a></h1>
+<DateMeta />
 <h1 id="고유값과-고유벡터-eigenvalues-and-eigenvectors" tabindex="-1"><a class="header-anchor" href="#고유값과-고유벡터-eigenvalues-and-eigenvectors"><span>고유값과 고유벡터 (Eigenvalues and Eigenvectors)</span></a></h1>
 <h2 id="정의" tabindex="-1"><a class="header-anchor" href="#정의"><span>정의</span></a></h2>
 <ul>

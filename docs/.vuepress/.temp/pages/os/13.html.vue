@@ -1,4 +1,5 @@
 <template><div><h1 id="_13-mass-storage-management" tabindex="-1"><a class="header-anchor" href="#_13-mass-storage-management"><span>13. Mass Storage Management</span></a></h1>
+<DateMeta />
 <p>Dept. of Computer Science<br>
 Hanyang University</p>
 <h2 id="physical-disk-structure" tabindex="-1"><a class="header-anchor" href="#physical-disk-structure"><span>Physical Disk Structure</span></a></h2>

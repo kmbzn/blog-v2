@@ -1,4 +1,5 @@
 <template><div><h1 id="_10-machine-learning-1" tabindex="-1"><a class="header-anchor" href="#_10-machine-learning-1"><span>10. Machine Learning (1)</span></a></h1>
+<DateMeta />
 <h2 id="what-is-machine-learning" tabindex="-1"><a class="header-anchor" href="#what-is-machine-learning"><span>What is (Machine) Learning?</span></a></h2>
 <ul>
 <li>Agent가 세상을 관찰한 후 성능을 향상시키면 학습하는 것</li>

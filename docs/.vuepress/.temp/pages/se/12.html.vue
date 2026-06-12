@@ -1,4 +1,5 @@
 <template><div><h1 id="_12-design-patterns" tabindex="-1"><a class="header-anchor" href="#_12-design-patterns"><span>12. Design Patterns</span></a></h1>
+<DateMeta />
 <h2 id="learning-goals" tabindex="-1"><a class="header-anchor" href="#learning-goals"><span>Learning Goals</span></a></h2>
 <ul>
 <li>Design pattern의 동기 이해 (솔루션의 template로서)</li>

@@ -1,0 +1,898 @@
+<template><div><h1 id="_10-2-support-for-object-oriented-programming" tabindex="-1"><a class="header-anchor" href="#_10-2-support-for-object-oriented-programming"><span>10.2. Support for Object Oriented Programming</span></a></h1>
+<DateMeta />
+<h2 id="support-for-object-oriented-programming" tabindex="-1"><a class="header-anchor" href="#support-for-object-oriented-programming"><span>Support for Object-Oriented Programming</span></a></h2>
+<ul>
+<li>What do we study in this chapter?</li>
+<li>Object-oriented programming (OOP)</li>
+<li>Design issues for OOP</li>
+<li>Language examples</li>
+<li>Implementation of object-oriented constructs</li>
+</ul>
+<h2 id="object-oriented-programming-oop" tabindex="-1"><a class="header-anchor" href="#object-oriented-programming-oop"><span>Object-Oriented Programming (OOP)</span></a></h2>
+<ul>
+<li>
+<p>Three major language features</p>
+</li>
+<li>
+<p>Abstract data types</p>
+</li>
+<li>
+<p>Inheritance (central theme in OOP)</p>
+</li>
+<li>
+<p>Polymorphism</p>
+</li>
+<li>
+<p>Object-oriented concepts (Inheritance)</p>
+</li>
+<li>
+<p>Productivity increases can come from reuse</p>
+</li>
+<li>
+<p>ADTs are difficult to reuse—always need changes</p>
+</li>
+<li>
+<p>All ADTs are independent and at the same level</p>
+</li>
+<li>
+<p>Inheritance allows new classes defined in terms of existing ones</p>
+</li>
+<li>
+<p>i.e., by allowing them to inherit common parts</p>
+</li>
+<li>
+<p>Inheritance addresses both of the above concerns</p>
+</li>
+<li>
+<p>Reuse ADTs after minor changes and define classes in a hierarchy</p>
+</li>
+<li>
+<p>ADTs are usually called classes</p>
+</li>
+<li>
+<p>Class instances are called objects</p>
+</li>
+<li>
+<p>Subclass or derived class — inherits from parent (superclass)</p>
+</li>
+<li>
+<p>Subprograms that operate on (belong to) objects = methods</p>
+</li>
+<li>
+<p>Variables encapsulated by objects = instance variables</p>
+</li>
+<li>
+<p>Method calls — sometimes called messages</p>
+</li>
+<li>
+<p>Collection of methods of an object — its message protocol or message interface</p>
+</li>
+<li>
+<p>객체는 단순히 함수를 실행하는 게 아니라, 메시지를 받고 거기에 반응하는 존재로 취급되기 때문</p>
+</li>
+<li>
+<p>객체는 자신이 이해할 수 있는 메시지(= 메서드 이름)만 처리할 수 있음</p>
+</li>
+<li>
+<p>Messages have method name, destination object</p>
+</li>
+<li>
+<p>Generally default = inherit all from parent</p>
+</li>
+<li>
+<p>Inheritance can be complicated by access controls</p>
+</li>
+<li>
+<p>Class can hide entities from subclasses</p>
+</li>
+<li>
+<p>Class can hide entities from its “clients”</p>
+</li>
+<li>
+<p>Some languages can hide entities from clients, but let subclasses see them</p>
+</li>
+<li>
+<p>Subclass can modify inherited method</p>
+</li>
+<li>
+<p>Can override default (inherited) — overrides the parent’s method</p>
+</li>
+<li>
+<p>Object-oriented concepts (Subclass differences from parent)</p>
+</li>
+<li>
+<p>Three ways a class can differ from its parent:</p>
+</li>
+<li>
+<ol>
+<li>The parent class can define some of its variables or methods to have private access, which means they will not be visible in the subclass</li>
+</ol>
+</li>
+<li>
+<ol start="2">
+<li>The subclass can add variables and/or methods to those inherited from the parent</li>
+</ol>
+</li>
+<li>
+<ol start="3">
+<li>The subclass can modify the behavior of one or more of its inherited methods</li>
+</ol>
+</li>
+<li>
+<p>Object-oriented concepts</p>
+</li>
+<li>
+<p>There are two kinds of variables in a class:</p>
+</li>
+<li>
+<p>Class variables - one/class</p>
+</li>
+<li>
+<p>Instance variables - one/object</p>
+</li>
+<li>
+<p>There are two kinds of methods in a class:</p>
+</li>
+<li>
+<p>Class methods – accept messages to the class</p>
+</li>
+<li>
+<p>Instance methods – accept messages to objects</p>
+</li>
+<li>
+<p>Single vs. Multiple Inheritance</p>
+</li>
+<li>
+<p>Single inheritance — all OO languages</p>
+</li>
+<li>
+<p>Multiple inheritance</p>
+</li>
+<li>
+<p>Most OO languages</p>
+</li>
+<li>
+<p>Sometimes problematic — what to inherit when there is a conflict?</p>
+</li>
+<li>
+<p>Disadvantages for reuse</p>
+</li>
+<li>
+<p>Creates interdependencies among classes -&gt; complicates maintenance</p>
+</li>
+<li>
+<p>May be functionally useful, but not logical, for a class to inherit from another</p>
+</li>
+</ul>
+<h2 id="dynamic-binding" tabindex="-1"><a class="header-anchor" href="#dynamic-binding"><span>Dynamic Binding</span></a></h2>
+<ul>
+<li>Since a hierarchy of classes exist, can exploit for polymorphism</li>
+<li>Polymorphic variable: can hold objects of a class or any of its descendants</li>
+<li>Top of object hierarchy can even point to any object</li>
+<li>Dynamic binding:</li>
+<li>Some methods of some subclasses may override a parent’s</li>
+<li>Which method of which class is called is decided at run-time</li>
+<li>Benefits:</li>
+<li>The usual ones for polymorphism</li>
+<li>Also: easy to extend software system during development and maintenance</li>
+<li>Abstract (virtual) method: only defines a protocol, not a definition</li>
+<li>Abstract class:</li>
+<li>Includes at least one abstract method</li>
+<li>Cannot be instantiated</li>
+</ul>
+<h2 id="design-issues-for-oop-languages" tabindex="-1"><a class="header-anchor" href="#design-issues-for-oop-languages"><span>Design Issues for OOP Languages</span></a></h2>
+<ul>
+<li>Is everything an object? (Exclusivity of objects)</li>
+<li>Subclasses = subtypes?</li>
+<li>Single or multiple inheritance?</li>
+<li>Allocating and deallocating objects</li>
+<li>Dynamic and static binding</li>
+<li>Nested classes?</li>
+<li>Object initialization</li>
+<li>Exclusivity of objects</li>
+<li>Some languages: everything is an object — e.g., Ruby, Smalltalk</li>
+<li>Advantage: elegance, purity, homogeneity of all data structures</li>
+<li>Disadvantage: can be slow for simple objects</li>
+<li>Other languages: objects are added to a complete typing system — Lisp, Python,…</li>
+<li>(모든 게 객체처럼 보이나 내부적으로 일부는 아님)</li>
+<li>Advantage - fast operations on simple objects</li>
+<li>Disadvantage - results in a confusing type system (two kinds of entities)</li>
+<li>Other languages: use imperative-style typing system for primitives, but everything else is an object — Java, Swift, …</li>
+<li>객체/기본형 구분 명확</li>
+<li>Advantage - fast operations on simple objects and a relatively small typing system</li>
+<li>Disadvantage - still some confusion because of the two type systems</li>
+<li>Are (sub)classes (sub)types?</li>
+<li>Most OO languages: yes</li>
+<li>Basically: does an “isa” relationship hold between parent class and subclass?</li>
+<li>&quot;is-a&quot; 관계는 인터페이스에 기반한 타입 관계</li>
+<li>If so, then instances of subclass must behave the same (more or less) as instances of the parent (서브타입은 상위 타입처럼 행동할 수 있어야 함)</li>
+<li>Subclass can only:</li>
+<li>Add variables and methods</li>
+<li>Override methods in “compatible” ways</li>
+<li>Also has some implication for ontology the programmer has in mind</li>
+<li>Subclasses are made for ontological reasons, not just for functionality and reuse</li>
+<li>E.g., make airplane subclass of vehicle, not bird — even though “fly”method could be inherited in the latter</li>
+<li>기능 재사용이 아닌 개념적 관계(온톨로지) 중심 설계</li>
+<li>Single or multiple inheritance?</li>
+<li>Advantages of multiple inheritance:</li>
+<li>Convenient — methods, variables from multiple sources</li>
+<li>Ontologically-useful — aircraft is a vehicle, flying-object, bird is a animal, flying-object</li>
+<li>Disadvantages:</li>
+<li>Complexity of language, implementation (e.g., handling name collisions)</li>
+<li>Potential inefficiency — increased cost of dynamic binding (search problem)</li>
+<li>Allocation and Deallocation of Objects</li>
+<li>From where are objects allocated?</li>
+<li>If treated as other ADTs, can be allocated anywhere: run-time stack, heap (via new, e.g.)</li>
+<li>If heap-dynamic only (e.g., Java, Lisp, Python,…)</li>
+<li>Heap-dynamic only의 장점</li>
+<li>References can be uniform via pointer/reference variable</li>
+<li>객체 변수는 항상 포인터 또는 참조(reference) 역할 -&gt; 어떤 타입이든 같은 방식으로 메모리 접근 가능</li>
+<li>Simplifies assignment; dereferencing can be implicit</li>
+<li>할당, 전달, 복사 등에서 일관된 처리 가능 -&gt; 복잡한 복사(= 값 복사 vs 참조 복사) 문제 줄어듦</li>
+<li>Allocation and DeAllocation of Objects</li>
+<li>If stack-dynamic only: can -&gt; object slicing</li>
+<li>Object of subclass B may be larger than one of its parent class A</li>
+<li>Suppose subroutine expects instance of A…</li>
+<li>…pass instance of B…</li>
+<li>…not enough room allocated, some instance variables not copied —or worse</li>
+<li>Kind of unavoidable with call-by-value and polymorphism by classes</li>
+<li>Is deallocation explicit or implicit?</li>
+<li>Dynamic and Static Binding</li>
+<li>메시지(메서드 호출)가 실제로 어떤 메서드 구현체와 연결되는지 결정하는 시점</li>
+<li>즉, <code v-pre>obj.method()</code>를 호출했을 때, 어떤 <code v-pre>method()</code>가 실행될지를 언제 결정하느냐의 문제</li>
+<li>Should all binding of messages to methods be dynamic?</li>
+<li>If none are, you lose the advantages of dynamic binding</li>
+<li>If all are, it is inefficient</li>
+<li>Maybe the design should allow the user to specify</li>
+<li>Dynamic Binding</li>
+<li>장점: 다형성(polymorphism) 구현 가능 새로운 클래스를 추가해도 기존 코드 변경 없이 확장 가능</li>
+<li>단점: 런타임 비용 증가 (vtable, lookup 등) 예측/최적화 어려움</li>
+<li>Nested classes</li>
+<li>Some languages allow it (e.g., Java, Python, Ruby), others don’t (Lisp)</li>
+<li>Why?</li>
+<li>Sometimes only one class (e.g., Tree) needs a particular new class (e.g., Node)</li>
+<li>Defining Node outside the Tree class -&gt; clutters the object system, may cause name clashes, etc.</li>
+<li>Avoid this if we nest Node inside Tree class</li>
+<li>Sometimes nesting is inside a subprogram rather than directly in class (함수 내부에서 클래스 정의도 가능)</li>
+<li>Issue: which parts of the nested class should be visible to parent and vice versa?</li>
+<li>Nested class와 outer class는 서로의 멤버에 접근할 수 있는가?</li>
+<li>Initialization of Objects</li>
+<li>Are objects initialized to values when they are created?</li>
+<li>Implicit or explicit initialization</li>
+<li>How are parent class members initialized when a subclass object is created?</li>
+</ul>
+<h2 id="support-for-oop-in-smalltalk" tabindex="-1"><a class="header-anchor" href="#support-for-oop-in-smalltalk"><span>Support for OOP in Smalltalk</span></a></h2>
+<ul>
+<li>Pure OO language -&gt; everything is an object</li>
+<li>All objects have local memory (to process, communicate with other object, inherit from ancestors)</li>
+<li>Cannot be nested</li>
+<li>All computation is through objects sending messages to objects</li>
+<li>[EX] <code v-pre>x + 7</code>: sending <code v-pre>+</code> message to <code v-pre>x</code> (object) with <code v-pre>7</code> (parameter), then return a new object</li>
+<li>No imperative structure (객체에 메시지로 제어 요청)</li>
+<li>Heap-dynamic objects</li>
+<li>Implicit deallocation</li>
+<li>Constructor must be explicitly called</li>
+<li>Inheritance</li>
+<li>A Smalltalk subclass inherits all of the instance variables, instance methods, and class methods of its superclass</li>
+<li>All subclasses are subtypes (nothing can be hidden)</li>
+<li>Overriding is possible (method in ancestor is hidden, accessed by super)</li>
+<li>No multiple inheritance</li>
+<li>All messages: method binding is dynamic</li>
+<li>Type checking: only dynamic type checking</li>
+<li>Only error is when object cannot handle a message (duck typing)</li>
+<li>Variables in Samlltalk are not typed (can be bound to any object, support dynamic polymorphism)</li>
+<li>Evaluation</li>
+<li>Simple, regular syntax</li>
+<li>Good example of powerful, small language</li>
+<li>Slow compared to compiled imperative languages</li>
+<li>Dynamic binding allows type errors to go undetected until run time</li>
+<li>Introduced the idea of a GUI</li>
+<li>Greatest legacy — advanced/established OOP</li>
+</ul>
+<div class="language-smalltalk line-numbers-mode" data-highlighter="prismjs" data-ext="smalltalk"><pre v-pre><code class="language-smalltalk"><span class="line"><span class="token comment">"Smalltalk Example Program"</span></span>
+<span class="line"><span class="token comment">"The following is a class definition, instantiations of which can draw equilateral polygons of any number of sides"</span></span>
+<span class="line">class name                  polygon</span>
+<span class="line">superclass                  Object</span>
+<span class="line">instance variable names     numSides</span>
+<span class="line">                            sideLength</span>
+<span class="line"><span class="token comment">"Class methods"</span></span>
+<span class="line"><span class="token comment">"Create an instance"</span></span>
+<span class="line"><span class="token keyword">new</span></span>
+<span class="line">    <span class="token operator">^</span> <span class="token keyword">super</span> <span class="token keyword">new</span> getPen</span>
+<span class="line"><span class="token comment">"Get a pen for drawing polygons"</span></span>
+<span class="line">getPen</span>
+<span class="line">    ourPen <span class="token operator">&lt;</span><span class="token operator">-</span> Pen <span class="token keyword">new</span> defaultNib<span class="token punctuation">:</span> <span class="token number">2</span></span>
+<span class="line"><span class="token comment">"Instance methods"</span></span>
+<span class="line"><span class="token comment">"Draw a polygon"</span></span>
+<span class="line">draw</span>
+<span class="line">    numSides timesRepeat<span class="token punctuation">:</span> <span class="token punctuation">[</span>ourPen go<span class="token punctuation">:</span> sideLength<span class="token punctuation">;</span></span>
+<span class="line">                                  turn<span class="token punctuation">:</span> <span class="token number">360</span> <span class="token operator">//</span> numSides<span class="token punctuation">]</span></span>
+<span class="line"><span class="token comment">"Set length of sides"</span></span>
+<span class="line">length<span class="token punctuation">:</span> len</span>
+<span class="line">    sideLength <span class="token operator">&lt;</span><span class="token operator">-</span> len</span>
+<span class="line"><span class="token comment">"Set number of sides"</span></span>
+<span class="line">sides<span class="token punctuation">:</span> num</span>
+<span class="line">    numSides <span class="token operator">&lt;</span><span class="token operator">-</span> num</span>
+<span class="line"></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="support-for-oop-in-c" tabindex="-1"><a class="header-anchor" href="#support-for-oop-in-c"><span>Support for OOP in C++</span></a></h2>
+<ul>
+<li>General Characteristics:</li>
+<li>Evolved from C and SIMULA 67</li>
+<li>Among the most widely used OOP languages</li>
+<li>Mixed typing system</li>
+<li>Objects can be static, stack dynamic and heap dynamic</li>
+<li>Explicit deallocation by new</li>
+<li>Constructors and destructors (implicitly called)</li>
+<li>Elaborate access controls to class entities</li>
+<li>Inheritance</li>
+<li>A class need not be the subclass of any class</li>
+<li>Object should be initialized (including inherited data member)</li>
+<li>Parent constructor is implicitly called</li>
+<li>Access controls for members are</li>
+<li>Private (visible only in the class and friends) (disallows subclasses from being subtypes)</li>
+<li>Public (visible in subclasses and clients)</li>
+<li>Protected (visible in the class and in subclasses, but not clients)</li>
+<li>In addition, the subclassing process can be declared with access controls (private or public), which define potential changes in access by subclasses</li>
+<li>Private derivation - inherited public and protected members are private in the subclasses</li>
+<li>Public derivation - public and protected members are also public and protected in subclasses</li>
+</ul>
+<div class="language-cpp line-numbers-mode" data-highlighter="prismjs" data-ext="cpp"><pre v-pre><code class="language-cpp"><span class="line"><span class="token keyword">class</span> <span class="token class-name">derived_class_name</span> <span class="token operator">:</span> <span class="token base-clause"><span class="token class-name">derivation_mode</span> <span class="token class-name">base_class_name</span></span></span>
+<span class="line"><span class="token punctuation">{</span>data member <span class="token operator">and</span> member function declarations<span class="token punctuation">}</span><span class="token punctuation">;</span></span>
+<span class="line"><span class="token comment">//derivation_mode can be either public or private</span></span>
+<span class="line"></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><div class="language-cpp line-numbers-mode" data-highlighter="prismjs" data-ext="cpp"><pre v-pre><code class="language-cpp"><span class="line"><span class="token keyword">class</span> <span class="token class-name">base_class</span> <span class="token punctuation">{</span></span>
+<span class="line"><span class="token keyword">private</span><span class="token operator">:</span></span>
+<span class="line">    <span class="token keyword">int</span> a<span class="token punctuation">;</span></span>
+<span class="line">    <span class="token keyword">float</span> x<span class="token punctuation">;</span></span>
+<span class="line"><span class="token keyword">protected</span><span class="token operator">:</span></span>
+<span class="line">    <span class="token keyword">int</span> b<span class="token punctuation">;</span></span>
+<span class="line">    <span class="token keyword">float</span> y<span class="token punctuation">;</span></span>
+<span class="line"><span class="token keyword">public</span><span class="token operator">:</span></span>
+<span class="line">    <span class="token keyword">int</span> c<span class="token punctuation">;</span></span>
+<span class="line">    <span class="token keyword">float</span> z<span class="token punctuation">;</span></span>
+<span class="line"><span class="token punctuation">}</span><span class="token punctuation">;</span></span>
+<span class="line"></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul>
+<li>Private-derived subclasses cannot be subtypes -&gt; is-a relationship would be broken</li>
+</ul>
+<div class="language-cpp line-numbers-mode" data-highlighter="prismjs" data-ext="cpp"><pre v-pre><code class="language-cpp"><span class="line"><span class="token keyword">class</span> <span class="token class-name">subclass_1</span> <span class="token operator">:</span> <span class="token base-clause"><span class="token keyword">public</span> <span class="token class-name">base_class</span></span> <span class="token punctuation">{</span> … <span class="token punctuation">}</span><span class="token punctuation">;</span></span>
+<span class="line"><span class="token comment">// In this one, b and y are protected and</span></span>
+<span class="line"><span class="token comment">// c and z are public</span></span>
+<span class="line"><span class="token keyword">class</span> <span class="token class-name">subclass_2</span> <span class="token operator">:</span> <span class="token base-clause"><span class="token keyword">private</span> <span class="token class-name">base_class</span></span> <span class="token punctuation">{</span> … <span class="token punctuation">}</span><span class="token punctuation">;</span></span>
+<span class="line"><span class="token comment">// In this one, b, y, c, and z are private,</span></span>
+<span class="line"><span class="token comment">// and no derived class has access to any</span></span>
+<span class="line"><span class="token comment">// member of base_class</span></span>
+<span class="line"></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul>
+<li>Reexportation in C++</li>
+<li>A member that is not accessible in a subclass (because of private derivation) can be declared to be visible there using the scope resolution operator (<code v-pre>::</code>), e.g.,</li>
+</ul>
+<div class="language-cpp line-numbers-mode" data-highlighter="prismjs" data-ext="cpp"><pre v-pre><code class="language-cpp"><span class="line"><span class="token keyword">class</span> <span class="token class-name">subclass_3</span> <span class="token operator">:</span> <span class="token base-clause"><span class="token keyword">private</span> <span class="token class-name">base_class</span></span> <span class="token punctuation">{</span></span>
+<span class="line">    base_class <span class="token double-colon punctuation">::</span> c<span class="token punctuation">;</span></span>
+<span class="line">    …</span>
+<span class="line"><span class="token punctuation">}</span></span>
+<span class="line"></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul>
+<li>One motivation for using private derivation</li>
+<li>A class provides members that must be visible, so they are defined to be public members; a derived class adds some new members</li>
+<li>But does not want its clients to see the members of the parent class, even though they had to be public in the parent class definition</li>
+<li>기능적 구현은 부모 클래스에 두되, 외부에는 제한된 인터페이스만 노출하고 싶을 때 유용</li>
+<li>캡슐화(Encapsulation) 원칙을 유지하면서도, 내부 구현을 재사용할 수 있음</li>
+</ul>
+<div class="language-cpp line-numbers-mode" data-highlighter="prismjs" data-ext="cpp"><pre v-pre><code class="language-cpp"><span class="line"><span class="token keyword">class</span> <span class="token class-name">single_linked_list</span> <span class="token punctuation">{</span></span>
+<span class="line"><span class="token keyword">private</span><span class="token operator">:</span></span>
+<span class="line">    <span class="token keyword">class</span> <span class="token class-name">node</span> <span class="token punctuation">{</span></span>
+<span class="line">    <span class="token keyword">public</span><span class="token operator">:</span></span>
+<span class="line">        node <span class="token operator">*</span>link<span class="token punctuation">;</span></span>
+<span class="line">        <span class="token keyword">int</span> contents<span class="token punctuation">;</span></span>
+<span class="line">    <span class="token punctuation">}</span><span class="token punctuation">;</span></span>
+<span class="line">    node <span class="token operator">*</span>head<span class="token punctuation">;</span></span>
+<span class="line"><span class="token keyword">public</span><span class="token operator">:</span></span>
+<span class="line">    <span class="token function">single_linked_list</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>head <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">}</span><span class="token punctuation">;</span></span>
+<span class="line">    <span class="token keyword">void</span> <span class="token function">insert_at_head</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">    <span class="token keyword">void</span> <span class="token function">insert_at_tail</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">    <span class="token keyword">int</span> <span class="token function">remove_at_head</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">    <span class="token keyword">int</span> <span class="token function">empty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line"><span class="token punctuation">}</span><span class="token punctuation">;</span></span>
+<span class="line"></span>
+<span class="line"><span class="token keyword">class</span> <span class="token class-name">stack_2</span> <span class="token operator">:</span> <span class="token base-clause"><span class="token keyword">private</span> <span class="token class-name">single_linked_list</span></span> <span class="token punctuation">{</span></span>
+<span class="line"><span class="token keyword">public</span><span class="token operator">:</span></span>
+<span class="line">    <span class="token function">stack_2</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span></span>
+<span class="line">    <span class="token keyword">void</span> <span class="token function">push</span><span class="token punctuation">(</span><span class="token keyword">int</span> value<span class="token punctuation">)</span> <span class="token punctuation">{</span></span>
+<span class="line">        single_linked_list <span class="token double-colon punctuation">::</span> <span class="token function">insert_at_head</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">    <span class="token punctuation">}</span></span>
+<span class="line">    <span class="token keyword">int</span> <span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span></span>
+<span class="line">        <span class="token keyword">return</span> single_linked_list <span class="token double-colon punctuation">::</span> <span class="token function">remove_at_head</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">    <span class="token punctuation">}</span></span>
+<span class="line">    single_linked_list<span class="token double-colon punctuation">::</span> <span class="token function">empty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line"><span class="token punctuation">}</span><span class="token punctuation">;</span></span>
+<span class="line"></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul>
+<li><code v-pre>insert_at_tail</code> can be protected from stack by Private derivation</li>
+<li>Multiple inheritance</li>
+<li>Two inherited members with the same name</li>
+<li>Both can be referenced using the scope resolution operator (<code v-pre>::</code>)</li>
+</ul>
+<div class="language-cpp line-numbers-mode" data-highlighter="prismjs" data-ext="cpp"><pre v-pre><code class="language-cpp"><span class="line"><span class="token keyword">class</span> <span class="token class-name">Thread</span> <span class="token punctuation">{</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> <span class="token punctuation">}</span></span>
+<span class="line"><span class="token keyword">class</span> <span class="token class-name">Drawing</span> <span class="token punctuation">{</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> <span class="token punctuation">}</span></span>
+<span class="line"><span class="token keyword">class</span> <span class="token class-name">DrawThread</span> <span class="token operator">:</span> <span class="token base-clause"><span class="token keyword">public</span> <span class="token class-name">Thread</span><span class="token punctuation">,</span> <span class="token keyword">public</span> <span class="token class-name">Drawing</span></span> <span class="token punctuation">{</span> … <span class="token punctuation">}</span></span>
+<span class="line"></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul>
+<li>Overriding</li>
+<li>Overriding methods must have exactly the same parameter profile as the overridden method</li>
+<li>Any difference in the parameter -&gt; considered a new method</li>
+<li>Dynamic Binding</li>
+<li>Virtual method: can be called through polymorphic variables and dynamically bound to messages</li>
+<li>Pure virtual function has no definition at all</li>
+<li>Class that has at least one pure virtual function is an abstract class</li>
+<li>If subclass of abstract class does not redefine pure virtual function -&gt; It also abstract class</li>
+</ul>
+<div class="language-cpp line-numbers-mode" data-highlighter="prismjs" data-ext="cpp"><pre v-pre><code class="language-cpp"><span class="line"><span class="token keyword">class</span> <span class="token class-name">Shape</span> <span class="token punctuation">{</span></span>
+<span class="line"><span class="token keyword">public</span><span class="token operator">:</span></span>
+<span class="line">    <span class="token keyword">virtual</span> <span class="token keyword">void</span> <span class="token function">draw</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span></span>
+<span class="line">    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span></span>
+<span class="line"><span class="token punctuation">}</span><span class="token punctuation">;</span></span>
+<span class="line"><span class="token keyword">class</span> <span class="token class-name">Circle</span> <span class="token operator">:</span> <span class="token base-clause"><span class="token keyword">public</span> <span class="token class-name">Shape</span></span> <span class="token punctuation">{</span></span>
+<span class="line"><span class="token keyword">public</span><span class="token operator">:</span></span>
+<span class="line">    <span class="token keyword">void</span> <span class="token function">draw</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> <span class="token punctuation">}</span></span>
+<span class="line">    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span></span>
+<span class="line"><span class="token punctuation">}</span><span class="token punctuation">;</span></span>
+<span class="line"><span class="token keyword">class</span> <span class="token class-name">Rectangle</span> <span class="token operator">:</span> <span class="token base-clause"><span class="token keyword">public</span> <span class="token class-name">Shape</span></span> <span class="token punctuation">{</span></span>
+<span class="line"><span class="token keyword">public</span><span class="token operator">:</span></span>
+<span class="line">    <span class="token keyword">void</span> <span class="token function">draw</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> <span class="token punctuation">}</span></span>
+<span class="line">    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span></span>
+<span class="line"><span class="token punctuation">}</span><span class="token punctuation">;</span></span>
+<span class="line"><span class="token keyword">class</span> <span class="token class-name">Square</span> <span class="token operator">:</span> <span class="token base-clause"><span class="token keyword">public</span> <span class="token class-name">Rectangle</span></span> <span class="token punctuation">{</span></span>
+<span class="line"><span class="token keyword">public</span><span class="token operator">:</span></span>
+<span class="line">    <span class="token keyword">void</span> <span class="token function">draw</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> <span class="token punctuation">}</span></span>
+<span class="line">    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span></span>
+<span class="line"><span class="token punctuation">}</span><span class="token punctuation">;</span></span>
+<span class="line"></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><div class="language-cpp line-numbers-mode" data-highlighter="prismjs" data-ext="cpp"><pre v-pre><code class="language-cpp"><span class="line">Square<span class="token operator">*</span> sq <span class="token operator">=</span> <span class="token keyword">new</span> Square<span class="token punctuation">;</span></span>
+<span class="line">Rectangle<span class="token operator">*</span> rect <span class="token operator">=</span> <span class="token keyword">new</span> Rectangle<span class="token punctuation">;</span></span>
+<span class="line">Shape<span class="token operator">*</span> ptr_shape<span class="token punctuation">;</span></span>
+<span class="line">ptr_shape <span class="token operator">=</span> sq<span class="token punctuation">;</span> <span class="token comment">// points to a Square</span></span>
+<span class="line">ptr_shape <span class="token operator">-></span><span class="token function">draw</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Dynamically bound to draw in Square</span></span>
+<span class="line">rect<span class="token operator">-></span><span class="token function">draw</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Statically bound to draw in Rectangle</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment">// If objects are allocated from the stack, it is quite different</span></span>
+<span class="line">Square sq<span class="token punctuation">;</span> <span class="token comment">// Allocates a Square object from the stack</span></span>
+<span class="line">Rectangle rect<span class="token punctuation">;</span> <span class="token comment">// Allocates a Rectangle object from the stack</span></span>
+<span class="line">rect <span class="token operator">=</span> sq<span class="token punctuation">;</span> <span class="token comment">// Copies the data member values from sq object</span></span>
+<span class="line">rect<span class="token punctuation">.</span><span class="token function">draw</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Calls the draw from Rectangle</span></span>
+<span class="line"></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul>
+<li>Evaluation</li>
+<li>C++ provides extensive access controls (unlike Smalltalk)</li>
+<li>C++ provides multiple inheritance</li>
+<li>In C++, the programmer must decide at design time which methods will be statically bound and which must be dynamically bound</li>
+<li>Smalltalk type checking is dynamic (flexible, but somewhat unsafe)</li>
+<li>Variable in Smalltalk is typeless</li>
+<li>Static binding is faster!</li>
+<li>Because of interpretation and dynamic binding, Smalltalk is ~10 times slower than C++</li>
+</ul>
+<h2 id="support-for-oop-in-objective-c" tabindex="-1"><a class="header-anchor" href="#support-for-oop-in-objective-c"><span>Support for OOP in Objective-C</span></a></h2>
+<ul>
+<li>Like C++, Objective-C adds support for OOP to C</li>
+<li>Design was at about the same time as that of C++</li>
+<li>Largest syntactic difference: method calls are messages (similar to Smalltalk)</li>
+<li>Interface section of a class declares the instance variables and the methods</li>
+<li>Implementation section of a class defines the methods</li>
+<li>No class variable directly (static global variable in implementation can be used)</li>
+<li>Classes cannot be nested</li>
+<li>Single inheritance only</li>
+<li>Every class must have a parent</li>
+<li><code v-pre>NSObject</code> is the base class</li>
+</ul>
+<div class="language-objc line-numbers-mode" data-highlighter="prismjs" data-ext="objc"><pre v-pre><code class="language-objc"><span class="line"><span class="token keyword">@interface</span> myNewClass<span class="token punctuation">:</span> NSObject <span class="token punctuation">{</span> … <span class="token punctuation">}</span></span>
+<span class="line">…</span>
+<span class="line"><span class="token keyword">@end</span></span>
+<span class="line"></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul>
+<li>For universally needed operations such as <code v-pre>alloc</code> and <code v-pre>init</code></li>
+<li>Any method that has the same name, same return type, and same number and types of parameters as an inherited method overrides the inherited method</li>
+<li>이름, 반환형, 매개변수 목록이 완전히 일치할 경우</li>
+<li>An overriden method can be called through <code v-pre>super</code></li>
+<li>All inheritance is public derivation (unlike C++)</li>
+<li>Objective-C has two approaches besides subclassing to extend a class</li>
+<li>A category is a secondary interface of a class that contains declarations of methods</li>
+<li>카테고리는 기존 클래스에 새로운 메서드를 추가할 수 있도록 하는 구조</li>
+<li>인스턴스 변수는 추가할 수 없음 (오직 메서드만 추가 가능)</li>
+<li>원래 클래스의 소스 코드를 수정하지 않고도 확장 가능</li>
+</ul>
+<div class="language-objc line-numbers-mode" data-highlighter="prismjs" data-ext="objc"><pre v-pre><code class="language-objc"><span class="line"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">import</span> <span class="token string">"Stack.h"</span></span></span>
+<span class="line"><span class="token keyword">@interface</span> <span class="token function">Stack</span> <span class="token punctuation">(</span>StackExtend<span class="token punctuation">)</span></span>
+<span class="line"><span class="token operator">-</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span> secondFromTop<span class="token punctuation">;</span></span>
+<span class="line"><span class="token operator">-</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span> full<span class="token punctuation">;</span></span>
+<span class="line"><span class="token keyword">@end</span></span>
+<span class="line"></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul>
+<li>Name of this category is <code v-pre>StackExtend</code></li>
+<li>A category is a mixin – its methods are added to the parent class</li>
+<li>Provide some of the benefits of multiple inheritance</li>
+<li>Parent class need not be mentioned</li>
+<li>The implementation of a category is in a separate implementation:</li>
+</ul>
+<div class="language-objc line-numbers-mode" data-highlighter="prismjs" data-ext="objc"><pre v-pre><code class="language-objc"><span class="line"><span class="token keyword">@implementation</span> <span class="token function">Stack</span> <span class="token punctuation">(</span>StackExtend<span class="token punctuation">)</span></span>
+<span class="line"></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div></div></div><ul>
+<li>The other way to extend a class: protocols</li>
+<li>A protocol is a list of method declarations (like Java’s interfaces)</li>
+<li>Protocol은 클래스가 구현해야 할 메서드 목록을 정의하는 일종의 계약</li>
+<li>Related to abstract class in C++</li>
+</ul>
+<div class="language-objc line-numbers-mode" data-highlighter="prismjs" data-ext="objc"><pre v-pre><code class="language-objc"><span class="line"><span class="token keyword">@protocol</span> MatrixOps</span>
+<span class="line"><span class="token operator">-</span><span class="token punctuation">(</span>Matrix <span class="token operator">*</span><span class="token punctuation">)</span> add<span class="token punctuation">:</span> <span class="token punctuation">(</span>Matrix <span class="token operator">*</span><span class="token punctuation">)</span> mat<span class="token punctuation">;</span></span>
+<span class="line"><span class="token operator">-</span><span class="token punctuation">(</span>Matrix <span class="token operator">*</span><span class="token punctuation">)</span> subtract<span class="token punctuation">:</span> <span class="token punctuation">(</span>Matrix <span class="token operator">*</span><span class="token punctuation">)</span> mat<span class="token punctuation">;</span></span>
+<span class="line"><span class="token operator">@</span>optional</span>
+<span class="line"><span class="token operator">-</span><span class="token punctuation">(</span>Matrix <span class="token operator">*</span><span class="token punctuation">)</span> multiply<span class="token punctuation">:</span> <span class="token punctuation">(</span>Matrix <span class="token operator">*</span><span class="token punctuation">)</span> mat<span class="token punctuation">;</span></span>
+<span class="line"><span class="token keyword">@end</span></span>
+<span class="line"></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul>
+<li><code v-pre>MatrixOps</code> is the name of the protocol</li>
+<li>The <code v-pre>add</code> and <code v-pre>subtract</code> methods must be implemented by class that uses the protocol</li>
+<li>A class that adopts a protocol must specify it</li>
+<li><code v-pre>@interface MyClass: NSObject &lt;YourProtocol&gt;</code></li>
+<li>Dynamic Binding</li>
+<li>Different from other OOP languages – a polymorphic variable is of type <code v-pre>id</code></li>
+<li>An <code v-pre>id</code> type variable can reference any object</li>
+<li>The run-time system keeps track of the type of the object that an <code v-pre>id</code> type variable references</li>
+<li>If a call to a method is made through an <code v-pre>id</code> type variable, the binding to the method is dynamic</li>
+</ul>
+<div class="language-objc line-numbers-mode" data-highlighter="prismjs" data-ext="objc"><pre v-pre><code class="language-objc"><span class="line"><span class="token comment">// Create the objects</span></span>
+<span class="line">Circle <span class="token operator">*</span>myCircle <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">[</span>Circle alloc<span class="token punctuation">]</span> init<span class="token punctuation">]</span><span class="token punctuation">;</span></span>
+<span class="line">Square <span class="token operator">*</span>mySquare <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">[</span>Square alloc<span class="token punctuation">]</span> init<span class="token punctuation">]</span><span class="token punctuation">;</span><span class="token comment">//Set the id to reference the circle and draw it</span></span>
+<span class="line">shapteRef <span class="token operator">=</span> myCircle<span class="token punctuation">;</span></span>
+<span class="line"><span class="token punctuation">[</span>shapeRef draw<span class="token punctuation">]</span><span class="token punctuation">;</span></span>
+<span class="line"><span class="token comment">// Initialize the objects</span></span>
+<span class="line"><span class="token punctuation">[</span>myCircle setCircumference<span class="token punctuation">:</span> <span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">;</span></span>
+<span class="line"><span class="token punctuation">[</span>mySquare setSide<span class="token punctuation">:</span> <span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">;</span><span class="token comment">// Set the id to reference the square</span></span>
+<span class="line">shapeRef <span class="token operator">=</span> mySquare<span class="token punctuation">;</span></span>
+<span class="line"><span class="token punctuation">[</span>shapeRef draw<span class="token punctuation">]</span><span class="token punctuation">;</span></span>
+<span class="line"><span class="token comment">// Create the id variable</span></span>
+<span class="line">id shapeRef<span class="token punctuation">;</span></span>
+<span class="line"></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul>
+<li>Evaluation</li>
+<li>Support is adequate, with the following deficiencies:</li>
+<li>There is no way to prevent overriding an inherited method</li>
+<li><code v-pre>final</code> 같은 키워드가 없음 (Java에는 있음)</li>
+<li>The use of <code v-pre>id</code> type variables for dynamic binding is overkill – these variables could be misused</li>
+<li>컴파일 타임 타입 체크가 불가 -&gt; 실수로 잘못된 메시지를 보낼 수 있음</li>
+<li>코드의 안정성과 가독성이 떨어질 수 있음</li>
+<li>Categories and protocols are useful additions</li>
+<li>Even though there is no exact multiple inheritance</li>
+<li>category: 클래스에 메서드를 추가할 수 있게 해주는 구조 (mixin 유사)</li>
+<li>protocol: 인터페이스 정의를 위한 구조 (Java의 interface와 유사)</li>
+</ul>
+<h2 id="support-for-oop-in-java" tabindex="-1"><a class="header-anchor" href="#support-for-oop-in-java"><span>Support for OOP in Java</span></a></h2>
+<ul>
+<li>Because of its close relationship to C++, focus is on the differences from that language</li>
+<li>General characteristics</li>
+<li>All data are objects except the primitive types</li>
+<li>All primitive types have wrapper classes that store one data value</li>
+<li>Primitive values are implicitly coerced (boxing)</li>
+<li>All classes are descendant of Object class</li>
+<li>All objects are heap-dynamic, are referenced through reference variables, and most are allocated with <code v-pre>new</code></li>
+<li>Inheritance</li>
+<li>Methods can be <code v-pre>final</code> (cannot be overriden)</li>
+<li>Bindings of method calls to the methods of the subclass are statically bound</li>
+<li>Not support the private and protected derivations of C++</li>
+<li>Subclasses should be subtypes</li>
+<li>All of the methods of <code v-pre>Vector</code> (parent) were also visible in the <code v-pre>Stack</code> class in Java collection</li>
+<li>-&gt; <code v-pre>Stack</code> in Java collection have various operations (not common in general <code v-pre>Stack</code>)</li>
+</ul>
+<div class="language-java line-numbers-mode" data-highlighter="prismjs" data-ext="java"><pre v-pre><code class="language-java"><span class="line"><span class="token keyword">class</span> <span class="token class-name">Animal</span> <span class="token punctuation">{</span></span>
+<span class="line">    <span class="token class-name">String</span> name<span class="token punctuation">;</span></span>
+<span class="line">    <span class="token keyword">int</span> numberOfLegs<span class="token punctuation">;</span></span>
+<span class="line">    <span class="token keyword">public</span> <span class="token keyword">final</span> <span class="token keyword">void</span> <span class="token function">birth</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">}</span></span>
+<span class="line"><span class="token punctuation">}</span></span>
+<span class="line"><span class="token keyword">class</span> <span class="token class-name">Dog</span> <span class="token keyword">extends</span> <span class="token class-name">Animal</span> <span class="token punctuation">{</span></span>
+<span class="line">    <span class="token class-name">String</span> type<span class="token punctuation">;</span></span>
+<span class="line"><span class="token punctuation">}</span></span>
+<span class="line"></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul>
+<li>Single inheritance supported only, but there is an abstract class category that provides some of the benefits of multiple inheritance (interface)</li>
+<li>An interface can include only method declarations and named constants</li>
+<li>Cannot contain constructors or nonabstract methods</li>
+<li>A class does not inherit an interface; it implements any number of interface</li>
+<li>All of the methods must be implemented</li>
+<li>To simulate multiple inheritance</li>
+<li>Inherit a class + implement a interface</li>
+<li>Interface provides another kind of polymorphism</li>
+<li>Problem with multiple inheritance can be avoided (the same name with the same protocol)</li>
+<li>Class need not reimplement that method having the same name and protocol</li>
+<li>[Variable name conflict] Completely avoided because there is not variable definition in interface</li>
+<li>Interface != multiple inheritance</li>
+<li>Because interfaces can be treated as types</li>
+<li>Interfaces provide no code reuse</li>
+<li>One problem with interfaces</li>
+<li>If a class implements two interfaces having the same name (and protocol), no way to implement both</li>
+<li>[EX]</li>
+</ul>
+<div class="language-java line-numbers-mode" data-highlighter="prismjs" data-ext="java"><pre v-pre><code class="language-java"><span class="line"><span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">Animal</span> <span class="token punctuation">{</span></span>
+<span class="line">    <span class="token keyword">public</span> <span class="token keyword">abstract</span> <span class="token keyword">void</span> <span class="token function">bark</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line"><span class="token punctuation">}</span></span>
+<span class="line"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Dog</span> <span class="token keyword">implements</span> <span class="token class-name">Animal</span><span class="token punctuation">{</span></span>
+<span class="line">    <span class="token annotation punctuation">@Override</span></span>
+<span class="line">    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">bark</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span></span>
+<span class="line">        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Woof woof!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">    <span class="token punctuation">}</span></span>
+<span class="line"><span class="token punctuation">}</span></span>
+<span class="line"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Cat</span> <span class="token keyword">implements</span> <span class="token class-name">Animal</span><span class="token punctuation">{</span></span>
+<span class="line">    <span class="token annotation punctuation">@Override</span></span>
+<span class="line">    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">bark</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span></span>
+<span class="line">        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Meow Meow!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">    <span class="token punctuation">}</span></span>
+<span class="line"><span class="token punctuation">}</span></span>
+<span class="line"></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul>
+<li>Dynamic binding</li>
+<li>In Java, all messages are dynamically bound to methods, unless the method is <code v-pre>final</code> (i.e., it cannot be overriden, therefore dynamic binding serves no purpose)</li>
+<li>Static binding is also used if the methods is static or private both of which disallow overriding</li>
+<li>Nested Classes</li>
+<li>All are hidden from all classes in their package, except for the nesting class</li>
+<li>Nonstatic classes nested directly are called inner classes</li>
+<li>An innerclass can access members of its nesting class</li>
+<li>Each innerclass has implicit pointer to instance of nesting class</li>
+<li>A static nested class cannot access members of its nesting class</li>
+<li>Static nested class does not have implicit pointer</li>
+<li>Members of the inner class, even the private members, are accessible in the outer class</li>
+<li>A local nested class is defined in a method of its nestingclass</li>
+<li>No access specifier is used</li>
+<li>Their scope is always limited to their nesting class</li>
+<li>Evaluation</li>
+<li>Design decisions to support OOP are similar to C++</li>
+<li>No support for procedural programming</li>
+<li>No parentless classes</li>
+<li>Dynamic binding is used as “normal” way to bind method calls to method definitions</li>
+<li>Uses interfaces to provide a simple form of support for multiple inheritance</li>
+</ul>
+<h2 id="support-for-oop-in-c-1" tabindex="-1"><a class="header-anchor" href="#support-for-oop-in-c-1"><span>Support for OOP in C#</span></a></h2>
+<ul>
+<li>General characteristics</li>
+<li>Support for OOP similar to Java</li>
+<li>Includes both classes and structs</li>
+<li>Classes are similar to Java’s classes</li>
+<li>structs are less powerful stack-dynamic constructs (e.g., no inheritance)</li>
+<li>Inheritance</li>
+<li>Uses the syntax of C++ for defining classes</li>
+<li><code v-pre>public class NewClass : ParentClass { ... }</code></li>
+<li>A method inherited from parent class can be replaced in the derived class by marking its definition with <code v-pre>new</code></li>
+<li><code v-pre>new</code>를 사용했기 때문에, 메서드는 오버라이드되지 않고 정적으로 바인딩됨, 개발자에게 의도를 명확히 표현하라고 요구</li>
+</ul>
+<div class="language-csharp line-numbers-mode" data-highlighter="prismjs" data-ext="cs"><pre v-pre><code class="language-csharp"><span class="line"><span class="token keyword">class</span> <span class="token class-name">Parent</span> <span class="token punctuation">{</span></span>
+<span class="line">    <span class="token keyword">public</span> <span class="token return-type class-name"><span class="token keyword">void</span></span> <span class="token function">Greet</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span></span>
+<span class="line">        Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">"Hello from Parent"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">    <span class="token punctuation">}</span></span>
+<span class="line"><span class="token punctuation">}</span></span>
+<span class="line"><span class="token class-name">Parent</span> p <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name">Child</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">p<span class="token punctuation">.</span><span class="token function">Greet</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 출력: Hello from Parent</span></span>
+<span class="line"><span class="token class-name">Child</span> c <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name">Child</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">c<span class="token punctuation">.</span><span class="token function">Greet</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 출력: Hello from Child</span></span>
+<span class="line"><span class="token keyword">class</span> <span class="token class-name">Child</span> <span class="token punctuation">:</span> <span class="token type-list"><span class="token class-name">Parent</span></span> <span class="token punctuation">{</span></span>
+<span class="line">    <span class="token keyword">public</span> <span class="token keyword">new</span> <span class="token return-type class-name"><span class="token keyword">void</span></span> <span class="token function">Greet</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// new로 부모 메서드 숨김</span></span>
+<span class="line">        Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">"Hello from Child"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">    <span class="token punctuation">}</span></span>
+<span class="line"><span class="token punctuation">}</span></span>
+<span class="line"></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul>
+<li>The parent class version can still be called explicitly with the prefix <code v-pre>base</code>:</li>
+<li><code v-pre>base.Draw()</code></li>
+<li>Dynamic binding</li>
+<li>To allow dynamic binding of method calls to methods:</li>
+<li>The base class method is marked <code v-pre>virtual</code></li>
+<li>The corresponding methods in derived classes are marked <code v-pre>override</code></li>
+</ul>
+<div class="language-csharp line-numbers-mode" data-highlighter="prismjs" data-ext="cs"><pre v-pre><code class="language-csharp"><span class="line"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Shape</span> <span class="token punctuation">{</span></span>
+<span class="line">    <span class="token keyword">public</span> <span class="token keyword">virtual</span> <span class="token return-type class-name"><span class="token keyword">void</span></span> <span class="token function">Draw</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token range operator">..</span><span class="token punctuation">.</span> <span class="token punctuation">}</span></span>
+<span class="line">    <span class="token range operator">..</span><span class="token punctuation">.</span></span>
+<span class="line"><span class="token punctuation">}</span></span>
+<span class="line"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Rectangle</span> <span class="token punctuation">:</span> <span class="token type-list"><span class="token class-name">Shape</span></span> <span class="token punctuation">{</span></span>
+<span class="line">    <span class="token keyword">public</span> <span class="token keyword">override</span> <span class="token return-type class-name"><span class="token keyword">void</span></span> <span class="token function">Draw</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token range operator">..</span><span class="token punctuation">.</span> <span class="token punctuation">}</span></span>
+<span class="line">    <span class="token range operator">..</span><span class="token punctuation">.</span></span>
+<span class="line"><span class="token punctuation">}</span></span>
+<span class="line"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Circle</span> <span class="token punctuation">:</span> <span class="token type-list"><span class="token class-name">Shape</span></span> <span class="token punctuation">{</span></span>
+<span class="line">    <span class="token keyword">public</span> <span class="token keyword">override</span> <span class="token return-type class-name"><span class="token keyword">void</span></span> <span class="token function">Draw</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token range operator">..</span><span class="token punctuation">.</span> <span class="token punctuation">}</span></span>
+<span class="line">    <span class="token range operator">..</span><span class="token punctuation">.</span></span>
+<span class="line"><span class="token punctuation">}</span></span>
+<span class="line"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Square</span> <span class="token punctuation">:</span> <span class="token type-list"><span class="token class-name">Rectangle</span></span> <span class="token punctuation">{</span></span>
+<span class="line">    <span class="token keyword">public</span> <span class="token keyword">override</span> <span class="token return-type class-name"><span class="token keyword">void</span></span> <span class="token function">Draw</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token range operator">..</span><span class="token punctuation">.</span> <span class="token punctuation">}</span></span>
+<span class="line">    <span class="token range operator">..</span><span class="token punctuation">.</span></span>
+<span class="line"><span class="token punctuation">}</span></span>
+<span class="line"></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul>
+<li>Abstract methods are marked <code v-pre>abstract</code> and must be implemented in all subclasses</li>
+<li>Abstract classes cannot be instantiated</li>
+<li>All C# classes are ultimately derived from a single root class, <code v-pre>Object</code></li>
+<li><code v-pre>Object</code> class defines a collection of methods, including <code v-pre>ToString</code>, <code v-pre>Finalize</code>, and <code v-pre>Equals</code></li>
+<li>Nested classes</li>
+<li>A C# class that is directly nested in a nesting class behaves like a Java static nested class</li>
+<li>C# does not support nested classes that behave like the non-static classes of Java</li>
+<li>명시적 참조 필요</li>
+<li>Evaluation</li>
+<li>C# is a relatively recently designed C-based OO language</li>
+<li>The differences between C#’s and Java’s support for OOP are relatively minor</li>
+<li><code v-pre>struct</code> in C# (not in Java)</li>
+<li>Simpler than C++ for OOP</li>
+</ul>
+<h2 id="support-for-oop-in-ada-95" tabindex="-1"><a class="header-anchor" href="#support-for-oop-in-ada-95"><span>Support for OOP in Ada 95+</span></a></h2>
+<ul>
+<li>General Characteristics</li>
+<li>OOP was one of the most important extensions to Ada 83</li>
+<li>Supporting inheritance and dynamic binding</li>
+<li>Encapsulation container is a package that defines a tagged type</li>
+<li>A tagged type is one in which every object includes a tag to indicate during execution its type (the tags are internal)</li>
+<li>Tagged types can be either private types or records</li>
+<li>No constructors or destructors are implicitly called</li>
+<li>Inheritance</li>
+<li>Subclasses can be derived from tagged types</li>
+<li>New entities are added to the inherited entities by placing them in a record definition</li>
+<li>All subclasses are subtypes</li>
+<li>Does not allow one to prevent entities of the parent class from being included in the derived class</li>
+<li>No support for multiple inheritance</li>
+<li>A comparable effect can be achieved using generic classes</li>
+</ul>
+<div class="language-ada line-numbers-mode" data-highlighter="prismjs" data-ext="ada"><pre v-pre><code class="language-ada"><span class="line"><span class="token keyword">package</span> <span class="token variable">Person_Pkg</span> <span class="token keyword">is</span></span>
+<span class="line"><span class="token keyword">type</span> <span class="token variable">Person</span> <span class="token keyword">is</span> <span class="token keyword">tagged</span> <span class="token keyword">private</span><span class="token punctuation">;</span></span>
+<span class="line"><span class="token keyword">procedure</span> <span class="token variable">Display</span><span class="token punctuation">(</span><span class="token variable">P</span> <span class="token punctuation">:</span> <span class="token keyword">in</span> <span class="token keyword">out</span> <span class="token variable">Person</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line"><span class="token keyword">private</span></span>
+<span class="line"><span class="token keyword">type</span> <span class="token variable">Person</span> <span class="token keyword">is</span> <span class="token keyword">tagged</span></span>
+<span class="line"><span class="token keyword">record</span></span>
+<span class="line"><span class="token variable">Name</span> <span class="token punctuation">:</span> <span class="token variable">String</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">..</span><span class="token number">30</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line"><span class="token variable">Address</span> <span class="token punctuation">:</span> <span class="token variable">String</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">..</span><span class="token number">30</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line"><span class="token variable">Age</span> <span class="token punctuation">:</span> <span class="token variable">Integer</span><span class="token punctuation">;</span></span>
+<span class="line"><span class="token keyword">end</span> <span class="token keyword">record</span><span class="token punctuation">;</span></span>
+<span class="line"><span class="token keyword">end</span> <span class="token variable">Person_Pkg</span><span class="token punctuation">;</span></span>
+<span class="line"><span class="token keyword">with</span> <span class="token variable">Person_Pkg</span><span class="token punctuation">;</span> <span class="token keyword">use</span> <span class="token variable">Person_Pkg</span><span class="token punctuation">;</span></span>
+<span class="line"><span class="token keyword">package</span> <span class="token variable">Student_Pkg</span> <span class="token keyword">is</span></span>
+<span class="line"><span class="token keyword">type</span> <span class="token variable">Student</span> <span class="token keyword">is</span> <span class="token keyword">new</span> <span class="token variable">Person</span> <span class="token keyword">with</span></span>
+<span class="line"><span class="token keyword">record</span></span>
+<span class="line"><span class="token variable">Grade_Point_Average</span> <span class="token punctuation">:</span> <span class="token variable">Float</span><span class="token punctuation">;</span></span>
+<span class="line"><span class="token variable">Grade_Level</span> <span class="token punctuation">:</span> <span class="token variable">Integer</span><span class="token punctuation">;</span></span>
+<span class="line"><span class="token keyword">end</span> <span class="token keyword">record</span><span class="token punctuation">;</span></span>
+<span class="line"><span class="token keyword">procedure</span> <span class="token variable">Display</span> <span class="token punctuation">(</span><span class="token variable">St</span><span class="token punctuation">:</span> <span class="token keyword">in</span> <span class="token variable">Student</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line"><span class="token keyword">end</span> <span class="token variable">Student_Pkg</span><span class="token punctuation">;</span></span>
+<span class="line"><span class="token variable">P1</span> <span class="token punctuation">:</span> <span class="token variable">Person</span><span class="token punctuation">;</span></span>
+<span class="line"><span class="token variable">S1</span> <span class="token punctuation">:</span> <span class="token variable">Student</span><span class="token punctuation">;</span></span>
+<span class="line"><span class="token variable">Fred</span> <span class="token punctuation">:</span> <span class="token variable">Person</span> <span class="token operator">:=</span> <span class="token punctuation">(</span><span class="token variable">To_Unbounded_String</span><span class="token punctuation">(</span><span class="token string">"Fred"</span><span class="token punctuation">)</span><span class="token punctuation">,</span></span>
+<span class="line"><span class="token variable">To_Unbounded_String</span><span class="token punctuation">(</span><span class="token string">"321 Mulberry Lane"</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">35</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line"><span class="token variable">Freddie</span> <span class="token punctuation">:</span> <span class="token variable">Student</span> <span class="token operator">:=</span></span>
+<span class="line"><span class="token punctuation">(</span><span class="token variable">To_Unbounded_String</span><span class="token punctuation">(</span><span class="token string">"Freddie"</span><span class="token punctuation">)</span><span class="token punctuation">,</span></span>
+<span class="line"><span class="token variable">To_Unbounded_String</span><span class="token punctuation">(</span><span class="token string">"725 Main St."</span><span class="token punctuation">)</span><span class="token punctuation">,</span></span>
+<span class="line"><span class="token number">20</span><span class="token punctuation">,</span> <span class="token number">3.25</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line"><span class="token variable">P1</span> <span class="token operator">:=</span> <span class="token variable">Freddie</span><span class="token punctuation">;</span> <span class="token operator">/</span><span class="token operator">/</span> <span class="token variable">Legal</span> <span class="token variable">because</span> <span class="token variable">Student</span> <span class="token keyword">is</span> <span class="token variable">a</span> <span class="token keyword">subtype</span> <span class="token keyword">of</span> <span class="token variable">Person</span></span>
+<span class="line"><span class="token operator">/</span><span class="token operator">/</span> <span class="token variable">Grade_Point_Average</span> <span class="token keyword">and</span> <span class="token variable">Grade_Level</span> <span class="token variable">are</span> <span class="token variable">ignored</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token variable">object</span> <span class="token variable">slicing</span></span>
+<span class="line"><span class="token variable">S1</span> <span class="token operator">:=</span> <span class="token punctuation">(</span><span class="token variable">Fred</span><span class="token punctuation">,</span> <span class="token number">3.05</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token operator">/</span><span class="token operator">/</span> <span class="token variable">Legal</span></span>
+<span class="line"><span class="token operator">/</span><span class="token operator">/</span> <span class="token variable">Note</span><span class="token punctuation">:</span> <span class="token variable">Display</span> <span class="token keyword">is</span> <span class="token variable">being</span> <span class="token variable">overridden</span> <span class="token variable">from</span> <span class="token variable">Person_Pkg</span></span>
+<span class="line"></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul>
+<li>Dynamic Binding</li>
+<li>Dynamic binding is done using polymorphic variables called classwide types</li>
+<li>For the tagged type <code v-pre>Person</code>, the classwide type is <code v-pre>Person'class</code></li>
+<li>Other bindings are static</li>
+<li>Any method may be dynamically bound</li>
+<li>Purely abstract base types can be defined in Ada 95 by including the reserved word <code v-pre>abstract</code></li>
+</ul>
+<div class="language-ada line-numbers-mode" data-highlighter="prismjs" data-ext="ada"><pre v-pre><code class="language-ada"><span class="line"><span class="token keyword">procedure</span> <span class="token variable">Display_Any_Person</span><span class="token punctuation">(</span><span class="token variable">P</span><span class="token punctuation">:</span> <span class="token keyword">in</span> <span class="token variable">Person</span><span class="token punctuation">)</span> <span class="token keyword">is</span></span>
+<span class="line"><span class="token keyword">begin</span></span>
+<span class="line"><span class="token variable">Display</span><span class="token punctuation">(</span><span class="token variable">p</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line"><span class="token keyword">end</span> <span class="token variable">Display_Any_Person</span><span class="token punctuation">;</span></span>
+<span class="line">…</span>
+<span class="line"><span class="token keyword">with</span> <span class="token variable">Person_Pkg</span><span class="token punctuation">;</span> <span class="token keyword">use</span> <span class="token variable">Person_Pkg</span><span class="token punctuation">;</span></span>
+<span class="line"><span class="token keyword">with</span> <span class="token variable">Student_Pkg</span><span class="token punctuation">;</span> <span class="token keyword">use</span> <span class="token variable">Student_Pkg</span><span class="token punctuation">;</span></span>
+<span class="line"><span class="token variable">P</span> <span class="token punctuation">:</span> <span class="token variable">Person</span><span class="token punctuation">;</span></span>
+<span class="line"><span class="token variable">S</span> <span class="token punctuation">:</span> <span class="token variable">Student</span><span class="token punctuation">;</span></span>
+<span class="line"><span class="token variable">Pcw</span> <span class="token punctuation">:</span> <span class="token variable">Person</span>’<span class="token variable">class</span><span class="token punctuation">;</span> <span class="token comment">-- A classwide variable</span></span>
+<span class="line">…</span>
+<span class="line"><span class="token variable">Pcw</span> <span class="token operator">:=</span> <span class="token variable">P</span><span class="token punctuation">;</span></span>
+<span class="line"><span class="token variable">Display_Any_Person</span><span class="token punctuation">(</span><span class="token variable">Pcw</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">-- Calls the Display in Person</span></span>
+<span class="line"><span class="token variable">Pcw</span> <span class="token operator">:=</span> <span class="token variable">S</span><span class="token punctuation">;</span></span>
+<span class="line"><span class="token variable">Display_Any_Person</span><span class="token punctuation">(</span><span class="token variable">Pcw</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">-- Calls the Display in Student</span></span>
+<span class="line"><span class="token keyword">package</span> <span class="token variable">Base_Pkg</span> <span class="token keyword">is</span></span>
+<span class="line"><span class="token keyword">type</span> <span class="token variable">T</span> <span class="token keyword">is</span> <span class="token keyword">abstract</span> <span class="token keyword">tagged</span> <span class="token keyword">null</span> <span class="token keyword">record</span><span class="token punctuation">;</span></span>
+<span class="line"><span class="token keyword">procedure</span> <span class="token variable">Do_It</span> <span class="token punctuation">(</span><span class="token variable">A</span> <span class="token punctuation">:</span> <span class="token variable">T</span><span class="token punctuation">)</span> <span class="token keyword">is</span> <span class="token keyword">abstract</span><span class="token punctuation">;</span></span>
+<span class="line"><span class="token keyword">end</span> <span class="token variable">Base_Pkg</span><span class="token punctuation">;</span></span>
+<span class="line"></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul>
+<li>Child Packages</li>
+<li>A child package is logically (possibly physically) nested inside another package</li>
+<li>Solves the problem of packages becoming physically too large</li>
+<li>if separate, they are called child library packages</li>
+<li>Declarations of the private child package are not visible to the nesting package body</li>
+<li>Even the private parts of the parent package are visible to the child package</li>
+<li>A child package is an alternative to class derivation (like protected)</li>
+<li>A child library package can be added any time to a program</li>
+<li>Evaluation</li>
+<li>Ada offers complete support for OOP</li>
+<li>C++ offers better form of inheritance than Ada</li>
+<li>Ada includes no initialization of objects (e.g., constructors)</li>
+<li>Dynamic binding in C-based OOP languages is restricted to pointers and/or references to objects; Ada has no such restriction and is thus more orthogonal</li>
+</ul>
+<h2 id="support-for-oop-in-ruby" tabindex="-1"><a class="header-anchor" href="#support-for-oop-in-ruby"><span>Support for OOP in Ruby</span></a></h2>
+<ul>
+<li>General Characteristics</li>
+<li>Everything is an object</li>
+<li>All computation is through message passing</li>
+<li>Class definitions are executable, allowing secondary definitions to add members to existing definitions</li>
+<li>Method definitions are also executable</li>
+<li>All variables are type-less references to objects</li>
+<li>Access control is different for data and methods</li>
+<li>It is private for all data and cannot be changed (accessor methods must be defined if needed)</li>
+<li>Methods can be either public, private, or protected</li>
+<li>Method access is checked at runtime</li>
+<li>Getters and setters can be defined by shortcuts (i.e. by <code v-pre>attr_reader</code>, <code v-pre>attr_writer</code>)</li>
+<li>Inheritance</li>
+<li>Access control to inherited methods can be different than in the parent class</li>
+<li>Subclasses are not necessarily subtypes</li>
+<li>Mixins can be created with modules, providing a kind of multiple inheritance</li>
+<li>Dynamic Binding</li>
+<li>All variables are typeless and polymorphic</li>
+<li>Evaluation</li>
+<li>Does not support abstract classes</li>
+<li>Does not fully support multiple inheritance</li>
+<li>-&gt; achieved by modules, mixin, etc..</li>
+<li>Access controls are weaker than those of other languages that support OOP</li>
+</ul>
+<h2 id="implementing-oo-constructs" tabindex="-1"><a class="header-anchor" href="#implementing-oo-constructs"><span>Implementing OO Constructs</span></a></h2>
+<ul>
+<li>Two interesting and challenging parts</li>
+<li>Storage structures for instance variables</li>
+<li>Dynamic binding of messages to methods</li>
+<li>Instance Data Storage</li>
+<li>Class instance records (CIRs) store the state of an object</li>
+<li>Static (built at compile time)</li>
+<li>Every class has its own CIR</li>
+<li>If a class has a parent, the subclass instance variables are added to the parent CIR</li>
+<li>Because CIR is static, access to all instance variables is done as it is in records</li>
+<li>Using constant offsets from the beginning of the CIR instance -&gt; efficient</li>
+<li>Dynamic Binding of Methods Calls</li>
+<li>Methods in a class that are statically bound need not be involved in the CIR</li>
+<li>Methods that will be dynamically bound must have entries in the CIR</li>
+<li>Such entries have a pointer to code of method (set at object creation time)</li>
+<li>Calls to dynamically bound methods can be connected to the corresponding code thru a pointer in the CIR</li>
+<li>Drawback: every instance (with dynamically bound methods) would need to store pointers</li>
+<li>The storage structure is sometimes called virtual method tables (vtable)</li>
+<li>List of such methods are stored</li>
+<li>Method calls can be represented as offsets from the beginning of the vtable</li>
+<li>[EX] Java (single inheritance)</li>
+<li>Method pointer for the area method in B’s vtable points to the code for A’s area method</li>
+<li>Pointers for draw and sift in B’s vtable point to B’s draw and sift</li>
+<li>[EX] Java (multiple inheritance)</li>
+<li>There must be at least two different views available in the CIR—one for each of the parent classes, one of which includes the view for the subclass, C</li>
+</ul>
+<h2 id="support-for-object-oriented-programming-1" tabindex="-1"><a class="header-anchor" href="#support-for-object-oriented-programming-1"><span>Support for Object-Oriented Programming</span></a></h2>
+<ul>
+<li>Summary</li>
+<li>OO programming involves three fundamental concepts: ADTs, inheritance, dynamic binding</li>
+<li>Major design issues: exclusivity of objects, subclasses and subtypes, type checking and polymorphism, single and multiple inheritance, dynamic binding, explicit and implicit de-allocation of objects, and nested classes</li>
+<li>Smalltalk is a pure OOL</li>
+<li>C++ has two distinct type systems (hybrid)</li>
+<li>Java is not a hybrid language like C++; it supports only OOP</li>
+<li>C# is based on C++ and Java</li>
+<li>Ruby is a relatively recent pure OOP language; provides some new ideas in support for OOP</li>
+<li>Implementing OOP involves some new data structures</li>
+</ul>
+</div></template>
+
+

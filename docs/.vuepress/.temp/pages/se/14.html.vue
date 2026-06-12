@@ -1,4 +1,5 @@
 <template><div><h1 id="_14-qa-process" tabindex="-1"><a class="header-anchor" href="#_14-qa-process"><span>14. QA Process</span></a></h1>
+<DateMeta />
 <h2 id="quality-assurance-process" tabindex="-1"><a class="header-anchor" href="#quality-assurance-process"><span>Quality Assurance Process</span></a></h2>
 <ul>
 <li>How to get developers to

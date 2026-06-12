@@ -1,4 +1,5 @@
 <template><div><h1 id="_13-intro-to-qa-testing" tabindex="-1"><a class="header-anchor" href="#_13-intro-to-qa-testing"><span>13. Intro to QA Testing</span></a></h1>
+<DateMeta />
 <h2 id="learning-goals" tabindex="-1"><a class="header-anchor" href="#learning-goals"><span>Learning Goals</span></a></h2>
 <ul>
 <li>Testing을 (비구조적) 차원에서 coverage를 달성하기 위한 활동으로 간주</li>

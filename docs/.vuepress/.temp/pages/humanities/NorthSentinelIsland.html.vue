@@ -1,4 +1,5 @@
 <template><div><h1 id="north-sentinel-island" tabindex="-1"><a class="header-anchor" href="#north-sentinel-island"><span>North Sentinel Island</span></a></h1>
+<DateMeta />
 <h2 id="개요" tabindex="-1"><a class="header-anchor" href="#개요"><span>개요</span></a></h2>
 <iframe
   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d393282.7656953128!2d92.0144!3d11.5782!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTEuNzk0N3g0MC4xIm4gOTLCsDAwJzIwLjEiTiA5MsKwMDAnMzAuNSJF!5e0!3m2!1sen!2sin!4v1719000000000!5m2!1sen!2sin"

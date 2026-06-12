@@ -1,4 +1,5 @@
 <template><div><h1 id="_09-buffer-overflow" tabindex="-1"><a class="header-anchor" href="#_09-buffer-overflow"><span>09. Buffer Overflow</span></a></h1>
+<DateMeta />
 <h1 id="os-overview" tabindex="-1"><a class="header-anchor" href="#os-overview"><span>OS Overview</span></a></h1>
 <h2 id="operating-system" tabindex="-1"><a class="header-anchor" href="#operating-system"><span>Operating System</span></a></h2>
 <ul>

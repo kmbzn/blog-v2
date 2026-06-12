@@ -1,4 +1,5 @@
 <template><div><h1 id="_1-basics-linear-algebra" tabindex="-1"><a class="header-anchor" href="#_1-basics-linear-algebra"><span>1. Basics; Linear Algebra</span></a></h1>
+<DateMeta />
 <h2 id="개요" tabindex="-1"><a class="header-anchor" href="#개요"><span>개요</span></a></h2>
 <ul>
 <li>선형대수학(Linear Algebra) 간략 검토</li>

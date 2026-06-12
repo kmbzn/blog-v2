@@ -1,4 +1,5 @@
 <template><div><h1 id="_26-attention-mechanism-and-self-attention" tabindex="-1"><a class="header-anchor" href="#_26-attention-mechanism-and-self-attention"><span>26. Attention Mechanism and Self-Attention</span></a></h1>
+<DateMeta />
 <h1 id="sequence-to-sequence-models" tabindex="-1"><a class="header-anchor" href="#sequence-to-sequence-models"><span>Sequence-to-Sequence Models</span></a></h1>
 <p>Focusing on neural machine translation</p>
 <h2 id="machine-translation" tabindex="-1"><a class="header-anchor" href="#machine-translation"><span>Machine Translation</span></a></h2>

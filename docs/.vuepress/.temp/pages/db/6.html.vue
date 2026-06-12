@@ -1,4 +1,5 @@
 <template><div><h1 id="_6-e-r-model" tabindex="-1"><a class="header-anchor" href="#_6-e-r-model"><span>6. E-R Model</span></a></h1>
+<DateMeta />
 <h2 id="overview-of-the-design-process" tabindex="-1"><a class="header-anchor" href="#overview-of-the-design-process"><span>Overview of the Design Process</span></a></h2>
 <ul>
 <li>Design Phases(설계 단계)

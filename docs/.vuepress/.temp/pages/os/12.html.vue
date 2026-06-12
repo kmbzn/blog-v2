@@ -1,4 +1,5 @@
 <template><div><h1 id="_12-file-system" tabindex="-1"><a class="header-anchor" href="#_12-file-system"><span>12. File System</span></a></h1>
+<DateMeta />
 <h2 id="file-concept" tabindex="-1"><a class="header-anchor" href="#file-concept"><span>File Concept</span></a></h2>
 <ul>
 <li>데이터와 프로그램을 위한 &quot;컨테이너&quot;</li>

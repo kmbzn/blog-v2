@@ -1,4 +1,5 @@
 <template><div><h1 id="_15-inspections-code-reviews" tabindex="-1"><a class="header-anchor" href="#_15-inspections-code-reviews"><span>15. Inspections / Code Reviews</span></a></h1>
+<DateMeta />
 <h2 id="learning-goals" tabindex="-1"><a class="header-anchor" href="#learning-goals"><span>Learning Goals</span></a></h2>
 <ul>
 <li>다양한 Formality level을 가진 Peer review의 형태 이해</li>

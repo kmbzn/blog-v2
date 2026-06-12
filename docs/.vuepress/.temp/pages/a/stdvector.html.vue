@@ -1,4 +1,5 @@
 <template><div><h1 id="c-std-vector-사용법-정리" tabindex="-1"><a class="header-anchor" href="#c-std-vector-사용법-정리"><span>C++ <code v-pre>std::vector</code> 사용법 정리</span></a></h1>
+<DateMeta />
 <p align="center">
   <img src="https://static.wikitide.net/greatcharacterswiki/8/8f/Screenshot_2022-09-13_203128.png" width="120" alt="vector" />
 </p>

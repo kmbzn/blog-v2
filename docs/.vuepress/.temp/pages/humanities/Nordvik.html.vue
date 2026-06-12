@@ -1,4 +1,5 @@
 <template><div><h1 id="nordvik-russia" tabindex="-1"><a class="header-anchor" href="#nordvik-russia"><span>Nordvik, Russia</span></a></h1>
+<DateMeta />
 <div class="hint-container info">
 <p class="hint-container-title">정보</p>
 <p><strong>본 문서는 한국어권 최초로 번역된 Nordvik 지역에 대한 정리 자료입니다.</strong><br>

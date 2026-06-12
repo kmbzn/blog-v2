@@ -90,10 +90,11 @@ export default defineUserConfig({
         ]
       },
       {
-        text: 'Watch Industry',
+        text: 'Brands',
         collapsible: true,
         children: [
-          '/watch/NOMOS-Glashutte',
+          '/brands/NOMOS-Glashutte',
+          '/brands/KZ',
         ]
       },
       {

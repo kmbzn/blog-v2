@@ -1,4 +1,5 @@
 <template><div><h1 id="_4-process-models" tabindex="-1"><a class="header-anchor" href="#_4-process-models"><span>4. Process Models</span></a></h1>
+<DateMeta />
 <h2 id="learning-goals" tabindex="-1"><a class="header-anchor" href="#learning-goals"><span>Learning Goals</span></a></h2>
 <ul>
 <li>Process(프로세스) 고려 사항의 필요성 이해</li>

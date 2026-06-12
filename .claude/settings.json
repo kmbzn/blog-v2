@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git add *)",
+      "Bash(git commit '--author=kmbzn <kmbzn24@gmail.com>' -m ' *)",
+      "Bash(git push *)",
+      "WebFetch(domain:www.youtube.com)",
+      "Bash(git commit *)",
+      "Bash(xargs cat)",
+      "WebSearch",
+      "WebFetch(domain:commons.wikimedia.org)",
+      "WebFetch(domain:cosko.godomall.com)",
+      "Bash(mkdir -p /home/kmbzn/blog-v2/docs/brands)",
+      "Bash(mv /home/kmbzn/blog-v2/docs/watch/NOMOS-Glashutte.md /home/kmbzn/blog-v2/docs/brands/NOMOS-Glashutte.md)",
+      "Bash(rmdir /home/kmbzn/blog-v2/docs/watch)"
+    ]
+  }
+}

@@ -1,4 +1,5 @@
 <template><div><h1 id="_5-agile" tabindex="-1"><a class="header-anchor" href="#_5-agile"><span>5. Agile</span></a></h1>
+<DateMeta />
 <h2 id="learning-goals" tabindex="-1"><a class="header-anchor" href="#learning-goals"><span>Learning Goals</span></a></h2>
 <ul>
 <li>Agile(애자일)을 iterative process practices(반복적 프로세스 프랙티스)의 집합이자 customer needs(고객 요구)와 development(개발)를 일치시키기 위한 business approach(비즈니스 접근 방식)로 정의</li>

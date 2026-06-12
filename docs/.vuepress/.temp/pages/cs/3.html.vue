@@ -1,4 +1,5 @@
 <template><div><h1 id="_03-cryptographic-tools" tabindex="-1"><a class="header-anchor" href="#_03-cryptographic-tools"><span>03. Cryptographic Tools</span></a></h1>
+<DateMeta />
 <h2 id="contents" tabindex="-1"><a class="header-anchor" href="#contents"><span>Contents</span></a></h2>
 <ul>
 <li>Symmetric Encryption</li>

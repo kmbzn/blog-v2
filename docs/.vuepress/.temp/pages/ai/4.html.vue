@@ -1,4 +1,5 @@
 <template><div><h1 id="_4-knowledge-and-logic-1" tabindex="-1"><a class="header-anchor" href="#_4-knowledge-and-logic-1"><span>4. Knowledge and Logic (1)</span></a></h1>
+<DateMeta />
 <h2 id="지식-기반-에이전트-knowledge-based-agents" tabindex="-1"><a class="header-anchor" href="#지식-기반-에이전트-knowledge-based-agents"><span>지식 기반 에이전트(Knowledge-Based Agents)</span></a></h2>
 <ul>
 <li>지식 기반 에이전트(Knowledge-based agents): 지식의 내부 표현(internal representation of knowledge)에 대한 추론(reasoning) 과정을 통해 취할 행동을 결정</li>

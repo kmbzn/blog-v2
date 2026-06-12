@@ -1,4 +1,5 @@
 <template><div><h1 id="_1-course-intro" tabindex="-1"><a class="header-anchor" href="#_1-course-intro"><span>1 - Course Intro</span></a></h1>
+<DateMeta />
 <h2 id="course-information" tabindex="-1"><a class="header-anchor" href="#course-information"><span>Course Information</span></a></h2>
 <ul>
 <li>Course Homepage

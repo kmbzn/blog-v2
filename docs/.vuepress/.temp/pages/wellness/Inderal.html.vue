@@ -1,0 +1,136 @@
+<template><div><h1 id="인데놀-inderal" tabindex="-1"><a class="header-anchor" href="#인데놀-inderal"><span>인데놀 (Inderal)</span></a></h1>
+<DateMeta />
+<h2 id="기본-정보" tabindex="-1"><a class="header-anchor" href="#기본-정보"><span>기본 정보</span></a></h2>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>성분명</td>
+<td>프로프라놀롤 염산염 (Propranolol HCl)</td>
+</tr>
+<tr>
+<td>상품명</td>
+<td>인데놀 (Inderal), 프로프라놀롤 등</td>
+</tr>
+<tr>
+<td>분류</td>
+<td>비선택적 베타 차단제 (Non-selective β-blocker)</td>
+</tr>
+<tr>
+<td>제형</td>
+<td>속방형 경구정, 서방형 경구 캡슐</td>
+</tr>
+<tr>
+<td>규격</td>
+<td>10mg, 40mg (속방형 기준)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="작용-기전" tabindex="-1"><a class="header-anchor" href="#작용-기전"><span>작용 기전</span></a></h2>
+<p>프로프라놀롤은 β1 및 β2 아드레날린 수용체를 모두 차단하는 비선택적 베타 차단제다. 심장의 β1 수용체 차단을 통해 심박수와 심근 수축력을 감소시키고, 혈압을 낮춘다. 말초의 β2 수용체 차단은 기관지 수축 및 혈관 확장 억제로 이어진다.</p>
+<p>상황적 불안(situational anxiety)에 사용될 때는 신체적 증상(떨림, 빠른 심박, 발한 등)을 억제하는 방식으로 작용하며, 중추신경계에 대한 직접적인 항불안 효과는 제한적이다.</p>
+<h2 id="적응증" tabindex="-1"><a class="header-anchor" href="#적응증"><span>적응증</span></a></h2>
+<ul>
+<li>고혈압</li>
+<li>협심증</li>
+<li>심방세동 등 부정맥</li>
+<li>심근경색 후 재발 예방</li>
+<li>본태성 진전 (Essential tremor)</li>
+<li>편두통 예방</li>
+<li>갑상선 기능 항진증 증상 조절</li>
+<li>상황적 불안 (수행 불안, 무대 공포 등) — 허가 외 사용 포함</li>
+</ul>
+<h2 id="용법-및-용량" tabindex="-1"><a class="header-anchor" href="#용법-및-용량"><span>용법 및 용량</span></a></h2>
+<p>적응증에 따라 용량 차이가 크다.</p>
+<table>
+<thead>
+<tr>
+<th>적응증</th>
+<th>일반적 용량</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>고혈압</td>
+<td>40–320mg/일 (분할 투여)</td>
+</tr>
+<tr>
+<td>본태성 진전</td>
+<td>40–120mg/일</td>
+</tr>
+<tr>
+<td>편두통 예방</td>
+<td>40–240mg/일</td>
+</tr>
+<tr>
+<td>상황적 불안</td>
+<td>10–40mg (이벤트 1–2시간 전 단회 복용)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="주요-부작용" tabindex="-1"><a class="header-anchor" href="#주요-부작용"><span>주요 부작용</span></a></h2>
+<p><strong>흔한 부작용</strong></p>
+<ul>
+<li>서맥 (심박수 감소)</li>
+<li>피로감, 무기력</li>
+<li>사지 냉감</li>
+<li>수면장애, 이상한 꿈</li>
+<li>소화기 증상 (구역, 설사)</li>
+</ul>
+<p><strong>중요 부작용</strong></p>
+<ul>
+<li>기관지 수축 (천식, COPD 환자에서 위험)</li>
+<li>혈당 이상 (저혈당 증상 은폐 가능)</li>
+<li>우울증 악화 가능성</li>
+<li>갑작스러운 복용 중단 시 반동성 심박수 증가 (반드시 점진적 감량)</li>
+</ul>
+<h2 id="금기-및-주의사항" tabindex="-1"><a class="header-anchor" href="#금기-및-주의사항"><span>금기 및 주의사항</span></a></h2>
+<p><strong>금기</strong></p>
+<ul>
+<li>천식 또는 기관지 경련성 질환</li>
+<li>2~3도 방실차단</li>
+<li>심인성 쇼크</li>
+<li>조절되지 않는 심부전</li>
+<li>서맥 (안정 시 심박수 &lt; 60bpm)</li>
+</ul>
+<p><strong>주의</strong></p>
+<ul>
+<li>당뇨 환자: 저혈당 증상(빈맥)을 은폐할 수 있음</li>
+<li>갑자기 복용 중단 시 협심증 악화 위험 — 반드시 수주에 걸쳐 감량</li>
+<li>다른 심혈관 약물과 병용 시 주의</li>
+</ul>
+<h2 id="반감기-및-지속시간" tabindex="-1"><a class="header-anchor" href="#반감기-및-지속시간"><span>반감기 및 지속시간</span></a></h2>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>수치</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>혈중 반감기</td>
+<td>3–6시간 (속방형)</td>
+</tr>
+<tr>
+<td>효과 발현</td>
+<td>경구 복용 후 약 1–2시간</td>
+</tr>
+<tr>
+<td>지속시간</td>
+<td>6–12시간 (속방형)</td>
+</tr>
+</tbody>
+</table>
+<div class="hint-container warning">
+<p class="hint-container-title">전문의약품</p>
+<p>인데놀은 전문의약품으로, 반드시 의사의 처방 하에 복용해야 한다. 자가 판단에 의한 복용 중단은 위험할 수 있다.</p>
+</div>
+</div></template>
+
+

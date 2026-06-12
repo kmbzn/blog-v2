@@ -1,4 +1,5 @@
 <template><div><h1 id="_11-virtual-memory-2" tabindex="-1"><a class="header-anchor" href="#_11-virtual-memory-2"><span>11. Virtual Memory (2)</span></a></h1>
+<DateMeta />
 <h2 id="allocation-of-frames" tabindex="-1"><a class="header-anchor" href="#allocation-of-frames"><span>Allocation of Frames</span></a></h2>
 <ul>
 <li>여러 프로세스에 page frame을 어떻게 분배할 것인가?</li>

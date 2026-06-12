@@ -1,4 +1,5 @@
 <template><div><h1 id="_8-lighting" tabindex="-1"><a class="header-anchor" href="#_8-lighting"><span>8 - Lighting</span></a></h1>
+<DateMeta />
 <h2 id="개요" tabindex="-1"><a class="header-anchor" href="#개요"><span>개요</span></a></h2>
 <ul>
 <li>물체의 가시 색상 (Visible Color of Objects)</li>

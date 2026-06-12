@@ -1,4 +1,5 @@
 <template><div><h1 id="_7-information-theory" tabindex="-1"><a class="header-anchor" href="#_7-information-theory"><span>7. Information Theory</span></a></h1>
+<DateMeta />
 <ul>
 <li>Information theory는 (Branch) of applied mathematics (응용 수학의 한 분야)로, 신호에 존재하는 정보량을 정량화하는 것을 중심으로 함</li>
 <li>원래는 (Discrete alphabets, 이산 알파벳)에서 (Noisy channel, 잡음 채널)을 통해 메시지를 보내는 것을 연구하기 위해 발명됨 (예: 라디오 송신을 통한 통신)</li>

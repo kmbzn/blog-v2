@@ -1,4 +1,5 @@
 <template><div><h1 id="_2024-midterm-exam" tabindex="-1"><a class="header-anchor" href="#_2024-midterm-exam"><span>2024 Midterm Exam</span></a></h1>
+<DateMeta />
 <p>총 15 문항, 100점 만점<br>
 2024.10.16.</p>
 <ol>

@@ -1,4 +1,5 @@
 <template><div><h1 id="_07-malicious-software" tabindex="-1"><a class="header-anchor" href="#_07-malicious-software"><span>07. Malicious Software</span></a></h1>
+<DateMeta />
 <h2 id="botnet-overview" tabindex="-1"><a class="header-anchor" href="#botnet-overview"><span>Botnet Overview</span></a></h2>
 <ul>
 <li><strong>botmaster</strong>

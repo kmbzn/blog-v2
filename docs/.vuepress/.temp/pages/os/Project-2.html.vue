@@ -1,4 +1,5 @@
 <template><div><h1 id="project-02-implementing-a-simple-kernel-level-thread" tabindex="-1"><a class="header-anchor" href="#project-02-implementing-a-simple-kernel-level-thread"><span>Project 02: Implementing a simple kernel-level thread</span></a></h1>
+<DateMeta />
 <p>Operating System</p>
 <p>Due date<br>
 2025. 05. 28. 23:59</p>

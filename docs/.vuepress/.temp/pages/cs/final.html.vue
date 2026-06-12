@@ -1,4 +1,5 @@
 <template><div><h1 id="_2024-computer-security-final-exam" tabindex="-1"><a class="header-anchor" href="#_2024-computer-security-final-exam"><span>2024 Computer Security Final Exam</span></a></h1>
+<DateMeta />
 <ul>
 <li>총 16문항, 100점 만점</li>
 <li>2024.12.11.</li>

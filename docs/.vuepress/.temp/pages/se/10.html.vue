@@ -1,4 +1,5 @@
 <template><div><h1 id="_10-object-oriented-analysis" tabindex="-1"><a class="header-anchor" href="#_10-object-oriented-analysis"><span>10. Object-Oriented Analysis</span></a></h1>
+<DateMeta />
 <h2 id="학습-목표" tabindex="-1"><a class="header-anchor" href="#학습-목표"><span>학습 목표</span></a></h2>
 <ul>
 <li>Domain의 핵심 추상화를 식별하고 domain model로 모델링</li>

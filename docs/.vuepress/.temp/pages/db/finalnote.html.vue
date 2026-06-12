@@ -1,4 +1,5 @@
 <template><div><h1 id="final-note" tabindex="-1"><a class="header-anchor" href="#final-note"><span>Final Note</span></a></h1>
+<DateMeta />
 <h2 id="_1-인덱싱-indexing-b-tree" tabindex="-1"><a class="header-anchor" href="#_1-인덱싱-indexing-b-tree"><span>1. 인덱싱 (Indexing) - B+ Tree</span></a></h2>
 <p>가장 확실하게 나오는 유형으로, B+ Tree의 구조 변화를 직접 그릴 수 있어야 함.</p>
 <ul>

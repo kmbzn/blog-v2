@@ -1,4 +1,5 @@
 <template><div><h1 id="_1966번-프린터-큐" tabindex="-1"><a class="header-anchor" href="#_1966번-프린터-큐"><span>1966번: 프린터 큐</span></a></h1>
+<DateMeta />
 <p><a href="https://www.acmicpc.net/problem/1966" target="_blank" rel="noopener noreferrer">https://www.acmicpc.net/problem/1966</a></p>
 <p>난이도: <strong>실버 III</strong></p>
 <p>해당 문제는 <strong>Python 3</strong>으로 풀이하였습니다.</p>

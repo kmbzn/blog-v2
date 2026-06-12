@@ -1,4 +1,5 @@
 <template><div><h1 id="assignment-2-1-db-schema-design" tabindex="-1"><a class="header-anchor" href="#assignment-2-1-db-schema-design"><span>Assignment 2-1: DB Schema Design</span></a></h1>
+<DateMeta />
 <p>2021024057 김병준</p>
 <h2 id="_1-설계-의도" tabindex="-1"><a class="header-anchor" href="#_1-설계-의도"><span>1. 설계 의도</span></a></h2>
 <p>본 Database Schema는 도서관의 서적, 회원 관리, 대출/반납 시스템을 구현하는 것을 목표로 설계하였습니다.</p>

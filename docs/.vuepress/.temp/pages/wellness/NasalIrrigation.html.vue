@@ -1,4 +1,5 @@
 <template><div><h1 id="자가비강세척-nasal-irrigation" tabindex="-1"><a class="header-anchor" href="#자가비강세척-nasal-irrigation"><span>자가비강세척 (Nasal Irrigation)</span></a></h1>
+<DateMeta />
 <p align="center">
   <img src="https://upload.wikimedia.org/wikipedia/commons/4/42/Nasal_irrigation.jpg" width="256px"/>
 </p>

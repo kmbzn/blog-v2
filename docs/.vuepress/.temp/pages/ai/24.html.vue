@@ -1,4 +1,5 @@
 <template><div><h1 id="_24-convolutional-neural-networks" tabindex="-1"><a class="header-anchor" href="#_24-convolutional-neural-networks"><span>24. Convolutional Neural Networks</span></a></h1>
+<DateMeta />
 <h1 id="a-bit-of-history" tabindex="-1"><a class="header-anchor" href="#a-bit-of-history"><span>A Bit of History</span></a></h1>
 <p>Once upon a time...</p>
 <h2 id="convolutional-neural-networks" tabindex="-1"><a class="header-anchor" href="#convolutional-neural-networks"><span>Convolutional Neural Networks</span></a></h2>

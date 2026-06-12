@@ -1,4 +1,5 @@
 <template><div><h1 id="computer-graphics-project-2-obj-viewer" tabindex="-1"><a class="header-anchor" href="#computer-graphics-project-2-obj-viewer"><span>Computer Graphics Project 2: Obj viewer</span></a></h1>
+<DateMeta />
 <p><strong>Handed out</strong>: April 24, 2025<br>
 <strong>Due</strong>: 2025년 5월 14일 23:59 (기한 초과 제출은 <strong>0점</strong> 처리됨)</p>
 <hr>

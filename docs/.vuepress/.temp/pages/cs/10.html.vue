@@ -1,4 +1,5 @@
 <template><div><h1 id="_10-string-security" tabindex="-1"><a class="header-anchor" href="#_10-string-security"><span>10. String Security</span></a></h1>
+<DateMeta />
 <h1 id="strings" tabindex="-1"><a class="header-anchor" href="#strings"><span>Strings</span></a></h1>
 <h2 id="character-strings" tabindex="-1"><a class="header-anchor" href="#character-strings"><span>Character Strings</span></a></h2>
 <ul>

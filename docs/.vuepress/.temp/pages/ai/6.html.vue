@@ -1,4 +1,5 @@
 <template><div><h1 id="_6-probability" tabindex="-1"><a class="header-anchor" href="#_6-probability"><span>6. Probability</span></a></h1>
+<DateMeta />
 <h2 id="확률-이론-probability-theory" tabindex="-1"><a class="header-anchor" href="#확률-이론-probability-theory"><span>확률 이론 (Probability Theory)</span></a></h2>
 <ul>
 <li>Probability theory는 불확실성 (uncertainty)에 대한 연구

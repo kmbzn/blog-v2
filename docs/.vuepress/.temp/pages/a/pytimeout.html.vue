@@ -1,6 +1,7 @@
 <template><div><h1 id="python-시간-초과-방지를-위한-팁" tabindex="-1"><a class="header-anchor" href="#python-시간-초과-방지를-위한-팁"><span>Python 시간 초과 방지를 위한 팁</span></a></h1>
+<DateMeta />
 <p align="center">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1869px-Python-logo-notext.svg.png" width="180" alt="Bitcoin logo" />
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/3840px-Python-logo-notext.svg.png" width="180" alt="Python logo" />
 </p>
 <p>필자는 최근 교내 알고리즘 대회에 참가하여 평상시 가장 익숙한 언어인 <strong>Python</strong>으로 문제를 풀었다.<br>
 하지만 몇몇 문제에서 끝내 시간 초과(Time Limit Exceeded)를 해결하지 못해 아쉬운 결과를 얻었다.<br>

@@ -1,4 +1,5 @@
 <template><div><h1 id="_2-rendering-basics" tabindex="-1"><a class="header-anchor" href="#_2-rendering-basics"><span>2 - Rendering Basics</span></a></h1>
+<DateMeta />
 <h2 id="outline" tabindex="-1"><a class="header-anchor" href="#outline"><span>Outline</span></a></h2>
 <ul>
 <li>Rendering의 기본 개념</li>

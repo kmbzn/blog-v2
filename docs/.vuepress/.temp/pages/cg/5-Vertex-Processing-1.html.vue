@@ -1,4 +1,5 @@
 <template><div><h1 id="_5-vertex-processing-1" tabindex="-1"><a class="header-anchor" href="#_5-vertex-processing-1"><span>5 - Vertex Processing 1</span></a></h1>
+<DateMeta />
 <h2 id="outline" tabindex="-1"><a class="header-anchor" href="#outline"><span>Outline</span></a></h2>
 <ul>
 <li>Rasterization Pipeline &amp; Vertex Processing</li>

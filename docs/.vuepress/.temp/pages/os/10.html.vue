@@ -1,4 +1,5 @@
 <template><div><h1 id="_10-virtual-memory-1" tabindex="-1"><a class="header-anchor" href="#_10-virtual-memory-1"><span>10. Virtual Memory(1)</span></a></h1>
+<DateMeta />
 <h2 id="size-of-a-logical-address-space" tabindex="-1"><a class="header-anchor" href="#size-of-a-logical-address-space"><span>Size of a Logical Address Space</span></a></h2>
 <div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code class="language-text"><span class="line">[stack]</span>
 <span class="line">   ↑</span>

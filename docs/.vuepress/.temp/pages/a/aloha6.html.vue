@@ -1,4 +1,5 @@
 <template><div><h1 id="중급반-6주차-위상-정렬" tabindex="-1"><a class="header-anchor" href="#중급반-6주차-위상-정렬"><span>중급반 6주차 - 위상 정렬</span></a></h1>
+<DateMeta />
 <h2 id="위상-정렬-topology-sort" tabindex="-1"><a class="header-anchor" href="#위상-정렬-topology-sort"><span>위상 정렬 &lt;Topology Sort&gt;</span></a></h2>
 <h3 id="위상-정렬이란" tabindex="-1"><a class="header-anchor" href="#위상-정렬이란"><span>위상 정렬이란?</span></a></h3>
 <p>위상 정렬(Topology Sort)이란, 방향 비순환 그래프(Directed Acyclic Graph, <code v-pre>DAG</code>)에서 정점들을 선형으로 정렬하는 알고리즘입니다.</p>

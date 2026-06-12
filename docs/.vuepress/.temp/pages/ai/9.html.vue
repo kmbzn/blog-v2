@@ -1,4 +1,5 @@
 <template><div><h1 id="_9-probabilitc-reasoning-3" tabindex="-1"><a class="header-anchor" href="#_9-probabilitc-reasoning-3"><span>9. Probabilitc Reasoning (3)</span></a></h1>
+<DateMeta />
 <h2 id="approximate-inference" tabindex="-1"><a class="header-anchor" href="#approximate-inference"><span>Approximate Inference</span></a></h2>
 <ul>
 <li>Monte Carlo algorithms는 생성된 샘플 수에 따라 정확도가 달라지는 근사적인 (approximate) 해답을 제공

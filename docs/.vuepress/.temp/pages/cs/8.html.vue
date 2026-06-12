@@ -1,4 +1,5 @@
 <template><div><h1 id="_08-firmware-analysis" tabindex="-1"><a class="header-anchor" href="#_08-firmware-analysis"><span>08. Firmware Analysis</span></a></h1>
+<DateMeta />
 <h2 id="펌웨어-분석의-필요성" tabindex="-1"><a class="header-anchor" href="#펌웨어-분석의-필요성"><span>펌웨어 분석의 필요성</span></a></h2>
 <ul>
 <li>IoT 기기, 스마트 기기 등 임베디드 시스템의 바이너리 안전성 증진 필요</li>

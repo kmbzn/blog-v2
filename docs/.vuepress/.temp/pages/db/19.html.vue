@@ -1,4 +1,5 @@
 <template><div><h1 id="_19-recovery-system" tabindex="-1"><a class="header-anchor" href="#_19-recovery-system"><span>19. Recovery System</span></a></h1>
+<DateMeta />
 <h2 id="failure-classification" tabindex="-1"><a class="header-anchor" href="#failure-classification"><span>Failure Classification</span></a></h2>
 <ul>
 <li>Transaction 실패

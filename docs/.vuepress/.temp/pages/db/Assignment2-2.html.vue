@@ -1,4 +1,5 @@
 <template><div><h1 id="assignment-2-2-web-application-development" tabindex="-1"><a class="header-anchor" href="#assignment-2-2-web-application-development"><span>Assignment 2-2. Web Application Development</span></a></h1>
+<DateMeta />
 <h3 id="목표" tabindex="-1"><a class="header-anchor" href="#목표"><span>목표</span></a></h3>
 <ul>
 <li><code v-pre>Assignment 2-1</code>에서 설계한 Relation schema를 바탕으로 Web Application 구현</li>

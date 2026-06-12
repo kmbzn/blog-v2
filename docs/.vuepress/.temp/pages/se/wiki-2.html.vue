@@ -1,4 +1,5 @@
 <template><div><h1 id="" tabindex="-1"><a class="header-anchor" href="#"><span><span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>Homework #1-2</mtext></mrow><annotation encoding="application/x-tex">\text{Homework \#1-2}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord text"><span class="mord">Homework #1-2</span></span></span></span></span></span></a></h1>
+<DateMeta />
 <ul>
 <li>Software Engineering (10780)</li>
 <li>학번: 2021024057</li>

@@ -1,4 +1,5 @@
 <template><div><h1 id="computer-graphics-project-3-bvh-viewer" tabindex="-1"><a class="header-anchor" href="#computer-graphics-project-3-bvh-viewer"><span>Computer Graphics Project 3: Bvh Viewer</span></a></h1>
+<DateMeta />
 <p>제출 기한: 2025년 6월 6일 (23:59)<br>
 <strong>(기한 초과 제출은 점수 없음)</strong></p>
 <ul>

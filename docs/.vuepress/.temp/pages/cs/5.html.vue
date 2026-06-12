@@ -1,4 +1,5 @@
 <template><div><h1 id="_05-access-control" tabindex="-1"><a class="header-anchor" href="#_05-access-control"><span>05. Access Control</span></a></h1>
+<DateMeta />
 <h2 id="access-control" tabindex="-1"><a class="header-anchor" href="#access-control"><span>Access Control</span></a></h2>
 <p><code v-pre>ITU-T Recommendation X.800</code>이 정의한 access control(접근 제어)</p>
 <blockquote>

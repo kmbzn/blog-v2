@@ -1,4 +1,5 @@
 <template><div><h1 id="_4-affine-space-frame-matrix" tabindex="-1"><a class="header-anchor" href="#_4-affine-space-frame-matrix"><span>4 - Affine Space / Frame / Matrix</span></a></h1>
+<DateMeta />
 <h2 id="outline" tabindex="-1"><a class="header-anchor" href="#outline"><span>Outline</span></a></h2>
 <ul>
 <li>Affine Space - Point vs. Vector</li>

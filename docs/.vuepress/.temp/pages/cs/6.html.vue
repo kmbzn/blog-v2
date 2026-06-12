@@ -1,4 +1,5 @@
 <template><div><h1 id="_06-database-security" tabindex="-1"><a class="header-anchor" href="#_06-database-security"><span>06. Database Security</span></a></h1>
+<DateMeta />
 <h2 id="데이터베이스-databases" tabindex="-1"><a class="header-anchor" href="#데이터베이스-databases"><span>데이터베이스 Databases</span></a></h2>
 <ul>
 <li>하나 이상의 애플리케이션에서 사용하기 위해 저장된 데이터의 구조화된 모음</li>

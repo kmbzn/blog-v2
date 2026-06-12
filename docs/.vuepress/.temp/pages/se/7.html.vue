@@ -1,4 +1,5 @@
 <template><div><h1 id="_7-requirements-elicitation-and-documentation" tabindex="-1"><a class="header-anchor" href="#_7-requirements-elicitation-and-documentation"><span>7. Requirements Elicitation and Documentation</span></a></h1>
+<DateMeta />
 <h2 id="learning-goals" tabindex="-1"><a class="header-anchor" href="#learning-goals"><span>Learning Goals</span></a></h2>
 <ul>
 <li>Stakeholders(이해관계자) 정의 및 식별</li>

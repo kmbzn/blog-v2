@@ -1,4 +1,5 @@
 <template><div><h1 id="_9-uml" tabindex="-1"><a class="header-anchor" href="#_9-uml"><span>9. UML</span></a></h1>
+<DateMeta />
 <h2 id="학습-목표" tabindex="-1"><a class="header-anchor" href="#학습-목표"><span>학습 목표</span></a></h2>
 <ul>
 <li>UML (Unified Modeling Language)이 무엇인지, 왜 필요한지 이해</li>

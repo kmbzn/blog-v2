@@ -1,4 +1,5 @@
 <template><div><h1 id="롱고롱고-rongorongo" tabindex="-1"><a class="header-anchor" href="#롱고롱고-rongorongo"><span>롱고롱고(Rongorongo)</span></a></h1>
+<DateMeta />
 <h2 id="개요" tabindex="-1"><a class="header-anchor" href="#개요"><span>개요</span></a></h2>
 <ul>
 <li>Rongorongo는 🇨🇱 칠레 이스터 섬(Rapa Nui)에서 발견된 미해독 문자 체계</li>

@@ -1,4 +1,5 @@
 <template><div><h1 id="_8-memory-management-1" tabindex="-1"><a class="header-anchor" href="#_8-memory-management-1"><span>8. Memory Management (1)</span></a></h1>
+<DateMeta />
 <h2 id="background" tabindex="-1"><a class="header-anchor" href="#background"><span>Background</span></a></h2>
 <ul>
 <li>프로그램은 디스크에서 메모리로 불러온 후, 프로세스 내에 위치해야 실행될 수 있음</li>

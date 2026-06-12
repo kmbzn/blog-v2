@@ -1,4 +1,5 @@
 <template><div><h1 id="_6-requirements" tabindex="-1"><a class="header-anchor" href="#_6-requirements"><span>6. Requirements</span></a></h1>
+<DateMeta />
 <h2 id="learning-goals" tabindex="-1"><a class="header-anchor" href="#learning-goals"><span>Learning Goals</span></a></h2>
 <ul>
 <li>Software engineering(소프트웨어 공학)에서 requirements(요구사항)의 중요성과 어려움 설명</li>

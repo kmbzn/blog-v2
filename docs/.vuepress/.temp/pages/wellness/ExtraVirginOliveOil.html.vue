@@ -1,4 +1,5 @@
 <template><div><h1 id="엑스트라-버진-올리브유-extra-virgin-olive-oil" tabindex="-1"><a class="header-anchor" href="#엑스트라-버진-올리브유-extra-virgin-olive-oil"><span>엑스트라 버진 올리브유 (Extra Virgin Olive Oil)</span></a></h1>
+<DateMeta />
 <p align="center">
   <img src="https://health.ucdavis.edu/media-resources/contenthub/post/internet/good-food/2024/04/images-body/olive-oil-health-benefits.jpg" width="100%"/>
 </p>

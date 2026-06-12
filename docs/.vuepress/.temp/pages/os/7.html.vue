@@ -1,4 +1,5 @@
 <template><div><h1 id="_7-deadlocks" tabindex="-1"><a class="header-anchor" href="#_7-deadlocks"><span>7. Deadlocks</span></a></h1>
+<DateMeta />
 <h2 id="the-deadlock-problem" tabindex="-1"><a class="header-anchor" href="#the-deadlock-problem"><span>The Deadlock Problem</span></a></h2>
 <ul>
 <li>리소스를 보유한 상태로 다른 프로세스가 가진 리소스를 기다리는 프로세스 집합이 있을 때, 이들 사이에서 교착 상태(deadlock)가 발생함</li>

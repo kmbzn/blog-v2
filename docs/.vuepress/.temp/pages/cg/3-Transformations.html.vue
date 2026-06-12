@@ -1,4 +1,5 @@
 <template><div><h1 id="_3-transformations" tabindex="-1"><a class="header-anchor" href="#_3-transformations"><span>3 - Transformations</span></a></h1>
+<DateMeta />
 <h2 id="outline" tabindex="-1"><a class="header-anchor" href="#outline"><span>Outline</span></a></h2>
 <ul>
 <li>2차원 변환

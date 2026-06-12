@@ -1,4 +1,5 @@
 <template><div><h1 id="_15-linear-models-2" tabindex="-1"><a class="header-anchor" href="#_15-linear-models-2"><span>15. Linear Models (2)</span></a></h1>
+<DateMeta />
 <h2 id="linear-functions" tabindex="-1"><a class="header-anchor" href="#linear-functions"><span>Linear Functions</span></a></h2>
 <ul>
 <li>연속값 입력(continuous-valued inputs)을 받는 선형 함수(linear functions)라는 다른 가설 공간(hypothesis space) 사용</li>

@@ -1,4 +1,5 @@
 <template><div><h1 id="_6-vertex-processing-2" tabindex="-1"><a class="header-anchor" href="#_6-vertex-processing-2"><span>6 - Vertex Processing 2</span></a></h1>
+<DateMeta />
 <h2 id="outline" tabindex="-1"><a class="header-anchor" href="#outline"><span>Outline</span></a></h2>
 <ul>
 <li>Projection Transformation

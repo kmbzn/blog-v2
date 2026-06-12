@@ -1,4 +1,5 @@
 <template><div><h1 id="_16-static-analysis" tabindex="-1"><a class="header-anchor" href="#_16-static-analysis"><span>16. Static Analysis</span></a></h1>
+<DateMeta />
 <h2 id="learning-goals" tabindex="-1"><a class="header-anchor" href="#learning-goals"><span>Learning Goals</span></a></h2>
 <ul>
 <li>한 문장으로 정적 분석 정의 및 정적 분석이 목표로 하는 Bug 유형 설명</li>

@@ -1,4 +1,5 @@
 <template><div><h1 id="wine-카카오톡-이모지-깨짐-문제-해결" tabindex="-1"><a class="header-anchor" href="#wine-카카오톡-이모지-깨짐-문제-해결"><span>Wine 카카오톡 이모지 깨짐 문제 해결</span></a></h1>
+<DateMeta />
 <p align="center">
   <img src="@source/os/logo.webp" width="192" alt="Main Logo" />
 </p>

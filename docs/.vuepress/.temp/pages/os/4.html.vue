@@ -1,4 +1,5 @@
 <template><div><h1 id="_4-threads" tabindex="-1"><a class="header-anchor" href="#_4-threads"><span>4. Threads</span></a></h1>
+<DateMeta />
 <h2 id="다루는-주제" tabindex="-1"><a class="header-anchor" href="#다루는-주제"><span>다루는 주제</span></a></h2>
 <ul>
 <li>A. 스레드 개념</li>

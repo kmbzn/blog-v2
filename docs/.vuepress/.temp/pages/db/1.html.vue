@@ -1,4 +1,5 @@
 <template><div><h1 id="_1-introduction" tabindex="-1"><a class="header-anchor" href="#_1-introduction"><span>1. Introduction</span></a></h1>
+<DateMeta />
 <h2 id="data-database-dbms와-db-app-직관적-개념들" tabindex="-1"><a class="header-anchor" href="#data-database-dbms와-db-app-직관적-개념들"><span>Data, Database, DBMS와 DB App: 직관적 개념들</span></a></h2>
 <ul>
 <li>Data: '누군가'와 관련 (높은 엔트로피)</li>

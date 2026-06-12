@@ -1,4 +1,5 @@
 <template><div><h1 id="_1018번-체스판-다시-칠하기" tabindex="-1"><a class="header-anchor" href="#_1018번-체스판-다시-칠하기"><span>1018번: 체스판 다시 칠하기</span></a></h1>
+<DateMeta />
 <p><a href="https://www.acmicpc.net/problem/1018" target="_blank" rel="noopener noreferrer">https://www.acmicpc.net/problem/1018</a></p>
 <p>난이도: <strong>실버 IV</strong></p>
 <p>해당 문제는 <strong>Python 3</strong>으로 풀이하였습니다.</p>

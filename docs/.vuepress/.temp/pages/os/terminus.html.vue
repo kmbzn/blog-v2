@@ -1,4 +1,5 @@
 <template><div><h1 id="리눅스-우분투-grub-폰트-변경" tabindex="-1"><a class="header-anchor" href="#리눅스-우분투-grub-폰트-변경"><span>리눅스 우분투 GRUB 폰트 변경</span></a></h1>
+<DateMeta />
 <p>우분투에서 가독성 좋은 비트맵 폰트인 <strong>Terminus</strong> 폰트를 사용하여 GRUB 메뉴 폰트 크기를 <code v-pre>32pt</code>로 키우는 방법입니다.</p>
 <h2 id="실행-스크립트" tabindex="-1"><a class="header-anchor" href="#실행-스크립트"><span>실행 스크립트</span></a></h2>
 <p>아래 명령어를 터미널에 순서대로 입력하거나, 스크립트 파일로 만들어 실행해볼 수 있습니다.</p>

@@ -1,4 +1,5 @@
 <template><div><h1 id="project-02-xv6-risc-v-kernel-level-threads-implementation-wiki" tabindex="-1"><a class="header-anchor" href="#project-02-xv6-risc-v-kernel-level-threads-implementation-wiki"><span>Project 02: xv6 RISC-V Kernel-Level Threads Implementation - wiki</span></a></h1>
+<DateMeta />
 <h2 id="design" tabindex="-1"><a class="header-anchor" href="#design"><span>Design</span></a></h2>
 <h3 id="project-overview" tabindex="-1"><a class="header-anchor" href="#project-overview"><span>Project Overview</span></a></h3>
 <p>본 project의 핵심 목표는 xv6 RISC-V 기반 운영체제에 <strong>kernel-level thread</strong> (커널 수준 thread) 기능을 추가하는 것이다. xv6는 MIT에서 교육 목적으로 설계한 간결한 UNIX 기반 OS로, 다중 프로세스(multiprocessing)는 지원하지만 다중 스레드(multithreading)는 지원하지 않는다. 본 project는 <strong>기존 xv6의 process 관리 구조를 최대한 활용하면서</strong>, thread의 실행 컨텍스트(context), 자원 공유 방식, 동기화 시나리오 등을 구현하는 데 중점을 둔다.</p>

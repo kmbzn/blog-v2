@@ -1,4 +1,5 @@
 <template><div><h1 id="_7-relational-database-design-1" tabindex="-1"><a class="header-anchor" href="#_7-relational-database-design-1"><span>7. Relational Database Design (1)</span></a></h1>
+<DateMeta />
 <h2 id="introduction" tabindex="-1"><a class="header-anchor" href="#introduction"><span>Introduction</span></a></h2>
 <ul>
 <li>Relational Database Design(관계형 데이터베이스 설계)

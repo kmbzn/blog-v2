@@ -1,4 +1,5 @@
 <template><div><h1 id="_11-object-oriented-design" tabindex="-1"><a class="header-anchor" href="#_11-object-oriented-design"><span>11. Object-Oriented Design</span></a></h1>
+<DateMeta />
 <h2 id="learning-goals" tabindex="-1"><a class="header-anchor" href="#learning-goals"><span>Learning Goals</span></a></h2>
 <ul>
 <li>Solution Space에서의 UML

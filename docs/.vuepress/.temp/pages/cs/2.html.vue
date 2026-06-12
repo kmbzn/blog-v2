@@ -1,4 +1,5 @@
 <template><div><h1 id="_02-정보보안정책-및-법규" tabindex="-1"><a class="header-anchor" href="#_02-정보보안정책-및-법규"><span>02. 정보보안정책 및 법규</span></a></h1>
+<DateMeta />
 <h2 id="법규" tabindex="-1"><a class="header-anchor" href="#법규"><span>법규</span></a></h2>
 <ul>
 <li>법: 국회에서 정함. 예: 개인정보보호법</li>

@@ -1,4 +1,5 @@
 <template><div><h1 id="_12-more-lighting-texture" tabindex="-1"><a class="header-anchor" href="#_12-more-lighting-texture"><span>12 - More Lighting, Texture</span></a></h1>
+<DateMeta />
 <h2 id="revised-class-schedule" tabindex="-1"><a class="header-anchor" href="#revised-class-schedule"><span>Revised Class Schedule</span></a></h2>
 <ul>
 <li>이전에 공유된 강의 일정 및 기말 시험 범위에 오류가 있었습니다.</li>
