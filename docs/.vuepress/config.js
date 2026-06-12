@@ -44,7 +44,7 @@ export default defineUserConfig({
     sidebar: [
       {
         children: [
-          '/Mindscape', '/Musics',
+          '/mindscape', '/musics',
         ]
       },
       {
@@ -70,53 +70,65 @@ export default defineUserConfig({
         text: 'Wellness',
         collapsible: true,
         children: [
-          '/wellness/PsylliumHusk',
-          '/wellness/ExtraVirginOliveOil',
-          '/wellness/NasalIrrigation',
+          '/wellness/psyllium-husk',
+          '/wellness/extra-virgin-olive-oil',
+          '/wellness/nasal-irrigation',
           '/wellness/ht08',
-          '/wellness/Concerta',
-          '/wellness/Inderal',
-          '/wellness/Sertraline',
-          '/wellness/Melatonin',
+          '/wellness/concerta',
+          '/wellness/inderal',
+          '/wellness/sertraline',
+          '/wellness/melatonin',
         ]
       },
       {
         text: 'Humanities',
         collapsible: true,
         children: [
-          '/humanities/Nordvik',
-          '/humanities/NorthSentinelIsland',
-          '/humanities/Rongorongo',
+          '/humanities/nordvik',
+          '/humanities/north-sentinel-island',
+          '/humanities/rongorongo',
         ]
       },
       {
         text: 'Design',
         collapsible: true,
         children: [
-          '/design/Google-Icon-Redesign-2026',
-          '/design/Gerald-Genta',
-          '/design/Bauhaus',
+          '/design/google-icon-redesign-2026',
+          '/design/gerald-genta',
+          '/design/bauhaus',
         ]
       },
       {
         text: 'Brands',
         collapsible: true,
         children: [
-          '/brands/NOMOS-Glashutte',
-          '/brands/KZ',
-          '/brands/AESTRUA',
-          '/brands/JINHAO',
-          '/brands/Herman-Miller',
+          '/brands/nomos-glashutte',
+          '/brands/kz',
+          '/brands/aestrua',
+          '/brands/jinhao',
+          '/brands/herman-miller',
         ]
       },
       {
         text: 'Finance',
         collapsible: true,
         children: [
-          '/finance/Hyundai-Card-ZERO',
-          '/finance/Shinhan-Card-Cheum',
-          '/finance/SP500-ETF',
-          '/finance/Parking-Account-CMA',
+          '/finance/hyundai-card-zero',
+          '/finance/shinhan-card-cheum',
+          '/finance/sp500-etf',
+          '/finance/parking-account-cma',
+          '/finance/berkshire-hathaway',
+          '/finance/bitcoin',
+        ]
+      },
+      {
+        text: 'Products',
+        collapsible: true,
+        children: [
+          '/products/audio-interface',
+          '/products/kurutoga',
+          '/products/cx31993-dac',
+          '/products/cleansing-milk',
         ]
       },
       {
