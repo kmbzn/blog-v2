@@ -104,6 +104,19 @@ export default defineUserConfig({
         children: [
           '/brands/NOMOS-Glashutte',
           '/brands/KZ',
+          '/brands/AESTRUA',
+          '/brands/JINHAO',
+          '/brands/Herman-Miller',
+        ]
+      },
+      {
+        text: 'Finance',
+        collapsible: true,
+        children: [
+          '/finance/Hyundai-Card-ZERO',
+          '/finance/Shinhan-Card-Cheum',
+          '/finance/SP500-ETF',
+          '/finance/Parking-Account-CMA',
         ]
       },
       {
