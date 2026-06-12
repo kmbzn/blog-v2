@@ -86,6 +86,13 @@ export default defineUserConfig({
         ]
       },
       {
+        text: 'Watch Industry',
+        collapsible: true,
+        children: [
+          '/watch/NOMOS-Glashutte',
+        ]
+      },
+      {
         text: 'Programming Languages',
         collapsible: true,
         children: [
