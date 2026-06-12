@@ -1,5 +1,7 @@
 # 구글의 아이콘 대개편 — 6년 만의 실수 인정
 
+![Google Workspace 새 아이콘](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgq4vEyIdFIDKnNv0qBck2KKKjXM7uzWyYHtGCuKaiv81yMfQbbIUsC05UaR9Xmjkcmd9dq3PKx6v9g3nZ0vlt4yGKhcCcyaFAvhqrWiXCaZsM7IhsXom_nUMqFSvbJJsG_QNhHtDxECFgKLqTrySYj_Oq4525A0VBcVEAD9YBT0FRUtjJsXU3LQE4ukpk/s2000/Introducing%20a%20fresh%20visual%20identity%20for%20Google%20Workspace%20app%20icons.png)
+
 2026년 5월, Google은 Gmail·Drive·Calendar·Meet·Chat 등 Workspace 앱 전반의 아이콘을 대대적으로 교체했다. 단순한 리프레시가 아니다. 이번 개편은 2020년에 강행한 아이콘 시스템이 실패였음을 사실상 인정한 것이다.
 
 ## 2020년 개편: 무엇이 문제였나

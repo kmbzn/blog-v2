@@ -94,6 +94,8 @@ export default defineUserConfig({
         collapsible: true,
         children: [
           '/design/Google-Icon-Redesign-2026',
+          '/design/Gerald-Genta',
+          '/design/Bauhaus',
         ]
       },
       {
