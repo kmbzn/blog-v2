@@ -1,12 +1,5 @@
 <template>
   <ParentPage>
-    <template #top>
-      <div v-if="git.createdTime || git.updatedTime" class="vp-date-meta">
-        <span v-if="git.createdTime">작성일 {{ formatDate(git.createdTime) }}</span>
-        <span v-if="git.createdTime && git.updatedTime" class="vp-date-sep">·</span>
-        <span v-if="git.updatedTime">최종 수정 {{ formatDate(git.updatedTime) }}</span>
-      </div>
-    </template>
     <template #bottom>
       <div class="vp-footer-wrapper">
         <hr />
@@ -50,33 +43,10 @@
 </template>
 
 <script setup>
-import { usePageData } from '@vuepress/client'
-import { computed } from 'vue'
 import ParentPage from '@vuepress/theme-default/lib/client/components/VPPage.vue'
-
-const page = usePageData()
-const git = computed(() => page.value.git ?? {})
-
-function formatDate(timestamp) {
-  const d = new Date(timestamp)
-  return `${d.getFullYear()}. ${d.getMonth() + 1}. ${d.getDate()}.`
-}
 </script>
 
 <style scoped>
-.vp-date-meta {
-  padding: 1rem 2rem 0;
-  font-size: 0.8rem;
-  color: var(--vp-c-text-3);
-  display: flex;
-  gap: 0.4rem;
-  align-items: center;
-}
-
-.vp-date-sep {
-  opacity: 0.5;
-}
-
 .vp-footer-wrapper {
   max-width: 800px;
   margin: 0 auto;

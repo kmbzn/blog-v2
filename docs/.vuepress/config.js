@@ -5,6 +5,18 @@ import { markdownMathPlugin } from '@vuepress/plugin-markdown-math'
 
 export default defineUserConfig({
   lang: 'ko-KR',
+  extendsMarkdown: (md) => {
+    md.core.ruler.push('inject-date-meta', (state) => {
+      for (let i = 0; i < state.tokens.length; i++) {
+        if (state.tokens[i].type === 'heading_close' && state.tokens[i].markup === '#') {
+          const t = new state.Token('html_block', '', 0)
+          t.content = '<DateMeta />\n'
+          state.tokens.splice(i + 1, 0, t)
+          break
+        }
+      }
+    })
+  },
   plugins: [
     markdownMathPlugin({
       type: 'katex',
