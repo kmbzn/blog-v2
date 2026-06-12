@@ -1,8 +1,8 @@
 <template>
   <div v-if="git.createdTime || git.updatedTime" class="vp-date-meta">
-    <span v-if="git.createdTime">작성일 {{ formatDate(git.createdTime) }}</span>
+    <span v-if="git.createdTime">작성 {{ formatDate(git.createdTime) }}</span>
     <span v-if="git.createdTime && git.updatedTime" class="vp-date-sep">·</span>
-    <span v-if="git.updatedTime">최종 수정 {{ formatDate(git.updatedTime) }}</span>
+    <span v-if="git.updatedTime">수정 {{ formatDate(git.updatedTime) }}</span>
   </div>
 </template>
 
@@ -24,6 +24,7 @@ function formatDate(timestamp) {
   font-size: 0.78rem;
   color: var(--vp-c-text-3);
   display: flex;
+  justify-content: flex-end;
   gap: 0.4rem;
   align-items: center;
   margin-top: -1rem;
