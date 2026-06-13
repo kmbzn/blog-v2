@@ -1,3 +1,6 @@
+---
+sitemap: false
+---
 # 10.1. Abstract Data Types and Encapsulation Constructs
 
 ## What do we study in this chapter?

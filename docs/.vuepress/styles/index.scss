@@ -23,7 +23,7 @@
 --------------------------------- */
 
 body, .built-with, .vp-footer .copyright, .vp-sidebar, .vp-sidebar-item {
-  font-family: 'Pretendard';
+  font-family: 'Pretendard Variable', 'Pretendard', sans-serif;
 }
 
 p, li {
@@ -36,7 +36,7 @@ p {
 }
 
 table {
-  font-family: 'Pretendard';
+  font-family: 'Pretendard Variable', 'Pretendard', sans-serif;
   font-size: 0.9em;
 }
 
@@ -63,7 +63,7 @@ pre {
   --code-c-line-number: #777;
   --code-c-text: --vp-c-text;
   --copy-code-c-hover: transparent;
-  --code-line-number-width: 2rem;
+  --code-line-number-width: 1.5rem;
   --code-line-height: 1.2rem;
   --code-font-size: 0.9rem;
 }
@@ -310,9 +310,19 @@ html[data-theme='dark'] img[src$=".png"]:not([src^="http"]) {
   pre, div[class^="language-"] {
     margin-inline: -0.5rem !important;
   }
+  div[class*=language-].line-numbers-mode {
+    margin-left: 1.5rem !important;
+    margin-right: 0 !important;
+  }
+  div[class*=language-].line-numbers-mode .line-numbers {
+    left: -1.5rem !important;
+    width: calc(var(--code-line-number-width) + 1.5rem) !important;
+    padding-inline: 0.1rem 0.4rem !important;
+  }
   div[class*=language-].line-numbers-mode pre {
-    margin-left: 0 !important;
-    padding-left: calc(var(--code-line-number-width) + 1rem) !important;
+    margin: 0 !important;
+    padding-left: calc(var(--code-line-number-width) + 0.75rem) !important;
+    padding-right: 0 !important;
   }
 }
 

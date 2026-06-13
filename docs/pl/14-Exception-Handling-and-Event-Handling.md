@@ -1,3 +1,6 @@
+---
+sitemap: false
+---
 # 14. Exception Handling and Event Handling
 
 ## Exception Handling and Event Handling

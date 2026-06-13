@@ -5,7 +5,121 @@ import { markdownMathPlugin } from '@vuepress/plugin-markdown-math'
 import { sitemapPlugin } from '@vuepress/plugin-sitemap'
 import { seoPlugin } from '@vuepress/plugin-seo'
 
+const sidebar = [
+  {
+    children: [
+      '/mindscape', '/musics',
+    ]
+  },
+  {
+    text: 'Algorithm',
+    collapsible: false,
+    children: [
+      '/a/1018', '/a/1966', '/a/pytimeout', '/a/stdvector', '/a/vim',
+    ]
+  },
+  {
+    text: 'Ubuntu',
+    collapsible: false,
+    children: [
+      '/os/terminus',
+      '/os/ubuntu_thumbnails',
+      '/os/wine_without_explorer',
+      '/os/clipboard_image_kakaotalk_ubuntu',
+      '/os/winemoji',
+      '/os/no_animation',
+    ]
+  },
+  {
+    text: 'Wellness',
+    collapsible: true,
+    children: [
+      '/wellness/psyllium-husk',
+      '/wellness/extra-virgin-olive-oil',
+      '/wellness/nasal-irrigation',
+      '/wellness/ht08',
+      '/wellness/concerta',
+      '/wellness/inderal',
+      '/wellness/sertraline',
+      '/wellness/melatonin',
+      '/wellness/cervical-abrasion',
+      '/wellness/barbell-squat',
+    ]
+  },
+  {
+    text: 'Humanities',
+    collapsible: true,
+    children: [
+      '/humanities/nordvik',
+      '/humanities/north-sentinel-island',
+      '/humanities/rongorongo',
+      '/humanities/baroque-music',
+    ]
+  },
+  {
+    text: 'Design',
+    collapsible: true,
+    children: [
+      '/design/google-icon-redesign-2026',
+      '/design/gerald-genta',
+      '/design/bauhaus',
+    ]
+  },
+  {
+    text: 'Brands',
+    collapsible: true,
+    children: [
+      '/brands/nomos-glashutte',
+      '/brands/frederique-constant',
+      '/brands/kz',
+      '/brands/aestrua',
+      '/brands/jinhao',
+      '/brands/herman-miller',
+      '/brands/desker',
+      '/brands/musinsa-standard',
+    ]
+  },
+  {
+    text: 'Finance',
+    collapsible: true,
+    children: [
+      '/finance/hyundai-card-zero',
+      '/finance/shinhan-card-cheum',
+      '/finance/sp500-etf',
+      '/finance/parking-account-cma',
+      '/finance/berkshire-hathaway',
+      '/finance/bitcoin',
+    ]
+  },
+  {
+    text: 'Products',
+    collapsible: true,
+    children: [
+      '/products/audio-interface',
+      '/products/kurutoga',
+      '/products/cx31993-dac',
+      '/products/cleansing-milk',
+      '/products/fidget-toy',
+      '/products/thinkpad',
+    ]
+  },
+]
+
+const sidebarPaths = new Set(
+  sidebar.flatMap(section =>
+    (section.children || []).map(child =>
+      typeof child === 'string' ? child : child.link
+    )
+  )
+)
+
 export default defineUserConfig({
+  extendsPage: (page) => {
+    const normalized = page.path.replace(/\.html$/, '').replace(/\/$/, '') || '/'
+    if (normalized !== '/' && !sidebarPaths.has(normalized)) {
+      page.frontmatter.sitemap = false
+    }
+  },
   lang: 'ko-KR',
   extendsMarkdown: (md) => {
     md.core.ruler.push('inject-date-meta', (state) => {
@@ -51,105 +165,7 @@ export default defineUserConfig({
   theme: theme({
     logo: '/images/kbz.png',
     colorMode: 'auto',
-    sidebar: [
-      {
-        children: [
-          '/mindscape', '/musics',
-        ]
-      },
-      {
-        text: 'Algorithm',
-        collapsible: false,
-        children: [
-          '/a/1018', '/a/1966', '/a/pytimeout', '/a/stdvector', '/a/vim', 
-        ]
-      },
-      {
-        text: 'Ubuntu',
-        collapsible: false,
-        children: [
-          '/os/terminus',
-          '/os/ubuntu_thumbnails',
-          '/os/wine_without_explorer',
-          '/os/clipboard_image_kakaotalk_ubuntu',
-          '/os/winemoji',
-          '/os/no_animation',
-        ]
-      },
-      {
-        text: 'Wellness',
-        collapsible: true,
-        children: [
-          '/wellness/psyllium-husk',
-          '/wellness/extra-virgin-olive-oil',
-          '/wellness/nasal-irrigation',
-          '/wellness/ht08',
-          '/wellness/concerta',
-          '/wellness/inderal',
-          '/wellness/sertraline',
-          '/wellness/melatonin',
-          '/wellness/cervical-abrasion',
-          '/wellness/barbell-squat',
-        ]
-      },
-      {
-        text: 'Humanities',
-        collapsible: true,
-        children: [
-          '/humanities/nordvik',
-          '/humanities/north-sentinel-island',
-          '/humanities/rongorongo',
-          '/humanities/baroque-music',
-        ]
-      },
-      {
-        text: 'Design',
-        collapsible: true,
-        children: [
-          '/design/google-icon-redesign-2026',
-          '/design/gerald-genta',
-          '/design/bauhaus',
-        ]
-      },
-      {
-        text: 'Brands',
-        collapsible: true,
-        children: [
-          '/brands/nomos-glashutte',
-          '/brands/frederique-constant',
-          '/brands/kz',
-          '/brands/aestrua',
-          '/brands/jinhao',
-          '/brands/herman-miller',
-          '/brands/desker',
-          '/brands/musinsa-standard',
-        ]
-      },
-      {
-        text: 'Finance',
-        collapsible: true,
-        children: [
-          '/finance/hyundai-card-zero',
-          '/finance/shinhan-card-cheum',
-          '/finance/sp500-etf',
-          '/finance/parking-account-cma',
-          '/finance/berkshire-hathaway',
-          '/finance/bitcoin',
-        ]
-      },
-      {
-        text: 'Products',
-        collapsible: true,
-        children: [
-          '/products/audio-interface',
-          '/products/kurutoga',
-          '/products/cx31993-dac',
-          '/products/cleansing-milk',
-          '/products/fidget-toy',
-          '/products/thinkpad',
-        ]
-      },
-    ],
+    sidebar,
     sidebarDepth: 0,
     lastUpdated: true,
     themePlugins: {

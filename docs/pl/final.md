@@ -1,3 +1,6 @@
+---
+sitemap: false
+---
 # Final Exam
 
 ## 1. Parameter Passing Methods
