@@ -1,5 +1,8 @@
-<template><div><h1 id="콘서타-concerta" tabindex="-1"><a class="header-anchor" href="#콘서타-concerta"><span>콘서타 (Concerta)</span></a></h1>
+<template><div><section class="print-section">
+<h1 id="콘서타-concerta" tabindex="-1"><a class="header-anchor" href="#콘서타-concerta"><span>콘서타 (Concerta)</span></a></h1>
 <DateMeta />
+</section>
+<section class="print-section">
 <h2 id="기본-정보" tabindex="-1"><a class="header-anchor" href="#기본-정보"><span>기본 정보</span></a></h2>
 <table>
 <thead>
@@ -31,14 +34,20 @@
 </tr>
 </tbody>
 </table>
+</section>
+<section class="print-section">
 <h2 id="작용-기전" tabindex="-1"><a class="header-anchor" href="#작용-기전"><span>작용 기전</span></a></h2>
 <p>메틸페니데이트는 도파민(Dopamine) 및 노르에피네프린(Norepinephrine) 재흡수를 억제하여 시냅스 간극 내 농도를 높인다. 전전두엽(prefrontal cortex)의 기능을 강화하여 주의 집중력과 충동 억제 능력을 개선한다.</p>
 <p>콘서타의 OROS(Osmotic Controlled-Release Oral delivery System) 기술은 약물을 약 22%는 즉시 방출하고 나머지 78%는 8–12시간에 걸쳐 점진적으로 방출하는 구조다.</p>
+</section>
+<section class="print-section">
 <h2 id="적응증" tabindex="-1"><a class="header-anchor" href="#적응증"><span>적응증</span></a></h2>
 <ul>
 <li>주의력결핍 과잉행동장애 (ADHD)</li>
 <li>소아, 청소년, 성인 모두 적응증 있음 (국내 허가 기준)</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="용법-및-용량" tabindex="-1"><a class="header-anchor" href="#용법-및-용량"><span>용법 및 용량</span></a></h2>
 <ul>
 <li><strong>성인 기준 초기 용량</strong>: 18mg 1일 1회, 아침 복용</li>
@@ -46,6 +55,8 @@
 <li>식사와 무관하게 복용 가능하나, 씹거나 쪼개지 않고 통째로 삼켜야 함</li>
 <li>오전에 복용해야 수면 방해를 최소화할 수 있음</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="주요-부작용" tabindex="-1"><a class="header-anchor" href="#주요-부작용"><span>주요 부작용</span></a></h2>
 <p><strong>흔한 부작용</strong></p>
 <ul>
@@ -61,6 +72,8 @@
 <li>기분 변화, 과민성</li>
 <li>성장 지연 (소아에서 장기 복용 시)</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="금기-및-주의사항" tabindex="-1"><a class="header-anchor" href="#금기-및-주의사항"><span>금기 및 주의사항</span></a></h2>
 <p><strong>금기</strong></p>
 <ul>
@@ -75,6 +88,8 @@
 <li>약물 남용 이력이 있는 경우 주의</li>
 <li>향정신성의약품으로 처방전 없이 취득·복용 불법</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="반감기-및-지속시간" tabindex="-1"><a class="header-anchor" href="#반감기-및-지속시간"><span>반감기 및 지속시간</span></a></h2>
 <table>
 <thead>
@@ -102,6 +117,7 @@
 <p class="hint-container-title">전문의약품</p>
 <p>콘서타는 전문의약품이자 향정신성의약품(마약류)으로, 반드시 정신건강의학과 또는 신경과 전문의의 처방 하에 복용해야 한다.</p>
 </div>
+</section>
 </div></template>
 
 

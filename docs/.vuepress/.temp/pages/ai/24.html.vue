@@ -1,13 +1,20 @@
-<template><div><h1 id="_24-convolutional-neural-networks" tabindex="-1"><a class="header-anchor" href="#_24-convolutional-neural-networks"><span>24. Convolutional Neural Networks</span></a></h1>
+<template><div><section class="print-section">
+<h1 id="_24-convolutional-neural-networks" tabindex="-1"><a class="header-anchor" href="#_24-convolutional-neural-networks"><span>24. Convolutional Neural Networks</span></a></h1>
 <DateMeta />
+</section>
+<section class="print-section">
 <h1 id="a-bit-of-history" tabindex="-1"><a class="header-anchor" href="#a-bit-of-history"><span>A Bit of History</span></a></h1>
 <p>Once upon a time...</p>
+</section>
+<section class="print-section">
 <h2 id="convolutional-neural-networks" tabindex="-1"><a class="header-anchor" href="#convolutional-neural-networks"><span>Convolutional Neural Networks</span></a></h2>
 <p><img src="@source/ai/image-39.png" alt=""></p>
 <ul>
 <li>Document recognition에 Gradient-based learning 적용</li>
 <li>LeCun, Bottou, Bengio, Haffner 1998</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="the-first-strong-result-in-deep-learning" tabindex="-1"><a class="header-anchor" href="#the-first-strong-result-in-deep-learning"><span>The First Strong Result in Deep Learning</span></a></h2>
 <p><img src="@source/ai/image-40.png" alt=""></p>
 <ul>
@@ -16,7 +23,11 @@
 <li>Alex Krizhevsky, Ilya Sutskever, Geoffrey E Hinton, 2012</li>
 <li>ILSVRC (ImageNet Large Scale Visual Recognition Challenge) 2012 우승</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="famous-image-datasets-imagenet" tabindex="-1"><a class="header-anchor" href="#famous-image-datasets-imagenet"><span>Famous Image Datasets: ImageNet</span></a></h2>
+</section>
+<section class="print-section">
 <h2 id="famous-image-datasets-mnist" tabindex="-1"><a class="header-anchor" href="#famous-image-datasets-mnist"><span>Famous Image Datasets: MNIST</span></a></h2>
 <p><img src="@source/ai/image-41.png" alt=""></p>
 <ul>
@@ -25,6 +36,8 @@
 <li>다양한 Image processing systems 학습에 일반적으로 사용되는 대규모 손글씨 숫자 Database</li>
 <li>60,000개의 Training images와 10,000개의 Testing images 포함</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="famous-image-datasets-cifar-10-vs-cifar-100" tabindex="-1"><a class="header-anchor" href="#famous-image-datasets-cifar-10-vs-cifar-100"><span>Famous Image Datasets: <code v-pre>CIFAR 10</code> vs. <code v-pre>CIFAR 100</code></span></a></h2>
 <ul>
 <li><code v-pre>CIFAR-10</code>
@@ -40,6 +53,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="fast-forward-to-today-convnets-are-everywhere" tabindex="-1"><a class="header-anchor" href="#fast-forward-to-today-convnets-are-everywhere"><span>Fast-Forward to Today: ConvNets Are Everywhere</span></a></h2>
 <ul>
 <li>Classification</li>
@@ -51,13 +66,19 @@
 <li>Self-driving Cars</li>
 <li>Diffusion models</li>
 </ul>
+</section>
+<section class="print-section">
 <h1 id="convolutional-neural-networks-1" tabindex="-1"><a class="header-anchor" href="#convolutional-neural-networks-1"><span>Convolutional Neural Networks</span></a></h1>
 <p>Convolutional Layer</p>
+</section>
+<section class="print-section">
 <h2 id="recap-fully-connected-layer-simple-ff-networks" tabindex="-1"><a class="header-anchor" href="#recap-fully-connected-layer-simple-ff-networks"><span>Recap: Fully Connected Layer (Simple FF Networks)</span></a></h2>
 <p><img src="@source/ai/image-42.png" alt=""></p>
 <ul>
 <li><span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>32</mn><mo>×</mo><mn>32</mn><mo>×</mo><mn>3</mn><mtext> image</mtext><mo>→</mo></mrow><annotation encoding="application/x-tex">32 \times 32 \times 3 ~\text{image} \to</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">32</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">32</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.8623em;vertical-align:-0.1944em;"></span><span class="mord">3</span><span class="mspace nobreak"> </span><span class="mord text"><span class="mord">image</span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">→</span></span></span></span> stretch to <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>3072</mn><mo>×</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">3072 \times 1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">3072</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span></li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="convolution-layer" tabindex="-1"><a class="header-anchor" href="#convolution-layer"><span>Convolution Layer</span></a></h2>
 <p><img src="@source/ai/image-43.png" alt=""></p>
 <p><span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>32</mn><mo>×</mo><mn>32</mn><mo>×</mo><mn>3</mn><mtext> image</mtext><mo>→</mo></mrow><annotation encoding="application/x-tex">32 \times 32 \times 3 ~\text{image} \to</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">32</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">32</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.8623em;vertical-align:-0.1944em;"></span><span class="mord">3</span><span class="mspace nobreak"> </span><span class="mord text"><span class="mord">image</span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">→</span></span></span></span> preserve spatial structure</p>
@@ -66,13 +87,23 @@
 <p><img src="@source/ai/image-46.png" alt=""></p>
 <p><img src="@source/ai/image-47.png" alt=""></p>
 <p><img src="@source/ai/image-48.png" alt=""></p>
+</section>
+<section class="print-section">
 <h1 id="convolutional-networks" tabindex="-1"><a class="header-anchor" href="#convolutional-networks"><span>Convolutional Networks</span></a></h1>
 <p><img src="@source/ai/image-49.png" alt=""></p>
+</section>
+<section class="print-section">
 <h2 id="a-closer-look-at-spatial-dimensions" tabindex="-1"><a class="header-anchor" href="#a-closer-look-at-spatial-dimensions"><span>A Closer Look at Spatial Dimensions</span></a></h2>
 <p><img src="@source/ai/image-50.png" alt=""></p>
+</section>
+<section class="print-section">
 <h2 id="in-practice-common-to-zero-pad-the-border" tabindex="-1"><a class="header-anchor" href="#in-practice-common-to-zero-pad-the-border"><span>In Practice: Common to Zero Pad the Border</span></a></h2>
+</section>
+<section class="print-section">
 <h2 id="caution" tabindex="-1"><a class="header-anchor" href="#caution"><span>Caution</span></a></h2>
 <p><img src="@source/ai/image-51.png" alt=""></p>
+</section>
+<section class="print-section">
 <h2 id="summary-convolutional-layer" tabindex="-1"><a class="header-anchor" href="#summary-convolutional-layer"><span>Summary: Convolutional Layer</span></a></h2>
 <ul>
 <li>입력이 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>W</mi><mn>1</mn></msub><mo>×</mo><msub><mi>H</mi><mn>1</mn></msub><mo>×</mo><mi>C</mi></mrow><annotation encoding="application/x-tex">W_1 \times H_1 \times C</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">W</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.1389em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.08125em;">H</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.0813em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.07153em;">C</span></span></span></span>라고 가정</li>
@@ -92,14 +123,20 @@
 </li>
 <li>Number of parameters: <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi><mo>×</mo><mi>F</mi><mo>×</mo><mi>C</mi><mo>×</mo><mi>K</mi></mrow><annotation encoding="application/x-tex">F \times F \times C \times K</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7667em;vertical-align:-0.0833em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">F</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.7667em;vertical-align:-0.0833em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">F</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.7667em;vertical-align:-0.0833em;"></span><span class="mord mathnormal" style="margin-right:0.07153em;">C</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.07153em;">K</span></span></span></span> weights + <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>K</mi></mrow><annotation encoding="application/x-tex">K</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.07153em;">K</span></span></span></span> biases</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="pooling-layer" tabindex="-1"><a class="header-anchor" href="#pooling-layer"><span>Pooling Layer</span></a></h2>
 <p><img src="@source/ai/image-57.png" alt=""></p>
 <ul>
 <li>Representations를 더 작고 관리하기 쉽게 만듦</li>
 <li>각 Activation map에 대해 독립적으로 작동</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="max-pooling" tabindex="-1"><a class="header-anchor" href="#max-pooling"><span>Max Pooling</span></a></h2>
 <p><img src="@source/ai/image-56.png" alt=""></p>
+</section>
+<section class="print-section">
 <h2 id="summary-pooling-layer" tabindex="-1"><a class="header-anchor" href="#summary-pooling-layer"><span>Summary: Pooling Layer</span></a></h2>
 <ul>
 <li>입력이 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>W</mi><mn>1</mn></msub><mo>×</mo><msub><mi>H</mi><mn>1</mn></msub><mo>×</mo><mi>C</mi></mrow><annotation encoding="application/x-tex">W_1 \times H_1 \times C</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">W</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.1389em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.08125em;">H</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.0813em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.07153em;">C</span></span></span></span>라고 가정</li>
@@ -117,10 +154,14 @@
 </li>
 <li>Number of parameters: 0</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="fully-connected-fc-layer" tabindex="-1"><a class="header-anchor" href="#fully-connected-fc-layer"><span>Fully-Connected (FC) Layer</span></a></h2>
 <ul>
 <li>일반적인 Feedforward Neural Networks와 같이 전체 Input volume에 연결된 Neurons 포함</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="summary" tabindex="-1"><a class="header-anchor" href="#summary"><span>Summary</span></a></h2>
 <ul>
 <li>ConvNets는 CONV, POOL, FC layers를 쌓음</li>
@@ -132,10 +173,16 @@
 <li>더 작은 Filters와 더 깊은 Architectures를 향한 추세</li>
 <li>POOL/FC layers를 제거하는 추세 (Just CONV)</li>
 </ul>
+</section>
+<section class="print-section">
 <h1 id="representative-cnn-architectures" tabindex="-1"><a class="header-anchor" href="#representative-cnn-architectures"><span>Representative CNN Architectures</span></a></h1>
 <p>GoogleNet, VGGNet, ResNet, …</p>
+</section>
+<section class="print-section">
 <h2 id="imagenet-large-scale-visual-recognition-challenge-ilsvrc-winners" tabindex="-1"><a class="header-anchor" href="#imagenet-large-scale-visual-recognition-challenge-ilsvrc-winners"><span>ImageNet Large Scale Visual Recognition Challenge (ILSVRC) Winners</span></a></h2>
 <p><img src="@source/ai/image-55.png" alt=""></p>
+</section>
+<section class="print-section">
 <h2 id="vggnet" tabindex="-1"><a class="header-anchor" href="#vggnet"><span>VGGNet</span></a></h2>
 <p><img src="@source/ai/image-54.png" alt=""></p>
 <ul>
@@ -143,6 +190,8 @@
 <li>8 layers (AlexNet) → 16 - 19 layers (VGG16Net)</li>
 <li>3x3 CONV stride 1, pad 1과 2x2 MAX POOL stride 2만 사용</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="resnet" tabindex="-1"><a class="header-anchor" href="#resnet"><span>ResNet</span></a></h2>
 <p><img src="@source/ai/image-53.png" alt=""></p>
 <ul>
@@ -150,12 +199,15 @@
 <li>ImageNet을 위한 152-layer model - ILSVRC’15 classification 우승</li>
 <li>ILSVRC’15 및 COCO’15의 모든 Classification 및 Detection competitions 석권</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="cnn-for-text-classification" tabindex="-1"><a class="header-anchor" href="#cnn-for-text-classification"><span>CNN for Text Classification</span></a></h2>
 <p><img src="@source/ai/image-52.png" alt=""></p>
 <ul>
 <li>Sentence Classification을 위한 Convolutional Neural Networks</li>
 <li>Yoon Kim, EMNLP 2014</li>
 </ul>
+</section>
 </div></template>
 
 

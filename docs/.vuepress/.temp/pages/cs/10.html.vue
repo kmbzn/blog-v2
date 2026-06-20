@@ -1,6 +1,11 @@
-<template><div><h1 id="_10-string-security" tabindex="-1"><a class="header-anchor" href="#_10-string-security"><span>10. String Security</span></a></h1>
+<template><div><section class="print-section">
+<h1 id="_10-string-security" tabindex="-1"><a class="header-anchor" href="#_10-string-security"><span>10. String Security</span></a></h1>
 <DateMeta />
+</section>
+<section class="print-section">
 <h1 id="strings" tabindex="-1"><a class="header-anchor" href="#strings"><span>Strings</span></a></h1>
+</section>
+<section class="print-section">
 <h2 id="character-strings" tabindex="-1"><a class="header-anchor" href="#character-strings"><span>Character Strings</span></a></h2>
 <ul>
 <li>표준 C 라이브러리 지원
@@ -14,6 +19,8 @@
 <p><strong>Figure 2.1.</strong> &quot;hello&quot;의 문자열 표현
 <img src="@source/cs/image-18.png" alt=""></p>
 </blockquote>
+</section>
+<section class="print-section">
 <h2 id="an-example" tabindex="-1"><a class="header-anchor" href="#an-example"><span>An Example</span></a></h2>
 <ul>
 <li>size of an array</li>
@@ -31,7 +38,9 @@
 <span class="line">  <span class="token comment">/* ... */</span></span>
 <span class="line"><span class="token punctuation">}</span></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="multibyte-character-set" tabindex="-1"><a class="header-anchor" href="#multibyte-character-set"><span>multibyte character set</span></a></h2>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h2 id="multibyte-character-set" tabindex="-1"><a class="header-anchor" href="#multibyte-character-set"><span>multibyte character set</span></a></h2>
 <ul>
 <li>Basic execution character set
 <ul>
@@ -52,6 +61,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="strings-1" tabindex="-1"><a class="header-anchor" href="#strings-1"><span>Strings</span></a></h2>
 <ul>
 <li><code v-pre>const char s[3] = &quot;abc&quot;;</code>
@@ -62,6 +73,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="strings-in-c" tabindex="-1"><a class="header-anchor" href="#strings-in-c"><span>Strings in C++</span></a></h2>
 <ul>
 <li><code v-pre>std::basic_string</code>
@@ -78,6 +91,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="character-types" tabindex="-1"><a class="header-anchor" href="#character-types"><span>Character Types</span></a></h2>
 <ul>
 <li>three types
@@ -111,7 +126,9 @@
 <span class="line">len <span class="token operator">=</span> <span class="token function">strlen</span><span class="token punctuation">(</span>scstr<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">/* warns when char is unsigned */</span></span>
 <span class="line">len <span class="token operator">=</span> <span class="token function">strlen</span><span class="token punctuation">(</span>ucstr<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">/* warns when char is signed */</span></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="int" tabindex="-1"><a class="header-anchor" href="#int"><span><code v-pre>int</code></span></a></h2>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h2 id="int" tabindex="-1"><a class="header-anchor" href="#int"><span><code v-pre>int</code></span></a></h2>
 <ul>
 <li><code v-pre>EOF</code> (음수 값)</li>
 <li>또는 <code v-pre>unsigned char</code>로 해석된 <code v-pre>char data</code></li>
@@ -127,6 +144,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="example" tabindex="-1"><a class="header-anchor" href="#example"><span>Example</span></a></h2>
 <ul>
 <li>Code Example 분석<div class="language-cpp line-numbers-mode" data-highlighter="prismjs" data-ext="cpp"><pre v-pre><code class="language-cpp"><span class="line"><span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span></span>
@@ -142,6 +161,8 @@
 <li>C에서 sizeof('a') → ???, sizeof(c) → ???</li>
 <li>C++에서 sizeof('a') → ???</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="unsigned-char" tabindex="-1"><a class="header-anchor" href="#unsigned-char"><span>unsigned char</span></a></h2>
 <ul>
 <li>객체가 어떤 type이든 될 수 있을 때 유용</li>
@@ -164,7 +185,9 @@
 <span class="line">    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span></span>
 <span class="line"><span class="token punctuation">}</span></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="sizing-strings" tabindex="-1"><a class="header-anchor" href="#sizing-strings"><span>Sizing Strings</span></a></h2>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h2 id="sizing-strings" tabindex="-1"><a class="header-anchor" href="#sizing-strings"><span>Sizing Strings</span></a></h2>
 <ul>
 <li>Buffer overflows를 예방하기 위해 필수</li>
 <li>The CERT C Secure Coding Standard
@@ -191,7 +214,9 @@
 <span class="line"><span class="token function">free</span><span class="token punctuation">(</span>wide_str2<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
 <span class="line">wide_str2 <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="common-string-manipulation-errors" tabindex="-1"><a class="header-anchor" href="#common-string-manipulation-errors"><span>Common String Manipulation Errors</span></a></h2>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h2 id="common-string-manipulation-errors" tabindex="-1"><a class="header-anchor" href="#common-string-manipulation-errors"><span>Common String Manipulation Errors</span></a></h2>
 <ul>
 <li>4가지 일반적인 오류
 <ul>
@@ -203,6 +228,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="improperly-bounded-string-copies" tabindex="-1"><a class="header-anchor" href="#improperly-bounded-string-copies"><span>Improperly Bounded String Copies</span></a></h2>
 <ul>
 <li>데이터가 고정된 길이의 문자열로부터 복사될 때
@@ -228,7 +255,11 @@
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><blockquote>
 <p><strong>Example 2.1.</strong> Reading from <code v-pre>stdin()</code></p>
 </blockquote>
+</section>
+<section class="print-section">
 <h2 id="copying-and-concatenating-strings" tabindex="-1"><a class="header-anchor" href="#copying-and-concatenating-strings"><span>Copying and concatenating strings</span></a></h2>
+</section>
+<section class="print-section">
 <h4 id="improperly-bounded-string-copies-1" tabindex="-1"><a class="header-anchor" href="#improperly-bounded-string-copies-1"><span>Improperly Bounded String Copies</span></a></h4>
 <ul>
 <li>Standard lib functions
@@ -260,7 +291,9 @@
 <span class="line">    <span class="token comment">/* ... */</span></span>
 <span class="line"><span class="token punctuation">}</span></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="sprintf-function" tabindex="-1"><a class="header-anchor" href="#sprintf-function"><span><code v-pre>sprintf()</code> function</span></a></h2>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h2 id="sprintf-function" tabindex="-1"><a class="header-anchor" href="#sprintf-function"><span><code v-pre>sprintf()</code> function</span></a></h2>
 <ul>
 <li>array에 output을 작성</li>
 <li>작성된 character의 끝에 null character가 작성</li>
@@ -279,6 +312,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="c-의-std-cin" tabindex="-1"><a class="header-anchor" href="#c-의-std-cin"><span>C++의 <code v-pre>std::cin</code></span></a></h2>
 <ul>
 <li>이 또한 문제점 있음.</li>
@@ -306,7 +341,9 @@
 <span class="line">  std<span class="token double-colon punctuation">::</span>cout <span class="token operator">&lt;&lt;</span> <span class="token string">"echo: "</span> <span class="token operator">&lt;&lt;</span> buf <span class="token operator">&lt;&lt;</span> <span class="token char">'\n'</span><span class="token punctuation">;</span></span>
 <span class="line"><span class="token punctuation">}</span></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="off-by-one-errors" tabindex="-1"><a class="header-anchor" href="#off-by-one-errors"><span>Off-by-One Errors</span></a></h2>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h2 id="off-by-one-errors" tabindex="-1"><a class="header-anchor" href="#off-by-one-errors"><span>Off-by-One Errors</span></a></h2>
 <ul>
 <li>또 다른 일반적인 문제</li>
 <li>unbounded string copies와 유사</li>
@@ -332,7 +369,9 @@
 <span class="line">  <span class="token comment">/* ... */</span><span class="token punctuation">;</span></span>
 <span class="line"><span class="token punctuation">}</span></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="null-termination-errors" tabindex="-1"><a class="header-anchor" href="#null-termination-errors"><span>Null-Termination Errors</span></a></h2>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h2 id="null-termination-errors" tabindex="-1"><a class="header-anchor" href="#null-termination-errors"><span>Null-Termination Errors</span></a></h2>
 <ul>
 <li>Example</li>
 </ul>
@@ -353,6 +392,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="string-vulnerabilities-and-exploits" tabindex="-1"><a class="header-anchor" href="#string-vulnerabilities-and-exploits"><span>String Vulnerabilities and Exploits</span></a></h2>
 <ul>
 <li>C 또는 C++에서 String manipulation
@@ -381,7 +422,9 @@
 <span class="line">  <span class="token punctuation">}</span></span>
 <span class="line"><span class="token punctuation">}</span></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="buffer-overflows" tabindex="-1"><a class="header-anchor" href="#buffer-overflows"><span>Buffer Overflows</span></a></h2>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h2 id="buffer-overflows" tabindex="-1"><a class="header-anchor" href="#buffer-overflows"><span>Buffer Overflows</span></a></h2>
 <ul>
 <li>Example<br>
 <img src="@source/cs/image-19.png" alt=""></li>
@@ -393,13 +436,19 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="process-memory-organization" tabindex="-1"><a class="header-anchor" href="#process-memory-organization"><span>Process Memory Organization</span></a></h2>
 <p><img src="@source/cs/image-20.png" alt=""></p>
+</section>
+<section class="print-section">
 <h2 id="programs-and-processes" tabindex="-1"><a class="header-anchor" href="#programs-and-processes"><span>Programs and Processes</span></a></h2>
 <p><img src="@source/cs/image-21.png" alt=""></p>
 <blockquote>
 <p><strong>Figure 10.4</strong> Program Loading into Process Memory</p>
 </blockquote>
+</section>
+<section class="print-section">
 <h2 id="stack-buffer-overflows" tabindex="-1"><a class="header-anchor" href="#stack-buffer-overflows"><span>Stack Buffer Overflows</span></a></h2>
 <ul>
 <li>Buffer가 stack에 위치할 때 발생
@@ -420,6 +469,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="stack-frame-with-functions-p-and-q" tabindex="-1"><a class="header-anchor" href="#stack-frame-with-functions-p-and-q"><span>Stack Frame with Functions P and Q</span></a></h2>
 <pre><code>  ┌───────────────────┐                   
 P:│    Return Addr    │                   
@@ -444,6 +495,8 @@ Q:│ Return Addr in P  │   │
 <blockquote>
 <p><strong>Figure 10.3</strong> Examples Stack Frame with Functions P and Q</p>
 </blockquote>
+</section>
+<section class="print-section">
 <h2 id="stack-management" tabindex="-1"><a class="header-anchor" href="#stack-management"><span>Stack Management</span></a></h2>
 <ul>
 <li>Stack은 automatic process-state data를 유지하여 program execution을 지원
@@ -536,6 +589,8 @@ Q:│ Return Addr in P  │   │
 </tr>
 </tbody>
 </table>
+</section>
+<section class="print-section">
 <h2 id="stack-smashing" tabindex="-1"><a class="header-anchor" href="#stack-smashing"><span>Stack Smashing</span></a></h2>
 <ul>
 <li>Stack smashing
@@ -548,6 +603,8 @@ Q:│ Return Addr in P  │   │
 <img src="@source/cs/image-41.png" alt="">
 <img src="@source/cs/image-40.png" alt=""></li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="corrupted-program-stack" tabindex="-1"><a class="header-anchor" href="#corrupted-program-stack"><span>Corrupted program stack</span></a></h2>
 <p><img src="@source/cs/image-42.png" alt="alt text">
 <img src="@source/cs/image-43.png" alt="alt text"></p>
@@ -558,6 +615,8 @@ Q:│ Return Addr in P  │   │
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="code-injection" tabindex="-1"><a class="header-anchor" href="#code-injection"><span>Code Injection</span></a></h2>
 <ul>
 <li>Return address가 덮어쓰여질 때
@@ -586,6 +645,8 @@ Q:│ Return Addr in P  │   │
 </ol>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="modified-example" tabindex="-1"><a class="header-anchor" href="#modified-example"><span>Modified Example</span></a></h2>
 <p><img src="@source/cs/image-45.png" alt="alt text"></p>
 <ul>
@@ -689,6 +750,8 @@ Q:│ Return Addr in P  │   │
 </tr>
 </tbody>
 </table>
+</section>
+<section class="print-section">
 <h2 id="arc-injection" tabindex="-1"><a class="header-anchor" href="#arc-injection"><span>Arc Injection</span></a></h2>
 <ul>
 <li>Arc injection technique
@@ -722,7 +785,9 @@ Q:│ Return Addr in P  │   │
 <span class="line">    /* ... */</span>
 <span class="line">}</span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="mitigation-strategies" tabindex="-1"><a class="header-anchor" href="#mitigation-strategies"><span>Mitigation Strategies</span></a></h2>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h2 id="mitigation-strategies" tabindex="-1"><a class="header-anchor" href="#mitigation-strategies"><span>Mitigation Strategies</span></a></h2>
 <ul>
 <li>여러 전략을 결합하는 defense-in-depth tactic 채택
 <ul>
@@ -748,6 +813,8 @@ Q:│ Return Addr in P  │   │
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="c11-annex-k-bounds-checking" tabindex="-1"><a class="header-anchor" href="#c11-annex-k-bounds-checking"><span><code v-pre>C11</code> Annex K Bounds-Checking</span></a></h2>
 <ul>
 <li>첫 번째 메모리 관리 model (caller allocates하고 caller free하는 방법)</li>
@@ -766,6 +833,8 @@ Q:│ Return Addr in P  │   │
 <li><code v-pre>gcc</code>에서는 implemented되지 않음.</li>
 <li>유효하지 않은 크기가 함수에 전달되면 buffer overflow problems를 겪을 수 있음.</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="c11-annex-k" tabindex="-1"><a class="header-anchor" href="#c11-annex-k"><span><code v-pre>C11</code> Annex K</span></a></h2>
 <ul>
 <li>Example: <code v-pre>gets_s()</code></li>
@@ -783,7 +852,9 @@ Q:│ Return Addr in P  │   │
 <span class="line">        <span class="token function">exit</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
 <span class="line"><span class="token punctuation">}</span></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="runtime-constraint-handler-function" tabindex="-1"><a class="header-anchor" href="#runtime-constraint-handler-function"><span>Runtime-constraint-handler function</span></a></h2>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h2 id="runtime-constraint-handler-function" tabindex="-1"><a class="header-anchor" href="#runtime-constraint-handler-function"><span>Runtime-constraint-handler function</span></a></h2>
 <ul>
 <li>오류 감지 시 특수 runtime-constraint-handler function 호출
 <ul>
@@ -797,6 +868,8 @@ Q:│ Return Addr in P  │   │
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="c11-annex-k-1" tabindex="-1"><a class="header-anchor" href="#c11-annex-k-1"><span><code v-pre>C11</code> Annex K</span></a></h2>
 <ul>
 <li>Example 2.6. <code v-pre>gets_s()</code> (Improved)</li>
@@ -820,7 +893,9 @@ Q:│ Return Addr in P  │   │
 <span class="line">    <span class="token function">get_y_or_n</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
 <span class="line"><span class="token punctuation">}</span></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="runtime-constraint-handler-function-1" tabindex="-1"><a class="header-anchor" href="#runtime-constraint-handler-function-1"><span>Runtime-constraint-handler function</span></a></h2>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h2 id="runtime-constraint-handler-function-1" tabindex="-1"><a class="header-anchor" href="#runtime-constraint-handler-function-1"><span>Runtime-constraint-handler function</span></a></h2>
 <ul>
 <li><code v-pre>ignore_handler_s()</code> 함수로 설정된 경우
 <ul>
@@ -839,6 +914,8 @@ Q:│ Return Addr in P  │   │
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="dynamic-allocation-functions" tabindex="-1"><a class="header-anchor" href="#dynamic-allocation-functions"><span>Dynamic Allocation Functions</span></a></h2>
 <ul>
 <li>두 번째 메모리 관리 model (callee allocates, caller frees)
@@ -878,6 +955,8 @@ Q:│ Return Addr in P  │   │
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="string-stream" tabindex="-1"><a class="header-anchor" href="#string-stream"><span>String stream</span></a></h2>
 <ul>
 <li><code v-pre>fmemopen()</code>, <code v-pre>open_memstream()</code></li>
@@ -921,7 +1000,9 @@ Q:│ Return Addr in P  │   │
 <span class="line">    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span></span>
 <span class="line"><span class="token punctuation">}</span></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="c-std-basic-string" tabindex="-1"><a class="header-anchor" href="#c-std-basic-string"><span>C++ <code v-pre>std::basic_string</code></span></a></h2>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h2 id="c-std-basic-string" tabindex="-1"><a class="header-anchor" href="#c-std-basic-string"><span>C++ <code v-pre>std::basic_string</code></span></a></h2>
 <ul>
 <li>C++ extraction operator <code v-pre>operator&gt;&gt;</code>
 <ul>
@@ -947,7 +1028,9 @@ Q:│ Return Addr in P  │   │
 <span class="line">string str2 <span class="token operator">=</span> “world”<span class="token punctuation">;</span></span>
 <span class="line">string str3 <span class="token operator">=</span> str1 <span class="token operator">+</span> str2<span class="token punctuation">;</span></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="example-std-cin" tabindex="-1"><a class="header-anchor" href="#example-std-cin"><span>Example: <code v-pre>std::cin</code></span></a></h3>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h3 id="example-std-cin" tabindex="-1"><a class="header-anchor" href="#example-std-cin"><span>Example: <code v-pre>std::cin</code></span></a></h3>
 <div class="language-cpp line-numbers-mode" data-highlighter="prismjs" data-ext="cpp"><pre v-pre><code class="language-cpp"><span class="line"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span></span>
 <span class="line"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;string></span></span></span>
 <span class="line"><span class="token keyword">using</span> namepsace std<span class="token punctuation">;</span></span>
@@ -959,7 +1042,9 @@ Q:│ Return Addr in P  │   │
 <span class="line">    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"str 1: "</span> <span class="token operator">&lt;&lt;</span> str <span class="token operator">&lt;&lt;</span> <span class="token char">'\n'</span><span class="token punctuation">;</span></span>
 <span class="line"><span class="token punctuation">}</span></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="std-out-of-range" tabindex="-1"><a class="header-anchor" href="#std-out-of-range"><span><code v-pre>std::out_of_range</code></span></a></h2>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h2 id="std-out-of-range" tabindex="-1"><a class="header-anchor" href="#std-out-of-range"><span><code v-pre>std::out_of_range</code></span></a></h2>
 <ul>
 <li>Subscript member <code v-pre>std::string::operator[]</code>
 <ul>
@@ -987,7 +1072,9 @@ Q:│ Return Addr in P  │   │
 <span class="line">    cerr <span class="token operator">&lt;&lt;</span> <span class="token string">"Out of Range error: "</span> <span class="token operator">&lt;&lt;</span> oor<span class="token punctuation">.</span><span class="token function">what</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> <span class="token char">'\n'</span><span class="token punctuation">;</span></span>
 <span class="line"><span class="token punctuation">}</span></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="c-str" tabindex="-1"><a class="header-anchor" href="#c-str"><span><code v-pre>c_str()</code></span></a></h2>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h2 id="c-str" tabindex="-1"><a class="header-anchor" href="#c-str"><span><code v-pre>c_str()</code></span></a></h2>
 <ul>
 <li><code v-pre>string</code>을 null-terminated byte string으로 변환
 <ul>
@@ -999,6 +1086,8 @@ Q:│ Return Addr in P  │   │
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="string-handling-functions" tabindex="-1"><a class="header-anchor" href="#string-handling-functions"><span>String-Handling Functions</span></a></h2>
 <ul>
 <li><code v-pre>gets()</code>
@@ -1020,6 +1109,8 @@ Q:│ Return Addr in P  │   │
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="fgets" tabindex="-1"><a class="header-anchor" href="#fgets"><span><code v-pre>fgets()</code></span></a></h2>
 <div class="language-c line-numbers-mode" data-highlighter="prismjs" data-ext="c"><pre v-pre><code class="language-c"><span class="line"><span class="token keyword">char</span> buf<span class="token punctuation">[</span>LINE_MAX<span class="token punctuation">]</span><span class="token punctuation">;</span></span>
 <span class="line"><span class="token keyword">int</span> ch<span class="token punctuation">;</span></span>
@@ -1043,7 +1134,9 @@ Q:│ Return Addr in P  │   │
 <span class="line">    <span class="token comment">/* fgets failed, handle error */</span></span>
 <span class="line"><span class="token punctuation">}</span></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="fgets-and-getchar" tabindex="-1"><a class="header-anchor" href="#fgets-and-getchar"><span><code v-pre>fgets()</code> and <code v-pre>getchar()</code></span></a></h2>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h2 id="fgets-and-getchar" tabindex="-1"><a class="header-anchor" href="#fgets-and-getchar"><span><code v-pre>fgets()</code> and <code v-pre>getchar()</code></span></a></h2>
 <ul>
 <li><code v-pre>fgets()</code>
 <ul>
@@ -1059,6 +1152,8 @@ Q:│ Return Addr in P  │   │
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="getchar" tabindex="-1"><a class="header-anchor" href="#getchar"><span><code v-pre>getchar()</code></span></a></h2>
 <ul>
 <li>Example 2.10. <code v-pre>getchar()</code></li>
@@ -1090,7 +1185,9 @@ Q:│ Return Addr in P  │   │
 <span class="line">    <span class="token comment">/* handle truncation */</span></span>
 <span class="line"><span class="token punctuation">}</span></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="c11-annext-k-gets-s" tabindex="-1"><a class="header-anchor" href="#c11-annext-k-gets-s"><span><code v-pre>C11</code> Annext K gets_s()</span></a></h2>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h2 id="c11-annext-k-gets-s" tabindex="-1"><a class="header-anchor" href="#c11-annext-k-gets-s"><span><code v-pre>C11</code> Annext K gets_s()</span></a></h2>
 <ul>
 <li><code v-pre>C11</code> <code v-pre>gets_s()</code> 함수
 <ul>
@@ -1119,6 +1216,8 @@ Q:│ Return Addr in P  │   │
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="dynamic-allocation-functions-1" tabindex="-1"><a class="header-anchor" href="#dynamic-allocation-functions-1"><span>Dynamic Allocation Functions</span></a></h2>
 <ul>
 <li><code v-pre>getline()</code> 함수
@@ -1136,6 +1235,8 @@ Q:│ Return Addr in P  │   │
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="getline" tabindex="-1"><a class="header-anchor" href="#getline"><span><code v-pre>getline()</code></span></a></h2>
 <div class="language-c line-numbers-mode" data-highlighter="prismjs" data-ext="c"><pre v-pre><code class="language-c"><span class="line"><span class="token keyword">int</span> ch<span class="token punctuation">;</span></span>
 <span class="line"><span class="token keyword">char</span> <span class="token operator">*</span>p<span class="token punctuation">;</span></span>
@@ -1162,7 +1263,11 @@ Q:│ Return Addr in P  │   │
 <span class="line"></span>
 <span class="line"><span class="token function">free</span><span class="token punctuation">(</span>buffer<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="alternative-functions-for-gets" tabindex="-1"><a class="header-anchor" href="#alternative-functions-for-gets"><span>Alternative functions for <code v-pre>gets()</code></span></a></h2>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h2 id="alternative-functions-for-gets" tabindex="-1"><a class="header-anchor" href="#alternative-functions-for-gets"><span>Alternative functions for <code v-pre>gets()</code></span></a></h2>
+</section>
+<section class="print-section">
 <h3 id="table-2-4-alternative-functions-for-gets" tabindex="-1"><a class="header-anchor" href="#table-2-4-alternative-functions-for-gets"><span>Table 2.4. Alternative Functions for <code v-pre>gets()</code></span></a></h3>
 <table>
 <thead>
@@ -1194,6 +1299,8 @@ Q:│ Return Addr in P  │   │
 </tr>
 </tbody>
 </table>
+</section>
+<section class="print-section">
 <h2 id="strcpy-and-strcat" tabindex="-1"><a class="header-anchor" href="#strcpy-and-strcat"><span><code v-pre>strcpy()</code> and <code v-pre>strcat()</code></span></a></h2>
 <ul>
 <li><code v-pre>C99</code>
@@ -1214,6 +1321,8 @@ Q:│ Return Addr in P  │   │
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="c11-annex-k-bounds-checking-interfaces" tabindex="-1"><a class="header-anchor" href="#c11-annex-k-bounds-checking-interfaces"><span><code v-pre>C11</code> Annex K Bounds-Checking interfaces</span></a></h2>
 <ul>
 <li><code v-pre>strcpy_s()</code> 및 <code v-pre>strcat_s()</code>
@@ -1229,7 +1338,11 @@ Q:│ Return Addr in P  │   │
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="string-copy-functions" tabindex="-1"><a class="header-anchor" href="#string-copy-functions"><span>String copy functions</span></a></h2>
+</section>
+<section class="print-section">
 <h3 id="table-2-5-string-copy-functions" tabindex="-1"><a class="header-anchor" href="#table-2-5-string-copy-functions"><span>Table 2.5. String Copy Functions</span></a></h3>
 <table>
 <thead>
@@ -1285,6 +1398,8 @@ Q:│ Return Addr in P  │   │
 </tr>
 </tbody>
 </table>
+</section>
+<section class="print-section">
 <h3 id="table-2-6-string-concatenation-functions" tabindex="-1"><a class="header-anchor" href="#table-2-6-string-concatenation-functions"><span>Table 2.6. String Concatenation Functions</span></a></h3>
 <table>
 <thead>
@@ -1332,6 +1447,8 @@ Q:│ Return Addr in P  │   │
 </tr>
 </tbody>
 </table>
+</section>
+<section class="print-section">
 <h2 id="strncpy-and-strncat" tabindex="-1"><a class="header-anchor" href="#strncpy-and-strncat"><span><code v-pre>strncpy()</code> and <code v-pre>strncat()</code></span></a></h2>
 <ul>
 <li><code v-pre>size_t parameter n</code> 추가</li>
@@ -1351,6 +1468,8 @@ Q:│ Return Addr in P  │   │
 </li>
 <li>결과 string이 잘릴 때 status code 없음.</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="strncpy-s" tabindex="-1"><a class="header-anchor" href="#strncpy-s"><span><code v-pre>strncpy_s()</code></span></a></h2>
 <div class="language-c line-numbers-mode" data-highlighter="prismjs" data-ext="c"><pre v-pre><code class="language-c"><span class="line"><span class="token class-name">errno_t</span> <span class="token function">strncpy_s</span> <span class="token punctuation">(</span></span>
 <span class="line">    <span class="token keyword">char</span> <span class="token operator">*</span> restrict s1<span class="token punctuation">,</span></span>
@@ -1389,7 +1508,11 @@ Q:│ Return Addr in P  │   │
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="summary-of-strcpy-and-strcat" tabindex="-1"><a class="header-anchor" href="#summary-of-strcpy-and-strcat"><span>Summary of <code v-pre>strcpy()</code> and <code v-pre>strcat()</code></span></a></h2>
+</section>
+<section class="print-section">
 <h3 id="table-2-7-truncating-copy-functions" tabindex="-1"><a class="header-anchor" href="#table-2-7-truncating-copy-functions"><span>Table 2.7. Truncating Copy Functions</span></a></h3>
 <table>
 <thead>
@@ -1484,6 +1607,8 @@ Q:│ Return Addr in P  │   │
 </tr>
 </tbody>
 </table>
+</section>
+<section class="print-section">
 <h2 id="runtime-protection-strategies" tabindex="-1"><a class="header-anchor" href="#runtime-protection-strategies"><span>Runtime Protection Strategies</span></a></h2>
 <ul>
 <li>Programmer가 불완전한 detection and recovery strategy를 사용하여 문제를 해결했다고 잘못된 확신을 가질 위험</li>
@@ -1499,6 +1624,8 @@ Q:│ Return Addr in P  │   │
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="input-validation" tabindex="-1"><a class="header-anchor" href="#input-validation"><span>Input validation</span></a></h2>
 <ul>
 <li>Buffer overflows를 완화하는 가장 좋은 방법</li>
@@ -1519,6 +1646,8 @@ Q:│ Return Addr in P  │   │
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="object-size-checking" tabindex="-1"><a class="header-anchor" href="#object-size-checking"><span>Object Size Checking</span></a></h2>
 <ul>
 <li>GCC
@@ -1601,7 +1730,9 @@ Q:│ Return Addr in P  │   │
 <span class="line">    <span class="token comment">/* src would overflow dest */</span></span>
 <span class="line"><span class="token punctuation">}</span></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="visual-studio-compiler-generated-runtime-checks" tabindex="-1"><a class="header-anchor" href="#visual-studio-compiler-generated-runtime-checks"><span>Visual Studio Compiler-Generated Runtime Checks</span></a></h2>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h2 id="visual-studio-compiler-generated-runtime-checks" tabindex="-1"><a class="header-anchor" href="#visual-studio-compiler-generated-runtime-checks"><span>Visual Studio Compiler-Generated Runtime Checks</span></a></h2>
 <ul>
 <li>Visual C++ 2010
 <ul>
@@ -1618,6 +1749,8 @@ Q:│ Return Addr in P  │   │
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="stack-smashing-protector-propolice" tabindex="-1"><a class="header-anchor" href="#stack-smashing-protector-propolice"><span>Stack-Smashing Protector (ProPolice)</span></a></h2>
 <ul>
 <li>
@@ -1663,6 +1796,8 @@ pointer──► ├────────────────────
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="operating-system-strategies" tabindex="-1"><a class="header-anchor" href="#operating-system-strategies"><span>Operating System Strategies</span></a></h2>
 <ul>
 <li>Address space layout randomization (ASLR)
@@ -1704,6 +1839,8 @@ pointer──► ├────────────────────
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="future-direction" tabindex="-1"><a class="header-anchor" href="#future-direction"><span>Future Direction</span></a></h2>
 <blockquote>
 <p>Figure 2.19. A possible Safe-Secure C/C++(SSCC) implementation
@@ -1712,6 +1849,8 @@ pointer──► ├────────────────────
 <ul>
 <li>가능한 Safe-Secure C/C++ (SSCC) implementation</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="notable-vulnerabilities" tabindex="-1"><a class="header-anchor" href="#notable-vulnerabilities"><span>Notable Vulnerabilities</span></a></h2>
 <ul>
 <li>Remote Login (rlogin)
@@ -1731,6 +1870,8 @@ pointer──► ├────────────────────
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="summary" tabindex="-1"><a class="header-anchor" href="#summary"><span>Summary</span></a></h2>
 <ul>
 <li>C 및 C++에서 buffer overflows가 자주 발생하는 이유
@@ -1749,8 +1890,11 @@ pointer──► ├────────────────────
 </li>
 <li>Defense-in-depth strategy</li>
 </ul>
+</section>
+<section class="print-section">
 <h1 id="시험-정보" tabindex="-1"><a class="header-anchor" href="#시험-정보"><span>시험 정보</span></a></h1>
 <p>장소: 501호</p>
+</section>
 </div></template>
 
 

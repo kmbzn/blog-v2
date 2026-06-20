@@ -1,5 +1,8 @@
-<template><div><h1 id="_08-firmware-analysis" tabindex="-1"><a class="header-anchor" href="#_08-firmware-analysis"><span>08. Firmware Analysis</span></a></h1>
+<template><div><section class="print-section">
+<h1 id="_08-firmware-analysis" tabindex="-1"><a class="header-anchor" href="#_08-firmware-analysis"><span>08. Firmware Analysis</span></a></h1>
 <DateMeta />
+</section>
+<section class="print-section">
 <h2 id="펌웨어-분석의-필요성" tabindex="-1"><a class="header-anchor" href="#펌웨어-분석의-필요성"><span>펌웨어 분석의 필요성</span></a></h2>
 <ul>
 <li>IoT 기기, 스마트 기기 등 임베디드 시스템의 바이너리 안전성 증진 필요</li>
@@ -8,6 +11,8 @@
 <li>펌웨어 수준의 난이도 높은 공격 증가</li>
 <li>국가기간망 펌웨어 공격 증가</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="owasp-iot-top-10" tabindex="-1"><a class="header-anchor" href="#owasp-iot-top-10"><span>OWASP IoT Top 10</span></a></h2>
 <ol>
 <li>Weak, Guessable, or Hardcoded Passwords</li>
@@ -31,6 +36,8 @@
 <li>Insecure Default Settings</li>
 <li>Lack of Physical Hardening</li>
 </ol>
+</section>
+<section class="print-section">
 <h2 id="펌웨어-분석-프로세스" tabindex="-1"><a class="header-anchor" href="#펌웨어-분석-프로세스"><span>펌웨어 분석 프로세스</span></a></h2>
 <pre><code>┌──────────────────────┐          ┌──────────────────────┐          ┌─────────────────────┐
 │ 펌웨어 획득 및 추출  │          │   검증 벡터 선정     │          │      정적 분석      │
@@ -64,6 +71,8 @@
                                                                     │    수행    │
                                                                     └────────────┘
 </code></pre>
+</section>
+<section class="print-section">
 <h2 id="펌웨어-이미지-획득" tabindex="-1"><a class="header-anchor" href="#펌웨어-이미지-획득"><span>펌웨어 이미지 획득</span></a></h2>
 <ul>
 <li><strong>제조사 제공 펌웨어</strong>: 제조사 홈페이지에서 업데이트 등의 지원을 위해 제공</li>
@@ -72,11 +81,15 @@
 <li><strong>JTAG (Joint Test Action Group) 이용</strong>: 임베디드 기기 디버깅 표준 장비. Emulator 이용 가능. 비휘발성 메모리 데이터(펌웨어) 추출 기능 제공</li>
 <li><strong>UART (Universal Asynchronous Receiver/Transmitter)</strong>: 병렬/직렬 데이터 전송 하드웨어. JTAG보다 간단하고 저렴. 디버깅 용도로 많이 이용. UART 포트 존재 시 펌웨어 덤프 가능</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="동적-분석-펌웨어-분석" tabindex="-1"><a class="header-anchor" href="#동적-분석-펌웨어-분석"><span>동적 분석 펌웨어 분석</span></a></h2>
 <ul>
 <li><strong>동적 분석</strong>: 정적 분석만으로는 실제 처리 과정 및 결과 확인 어려움. 특정 입력에 대한 출력 과정과 결과 확인 가능</li>
 <li><strong>동적 분석 환경</strong>: QEMU와 같은 emulator 이용. 대상 디바이스와 동일 환경 구현. GDB 등 디버거로 동적 분석 수행. 하드웨어 의존성 문제 해결 필요</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="펌웨어-구조-분석-펌웨어-분석" tabindex="-1"><a class="header-anchor" href="#펌웨어-구조-분석-펌웨어-분석"><span>펌웨어 구조 분석 펌웨어 분석</span></a></h2>
 <pre><code> ┌──────────┐     ┌───────────┐     ┌──────────┐
  │          │     │Bootloader │     │          │
@@ -103,6 +116,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="이미지-파일-분석-펌웨어-분석" tabindex="-1"><a class="header-anchor" href="#이미지-파일-분석-펌웨어-분석"><span>이미지 파일 분석 펌웨어 분석</span></a></h2>
 <ul>
 <li><strong>펌웨어 이미지 파일 구조 분석</strong>
@@ -120,6 +135,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="소스코드-분석-–-정적-분석-펌웨어-분석" tabindex="-1"><a class="header-anchor" href="#소스코드-분석-–-정적-분석-펌웨어-분석"><span>소스코드 분석 – 정적 분석 펌웨어 분석</span></a></h2>
 <ul>
 <li><strong>펌웨어 소스코드/바이너리 분석 예</strong>
@@ -132,6 +149,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="펌웨어-취약점-분석" tabindex="-1"><a class="header-anchor" href="#펌웨어-취약점-분석"><span>펌웨어 취약점 분석</span></a></h2>
 <ul>
 <li><strong>FirmwareModificationKit을 통한 추출 및 분석</strong>: 펌웨어 이미지로부터 파일 시스템 추출. 무결성 검증 루틴 포함 파일 분석</li>
@@ -139,6 +158,8 @@
 <li><strong>부팅 로그 분석</strong>: 부팅 로그 분석을 통한 무결성 검증 과정 확인. (예: 1024 bit RSA 키 자체 생성 확인)</li>
 <li><strong>파일시스템 파일 분석</strong>: 인증서 연결 형태 / 인증서 파일 자체 분석</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="nas-취약점-분석-사례-1-취약점-분석-사례" tabindex="-1"><a class="header-anchor" href="#nas-취약점-분석-사례-1-취약점-분석-사례"><span>NAS 취약점 분석 사례 1 취약점 분석 사례</span></a></h2>
 <ul>
 <li><strong>펌웨어 획득</strong>: 제조사 홈페이지 제공 (버전 5592, 릴리즈 2015.08.08)</li>
@@ -151,6 +172,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="nas-취약점-분석-사례-2-취약점-분석-사례" tabindex="-1"><a class="header-anchor" href="#nas-취약점-분석-사례-2-취약점-분석-사례"><span>NAS 취약점 분석 사례 2 취약점 분석 사례</span></a></h2>
 <ul>
 <li><strong>UART 연결 시 shell</strong>: UART 연결 시 root 권한의 부트로더 쉘 획득 가능</li>
@@ -158,6 +181,8 @@
 <li><strong>펌웨어 획득</strong>: 제조사 홈페이지 제공</li>
 <li><strong>디버깅용 백도어</strong>: 별도 인가 과정 없이 접근 가능한 바이너리에 존재. 특정 인자값 전달 시 사용 가능</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="nas-펌웨어-분석-결과-취약점-분석-사례" tabindex="-1"><a class="header-anchor" href="#nas-펌웨어-분석-결과-취약점-분석-사례"><span>NAS 펌웨어 분석 결과 취약점 분석 사례</span></a></h2>
 <ul>
 <li><strong>일반 사용자 디버깅용 백도어 접근 및 활용</strong>
@@ -174,12 +199,16 @@
 </ol>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="스마트-스피커-분석-취약점-분석-사례" tabindex="-1"><a class="header-anchor" href="#스마트-스피커-분석-취약점-분석-사례"><span>스마트 스피커 분석 취약점 분석 사례</span></a></h2>
 <ul>
 <li>스피커 제조사의 메인 서버에서 명령 및 데이터 처리</li>
 <li>스피커는 사용자 음성 명령 입력 및 서버 명령 출력 역할</li>
 <li>제한된 공격 경로</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="스마트-스피커-분석-스마트-스피커-분석" tabindex="-1"><a class="header-anchor" href="#스마트-스피커-분석-스마트-스피커-분석"><span>스마트 스피커 분석 스마트 스피커 분석</span></a></h2>
 <ul>
 <li><strong>스마트 스피커의 물리적 구조 확인 (NUGU 스피커)</strong>
@@ -205,6 +234,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="uart-포트-접속-및-분석-스마트-스피커-분석" tabindex="-1"><a class="header-anchor" href="#uart-포트-접속-및-분석-스마트-스피커-분석"><span>UART 포트 접속 및 분석 스마트 스피커 분석</span></a></h2>
 <ul>
 <li><strong>방법 1: 케이블 전원 공급 후 아두이노 이용 연결</strong>
@@ -234,6 +265,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="uboot-shell-스마트-스피커-분석" tabindex="-1"><a class="header-anchor" href="#uboot-shell-스마트-스피커-분석"><span>Uboot Shell 스마트 스피커 분석</span></a></h2>
 <ul>
 <li>Uboot는 디바이스 부팅 과정 중 하나</li>
@@ -241,10 +274,14 @@
 <li>메모리 직접 수정/읽기 가능</li>
 <li>임의 주소 메모리 덤프 (펌웨어 덤프) 가능</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="펌웨어-업데이트-패킷-분석-스마트-스피커-분석" tabindex="-1"><a class="header-anchor" href="#펌웨어-업데이트-패킷-분석-스마트-스피커-분석"><span>펌웨어 업데이트 패킷 분석 스마트 스피커 분석</span></a></h2>
 <ul>
 <li>NUGU 스피커 펌웨어 업데이트 패킷은 암호화되어 있음</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="펌웨어-분석-요약" tabindex="-1"><a class="header-anchor" href="#펌웨어-분석-요약"><span>펌웨어 분석 요약</span></a></h2>
 <ul>
 <li><strong>펌웨어 획득</strong>: 제조사 다운로드, 패킷 스니핑, 디버깅 포트 덤프 등</li>
@@ -252,6 +289,8 @@
 <li><strong>정적/동적 분석</strong>: 바이너리 파일 분석과 유사 (디버깅 코드, 하드코딩된 패스워드, 취약 함수 사용 여부 등)</li>
 <li><strong>검증 벡터 선정</strong>: 사용자 인터페이스, 네트워크 처리, 외부 입력 데이터 처리, 펌웨어 무결성 처리 부분 분석</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="firmware-analysis" tabindex="-1"><a class="header-anchor" href="#firmware-analysis"><span>Firmware Analysis</span></a></h2>
 <ul>
 <li><strong><code v-pre>strings</code> command options</strong>
@@ -262,6 +301,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="binwalk" tabindex="-1"><a class="header-anchor" href="#binwalk"><span>binwalk</span></a></h2>
 <ul>
 <li><strong>설치 방법 (linux)</strong>: <code v-pre>sudo apt install binwalk</code></li>
@@ -288,6 +329,8 @@
 </li>
 <li><strong><code v-pre>sasquatch</code> 설치</strong>: <code v-pre>git clone https://github.com/devttys0/sasquatch</code> (설치 후 <code v-pre>binwalk</code> 실행)</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="firmware-modification-kit-fmk" tabindex="-1"><a class="header-anchor" href="#firmware-modification-kit-fmk"><span>firmware modification kit (FMK)</span></a></h2>
 <ul>
 <li><strong>사이트</strong>
@@ -304,6 +347,7 @@
 </li>
 <li><strong>펌웨어 추출</strong>: <code v-pre>./extract-firmware.sh ****.bin</code></li>
 </ul>
+</section>
 </div></template>
 
 

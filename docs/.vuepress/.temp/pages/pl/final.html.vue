@@ -1,12 +1,19 @@
-<template><div><h1 id="final-exam" tabindex="-1"><a class="header-anchor" href="#final-exam"><span>Final Exam</span></a></h1>
+<template><div><section class="print-section">
+<h1 id="final-exam" tabindex="-1"><a class="header-anchor" href="#final-exam"><span>Final Exam</span></a></h1>
 <DateMeta />
+</section>
+<section class="print-section">
 <h2 id="_1-parameter-passing-methods" tabindex="-1"><a class="header-anchor" href="#_1-parameter-passing-methods"><span>1. Parameter Passing Methods</span></a></h2>
+</section>
+<section class="print-section">
 <h3 id="semantics-models" tabindex="-1"><a class="header-anchor" href="#semantics-models"><span>Semantics Models</span></a></h3>
 <ul>
 <li><strong>in mode</strong>: caller → callee 방향, 함수 내부에서 읽기만 가능</li>
 <li><strong>out mode</strong>: callee → caller 방향, 함수 종료 시 결과 복사</li>
 <li><strong>inout mode</strong>: 양방향</li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="pass-by-value" tabindex="-1"><a class="header-anchor" href="#pass-by-value"><span>Pass-by-value</span></a></h3>
 <p>caller의 값을 복사해서 callee에 전달. callee에서 변경해도 원본에 영향 없음.</p>
 <div class="language-c line-numbers-mode" data-highlighter="prismjs" data-ext="c"><pre v-pre><code class="language-c"><span class="line"><span class="token keyword">void</span> <span class="token function">add</span><span class="token punctuation">(</span><span class="token keyword">int</span> in<span class="token punctuation">)</span> <span class="token punctuation">{</span> in <span class="token operator">=</span> in <span class="token operator">+</span> <span class="token number">10</span><span class="token punctuation">;</span> <span class="token punctuation">}</span></span>
@@ -15,6 +22,8 @@
 <span class="line"></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>장점: 빠름 (scalar 기준)
 단점: 크기가 큰 데이터는 복사 비용 증가</p>
+</section>
+<section class="print-section">
 <h3 id="pass-by-result" tabindex="-1"><a class="header-anchor" href="#pass-by-result"><span>Pass-by-result</span></a></h3>
 <p>함수 종료 시 callee의 지역 변수 값을 caller로 복사 (out mode).
 함수 내에서 초기값을 읽지 않음.</p>
@@ -28,8 +37,12 @@
 <span class="line"><span class="token comment">// call-time 평가: list[3] = 17, sub = 5</span></span>
 <span class="line"><span class="token comment">// return-time 평가: sub가 먼저 5가 되어 list[5] = 17</span></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="pass-by-value-result" tabindex="-1"><a class="header-anchor" href="#pass-by-value-result"><span>Pass-by-value-result</span></a></h3>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h3 id="pass-by-value-result" tabindex="-1"><a class="header-anchor" href="#pass-by-value-result"><span>Pass-by-value-result</span></a></h3>
 <p>진입 시 값 복사 + 종료 시 다시 복사 (inout mode). copy-in/copy-out이라고도 함.</p>
+</section>
+<section class="print-section">
 <h3 id="pass-by-reference" tabindex="-1"><a class="header-anchor" href="#pass-by-reference"><span>Pass-by-reference</span></a></h3>
 <p>주소를 전달. callee에서 변경하면 원본도 바뀜.</p>
 <div class="language-c line-numbers-mode" data-highlighter="prismjs" data-ext="c"><pre v-pre><code class="language-c"><span class="line"><span class="token keyword">void</span> <span class="token function">add</span><span class="token punctuation">(</span><span class="token keyword">int</span> <span class="token operator">&amp;</span>in<span class="token punctuation">)</span> <span class="token punctuation">{</span> in <span class="token operator">=</span> in <span class="token operator">+</span> <span class="token number">10</span><span class="token punctuation">;</span> <span class="token punctuation">}</span></span>
@@ -39,8 +52,12 @@
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>단점: 의도치 않은 변경, alias 생성 위험</p>
 <div class="language-c line-numbers-mode" data-highlighter="prismjs" data-ext="c"><pre v-pre><code class="language-c"><span class="line"><span class="token function">fun</span><span class="token punctuation">(</span>total<span class="token punctuation">,</span> total<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// first와 second가 같은 변수 — alias</span></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h3 id="pass-by-name" tabindex="-1"><a class="header-anchor" href="#pass-by-name"><span>Pass-by-name</span></a></h3>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h3 id="pass-by-name" tabindex="-1"><a class="header-anchor" href="#pass-by-name"><span>Pass-by-name</span></a></h3>
 <p>실제 매개변수의 표현식을 그대로 넘겨 매 접근 시 재평가. Algol 60에서 사용, 현재는 거의 쓰이지 않음.</p>
+</section>
+<section class="print-section">
 <h3 id="pass-by-assignment-python-ruby" tabindex="-1"><a class="header-anchor" href="#pass-by-assignment-python-ruby"><span>Pass-by-assignment (Python, Ruby)</span></a></h3>
 <p>모든 데이터가 object.</p>
 <ul>
@@ -53,7 +70,9 @@
 <span class="line"><span class="token keyword">def</span> <span class="token function">func</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">:</span></span>
 <span class="line">    x<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span>  <span class="token comment"># list: 원본 변경됨</span></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="언어별-요약" tabindex="-1"><a class="header-anchor" href="#언어별-요약"><span>언어별 요약</span></a></h3>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h3 id="언어별-요약" tabindex="-1"><a class="header-anchor" href="#언어별-요약"><span>언어별 요약</span></a></h3>
 <table>
 <thead>
 <tr>
@@ -90,6 +109,8 @@
 </tr>
 </tbody>
 </table>
+</section>
+<section class="print-section">
 <h3 id="swap-예시-분석" tabindex="-1"><a class="header-anchor" href="#swap-예시-분석"><span>swap 예시 분석</span></a></h3>
 <div class="language-c line-numbers-mode" data-highlighter="prismjs" data-ext="c"><pre v-pre><code class="language-c"><span class="line"><span class="token keyword">void</span> <span class="token function">swap</span><span class="token punctuation">(</span><span class="token keyword">int</span> a<span class="token punctuation">,</span> <span class="token keyword">int</span> b<span class="token punctuation">)</span> <span class="token punctuation">{</span></span>
 <span class="line">    <span class="token keyword">int</span> temp<span class="token punctuation">;</span> temp <span class="token operator">=</span> a<span class="token punctuation">;</span> a <span class="token operator">=</span> b<span class="token punctuation">;</span> b <span class="token operator">=</span> temp<span class="token punctuation">;</span></span>
@@ -103,7 +124,11 @@
 <li>pass-by-value-result (call-time 주소 평가): value=5, list={1,3,2,7,9}</li>
 <li>pass-by-value-result (return-time 주소 평가): value=5 후 list[5]에 쓰려 함 → 범위 오류 가능</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="_2-implementing-subprogram-ari-static-chain" tabindex="-1"><a class="header-anchor" href="#_2-implementing-subprogram-ari-static-chain"><span>2. Implementing Subprogram (ARI, Static Chain)</span></a></h2>
+</section>
+<section class="print-section">
 <h3 id="activation-record-ar" tabindex="-1"><a class="header-anchor" href="#activation-record-ar"><span>Activation Record (AR)</span></a></h3>
 <p>subprogram 호출 시 runtime stack에 쌓이는 프레임 구조.</p>
 <table>
@@ -142,6 +167,8 @@
 <li>호출 시 현재 EP를 new ARI에 dynamic link로 저장 후, EP를 새 ARI base로 변경</li>
 <li>종료 시 EP를 dynamic link로 복원</li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="prologue-epilogue" tabindex="-1"><a class="header-anchor" href="#prologue-epilogue"><span>Prologue / Epilogue</span></a></h3>
 <ul>
 <li>
@@ -162,6 +189,8 @@
 </ol>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="local-offset-chain-offset" tabindex="-1"><a class="header-anchor" href="#local-offset-chain-offset"><span>Local Offset / Chain Offset</span></a></h3>
 <p>변수 접근 표기: <code v-pre>(chain_offset, local_offset)</code></p>
 <ul>
@@ -169,7 +198,7 @@
 <li><strong>chain_offset</strong>: 몇 번 static link를 따라가야 하는지</li>
 </ul>
 <p>static link는 ARI에 추가된 포인터로, 자신을 감싸는 lexical parent의 ARI를 가리킴.</p>
-<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code class="language-text"><span class="line">Bigsub:   A(offset=3), B(offset=4), C(offset=5)    [depth=0]</span>
+<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code class="language-text"><span class="line">Bigsub:   A(offset=3), B(offset=4), C(offset=5)   [depth=0]</span>
 <span class="line">  Sub1:   A(offset=3)                              [depth=1]</span>
 <span class="line">  Sub2:   B(offset=4)                              [depth=1]</span>
 <span class="line">    Sub3: E(offset=4)                              [depth=2]</span>
@@ -185,11 +214,15 @@
 <li>Bigsub의 A: (1, 3)</li>
 <li>D는 없음 → static semantic error</li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="simple-vs-stack-dynamic" tabindex="-1"><a class="header-anchor" href="#simple-vs-stack-dynamic"><span>Simple vs Stack-Dynamic</span></a></h3>
 <ul>
 <li><strong>Simple subprogram</strong>: 재귀 없음, 지역 변수가 모두 static → ARI 고정 크기, 컴파일 타임에 static 할당</li>
 <li><strong>Stack-dynamic</strong>: 재귀 지원, 호출마다 새 ARI 동적 생성</li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="dynamic-scoping" tabindex="-1"><a class="header-anchor" href="#dynamic-scoping"><span>Dynamic Scoping</span></a></h3>
 <ul>
 <li>
@@ -207,7 +240,11 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="_3-concurrency" tabindex="-1"><a class="header-anchor" href="#_3-concurrency"><span>3. Concurrency</span></a></h2>
+</section>
+<section class="print-section">
 <h3 id="핵심-용어" tabindex="-1"><a class="header-anchor" href="#핵심-용어"><span>핵심 용어</span></a></h3>
 <ul>
 <li><strong>Task/Process/Thread</strong>: 다른 프로그램 단위와 동시에 실행될 수 있는 단위</li>
@@ -218,13 +255,19 @@
 <li><strong>Liveness</strong>: task가 언젠가 실행을 완료한다는 보장</li>
 <li><strong>Mutual exclusion</strong>: 공유 자원에 한 번에 하나의 task만 접근</li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="synchronization-종류" tabindex="-1"><a class="header-anchor" href="#synchronization-종류"><span>Synchronization 종류</span></a></h3>
 <ul>
 <li><strong>Cooperation synchronization</strong>: task A가 계속 실행되려면 task B의 특정 작업 완료를 기다려야 함 (예: producer-consumer)</li>
 <li><strong>Competition synchronization</strong>: 동시에 사용할 수 없는 공유 자원에 대한 배타적 접근 보장</li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="task-상태" tabindex="-1"><a class="header-anchor" href="#task-상태"><span>Task 상태</span></a></h3>
 <p>New → Ready → Running → Blocked → Dead</p>
+</section>
+<section class="print-section">
 <h3 id="semaphore" tabindex="-1"><a class="header-anchor" href="#semaphore"><span>Semaphore</span></a></h3>
 <p>Dijkstra(1965). counter(정수) + 대기 queue로 구성.</p>
 <div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code class="language-text"><span class="line">wait(s):</span>
@@ -288,6 +331,8 @@
 <li><code v-pre>wait(fullspots)</code> 누락 → buffer underflow (빈 버퍼에서 FETCH)</li>
 <li><code v-pre>release(fullspots)</code> 누락 → consumer가 영원히 대기</li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="monitor" tabindex="-1"><a class="header-anchor" href="#monitor"><span>Monitor</span></a></h3>
 <p>공유 데이터를 encapsulate, 한 번에 하나의 task만 접근하도록 런타임이 보장.</p>
 <ul>
@@ -304,6 +349,8 @@
 <li>Monitor가 더 안전: 공유 데이터가 monitor 내부에만 있고, competition sync가 자동</li>
 <li>Semaphore는 직접 관리하므로 실수 가능성 높음</li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="message-passing-ada" tabindex="-1"><a class="header-anchor" href="#message-passing-ada"><span>Message Passing (Ada)</span></a></h3>
 <p>Ada의 rendezvous 모델: sender와 receiver 모두 준비되면 동기적으로 통신.</p>
 <div class="language-ada line-numbers-mode" data-highlighter="prismjs" data-ext="ada"><pre v-pre><code class="language-ada"><span class="line"><span class="token keyword">task</span> <span class="token keyword">body</span> <span class="token variable">Buf_Task</span> <span class="token keyword">is</span></span>
@@ -330,6 +377,8 @@
 <li><code v-pre>select</code>: 여러 accept 중 하나를 선택 (비결정적)</li>
 <li><code v-pre>when 조건 =&gt;</code>: guarded accept — 조건이 참일 때만 open</li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="java-threads" tabindex="-1"><a class="header-anchor" href="#java-threads"><span>Java Threads</span></a></h3>
 <div class="language-java line-numbers-mode" data-highlighter="prismjs" data-ext="java"><pre v-pre><code class="language-java"><span class="line"><span class="token keyword">class</span> <span class="token class-name">MyThread</span> <span class="token keyword">extends</span> <span class="token class-name">Thread</span> <span class="token punctuation">{</span></span>
 <span class="line">    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> <span class="token punctuation">}</span></span>
@@ -351,7 +400,9 @@
 <span class="line">emptyspots<span class="token punctuation">.</span><span class="token function">acquire</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// wait</span></span>
 <span class="line">fullspots<span class="token punctuation">.</span><span class="token function">release</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// release</span></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="c-threads" tabindex="-1"><a class="header-anchor" href="#c-threads"><span>C# Threads</span></a></h3>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h3 id="c-threads" tabindex="-1"><a class="header-anchor" href="#c-threads"><span>C# Threads</span></a></h3>
 <div class="language-csharp line-numbers-mode" data-highlighter="prismjs" data-ext="cs"><pre v-pre><code class="language-csharp"><span class="line"><span class="token class-name">Thread</span> t <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name">Thread</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token constructor-invocation class-name">ThreadStart</span><span class="token punctuation">(</span>MyMethod<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
 <span class="line">t<span class="token punctuation">.</span><span class="token function">Start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
 <span class="line"></span></code></pre>
@@ -361,6 +412,8 @@
 <li><code v-pre>lock(obj) { ... }</code>: critical section</li>
 <li><code v-pre>Monitor</code> 클래스</li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="ada-95-protected-objects" tabindex="-1"><a class="header-anchor" href="#ada-95-protected-objects"><span>Ada 95 Protected Objects</span></a></h3>
 <p>rendezvous보다 가벼운 공유 데이터 보호 메커니즘.</p>
 <div class="language-ada line-numbers-mode" data-highlighter="prismjs" data-ext="ada"><pre v-pre><code class="language-ada"><span class="line"><span class="token keyword">protected</span> <span class="token variable">Buffer</span> <span class="token keyword">is</span></span>
@@ -370,7 +423,11 @@
 <span class="line">  <span class="token punctuation">..</span><span class="token punctuation">.</span></span>
 <span class="line"><span class="token keyword">end</span> <span class="token variable">Buffer</span><span class="token punctuation">;</span></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="_4-scheme" tabindex="-1"><a class="header-anchor" href="#_4-scheme"><span>4. Scheme</span></a></h2>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h2 id="_4-scheme" tabindex="-1"><a class="header-anchor" href="#_4-scheme"><span>4. Scheme</span></a></h2>
+</section>
+<section class="print-section">
 <h3 id="기본-특징" tabindex="-1"><a class="header-anchor" href="#기본-특징"><span>기본 특징</span></a></h3>
 <ul>
 <li>prefix 표기법: <code v-pre>(operator operand1 operand2 ...)</code></li>
@@ -378,6 +435,8 @@
 <li>static scope, first-class function</li>
 <li>REPL: Read → Eval → Print → Loop</li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="핵심-함수" tabindex="-1"><a class="header-anchor" href="#핵심-함수"><span>핵심 함수</span></a></h3>
 <table>
 <thead>
@@ -431,13 +490,17 @@
 <span class="line"><span class="token punctuation">(</span><span class="token function">CAAR</span> x<span class="token punctuation">)</span>   <span class="token comment">; (CAR (CAR x))</span></span>
 <span class="line"><span class="token punctuation">(</span><span class="token function">CDAR</span> x<span class="token punctuation">)</span>   <span class="token comment">; (CDR (CAR x))</span></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="define" tabindex="-1"><a class="header-anchor" href="#define"><span>DEFINE</span></a></h3>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h3 id="define" tabindex="-1"><a class="header-anchor" href="#define"><span>DEFINE</span></a></h3>
 <div class="language-scheme line-numbers-mode" data-highlighter="prismjs" data-ext="scheme"><pre v-pre><code class="language-scheme"><span class="line"><span class="token punctuation">(</span><span class="token function">DEFINE</span> pi <span class="token number">3.14159</span><span class="token punctuation">)</span></span>
 <span class="line"><span class="token punctuation">(</span><span class="token function">DEFINE</span> <span class="token punctuation">(</span><span class="token builtin">square</span> x<span class="token punctuation">)</span> <span class="token punctuation">(</span><span class="token operator">*</span> x x<span class="token punctuation">)</span><span class="token punctuation">)</span></span>
 <span class="line"><span class="token comment">; 아래와 동일</span></span>
 <span class="line"><span class="token punctuation">(</span><span class="token function">DEFINE</span> square <span class="token punctuation">(</span><span class="token function">LAMBDA</span> <span class="token punctuation">(</span><span class="token function">x</span><span class="token punctuation">)</span> <span class="token punctuation">(</span><span class="token operator">*</span> x x<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span></span>
 <span class="line"></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>DEFINE으로 바인딩된 이름은 Java의 <code v-pre>final</code>처럼 재바인딩 불가.</p>
+</section>
+<section class="print-section">
 <h3 id="조건문" tabindex="-1"><a class="header-anchor" href="#조건문"><span>조건문</span></a></h3>
 <div class="language-scheme line-numbers-mode" data-highlighter="prismjs" data-ext="scheme"><pre v-pre><code class="language-scheme"><span class="line"><span class="token punctuation">(</span><span class="token function">IF</span> predicate then_expr else_expr<span class="token punctuation">)</span></span>
 <span class="line"></span>
@@ -464,7 +527,9 @@
 <span class="line"></span>
 <span class="line"><span class="token punctuation">(</span><span class="token function">leap?</span> <span class="token number">2024</span><span class="token punctuation">)</span> <span class="token comment">; → #T</span></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="기본-재귀-패턴" tabindex="-1"><a class="header-anchor" href="#기본-재귀-패턴"><span>기본 재귀 패턴</span></a></h3>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h3 id="기본-재귀-패턴" tabindex="-1"><a class="header-anchor" href="#기본-재귀-패턴"><span>기본 재귀 패턴</span></a></h3>
 <div class="language-scheme line-numbers-mode" data-highlighter="prismjs" data-ext="scheme"><pre v-pre><code class="language-scheme"><span class="line"><span class="token comment">; 리스트 길이</span></span>
 <span class="line"><span class="token punctuation">(</span><span class="token function">DEFINE</span> <span class="token punctuation">(</span><span class="token builtin">length</span> lst<span class="token punctuation">)</span></span>
 <span class="line">  <span class="token punctuation">(</span><span class="token function">COND</span></span>
@@ -489,7 +554,9 @@
 <span class="line">    <span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token function">NULL?</span> lst<span class="token punctuation">)</span> <span class="token punctuation">'</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span></span>
 <span class="line">    <span class="token punctuation">(</span><span class="token function">ELSE</span> <span class="token punctuation">(</span><span class="token builtin">append</span> <span class="token punctuation">(</span><span class="token function">my-reverse</span> <span class="token punctuation">(</span><span class="token function">CDR</span> lst<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">(</span><span class="token function">LIST</span> <span class="token punctuation">(</span><span class="token function">CAR</span> lst<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="리스트-탐색" tabindex="-1"><a class="header-anchor" href="#리스트-탐색"><span>리스트 탐색</span></a></h3>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h3 id="리스트-탐색" tabindex="-1"><a class="header-anchor" href="#리스트-탐색"><span>리스트 탐색</span></a></h3>
 <div class="language-scheme line-numbers-mode" data-highlighter="prismjs" data-ext="scheme"><pre v-pre><code class="language-scheme"><span class="line"><span class="token comment">; 리스트에 원소가 있는지 확인</span></span>
 <span class="line"><span class="token punctuation">(</span><span class="token function">DEFINE</span> <span class="token punctuation">(</span><span class="token builtin">member</span> atm lst<span class="token punctuation">)</span></span>
 <span class="line">  <span class="token punctuation">(</span><span class="token function">COND</span></span>
@@ -500,7 +567,9 @@
 <span class="line"><span class="token punctuation">(</span><span class="token builtin">member</span> <span class="token symbol">'B</span> <span class="token punctuation">'</span><span class="token punctuation">(</span>A B C<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">; → #T</span></span>
 <span class="line"><span class="token punctuation">(</span><span class="token builtin">member</span> <span class="token symbol">'B</span> <span class="token punctuation">'</span><span class="token punctuation">(</span>A C D<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">; → #F</span></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="리스트-비교" tabindex="-1"><a class="header-anchor" href="#리스트-비교"><span>리스트 비교</span></a></h3>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h3 id="리스트-비교" tabindex="-1"><a class="header-anchor" href="#리스트-비교"><span>리스트 비교</span></a></h3>
 <div class="language-scheme line-numbers-mode" data-highlighter="prismjs" data-ext="scheme"><pre v-pre><code class="language-scheme"><span class="line"><span class="token comment">; 단순 리스트(atom만 포함) 비교</span></span>
 <span class="line"><span class="token punctuation">(</span><span class="token function">DEFINE</span> <span class="token punctuation">(</span><span class="token function">equalsimp</span> list1 list2<span class="token punctuation">)</span></span>
 <span class="line">  <span class="token punctuation">(</span><span class="token function">COND</span></span>
@@ -521,7 +590,9 @@
 <span class="line">     <span class="token punctuation">(</span><span class="token function">equal</span> <span class="token punctuation">(</span><span class="token function">CDR</span> list1<span class="token punctuation">)</span> <span class="token punctuation">(</span><span class="token function">CDR</span> list2<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span></span>
 <span class="line">    <span class="token punctuation">(</span><span class="token function">ELSE</span> #F<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="집합-연산" tabindex="-1"><a class="header-anchor" href="#집합-연산"><span>집합 연산</span></a></h3>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h3 id="집합-연산" tabindex="-1"><a class="header-anchor" href="#집합-연산"><span>집합 연산</span></a></h3>
 <div class="language-scheme line-numbers-mode" data-highlighter="prismjs" data-ext="scheme"><pre v-pre><code class="language-scheme"><span class="line"><span class="token comment">; 교집합 (두 리스트의 공통 원소)</span></span>
 <span class="line"><span class="token punctuation">(</span><span class="token function">DEFINE</span> <span class="token punctuation">(</span><span class="token function">guess</span> list1 list2<span class="token punctuation">)</span></span>
 <span class="line">  <span class="token punctuation">(</span><span class="token function">COND</span></span>
@@ -532,7 +603,9 @@
 <span class="line"></span>
 <span class="line"><span class="token punctuation">(</span><span class="token function">guess</span> <span class="token punctuation">'</span><span class="token punctuation">(</span>A B C D<span class="token punctuation">)</span> <span class="token punctuation">'</span><span class="token punctuation">(</span>B D F<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">; → (B D)</span></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="정렬" tabindex="-1"><a class="header-anchor" href="#정렬"><span>정렬</span></a></h3>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h3 id="정렬" tabindex="-1"><a class="header-anchor" href="#정렬"><span>정렬</span></a></h3>
 <div class="language-scheme line-numbers-mode" data-highlighter="prismjs" data-ext="scheme"><pre v-pre><code class="language-scheme"><span class="line"><span class="token comment">; 삽입 정렬 -- insert: 정렬된 리스트에 원소 삽입</span></span>
 <span class="line"><span class="token punctuation">(</span><span class="token function">DEFINE</span> <span class="token punctuation">(</span><span class="token function">insert</span> atm lst<span class="token punctuation">)</span></span>
 <span class="line">  <span class="token punctuation">(</span><span class="token function">COND</span></span>
@@ -548,7 +621,9 @@
 <span class="line"></span>
 <span class="line"><span class="token punctuation">(</span><span class="token function">sort</span> <span class="token punctuation">'</span><span class="token punctuation">(</span><span class="token number">3</span> <span class="token number">7</span> <span class="token number">5</span> <span class="token number">1</span> <span class="token number">9</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">; → (1 3 5 7 9)</span></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="이진-트리" tabindex="-1"><a class="header-anchor" href="#이진-트리"><span>이진 트리</span></a></h3>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h3 id="이진-트리" tabindex="-1"><a class="header-anchor" href="#이진-트리"><span>이진 트리</span></a></h3>
 <p>트리를 <code v-pre>(값 왼쪽 오른쪽)</code> 형태의 리스트로 표현.</p>
 <ul>
 <li><code v-pre>(CAR t)</code>: 루트 값</li>
@@ -579,6 +654,8 @@
 <span class="line">           <span class="token punctuation">(</span><span class="token function">tree-max</span> <span class="token punctuation">(</span><span class="token function">CADDR</span> t<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span></span>
 <span class="line"></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>트리 예시: <code v-pre>'(5 (3 (1 () ()) (4 () ())) (8 (7 () ()) ()))</code></p>
+</section>
+<section class="print-section">
 <h3 id="let" tabindex="-1"><a class="header-anchor" href="#let"><span>LET</span></a></h3>
 <div class="language-scheme line-numbers-mode" data-highlighter="prismjs" data-ext="scheme"><pre v-pre><code class="language-scheme"><span class="line"><span class="token punctuation">(</span><span class="token function">LET</span> <span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token function">alpha</span> <span class="token number">7</span><span class="token punctuation">)</span> <span class="token punctuation">(</span><span class="token function">beta</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">)</span></span>
 <span class="line">  <span class="token punctuation">(</span><span class="token operator">*</span> alpha beta<span class="token punctuation">)</span><span class="token punctuation">)</span></span>
@@ -592,7 +669,9 @@
 <span class="line">    <span class="token punctuation">(</span><span class="token function">LIST</span> <span class="token punctuation">(</span><span class="token operator">+</span> minus_b root_part<span class="token punctuation">)</span></span>
 <span class="line">          <span class="token punctuation">(</span><span class="token operator">-</span> minus_b root_part<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="map-fold-filter" tabindex="-1"><a class="header-anchor" href="#map-fold-filter"><span>map / fold / filter</span></a></h3>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h3 id="map-fold-filter" tabindex="-1"><a class="header-anchor" href="#map-fold-filter"><span>map / fold / filter</span></a></h3>
 <div class="language-scheme line-numbers-mode" data-highlighter="prismjs" data-ext="scheme"><pre v-pre><code class="language-scheme"><span class="line"><span class="token comment">; map: 리스트 각 원소에 함수 적용</span></span>
 <span class="line"><span class="token punctuation">(</span><span class="token function">DEFINE</span> <span class="token punctuation">(</span><span class="token builtin">map</span> fun lst<span class="token punctuation">)</span></span>
 <span class="line">  <span class="token punctuation">(</span><span class="token function">COND</span></span>
@@ -621,7 +700,9 @@
 <span class="line"><span class="token punctuation">(</span><span class="token function">FILTER</span> EVEN? <span class="token punctuation">'</span><span class="token punctuation">(</span><span class="token number">1</span> <span class="token number">2</span> <span class="token number">3</span> <span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">; → (2 4)</span></span>
 <span class="line"><span class="token punctuation">(</span><span class="token function">FILTER</span> ODD?  <span class="token punctuation">'</span><span class="token punctuation">(</span><span class="token number">1</span> <span class="token number">2</span> <span class="token number">3</span> <span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">; → (1 3)</span></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="함수-합성" tabindex="-1"><a class="header-anchor" href="#함수-합성"><span>함수 합성</span></a></h3>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h3 id="함수-합성" tabindex="-1"><a class="header-anchor" href="#함수-합성"><span>함수 합성</span></a></h3>
 <div class="language-scheme line-numbers-mode" data-highlighter="prismjs" data-ext="scheme"><pre v-pre><code class="language-scheme"><span class="line"><span class="token punctuation">(</span><span class="token function">DEFINE</span> <span class="token punctuation">(</span><span class="token function">compose</span> f g<span class="token punctuation">)</span></span>
 <span class="line">  <span class="token punctuation">(</span><span class="token function">LAMBDA</span> <span class="token punctuation">(</span><span class="token function">x</span><span class="token punctuation">)</span> <span class="token punctuation">(</span><span class="token function">f</span> <span class="token punctuation">(</span><span class="token function">g</span> x<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span></span>
 <span class="line"></span>
@@ -633,7 +714,9 @@
 <span class="line">  <span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token function">compose</span> CAR <span class="token punctuation">(</span><span class="token function">compose</span> CDR CDR<span class="token punctuation">)</span><span class="token punctuation">)</span> lst<span class="token punctuation">)</span><span class="token punctuation">)</span></span>
 <span class="line"><span class="token punctuation">(</span><span class="token function">third</span> <span class="token punctuation">'</span><span class="token punctuation">(</span><span class="token number">1</span> <span class="token number">2</span> <span class="token number">3</span> <span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">; → 3</span></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="tail-recursion" tabindex="-1"><a class="header-anchor" href="#tail-recursion"><span>Tail Recursion</span></a></h3>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h3 id="tail-recursion" tabindex="-1"><a class="header-anchor" href="#tail-recursion"><span>Tail Recursion</span></a></h3>
 <p>마지막 연산이 재귀 호출 → 컴파일러가 반복문으로 변환 가능.
 Scheme은 tail call optimization을 언어 명세에서 요구함.</p>
 <div class="language-scheme line-numbers-mode" data-highlighter="prismjs" data-ext="scheme"><pre v-pre><code class="language-scheme"><span class="line"><span class="token comment">; 일반 재귀 (tail recursive 아님: * n이 재귀 이후에 실행됨)</span></span>
@@ -655,7 +738,9 @@ Scheme은 tail call optimization을 언어 명세에서 요구함.</p>
 <span class="line">    <span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token function">EQ?</span> atm <span class="token punctuation">(</span><span class="token function">CAR</span> lst<span class="token punctuation">)</span><span class="token punctuation">)</span> #T<span class="token punctuation">)</span></span>
 <span class="line">    <span class="token punctuation">(</span><span class="token function">ELSE</span> <span class="token punctuation">(</span><span class="token builtin">member</span> atm <span class="token punctuation">(</span><span class="token function">CDR</span> lst<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="중첩-리스트-합산" tabindex="-1"><a class="header-anchor" href="#중첩-리스트-합산"><span>중첩 리스트 합산</span></a></h3>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h3 id="중첩-리스트-합산" tabindex="-1"><a class="header-anchor" href="#중첩-리스트-합산"><span>중첩 리스트 합산</span></a></h3>
 <div class="language-scheme line-numbers-mode" data-highlighter="prismjs" data-ext="scheme"><pre v-pre><code class="language-scheme"><span class="line"><span class="token comment">; 중첩 리스트도 처리하는 adder</span></span>
 <span class="line"><span class="token punctuation">(</span><span class="token function">DEFINE</span> <span class="token punctuation">(</span><span class="token function">adder</span> lst<span class="token punctuation">)</span></span>
 <span class="line">  <span class="token punctuation">(</span><span class="token function">COND</span></span>
@@ -666,13 +751,19 @@ Scheme은 tail call optimization을 언어 명세에서 요구함.</p>
 <span class="line"></span>
 <span class="line"><span class="token punctuation">(</span><span class="token function">adder</span> <span class="token punctuation">'</span><span class="token punctuation">(</span><span class="token number">1</span> <span class="token punctuation">(</span><span class="token number">2</span> <span class="token number">3</span><span class="token punctuation">)</span> <span class="token punctuation">(</span><span class="token number">4</span> <span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">; → 15</span></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="quote" tabindex="-1"><a class="header-anchor" href="#quote"><span>QUOTE</span></a></h3>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h3 id="quote" tabindex="-1"><a class="header-anchor" href="#quote"><span>QUOTE</span></a></h3>
 <div class="language-scheme line-numbers-mode" data-highlighter="prismjs" data-ext="scheme"><pre v-pre><code class="language-scheme"><span class="line"><span class="token punctuation">(</span><span class="token function">QUOTE</span> <span class="token punctuation">(</span><span class="token function">A</span> B C<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">; → (A B C)</span></span>
 <span class="line"><span class="token punctuation">'</span><span class="token punctuation">(</span>A B C<span class="token punctuation">)</span>        <span class="token comment">; 위와 동일 (축약형)</span></span>
 <span class="line"><span class="token punctuation">(</span><span class="token operator">+</span> <span class="token number">1</span> <span class="token number">2</span><span class="token punctuation">)</span>         <span class="token comment">; → 3 (평가됨)</span></span>
 <span class="line"><span class="token punctuation">'</span><span class="token punctuation">(</span>+ <span class="token number">1</span> <span class="token number">2</span><span class="token punctuation">)</span>        <span class="token comment">; → (+ 1 2) (평가 안 됨)</span></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="_5-ml" tabindex="-1"><a class="header-anchor" href="#_5-ml"><span>5. ML</span></a></h2>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h2 id="_5-ml" tabindex="-1"><a class="header-anchor" href="#_5-ml"><span>5. ML</span></a></h2>
+</section>
+<section class="print-section">
 <h3 id="기본-특징-1" tabindex="-1"><a class="header-anchor" href="#기본-특징-1"><span>기본 특징</span></a></h3>
 <ul>
 <li>정적 스코프, 강한 타입, 타입 추론 (type inferencing)</li>
@@ -680,6 +771,8 @@ Scheme은 tail call optimization을 언어 명세에서 요구함.</p>
 <li>immutable 변수</li>
 <li>사용자 정의 함수 오버로딩 불가 → 다른 이름 사용</li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="함수-정의" tabindex="-1"><a class="header-anchor" href="#함수-정의"><span>함수 정의</span></a></h3>
 <div class="language-sml line-numbers-mode" data-highlighter="prismjs" data-ext="sml"><pre v-pre><code class="language-sml"><span class="line"><span class="token keyword">fun</span> <span class="token function">cube</span><span class="token punctuation">(</span>x <span class="token punctuation">:</span> <span class="token class-name">int</span><span class="token punctuation">)</span> <span class="token operator">=</span> x <span class="token operator">*</span> x <span class="token operator">*</span> x<span class="token punctuation">;</span></span>
 <span class="line"><span class="token keyword">fun</span> <span class="token function">fact</span><span class="token punctuation">(</span>n <span class="token punctuation">:</span> <span class="token class-name">int</span><span class="token punctuation">)</span> <span class="token punctuation">:</span> <span class="token class-name">int</span> <span class="token operator">=</span></span>
@@ -687,6 +780,8 @@ Scheme은 tail call optimization을 언어 명세에서 요구함.</p>
 <span class="line">  <span class="token keyword">else</span> n <span class="token operator">*</span> fact<span class="token punctuation">(</span>n <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
 <span class="line"></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>반환값: 마지막 표현식의 값.</p>
+</section>
+<section class="print-section">
 <h3 id="패턴-매칭" tabindex="-1"><a class="header-anchor" href="#패턴-매칭"><span>패턴 매칭</span></a></h3>
 <div class="language-sml line-numbers-mode" data-highlighter="prismjs" data-ext="sml"><pre v-pre><code class="language-sml"><span class="line"><span class="token keyword">fun</span> <span class="token function">fact</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token number">1</span></span>
 <span class="line">  <span class="token operator">|</span> fact<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token number">1</span></span>
@@ -707,7 +802,9 @@ Scheme은 tail call optimization을 언어 명세에서 요구함.</p>
 <span class="line">    <span class="token keyword">if</span> atm <span class="token operator">=</span> h <span class="token keyword">then</span> <span class="token boolean">true</span></span>
 <span class="line">    <span class="token keyword">else</span> member<span class="token punctuation">(</span>atm<span class="token punctuation">,</span> t<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="리스트-연산" tabindex="-1"><a class="header-anchor" href="#리스트-연산"><span>리스트 연산</span></a></h3>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h3 id="리스트-연산" tabindex="-1"><a class="header-anchor" href="#리스트-연산"><span>리스트 연산</span></a></h3>
 <table>
 <thead>
 <tr>
@@ -749,6 +846,8 @@ Scheme은 tail call optimization을 언어 명세에서 요구함.</p>
 </tr>
 </tbody>
 </table>
+</section>
+<section class="print-section">
 <h3 id="타입-추론" tabindex="-1"><a class="header-anchor" href="#타입-추론"><span>타입 추론</span></a></h3>
 <div class="language-sml line-numbers-mode" data-highlighter="prismjs" data-ext="sml"><pre v-pre><code class="language-sml"><span class="line"><span class="token keyword">fun</span> <span class="token function">circumf</span><span class="token punctuation">(</span>r<span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token number">3.14159</span> <span class="token operator">*</span> r <span class="token operator">*</span> r<span class="token punctuation">;</span></span>
 <span class="line"><span class="token comment">(* 3.14159가 real → r: real, 반환값: real *)</span></span>
@@ -760,7 +859,9 @@ Scheme은 tail call optimization을 언어 명세에서 요구함.</p>
 <span class="line"><span class="token keyword">fun</span> <span class="token function">square</span><span class="token punctuation">(</span>x <span class="token punctuation">:</span> <span class="token class-name">real</span><span class="token punctuation">)</span> <span class="token operator">=</span> x <span class="token operator">*</span> x<span class="token punctuation">;</span></span>
 <span class="line"><span class="token comment">(* 명시적으로 real 지정 *)</span></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="val-let" tabindex="-1"><a class="header-anchor" href="#val-let"><span>val / let</span></a></h3>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h3 id="val-let" tabindex="-1"><a class="header-anchor" href="#val-let"><span>val / let</span></a></h3>
 <div class="language-sml line-numbers-mode" data-highlighter="prismjs" data-ext="sml"><pre v-pre><code class="language-sml"><span class="line"><span class="token keyword">val</span> distance <span class="token operator">=</span> time <span class="token operator">*</span> speed<span class="token punctuation">;</span></span>
 <span class="line"></span>
 <span class="line"><span class="token keyword">let</span></span>
@@ -771,6 +872,8 @@ Scheme은 tail call optimization을 언어 명세에서 요구함.</p>
 <span class="line"><span class="token keyword">end</span><span class="token punctuation">;</span></span>
 <span class="line"></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>같은 이름을 두 번 val하면 이전 것이 숨겨짐 (shadowing).</p>
+</section>
+<section class="print-section">
 <h3 id="lambda" tabindex="-1"><a class="header-anchor" href="#lambda"><span>Lambda</span></a></h3>
 <div class="language-sml line-numbers-mode" data-highlighter="prismjs" data-ext="sml"><pre v-pre><code class="language-sml"><span class="line"><span class="token keyword">fn</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span> <span class="token operator">=></span> x <span class="token operator">*</span> x</span>
 <span class="line"></span>
@@ -780,7 +883,9 @@ Scheme은 tail call optimization을 언어 명세에서 요구함.</p>
 <span class="line">map<span class="token punctuation">(</span><span class="token keyword">fn</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span> <span class="token operator">=></span> x <span class="token operator">*</span> x <span class="token operator">*</span> x<span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
 <span class="line"><span class="token comment">(* [1, 27, 125] *)</span></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="map-filter" tabindex="-1"><a class="header-anchor" href="#map-filter"><span>map / filter</span></a></h3>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h3 id="map-filter" tabindex="-1"><a class="header-anchor" href="#map-filter"><span>map / filter</span></a></h3>
 <div class="language-sml line-numbers-mode" data-highlighter="prismjs" data-ext="sml"><pre v-pre><code class="language-sml"><span class="line"><span class="token comment">(* map: 리스트 각 원소에 함수 적용 *)</span></span>
 <span class="line"><span class="token keyword">fun</span> <span class="token function">cube</span> x <span class="token operator">=</span> x <span class="token operator">*</span> x <span class="token operator">*</span> x<span class="token punctuation">;</span></span>
 <span class="line"><span class="token keyword">val</span> cubeList <span class="token operator">=</span> map cube<span class="token punctuation">;</span></span>
@@ -790,7 +895,9 @@ Scheme은 tail call optimization을 언어 명세에서 요구함.</p>
 <span class="line">filter<span class="token punctuation">(</span><span class="token keyword">fn</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span> <span class="token operator">=></span> x mod <span class="token number">2</span> <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
 <span class="line"><span class="token comment">(* [2, 4] *)</span></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="currying-partial-application" tabindex="-1"><a class="header-anchor" href="#currying-partial-application"><span>Currying / Partial Application</span></a></h3>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h3 id="currying-partial-application" tabindex="-1"><a class="header-anchor" href="#currying-partial-application"><span>Currying / Partial Application</span></a></h3>
 <div class="language-sml line-numbers-mode" data-highlighter="prismjs" data-ext="sml"><pre v-pre><code class="language-sml"><span class="line"><span class="token keyword">fun</span> <span class="token function">add</span> a b <span class="token operator">=</span> a <span class="token operator">+</span> b<span class="token punctuation">;</span></span>
 <span class="line"><span class="token comment">(* add: int → int → int *)</span></span>
 <span class="line"></span>
@@ -805,15 +912,23 @@ Scheme은 tail call optimization을 언어 명세에서 요구함.</p>
 <span class="line"><span class="token keyword">val</span> add3 <span class="token operator">=</span> add_curried <span class="token number">3</span><span class="token punctuation">;</span>  <span class="token comment">(* 부분 적용 → int → int *)</span></span>
 <span class="line">add3 <span class="token number">10</span><span class="token punctuation">;</span>                   <span class="token comment">(* 13 *)</span></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="함수-합성-1" tabindex="-1"><a class="header-anchor" href="#함수-합성-1"><span>함수 합성</span></a></h3>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h3 id="함수-합성-1" tabindex="-1"><a class="header-anchor" href="#함수-합성-1"><span>함수 합성</span></a></h3>
 <div class="language-sml line-numbers-mode" data-highlighter="prismjs" data-ext="sml"><pre v-pre><code class="language-sml"><span class="line"><span class="token keyword">fun</span> <span class="token function">double</span> x <span class="token operator">=</span> <span class="token number">2</span> <span class="token operator">*</span> x<span class="token punctuation">;</span></span>
 <span class="line"><span class="token keyword">fun</span> <span class="token function">square</span> x <span class="token operator">=</span> x <span class="token operator">*</span> x<span class="token punctuation">;</span></span>
 <span class="line"><span class="token keyword">val</span> doubleThenSquare <span class="token operator">=</span> square o double<span class="token punctuation">;</span></span>
 <span class="line"><span class="token keyword">val</span> result <span class="token operator">=</span> doubleThenSquare <span class="token number">3</span><span class="token punctuation">;</span> <span class="token comment">(* square(double(3)) = 36 *)</span></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="_6-haskell" tabindex="-1"><a class="header-anchor" href="#_6-haskell"><span>6. Haskell</span></a></h2>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h2 id="_6-haskell" tabindex="-1"><a class="header-anchor" href="#_6-haskell"><span>6. Haskell</span></a></h2>
+</section>
+<section class="print-section">
 <h3 id="ml과-공통점" tabindex="-1"><a class="header-anchor" href="#ml과-공통점"><span>ML과 공통점</span></a></h3>
 <p>정적 스코프, 강한 타입, 타입 추론, 패턴 매칭</p>
+</section>
+<section class="print-section">
 <h3 id="ml과-차이점" tabindex="-1"><a class="header-anchor" href="#ml과-차이점"><span>ML과 차이점</span></a></h3>
 <ul>
 <li><strong>Lazy evaluation</strong>: 값이 실제로 필요할 때까지 평가 미룸</li>
@@ -821,6 +936,8 @@ Scheme은 tail call optimization을 언어 명세에서 요구함.</p>
 <li><strong>type class</strong>: 오버로딩 지원</li>
 <li>무한 리스트 가능</li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="기본-리스트-함수" tabindex="-1"><a class="header-anchor" href="#기본-리스트-함수"><span>기본 리스트 함수</span></a></h3>
 <div class="language-haskell line-numbers-mode" data-highlighter="prismjs" data-ext="haskell"><pre v-pre><code class="language-haskell"><span class="line"><span class="token builtin">head</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">]</span>       <span class="token comment">-- 1</span></span>
 <span class="line"><span class="token builtin">tail</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">]</span>       <span class="token comment">-- [2,3]</span></span>
@@ -838,7 +955,9 @@ Scheme은 tail call optimization을 언어 명세에서 요구함.</p>
 <span class="line"><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token operator">..</span><span class="token number">10</span><span class="token punctuation">]</span>          <span class="token comment">-- [2,4,6,8,10]</span></span>
 <span class="line"><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">]</span> <span class="token operator">!!</span> <span class="token number">2</span>     <span class="token comment">-- 3 (인덱스 접근, 0부터)</span></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="패턴-매칭-1" tabindex="-1"><a class="header-anchor" href="#패턴-매칭-1"><span>패턴 매칭</span></a></h3>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h3 id="패턴-매칭-1" tabindex="-1"><a class="header-anchor" href="#패턴-매칭-1"><span>패턴 매칭</span></a></h3>
 <div class="language-haskell line-numbers-mode" data-highlighter="prismjs" data-ext="haskell"><pre v-pre><code class="language-haskell"><span class="line"><span class="token hvariable">fact</span> <span class="token number">0</span> <span class="token operator">=</span> <span class="token number">1</span></span>
 <span class="line"><span class="token hvariable">fact</span> <span class="token number">1</span> <span class="token operator">=</span> <span class="token number">1</span></span>
 <span class="line"><span class="token hvariable">fact</span> <span class="token hvariable">n</span> <span class="token operator">=</span> <span class="token hvariable">n</span> <span class="token operator">*</span> <span class="token hvariable">fact</span> <span class="token punctuation">(</span><span class="token hvariable">n</span> <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span></span>
@@ -861,7 +980,9 @@ Scheme은 tail call optimization을 언어 명세에서 요구함.</p>
 <span class="line"><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">++</span> <span class="token hvariable">y</span> <span class="token operator">=</span> <span class="token hvariable">y</span></span>
 <span class="line"><span class="token punctuation">(</span><span class="token hvariable">a</span><span class="token operator">:</span><span class="token hvariable">x</span><span class="token punctuation">)</span> <span class="token operator">++</span> <span class="token hvariable">y</span> <span class="token operator">=</span> <span class="token hvariable">a</span> <span class="token operator">:</span> <span class="token punctuation">(</span><span class="token hvariable">x</span> <span class="token operator">++</span> <span class="token hvariable">y</span><span class="token punctuation">)</span></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="guards" tabindex="-1"><a class="header-anchor" href="#guards"><span>Guards</span></a></h3>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h3 id="guards" tabindex="-1"><a class="header-anchor" href="#guards"><span>Guards</span></a></h3>
 <div class="language-haskell line-numbers-mode" data-highlighter="prismjs" data-ext="haskell"><pre v-pre><code class="language-haskell"><span class="line"><span class="token hvariable">fact</span> <span class="token hvariable">n</span></span>
 <span class="line">  <span class="token operator">|</span> <span class="token hvariable">n</span> <span class="token operator">==</span> <span class="token number">0</span>    <span class="token operator">=</span> <span class="token number">1</span></span>
 <span class="line">  <span class="token operator">|</span> <span class="token hvariable">n</span> <span class="token operator">==</span> <span class="token number">1</span>    <span class="token operator">=</span> <span class="token number">1</span></span>
@@ -872,7 +993,9 @@ Scheme은 tail call optimization을 언어 명세에서 요구함.</p>
 <span class="line">  <span class="token operator">|</span> <span class="token hvariable">n</span> <span class="token operator">></span> <span class="token number">100</span>   <span class="token operator">=</span> <span class="token number">2</span></span>
 <span class="line">  <span class="token operator">|</span> <span class="token builtin">otherwise</span> <span class="token operator">=</span> <span class="token number">1</span></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="foldr" tabindex="-1"><a class="header-anchor" href="#foldr"><span>foldr</span></a></h3>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h3 id="foldr" tabindex="-1"><a class="header-anchor" href="#foldr"><span>foldr</span></a></h3>
 <p>오른쪽에서 왼쪽으로 누적.</p>
 <p><code v-pre>foldr f v [x1, x2, x3]</code> = <code v-pre>x1 \</code>f` (x2 `f` (x3 `f` v))`</p>
 <div class="language-haskell line-numbers-mode" data-highlighter="prismjs" data-ext="haskell"><pre v-pre><code class="language-haskell"><span class="line"><span class="token builtin">sum</span>     <span class="token operator">=</span> <span class="token builtin">foldr</span> <span class="token punctuation">(</span><span class="token operator">+</span><span class="token punctuation">)</span> <span class="token number">0</span></span>
@@ -899,7 +1022,9 @@ Scheme은 tail call optimization을 언어 명세에서 요구함.</p>
 <span class="line">  <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">]</span> <span class="token operator">++</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span></span>
 <span class="line">  <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">]</span></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="map" tabindex="-1"><a class="header-anchor" href="#map"><span>map</span></a></h3>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h3 id="map" tabindex="-1"><a class="header-anchor" href="#map"><span>map</span></a></h3>
 <div class="language-haskell line-numbers-mode" data-highlighter="prismjs" data-ext="haskell"><pre v-pre><code class="language-haskell"><span class="line"><span class="token builtin">map</span> <span class="token punctuation">(</span><span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">]</span>    <span class="token comment">-- [2,3,4]</span></span>
 <span class="line"><span class="token builtin">map</span> <span class="token punctuation">(</span><span class="token operator">*</span><span class="token number">2</span><span class="token punctuation">)</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">]</span>    <span class="token comment">-- [2,4,6]</span></span>
 <span class="line"><span class="token builtin">map</span> <span class="token builtin">negate</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">]</span>  <span class="token comment">-- [-1,-2,-3]</span></span>
@@ -908,7 +1033,9 @@ Scheme은 tail call optimization을 언어 명세에서 요구함.</p>
 <span class="line"><span class="token builtin">map</span> <span class="token hvariable">f</span> <span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span></span>
 <span class="line"><span class="token builtin">map</span> <span class="token hvariable">f</span> <span class="token punctuation">(</span><span class="token hvariable">x</span><span class="token operator">:</span><span class="token hvariable">xs</span><span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token hvariable">f</span> <span class="token hvariable">x</span> <span class="token operator">:</span> <span class="token builtin">map</span> <span class="token hvariable">f</span> <span class="token hvariable">xs</span></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="list-comprehension" tabindex="-1"><a class="header-anchor" href="#list-comprehension"><span>List Comprehension</span></a></h3>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h3 id="list-comprehension" tabindex="-1"><a class="header-anchor" href="#list-comprehension"><span>List Comprehension</span></a></h3>
 <div class="language-haskell line-numbers-mode" data-highlighter="prismjs" data-ext="haskell"><pre v-pre><code class="language-haskell"><span class="line"><span class="token punctuation">[</span><span class="token hvariable">n</span><span class="token operator">*</span><span class="token hvariable">n</span> <span class="token operator">|</span> <span class="token hvariable">n</span> <span class="token operator">&lt;-</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token operator">..</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">]</span></span>
 <span class="line"><span class="token comment">-- [1,4,9,16,25]</span></span>
 <span class="line"></span>
@@ -934,11 +1061,15 @@ Scheme은 tail call optimization을 언어 명세에서 요구함.</p>
 <span class="line"><span class="token builtin">concat</span> <span class="token hvariable">xss</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token hvariable">x</span> <span class="token operator">|</span> <span class="token hvariable">xs</span> <span class="token operator">&lt;-</span> <span class="token hvariable">xss</span><span class="token punctuation">,</span> <span class="token hvariable">x</span> <span class="token operator">&lt;-</span> <span class="token hvariable">xs</span><span class="token punctuation">]</span></span>
 <span class="line"><span class="token builtin">concat</span> <span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token comment">-- [1,2,3,4,5]</span></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="함수-합성-2" tabindex="-1"><a class="header-anchor" href="#함수-합성-2"><span>함수 합성</span></a></h3>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h3 id="함수-합성-2" tabindex="-1"><a class="header-anchor" href="#함수-합성-2"><span>함수 합성</span></a></h3>
 <div class="language-haskell line-numbers-mode" data-highlighter="prismjs" data-ext="haskell"><pre v-pre><code class="language-haskell"><span class="line"><span class="token punctuation">(</span><span class="token hvariable">f</span> <span class="token operator">.</span> <span class="token hvariable">g</span><span class="token punctuation">)</span> <span class="token hvariable">x</span> <span class="token operator">=</span> <span class="token hvariable">f</span> <span class="token punctuation">(</span><span class="token hvariable">g</span> <span class="token hvariable">x</span><span class="token punctuation">)</span>   <span class="token comment">-- 오른쪽부터 왼쪽으로 적용</span></span>
 <span class="line"><span class="token builtin">odd</span> <span class="token operator">=</span> <span class="token builtin">not</span> <span class="token operator">.</span> <span class="token builtin">even</span></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="zip-pairs-sorted-positions" tabindex="-1"><a class="header-anchor" href="#zip-pairs-sorted-positions"><span>zip / pairs / sorted / positions</span></a></h3>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h3 id="zip-pairs-sorted-positions" tabindex="-1"><a class="header-anchor" href="#zip-pairs-sorted-positions"><span>zip / pairs / sorted / positions</span></a></h3>
 <div class="language-haskell line-numbers-mode" data-highlighter="prismjs" data-ext="haskell"><pre v-pre><code class="language-haskell"><span class="line"><span class="token comment">-- zip: 두 리스트 원소를 쌍으로 묶음 (짧은 쪽 기준)</span></span>
 <span class="line"><span class="token builtin">zip</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">]</span> <span class="token punctuation">[</span><span class="token char string">'a'</span><span class="token punctuation">,</span><span class="token char string">'b'</span><span class="token punctuation">,</span><span class="token char string">'c'</span><span class="token punctuation">,</span><span class="token char string">'d'</span><span class="token punctuation">]</span>  <span class="token comment">-- [(1,'a'),(2,'b'),(3,'c')]</span></span>
 <span class="line"><span class="token builtin">zip</span> <span class="token string">"abc"</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">]</span>               <span class="token comment">-- [('a',1),('b',2),('c',3)]</span></span>
@@ -957,7 +1088,9 @@ Scheme은 tail call optimization을 언어 명세에서 요구함.</p>
 <span class="line">  <span class="token keyword">where</span> <span class="token hvariable">n</span> <span class="token operator">=</span> <span class="token builtin">length</span> <span class="token hvariable">xs</span> <span class="token operator">-</span> <span class="token number">1</span></span>
 <span class="line"><span class="token hvariable">positions</span> <span class="token number">0</span> <span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">]</span>  <span class="token comment">-- [0,2,5]</span></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="all-any" tabindex="-1"><a class="header-anchor" href="#all-any"><span>all / any</span></a></h3>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h3 id="all-any" tabindex="-1"><a class="header-anchor" href="#all-any"><span>all / any</span></a></h3>
 <div class="language-haskell line-numbers-mode" data-highlighter="prismjs" data-ext="haskell"><pre v-pre><code class="language-haskell"><span class="line"><span class="token builtin">all</span> <span class="token hvariable">p</span> <span class="token hvariable">xs</span> <span class="token operator">=</span> <span class="token builtin">and</span> <span class="token punctuation">[</span><span class="token hvariable">p</span> <span class="token hvariable">x</span> <span class="token operator">|</span> <span class="token hvariable">x</span> <span class="token operator">&lt;-</span> <span class="token hvariable">xs</span><span class="token punctuation">]</span></span>
 <span class="line"><span class="token builtin">all</span> <span class="token builtin">even</span> <span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">]</span>  <span class="token comment">-- True</span></span>
 <span class="line"><span class="token builtin">all</span> <span class="token builtin">even</span> <span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">]</span>  <span class="token comment">-- False</span></span>
@@ -966,7 +1099,9 @@ Scheme은 tail call optimization을 언어 명세에서 요구함.</p>
 <span class="line"><span class="token builtin">any</span> <span class="token builtin">odd</span> <span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">]</span>   <span class="token comment">-- False</span></span>
 <span class="line"><span class="token builtin">any</span> <span class="token builtin">odd</span> <span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">]</span>   <span class="token comment">-- True</span></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="lazy-evaluation" tabindex="-1"><a class="header-anchor" href="#lazy-evaluation"><span>Lazy Evaluation</span></a></h3>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h3 id="lazy-evaluation" tabindex="-1"><a class="header-anchor" href="#lazy-evaluation"><span>Lazy Evaluation</span></a></h3>
 <div class="language-haskell line-numbers-mode" data-highlighter="prismjs" data-ext="haskell"><pre v-pre><code class="language-haskell"><span class="line"><span class="token hvariable">positives</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">0</span><span class="token operator">..</span><span class="token punctuation">]</span></span>
 <span class="line"><span class="token builtin">take</span> <span class="token number">5</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token operator">..</span><span class="token punctuation">]</span>   <span class="token comment">-- [1,3,5,7,9]</span></span>
 <span class="line"><span class="token hvariable">squares</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token hvariable">n</span><span class="token operator">*</span><span class="token hvariable">n</span> <span class="token operator">|</span> <span class="token hvariable">n</span> <span class="token operator">&lt;-</span> <span class="token punctuation">[</span><span class="token number">0</span><span class="token operator">..</span><span class="token punctuation">]</span><span class="token punctuation">]</span></span>
@@ -980,14 +1115,18 @@ Scheme은 tail call optimization을 언어 명세에서 요구함.</p>
 <span class="line"><span class="token hvariable">member2</span> <span class="token number">16</span> <span class="token hvariable">squares</span> <span class="token comment">-- True</span></span>
 <span class="line"><span class="token hvariable">member2</span> <span class="token number">5</span> <span class="token hvariable">squares</span>  <span class="token comment">-- False (빠르게 종료)</span></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="quicksort" tabindex="-1"><a class="header-anchor" href="#quicksort"><span>Quicksort</span></a></h3>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h3 id="quicksort" tabindex="-1"><a class="header-anchor" href="#quicksort"><span>Quicksort</span></a></h3>
 <div class="language-haskell line-numbers-mode" data-highlighter="prismjs" data-ext="haskell"><pre v-pre><code class="language-haskell"><span class="line"><span class="token builtin">sort</span> <span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span></span>
 <span class="line"><span class="token builtin">sort</span> <span class="token punctuation">(</span><span class="token hvariable">h</span><span class="token operator">:</span><span class="token hvariable">t</span><span class="token punctuation">)</span> <span class="token operator">=</span></span>
 <span class="line">  <span class="token builtin">sort</span> <span class="token punctuation">[</span><span class="token hvariable">b</span> <span class="token operator">|</span> <span class="token hvariable">b</span> <span class="token operator">&lt;-</span> <span class="token hvariable">t</span><span class="token punctuation">,</span> <span class="token hvariable">b</span> <span class="token operator">&lt;=</span> <span class="token hvariable">h</span><span class="token punctuation">]</span></span>
 <span class="line">  <span class="token operator">++</span> <span class="token punctuation">[</span><span class="token hvariable">h</span><span class="token punctuation">]</span> <span class="token operator">++</span></span>
 <span class="line">  <span class="token builtin">sort</span> <span class="token punctuation">[</span><span class="token hvariable">b</span> <span class="token operator">|</span> <span class="token hvariable">b</span> <span class="token operator">&lt;-</span> <span class="token hvariable">t</span><span class="token punctuation">,</span> <span class="token hvariable">b</span> <span class="token operator">></span> <span class="token hvariable">h</span><span class="token punctuation">]</span></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="insertion-sort" tabindex="-1"><a class="header-anchor" href="#insertion-sort"><span>Insertion Sort</span></a></h3>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h3 id="insertion-sort" tabindex="-1"><a class="header-anchor" href="#insertion-sort"><span>Insertion Sort</span></a></h3>
 <div class="language-haskell line-numbers-mode" data-highlighter="prismjs" data-ext="haskell"><pre v-pre><code class="language-haskell"><span class="line"><span class="token hvariable">insert</span> <span class="token hvariable">x</span> <span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token hvariable">x</span><span class="token punctuation">]</span></span>
 <span class="line"><span class="token hvariable">insert</span> <span class="token hvariable">x</span> <span class="token punctuation">(</span><span class="token hvariable">y</span><span class="token operator">:</span><span class="token hvariable">ys</span><span class="token punctuation">)</span></span>
 <span class="line">  <span class="token operator">|</span> <span class="token hvariable">x</span> <span class="token operator">&lt;=</span> <span class="token hvariable">y</span>    <span class="token operator">=</span> <span class="token hvariable">x</span> <span class="token operator">:</span> <span class="token hvariable">y</span> <span class="token operator">:</span> <span class="token hvariable">ys</span></span>
@@ -996,7 +1135,9 @@ Scheme은 tail call optimization을 언어 명세에서 요구함.</p>
 <span class="line"><span class="token hvariable">isort</span> <span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span></span>
 <span class="line"><span class="token hvariable">isort</span> <span class="token punctuation">(</span><span class="token hvariable">x</span><span class="token operator">:</span><span class="token hvariable">xs</span><span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token hvariable">insert</span> <span class="token hvariable">x</span> <span class="token punctuation">(</span><span class="token hvariable">isort</span> <span class="token hvariable">xs</span><span class="token punctuation">)</span></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="merge-sort" tabindex="-1"><a class="header-anchor" href="#merge-sort"><span>Merge Sort</span></a></h3>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h3 id="merge-sort" tabindex="-1"><a class="header-anchor" href="#merge-sort"><span>Merge Sort</span></a></h3>
 <div class="language-haskell line-numbers-mode" data-highlighter="prismjs" data-ext="haskell"><pre v-pre><code class="language-haskell"><span class="line"><span class="token hvariable">merge</span> <span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token hvariable">ys</span> <span class="token operator">=</span> <span class="token hvariable">ys</span></span>
 <span class="line"><span class="token hvariable">merge</span> <span class="token hvariable">xs</span> <span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token hvariable">xs</span></span>
 <span class="line"><span class="token hvariable">merge</span> <span class="token punctuation">(</span><span class="token hvariable">x</span><span class="token operator">:</span><span class="token hvariable">xs</span><span class="token punctuation">)</span> <span class="token punctuation">(</span><span class="token hvariable">y</span><span class="token operator">:</span><span class="token hvariable">ys</span><span class="token punctuation">)</span> <span class="token operator">=</span></span>
@@ -1010,7 +1151,9 @@ Scheme은 tail call optimization을 언어 명세에서 요구함.</p>
 <span class="line"><span class="token hvariable">msort</span> <span class="token hvariable">xs</span> <span class="token operator">=</span> <span class="token hvariable">merge</span> <span class="token punctuation">(</span><span class="token hvariable">msort</span> <span class="token hvariable">ys</span><span class="token punctuation">)</span> <span class="token punctuation">(</span><span class="token hvariable">msort</span> <span class="token hvariable">zs</span><span class="token punctuation">)</span></span>
 <span class="line">  <span class="token keyword">where</span> <span class="token punctuation">(</span><span class="token hvariable">ys</span><span class="token punctuation">,</span> <span class="token hvariable">zs</span><span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token hvariable">halve</span> <span class="token hvariable">xs</span></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="let-where" tabindex="-1"><a class="header-anchor" href="#let-where"><span>let / where</span></a></h3>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h3 id="let-where" tabindex="-1"><a class="header-anchor" href="#let-where"><span>let / where</span></a></h3>
 <div class="language-haskell line-numbers-mode" data-highlighter="prismjs" data-ext="haskell"><pre v-pre><code class="language-haskell"><span class="line"><span class="token comment">-- let ... in</span></span>
 <span class="line"><span class="token hvariable">quadratic</span> <span class="token hvariable">a</span> <span class="token hvariable">b</span> <span class="token hvariable">c</span> <span class="token operator">=</span></span>
 <span class="line">  <span class="token keyword">let</span> <span class="token hvariable">minus_b</span> <span class="token operator">=</span> <span class="token operator">-</span><span class="token hvariable">b</span> <span class="token operator">/</span> <span class="token punctuation">(</span><span class="token number">2.0</span> <span class="token operator">*</span> <span class="token hvariable">a</span><span class="token punctuation">)</span></span>
@@ -1024,7 +1167,11 @@ Scheme은 tail call optimization을 언어 명세에서 요구함.</p>
 <span class="line">    <span class="token hvariable">minus_b</span> <span class="token operator">=</span> <span class="token operator">-</span><span class="token hvariable">b</span> <span class="token operator">/</span> <span class="token punctuation">(</span><span class="token number">2.0</span> <span class="token operator">*</span> <span class="token hvariable">a</span><span class="token punctuation">)</span></span>
 <span class="line">    <span class="token hvariable">disc</span>    <span class="token operator">=</span> <span class="token builtin">sqrt</span><span class="token punctuation">(</span><span class="token hvariable">b</span><span class="token operator">^</span><span class="token number">2</span> <span class="token operator">-</span> <span class="token number">4.0</span><span class="token operator">*</span><span class="token hvariable">a</span><span class="token operator">*</span><span class="token hvariable">c</span><span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token punctuation">(</span><span class="token number">2.0</span><span class="token operator">*</span><span class="token hvariable">a</span><span class="token punctuation">)</span></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="_7-common-lisp-f" tabindex="-1"><a class="header-anchor" href="#_7-common-lisp-f"><span>7. Common Lisp / F#</span></a></h2>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h2 id="_7-common-lisp-f" tabindex="-1"><a class="header-anchor" href="#_7-common-lisp-f"><span>7. Common Lisp / F#</span></a></h2>
+</section>
+<section class="print-section">
 <h3 id="common-lisp" tabindex="-1"><a class="header-anchor" href="#common-lisp"><span>Common Lisp</span></a></h3>
 <ul>
 <li>Scheme보다 크고 복잡한 언어</li>
@@ -1046,7 +1193,9 @@ Scheme은 tail call optimization을 언어 명세에서 요구함.</p>
 <span class="line">    <span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token car">EQUAL</span> atm <span class="token punctuation">(</span><span class="token car">CAR</span> lst<span class="token punctuation">)</span><span class="token punctuation">)</span> T<span class="token punctuation">)</span></span>
 <span class="line">    <span class="token punctuation">(</span><span class="token car">T</span> <span class="token punctuation">(</span><span class="token car">recursive_member</span> atm <span class="token punctuation">(</span><span class="token car">CDR</span> lst<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="f" tabindex="-1"><a class="header-anchor" href="#f"><span>F#</span></a></h3>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h3 id="f" tabindex="-1"><a class="header-anchor" href="#f"><span>F#</span></a></h3>
 <ul>
 <li>ML/OCaml 계열, .NET 기반</li>
 <li>함수형 + 명령형 + OOP 지원</li>
@@ -1111,7 +1260,11 @@ Scheme은 tail call optimization을 언어 명세에서 요구함.</p>
 <span class="line">List<span class="token punctuation">.</span>filter <span class="token punctuation">(</span><span class="token keyword">fun</span> x <span class="token operator">-></span> x <span class="token operator">%</span> <span class="token number">2</span> <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">)</span> l  <span class="token comment">// [2;4]</span></span>
 <span class="line">List<span class="token punctuation">.</span>fold <span class="token punctuation">(</span><span class="token keyword">fun</span> acc x <span class="token operator">-></span> acc <span class="token operator">+</span> x<span class="token punctuation">)</span> <span class="token number">0</span> l <span class="token comment">// 15</span></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="_7-5-fpl-4-language-full-comparison" tabindex="-1"><a class="header-anchor" href="#_7-5-fpl-4-language-full-comparison"><span>7.5. FPL 4-Language Full Comparison</span></a></h2>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h2 id="_7-5-fpl-4-language-full-comparison" tabindex="-1"><a class="header-anchor" href="#_7-5-fpl-4-language-full-comparison"><span>7.5. FPL 4-Language Full Comparison</span></a></h2>
+</section>
+<section class="print-section">
 <h3 id="기본-정보" tabindex="-1"><a class="header-anchor" href="#기본-정보"><span>기본 정보</span></a></h3>
 <table>
 <thead>
@@ -1154,6 +1307,8 @@ Scheme은 tail call optimization을 언어 명세에서 요구함.</p>
 </tr>
 </tbody>
 </table>
+</section>
+<section class="print-section">
 <h3 id="타입-시스템" tabindex="-1"><a class="header-anchor" href="#타입-시스템"><span>타입 시스템</span></a></h3>
 <table>
 <thead>
@@ -1203,6 +1358,8 @@ Scheme은 tail call optimization을 언어 명세에서 요구함.</p>
 </tr>
 </tbody>
 </table>
+</section>
+<section class="print-section">
 <h3 id="스코프-변수" tabindex="-1"><a class="header-anchor" href="#스코프-변수"><span>스코프 / 변수</span></a></h3>
 <table>
 <thead>
@@ -1245,6 +1402,8 @@ Scheme은 tail call optimization을 언어 명세에서 요구함.</p>
 </tr>
 </tbody>
 </table>
+</section>
+<section class="print-section">
 <h3 id="평가-방식" tabindex="-1"><a class="header-anchor" href="#평가-방식"><span>평가 방식</span></a></h3>
 <table>
 <thead>
@@ -1287,6 +1446,8 @@ Scheme은 tail call optimization을 언어 명세에서 요구함.</p>
 </tr>
 </tbody>
 </table>
+</section>
+<section class="print-section">
 <h3 id="문법-—-함수-정의" tabindex="-1"><a class="header-anchor" href="#문법-—-함수-정의"><span>문법 — 함수 정의</span></a></h3>
 <table>
 <thead>
@@ -1343,6 +1504,8 @@ Scheme은 tail call optimization을 언어 명세에서 요구함.</p>
 </tr>
 </tbody>
 </table>
+</section>
+<section class="print-section">
 <h3 id="문법-—-조건문" tabindex="-1"><a class="header-anchor" href="#문법-—-조건문"><span>문법 — 조건문</span></a></h3>
 <table>
 <thead>
@@ -1378,6 +1541,8 @@ Scheme은 tail call optimization을 언어 명세에서 요구함.</p>
 </tr>
 </tbody>
 </table>
+</section>
+<section class="print-section">
 <h3 id="문법-—-리스트-연산" tabindex="-1"><a class="header-anchor" href="#문법-—-리스트-연산"><span>문법 — 리스트 연산</span></a></h3>
 <table>
 <thead>
@@ -1448,6 +1613,8 @@ Scheme은 tail call optimization을 언어 명세에서 요구함.</p>
 </tr>
 </tbody>
 </table>
+</section>
+<section class="print-section">
 <h3 id="문법-—-고차-함수" tabindex="-1"><a class="header-anchor" href="#문법-—-고차-함수"><span>문법 — 고차 함수</span></a></h3>
 <table>
 <thead>
@@ -1483,6 +1650,8 @@ Scheme은 tail call optimization을 언어 명세에서 요구함.</p>
 </tr>
 </tbody>
 </table>
+</section>
+<section class="print-section">
 <h3 id="문법-—-지역-바인딩" tabindex="-1"><a class="header-anchor" href="#문법-—-지역-바인딩"><span>문법 — 지역 바인딩</span></a></h3>
 <table>
 <thead>
@@ -1518,6 +1687,8 @@ Scheme은 tail call optimization을 언어 명세에서 요구함.</p>
 </tr>
 </tbody>
 </table>
+</section>
+<section class="print-section">
 <h3 id="불리언" tabindex="-1"><a class="header-anchor" href="#불리언"><span>불리언</span></a></h3>
 <table>
 <thead>
@@ -1567,6 +1738,8 @@ Scheme은 tail call optimization을 언어 명세에서 요구함.</p>
 </tr>
 </tbody>
 </table>
+</section>
+<section class="print-section">
 <h3 id="예외-처리" tabindex="-1"><a class="header-anchor" href="#예외-처리"><span>예외 처리</span></a></h3>
 <table>
 <thead>
@@ -1609,6 +1782,8 @@ Scheme은 tail call optimization을 언어 명세에서 요구함.</p>
 </tr>
 </tbody>
 </table>
+</section>
+<section class="print-section">
 <h3 id="확장-기능" tabindex="-1"><a class="header-anchor" href="#확장-기능"><span>확장 기능</span></a></h3>
 <table>
 <thead>
@@ -1658,6 +1833,8 @@ Scheme은 tail call optimization을 언어 명세에서 요구함.</p>
 </tr>
 </tbody>
 </table>
+</section>
+<section class="print-section">
 <h3 id="한-문장-요약" tabindex="-1"><a class="header-anchor" href="#한-문장-요약"><span>한 문장 요약</span></a></h3>
 <table>
 <thead>
@@ -1685,6 +1862,8 @@ Scheme은 tail call optimization을 언어 명세에서 요구함.</p>
 </tr>
 </tbody>
 </table>
+</section>
+<section class="print-section">
 <h3 id="핵심-특성-비교" tabindex="-1"><a class="header-anchor" href="#핵심-특성-비교"><span>핵심 특성 비교</span></a></h3>
 <table>
 <thead>
@@ -1844,6 +2023,8 @@ Scheme은 tail call optimization을 언어 명세에서 요구함.</p>
 </tr>
 </tbody>
 </table>
+</section>
+<section class="print-section">
 <h3 id="언어-계보" tabindex="-1"><a class="header-anchor" href="#언어-계보"><span>언어 계보</span></a></h3>
 <div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code class="language-text"><span class="line">LISP (1958)</span>
 <span class="line">├── Common Lisp (1984) — 여러 LISP 방언 통합, 대형 언어</span>
@@ -1855,7 +2036,9 @@ Scheme은 tail call optimization을 언어 명세에서 요구함.</p>
 <span class="line">│   └── F# (2005)    — .NET 기반, 함수형+명령형+OOP</span>
 <span class="line">└── Haskell (1990)   — 순수 함수형, lazy evaluation</span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="조건문-비교" tabindex="-1"><a class="header-anchor" href="#조건문-비교"><span>조건문 비교</span></a></h3>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h3 id="조건문-비교" tabindex="-1"><a class="header-anchor" href="#조건문-비교"><span>조건문 비교</span></a></h3>
 <table>
 <thead>
 <tr>
@@ -1892,6 +2075,8 @@ Scheme은 tail call optimization을 언어 명세에서 요구함.</p>
 </tr>
 </tbody>
 </table>
+</section>
+<section class="print-section">
 <h3 id="함수-정의-비교" tabindex="-1"><a class="header-anchor" href="#함수-정의-비교"><span>함수 정의 비교</span></a></h3>
 <table>
 <thead>
@@ -1923,6 +2108,8 @@ Scheme은 tail call optimization을 언어 명세에서 요구함.</p>
 </tr>
 </tbody>
 </table>
+</section>
+<section class="print-section">
 <h3 id="리스트-연산-비교" tabindex="-1"><a class="header-anchor" href="#리스트-연산-비교"><span>리스트 연산 비교</span></a></h3>
 <table>
 <thead>
@@ -1986,6 +2173,8 @@ Scheme은 tail call optimization을 언어 명세에서 요구함.</p>
 </tr>
 </tbody>
 </table>
+</section>
+<section class="print-section">
 <h3 id="map-filter-fold-비교" tabindex="-1"><a class="header-anchor" href="#map-filter-fold-비교"><span>map / filter / fold 비교</span></a></h3>
 <table>
 <thead>
@@ -2028,6 +2217,8 @@ Scheme은 tail call optimization을 언어 명세에서 요구함.</p>
 </tr>
 </tbody>
 </table>
+</section>
+<section class="print-section">
 <h3 id="공통-특성-모든-fpl" tabindex="-1"><a class="header-anchor" href="#공통-특성-모든-fpl"><span>공통 특성 (모든 FPL)</span></a></h3>
 <ul>
 <li>first-class function: 함수를 값처럼 사용 가능 (변수 할당, 인자 전달, 반환)</li>
@@ -2035,6 +2226,8 @@ Scheme은 tail call optimization을 언어 명세에서 요구함.</p>
 <li>referential transparency 지향: 같은 입력 → 항상 같은 출력</li>
 <li>higher-order function 지원: map, filter, fold 등</li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="ml-vs-haskell-핵심-차이" tabindex="-1"><a class="header-anchor" href="#ml-vs-haskell-핵심-차이"><span>ML vs Haskell 핵심 차이</span></a></h3>
 <table>
 <thead>
@@ -2072,6 +2265,8 @@ Scheme은 tail call optimization을 언어 명세에서 요구함.</p>
 </tr>
 </tbody>
 </table>
+</section>
+<section class="print-section">
 <h3 id="scheme-vs-common-lisp-핵심-차이" tabindex="-1"><a class="header-anchor" href="#scheme-vs-common-lisp-핵심-차이"><span>Scheme vs Common Lisp 핵심 차이</span></a></h3>
 <table>
 <thead>
@@ -2114,7 +2309,11 @@ Scheme은 tail call optimization을 언어 명세에서 요구함.</p>
 </tr>
 </tbody>
 </table>
+</section>
+<section class="print-section">
 <h2 id="_8-exception-handling" tabindex="-1"><a class="header-anchor" href="#_8-exception-handling"><span>8. Exception Handling</span></a></h2>
+</section>
+<section class="print-section">
 <h3 id="핵심-개념" tabindex="-1"><a class="header-anchor" href="#핵심-개념"><span>핵심 개념</span></a></h3>
 <ul>
 <li><strong>exception</strong>: 하드웨어나 소프트웨어가 감지하는 비정상적/특별한 사건</li>
@@ -2124,6 +2323,8 @@ Scheme은 tail call optimization을 언어 명세에서 요구함.</p>
 <li><strong>termination</strong>: handler 완료 후 raising 블록으로 돌아가지 않음</li>
 <li><strong>resumption</strong>: handler 완료 후 raising 지점에서 계속 실행 (Ruby의 <code v-pre>retry</code>)</li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="언어별-syntax-비교" tabindex="-1"><a class="header-anchor" href="#언어별-syntax-비교"><span>언어별 Syntax 비교</span></a></h3>
 <table>
 <thead>
@@ -2173,6 +2374,8 @@ Scheme은 tail call optimization을 언어 명세에서 요구함.</p>
 </tr>
 </tbody>
 </table>
+</section>
+<section class="print-section">
 <h3 id="ada" tabindex="-1"><a class="header-anchor" href="#ada"><span>Ada</span></a></h3>
 <div class="language-ada line-numbers-mode" data-highlighter="prismjs" data-ext="ada"><pre v-pre><code class="language-ada"><span class="line"><span class="token keyword">begin</span></span>
 <span class="line">  <span class="token comment">-- 코드</span></span>
@@ -2192,6 +2395,8 @@ Scheme은 tail call optimization을 언어 명세에서 요구함.</p>
 <span class="line"><span class="token keyword">raise</span><span class="token punctuation">;</span>  <span class="token comment">-- handler 내에서: 같은 exception 재발생</span></span>
 <span class="line"></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>exception 비활성화: <code v-pre>pragma Suppress(check_name);</code></p>
+</section>
+<section class="print-section">
 <h3 id="c" tabindex="-1"><a class="header-anchor" href="#c"><span>C++</span></a></h3>
 <div class="language-cpp line-numbers-mode" data-highlighter="prismjs" data-ext="cpp"><pre v-pre><code class="language-cpp"><span class="line"><span class="token keyword">try</span> <span class="token punctuation">{</span></span>
 <span class="line">    <span class="token keyword">throw</span> <span class="token number">42</span><span class="token punctuation">;</span></span>
@@ -2212,6 +2417,8 @@ Scheme은 tail call optimization을 언어 명세에서 요구함.</p>
 <li>handler는 순서대로 매칭, 먼저 매칭된 것 사용</li>
 <li><code v-pre>throw;</code> → 현재 exception 재발생</li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="java" tabindex="-1"><a class="header-anchor" href="#java"><span>Java</span></a></h3>
 <div class="language-java line-numbers-mode" data-highlighter="prismjs" data-ext="java"><pre v-pre><code class="language-java"><span class="line"><span class="token keyword">try</span> <span class="token punctuation">{</span></span>
 <span class="line">    <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">MyException</span><span class="token punctuation">(</span><span class="token string">"message"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
@@ -2238,6 +2445,8 @@ Scheme은 tail call optimization을 언어 명세에서 요구함.</p>
 <span class="line"><span class="token punctuation">}</span></span>
 <span class="line"></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><strong>unchecked exception</strong>: <code v-pre>RuntimeException</code>, <code v-pre>Error</code> 하위 — 컴파일러가 강제하지 않음</p>
+</section>
+<section class="print-section">
 <h3 id="python" tabindex="-1"><a class="header-anchor" href="#python"><span>Python</span></a></h3>
 <div class="language-python line-numbers-mode" data-highlighter="prismjs" data-ext="py"><pre v-pre><code class="language-python"><span class="line"><span class="token keyword">try</span><span class="token punctuation">:</span></span>
 <span class="line">    <span class="token keyword">raise</span> ValueError<span class="token punctuation">(</span><span class="token string">"잘못된 값"</span><span class="token punctuation">)</span></span>
@@ -2251,6 +2460,8 @@ Scheme은 tail call optimization을 언어 명세에서 요구함.</p>
 <span class="line">    <span class="token keyword">pass</span>  <span class="token comment"># 항상 실행</span></span>
 <span class="line"></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>계층: <code v-pre>BaseException</code> → <code v-pre>Exception</code> → <code v-pre>ArithmeticError</code>, <code v-pre>LookupError</code> 등</p>
+</section>
+<section class="print-section">
 <h3 id="ruby" tabindex="-1"><a class="header-anchor" href="#ruby"><span>Ruby</span></a></h3>
 <div class="language-ruby line-numbers-mode" data-highlighter="prismjs" data-ext="rb"><pre v-pre><code class="language-ruby"><span class="line"><span class="token keyword">begin</span></span>
 <span class="line">  <span class="token keyword">raise</span> <span class="token string-literal"><span class="token string">"에러 발생"</span></span></span>
@@ -2263,13 +2474,19 @@ Scheme은 tail call optimization을 언어 명세에서 요구함.</p>
 <span class="line"><span class="token keyword">retry</span>  <span class="token comment"># rescue 블록 내에서만: raising 지점부터 재실행</span></span>
 <span class="line"><span class="token keyword">end</span></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="_9-polymorphism-and-oop" tabindex="-1"><a class="header-anchor" href="#_9-polymorphism-and-oop"><span>9. Polymorphism and OOP</span></a></h2>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h2 id="_9-polymorphism-and-oop" tabindex="-1"><a class="header-anchor" href="#_9-polymorphism-and-oop"><span>9. Polymorphism and OOP</span></a></h2>
+</section>
+<section class="print-section">
 <h3 id="polymorphism-종류" tabindex="-1"><a class="header-anchor" href="#polymorphism-종류"><span>Polymorphism 종류</span></a></h3>
 <ul>
 <li><strong>Ad hoc polymorphism</strong>: 오버로딩. 각 타입마다 별도 구현. 같은 이름, 다른 protocol.</li>
 <li><strong>Subtype polymorphism</strong>: 상속 기반. 부모 타입 변수가 자식 객체를 참조.</li>
 <li><strong>Parametric polymorphism</strong>: generic. 타입을 매개변수화.</li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="polymorphic-variable-선언-방법-언어별" tabindex="-1"><a class="header-anchor" href="#polymorphic-variable-선언-방법-언어별"><span>Polymorphic Variable 선언 방법 (언어별)</span></a></h3>
 <p><strong>C++ (pointer 기반, virtual 필요)</strong></p>
 <div class="language-cpp line-numbers-mode" data-highlighter="prismjs" data-ext="cpp"><pre v-pre><code class="language-cpp"><span class="line">Shape<span class="token operator">*</span> ptr <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token function">Circle</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
@@ -2295,7 +2512,9 @@ Scheme은 tail call optimization을 언어 명세에서 요구함.</p>
 <div class="language-smalltalk line-numbers-mode" data-highlighter="prismjs" data-ext="smalltalk"><pre v-pre><code class="language-smalltalk"><span class="line">x <span class="token operator">:=</span> Dog <span class="token keyword">new</span><span class="token punctuation">.</span></span>
 <span class="line">x speak<span class="token punctuation">.</span>   <span class="token comment">"모든 메시지가 dynamic binding"</span></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="dynamic-binding" tabindex="-1"><a class="header-anchor" href="#dynamic-binding"><span>Dynamic Binding</span></a></h3>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h3 id="dynamic-binding" tabindex="-1"><a class="header-anchor" href="#dynamic-binding"><span>Dynamic Binding</span></a></h3>
 <ul>
 <li>런타임에 어떤 메서드가 호출될지 결정</li>
 <li>virtual method table (vtable)을 통해 구현: 동적으로 바인딩되는 메서드 포인터 목록</li>
@@ -2320,6 +2539,8 @@ Scheme은 tail call optimization을 언어 명세에서 요구함.</p>
 <span class="line"></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><strong>Java</strong>: <code v-pre>final</code>, <code v-pre>static</code>, <code v-pre>private</code> 메서드는 static binding, 나머지는 모두 dynamic binding</p>
 <p><strong>C#</strong>: <code v-pre>virtual</code> + <code v-pre>override</code> 조합. <code v-pre>new</code> 키워드는 부모 메서드 숨김 (static binding)</p>
+</section>
+<section class="print-section">
 <h3 id="abstract-class-vs-interface-java" tabindex="-1"><a class="header-anchor" href="#abstract-class-vs-interface-java"><span>Abstract Class vs Interface (Java)</span></a></h3>
 <ul>
 <li><strong>abstract class</strong>: <code v-pre>abstract</code> 키워드, 일부 메서드 구현 가능, 단일 상속</li>
@@ -2330,11 +2551,15 @@ Scheme은 tail call optimization을 언어 명세에서 요구함.</p>
 <span class="line">    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">bark</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Woof"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token punctuation">}</span></span>
 <span class="line"><span class="token punctuation">}</span></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="상속-접근-제어-c" tabindex="-1"><a class="header-anchor" href="#상속-접근-제어-c"><span>상속 접근 제어 (C++)</span></a></h3>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h3 id="상속-접근-제어-c" tabindex="-1"><a class="header-anchor" href="#상속-접근-제어-c"><span>상속 접근 제어 (C++)</span></a></h3>
 <ul>
 <li><code v-pre>public</code> 상속: 부모의 public/protected 그대로 유지 → subtype 관계</li>
 <li><code v-pre>private</code> 상속: 부모의 모든 멤버가 private → subtype 관계 아님, 구현만 재사용</li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="ruby-mixin" tabindex="-1"><a class="header-anchor" href="#ruby-mixin"><span>Ruby Mixin</span></a></h3>
 <div class="language-ruby line-numbers-mode" data-highlighter="prismjs" data-ext="rb"><pre v-pre><code class="language-ruby"><span class="line"><span class="token keyword">module</span> <span class="token class-name">Flyable</span></span>
 <span class="line">  <span class="token keyword">def</span> <span class="token method-definition"><span class="token function">fly</span></span></span>
@@ -2351,6 +2576,8 @@ Scheme은 tail call optimization을 언어 명세에서 요구함.</p>
 <li><code v-pre>prepend</code>: 인스턴스 메서드로 주입, 클래스 자신의 메서드보다 우선</li>
 <li><code v-pre>extend</code>: 클래스 메서드로 주입</li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="adt-핵심-개념" tabindex="-1"><a class="header-anchor" href="#adt-핵심-개념"><span>ADT 핵심 개념</span></a></h3>
 <ul>
 <li>데이터와 operation을 하나의 단위로 묶음</li>
@@ -2400,7 +2627,11 @@ Scheme은 tail call optimization을 언어 명세에서 요구함.</p>
 </tbody>
 </table>
 <p>C# 추가: <code v-pre>internal</code> (같은 assembly), <code v-pre>protected internal</code></p>
+</section>
+<section class="print-section">
 <h2 id="_10-generic-subprograms" tabindex="-1"><a class="header-anchor" href="#_10-generic-subprograms"><span>10. Generic Subprograms</span></a></h2>
+</section>
+<section class="print-section">
 <h3 id="c-template" tabindex="-1"><a class="header-anchor" href="#c-template"><span>C++ Template</span></a></h3>
 <div class="language-cpp line-numbers-mode" data-highlighter="prismjs" data-ext="cpp"><pre v-pre><code class="language-cpp"><span class="line"><span class="token keyword">template</span> <span class="token operator">&lt;</span><span class="token keyword">class</span> <span class="token class-name">Type</span><span class="token operator">></span></span>
 <span class="line">Type <span class="token function">max</span><span class="token punctuation">(</span>Type first<span class="token punctuation">,</span> Type second<span class="token punctuation">)</span> <span class="token punctuation">{</span></span>
@@ -2413,6 +2644,8 @@ Scheme은 tail call optimization을 언어 명세에서 요구함.</p>
 <li>특화된 함수가 template보다 우선</li>
 <li>여러 타입 파라미터: <code v-pre>template &lt;class T1, class T2&gt;</code></li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="java-generics" tabindex="-1"><a class="header-anchor" href="#java-generics"><span>Java Generics</span></a></h3>
 <div class="language-java line-numbers-mode" data-highlighter="prismjs" data-ext="java"><pre v-pre><code class="language-java"><span class="line"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Stack</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">T</span><span class="token punctuation">></span></span> <span class="token punctuation">{</span></span>
 <span class="line">    <span class="token keyword">private</span> <span class="token class-name">ArrayList</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">T</span><span class="token punctuation">></span></span> stackRef<span class="token punctuation">;</span></span>
@@ -2424,6 +2657,8 @@ Scheme은 tail call optimization을 언어 명세에서 요구함.</p>
 <li>primitive type 직접 사용 불가 → Integer, Double 등 wrapper class 사용</li>
 <li>wildcard: <code v-pre>Collection&lt;?&gt;</code> — 읽기 가능, 쓰기 제한</li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="ada-generic" tabindex="-1"><a class="header-anchor" href="#ada-generic"><span>Ada Generic</span></a></h3>
 <div class="language-ada line-numbers-mode" data-highlighter="prismjs" data-ext="ada"><pre v-pre><code class="language-ada"><span class="line"><span class="token keyword">generic</span></span>
 <span class="line">  <span class="token variable">Max_Size</span> <span class="token punctuation">:</span> <span class="token variable">Positive</span><span class="token punctuation">;</span></span>
@@ -2435,7 +2670,11 @@ Scheme은 tail call optimization을 언어 명세에서 요구함.</p>
 <span class="line"><span class="token comment">-- 인스턴스화</span></span>
 <span class="line"><span class="token keyword">package</span> <span class="token variable">Integer_Stack</span> <span class="token keyword">is</span> <span class="token keyword">new</span> <span class="token variable">Generic_Stack</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">,</span> <span class="token variable">Integer</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="quick-reference" tabindex="-1"><a class="header-anchor" href="#quick-reference"><span>Quick Reference</span></a></h2>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h2 id="quick-reference" tabindex="-1"><a class="header-anchor" href="#quick-reference"><span>Quick Reference</span></a></h2>
+</section>
+<section class="print-section">
 <h3 id="ari-접근-표기" tabindex="-1"><a class="header-anchor" href="#ari-접근-표기"><span>ARI 접근 표기</span></a></h3>
 <p><code v-pre>(chain_offset, local_offset)</code></p>
 <ul>
@@ -2443,6 +2682,8 @@ Scheme은 tail call optimization을 언어 명세에서 요구함.</p>
 <li>chain_offset = 1: 직접 상위(부모) 서브프로그램의 변수</li>
 <li>local_offset: ARI 내 오프셋 (컴파일 타임 결정)</li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="scheme-이진-트리-핵심-코드" tabindex="-1"><a class="header-anchor" href="#scheme-이진-트리-핵심-코드"><span>Scheme 이진 트리 핵심 코드</span></a></h3>
 <div class="language-scheme line-numbers-mode" data-highlighter="prismjs" data-ext="scheme"><pre v-pre><code class="language-scheme"><span class="line"><span class="token punctuation">(</span><span class="token function">DEFINE</span> <span class="token punctuation">(</span><span class="token function">tree-height</span> t<span class="token punctuation">)</span></span>
 <span class="line">  <span class="token punctuation">(</span><span class="token function">IF</span> <span class="token punctuation">(</span><span class="token function">NULL?</span> t<span class="token punctuation">)</span></span>
@@ -2456,7 +2697,9 @@ Scheme은 tail call optimization을 언어 명세에서 요구함.</p>
 <span class="line">      <span class="token punctuation">(</span><span class="token operator">+</span> <span class="token number">1</span> <span class="token punctuation">(</span><span class="token function">count-nodes</span> <span class="token punctuation">(</span><span class="token function">CADR</span> t<span class="token punctuation">)</span><span class="token punctuation">)</span></span>
 <span class="line">           <span class="token punctuation">(</span><span class="token function">count-nodes</span> <span class="token punctuation">(</span><span class="token function">CADDR</span> t<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="haskell-foldr-계산-과정" tabindex="-1"><a class="header-anchor" href="#haskell-foldr-계산-과정"><span>Haskell foldr 계산 과정</span></a></h3>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h3 id="haskell-foldr-계산-과정" tabindex="-1"><a class="header-anchor" href="#haskell-foldr-계산-과정"><span>Haskell foldr 계산 과정</span></a></h3>
 <div class="language-haskell line-numbers-mode" data-highlighter="prismjs" data-ext="haskell"><pre v-pre><code class="language-haskell"><span class="line"><span class="token builtin">foldr</span> <span class="token punctuation">(</span><span class="token operator">+</span><span class="token punctuation">)</span> <span class="token number">0</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">]</span></span>
 <span class="line"><span class="token operator">=</span> <span class="token number">1</span> <span class="token operator">+</span> <span class="token builtin">foldr</span> <span class="token punctuation">(</span><span class="token operator">+</span><span class="token punctuation">)</span> <span class="token number">0</span> <span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">]</span></span>
 <span class="line"><span class="token operator">=</span> <span class="token number">1</span> <span class="token operator">+</span> <span class="token punctuation">(</span><span class="token number">2</span> <span class="token operator">+</span> <span class="token builtin">foldr</span> <span class="token punctuation">(</span><span class="token operator">+</span><span class="token punctuation">)</span> <span class="token number">0</span> <span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">)</span></span>
@@ -2467,7 +2710,9 @@ Scheme은 tail call optimization을 언어 명세에서 요구함.</p>
 <span class="line"><span class="token operator">=</span> <span class="token number">1</span> <span class="token operator">+</span> <span class="token punctuation">(</span><span class="token number">1</span> <span class="token operator">+</span> <span class="token punctuation">(</span><span class="token number">1</span> <span class="token operator">+</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span></span>
 <span class="line"><span class="token operator">=</span> <span class="token number">3</span>  <span class="token comment">-- length와 동일</span></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="exception-keywords-한눈에" tabindex="-1"><a class="header-anchor" href="#exception-keywords-한눈에"><span>Exception Keywords 한눈에</span></a></h3>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h3 id="exception-keywords-한눈에" tabindex="-1"><a class="header-anchor" href="#exception-keywords-한눈에"><span>Exception Keywords 한눈에</span></a></h3>
 <table>
 <thead>
 <tr>
@@ -2517,6 +2762,8 @@ Scheme은 tail call optimization을 언어 명세에서 요구함.</p>
 </tbody>
 </table>
 <p>Ruby 추가: <code v-pre>retry</code> (재시도), Java 추가: <code v-pre>throws</code> (메서드 선언에 checked exception 명시)</p>
+</section>
+<section class="print-section">
 <h3 id="semaphore-vs-monitor" tabindex="-1"><a class="header-anchor" href="#semaphore-vs-monitor"><span>Semaphore vs Monitor</span></a></h3>
 <table>
 <thead>
@@ -2554,6 +2801,8 @@ Scheme은 tail call optimization을 언어 명세에서 요구함.</p>
 </tr>
 </tbody>
 </table>
+</section>
+<section class="print-section">
 <h3 id="언어별-다형성-선언-키워드" tabindex="-1"><a class="header-anchor" href="#언어별-다형성-선언-키워드"><span>언어별 다형성 선언 키워드</span></a></h3>
 <table>
 <thead>
@@ -2591,6 +2840,7 @@ Scheme은 tail call optimization을 언어 명세에서 요구함.</p>
 </tr>
 </tbody>
 </table>
+</section>
 </div></template>
 
 

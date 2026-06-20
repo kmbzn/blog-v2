@@ -132,6 +132,36 @@ export default defineUserConfig({
         }
       }
     })
+
+    md.core.ruler.push('wrap-print-sections', (state) => {
+      const tokens = state.tokens
+      const out = []
+      let inSection = false
+
+      for (const token of tokens) {
+        const isSub = token.type === 'heading_open'
+        if (isSub) {
+          if (inSection) {
+            const t = new state.Token('html_block', '', 0)
+            t.content = '</section>\n'
+            out.push(t)
+          }
+          const t = new state.Token('html_block', '', 0)
+          t.content = '<section class="print-section">\n'
+          out.push(t)
+          inSection = true
+        }
+        out.push(token)
+      }
+
+      if (inSection) {
+        const t = new state.Token('html_block', '', 0)
+        t.content = '</section>\n'
+        out.push(t)
+      }
+
+      state.tokens = out
+    })
   },
   plugins: [
     markdownMathPlugin({

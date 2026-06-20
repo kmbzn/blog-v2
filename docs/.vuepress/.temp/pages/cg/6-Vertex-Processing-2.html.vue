@@ -1,5 +1,8 @@
-<template><div><h1 id="_6-vertex-processing-2" tabindex="-1"><a class="header-anchor" href="#_6-vertex-processing-2"><span>6 - Vertex Processing 2</span></a></h1>
+<template><div><section class="print-section">
+<h1 id="_6-vertex-processing-2" tabindex="-1"><a class="header-anchor" href="#_6-vertex-processing-2"><span>6 - Vertex Processing 2</span></a></h1>
 <DateMeta />
+</section>
+<section class="print-section">
 <h2 id="outline" tabindex="-1"><a class="header-anchor" href="#outline"><span>Outline</span></a></h2>
 <ul>
 <li>Projection Transformation
@@ -10,6 +13,8 @@
 </li>
 <li>Viewport Transformation</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="projection-transformation" tabindex="-1"><a class="header-anchor" href="#projection-transformation"><span>Projection Transformation</span></a></h2>
 <ul>
 <li>View space → NDC (normalized device coordinate system)로 변환</li>
@@ -22,6 +27,8 @@
 <li><span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="bold">P</mi></mrow><annotation encoding="application/x-tex">\mathbf{P}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6861em;"></span><span class="mord mathbf">P</span></span></span></span>: projection matrix</li>
 <li><span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi mathvariant="bold">p</mi><mi mathvariant="bold">c</mi></msub></mrow><annotation encoding="application/x-tex">\mathbf{p_c}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6389em;vertical-align:-0.1944em;"></span><span class="mord"><span class="mord mathbf">p</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1611em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathbf mtight">c</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>: clip space (또는 NDC space) 좌표</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="recall-that" tabindex="-1"><a class="header-anchor" href="#recall-that"><span>Recall that...</span></a></h2>
 <ul>
 <li>
@@ -49,12 +56,16 @@
 </ol>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="recall-opengl-clip-space" tabindex="-1"><a class="header-anchor" href="#recall-opengl-clip-space"><span>Recall: OpenGL Clip Space</span></a></h2>
 <ul>
 <li>Clip Space에서는 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo separator="true">,</mo><mi>y</mi><mo separator="true">,</mo><mi>z</mi></mrow><annotation encoding="application/x-tex">x, y, z</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">x</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.04398em;">z</span></span></span></span> 좌표가 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">-1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">−</span><span class="mord">1</span></span></span></span>에서 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span>까지인 cube 공간 안에 객체를 그릴 수 있음</li>
 <li>이 공간의 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mi>y</mi></mrow><annotation encoding="application/x-tex">xy</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">x</span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span></span></span></span> 평면이 2D <strong>viewport</strong> 역할을 함</li>
 <li>이 좌표계는 <strong>normalized device coordinate (NDC)</strong> 라고 불림</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="normalized-device-coordinates-ndc" tabindex="-1"><a class="header-anchor" href="#normalized-device-coordinates-ndc"><span>Normalized Device Coordinates (NDC)</span></a></h2>
 <ul>
 <li>Normalized device coordinates (NDC)는 <strong>장치에 독립</strong>적인 디스플레이 좌표계
@@ -69,6 +80,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="canonical-view-volume" tabindex="-1"><a class="header-anchor" href="#canonical-view-volume"><span>Canonical View Volume</span></a></h2>
 <ul>
 <li><strong>Canonical view volume</strong>은 NDC 공간 내의 3차원 볼륨이며, 화면에 표시될 수 있는 장면의 영역을 정의한다.</li>
@@ -81,6 +94,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="canonical-view-volume-1" tabindex="-1"><a class="header-anchor" href="#canonical-view-volume-1"><span>Canonical View Volume</span></a></h2>
 <ul>
 <li>관례적으로 NDC는 <strong>left-handed</strong> 좌표계임 (OpenGL과 Direct3D 모두)
@@ -95,6 +110,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="view-volume" tabindex="-1"><a class="header-anchor" href="#view-volume"><span>View Volume</span></a></h2>
 <ul>
 <li>View space에서는 객체를 꼭 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">[</mo><mo>−</mo><mn>1</mn><mo separator="true">,</mo><mn>1</mn><mo stretchy="false">]</mo></mrow><annotation encoding="application/x-tex">[-1, 1]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord">−</span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">1</span><span class="mclose">]</span></span></span></span> 범위 안에 배치할 필요는 없다.</li>
@@ -102,6 +119,8 @@
 <li>이 view volume (및 그 안의 모든 객체)은 <strong>canonical view volume in NDC space</strong>로 투영된다.</li>
 </ul>
 <p>→ <strong>Projection transformation</strong></p>
+</section>
+<section class="print-section">
 <h2 id="projection-transformation-1" tabindex="-1"><a class="header-anchor" href="#projection-transformation-1"><span>Projection Transformation</span></a></h2>
 <ul>
 <li>CG에서의 Projection이란: <strong>3D 좌표를 2D 화면 좌표로 매핑</strong>하는 것</li>
@@ -119,6 +138,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="orthographic-orthogonal-projection" tabindex="-1"><a class="header-anchor" href="#orthographic-orthogonal-projection"><span>Orthographic (Orthogonal) Projection</span></a></h2>
 <ul>
 <li>View volume: 직육면체 (cuboid)</li>
@@ -129,6 +150,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="windowing-transformation" tabindex="-1"><a class="header-anchor" href="#windowing-transformation"><span>Windowing Transformation</span></a></h2>
 <ul>
 <li>사각형 공간 내 점 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><msub><mi>p</mi><mi>x</mi></msub><mo separator="true">,</mo><mtext> </mtext><msub><mi>p</mi><mi>y</mi></msub><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(p_x,~p_y)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.0361em;vertical-align:-0.2861em;"></span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal">p</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">x</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace nobreak"> </span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord mathnormal">p</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.03588em;">y</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span>을 다른 사각형 공간의 대응 점 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><msubsup><mi>p</mi><mi>x</mi><mo mathvariant="normal" lspace="0em" rspace="0em">′</mo></msubsup><mo separator="true">,</mo><mtext> </mtext><msubsup><mi>p</mi><mi>y</mi><mo mathvariant="normal" lspace="0em" rspace="0em">′</mo></msubsup><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(p_x&#x27;,~p_y&#x27;)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.135em;vertical-align:-0.3831em;"></span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal">p</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.7519em;"><span style="top:-2.453em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">x</span></span></span><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.247em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace nobreak"> </span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord mathnormal">p</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.7519em;"><span style="top:-2.453em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.03588em;">y</span></span></span><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.3831em;"><span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span>로 매핑하는 변환
@@ -140,6 +163,8 @@
 <p v-pre class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msubsup><mi>p</mi><mi>x</mi><mo mathvariant="normal" lspace="0em" rspace="0em">′</mo></msubsup><mo>=</mo><mrow><mo fence="true">(</mo><mfrac><mrow><msub><mi>p</mi><mi>x</mi></msub><mo>−</mo><msub><mi>x</mi><mi>l</mi></msub></mrow><mrow><msub><mi>x</mi><mi>r</mi></msub><mo>−</mo><msub><mi>x</mi><mi>l</mi></msub></mrow></mfrac><mo fence="true">)</mo></mrow><mo stretchy="false">(</mo><msubsup><mi>x</mi><mi>r</mi><mo mathvariant="normal" lspace="0em" rspace="0em">′</mo></msubsup><mo>−</mo><msubsup><mi>x</mi><mi>l</mi><mo mathvariant="normal" lspace="0em" rspace="0em">′</mo></msubsup><mo stretchy="false">)</mo><mo>+</mo><msubsup><mi>x</mi><mi>l</mi><mo mathvariant="normal" lspace="0em" rspace="0em">′</mo></msubsup><mspace linebreak="newline"></mspace><msubsup><mi>p</mi><mi>y</mi><mo mathvariant="normal" lspace="0em" rspace="0em">′</mo></msubsup><mo>=</mo><mrow><mo fence="true">(</mo><mfrac><mrow><msub><mi>p</mi><mi>y</mi></msub><mo>−</mo><msub><mi>y</mi><mi>l</mi></msub></mrow><mrow><msub><mi>y</mi><mi>r</mi></msub><mo>−</mo><msub><mi>y</mi><mi>l</mi></msub></mrow></mfrac><mo fence="true">)</mo></mrow><mo stretchy="false">(</mo><msubsup><mi>y</mi><mi>r</mi><mo mathvariant="normal" lspace="0em" rspace="0em">′</mo></msubsup><mo>−</mo><msubsup><mi>y</mi><mi>l</mi><mo mathvariant="normal" lspace="0em" rspace="0em">′</mo></msubsup><mo stretchy="false">)</mo><mo>+</mo><msubsup><mi>y</mi><mi>l</mi><mo mathvariant="normal" lspace="0em" rspace="0em">′</mo></msubsup></mrow><annotation encoding="application/x-tex">p&#x27;_x = \left( \frac{p_x - x_l}{x_r - x_l} \right)(x_r&#x27; - x_l&#x27;) + x_l&#x27; \\
 p&#x27;_y = \left( \frac{p_y - y_l}{y_r - y_l} \right)(y_r&#x27; - y_l&#x27;) + y_l&#x27;
 </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.0489em;vertical-align:-0.247em;"></span><span class="mord"><span class="mord mathnormal">p</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8019em;"><span style="top:-2.453em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">x</span></span></span><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.247em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:2.4em;vertical-align:-0.95em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;"><span class="delimsizing size3">(</span></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.2603em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.02778em;">r</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.01968em;">l</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathnormal">p</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">x</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.01968em;">l</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.836em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mclose delimcenter" style="top:0em;"><span class="delimsizing size3">)</span></span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8019em;"><span style="top:-2.453em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.02778em;">r</span></span></span><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.247em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1.0519em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8019em;"><span style="top:-2.453em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.01968em;">l</span></span></span><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.247em;"><span></span></span></span></span></span></span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1.0489em;vertical-align:-0.247em;"></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8019em;"><span style="top:-2.453em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.01968em;">l</span></span></span><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.247em;"><span></span></span></span></span></span></span></span><span class="mspace newline"></span><span class="base"><span class="strut" style="height:1.185em;vertical-align:-0.3831em;"></span><span class="mord"><span class="mord mathnormal">p</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8019em;"><span style="top:-2.453em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.03588em;">y</span></span></span><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.3831em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:2.4em;vertical-align:-0.95em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;"><span class="delimsizing size3">(</span></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.2603em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.02778em;">r</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.01968em;">l</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathnormal">p</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.03588em;">y</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.01968em;">l</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.8804em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mclose delimcenter" style="top:0em;"><span class="delimsizing size3">)</span></span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8019em;"><span style="top:-2.453em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.02778em;">r</span></span></span><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.247em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1.0519em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8019em;"><span style="top:-2.453em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.01968em;">l</span></span></span><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.247em;"><span></span></span></span></span></span></span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1.0489em;vertical-align:-0.247em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8019em;"><span style="top:-2.453em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.01968em;">l</span></span></span><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.247em;"><span></span></span></span></span></span></span></span></span></span></span></p>
+</section>
+<section class="print-section">
 <h2 id="orthographic-projection-matrix" tabindex="-1"><a class="header-anchor" href="#orthographic-projection-matrix"><span>Orthographic Projection Matrix</span></a></h2>
 <ul>
 <li>
@@ -162,11 +187,15 @@ H403z M403 1759 V0 H319 V1759 v1800 v1759 h84z"/></svg></span></span></span><spa
 M347 1759 V0 H263 V1759 v1800 v1759 h84z"/></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:2.45em;"><span></span></span></span></span></span></span></span></span></span></span></span></p>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="examples-of-orthographic-projection" tabindex="-1"><a class="header-anchor" href="#examples-of-orthographic-projection"><span>Examples of Orthographic Projection</span></a></h2>
 <ul>
 <li>Orthographic 및 등각(isometric) 투영 예시</li>
 <li><strong>객체는 카메라로부터의 거리와 무관하게 항상 동일한 크기로 보임</strong></li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="properties-of-orthographic-projection" tabindex="-1"><a class="header-anchor" href="#properties-of-orthographic-projection"><span>Properties of Orthographic Projection</span></a></h2>
 <ul>
 <li>사실적으로 보이지 않음</li>
@@ -179,13 +208,19 @@ M347 1759 V0 H263 V1759 v1800 v1759 h84z"/></svg></span></span></span><span clas
 <li>Scaling과 Translation의 조합<br>
 → <strong>Affine transformation</strong></li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="demo-orthographic-projection" tabindex="-1"><a class="header-anchor" href="#demo-orthographic-projection"><span>[Demo] Orthographic Projection</span></a></h2>
 <ul>
 <li><a href="http://learnwebgl.brown37.net/08_projections/create_ortho/create_ortho.html" target="_blank" rel="noopener noreferrer">learnwebgl.brown37.net/08_projections/create_ortho/create_ortho.html</a></li>
 <li>슬라이더를 움직이며 왼쪽(view volume)과 오른쪽(rendered view)을 관찰</li>
 <li>왼쪽, 오른쪽, 아래, 위, 가까움, 멀리 위치를 조절 가능</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="quiz-1" tabindex="-1"><a class="header-anchor" href="#quiz-1"><span>Quiz 1</span></a></h2>
+</section>
+<section class="print-section">
 <h2 id="perspective-effects" tabindex="-1"><a class="header-anchor" href="#perspective-effects"><span>Perspective Effects</span></a></h2>
 <ul>
 <li>멀리 있는 객체는 작게 보임</li>
@@ -196,6 +231,8 @@ M347 1759 V0 H263 V1759 v1800 v1759 h84z"/></svg></span></span></span><span clas
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="perspective-projection" tabindex="-1"><a class="header-anchor" href="#perspective-projection"><span>Perspective Projection</span></a></h2>
 <ul>
 <li>View volume: <strong>Frustum (절두체)</strong> → &quot;Viewing frustum&quot;</li>
@@ -203,6 +240,8 @@ M347 1759 V0 H263 V1759 v1800 v1759 h84z"/></svg></span></span></span><span clas
 <li>정점들을 canonical view volume로 비선형적으로 매핑
 → 깊이에 따른 왜곡 효과 생성</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="why-does-this-mapping-generate-a-perspective-effect" tabindex="-1"><a class="header-anchor" href="#why-does-this-mapping-generate-a-perspective-effect"><span>Why does this mapping generate a perspective effect?</span></a></h2>
 <ul>
 <li>원래 3D 장면에서 카메라 기준으로 멀어질수록 z값 증가</li>
@@ -210,6 +249,8 @@ M347 1759 V0 H263 V1759 v1800 v1759 h84z"/></svg></span></span></span><span clas
 <li><strong>가까운 객체는 크게, 먼 객체는 작게</strong> 투영됨<br>
 → 이것이 perspective 효과의 본질</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="an-example-of-perspective-projection" tabindex="-1"><a class="header-anchor" href="#an-example-of-perspective-projection"><span>An Example of Perspective Projection</span></a></h2>
 <p><strong>After perspective projection</strong></p>
 <ul>
@@ -220,10 +261,14 @@ M347 1759 V0 H263 V1759 v1800 v1759 h84z"/></svg></span></span></span><span clas
 <li>수직 방향: <code v-pre>768px</code></li>
 <li>카메라의 viewport 내에 객체들이 깊이에 따라 달리 표현됨</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="let-s-first-consider-3d-view-frustum-→-2d-projection-plane" tabindex="-1"><a class="header-anchor" href="#let-s-first-consider-3d-view-frustum-→-2d-projection-plane"><span>Let's first consider 3D View Frustum → 2D Projection Plane</span></a></h2>
 <ul>
 <li>3D 점을 카메라 평면에 투영하는 과정을 고려해보자.</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="perspective-projection-1" tabindex="-1"><a class="header-anchor" href="#perspective-projection-1"><span>Perspective projection</span></a></h2>
 <ul>
 <li>
@@ -236,6 +281,8 @@ M347 1759 V0 H263 V1759 v1800 v1759 h84z"/></svg></span></span></span><span clas
 <p v-pre class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mfrac><msup><mi>y</mi><mo mathvariant="normal" lspace="0em" rspace="0em">′</mo></msup><mi>d</mi></mfrac><mo>=</mo><mfrac><mi>y</mi><mrow><mo>−</mo><mi>z</mi></mrow></mfrac><mspace linebreak="newline"></mspace><mo>⇒</mo><mspace width="1em"/><msup><mi>y</mi><mo mathvariant="normal" lspace="0em" rspace="0em">′</mo></msup><mo>=</mo><mfrac><mrow><mo>−</mo><mi>d</mi><mo>⋅</mo><mi>y</mi></mrow><mi>z</mi></mfrac></mrow><annotation encoding="application/x-tex">\frac{y&#x27;}{d} = \frac{y}{-z} \\
 \Rightarrow\quad y&#x27; = \frac{-d \cdot y}{z}
 </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:2.1149em;vertical-align:-0.686em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.4289em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal">d</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7519em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1.8769em;vertical-align:-0.7693em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.1076em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">−</span><span class="mord mathnormal" style="margin-right:0.04398em;">z</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">y</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.7693em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span><span class="mspace newline"></span><span class="base"><span class="strut" style="height:0.3669em;"></span><span class="mrel">⇒</span><span class="mspace" style="margin-right:1em;"></span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.9963em;vertical-align:-0.1944em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8019em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:2.0574em;vertical-align:-0.686em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.3714em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.04398em;">z</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">−</span><span class="mord mathnormal">d</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span></p>
+</section>
+<section class="print-section">
 <h2 id="homogeneous-coordinates-revisited" tabindex="-1"><a class="header-anchor" href="#homogeneous-coordinates-revisited"><span>Homogeneous coordinates revisited</span></a></h2>
 <ul>
 <li>Perspective는 나눗셈 연산이 필요함
@@ -251,6 +298,8 @@ M347 1759 V0 H263 V1759 v1800 v1759 h84z"/></svg></span></span></span><span clas
 </li>
 <li><strong>Homogeneous coordinates의 본래 목적은 투영 구현</strong>에 있음</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="homogeneous-coordinates-revisited-1" tabindex="-1"><a class="header-anchor" href="#homogeneous-coordinates-revisited-1"><span>Homogeneous coordinates revisited</span></a></h2>
 <ul>
 <li>
@@ -284,6 +333,8 @@ M347 1759 V0 H263 V1759 v1200 v1759 h84z"/></svg></span></span></span><span clas
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="perspective-projection-2" tabindex="-1"><a class="header-anchor" href="#perspective-projection-2"><span>Perspective projection</span></a></h2>
 <ul>
 <li>
@@ -321,12 +372,16 @@ H403z M403 1759 V0 H319 V1759 v1200 v1759 h84z"/></svg></span></span></span><spa
 M347 1759 V0 H263 V1759 v1200 v1759 h84z"/></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:2.15em;"><span></span></span></span></span></span></span></span></span></span></span></span></p>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="so-far-3d-→-2d" tabindex="-1"><a class="header-anchor" href="#so-far-3d-→-2d"><span>So far, 3D → 2D</span></a></h2>
 <ul>
 <li>지금까지는 단지<br>
 <strong>3D View Frustum → 2D Projection Plane</strong><br>
 로의 투영 이야기였음</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="now-3d-→-3d" tabindex="-1"><a class="header-anchor" href="#now-3d-→-3d"><span>Now, 3D → 3D</span></a></h2>
 <ul>
 <li>
@@ -338,6 +393,8 @@ M347 1759 V0 H263 V1759 v1200 v1759 h84z"/></svg></span></span></span><span clas
 → clip space의 깊이 정보가 필요</p>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="first-3d-view-frustum-→-3d-cuboid" tabindex="-1"><a class="header-anchor" href="#first-3d-view-frustum-→-3d-cuboid"><span>First, 3D View Frustum → 3D Cuboid</span></a></h2>
 <ul>
 <li>우선은 canonical volume이 아닌, near, far 평면이 같은 위치의 cuboid를 고려</li>
@@ -356,6 +413,8 @@ M347 1759 V0 H263 V1759 v1200 v1759 h84z"/></svg></span></span></span><span clas
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="_3d-view-frustum-→-3d-cuboid" tabindex="-1"><a class="header-anchor" href="#_3d-view-frustum-→-3d-cuboid"><span>3D View Frustum → 3D Cuboid</span></a></h2>
 <ul>
 <li>
@@ -418,6 +477,8 @@ M347 1759 V0 H263 V1759 v1200 v1759 h84z"/></svg></span></span></span><span clas
 </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">a</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mord mathnormal">n</span><span class="mpunct">,</span><span class="mspace" style="margin-right:1em;"></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">b</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">n</span></span></span></span></span></p>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="final-3d-view-frustum-→-3d-canonical-view-volume" tabindex="-1"><a class="header-anchor" href="#final-3d-view-frustum-→-3d-canonical-view-volume"><span>Final: 3D View Frustum → 3D Canonical View Volume</span></a></h2>
 <ul>
 <li>
@@ -440,6 +501,8 @@ M347 1759 V0 H263 V1759 v1200 v1759 h84z"/></svg></span></span></span><span clas
 <p>frustum → cuboid → canonical volume 으로 변환</p>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="perspective-projection-matrix" tabindex="-1"><a class="header-anchor" href="#perspective-projection-matrix"><span>Perspective Projection Matrix</span></a></h2>
 <ul>
 <li>
@@ -456,6 +519,8 @@ H403z M403 1759 V0 H319 V1759 v1200 v1759 h84z"/></svg></span></span></span><spa
 M347 1759 V0 H263 V1759 v1200 v1759 h84z"/></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:2.15em;"><span></span></span></span></span></span></span></span></span></span></span></span></p>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="note-on-mapped-depth-z-value" tabindex="-1"><a class="header-anchor" href="#note-on-mapped-depth-z-value"><span>Note on Mapped Depth (Z' value)</span></a></h2>
 <ul>
 <li>Perspective projection은 깊이 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>z</mi></mrow><annotation encoding="application/x-tex">z</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal" style="margin-right:0.04398em;">z</span></span></span></span>값을 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mo>−</mo><mn>1</mn><mo separator="true">,</mo><mtext> </mtext><mo>+</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(-1,~+1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">−</span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace nobreak"> </span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">+</span><span class="mord">1</span><span class="mclose">)</span></span></span></span> 범위로 <strong>비선형 매핑</strong></li>
@@ -472,6 +537,8 @@ M347 1759 V0 H263 V1759 v1200 v1759 h84z"/></svg></span></span></span><span clas
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="perspective-division-clip-ndc-space" tabindex="-1"><a class="header-anchor" href="#perspective-division-clip-ndc-space"><span>Perspective Division, Clip / NDC Space</span></a></h2>
 <ul>
 <li>clip space: shader 이후 장면 표현 (4D homogeneous)</li>
@@ -482,18 +549,26 @@ M347 1759 V0 H263 V1759 v1200 v1759 h84z"/></svg></span></span></span><span clas
 </li>
 <li>실제 표현되는 범위: <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">[</mo><mo>−</mo><mn>1</mn><mo separator="true">,</mo><mtext> </mtext><mn>1</mn><mo stretchy="false">]</mo></mrow><annotation encoding="application/x-tex">[-1,~1]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord">−</span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace nobreak"> </span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">1</span><span class="mclose">]</span></span></span></span></li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="demo-perspective-projection-frustum" tabindex="-1"><a class="header-anchor" href="#demo-perspective-projection-frustum"><span>[Demo] Perspective Projection - frustum</span></a></h2>
 <ul>
 <li><a href="http://learnwebgl.brown37.net/08_projections/create_frustum/create_frustum.html" target="_blank" rel="noopener noreferrer">learnwebgl.brown37.net/08_projections/create_frustum/create_frustum.html</a></li>
 <li>슬라이더로 left, right, top, near, far 값을 조절하며 변화 확인</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="demo-perspective-projection-perspective" tabindex="-1"><a class="header-anchor" href="#demo-perspective-projection-perspective"><span>[Demo] Perspective Projection - perspective</span></a></h2>
 <ul>
 <li><a href="http://learnwebgl.brown37.net/08_projections/create_perspective/create_perspective.html" target="_blank" rel="noopener noreferrer">learnwebgl.brown37.net/08_projections/create_perspective/create_perspective.html</a></li>
 <li>슬라이더를 이용해 <code v-pre>fovy</code>, <code v-pre>aspect</code>, <code v-pre>near</code>, <code v-pre>far</code> 조절</li>
 <li><strong>frustum</strong>과 <strong>perspective</strong> 중 어떤 것이 더 편리한가?</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="quiz-2" tabindex="-1"><a class="header-anchor" href="#quiz-2"><span>Quiz 2</span></a></h2>
+</section>
+<section class="print-section">
 <h2 id="viewport-transformation" tabindex="-1"><a class="header-anchor" href="#viewport-transformation"><span>Viewport Transformation</span></a></h2>
 <ul>
 <li>Viewport transformation은 NDC 공간에서 화면 공간(screen space)으로 변환</li>
@@ -505,6 +580,8 @@ M347 1759 V0 H263 V1759 v1200 v1759 h84z"/></svg></span></span></span><span clas
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="recall-that-1" tabindex="-1"><a class="header-anchor" href="#recall-that-1"><span>Recall that...</span></a></h2>
 <ul>
 <li>
@@ -532,6 +609,8 @@ M347 1759 V0 H263 V1759 v1200 v1759 h84z"/></svg></span></span></span><span clas
 </ol>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="viewport-transformation-1" tabindex="-1"><a class="header-anchor" href="#viewport-transformation-1"><span>Viewport Transformation</span></a></h2>
 <ul>
 <li>Canonical view volume (NDC)에서 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>z</mi></mrow><annotation encoding="application/x-tex">z</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal" style="margin-right:0.04398em;">z</span></span></span></span>방향 +를 기준으로 내려다본다고 가정</li>
@@ -539,6 +618,8 @@ M347 1759 V0 H263 V1759 v1200 v1759 h84z"/></svg></span></span></span><span clas
 <li>Viewport transformation도 결국 <strong>windowing transformation</strong>의 일종</li>
 <li>깊이 값(<span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>z</mi></mrow><annotation encoding="application/x-tex">z</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal" style="margin-right:0.04398em;">z</span></span></span></span>)은 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">[</mo><mn>0</mn><mo separator="true">,</mo><mtext> </mtext><mn>1</mn><mo stretchy="false">]</mo></mrow><annotation encoding="application/x-tex">[0,~1]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace nobreak"> </span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">1</span><span class="mclose">]</span></span></span></span> 범위로 재매핑됨 (default depth buffer)</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="viewport-transformation-matrix" tabindex="-1"><a class="header-anchor" href="#viewport-transformation-matrix"><span>Viewport Transformation Matrix</span></a></h2>
 <ul>
 <li>
@@ -565,6 +646,7 @@ M347 1759 V0 H263 V1759 v1200 v1759 h84z"/></svg></span></span></span><span clas
 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mtext>width</mtext><mo separator="true">,</mo><mtext> height</mtext><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(\text{width},\ \text{height})</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord text"><span class="mord">width</span></span><span class="mpunct">,</span><span class="mspace"> </span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord text"><span class="mord">height</span></span><span class="mclose">)</span></span></span></span> 크기의 <strong>화면 좌표</strong>로 이동</p>
 </li>
 </ul>
+</section>
 </div></template>
 
 

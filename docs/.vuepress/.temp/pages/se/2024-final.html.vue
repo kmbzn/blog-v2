@@ -1,5 +1,8 @@
-<template><div><h1 id="_2024년-기말고사" tabindex="-1"><a class="header-anchor" href="#_2024년-기말고사"><span>2024년 기말고사</span></a></h1>
+<template><div><section class="print-section">
+<h1 id="_2024년-기말고사" tabindex="-1"><a class="header-anchor" href="#_2024년-기말고사"><span>2024년 기말고사</span></a></h1>
 <DateMeta />
+</section>
+<section class="print-section">
 <h3 id="_1-다음-요구사항과-유즈케이스를-읽고-물음에-답하시오-30점" tabindex="-1"><a class="header-anchor" href="#_1-다음-요구사항과-유즈케이스를-읽고-물음에-답하시오-30점"><span>1. 다음 요구사항과 유즈케이스를 읽고 물음에 답하시오. (30점)</span></a></h3>
 <blockquote>
 <p>공공 도서관은 지역 사회 구성원들이 대여할 수 있는 책, 영화, 기타 자료들을 보관하고 있다. 도서관 회원은 도서관 계정과 해당 계정의 ID 번호가 적힌 도서관 카드를 갖고 있으며, 이를 통해 도서관에서 본인을 확인할 수 있다. 회원의 도서관 계정에는 대출한 자료와 각 자료의 반납 기한이 기록된다. 각 자료 유형마다 대여 기간이 설정되어 있으며, 이 기간을 기준으로 대출 시 반납 기한이 결정된다. 만약 회원이 반납 기한을 넘긴 후 자료를 반납할 경우, 해당 자료에 대한 연체료가 발생하며, 이 금액은 회원의 도서관 계정에 기록된다.</p>
@@ -15,6 +18,8 @@
 <li>주어진 유즈 케이스 시나리오의 Sequence diagram을 작성하시오. (10점)
 <img src="@source/se/image-88.png" alt="alt text"></li>
 </ol>
+</section>
+<section class="print-section">
 <h3 id="_2-당신은-경쟁사의-제품을-역공학으로-분석하여-다음과-같은-코드를-작성할-수-있었다-분석-결과-decorator-패턴과-그-외-두-종류의-디자인-패턴까지-총-세-종류의-디자인-패턴을-사용하고-있었다-decorator-패턴-외에-어떤-디자인-패턴을-사용하고-있고-어떤-class와-method가-해당-디자인-패턴과-관련되어-있는지-설명하시오-decorator-패턴-외-총-2개의-패턴에-대해-설명-15점" tabindex="-1"><a class="header-anchor" href="#_2-당신은-경쟁사의-제품을-역공학으로-분석하여-다음과-같은-코드를-작성할-수-있었다-분석-결과-decorator-패턴과-그-외-두-종류의-디자인-패턴까지-총-세-종류의-디자인-패턴을-사용하고-있었다-decorator-패턴-외에-어떤-디자인-패턴을-사용하고-있고-어떤-class와-method가-해당-디자인-패턴과-관련되어-있는지-설명하시오-decorator-패턴-외-총-2개의-패턴에-대해-설명-15점"><span>2. 당신은 경쟁사의 제품을 역공학으로 분석하여 다음과 같은 코드를 작성할 수 있었다. 분석 결과 Decorator 패턴과 그 외 두 종류의 디자인 패턴까지 총 세 종류의 디자인 패턴을 사용하고 있었다. Decorator 패턴 외에 어떤 디자인 패턴을 사용하고 있고 어떤 Class와 Method가 해당 디자인 패턴과 관련되어 있는지 설명하시오. (Decorator 패턴 외 총 2개의 패턴에 대해 설명) (15점)</span></a></h3>
 <div class="language-java line-numbers-mode" data-highlighter="prismjs" data-ext="java"><pre v-pre><code class="language-java"><span class="line"><span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">I1</span> <span class="token punctuation">{</span></span>
 <span class="line">    <span class="token keyword">public</span> <span class="token class-name">I2</span> <span class="token function">method1</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
@@ -86,6 +91,8 @@
 <li>singleton 패턴은 <code v-pre>C1</code> 클래스에 적용되어 있다. <code v-pre>C1</code> 클래스는 생성자를 <code v-pre>private</code>으로 선언하여 외부에서 임의로 인스턴스를 생성하지 못하도록 제한하였다. 대신 클래스 내부에서 <code v-pre>static</code> 필드인 <code v-pre>c1</code>을 통해 자기 자신의 유일한 인스턴스를 미리 생성해 두고, <code v-pre>public static</code> 메서드인 <code v-pre>method4()</code>를 통해서만 이 인스턴스에 접근할 수 있도록 하였다. 이는 시스템 전체에서 해당 클래스의 인스턴스가 오직 하나만 존재하도록 보장하는 역할을 한다.</li>
 <li>팩토리 메서드 패턴은 <code v-pre>C1</code> 클래스의 <code v-pre>method1()</code>과 내부 클래스 <code v-pre>C2</code>의 관계에서 찾아볼 수 있다. <code v-pre>C1</code>의 <code v-pre>method1()</code>은 구체적인 구현 클래스인 <code v-pre>C2</code>의 인스턴스를 생성하여 반환하는 역할을 수행한다. 이때 <code v-pre>C2</code>는 <code v-pre>private static inner class</code>로 선언되어 있어 외부에서는 그 존재를 알 수 없으며, 클라이언트는 오직 <code v-pre>I2</code> 인터페이스를 통해서만 반환된 객체를 사용할 수 있다. 이는 객체 생성의 구체적인 내용을 캡슐화하여 유연성을 높이는 방식이다.</li>
 </ol>
+</section>
+<section class="print-section">
 <h3 id="_3-소프트웨어-품질보증-활동에-관한-질문에-답하시오-10점" tabindex="-1"><a class="header-anchor" href="#_3-소프트웨어-품질보증-활동에-관한-질문에-답하시오-10점"><span>3. 소프트웨어 품질보증 활동에 관한 질문에 답하시오. (10점)</span></a></h3>
 <ol>
 <li>
@@ -101,6 +108,8 @@
 </ul>
 </li>
 </ol>
+</section>
+<section class="print-section">
 <h3 id="_4-다음-주어진-코드에-데이터-흐름-data-flow-정적-분석을-적용하여-으로-나누는-연산이-발생하는지-분석하고자-한다-이-때-다음-질문에-답하시오-단-x-y-z는-정수-타입이-아닌-일반적인-숫자-타입이라-가정하고-input-함수는-사용자로부터-입력받은-임의의-숫자값을-리턴하는-함수이다-20점" tabindex="-1"><a class="header-anchor" href="#_4-다음-주어진-코드에-데이터-흐름-data-flow-정적-분석을-적용하여-으로-나누는-연산이-발생하는지-분석하고자-한다-이-때-다음-질문에-답하시오-단-x-y-z는-정수-타입이-아닌-일반적인-숫자-타입이라-가정하고-input-함수는-사용자로부터-입력받은-임의의-숫자값을-리턴하는-함수이다-20점"><span>4. 다음 주어진 코드에 데이터 흐름 (Data-flow) 정적 분석을 적용하여 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">0</span></span></span></span>으로 나누는 연산이 발생하는지 분석하고자 한다. 이 때 다음 질문에 답하시오. (단, x, y, z는 정수 타입이 아닌 일반적인 숫자 타입이라 가정하고, <code v-pre>input()</code> 함수는 사용자로부터 입력받은 임의의 숫자값을 리턴하는 함수이다.) (20점)</span></a></h3>
 <div class="language-c line-numbers-mode" data-highlighter="prismjs" data-ext="c"><pre v-pre><code class="language-c"><span class="line">x <span class="token operator">=</span> <span class="token function">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
 <span class="line">y <span class="token operator">=</span> x<span class="token punctuation">;</span></span>
@@ -123,6 +132,8 @@
 </ul>
 </li>
 </ol>
+</section>
+<section class="print-section">
 <h3 id="_5-다음-삼각형-판별-c-프로그램에-대해-질문에-답하시오-20점" tabindex="-1"><a class="header-anchor" href="#_5-다음-삼각형-판별-c-프로그램에-대해-질문에-답하시오-20점"><span>5. 다음 삼각형 판별 C 프로그램에 대해 질문에 답하시오. (20점)</span></a></h3>
 <div class="language-c line-numbers-mode" data-highlighter="prismjs" data-ext="c"><pre v-pre><code class="language-c"><span class="line"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span></span>
 <span class="line"></span>
@@ -186,6 +197,7 @@
 </ul>
 </li>
 </ol>
+</section>
 </div></template>
 
 

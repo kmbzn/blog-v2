@@ -1,9 +1,16 @@
-<template><div><h1 id="파킹통장-vs-cma-통장" tabindex="-1"><a class="header-anchor" href="#파킹통장-vs-cma-통장"><span>파킹통장 vs CMA 통장</span></a></h1>
+<template><div><section class="print-section">
+<h1 id="파킹통장-vs-cma-통장" tabindex="-1"><a class="header-anchor" href="#파킹통장-vs-cma-통장"><span>파킹통장 vs CMA 통장</span></a></h1>
 <DateMeta />
 <p>여유 자금을 잠깐 보관할 때 이자를 받을 수 있는 대표적인 두 가지 수단이 파킹통장과 CMA 통장이다. 둘 다 수시 입출금이 가능하면서 일반 보통예금보다 높은 금리를 제공하지만, 구조와 안전성 면에서 차이가 있다.</p>
+</section>
+<section class="print-section">
 <h2 id="파킹통장" tabindex="-1"><a class="header-anchor" href="#파킹통장"><span>파킹통장</span></a></h2>
+</section>
+<section class="print-section">
 <h3 id="개념" tabindex="-1"><a class="header-anchor" href="#개념"><span>개념</span></a></h3>
 <p>파킹통장(Parking Account)은 은행에서 제공하는 수시 입출금 예금 상품 중, 일반 보통예금보다 높은 금리를 제공하는 통장을 통칭한다. 차를 잠깐 '주차'하듯 자금을 잠시 보관하는 용도에서 이름이 붙었다.</p>
+</section>
+<section class="print-section">
 <h3 id="특징" tabindex="-1"><a class="header-anchor" href="#특징"><span>특징</span></a></h3>
 <ul>
 <li>운영 주체: <strong>은행</strong></li>
@@ -11,6 +18,8 @@
 <li>이자 계산 방식: 일별 잔액 기준, 매월 말 지급 (상품마다 다름)</li>
 <li>입출금: 자유롭게 가능 (공과금 자동이체, 체크카드 연결 등 가능)</li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="주요-상품-비교-2024-2025년-기준" tabindex="-1"><a class="header-anchor" href="#주요-상품-비교-2024-2025년-기준"><span>주요 상품 비교 (2024~2025년 기준)</span></a></h3>
 <table>
 <thead>
@@ -51,6 +60,8 @@
 <blockquote>
 <p>금리는 한국은행 기준금리 변동에 따라 주기적으로 조정된다. 가입 전 최신 금리를 확인할 것.</p>
 </blockquote>
+</section>
+<section class="print-section">
 <h3 id="장단점" tabindex="-1"><a class="header-anchor" href="#장단점"><span>장단점</span></a></h3>
 <p><strong>장점</strong></p>
 <ul>
@@ -63,9 +74,15 @@
 <li>증권사 CMA 대비 금리가 낮은 경우가 있음</li>
 <li>인터넷 전문은행 외 시중은행 파킹통장은 금리가 낮거나 조건이 복잡함</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="cma-통장" tabindex="-1"><a class="header-anchor" href="#cma-통장"><span>CMA 통장</span></a></h2>
+</section>
+<section class="print-section">
 <h3 id="개념-1" tabindex="-1"><a class="header-anchor" href="#개념-1"><span>개념</span></a></h3>
 <p>CMA(Cash Management Account)는 증권사에서 운영하는 단기 금융상품이다. 고객이 예치한 자금을 단기 채권, RP(환매조건부채권), MMF 등에 운용해 수익을 내고, 그 수익을 이자로 지급하는 구조다.</p>
+</section>
+<section class="print-section">
 <h3 id="종류" tabindex="-1"><a class="header-anchor" href="#종류"><span>종류</span></a></h3>
 <table>
 <thead>
@@ -98,6 +115,8 @@
 </tr>
 </tbody>
 </table>
+</section>
+<section class="print-section">
 <h3 id="주요-cma-금리-비교-2024-2025년-기준" tabindex="-1"><a class="header-anchor" href="#주요-cma-금리-비교-2024-2025년-기준"><span>주요 CMA 금리 비교 (2024~2025년 기준)</span></a></h3>
 <table>
 <thead>
@@ -138,6 +157,8 @@
 <blockquote>
 <p>CMA 금리는 파킹통장보다 높은 경우가 많지만, <strong>예금자보호가 적용되지 않는다</strong>는 점이 핵심 차이다.</p>
 </blockquote>
+</section>
+<section class="print-section">
 <h3 id="특징-1" tabindex="-1"><a class="header-anchor" href="#특징-1"><span>특징</span></a></h3>
 <ul>
 <li>운영 주체: <strong>증권사</strong></li>
@@ -146,6 +167,8 @@
 <li>입출금: 자유롭게 가능 (체크카드 연결 가능)</li>
 <li>증권 거래: CMA 계좌에서 주식, ETF 매수 바로 가능</li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="장단점-1" tabindex="-1"><a class="header-anchor" href="#장단점-1"><span>장단점</span></a></h3>
 <p><strong>장점</strong></p>
 <ul>
@@ -158,6 +181,8 @@
 <li><strong>예금자보호 미적용</strong> (증권사 파산 시 원금 손실 가능성)</li>
 <li>은행 자동이체, 월급 이체 설정이 은행 계좌보다 번거로울 수 있음</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="파킹통장-vs-cma-핵심-비교" tabindex="-1"><a class="header-anchor" href="#파킹통장-vs-cma-핵심-비교"><span>파킹통장 vs CMA 핵심 비교</span></a></h2>
 <table>
 <thead>
@@ -205,7 +230,11 @@
 </tr>
 </tbody>
 </table>
+</section>
+<section class="print-section">
 <h2 id="어떤-것을-선택해야-할까" tabindex="-1"><a class="header-anchor" href="#어떤-것을-선택해야-할까"><span>어떤 것을 선택해야 할까?</span></a></h2>
+</section>
+<section class="print-section">
 <h3 id="파킹통장이-적합한-경우" tabindex="-1"><a class="header-anchor" href="#파킹통장이-적합한-경우"><span>파킹통장이 적합한 경우</span></a></h3>
 <ul>
 <li>원금 보호(예금자보호)가 최우선인 경우</li>
@@ -213,12 +242,16 @@
 <li>1억원 이하의 단기 자금 보관</li>
 <li>은행 서비스가 익숙하고 간편하게 쓰고 싶은 경우</li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="cma가-적합한-경우" tabindex="-1"><a class="header-anchor" href="#cma가-적합한-경우"><span>CMA가 적합한 경우</span></a></h3>
 <ul>
 <li>조금이라도 더 높은 금리를 원하는 경우</li>
 <li>이미 증권 계좌를 사용 중이거나 주식·ETF 투자와 연동하고 싶은 경우</li>
 <li>소액 (수백만원 이하)이라 예금자보호 필요성이 낮다고 판단하는 경우</li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="현실적인-전략" tabindex="-1"><a class="header-anchor" href="#현실적인-전략"><span>현실적인 전략</span></a></h3>
 <p>1억원 이하 단기 자금이라면 <strong>파킹통장</strong>이 안정적이다. 금리 차이(0.5~1%p)가 있지만, 예금자보호가 주는 안전성은 그 이상의 가치가 있다.</p>
 <p>1억원 초과 여유 자금이라면 어차피 예금자보호를 초과하므로, CMA의 높은 금리를 선택하거나 두 상품을 분산해서 사용하는 것이 현명하다.</p>
@@ -230,6 +263,7 @@
 <p class="hint-container-title">예금자보호 한도</p>
 <p>예금자보호는 1인 1금융기관(은행) 기준 원금+이자 합산 <strong>1억원</strong>까지 보호한다. 2개 이상의 은행에 나눠 예치하면 각 은행별로 1억원까지 보호받는다. 증권사 RP형 CMA는 예금자보호 대상이 아니다.</p>
 </div>
+</section>
 </div></template>
 
 

@@ -1,5 +1,8 @@
-<template><div><h1 id="_11-object-oriented-design" tabindex="-1"><a class="header-anchor" href="#_11-object-oriented-design"><span>11. Object-Oriented Design</span></a></h1>
+<template><div><section class="print-section">
+<h1 id="_11-object-oriented-design" tabindex="-1"><a class="header-anchor" href="#_11-object-oriented-design"><span>11. Object-Oriented Design</span></a></h1>
 <DateMeta />
+</section>
+<section class="print-section">
 <h2 id="learning-goals" tabindex="-1"><a class="header-anchor" href="#learning-goals"><span>Learning Goals</span></a></h2>
 <ul>
 <li>Solution Space에서의 UML
@@ -17,7 +20,11 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h1 id="modeling-implementations-with-uml" tabindex="-1"><a class="header-anchor" href="#modeling-implementations-with-uml"><span>Modeling Implementations with UML</span></a></h1>
+</section>
+<section class="print-section">
 <h2 id="a-word-on-uml" tabindex="-1"><a class="header-anchor" href="#a-word-on-uml"><span>A Word on UML</span></a></h2>
 <ul>
 <li>UML은 표준화된, 확립된 표기법</li>
@@ -30,8 +37,12 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="one-domain-model-for-the-library-system" tabindex="-1"><a class="header-anchor" href="#one-domain-model-for-the-library-system"><span>One Domain Model for the Library System</span></a></h2>
 <p><img src="@source/se/image-21.png" alt="alt text"></p>
+</section>
+<section class="print-section">
 <h2 id="from-concepts-to-objects" tabindex="-1"><a class="header-anchor" href="#from-concepts-to-objects"><span>From Concepts to Objects</span></a></h2>
 <ul>
 <li>Domain 개념은 classes와 어떻게 다른가?
@@ -42,6 +53,8 @@
 </li>
 </ul>
 <p><img src="@source/se/image-56.png" alt="alt text"></p>
+</section>
+<section class="print-section">
 <h2 id="object-diagrams" tabindex="-1"><a class="header-anchor" href="#object-diagrams"><span>Object Diagrams</span></a></h2>
 <ul>
 <li>Fields와 methods를 가진 Objects/classes</li>
@@ -49,6 +62,8 @@
 <li>Associations, visibility, types
 <img src="@source/se/image-23.png" alt="alt text"></li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="object-diagram-notation-classes-objects" tabindex="-1"><a class="header-anchor" href="#object-diagram-notation-classes-objects"><span>Object Diagram Notation: Classes/Objects</span></a></h2>
 <p><img src="@source/se/image-22.png" alt="alt text"></p>
 <div class="language-java line-numbers-mode" data-highlighter="prismjs" data-ext="java"><pre v-pre><code class="language-java"><span class="line"><span class="token keyword">class</span> <span class="token class-name">LibraryAccount</span> <span class="token punctuation">{</span></span>
@@ -59,7 +74,9 @@
 <span class="line">  <span class="token keyword">void</span> <span class="token function">payFees</span><span class="token punctuation">(</span><span class="token keyword">int</span> payment<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> <span class="token punctuation">}</span></span>
 <span class="line"><span class="token punctuation">}</span></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="object-diagram-notation-interfaces" tabindex="-1"><a class="header-anchor" href="#object-diagram-notation-interfaces"><span>Object Diagram Notation: Interfaces</span></a></h2>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h2 id="object-diagram-notation-interfaces" tabindex="-1"><a class="header-anchor" href="#object-diagram-notation-interfaces"><span>Object Diagram Notation: Interfaces</span></a></h2>
 <p><img src="@source/se/image-24.png" alt="alt text"></p>
 <div class="language-java line-numbers-mode" data-highlighter="prismjs" data-ext="java"><pre v-pre><code class="language-java"><span class="line"><span class="token keyword">interface</span> <span class="token class-name">LibraryAccount</span> <span class="token punctuation">{</span></span>
 <span class="line">  <span class="token keyword">boolean</span> <span class="token function">borrow</span><span class="token punctuation">(</span><span class="token class-name">Book</span> b<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
@@ -67,7 +84,9 @@
 <span class="line">  <span class="token keyword">void</span> <span class="token function">payFees</span><span class="token punctuation">(</span><span class="token keyword">int</span> payment<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
 <span class="line"><span class="token punctuation">}</span></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="object-diagram-notation-associations" tabindex="-1"><a class="header-anchor" href="#object-diagram-notation-associations"><span>Object Diagram Notation: Associations</span></a></h2>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h2 id="object-diagram-notation-associations" tabindex="-1"><a class="header-anchor" href="#object-diagram-notation-associations"><span>Object Diagram Notation: Associations</span></a></h2>
 <p><img src="@source/se/image-25.png" alt="alt text"></p>
 <div class="language-java line-numbers-mode" data-highlighter="prismjs" data-ext="java"><pre v-pre><code class="language-java"><span class="line"><span class="token keyword">class</span> <span class="token class-name">LibraryAccount</span> <span class="token punctuation">{</span></span>
 <span class="line">  <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span></span>
@@ -83,6 +102,8 @@
 <li>Fields는 기본 types에만 사용</li>
 </ul>
 <p><img src="@source/se/image-26.png" alt="alt text"></p>
+</section>
+<section class="print-section">
 <h2 id="class-diagram-vs-object-diagram" tabindex="-1"><a class="header-anchor" href="#class-diagram-vs-object-diagram"><span>Class Diagram vs Object Diagram</span></a></h2>
 <ul>
 <li>Classes와 objects 둘 다 modeling 가능</li>
@@ -90,6 +111,8 @@
 <li>특정 objects를 modeling해야 하는 경우 <code v-pre>objectId: Class</code> 표기법 사용
 <img src="@source/se/image-27.png" alt="alt text"></li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="class-diagrams-and-javascript-typescript" tabindex="-1"><a class="header-anchor" href="#class-diagrams-and-javascript-typescript"><span>Class Diagrams and JavaScript/TypeScript</span></a></h2>
 <ul>
 <li>Classes를 사용하지 않을 때에도, 동일한 아이디어를 표현하기 위해 표기법 사용
@@ -107,10 +130,16 @@
 <span class="line">    <span class="token punctuation">}</span></span>
 <span class="line"><span class="token punctuation">}</span></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="one-object-model-for-the-library-system" tabindex="-1"><a class="header-anchor" href="#one-object-model-for-the-library-system"><span>One Object Model for the Library System</span></a></h2>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h2 id="one-object-model-for-the-library-system" tabindex="-1"><a class="header-anchor" href="#one-object-model-for-the-library-system"><span>One Object Model for the Library System</span></a></h2>
 <p><img src="@source/se/image-28.png" alt="alt text"></p>
+</section>
+<section class="print-section">
 <h2 id="domain-model-vs-object-model" tabindex="-1"><a class="header-anchor" href="#domain-model-vs-object-model"><span>Domain Model vs Object Model</span></a></h2>
 <p><img src="@source/se/image-29.png" alt="alt text"></p>
+</section>
+<section class="print-section">
 <h2 id="object-diagram-notation-requirements" tabindex="-1"><a class="header-anchor" href="#object-diagram-notation-requirements"><span>Object Diagram Notation Requirements</span></a></h2>
 <ul>
 <li>표기법에 대해 매우 엄격하지는 않지만,
@@ -126,6 +155,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h1 id="modeling-interactions-past-the-system-boundary" tabindex="-1"><a class="header-anchor" href="#modeling-interactions-past-the-system-boundary"><span>Modeling Interactions Past the System Boundary</span></a></h1>
 <ul>
 <li><strong>Use case scenario:</strong> 도서관 회원이 도서관 카드를 사용하여 도서관 시스템 키오스크에서 로그인하고 책을 대출</li>
@@ -133,6 +164,8 @@
 <li>해당 책과 반납 기한을 회원의 도서관 계정에 대출 항목으로 기록
 <img src="@source/se/image-30.png" alt="alt text"></li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="interaction-diagrams" tabindex="-1"><a class="header-anchor" href="#interaction-diagrams"><span>Interaction Diagrams</span></a></h2>
 <ul>
 <li>Objects 간의 상호작용</li>
@@ -140,13 +173,19 @@
 <li>Sequence diagrams는 system sequence diagrams와 유사하지만, objects/classes 간의 상호작용을 묘사
 <img src="@source/se/image-31.png" alt="alt text"></li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="example" tabindex="-1"><a class="header-anchor" href="#example"><span>Example</span></a></h2>
 <p><img src="@source/se/image-32.png" alt="alt text"></p>
+</section>
+<section class="print-section">
 <h2 id="interaction-diagram-practice" tabindex="-1"><a class="header-anchor" href="#interaction-diagram-practice"><span>Interaction Diagram Practice</span></a></h2>
 <ul>
 <li><strong>Use case scenario:</strong> ...책을 대출. 회원의 미납 연체료가 없는지 확인 후, 시스템은 대출 기간(loan period)을 현재 날짜에 더해 반납 기한을 결정하고, 책과 반납 기한을 회원 계정에 대출 항목으로 기록
 <img src="@source/se/image-33.png" alt="alt text"></li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="interaction-diagrams-help-evaluate-design-alternatives" tabindex="-1"><a class="header-anchor" href="#interaction-diagrams-help-evaluate-design-alternatives"><span>Interaction Diagrams Help Evaluate Design Alternatives</span></a></h2>
 <ul>
 <li>설계 대안을 <strong>명시적으로</strong> 고려</li>
@@ -156,7 +195,11 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h1 id="object-level-design" tabindex="-1"><a class="header-anchor" href="#object-level-design"><span>Object-Level Design</span></a></h1>
+</section>
+<section class="print-section">
 <h2 id="who-is-responsible" tabindex="-1"><a class="header-anchor" href="#who-is-responsible"><span>Who is Responsible?</span></a></h2>
 <ul>
 <li>도서관 문제(Library problem) 고려
@@ -166,6 +209,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="doing-and-knowing-responsibilities" tabindex="-1"><a class="header-anchor" href="#doing-and-knowing-responsibilities"><span>Doing and Knowing Responsibilities</span></a></h2>
 <ul>
 <li>책임(Responsibilities)은 객체의 행동 측면에서의 의무와 관련</li>
@@ -197,6 +242,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="grasp의-9개-패턴" tabindex="-1"><a class="header-anchor" href="#grasp의-9개-패턴"><span>GRASP의 9개 패턴</span></a></h2>
 <ol>
 <li>Information expert</li>
@@ -209,6 +256,8 @@
 <li>Protected variations</li>
 <li>Pure fabrication</li>
 </ol>
+</section>
+<section class="print-section">
 <h2 id="information-expert" tabindex="-1"><a class="header-anchor" href="#information-expert"><span>Information Expert</span></a></h2>
 <table>
 <thead>
@@ -228,12 +277,16 @@
 </tr>
 </tbody>
 </table>
+</section>
+<section class="print-section">
 <h3 id="applying-information-expert" tabindex="-1"><a class="header-anchor" href="#applying-information-expert"><span>Applying Information Expert</span></a></h3>
 <ul>
 <li>Software <code v-pre>Board</code>는 모든 <code v-pre>Square</code> objects를 집합(aggregate)시킬 것</li>
 <li>따라서, <code v-pre>Board</code>는 이 책임을 수행하는 데 필요한 정보를 가짐
 <img src="@source/se/image-34.png" alt="alt text"></li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="creator" tabindex="-1"><a class="header-anchor" href="#creator"><span>Creator</span></a></h2>
 <table>
 <thead>
@@ -253,6 +306,8 @@
 </tr>
 </tbody>
 </table>
+</section>
+<section class="print-section">
 <h3 id="example-creator" tabindex="-1"><a class="header-anchor" href="#example-creator"><span>Example: Creator</span></a></h3>
 <p><img src="@source/se/image-35.png" alt="alt text"></p>
 <ul>
@@ -263,6 +318,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="controller" tabindex="-1"><a class="header-anchor" href="#controller"><span>Controller</span></a></h2>
 <table>
 <thead>
@@ -287,6 +344,8 @@
 <li><code v-pre>MonopolyGame</code>을 사용한 Controller pattern 적용</li>
 <li>UI layer와 software objects의 domain layer 연결</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="design-goals-principles-and-patterns" tabindex="-1"><a class="header-anchor" href="#design-goals-principles-and-patterns"><span>Design Goals, Principles, and Patterns</span></a></h2>
 <ul>
 <li>Design Goals
@@ -311,13 +370,19 @@
 </li>
 </ul>
 <p><img src="@source/se/image-37.png" alt="alt text"></p>
+</section>
+<section class="print-section">
 <h1 id="design-principle-low-representational-gap" tabindex="-1"><a class="header-anchor" href="#design-principle-low-representational-gap"><span>Design Principle: Low Representational Gap</span></a></h1>
 <p>2025.11.5.(목)</p>
+</section>
+<section class="print-section">
 <h2 id="low-representational-gap" tabindex="-1"><a class="header-anchor" href="#low-representational-gap"><span>Low Representational Gap</span></a></h2>
 <ul>
 <li>식별된 개념은 구현 시 classes에 대한 영감을 제공</li>
 <li>Domain 개념을 반영하는 Classes는 종종 이해하기 직관적이며, 거의 변경되지 않음 (low representational gap)</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="designs-with-low-representational-gap" tabindex="-1"><a class="header-anchor" href="#designs-with-low-representational-gap"><span>Designs with Low Representational Gap</span></a></h2>
 <ul>
 <li>각 domain class에 대해 software class 생성, 해당 관계 생성</li>
@@ -330,6 +395,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h1 id="design-principle-low-coupling" tabindex="-1"><a class="header-anchor" href="#design-principle-low-coupling"><span>Design Principle: Low Coupling</span></a></h1>
 <ul>
 <li>Module은 가능한 한 적은 수의 다른 modules에 의존해야 함
@@ -353,11 +420,15 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="topologies-with-different-coupling" tabindex="-1"><a class="header-anchor" href="#topologies-with-different-coupling"><span>Topologies with Different Coupling</span></a></h2>
 <p><img src="@source/se/image-38.png" alt="alt text"></p>
 <blockquote>
 <p><em>Types of module interconnection structures</em></p>
 </blockquote>
+</section>
+<section class="print-section">
 <h2 id="high-coupling-is-undesirable" tabindex="-1"><a class="header-anchor" href="#high-coupling-is-undesirable"><span>High Coupling is Undesirable</span></a></h2>
 <ul>
 <li>Low coupling을 가진 element는 적은 수의 다른 elements에 의존
@@ -379,12 +450,16 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="design-goals-principles-and-patterns-1" tabindex="-1"><a class="header-anchor" href="#design-goals-principles-and-patterns-1"><span>Design Goals, Principles, and Patterns</span></a></h2>
 <ul>
 <li><strong>Design Goals:</strong> 변경, 이해, 재사용, 분업 등을 위한 설계</li>
 <li><strong>Design Principle:</strong> Low coupling, high cohesion, Low representational gap</li>
 <li><strong>Design Heuristics:</strong> (시스템에서 원칙 증진) Law of Demeter, Information expert, Creator, Controller</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="design-heuristic-law-of-demeter" tabindex="-1"><a class="header-anchor" href="#design-heuristic-law-of-demeter"><span>Design Heuristic: Law of Demeter</span></a></h2>
 <ul>
 <li>각 module은 다른 units에 대해 제한된 지식만 가져야 함
@@ -404,6 +479,8 @@
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div></div></div><blockquote>
 <p><em>So don't do this ^ !!</em></p>
 </blockquote>
+</section>
+<section class="print-section">
 <h2 id="coupling-discussion" tabindex="-1"><a class="header-anchor" href="#coupling-discussion"><span>Coupling: Discussion</span></a></h2>
 <ul>
 <li>매우 안정적인 elements에 대한 high coupling은 보통 문제되지 않음
@@ -425,6 +502,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="design-goals" tabindex="-1"><a class="header-anchor" href="#design-goals"><span>Design Goals</span></a></h2>
 <ul>
 <li>Low coupling이 지원하는 방식 설명:
@@ -453,6 +532,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="design-heuristic-controller-also-design-pattern-facade" tabindex="-1"><a class="header-anchor" href="#design-heuristic-controller-also-design-pattern-facade"><span>Design Heuristic: Controller (also Design Pattern: FAÇADE)</span></a></h2>
 <ul>
 <li><strong>Problem:</strong> 어떤 객체가 system operation (event)을 수신하고 조정하는가?</li>
@@ -465,6 +546,8 @@
 <li><strong>Process:</strong> System sequence diagram에서 도출 (핵심 원칙: Low representational gap, high cohesion)</li>
 </ul>
 <p><img src="@source/se/image-57.png" alt="alt text"></p>
+</section>
+<section class="print-section">
 <h2 id="controller-discussion" tabindex="-1"><a class="header-anchor" href="#controller-discussion"><span>Controller: Discussion</span></a></h2>
 <ul>
 <li>Controller는 coordinator
@@ -485,6 +568,8 @@
 </li>
 <li>Façade design pattern (추후 강의)과 밀접하게 관련</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="controller-design-trade-off" tabindex="-1"><a class="header-anchor" href="#controller-design-trade-off"><span>Controller: Design Trade-off</span></a></h2>
 <ul>
 <li>Coupling 감소
@@ -509,8 +594,14 @@
 </li>
 <li>단, 비대해진(bloated) controllers는 coupling을 높이고 cohesion을 낮춤; 해당 시 분할</li>
 </ul>
+</section>
+<section class="print-section">
 <h1 id="design-principle-high-cohesion" tabindex="-1"><a class="header-anchor" href="#design-principle-high-cohesion"><span>Design Principle: High Cohesion</span></a></h1>
+</section>
+<section class="print-section">
 <h3 id="or-single-responsibility-principle" tabindex="-1"><a class="header-anchor" href="#or-single-responsibility-principle"><span>(OR SINGLE RESPONSIBILITY PRINCIPLE)</span></a></h3>
+</section>
+<section class="print-section">
 <h2 id="design-principle-cohesion" tabindex="-1"><a class="header-anchor" href="#design-principle-cohesion"><span>Design Principle: Cohesion</span></a></h2>
 <ul>
 <li>Module은 작고 관련된 책임 집합을 가져야 함
@@ -528,6 +619,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="example-low-cohesion" tabindex="-1"><a class="header-anchor" href="#example-low-cohesion"><span>Example: Low Cohesion</span></a></h2>
 <div class="language-java line-numbers-mode" data-highlighter="prismjs" data-ext="java"><pre v-pre><code class="language-java"><span class="line"><span class="token keyword">class</span> <span class="token class-name">DatabaseApplication</span> <span class="token punctuation">{</span></span>
 <span class="line">    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">authorizeOrder</span><span class="token punctuation">(</span><span class="token class-name">Data</span> data<span class="token punctuation">,</span> <span class="token class-name">User</span> currentUser<span class="token punctuation">,</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">)</span><span class="token punctuation">{</span></span>
@@ -551,7 +644,9 @@
 <span class="line">    <span class="token punctuation">}</span></span>
 <span class="line"><span class="token punctuation">}</span></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="anti-pattern-god-object" tabindex="-1"><a class="header-anchor" href="#anti-pattern-god-object"><span>Anti-Pattern: God Object</span></a></h2>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h2 id="anti-pattern-god-object" tabindex="-1"><a class="header-anchor" href="#anti-pattern-god-object"><span>Anti-Pattern: God Object</span></a></h2>
 <div class="language-javascript line-numbers-mode" data-highlighter="prismjs" data-ext="js"><pre v-pre><code class="language-javascript"><span class="line"><span class="token keyword">class</span> <span class="token class-name">Chat</span> <span class="token punctuation">{</span></span>
 <span class="line">    List<span class="token operator">&lt;</span>String<span class="token operator">></span> channels<span class="token punctuation">;</span></span>
 <span class="line">    Map<span class="token operator">&lt;</span>String<span class="token punctuation">,</span> List<span class="token operator">&lt;</span>Msg<span class="token operator">>></span> messages<span class="token punctuation">;</span></span>
@@ -583,7 +678,9 @@
 <span class="line">    <span class="token operator">...</span> accounts<span class="token punctuation">,</span> bannedUsers <span class="token operator">...</span></span>
 <span class="line"><span class="token punctuation">}</span></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="cohesion-in-graph-implementations" tabindex="-1"><a class="header-anchor" href="#cohesion-in-graph-implementations"><span>Cohesion in Graph Implementations</span></a></h2>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h2 id="cohesion-in-graph-implementations" tabindex="-1"><a class="header-anchor" href="#cohesion-in-graph-implementations"><span>Cohesion in Graph Implementations</span></a></h2>
 <div class="language-javascript line-numbers-mode" data-highlighter="prismjs" data-ext="js"><pre v-pre><code class="language-javascript"><span class="line"><span class="token keyword">class</span> <span class="token class-name">Graph</span> <span class="token punctuation">{</span></span>
 <span class="line">    Node<span class="token punctuation">[</span><span class="token punctuation">]</span> nodes<span class="token punctuation">;</span></span>
 <span class="line">    boolean<span class="token punctuation">[</span><span class="token punctuation">]</span> isVisited<span class="token punctuation">;</span></span>
@@ -605,6 +702,8 @@
 <li>이것이 좋은 구현인가?</li>
 <li>No, graph가 data뿐만 아니라 알고리즘적 책임까지 맡고 있기 때문</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="bluemarble-example" tabindex="-1"><a class="header-anchor" href="#bluemarble-example"><span>Bluemarble Example</span></a></h2>
 <ul>
 <li>어느 디자인이 더 높은 cohesion을 가지는가?</li>
@@ -635,7 +734,9 @@
 <span class="line">    <span class="token punctuation">}</span></span>
 <span class="line"><span class="token punctuation">}</span></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="hints-for-identifying-cohesion" tabindex="-1"><a class="header-anchor" href="#hints-for-identifying-cohesion"><span>Hints for Identifying Cohesion</span></a></h2>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h2 id="hints-for-identifying-cohesion" tabindex="-1"><a class="header-anchor" href="#hints-for-identifying-cohesion"><span>Hints for Identifying Cohesion</span></a></h2>
 <ul>
 <li>개념(concept)당 하나의 색상 사용</li>
 <li>해당 concept의 모든 코드를 그 색상으로 강조<br>
@@ -650,6 +751,8 @@
 </li>
 <li>공학적 판단(engineering judgment) 필요</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="cohesion-discussion" tabindex="-1"><a class="header-anchor" href="#cohesion-discussion"><span>Cohesion: Discussion</span></a></h2>
 <ul>
 <li>Very Low Cohesion: Class가 매우 다른 기능 영역의 많은 것들을 전적으로 책임짐</li>
@@ -665,6 +768,8 @@
 </li>
 <li>경험 법칙 (Rule of thumb): high cohesion을 가진 class는 상대적으로 적은 수의 고도로 연관된 기능의 methods를 가지며, 너무 많은 작업을 수행하지 않음</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="coupling-vs-cohesion-극단적-케이스" tabindex="-1"><a class="header-anchor" href="#coupling-vs-cohesion-극단적-케이스"><span>Coupling vs Cohesion (극단적 케이스)</span></a></h2>
 <ul>
 <li>모든 코드가 하나의 class/method에
@@ -683,7 +788,11 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h1 id="design-heuristic-information-expert" tabindex="-1"><a class="header-anchor" href="#design-heuristic-information-expert"><span>Design Heuristic: Information Expert</span></a></h1>
+</section>
+<section class="print-section">
 <h2 id="information-expert-design-heuristic" tabindex="-1"><a class="header-anchor" href="#information-expert-design-heuristic"><span>Information Expert (Design Heuristic)</span></a></h2>
 <ul>
 <li>Heuristic: 책임을 수행하는 데 필요한 정보를 가진 class에 책임을 할당
@@ -702,10 +811,14 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="information-expert-example-1" tabindex="-1"><a class="header-anchor" href="#information-expert-example-1"><span>Information Expert: Example 1</span></a></h2>
 <ul>
 <li>어느 class가 shipment의 무게를 계산하는 데 필요한 모든 정보를 가지고 있는가?</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="information-expert-example-2" tabindex="-1"><a class="header-anchor" href="#information-expert-example-2"><span>Information Expert: Example 2</span></a></h2>
 <p><img src="@source/se/image-39.png" alt="alt text"></p>
 <ul>
@@ -733,6 +846,8 @@
 </tr>
 </tbody>
 </table>
+</section>
+<section class="print-section">
 <h2 id="information-expert-→-do-it-myself-strategy" tabindex="-1"><a class="header-anchor" href="#information-expert-→-do-it-myself-strategy"><span>Information Expert → &quot;Do It Myself Strategy&quot;</span></a></h2>
 <ul>
 <li>Expert는 보통 software object가 자신이 나타내는 무생물(inanimate) 실제 세계 사물에 대해 일반적으로 수행되는 작업들을 직접 수행하는 설계로 이어짐
@@ -743,7 +858,11 @@
 <li>OO design에서, 모든 software objects는 &quot;살아있고&quot; &quot;생명(animated)&quot;이 있으며, 책임을 맡고 일을 할 수 있음</li>
 <li>그들은 자신이 아는 정보와 관련된 일을 함</li>
 </ul>
+</section>
+<section class="print-section">
 <h1 id="design-heuristic-creator" tabindex="-1"><a class="header-anchor" href="#design-heuristic-creator"><span>Design Heuristic: Creator</span></a></h1>
+</section>
+<section class="print-section">
 <h2 id="creator-design-heuristic" tabindex="-1"><a class="header-anchor" href="#creator-design-heuristic"><span>Creator (Design Heuristic)</span></a></h2>
 <ul>
 <li>Problem: 누가 A를 생성하는가?</li>
@@ -760,6 +879,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="creator-example" tabindex="-1"><a class="header-anchor" href="#creator-example"><span>Creator: Example</span></a></h2>
 <ul>
 <li>Beetle objects 생성 책임은 누구에게 있는가?
@@ -773,6 +894,8 @@
 <li>Interaction diagram:</li>
 </ul>
 <p><img src="@source/se/image-41.png" alt="alt text"></p>
+</section>
+<section class="print-section">
 <h2 id="creator-grasp" tabindex="-1"><a class="header-anchor" href="#creator-grasp"><span>Creator (GRASP)</span></a></h2>
 <ul>
 <li>Problem: 객체 생성 책임 할당
@@ -785,6 +908,8 @@
 </li>
 <li>AI? Player? Main class? Board? Meeple(Dog)?</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="creator-discussion-of-design-goals-principles" tabindex="-1"><a class="header-anchor" href="#creator-discussion-of-design-goals-principles"><span>Creator: Discussion of Design Goals/Principles</span></a></h2>
 <ul>
 <li>Low coupling, high cohesion 증진
@@ -810,6 +935,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="other-design-heuristics" tabindex="-1"><a class="header-anchor" href="#other-design-heuristics"><span>Other Design Heuristics</span></a></h2>
 <ul>
 <li>Mutability 최소화</li>
@@ -817,6 +944,8 @@
 <li>상속(Inheritance)보다 composition/delegation 선호</li>
 <li>Coupling을 줄이기 위해 indirection 사용</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="object-level-artifacts-of-this-design-process" tabindex="-1"><a class="header-anchor" href="#object-level-artifacts-of-this-design-process"><span>Object-level Artifacts of This Design Process</span></a></h2>
 <ul>
 <li><strong>Object interaction diagrams</strong>는 objects에 methods를 추가
@@ -831,6 +960,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="summary" tabindex="-1"><a class="header-anchor" href="#summary"><span>Summary</span></a></h2>
 <ul>
 <li>Design은 품질 속성(quality attributes)에 의해 주도됨
@@ -849,6 +980,7 @@
 </ul>
 </li>
 </ul>
+</section>
 </div></template>
 
 

@@ -1,17 +1,24 @@
-<template><div><h1 id="_10-object-oriented-analysis" tabindex="-1"><a class="header-anchor" href="#_10-object-oriented-analysis"><span>10. Object-Oriented Analysis</span></a></h1>
+<template><div><section class="print-section">
+<h1 id="_10-object-oriented-analysis" tabindex="-1"><a class="header-anchor" href="#_10-object-oriented-analysis"><span>10. Object-Oriented Analysis</span></a></h1>
 <DateMeta />
+</section>
+<section class="print-section">
 <h2 id="학습-목표" tabindex="-1"><a class="header-anchor" href="#학습-목표"><span>학습 목표</span></a></h2>
 <ul>
 <li>Domain의 핵심 추상화를 식별하고 domain model로 모델링</li>
 <li>시스템 내 핵심 상호작용 식별 및 system sequence diagram으로 모델링</li>
 <li>Low representational gap 설계 원칙의 장점 및 한계 논의</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="from-requirements-to-code" tabindex="-1"><a class="header-anchor" href="#from-requirements-to-code"><span>From Requirements to Code</span></a></h2>
 <pre><code>┌──────────────┐           ┌───────┐
 │  User Needs  ├──────────►│       │
 │(Requirements)│  Miracle? │ Code  │
 └──────────────┘           └───────┘
 </code></pre>
+</section>
+<section class="print-section">
 <h2 id="from-problem-to-solution" tabindex="-1"><a class="header-anchor" href="#from-problem-to-solution"><span>From Problem to Solution</span></a></h2>
 <pre><code>┌──────────────┐      ┌──────────────┐
 │Problem space │      │Solution space│
@@ -38,6 +45,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="an-object-oriented-design-process" tabindex="-1"><a class="header-anchor" href="#an-object-oriented-design-process"><span>An Object-Oriented Design Process</span></a></h2>
 <ul>
 <li>OO Analysis: 문제 이해
@@ -70,6 +79,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="a-design-process" tabindex="-1"><a class="header-anchor" href="#a-design-process"><span>A Design Process</span></a></h2>
 <ul>
 <li><strong>Object-Oriented Analysis</strong>
@@ -95,6 +106,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="a-high-level-software-design-process" tabindex="-1"><a class="header-anchor" href="#a-high-level-software-design-process"><span>A High-level Software Design Process</span></a></h2>
 <ul>
 <li>Project 시작</li>
@@ -108,7 +121,11 @@
 <li>Solution 구현 및 test</li>
 <li>유지보수, 발전 등</li>
 </ul>
+</section>
+<section class="print-section">
 <h1 id="domain-models-도메인-모델" tabindex="-1"><a class="header-anchor" href="#domain-models-도메인-모델"><span>Domain Models 도메인 모델</span></a></h1>
+</section>
+<section class="print-section">
 <h2 id="object-oriented-analysis" tabindex="-1"><a class="header-anchor" href="#object-oriented-analysis"><span>Object-Oriented Analysis</span></a></h2>
 <ul>
 <li>요구사항에 나오는 <strong>명사</strong>들, 자연어 용어집</li>
@@ -124,6 +141,8 @@
 <li>(비공식적인) 표기법으로 <strong>UML class diagrams</strong>을 자주 사용</li>
 <li>추후 classes를 찾기 위한 출발점 (low representational gap)</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="input-to-the-analysis-process-requirements-and-use-cases" tabindex="-1"><a class="header-anchor" href="#input-to-the-analysis-process-requirements-and-use-cases"><span>Input to the Analysis Process: Requirements and Use Cases</span></a></h2>
 <blockquote>
 <p>공공 도서관은 일반적으로 지역 사회 주민들이 대출할 수 있는 도서, 영화 또는 기타 도서관 자료를 소장합니다. 각 회원에게는 일반적으로 도서관 계정과 계정 ID 번호가 기재된 도서관 카드가 발급되며, 이를 통해 도서관에서 본인 확인을 할 수 있습니다. 회원의 도서관 계정에는 해당 회원이 대출한 자료와 각 대출 자료의 반납 기한이 기록됩니다. 각 자료 유형에는 기본 대여 기간이 설정되어 있으며, 이는 자료가 대출될 때 반납일을 결정합니다. 회원이 반납일 이후에 자료를 반납할 경우, 해당 자료에 지정된 연체료를 지불해야 하며, 이 금액은 회원의 도서관 계정에 기록됩니다.</p>
@@ -131,6 +150,8 @@
 <blockquote>
 <p>유즈케이스 시나리오: 도서관 회원은 도서관 시스템 키오스크에서 도서관 카드로 로그인하여 책을 대출할 수 있어야 합니다. 회원의 미납 연체료가 없음을 확인한 후, 도서관 시스템은 해당 도서의 대여 기간을 현재 날짜에 더하여 반납 기한을 결정하고, 해당 도서와 반납 기한을 회원의 도서관 계정에 대출 자료로 기록해야 합니다.</p>
 </blockquote>
+</section>
+<section class="print-section">
 <h2 id="modeling-a-problem-domain" tabindex="-1"><a class="header-anchor" href="#modeling-a-problem-domain"><span>Modeling a Problem Domain</span></a></h2>
 <ul>
 <li>Domain 설명의 핵심 개념 식별
@@ -142,6 +163,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="glossary-용어집" tabindex="-1"><a class="header-anchor" href="#glossary-용어집"><span>Glossary 용어집</span></a></h2>
 <ul>
 <li>
@@ -161,6 +184,8 @@
 └─명백한 개념에 대해선 설명할 필요 없음.</p>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="visual-notation-uml" tabindex="-1"><a class="header-anchor" href="#visual-notation-uml"><span>Visual Notation: UML</span></a></h2>
 <pre><code> Name of real-world concept   Multiplicities/cardinalities
  (not software cases)       ┌─indicate &quot;how many&quot;         
@@ -174,6 +199,8 @@
  └─Properties     Associations                            
    of concept     between concepts                        
 </code></pre>
+</section>
+<section class="print-section">
 <h2 id="reading-associations" tabindex="-1"><a class="header-anchor" href="#reading-associations"><span>Reading Associations</span></a></h2>
 <pre><code>────────────────────────────────────────►       
 One library account can borrow many books       
@@ -186,6 +213,8 @@ One library account can borrow many books
 One book can be borrowed by one library account 
 ◄──────────────────────────────────────────────
 </code></pre>
+</section>
+<section class="print-section">
 <h2 id="attributes-vs-concepts" tabindex="-1"><a class="header-anchor" href="#attributes-vs-concepts"><span>Attributes vs. Concepts</span></a></h2>
 <pre><code>┌───────────────┐      ┌───────────────┐          ┌───────┐
 │Library Account│      │Library Account│          │Book   │
@@ -201,6 +230,8 @@ One book can be borrowed by one library account
 <ul>
 <li>Type annotations 회피</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="modeling-a-problem-domain-1" tabindex="-1"><a class="header-anchor" href="#modeling-a-problem-domain-1"><span>Modeling a Problem Domain</span></a></h2>
 <ul>
 <li>Domain model은 살아있는 문서</li>
@@ -213,11 +244,15 @@ One book can be borrowed by one library account
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="identifying-concepts" tabindex="-1"><a class="header-anchor" href="#identifying-concepts"><span>Identifying Concepts</span></a></h2>
 <blockquote>
 <p>&quot;A public <strong>library</strong> typically stores a collection of <strong>books</strong>, <strong>movies</strong>, or other <strong>library items</strong> available to be borrowed by people living in a community. Each <strong>library member</strong> typically has a <strong>library account</strong> and a <strong>library card</strong> with the account’s <strong>ID number</strong>, which she can use to identify herself to the library.
 A member’s library account records which items the member has borrowed and the <strong>due date</strong> for each <strong>borrowed item</strong>. Each type of item has a <strong>default rental period</strong>, which determines the item’s due date when the item is borrowed. If a member returns an item after the item’s due date, the member owes a <strong>late fee</strong> specific for that item, an amount of money recorded in the member’s library account 20&quot;</p>
 </blockquote>
+</section>
+<section class="print-section">
 <h2 id="hints-for-identifying-concepts" tabindex="-1"><a class="header-anchor" href="#hints-for-identifying-concepts"><span>Hints for Identifying Concepts</span></a></h2>
 <ul>
 <li>요구사항 명세 읽기, 명사 찾기</li>
@@ -235,6 +270,8 @@ A member’s library account records which items the member has borrowed and the
 <li>Brainstorming</li>
 <li>수집 먼저. 조직, 필터링, 수정은 이후에!</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="one-domain-model-for-the-library-system" tabindex="-1"><a class="header-anchor" href="#one-domain-model-for-the-library-system"><span>One Domain Model for the Library System</span></a></h2>
 <pre><code>┌───────────────┐              ┌─────────────┐       
 │    Library    │&lt;&gt;-1-----0*..&gt;│    Item     │       
@@ -268,6 +305,8 @@ A member’s library account records which items the member has borrowed and the
                                     │item           │
                                     └───────────────┘
 </code></pre>
+</section>
+<section class="print-section">
 <h2 id="notes-on-the-library-domain-model" tabindex="-1"><a class="header-anchor" href="#notes-on-the-library-domain-model"><span>Notes on the Library Domain Model</span></a></h2>
 <ul>
 <li>모든 개념은 프로그래머가 아니어도 접근 가능</li>
@@ -282,6 +321,8 @@ A member’s library account records which items the member has borrowed and the
 <li>집합 타입(Aggregate types)은 보통 별도 개념으로 모델링</li>
 <li>기본 attributes (숫자, 문자열)는 보통 attributes로 모델링</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="why-domain-modeling" tabindex="-1"><a class="header-anchor" href="#why-domain-modeling"><span>Why Domain Modeling?</span></a></h2>
 <ul>
 <li>Domain 이해
@@ -305,6 +346,8 @@ A member’s library account records which items the member has borrowed and the
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="hints-for-object-oriented-analysis" tabindex="-1"><a class="header-anchor" href="#hints-for-object-oriented-analysis"><span>Hints for Object-Oriented Analysis</span></a></h2>
 <ul>
 <li>Domain model은 어휘 제공
@@ -332,6 +375,8 @@ A member’s library account records which items the member has borrowed and the
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="domain-model-distinctions" tabindex="-1"><a class="header-anchor" href="#domain-model-distinctions"><span>Domain Model Distinctions</span></a></h2>
 <ul>
 <li>VS. data model (solution space)
@@ -346,7 +391,11 @@ A member’s library account records which items the member has borrowed and the
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h1 id="system-sequence-diagram" tabindex="-1"><a class="header-anchor" href="#system-sequence-diagram"><span>System Sequence Diagram</span></a></h1>
+</section>
+<section class="print-section">
 <h2 id="understanding-system-behavior" tabindex="-1"><a class="header-anchor" href="#understanding-system-behavior"><span>Understanding System Behavior</span></a></h2>
 <ul>
 <li><strong>System sequence diagram</strong>: 하나의 use scenario에 대해, system의 경계(boundary)에서 발생하는 이벤트 순서를 보여주는 model</li>
@@ -356,6 +405,8 @@ A member’s library account records which items the member has borrowed and the
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="one-example-for-the-library-system" tabindex="-1"><a class="header-anchor" href="#one-example-for-the-library-system"><span>One Example for the Library System</span></a></h2>
 <pre><code>┌─────┐        ┌───────┐
 │User │        │System │
@@ -373,7 +424,11 @@ A member’s library account records which items the member has borrowed and the
 <ul>
 <li>Use case 시나리오: Library member가 library card로 kiosk 로그인 후 책 대출. 연체료 미납을 확인 후, rental period를 더해 반납 기한 결정. 책과 반납 기한을 member의 account에 기록</li>
 </ul>
+</section>
+<section class="print-section">
 <h1 id="behavioral-contracts" tabindex="-1"><a class="header-anchor" href="#behavioral-contracts"><span>Behavioral Contracts</span></a></h1>
+</section>
+<section class="print-section">
 <h2 id="formalize-system-at-boundary" tabindex="-1"><a class="header-anchor" href="#formalize-system-at-boundary"><span>Formalize System at Boundary</span></a></h2>
 <pre><code>┌─────┐        ┌───────┐
 │User │        │System │
@@ -396,6 +451,8 @@ A member’s library account records which items the member has borrowed and the
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="system-behavioral-contract-example" tabindex="-1"><a class="header-anchor" href="#system-behavioral-contract-example"><span>System Behavioral Contract Example</span></a></h2>
 <ul>
 <li>Operation: <code v-pre>borrow(item)</code></li>
@@ -412,6 +469,8 @@ A member’s library account records which items the member has borrowed and the
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="distinguishing-domain-vs-implementation-concepts" tabindex="-1"><a class="header-anchor" href="#distinguishing-domain-vs-implementation-concepts"><span>Distinguishing Domain vs. Implementation Concepts</span></a></h2>
 <ul>
 <li><strong>Domain-level concepts</strong>
@@ -429,6 +488,8 @@ A member’s library account records which items the member has borrowed and the
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="summary-understanding-the-problem-domain" tabindex="-1"><a class="header-anchor" href="#summary-understanding-the-problem-domain"><span>Summary: Understanding the Problem Domain</span></a></h2>
 <ul>
 <li>Domain 수준의 표현을 구축하는 tools 파악
@@ -450,6 +511,7 @@ A member’s library account records which items the member has borrowed and the
 </ul>
 </li>
 </ul>
+</section>
 </div></template>
 
 

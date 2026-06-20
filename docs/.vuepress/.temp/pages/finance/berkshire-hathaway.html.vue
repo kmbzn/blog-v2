@@ -1,6 +1,9 @@
-<template><div><h1 id="버크셔-해서웨이-berkshire-hathaway" tabindex="-1"><a class="header-anchor" href="#버크셔-해서웨이-berkshire-hathaway"><span>버크셔 해서웨이 (Berkshire Hathaway)</span></a></h1>
+<template><div><section class="print-section">
+<h1 id="버크셔-해서웨이-berkshire-hathaway" tabindex="-1"><a class="header-anchor" href="#버크셔-해서웨이-berkshire-hathaway"><span>버크셔 해서웨이 (Berkshire Hathaway)</span></a></h1>
 <DateMeta />
 <p>버크셔 해서웨이(Berkshire Hathaway Inc.)는 워런 버핏(Warren Buffett)이 이끄는 미국의 다국적 지주회사(conglomerate)다. 뉴욕증권거래소(NYSE)에 <strong>BRK-A</strong>와 <strong>BRK-B</strong> 두 종류로 상장되어 있으며, 시가총액 기준 세계 최대 기업 중 하나로 꼽힌다.</p>
+</section>
+<section class="print-section">
 <h2 id="brk-a와-brk-b의-차이" tabindex="-1"><a class="header-anchor" href="#brk-a와-brk-b의-차이"><span>BRK-A와 BRK-B의 차이</span></a></h2>
 <p>버크셔 해서웨이는 하나의 회사이지만 두 종류의 주식이 상장되어 있다. 두 주식은 동일한 회사의 소유권을 나타내지만 가격, 의결권, 분할 가능성에서 차이가 있다.</p>
 <table>
@@ -44,11 +47,17 @@
 </tr>
 </tbody>
 </table>
+</section>
+<section class="print-section">
 <h3 id="brk-a의-높은-주가-의도" tabindex="-1"><a class="header-anchor" href="#brk-a의-높은-주가-의도"><span>BRK-A의 높은 주가 의도</span></a></h3>
 <p>워런 버핏은 의도적으로 BRK-A 주식을 분할하지 않는다. 이유는 <strong>단기 투자자(투기꾼)를 걸러내기 위해서</strong>다. 주가가 매우 높으면 소액 단기 거래가 어려워지고, 장기 가치 투자자만 주주로 남게 된다는 철학이다.</p>
 <p>1996년 소규모 투자자들을 위해 BRK-A의 1/30 가치로 BRK-B를 발행했으며, 2010년 Burlington Northern Santa Fe(BNSF) 인수 대가로 주주에게 BRK-B 50:1 분할을 실시해 현재 BRK-A의 1/1,500 가치가 되었다.</p>
 <hr>
+</section>
+<section class="print-section">
 <h2 id="회사-개요" tabindex="-1"><a class="header-anchor" href="#회사-개요"><span>회사 개요</span></a></h2>
+</section>
+<section class="print-section">
 <h3 id="역사" tabindex="-1"><a class="header-anchor" href="#역사"><span>역사</span></a></h3>
 <ul>
 <li><strong>1839년</strong>: Berkshire Cotton Manufacturing으로 출발 (섬유 제조업)</li>
@@ -61,6 +70,8 @@
 <li><strong>2016년~</strong>: 애플 주식 매입 시작 (현재 최대 단일 주식 포지션)</li>
 </ul>
 <p>버핏은 섬유 회사인 버크셔를 인수한 것이 자신의 역대 최대 실수라고 고백한 바 있다. 그러나 그 이후 보험·에너지·철도·소비재 전반으로 포트폴리오를 다각화해 세계적인 투자회사로 변모시켰다.</p>
+</section>
+<section class="print-section">
 <h3 id="주요-자회사-100-보유" tabindex="-1"><a class="header-anchor" href="#주요-자회사-100-보유"><span>주요 자회사 (100% 보유)</span></a></h3>
 <table>
 <thead>
@@ -108,6 +119,8 @@
 </tr>
 </tbody>
 </table>
+</section>
+<section class="print-section">
 <h3 id="주요-주식-보유-포트폴리오-2024-2025년-기준-상위" tabindex="-1"><a class="header-anchor" href="#주요-주식-보유-포트폴리오-2024-2025년-기준-상위"><span>주요 주식 보유 포트폴리오 (2024~2025년 기준 상위)</span></a></h3>
 <table>
 <thead>
@@ -151,7 +164,11 @@
 </tbody>
 </table>
 <hr>
+</section>
+<section class="print-section">
 <h2 id="투자-방법" tabindex="-1"><a class="header-anchor" href="#투자-방법"><span>투자 방법</span></a></h2>
+</section>
+<section class="print-section">
 <h3 id="국내-증권사에서-brk-b-매수" tabindex="-1"><a class="header-anchor" href="#국내-증권사에서-brk-b-매수"><span>국내 증권사에서 BRK-B 매수</span></a></h3>
 <p>BRK-A는 주당 수억 원 수준이므로 개인투자자는 사실상 BRK-B만 고려한다.</p>
 <ol>
@@ -160,12 +177,18 @@
 <li>달러 환전</li>
 <li>티커 <code v-pre>BRK-B</code> 검색 후 매수</li>
 </ol>
+</section>
+<section class="print-section">
 <h3 id="isa-연금저축-계좌" tabindex="-1"><a class="header-anchor" href="#isa-연금저축-계좌"><span>ISA / 연금저축 계좌</span></a></h3>
 <p>BRK-B는 미국 증시 직접 상장 주식이므로, <strong>ISA나 연금저축에서는 직접 매수가 불가하다.</strong> 이 계좌들은 국내 상장 ETF·펀드만 편입 가능하다.</p>
 <p>BRK-B에 ISA를 통해 간접적으로 투자하려면, BRK-B를 포함한 미국 주식형 펀드나 ETF를 통하는 방법이 있다.</p>
+</section>
+<section class="print-section">
 <h3 id="세금" tabindex="-1"><a class="header-anchor" href="#세금"><span>세금</span></a></h3>
 <p>해외 주식 매매차익은 연 250만원 초과분에 대해 <strong>22% 양도소득세</strong> 적용. 배당도 없으므로 배당소득세 고려 불필요.</p>
 <hr>
+</section>
+<section class="print-section">
 <h2 id="brk-b-vs-s-p-500-etf-비교" tabindex="-1"><a class="header-anchor" href="#brk-b-vs-s-p-500-etf-비교"><span>BRK-B vs S&amp;P 500 ETF 비교</span></a></h2>
 <table>
 <thead>
@@ -210,6 +233,8 @@
 </table>
 <p>워런 버핏 본인도 &quot;내 재산의 90%는 S&amp;P 500 인덱스 펀드에, 나머지 10%는 단기국채에 투자하라&quot;고 유언에 밝힌 바 있다. BRK-B는 버핏의 투자 철학에 대한 신뢰를 사는 것이라고 볼 수 있다.</p>
 <hr>
+</section>
+<section class="print-section">
 <h2 id="버핏의-투자-원칙-요약" tabindex="-1"><a class="header-anchor" href="#버핏의-투자-원칙-요약"><span>버핏의 투자 원칙 요약</span></a></h2>
 <p>버크셔를 이해하려면 워런 버핏의 투자 철학을 이해해야 한다.</p>
 <ol>
@@ -225,6 +250,7 @@
 <p class="hint-container-title">투자 전 고려사항</p>
 <p>워런 버핏(94세, 2025년 기준)과 찰리 멍거(2023년 사망)의 부재 또는 영향력 약화 후 버크셔의 운용 능력이 지금과 같을지는 불확실하다. 후계자 그레그 에이블(Greg Abel)이 이미 지명되어 있으나, '버핏 프리미엄'이 주가에 반영되어 있을 가능성을 고려해야 한다.</p>
 </div>
+</section>
 </div></template>
 
 

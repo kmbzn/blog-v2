@@ -1,5 +1,8 @@
-<template><div><h1 id="_01-overview" tabindex="-1"><a class="header-anchor" href="#_01-overview"><span>01. Overview</span></a></h1>
+<template><div><section class="print-section">
+<h1 id="_01-overview" tabindex="-1"><a class="header-anchor" href="#_01-overview"><span>01. Overview</span></a></h1>
 <DateMeta />
+</section>
+<section class="print-section">
 <h2 id="computer-security-overview" tabindex="-1"><a class="header-anchor" href="#computer-security-overview"><span>Computer Security Overview</span></a></h2>
 <ul>
 <li>NIST Computer Security Handbook에서 정의한 컴퓨터 보안(Computer Security)
@@ -8,6 +11,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="the-cia-triad" tabindex="-1"><a class="header-anchor" href="#the-cia-triad"><span>The CIA Triad</span></a></h2>
 <ul>
 <li>Confidentiality(기밀성)
@@ -24,6 +29,8 @@
 </li>
 <li>Availability(가용성)</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="key-security-concepts" tabindex="-1"><a class="header-anchor" href="#key-security-concepts"><span>Key Security Concepts</span></a></h2>
 <ul>
 <li>Confidentiality
@@ -42,6 +49,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="additional-security-concepts-aaa" tabindex="-1"><a class="header-anchor" href="#additional-security-concepts-aaa"><span>Additional Security Concepts (AAA)</span></a></h2>
 <ul>
 <li>Authentication(인증)
@@ -61,6 +70,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="computer-security-challenges" tabindex="-1"><a class="header-anchor" href="#computer-security-challenges"><span>Computer Security Challenges</span></a></h2>
 <ul>
 <li>컴퓨터 보안은 초심자에게 처음 보이는 것만큼 단순하지 않음.</li>
@@ -78,6 +89,8 @@
 </li>
 <li>효율적이고 사용자 친화적 운영의 장애물로 간주됨.</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="table-1-1-computer-security-terminology" tabindex="-1"><a class="header-anchor" href="#table-1-1-computer-security-terminology"><span>Table 1.1 Computer Security Terminology</span></a></h2>
 <ul>
 <li><code v-pre>RFC 2828</code>, Internet Security Glossary, May 2000</li>
@@ -127,6 +140,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="figure-1-2-security-concepts-and-relationships" tabindex="-1"><a class="header-anchor" href="#figure-1-2-security-concepts-and-relationships"><span>Figure 1.2 Security Concepts and Relationships</span></a></h2>
 <ul>
 <li>소유자(Owners)는 자산(assets)에 가치(value)를 둠</li>
@@ -142,6 +157,8 @@
 <li>countermeasure는 위협을 줄임</li>
 <li>countermeasures 자체가 취약점을 가질 수 있음</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="vulnerabilities-threats-and-attacks" tabindex="-1"><a class="header-anchor" href="#vulnerabilities-threats-and-attacks"><span>Vulnerabilities, Threats and Attacks</span></a></h2>
 <ul>
 <li>취약점(Vulnerabilities)의 범주
@@ -184,6 +201,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="passive-and-active-attacks" tabindex="-1"><a class="header-anchor" href="#passive-and-active-attacks"><span>Passive and Active Attacks</span></a></h2>
 <ul>
 <li>Passive attacks
@@ -219,6 +238,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="countermeasure" tabindex="-1"><a class="header-anchor" href="#countermeasure"><span>Countermeasure</span></a></h2>
 <ul>
 <li>목표는 자산에 대한 잔여 위험 수준을 최소화하는 것
@@ -233,6 +254,8 @@
 <li>알고 있는 잔여 취약점이 남을 수 있음</li>
 <li>보안 공격에 대처하는 데 사용되는 수단</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="figure-1-3-scope-of-computer-security" tabindex="-1"><a class="header-anchor" href="#figure-1-3-scope-of-computer-security"><span>Figure 1.3 Scope of Computer Security</span></a></h2>
 <ul>
 <li>Computer System(컴퓨터 시스템) 구성 요소
@@ -250,21 +273,31 @@
 <li>네트워크를 통한 데이터의 안전한 전송 (Network security)</li>
 <li>민감한 파일의 보안 유지 (File security)</li>
 </ol>
+</section>
+<section class="print-section">
 <h2 id="table-1-4-fips-pub-200" tabindex="-1"><a class="header-anchor" href="#table-1-4-fips-pub-200"><span>Table 1.4 (<code v-pre>FIPS PUB 200</code>)</span></a></h2>
+</section>
+<section class="print-section">
 <h3 id="access-control-접근-통제" tabindex="-1"><a class="header-anchor" href="#access-control-접근-통제"><span>Access control (접근 통제)</span></a></h3>
 <ul>
 <li>정보 시스템 접근을 인가된 사용자, 인가된 사용자를 대신하는 프로세스, 또는 다른 정보 시스템을 포함한 장치로 제한하고, 인가된 사용자가 수행하도록 허용된 트랜잭션 및 기능 유형으로 제한함.</li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="awareness-and-training-인식-및-훈련" tabindex="-1"><a class="header-anchor" href="#awareness-and-training-인식-및-훈련"><span>Awareness and training (인식 및 훈련)</span></a></h3>
 <ol>
 <li>조직 정보 시스템의 관리자 및 사용자가 자신의 활동과 관련된 보안 위험 및 조직 정보 시스템의 보안과 관련된 적용 법률, 규정, 정책을 인지하도록 보장함.</li>
 <li>담당자가 할당된 정보 보안 관련 임무와 책임을 수행하기에 적절한 훈련을 받도록 보장함.</li>
 </ol>
+</section>
+<section class="print-section">
 <h3 id="audit-and-accountability-감사-및-책임" tabindex="-1"><a class="header-anchor" href="#audit-and-accountability-감사-및-책임"><span>Audit and accountability (감사 및 책임)</span></a></h3>
 <ol>
 <li>불법적이거나, 인가되지 않았거나, 부적절한 정보 시스템 활동의 모니터링, 분석, 조사, 보고를 가능하게 하는 데 필요한 범위까지 정보 시스템 감사 기록을 생성, 보호, 유지함.</li>
 <li>개별 정보 시스템 사용자의 행위를 해당 사용자에게 고유하게 추적하여 책임을 물을 수 있도록 보장함.</li>
 </ol>
+</section>
+<section class="print-section">
 <h3 id="certification-accreditation-and-security-assessments-인증-인가-및-보안-평가" tabindex="-1"><a class="header-anchor" href="#certification-accreditation-and-security-assessments-인증-인가-및-보안-평가"><span>Certification, accreditation, and security assessments (인증, 인가 및 보안 평가)</span></a></h3>
 <ol>
 <li>조직 정보 시스템의 보안 통제가 적용에 효과적인지 판단하기 위해 주기적으로 평가함.</li>
@@ -272,35 +305,49 @@
 <li>조직 정보 시스템 및 관련된 모든 정보 시스템 연결의 운영을 인가함.</li>
 <li>통제의 지속적인 효과성을 보장하기 위해 정보 시스템 보안 통제를 지속적으로 모니터링함.</li>
 </ol>
+</section>
+<section class="print-section">
 <h3 id="configuration-management-구성-관리" tabindex="-1"><a class="header-anchor" href="#configuration-management-구성-관리"><span>Configuration management (구성 관리)</span></a></h3>
 <ol>
 <li>각 시스템 개발 수명 주기 전반에 걸쳐 조직 정보 시스템(하드웨어, 소프트웨어, 펌웨어, 문서 포함)의 기준 구성 및 인벤토리를 설정하고 유지함.</li>
 <li>조직 정보 시스템에 사용되는 정보 기술 제품에 대한 보안 구성 설정을 확립하고 시행함.</li>
 </ol>
+</section>
+<section class="print-section">
 <h3 id="contingency-planning-비상-계획" tabindex="-1"><a class="header-anchor" href="#contingency-planning-비상-계획"><span>Contingency planning (비상 계획)</span></a></h3>
 <ul>
 <li>비상 상황 시 핵심 정보 자원의 가용성 및 운영의 연속성을 보장하기 위해 조직 정보 시스템의 비상 대응, 백업 운영, 재해 복구 계획을 수립, 유지, 구현함.</li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="identification-and-authentication-식별-및-인증" tabindex="-1"><a class="header-anchor" href="#identification-and-authentication-식별-및-인증"><span>Identification and authentication (식별 및 인증)</span></a></h3>
 <ul>
 <li>정보 시스템 접근을 허용하기 위한 전제 조건으로, 정보 시스템 사용자, 사용자를 대신하는 프로세스, 또는 장치를 식별하고 해당 사용자, 프로세스, 장치의 신원을 인증(또는 검증)함.</li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="incident-response-사고-대응" tabindex="-1"><a class="header-anchor" href="#incident-response-사고-대응"><span>Incident response (사고 대응)</span></a></h3>
 <ol>
 <li>적절한 준비, 탐지, 분석, 봉쇄, 복구, 사용자 대응 활동을 포함하는 조직 정보 시스템의 운영 사고 처리 역량을 확립함.</li>
 <li>사고를 추적, 문서화하고 적절한 조직 관계자 및/또는 당국에 보고함.</li>
 </ol>
+</section>
+<section class="print-section">
 <h3 id="maintenance-유지보수" tabindex="-1"><a class="header-anchor" href="#maintenance-유지보수"><span>Maintenance (유지보수)</span></a></h3>
 <ol>
 <li>조직 정보 시스템에 대한 주기적이고 시기적절한 유지보수를 수행함.</li>
 <li>정보 시스템 유지보수를 수행하는 데 사용되는 도구, 기술, 메커니즘, 인력에 대한 효과적인 통제를 제공함.</li>
 </ol>
+</section>
+<section class="print-section">
 <h3 id="media-protection-매체-보호" tabindex="-1"><a class="header-anchor" href="#media-protection-매체-보호"><span>Media protection (매체 보호)</span></a></h3>
 <ol>
 <li>종이 및 디지털 형태의 정보 시스템 매체를 보호함.</li>
 <li>정보 시스템 매체의 정보 접근을 인가된 사용자로 제한함.</li>
 <li>정보 시스템 매체를 폐기 또는 재사용을 위해 배포하기 전에 삭제(sanitize)하거나 파기함.</li>
 </ol>
+</section>
+<section class="print-section">
 <h3 id="physical-and-environmental-protection-물리적-및-환경적-보호" tabindex="-1"><a class="header-anchor" href="#physical-and-environmental-protection-물리적-및-환경적-보호"><span>Physical and environmental protection (물리적 및 환경적 보호)</span></a></h3>
 <ol>
 <li>정보 시스템, 장비, 관련 운영 환경에 대한 물리적 접근을 인가된 개인으로 제한함.</li>
@@ -309,20 +356,28 @@
 <li>환경적 위험으로부터 정보 시스템을 보호함.</li>
 <li>정보 시스템을 포함하는 시설에 적절한 환경 통제를 제공함.</li>
 </ol>
+</section>
+<section class="print-section">
 <h3 id="planning-계획" tabindex="-1"><a class="header-anchor" href="#planning-계획"><span>Planning (계획)</span></a></h3>
 <ul>
 <li>정보 시스템에 적용 중이거나 계획된 보안 통제 및 정보 시스템에 접근하는 개인의 행동 규칙을 기술하는 조직 정보 시스템 보안 계획을 개발, 문서화, 주기적 업데이트, 구현함.</li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="personnel-security-인적-보안" tabindex="-1"><a class="header-anchor" href="#personnel-security-인적-보안"><span>Personnel security (인적 보안)</span></a></h3>
 <ol>
 <li>조직 내 책임 있는 위치(제3자 서비스 제공자 포함)를 차지하는 개인이 신뢰할 수 있고 해당 위치에 대한 확립된 보안 기준을 충족하도록 보장함.</li>
 <li>조직 정보 및 정보 시스템이 해고 및 전근과 같은 인사 조치 중 및 이후에 보호되도록 보장함.</li>
 <li>조직 보안 정책 및 절차를 준수하지 않는 인력에 대해 공식적인 제재를 적용함.</li>
 </ol>
+</section>
+<section class="print-section">
 <h3 id="risk-assessment-위험-평가" tabindex="-1"><a class="header-anchor" href="#risk-assessment-위험-평가"><span>Risk assessment (위험 평가)</span></a></h3>
 <ul>
 <li>조직 정보 시스템의 운영 및 관련 처리, 저장, 전송으로 인해 발생하는 조직 운영(임무, 기능, 이미지, 평판 포함), 조직 자산, 개인에 대한 위험을 주기적으로 평가함.</li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="systems-and-services-acquisition-시스템-및-서비스-획득" tabindex="-1"><a class="header-anchor" href="#systems-and-services-acquisition-시스템-및-서비스-획득"><span>Systems and services acquisition (시스템 및 서비스 획득)</span></a></h3>
 <ol>
 <li>조직 정보 시스템을 적절히 보호하기 위해 충분한 자원을 할당함.</li>
@@ -330,17 +385,23 @@
 <li>소프트웨어 사용 및 설치 제한을 채용함.</li>
 <li>제3자 제공자가 조직에서 아웃소싱된 정보, 애플리케이션, 및/또는 서비스를 보호하기 위한 적절한 보안 조치를 채용하도록 보장함.</li>
 </ol>
+</section>
+<section class="print-section">
 <h3 id="system-and-communications-protection-시스템-및-통신-보호" tabindex="-1"><a class="header-anchor" href="#system-and-communications-protection-시스템-및-통신-보호"><span>System and communications protection (시스템 및 통신 보호)</span></a></h3>
 <ol>
 <li>정보 시스템의 외부 경계 및 주요 내부 경계에서 조직 통신(즉, 조직 정보 시스템에 의해 전송되거나 수신되는 정보)을 모니터링, 통제, 보호함.</li>
 <li>조직 정보 시스템 내 효과적인 정보 보안을 증진하는 아키텍처 설계, 소프트웨어 개발 기술, 시스템 엔지니어링 원칙을 채용함.</li>
 </ol>
+</section>
+<section class="print-section">
 <h3 id="system-and-information-integrity-시스템-및-정보-무결성" tabindex="-1"><a class="header-anchor" href="#system-and-information-integrity-시스템-및-정보-무결성"><span>System and information integrity (시스템 및 정보 무결성)</span></a></h3>
 <ol>
 <li>정보 및 정보 시스템 결함을 시기적절하게 식별, 보고, 수정함.</li>
 <li>조직 정보 시스템 내 적절한 위치에서 악성 코드로부터 보호를 제공함.</li>
 <li>정보 시스템 보안 경고 및 권고를 모니터링하고 대응하여 적절한 조치를 취함.</li>
 </ol>
+</section>
+<section class="print-section">
 <h2 id="security-functional-requirements" tabindex="-1"><a class="header-anchor" href="#security-functional-requirements"><span>Security Functional Requirements</span></a></h2>
 <ul>
 <li>주로 컴퓨터 보안 기술적 조치가 필요한 기능 영역:
@@ -359,6 +420,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="security-architecture-for-open-systems" tabindex="-1"><a class="header-anchor" href="#security-architecture-for-open-systems"><span>Security Architecture For Open Systems</span></a></h2>
 <ul>
 <li><code v-pre>ITU-T Recommendation X.800</code>, Security Architecture for OSI(Open System Interconnection)
@@ -375,6 +438,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="security-services" tabindex="-1"><a class="header-anchor" href="#security-services"><span>Security Services</span></a></h2>
 <ul>
 <li><code v-pre>X.800</code>
@@ -390,6 +455,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="authentication-service" tabindex="-1"><a class="header-anchor" href="#authentication-service"><span>Authentication Service</span></a></h2>
 <ul>
 <li>통신이 주장하는 출처로부터 온 것임을 보장하는 것과 관련</li>
@@ -409,17 +476,23 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="access-control-service" tabindex="-1"><a class="header-anchor" href="#access-control-service"><span>Access Control Service</span></a></h3>
 <ul>
 <li>통신 링크를 통해 호스트 시스템 및 애플리케이션에 대한 접근을 제한하고 제어하는 능력</li>
 <li>접근하려는 각 엔티티는 먼저 식별되거나 인증되어야 접근 권한을 개인에 맞게 조정할 수 있음.</li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="nonrepudiation-service" tabindex="-1"><a class="header-anchor" href="#nonrepudiation-service"><span>Nonrepudiation Service</span></a></h3>
 <ul>
 <li>송신자나 수신자 모두 전송된 메시지를 부인하는 것을 방지</li>
 <li>수신자는 주장된 송신자가 실제로 메시지를 보냈음을 증명할 수 있음.</li>
 <li>송신자는 주장된 수신자가 실제로 메시지를 받았음을 증명할 수 있음.</li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="data-confidentiality-service" tabindex="-1"><a class="header-anchor" href="#data-confidentiality-service"><span>Data Confidentiality Service</span></a></h3>
 <ul>
 <li>Passive attack으로부터 전송된 데이터를 보호</li>
@@ -447,6 +520,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="data-integrity-service" tabindex="-1"><a class="header-anchor" href="#data-integrity-service"><span>Data Integrity Service</span></a></h3>
 <ul>
 <li>메시지 스트림, 단일 메시지 또는 메시지 내 선택된 필드에 적용될 수 있음.</li>
@@ -461,6 +536,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="availability-service" tabindex="-1"><a class="header-anchor" href="#availability-service"><span>Availability Service</span></a></h3>
 <ul>
 <li>시스템을 보호하여 가용성을 보장하는, 적절한 응답 시간을 제공하는 서비스
@@ -475,7 +552,11 @@
 <li>서비스 거부 공격으로 인해 발생하는 보안 우려를 다룸</li>
 <li>시스템 자원의 적절한 관리 및 통제에 의존</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="x-800-security-mechanisms" tabindex="-1"><a class="header-anchor" href="#x-800-security-mechanisms"><span>X.800 Security Mechanisms</span></a></h2>
+</section>
+<section class="print-section">
 <h3 id="specific-security-mechanisms-특정-보안-메커니즘" tabindex="-1"><a class="header-anchor" href="#specific-security-mechanisms-특정-보안-메커니즘"><span>SPECIFIC SECURITY MECHANISMS(특정 보안 메커니즘)</span></a></h3>
 <ul>
 <li>OSI(Open Systems Interconnection) 보안 서비스 중 일부를 제공하기 위해 적절한 프로토콜 계층에 통합될 수 있는 메커니즘</li>
@@ -521,6 +602,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="pervasive-security-mechanisms-만연한-보안-메커니즘" tabindex="-1"><a class="header-anchor" href="#pervasive-security-mechanisms-만연한-보안-메커니즘"><span>PERVASIVE SECURITY MECHANISMS(만연한 보안 메커니즘)</span></a></h3>
 <ul>
 <li>특정 OSI 보안 서비스 또는 프로토콜 계층에 특정되지 않은 메커니즘</li>
@@ -550,6 +633,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="computer-security-strategy" tabindex="-1"><a class="header-anchor" href="#computer-security-strategy"><span>Computer Security Strategy</span></a></h2>
 <ul>
 <li>Specification/policy
@@ -568,6 +653,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="security-policy" tabindex="-1"><a class="header-anchor" href="#security-policy"><span>Security Policy</span></a></h2>
 <ul>
 <li>시스템이나 조직이 민감하고 중요한 시스템 자원을 보호하기 위해 보안 서비스를 제공하는 방법을 명시하거나 규제하는 rule(규칙)과 practice(관행)의 공식적 서술</li>
@@ -585,6 +672,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="security-implementation" tabindex="-1"><a class="header-anchor" href="#security-implementation"><span>Security Implementation</span></a></h2>
 <ul>
 <li>네 가지 상호 보완적인 조치
@@ -614,6 +703,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="assurance-and-evaluation" tabindex="-1"><a class="header-anchor" href="#assurance-and-evaluation"><span>Assurance and Evaluation</span></a></h2>
 <ul>
 <li>Assurance (= <em>degree of confidence</em>)
@@ -637,6 +728,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="summary" tabindex="-1"><a class="header-anchor" href="#summary"><span>Summary</span></a></h2>
 <ul>
 <li>Security concepts
@@ -668,6 +761,7 @@
 </ul>
 </li>
 </ul>
+</section>
 </div></template>
 
 

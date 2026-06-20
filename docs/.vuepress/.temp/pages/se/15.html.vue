@@ -1,5 +1,8 @@
-<template><div><h1 id="_15-inspections-code-reviews" tabindex="-1"><a class="header-anchor" href="#_15-inspections-code-reviews"><span>15. Inspections / Code Reviews</span></a></h1>
+<template><div><section class="print-section">
+<h1 id="_15-inspections-code-reviews" tabindex="-1"><a class="header-anchor" href="#_15-inspections-code-reviews"><span>15. Inspections / Code Reviews</span></a></h1>
 <DateMeta />
+</section>
+<section class="print-section">
 <h2 id="learning-goals" tabindex="-1"><a class="header-anchor" href="#learning-goals"><span>Learning Goals</span></a></h2>
 <ul>
 <li>다양한 Formality level을 가진 Peer review의 형태 이해</li>
@@ -8,6 +11,8 @@
 <li>Code review의 사회적, 문화적 문제 완화</li>
 <li>현대 기술 기업의 Commit review 동기와 이점 대조</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="intuition" tabindex="-1"><a class="header-anchor" href="#intuition"><span>Intuition</span></a></h2>
 <blockquote>
 <p><em>&quot;Many eyes make all bugs shallow&quot;</em><br>
@@ -19,6 +24,8 @@
 <em>(고객이 아닌 동료가 결함을 찾게 하라)</em><br>
 <strong>Karl Wiegers</strong></p>
 </blockquote>
+</section>
+<section class="print-section">
 <h2 id="isn-t-testing-sufficient" tabindex="-1"><a class="header-anchor" href="#isn-t-testing-sufficient"><span>Isn’t Testing Sufficient?</span></a></h2>
 <ul>
 <li>오류가 다른 오류를 은폐할 수 있음</li>
@@ -27,24 +34,34 @@
 <li>Tests는 Code quality를 확인하지 않음</li>
 <li>많은 품질 속성(예: Security, Compliance, Scalability)은 테스트하기 어려움</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="a-second-pair-of-eyes" tabindex="-1"><a class="header-anchor" href="#a-second-pair-of-eyes"><span>A Second Pair of Eyes</span></a></h2>
 <ul>
 <li>다른 배경과 경험 보유</li>
 <li>정답에 대한 선입견 없음(No preconceived idea)</li>
 <li>&quot;의도했던 것&quot;에 편향되지 않음</li>
 </ul>
+</section>
+<section class="print-section">
 <h1 id="software-code-reviews" tabindex="-1"><a class="header-anchor" href="#software-code-reviews"><span>Software Code Reviews</span></a></h1>
+</section>
+<section class="print-section">
 <h2 id="code-reviews-in-github" tabindex="-1"><a class="header-anchor" href="#code-reviews-in-github"><span>Code Reviews in GitHub</span></a></h2>
 <ul>
 <li>Pull requests를 통해 [Git] repository에 Push한 변경 사항 공유</li>
 <li>Pull request가 열리면 Collaborators와 잠재적 변경 사항을 논의하고 검토하며 Repository에 Merge 되기 전 후속 Commits 추가 가능</li>
 <li>다른 기여자들은 제안된 변경 사항 검토, Review comments 추가, PR 토론 참여, PR에 Commits 추가 가능</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="code-reviews-in-vs-team" tabindex="-1"><a class="header-anchor" href="#code-reviews-in-vs-team"><span>Code Reviews in VS Team</span></a></h2>
 <ul>
 <li>Code check-in 전 Visual Studio를 사용해 팀원에게 리뷰 요청 가능</li>
 <li>요청은 Team Explorer의 &quot;My Work&quot; 페이지에 표시됨</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="google-s-code-review-flow" tabindex="-1"><a class="header-anchor" href="#google-s-code-review-flow"><span>Google's Code Review Flow</span></a></h2>
 <ol>
 <li>사용자가 변경 사항 작성 후 Snapshot(Patch 및 설명)을 Code review tool에 업로드</li>
@@ -55,6 +72,8 @@
 <li>Reviewers가 최신 상태에 만족하면 &quot;LGTM&quot;(Looks Good To Me)으로 수락 (보통 1개의 LGTM 필요하나 관례상 전원 동의 요구 가능)</li>
 <li>LGTM 후 Author는 모든 Comments를 해결하고 승인받은 경우 Codebase에 변경 사항 Commit</li>
 </ol>
+</section>
+<section class="print-section">
 <h2 id="code-review-goals" tabindex="-1"><a class="header-anchor" href="#code-review-goals"><span>Code Review Goals</span></a></h2>
 <ul>
 <li>Finding defects
@@ -84,8 +103,12 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="developers-expectations" tabindex="-1"><a class="header-anchor" href="#developers-expectations"><span>Developers’ Expectations</span></a></h2>
 <p><img src="@source/se/image-69.png" alt="alt text"></p>
+</section>
+<section class="print-section">
 <h2 id="actual-outcomes" tabindex="-1"><a class="header-anchor" href="#actual-outcomes"><span>Actual Outcomes</span></a></h2>
 <p><img src="@source/se/image-75.png" alt="alt text"></p>
 <ul>
@@ -110,10 +133,14 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="expectation-vs-outcomes" tabindex="-1"><a class="header-anchor" href="#expectation-vs-outcomes"><span>Expectation vs Outcomes</span></a></h2>
 <ul>
 <li>기대와 결과 사이에 불일치 존재</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="expectation-outcome-mismatch" tabindex="-1"><a class="header-anchor" href="#expectation-outcome-mismatch"><span>Expectation/Outcome Mismatch</span></a></h2>
 <ul>
 <li>Code reviews의 낮은 품질
@@ -131,6 +158,8 @@
 </li>
 <li>결과물에 대한 Quality assurance 부재</li>
 </ul>
+</section>
+<section class="print-section">
 <h1 id="formal-inspection" tabindex="-1"><a class="header-anchor" href="#formal-inspection"><span>Formal Inspection</span></a></h1>
 <ul>
 <li>70년대 IBM에서 아이디어 대중화</li>
@@ -143,6 +172,8 @@
 </li>
 <li>비용이 많이 들고 노동 집약적</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="inspection-team-and-roles" tabindex="-1"><a class="header-anchor" href="#inspection-team-and-roles"><span>Inspection Team and Roles</span></a></h2>
 <ul>
 <li>보통 4-5명 (최소 3명)</li>
@@ -152,6 +183,8 @@
 <li>Scribe: 결과 기록</li>
 <li>Moderator: 프로세스 관리, 진행(Facilitates), 보고</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="inspection-process" tabindex="-1"><a class="header-anchor" href="#inspection-process"><span>Inspection Process</span></a></h2>
 <p><img src="@source/se/image-76.png" alt="alt text"></p>
 <ol>
@@ -171,6 +204,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="inspection-steps" tabindex="-1"><a class="header-anchor" href="#inspection-steps"><span>Inspection Steps</span></a></h2>
 <ul>
 <li>Planning (Moderator 선정)</li>
@@ -186,6 +221,8 @@
 <li>Rework</li>
 <li>Follow-up (Verifier가 변경 사항 확인)</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="checklists" tabindex="-1"><a class="header-anchor" href="#checklists"><span>Checklists</span></a></h2>
 <ul>
 <li>무엇을 찾아야 할지 상기시킴</li>
@@ -206,6 +243,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="perspective-based-inspections" tabindex="-1"><a class="header-anchor" href="#perspective-based-inspections"><span>Perspective-based Inspections</span></a></h2>
 <ul>
 <li>서로 다른 전문 분야나 Focus/Checklists를 가진 Inspectors 배치
@@ -221,6 +260,8 @@
 <li>특히 Preparation 단계에서 유효</li>
 <li>출판된 데이터는 적지만 효과적인 관행으로 간주됨</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="process-details" tabindex="-1"><a class="header-anchor" href="#process-details"><span>Process Details</span></a></h2>
 <ul>
 <li>Authors는 Code를 설명하거나 방어하지 않음 (객관적이지 않음)
@@ -236,6 +277,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="social-issues-egos-in-inspections" tabindex="-1"><a class="header-anchor" href="#social-issues-egos-in-inspections"><span>Social Issues: Egos in Inspections</span></a></h2>
 <ul>
 <li>Artifacts에 대한 Author의 자존감(Self-worth)</li>
@@ -249,6 +292,8 @@
 <li>Guidelines가 없다면 Style 토론 회피</li>
 <li>결함 해결 방식은 Author가 결정</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="social-issues-inspection-incentive" tabindex="-1"><a class="header-anchor" href="#social-issues-inspection-incentive"><span>Social Issues: Inspection Incentive</span></a></h2>
 <ul>
 <li>Moderator는 토론을 진행하고 충돌 해결해야 함</li>
@@ -265,6 +310,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="root-cause-analysis" tabindex="-1"><a class="header-anchor" href="#root-cause-analysis"><span>Root Cause Analysis</span></a></h2>
 <ul>
 <li>당면한 퍼즐 너머를 봄</li>
@@ -278,6 +325,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="when-to-inspect" tabindex="-1"><a class="header-anchor" href="#when-to-inspect"><span>When to Inspect</span></a></h2>
 <ul>
 <li>Milestones 이전</li>
@@ -295,6 +344,8 @@
 <li>중요 Components 집중</li>
 <li>첫 세션의 Defect density를 식별하여 추가 Inspections 필요성 가이드</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="reviews-as-part-of-a-milestone" tabindex="-1"><a class="header-anchor" href="#reviews-as-part-of-a-milestone"><span>Reviews as Part of a Milestone</span></a></h2>
 <p><img src="@source/se/image-70.png" alt="alt text"></p>
 <ul>
@@ -302,6 +353,8 @@
 <li>Milestone 도달 전 적절한 시점인지 확인</li>
 <li>Rework 과정을 거쳐 Milestone 달성</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="guidelines-for-inspections" tabindex="-1"><a class="header-anchor" href="#guidelines-for-inspections"><span>Guidelines for Inspections</span></a></h2>
 <ul>
 <li>다수 기업의 프로젝트 및 실험에서 수집됨</li>
@@ -311,23 +364,31 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="focus-fatigue" tabindex="-1"><a class="header-anchor" href="#focus-fatigue"><span>Focus Fatigue</span></a></h2>
 <p><img src="@source/se/image-74.png" alt="alt text"></p>
 <ul>
 <li>권장 사항: 세션당 60분 초과 금지</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="inspection-speed" tabindex="-1"><a class="header-anchor" href="#inspection-speed"><span>Inspection Speed</span></a></h2>
 <p><img src="@source/se/image-73.png" alt="alt text"></p>
 <ul>
 <li>400 LOC/h 이상 시 리뷰가 얕아짐(Shallow)</li>
 <li>권장 사항: 1시간 리뷰 세션에 400 LOC 미만 일정 잡기</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="importance-of-context" tabindex="-1"><a class="header-anchor" href="#importance-of-context"><span>Importance of Context</span></a></h2>
 <ul>
 <li>Context dependencies가 적은 Code가 리뷰하기 쉬움</li>
 <li>Reviewers는 관련 파일 확인 필요</li>
 <li>Modularity (Small interfaces, High cohesion, Low coupling 등) 필요</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="are-meetings-required" tabindex="-1"><a class="header-anchor" href="#are-meetings-required"><span>Are Meetings Required</span></a></h2>
 <p><img src="@source/se/image-72.png" alt="alt text"></p>
 <ul>
@@ -335,17 +396,23 @@
 <li>제안된 시너지 효과는 낮은 영향만 미침</li>
 <li>주장: Meetings에서 발견되는 결함은 종종 더 미묘함(Subtle)</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="false-positives" tabindex="-1"><a class="header-anchor" href="#false-positives"><span>False Positives</span></a></h2>
 <ul>
 <li>발견된 issue의 약 25%는 False positives</li>
 <li>Meeting 중 토론 회피</li>
 <li>Meeting 중 혼란은 문서가 더 명확해야 한다는 지표(Indicator)</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="self-checks-can-find-half-the-issues" tabindex="-1"><a class="header-anchor" href="#self-checks-can-find-half-the-issues"><span>Self-checks Can Find Half the Issues</span></a></h2>
 <p><img src="@source/se/image-71.png" alt="alt text"></p>
 <ul>
 <li>Authors가 Inspection 전 문서를 Self-check함</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="the-goal-is-not-to-be-right-it-s-to-save" tabindex="-1"><a class="header-anchor" href="#the-goal-is-not-to-be-right-it-s-to-save"><span>The Goal Is Not To Be “Right” (it’s to save $)</span></a></h2>
 <blockquote>
 <p><em>&quot;피로스의 승리(Pyrrhic victory)는 승리자에게 막대한 대가를 치르게 하여 패배와 다름없는 승리이다.<br>
@@ -360,6 +427,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="inspections-vs-reviews-costs" tabindex="-1"><a class="header-anchor" href="#inspections-vs-reviews-costs"><span>Inspections vs Reviews: Costs</span></a></h2>
 <ul>
 <li>Formal inspections 및 Modern code reviews
@@ -375,6 +444,8 @@
 </li>
 <li>Code reviews 대 버그를 찾지 못하는 비용 비교</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="code-review-by-formality" tabindex="-1"><a class="header-anchor" href="#code-review-by-formality"><span>Code Review by Formality</span></a></h2>
 <ol>
 <li>Inspection (가장 formal함)</li>
@@ -383,6 +454,8 @@
 <li>Passaround (&quot;Modern code reviews&quot;)</li>
 <li>Ad hoc review</li>
 </ol>
+</section>
+<section class="print-section">
 <h2 id="differences-among-peer-review-types" tabindex="-1"><a class="header-anchor" href="#differences-among-peer-review-types"><span>Differences Among Peer Review Types</span></a></h2>
 <table>
 <thead>
@@ -438,6 +511,8 @@
 </tr>
 </tbody>
 </table>
+</section>
+<section class="print-section">
 <h2 id="experience-studies-claims" tabindex="-1"><a class="header-anchor" href="#experience-studies-claims"><span>Experience (Studies/Claims)</span></a></h2>
 <ul>
 <li>Raytheon
@@ -467,6 +542,7 @@
 </ul>
 </li>
 </ul>
+</section>
 </div></template>
 
 

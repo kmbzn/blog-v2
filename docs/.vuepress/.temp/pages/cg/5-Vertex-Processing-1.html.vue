@@ -1,11 +1,16 @@
-<template><div><h1 id="_5-vertex-processing-1" tabindex="-1"><a class="header-anchor" href="#_5-vertex-processing-1"><span>5 - Vertex Processing 1</span></a></h1>
+<template><div><section class="print-section">
+<h1 id="_5-vertex-processing-1" tabindex="-1"><a class="header-anchor" href="#_5-vertex-processing-1"><span>5 - Vertex Processing 1</span></a></h1>
 <DateMeta />
+</section>
+<section class="print-section">
 <h2 id="outline" tabindex="-1"><a class="header-anchor" href="#outline"><span>Outline</span></a></h2>
 <ul>
 <li>Rasterization Pipeline &amp; Vertex Processing</li>
 <li>Modeling Transformation</li>
 <li>Viewing Transformation</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="recall-rasterization-pipeline" tabindex="-1"><a class="header-anchor" href="#recall-rasterization-pipeline"><span>Recall: Rasterization Pipeline</span></a></h2>
 <p>(3D 장면의 기하 정보를 픽셀 단위의 2D 이미지로 변환하는 일련의 처리 과정)</p>
 <ul>
@@ -51,6 +56,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="vertex-processing" tabindex="-1"><a class="header-anchor" href="#vertex-processing"><span>Vertex Processing</span></a></h2>
 <ul>
 <li>
@@ -76,6 +83,8 @@
 </ol>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="in-terms-of-cg-transformation" tabindex="-1"><a class="header-anchor" href="#in-terms-of-cg-transformation"><span>In Terms of CG Transformation,</span></a></h2>
 <ol>
 <li>객체 배치<br>
@@ -90,6 +99,8 @@
 <ul>
 <li>위 모든 변환들은 <strong>행렬 곱셈</strong>으로 구성됨</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="vertex-processing-transformation-pipeline" tabindex="-1"><a class="header-anchor" href="#vertex-processing-transformation-pipeline"><span>Vertex Processing (Transformation Pipeline)</span></a></h2>
 <ul>
 <li>Object space (body frame):
@@ -109,42 +120,58 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="modeling-transformation" tabindex="-1"><a class="header-anchor" href="#modeling-transformation"><span>Modeling transformation</span></a></h3>
 <ul>
 <li>객체 좌표계 (object space) → world 좌표계로 변환</li>
 <li>이전 강의에서 배운 affine transformation을 적용함</li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="placing-a-camera" tabindex="-1"><a class="header-anchor" href="#placing-a-camera"><span>Placing a “camera”</span></a></h3>
 <ul>
 <li>world 좌표계 상에서 카메라를 배치함</li>
 <li>view space (또는 camera space) 정의됨</li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="viewing-transformation" tabindex="-1"><a class="header-anchor" href="#viewing-transformation"><span>Viewing transformation</span></a></h3>
 <ul>
 <li>world space → camera space로 변환</li>
 <li>즉, world 기준 장면을 카메라 기준으로 재배열</li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="selecting-its-lens" tabindex="-1"><a class="header-anchor" href="#selecting-its-lens"><span>Selecting its “lens”</span></a></h3>
 <ul>
 <li>투영 방식을 정의함 (예: perspective, orthographic 등)</li>
 <li>view space → <strong>Clip space / NDC (normalized device coordinate) space</strong></li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="projection-transformation" tabindex="-1"><a class="header-anchor" href="#projection-transformation"><span>Projection transformation</span></a></h3>
 <ul>
 <li>시야각(FOV), 종횡비, near/far plane 등을 고려하여<br>
 3D 공간을 <strong>정규화된 장치 좌표계(NDC)</strong> 로 변환</li>
 <li>좌표 범위: <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mo>−</mo><mn>1</mn><mo separator="true">,</mo><mtext> </mtext><mo>−</mo><mn>1</mn><mo separator="true">,</mo><mtext> </mtext><mo>−</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(-1,~-1,~-1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">−</span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace nobreak"> </span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">−</span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace nobreak"> </span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">−</span><span class="mord">1</span><span class="mclose">)</span></span></span></span> ~ <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mn>1</mn><mo separator="true">,</mo><mtext> </mtext><mn>1</mn><mo separator="true">,</mo><mtext> </mtext><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(1,~1,~1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace nobreak"> </span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace nobreak"> </span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">1</span><span class="mclose">)</span></span></span></span></li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="displaying-on-a-cinema-screen" tabindex="-1"><a class="header-anchor" href="#displaying-on-a-cinema-screen"><span>Displaying on a “cinema screen”</span></a></h3>
 <ul>
 <li>NDC 공간을 이미지 공간으로 변환</li>
 <li>즉, 픽셀 좌표계 상에 화면 출력</li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="viewport-transformation" tabindex="-1"><a class="header-anchor" href="#viewport-transformation"><span>Viewport transformation</span></a></h3>
 <ul>
 <li>NDC 좌표를 실제 화면 해상도에 맞게 스케일 조정</li>
 <li>좌표계를 정규화 공간 → 스크린 공간으로 변환</li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="transformation-pipeline-전체-요약" tabindex="-1"><a class="header-anchor" href="#transformation-pipeline-전체-요약"><span>Transformation Pipeline 전체 요약</span></a></h3>
 <p>Object space → View space → Clip space → Screen space</p>
 <ol>
@@ -173,6 +200,8 @@
 </ul>
 <p v-pre class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi mathvariant="bold">p</mi><mi>s</mi></msub><mo>=</mo><msub><mi mathvariant="bold">T</mi><mrow><mi>v</mi><mi>p</mi></mrow></msub><mo>⋅</mo><mrow><mi mathvariant="bold">P</mi><mi mathvariant="bold">V</mi><mi mathvariant="bold">M</mi></mrow><mo>⋅</mo><msub><mi mathvariant="bold">p</mi><mi>o</mi></msub></mrow><annotation encoding="application/x-tex">\mathbf{p}_s = \mathbf{T}_{vp} \cdot \mathbf{PVM} \cdot \mathbf{p}_o
 </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6389em;vertical-align:-0.1944em;"></span><span class="mord"><span class="mord mathbf">p</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">s</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.9722em;vertical-align:-0.2861em;"></span><span class="mord"><span class="mord mathbf">T</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.03588em;">v</span><span class="mord mathnormal mtight">p</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6861em;"></span><span class="mord"><span class="mord mathbf">PVM</span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6389em;vertical-align:-0.1944em;"></span><span class="mord"><span class="mord mathbf">p</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">o</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span></p>
+</section>
+<section class="print-section">
 <h2 id="modeling-transformation-1" tabindex="-1"><a class="header-anchor" href="#modeling-transformation-1"><span>Modeling Transformation</span></a></h2>
 <ul>
 <li>object space에서 world space로의 변환<p v-pre class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi mathvariant="bold">p</mi><mi>w</mi></msub><mo>=</mo><mi mathvariant="bold">M</mi><msub><mi mathvariant="bold">p</mi><mi>o</mi></msub></mrow><annotation encoding="application/x-tex">\mathbf{p}_w = \mathbf{M} \mathbf{p}_o
@@ -181,6 +210,8 @@
 <li>이때 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="bold">M</mi></mrow><annotation encoding="application/x-tex">\mathbf{M}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6861em;"></span><span class="mord mathbf">M</span></span></span></span>은 affine transformation들의 조합</li>
 <li>예: 이동, 회전, 스케일 등</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="recall-directions-of-the-arrow" tabindex="-1"><a class="header-anchor" href="#recall-directions-of-the-arrow"><span>Recall: Directions of the &quot;arrow&quot;</span></a></h2>
 <ul>
 <li>
@@ -190,6 +221,8 @@
 <li>1번째 의미: geometry 변환 방향</li>
 <li>3번째 의미: frame이 바뀌는 관점에서 → 방향 반대가 되는 것처럼 보일 수 있음</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="modeling-transformation-2" tabindex="-1"><a class="header-anchor" href="#modeling-transformation-2"><span>Modeling Transformation</span></a></h2>
 <ul>
 <li>객체는 <strong>object의 고유 좌표계 (body frame)</strong> 에 정의됨</li>
@@ -206,7 +239,11 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="quiz-1" tabindex="-1"><a class="header-anchor" href="#quiz-1"><span>Quiz 1</span></a></h2>
+</section>
+<section class="print-section">
 <h2 id="viewing-transformation-1" tabindex="-1"><a class="header-anchor" href="#viewing-transformation-1"><span>Viewing Transformation</span></a></h2>
 <ul>
 <li>Viewing transformation은 <strong>world space</strong>에서 <strong>camera space</strong>(view space)로 변환하는 연산이다.</li>
@@ -215,6 +252,8 @@
 </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7544em;vertical-align:-0.31em;"></span><span class="mord mathbf">p</span><span class="mord" style="margin-right:0.02778em;">_</span><span class="mord mathbf" style="margin-right:0.01597em;">v</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.9961em;vertical-align:-0.31em;"></span><span class="mord mathbf">Vp</span><span class="mord" style="margin-right:0.02778em;">_</span><span class="mord mathbf" style="margin-right:0.01597em;">w</span></span></span></span></span></p>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="recall-that" tabindex="-1"><a class="header-anchor" href="#recall-that"><span>Recall that...</span></a></h2>
 <ul>
 <li>
@@ -242,6 +281,8 @@
 </ol>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="viewing-transformation-2" tabindex="-1"><a class="header-anchor" href="#viewing-transformation-2"><span>Viewing Transformation</span></a></h2>
 <ul>
 <li>Viewing transformation은 <strong>rigid transformation</strong>으로서, <strong>회전과 이동</strong>을 포함한다.</li>
@@ -250,6 +291,8 @@
 <li>이를 위해 <strong>camera frame</strong>을 정의해야 함 (world frame 기준)</li>
 <li>camera frame을 정의한다는 것은 곧 <strong>카메라의 위치와 방향</strong>을 결정하는 것과 같다.</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="defining-camera-frame-1-lookat" tabindex="-1"><a class="header-anchor" href="#defining-camera-frame-1-lookat"><span>Defining Camera Frame 1 - &quot;LookAt&quot;</span></a></h2>
 <ul>
 <li>카메라의 위치와 방향을 정의하는 여러 방식이 있다.</li>
@@ -261,11 +304,15 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="demo-lookat-function" tabindex="-1"><a class="header-anchor" href="#demo-lookat-function"><span>[Demo] LookAt Function</span></a></h2>
 <ul>
 <li><a href="http://learnwebgl.brown37.net/07_cameras/camera_lookat/camera_lookat.html" target="_blank" rel="noopener noreferrer">learnwebgl.brown37.net/07_cameras/camera_lookat/camera_lookat.html</a></li>
 <li>슬라이더를 움직이며 eye, center, up 값을 바꿔보면, 3D 장면의 뷰가 어떻게 변하는지 관찰할 수 있다.</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="defining-camera-frame-1-lookat-1" tabindex="-1"><a class="header-anchor" href="#defining-camera-frame-1-lookat-1"><span>Defining Camera Frame 1 - &quot;LookAt&quot;</span></a></h2>
 <ul>
 <li>eye point, look-at point, up vector가 주어지면, <strong>camera frame</strong>을 계산할 수 있다.</li>
@@ -278,10 +325,14 @@
 </li>
 <li>camera frame을 정의하려면 <strong><span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="bold">u</mi><mo separator="true">,</mo><mtext> </mtext><mi mathvariant="bold">v</mi><mo separator="true">,</mo><mtext> </mtext><mi mathvariant="bold">w</mi></mrow><annotation encoding="application/x-tex">\mathbf{u},\ \mathbf{v},\ \mathbf{w}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6389em;vertical-align:-0.1944em;"></span><span class="mord mathbf">u</span><span class="mpunct">,</span><span class="mspace"> </span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathbf" style="margin-right:0.01597em;">v</span><span class="mpunct">,</span><span class="mspace"> </span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathbf" style="margin-right:0.01597em;">w</span></span></span></span> 벡터</strong>와 <strong>원점</strong>을 구해야 함</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="given-eye-point-look-at-point-up-vector" tabindex="-1"><a class="header-anchor" href="#given-eye-point-look-at-point-up-vector"><span>Given Eye point, Look-at point, Up vector</span></a></h2>
 <ul>
 <li>Eye point, Look-at point, Up vector를 이용하여 카메라 좌표계를 정의한다.</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="getting-origin-point" tabindex="-1"><a class="header-anchor" href="#getting-origin-point"><span>Getting origin point</span></a></h2>
 <ul>
 <li>
@@ -290,6 +341,8 @@
 </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord text"><span class="mord">origin of camera frame</span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.9961em;vertical-align:-0.31em;"></span><span class="mord mathbf">P</span><span class="mord" style="margin-right:0.02778em;">_</span><span class="mord"><span class="mord text"><span class="mord">eye</span></span></span></span></span></span></span></p>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="getting-w-axis-vector" tabindex="-1"><a class="header-anchor" href="#getting-w-axis-vector"><span>Getting &quot;w&quot; axis vector</span></a></h2>
 <ul>
 <li>
@@ -298,6 +351,8 @@
 </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4444em;"></span><span class="mord mathbf" style="margin-right:0.01597em;">w</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:2.3904em;vertical-align:-0.996em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.3944em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">∣∣</span><span class="mord mathbf">P</span><span class="mord" style="margin-right:0.02778em;">_</span><span class="mord"><span class="mord text"><span class="mord">eye</span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord mathbf">P</span><span class="mord" style="margin-right:0.02778em;">_</span><span class="mord"><span class="mord text"><span class="mord">ref</span></span></span><span class="mord">∣∣</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.7em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathbf">P</span><span class="mord" style="margin-right:0.02778em;">_</span><span class="mord"><span class="mord text"><span class="mord">eye</span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord mathbf">P</span><span class="mord" style="margin-right:0.02778em;">_</span><span class="mord"><span class="mord text"><span class="mord">ref</span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.996em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span></p>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="getting-u-axis-vector" tabindex="-1"><a class="header-anchor" href="#getting-u-axis-vector"><span>Getting &quot;u&quot; axis vector</span></a></h2>
 <ul>
 <li>
@@ -306,6 +361,8 @@
 </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4444em;"></span><span class="mord mathbf">u</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:2.3821em;vertical-align:-0.996em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.3861em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">∣∣</span><span class="mord mathbf" style="margin-right:0.01597em;">V</span><span class="mord" style="margin-right:0.02778em;">_</span><span class="mord"><span class="mord text"><span class="mord">up</span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord mathbf" style="margin-right:0.01597em;">w</span><span class="mord">∣∣</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.7em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathbf" style="margin-right:0.01597em;">V</span><span class="mord" style="margin-right:0.02778em;">_</span><span class="mord"><span class="mord text"><span class="mord">up</span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord mathbf" style="margin-right:0.01597em;">w</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.996em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span></p>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="getting-v-axis-vector" tabindex="-1"><a class="header-anchor" href="#getting-v-axis-vector"><span>Getting &quot;v&quot; axis vector</span></a></h2>
 <ul>
 <li>
@@ -314,6 +371,8 @@
 </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4444em;"></span><span class="mord mathbf" style="margin-right:0.01597em;">v</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6667em;vertical-align:-0.0833em;"></span><span class="mord mathbf" style="margin-right:0.01597em;">w</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.4444em;"></span><span class="mord mathbf">u</span></span></span></span></span></p>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="recall-2-affine-transformation-matrix-defines-an-affine-frame-w-r-t-world-frame" tabindex="-1"><a class="header-anchor" href="#recall-2-affine-transformation-matrix-defines-an-affine-frame-w-r-t-world-frame"><span>Recall: 2) Affine Transformation Matrix defines an Affine Frame w.r.t. World Frame</span></a></h2>
 <ul>
 <li>Affine 변환 행렬 M은 좌표계(프레임)를 변환하는데 사용된다.</li>
@@ -335,6 +394,8 @@ x_{1z} &amp; y_{1z} &amp; z_{1z} &amp; p_{1z} \\
 </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:4.8em;vertical-align:-2.15em;"></span><span class="minner"><span class="mopen"><span class="delimsizing mult"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.65em;"><span style="top:-4.65em;"><span class="pstrut" style="height:6.8em;"></span><span style="width:0.667em;height:4.800em;"><svg xmlns="http://www.w3.org/2000/svg" width="0.667em" height="4.800em" viewBox="0 0 667 4800"><path d="M403 1759 V84 H666 V0 H319 V1759 v1200 v1759 h347 v-84
 H403z M403 1759 V0 H319 V1759 v1200 v1759 h84z"/></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:2.15em;"><span></span></span></span></span></span></span><span class="mord"><span class="mtable"><span class="col-align-c"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.65em;"><span style="top:-4.81em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span><span class="mord mathnormal mtight">x</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span><span style="top:-3.61em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span><span class="mord mathnormal mtight" style="margin-right:0.03588em;">y</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span></span></span><span style="top:-2.41em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span><span class="mord mathnormal mtight" style="margin-right:0.04398em;">z</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span><span style="top:-1.21em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:2.15em;"><span></span></span></span></span></span><span class="arraycolsep" style="width:0.5em;"></span><span class="arraycolsep" style="width:0.5em;"></span><span class="col-align-c"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.65em;"><span style="top:-4.81em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span><span class="mord mathnormal mtight">x</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span><span style="top:-3.61em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span><span class="mord mathnormal mtight" style="margin-right:0.03588em;">y</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span></span></span><span style="top:-2.41em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span><span class="mord mathnormal mtight" style="margin-right:0.04398em;">z</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span><span style="top:-1.21em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:2.15em;"><span></span></span></span></span></span><span class="arraycolsep" style="width:0.5em;"></span><span class="arraycolsep" style="width:0.5em;"></span><span class="col-align-c"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.65em;"><span style="top:-4.81em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathnormal" style="margin-right:0.04398em;">z</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.044em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span><span class="mord mathnormal mtight">x</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span><span style="top:-3.61em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathnormal" style="margin-right:0.04398em;">z</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.044em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span><span class="mord mathnormal mtight" style="margin-right:0.03588em;">y</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span></span></span><span style="top:-2.41em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathnormal" style="margin-right:0.04398em;">z</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.044em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span><span class="mord mathnormal mtight" style="margin-right:0.04398em;">z</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span><span style="top:-1.21em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:2.15em;"><span></span></span></span></span></span><span class="arraycolsep" style="width:0.5em;"></span><span class="arraycolsep" style="width:0.5em;"></span><span class="col-align-c"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.65em;"><span style="top:-4.81em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathnormal">p</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span><span class="mord mathnormal mtight">x</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span><span style="top:-3.61em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathnormal">p</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span><span class="mord mathnormal mtight" style="margin-right:0.03588em;">y</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span></span></span><span style="top:-2.41em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathnormal">p</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span><span class="mord mathnormal mtight" style="margin-right:0.04398em;">z</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span><span style="top:-1.21em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:2.15em;"><span></span></span></span></span></span></span></span><span class="mclose"><span class="delimsizing mult"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.65em;"><span style="top:-4.65em;"><span class="pstrut" style="height:6.8em;"></span><span style="width:0.667em;height:4.800em;"><svg xmlns="http://www.w3.org/2000/svg" width="0.667em" height="4.800em" viewBox="0 0 667 4800"><path d="M347 1759 V0 H0 V84 H263 V1759 v1200 v1759 H0 v84 H347z
 M347 1759 V0 H263 V1759 v1200 v1759 h84z"/></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:2.15em;"><span></span></span></span></span></span></span></span></span></span></span></span></p>
+</section>
+<section class="print-section">
 <h2 id="thus-the-camera-frame-is-defined-by" tabindex="-1"><a class="header-anchor" href="#thus-the-camera-frame-is-defined-by"><span>Thus, the Camera Frame is defined by</span></a></h2>
 <p v-pre class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi mathvariant="bold">v</mi><mo>=</mo><mi mathvariant="bold">w</mi><mo>×</mo><mi mathvariant="bold">u</mi></mrow><annotation encoding="application/x-tex">\mathbf{v} = \mathbf{w} \times \mathbf{u}
 </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4444em;"></span><span class="mord mathbf" style="margin-right:0.01597em;">v</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6667em;vertical-align:-0.0833em;"></span><span class="mord mathbf" style="margin-right:0.01597em;">w</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.4444em;"></span><span class="mord mathbf">u</span></span></span></span></span></p>
@@ -347,6 +408,8 @@ u_z &amp; v_z &amp; w_z &amp; P_{\text{eye},z} \\
 </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:4.8em;vertical-align:-2.15em;"></span><span class="minner"><span class="mopen"><span class="delimsizing mult"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.65em;"><span style="top:-4.65em;"><span class="pstrut" style="height:6.8em;"></span><span style="width:0.667em;height:4.800em;"><svg xmlns="http://www.w3.org/2000/svg" width="0.667em" height="4.800em" viewBox="0 0 667 4800"><path d="M403 1759 V84 H666 V0 H319 V1759 v1200 v1759 h347 v-84
 H403z M403 1759 V0 H319 V1759 v1200 v1759 h84z"/></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:2.15em;"><span></span></span></span></span></span></span><span class="mord"><span class="mtable"><span class="col-align-c"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.65em;"><span style="top:-4.81em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathnormal">u</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">x</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span><span style="top:-3.61em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathnormal">u</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.03588em;">y</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span></span></span><span style="top:-2.41em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathnormal">u</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.04398em;">z</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span><span style="top:-1.21em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:2.15em;"><span></span></span></span></span></span><span class="arraycolsep" style="width:0.5em;"></span><span class="arraycolsep" style="width:0.5em;"></span><span class="col-align-c"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.65em;"><span style="top:-4.81em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">v</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">x</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span><span style="top:-3.61em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">v</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.03588em;">y</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span></span></span><span style="top:-2.41em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">v</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.04398em;">z</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span><span style="top:-1.21em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:2.15em;"><span></span></span></span></span></span><span class="arraycolsep" style="width:0.5em;"></span><span class="arraycolsep" style="width:0.5em;"></span><span class="col-align-c"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.65em;"><span style="top:-4.81em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathnormal" style="margin-right:0.02691em;">w</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:-0.0269em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">x</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span><span style="top:-3.61em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathnormal" style="margin-right:0.02691em;">w</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:-0.0269em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.03588em;">y</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span></span></span><span style="top:-2.41em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathnormal" style="margin-right:0.02691em;">w</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:-0.0269em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.04398em;">z</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span><span style="top:-1.21em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:2.15em;"><span></span></span></span></span></span><span class="arraycolsep" style="width:0.5em;"></span><span class="arraycolsep" style="width:0.5em;"></span><span class="col-align-c"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.65em;"><span style="top:-4.81em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:-0.1389em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord text mtight"><span class="mord mtight">eye</span></span><span class="mpunct mtight">,</span><span class="mord mathnormal mtight">x</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span></span></span><span style="top:-3.61em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:-0.1389em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord text mtight"><span class="mord mtight">eye</span></span><span class="mpunct mtight">,</span><span class="mord mathnormal mtight" style="margin-right:0.03588em;">y</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span></span></span><span style="top:-2.41em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:-0.1389em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord text mtight"><span class="mord mtight">eye</span></span><span class="mpunct mtight">,</span><span class="mord mathnormal mtight" style="margin-right:0.04398em;">z</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span></span></span><span style="top:-1.21em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:2.15em;"><span></span></span></span></span></span></span></span><span class="mclose"><span class="delimsizing mult"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.65em;"><span style="top:-4.65em;"><span class="pstrut" style="height:6.8em;"></span><span style="width:0.667em;height:4.800em;"><svg xmlns="http://www.w3.org/2000/svg" width="0.667em" height="4.800em" viewBox="0 0 667 4800"><path d="M347 1759 V0 H0 V84 H263 V1759 v1200 v1759 H0 v84 H347z
 M347 1759 V0 H263 V1759 v1200 v1759 h84z"/></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:2.15em;"><span></span></span></span></span></span></span></span></span></span></span></span></p>
+</section>
+<section class="print-section">
 <h2 id="how-can-we-get-viewing-matrix-from-the-camera-frame" tabindex="-1"><a class="header-anchor" href="#how-can-we-get-viewing-matrix-from-the-camera-frame"><span>How can we get viewing matrix <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="bold">V</mi></mrow><annotation encoding="application/x-tex">\mathbf{V}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6861em;"></span><span class="mord mathbf" style="margin-right:0.01597em;">V</span></span></span></span> from the camera frame?</span></a></h2>
 <ul>
 <li>
@@ -377,6 +440,8 @@ H403z M403 1759 V0 H319 V1759 v1200 v1759 h84z"/></svg></span></span></span><spa
 M347 1759 V0 H263 V1759 v1200 v1759 h84z"/></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:2.15em;"><span></span></span></span></span></span></span></span></span></span></span></span></p>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="viewing-transformation-is-the-opposite-direction" tabindex="-1"><a class="header-anchor" href="#viewing-transformation-is-the-opposite-direction"><span>Viewing Transformation is the Opposite Direction</span></a></h2>
 <ul>
 <li>
@@ -396,6 +461,8 @@ M347 1759 V0 H263 V1759 v1200 v1759 h84z"/></svg></span></span></span><span clas
 </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6861em;"></span><span class="mord mathbf" style="margin-right:0.01597em;">V</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:2.604em;vertical-align:-0.95em;"></span><span class="minner"><span class="minner"><span class="mopen delimcenter" style="top:0em;"><span class="delimsizing size3">[</span></span><span class="mord"><span class="mtable"><span class="col-align-c"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.45em;"><span style="top:-3.61em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathbf">R</span></span></span><span style="top:-2.41em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathbf">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.95em;"><span></span></span></span></span></span><span class="arraycolsep" style="width:0.5em;"></span><span class="arraycolsep" style="width:0.5em;"></span><span class="col-align-c"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.45em;"><span style="top:-3.61em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathbf">t</span></span></span><span style="top:-2.41em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.95em;"><span></span></span></span></span></span></span></span><span class="mclose delimcenter" style="top:0em;"><span class="delimsizing size3">]</span></span></span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:1.654em;"><span style="top:-3.9029em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">−</span><span class="mord mtight">1</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:2.4091em;vertical-align:-0.9546em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;"><span class="delimsizing size3">[</span></span><span class="mord"><span class="mtable"><span class="col-align-c"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.4546em;"><span style="top:-3.6054em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathbf">R</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8491em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">⊤</span></span></span></span></span></span></span></span></span></span><span style="top:-2.4054em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathbf">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.9546em;"><span></span></span></span></span></span><span class="arraycolsep" style="width:0.5em;"></span><span class="arraycolsep" style="width:0.5em;"></span><span class="col-align-c"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.4546em;"><span style="top:-3.6054em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">−</span><span class="mord"><span class="mord mathbf">R</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8491em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">⊤</span></span></span></span></span></span></span></span><span class="mord mathbf">t</span></span></span><span style="top:-2.4054em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.9546em;"><span></span></span></span></span></span></span></span><span class="mclose delimcenter" style="top:0em;"><span class="delimsizing size3">]</span></span></span></span></span></span></span></p>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="inverting-rigid-transformation-matrix" tabindex="-1"><a class="header-anchor" href="#inverting-rigid-transformation-matrix"><span>Inverting Rigid Transformation Matrix</span></a></h2>
 <ul>
 <li>
@@ -417,6 +484,8 @@ M347 1759 V0 H263 V1759 v1200 v1759 h84z"/></svg></span></span></span><span clas
 <p>카메라 프레임 행렬의 경우, <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="bold">R</mi></mrow><annotation encoding="application/x-tex">\mathbf{R}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6861em;"></span><span class="mord mathbf">R</span></span></span></span>은 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="bold">u</mi><mo separator="true">,</mo><mtext> </mtext><mi mathvariant="bold">v</mi><mo separator="true">,</mo><mtext> </mtext><mi mathvariant="bold">w</mi></mrow><annotation encoding="application/x-tex">\mathbf{u},\ \mathbf{v},\ \mathbf{w}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6389em;vertical-align:-0.1944em;"></span><span class="mord mathbf">u</span><span class="mpunct">,</span><span class="mspace"> </span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathbf" style="margin-right:0.01597em;">v</span><span class="mpunct">,</span><span class="mspace"> </span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathbf" style="margin-right:0.01597em;">w</span></span></span></span> 방향 벡터로 이루어진다.</p>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="viewing-transformation-is-the-opposite-direction-1" tabindex="-1"><a class="header-anchor" href="#viewing-transformation-is-the-opposite-direction-1"><span>Viewing Transformation is the Opposite Direction</span></a></h2>
 <ul>
 <li>
@@ -432,16 +501,22 @@ H403z M403 1759 V0 H319 V1759 v1200 v1759 h84z"/></svg></span></span></span><spa
 M347 1759 V0 H263 V1759 v1200 v1759 h84z"/></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:2.15em;"><span></span></span></span></span></span></span></span></span></span></span></span></p>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="defining-camera-frame-2-translate-rotate" tabindex="-1"><a class="header-anchor" href="#defining-camera-frame-2-translate-rotate"><span>Defining Camera Frame 2 - Translate &amp; Rotate</span></a></h2>
 <ul>
 <li><code v-pre>LookAt</code> 함수 외에도, 카메라의 위치와 방향을 정의할 수 있는 방법이 있다.</li>
 <li>단순히 <strong>translate</strong>하고 <strong>rotate</strong>하면 rigid transformation 행렬로 정의 가능하다.</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="demo-translate-rotate-camera" tabindex="-1"><a class="header-anchor" href="#demo-translate-rotate-camera"><span>[Demo] Translate &amp; Rotate Camera</span></a></h2>
 <ul>
 <li><a href="http://learnwebgl.brown37.net/07_cameras/camera_trunk_axes/camera_trunk_axes.html" target="_blank" rel="noopener noreferrer">learnwebgl.brown37.net/07_cameras/camera_trunk_axes/camera_trunk_axes.html</a></li>
 <li>슬라이더로 eye 위치를 바꾸거나 축 방향 및 각도를 지정해 회전하는 카메라 움직임을 시각적으로 관찰할 수 있다.</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="moving-camera-vs-moving-world" tabindex="-1"><a class="header-anchor" href="#moving-camera-vs-moving-world"><span>Moving Camera vs Moving World</span></a></h2>
 <ul>
 <li>사실, 이 둘은 <strong>동등한 연산</strong>이다.</li>
@@ -450,11 +525,14 @@ M347 1759 V0 H263 V1759 v1200 v1759 h84z"/></svg></span></span></span><span clas
 <li>카메라를 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi></mrow><annotation encoding="application/x-tex">y</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span></span></span></span>축 기준으로 <strong><span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>60</mn><mi mathvariant="normal">°</mi></mrow><annotation encoding="application/x-tex">60\degree</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord">60°</span></span></span></span> 회전</strong>시키는 것은<br>
 == 월드를 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi></mrow><annotation encoding="application/x-tex">y</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span></span></span></span>축 기준으로 <strong><span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>−</mo><mn>60</mn><mi mathvariant="normal">°</mi></mrow><annotation encoding="application/x-tex">-60\degree</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7778em;vertical-align:-0.0833em;"></span><span class="mord">−</span><span class="mord">60°</span></span></span></span> 회전</strong>시키는 것과 같다.</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="demo-moving-camera-vs-moving-world" tabindex="-1"><a class="header-anchor" href="#demo-moving-camera-vs-moving-world"><span>[Demo] Moving Camera vs. Moving World</span></a></h2>
 <ul>
 <li><a href="https://webglfundamentals.org/webgl/lessons/resources/camera-move-camera.html?mode=0" target="_blank" rel="noopener noreferrer">Moving camera</a></li>
 <li><a href="https://webglfundamentals.org/webgl/lessons/resources/camera-move-camera.html?mode=2" target="_blank" rel="noopener noreferrer">Moving world</a></li>
 </ul>
+</section>
 </div></template>
 
 

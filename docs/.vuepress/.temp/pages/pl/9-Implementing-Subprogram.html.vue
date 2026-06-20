@@ -1,5 +1,8 @@
-<template><div><h1 id="_9-implementing-subprogram" tabindex="-1"><a class="header-anchor" href="#_9-implementing-subprogram"><span>9. Implementing Subprogram</span></a></h1>
+<template><div><section class="print-section">
+<h1 id="_9-implementing-subprogram" tabindex="-1"><a class="header-anchor" href="#_9-implementing-subprogram"><span>9. Implementing Subprogram</span></a></h1>
 <DateMeta />
+</section>
+<section class="print-section">
 <h2 id="recap-subprograms" tabindex="-1"><a class="header-anchor" href="#recap-subprograms"><span>Recap: Subprograms</span></a></h2>
 <ul>
 <li>Parameters</li>
@@ -131,6 +134,8 @@
 <li><span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>→</mo></mrow><annotation encoding="application/x-tex">\rightarrow</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.3669em;"></span><span class="mrel">→</span></span></span></span> quasi-concurrency</li>
 <li>Related to the way multiprogramming operating systems</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="implementing-subprogram" tabindex="-1"><a class="header-anchor" href="#implementing-subprogram"><span>Implementing Subprogram</span></a></h2>
 <ul>
 <li>
@@ -238,6 +243,8 @@
 <p>scope 규칙에 따라, 런타임에 찾는 방법(static vs dynamic)이 달라 짐</p>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="general-semantics-of-calls-and-returns" tabindex="-1"><a class="header-anchor" href="#general-semantics-of-calls-and-returns"><span>General Semantics of Calls and Returns</span></a></h2>
 <ul>
 <li>
@@ -321,6 +328,8 @@
 <li>Program counter (PC)</li>
 <li>Code</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="simple-subprograms" tabindex="-1"><a class="header-anchor" href="#simple-subprograms"><span>“Simple” Subprograms</span></a></h2>
 <ul>
 <li>No nested and all local variables are static (or no recursion)</li>
@@ -602,6 +611,8 @@
 <p><span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>→</mo></mrow><annotation encoding="application/x-tex">\rightarrow</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.3669em;"></span><span class="mrel">→</span></span></span></span> 이후 Linker가 이 컴파일 결과들을 하나로 합침</p>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="subprograms-with-stack-dynamic-local-variables" tabindex="-1"><a class="header-anchor" href="#subprograms-with-stack-dynamic-local-variables"><span>Subprograms with Stack-Dynamic Local Variables</span></a></h2>
 <ul>
 <li>
@@ -958,6 +969,8 @@
 <p>Second (0x…98)</p>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="nested-subprograms" tabindex="-1"><a class="header-anchor" href="#nested-subprograms"><span>Nested subprograms</span></a></h2>
 <ul>
 <li>
@@ -1151,6 +1164,8 @@
 <p>Real-time 시스템(시간 예측이 필요한 프로그램)에도 유리</p>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="blocks" tabindex="-1"><a class="header-anchor" href="#blocks"><span>Blocks</span></a></h2>
 <ul>
 <li>
@@ -1264,6 +1279,8 @@
 <li>Static Link를 따라 block1의 Activation Record로 이동</li>
 <li>block1 ARI 안에서 a 를 local offset으로 찾아서 접근</li>
 </ol>
+</section>
+<section class="print-section">
 <h2 id="dynamic-scoping" tabindex="-1"><a class="header-anchor" href="#dynamic-scoping"><span>Dynamic Scoping</span></a></h2>
 <ul>
 <li>
@@ -1435,6 +1452,7 @@
 </tr>
 </tbody>
 </table>
+</section>
 </div></template>
 
 

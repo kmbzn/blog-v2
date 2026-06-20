@@ -1,4 +1,5 @@
-<template><div><h1 id="computer-graphics-project-3-bvh-viewer" tabindex="-1"><a class="header-anchor" href="#computer-graphics-project-3-bvh-viewer"><span>Computer Graphics Project 3: Bvh Viewer</span></a></h1>
+<template><div><section class="print-section">
+<h1 id="computer-graphics-project-3-bvh-viewer" tabindex="-1"><a class="header-anchor" href="#computer-graphics-project-3-bvh-viewer"><span>Computer Graphics Project 3: Bvh Viewer</span></a></h1>
 <DateMeta />
 <p>제출 기한: 2025년 6월 6일 (23:59)<br>
 <strong>(기한 초과 제출은 점수 없음)</strong></p>
@@ -21,7 +22,9 @@
 </ul>
 <div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code class="language-text"><span class="line">python3 main.py</span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h2 id="_1-구현-내용" tabindex="-1"><a class="header-anchor" href="#_1-구현-내용"><span>1. 구현 내용</span></a></h2>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h2 id="_1-구현-내용" tabindex="-1"><a class="header-anchor" href="#_1-구현-내용"><span>1. 구현 내용</span></a></h2>
 <p>자신만의 bvh 뷰어를 구현하세요.</p>
 <ul>
 <li>
@@ -33,6 +36,8 @@
 세부사항이 잘 보이도록 <strong>충분히 큰</strong> 해상도를 사용하세요.</p>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="c-opengl-3-3-core-profile을-사용해야-합니다" tabindex="-1"><a class="header-anchor" href="#c-opengl-3-3-core-profile을-사용해야-합니다"><span>C. OpenGL 3.3 Core Profile을 사용해야 합니다</span></a></h3>
 <ul>
 <li>Python 코드에 다음을 반드시 포함하세요:</li>
@@ -49,12 +54,18 @@
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><ul>
 <li><strong>OpenGL 3.3 Core Profile을 사용하지 않으면 (예외: 리포트만 제출 시) 이 프로젝트에 대한 점수를 받을 수 없습니다.</strong></li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="_2-requirements" tabindex="-1"><a class="header-anchor" href="#_2-requirements"><span>2. Requirements</span></a></h2>
+</section>
+<section class="print-section">
 <h3 id="a-카메라-조작-10점" tabindex="-1"><a class="header-anchor" href="#a-카메라-조작-10점"><span>A. 카메라 조작 (10점)</span></a></h3>
 <ul>
 <li>Project1에서 구현한 방식대로 카메라를 조작하세요.</li>
 <li><strong>레퍼런스 그리드 평면도 함께 그리세요.</strong></li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="b-bvh-파일-불러오기-및-렌더링-80점" tabindex="-1"><a class="header-anchor" href="#b-bvh-파일-불러오기-및-렌더링-80점"><span>B. bvh 파일 불러오기 및 렌더링 (80점)</span></a></h3>
 <ul>
 <li>
@@ -92,6 +103,8 @@
 <p>예시 이미지로는 <code v-pre>sample-walk.bvh</code>의 정지 포즈가 제공됩니다.</p>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="iii-스페이스바로-애니메이션-30점" tabindex="-1"><a class="header-anchor" href="#iii-스페이스바로-애니메이션-30점"><span>iii. 스페이스바로 애니메이션 (30점)</span></a></h3>
 <ul>
 <li>
@@ -104,6 +117,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="iv-bvh-파일-로드-시-stdout-콘솔-에-다음-정보-출력-10점" tabindex="-1"><a class="header-anchor" href="#iv-bvh-파일-로드-시-stdout-콘솔-에-다음-정보-출력-10점"><span>iv. bvh 파일 로드 시 stdout(콘솔)에 다음 정보 출력 (10점)</span></a></h3>
 <ol>
 <li>파일 이름</li>
@@ -112,6 +127,8 @@
 <li>관절 수 (root 포함)</li>
 <li>모든 관절 이름 리스트</li>
 </ol>
+</section>
+<section class="print-section">
 <h3 id="c-obj-렌더링-모드-제공-30점" tabindex="-1"><a class="header-anchor" href="#c-obj-렌더링-모드-제공-30점"><span>C. OBJ 렌더링 모드 제공 (30점)</span></a></h3>
 <ul>
 <li>
@@ -146,10 +163,14 @@
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div></div></div><ul>
 <li>OBJ 메쉬도 조명은 Phong shading 사용</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="_3-report-15점" tabindex="-1"><a class="header-anchor" href="#_3-report-15점"><span>3. Report (15점)</span></a></h2>
 <ul>
 <li>최대 2페이지 분량의 docx 형식 문서 제출</li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="b-리포트에-포함할-것" tabindex="-1"><a class="header-anchor" href="#b-리포트에-포함할-것"><span>B. 리포트에 포함할 것</span></a></h3>
 <ol>
 <li>구현한 요구사항 명시 (5점)</li>
@@ -181,6 +202,8 @@
 <ul>
 <li>리포트는 간결하게 작성 (영어 또는 한국어)</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="_4-실행-환경" tabindex="-1"><a class="header-anchor" href="#_4-실행-환경"><span>4. 실행 환경</span></a></h2>
 <ul>
 <li>
@@ -204,11 +227,15 @@
 <strong>리포트를 제외한 모든 점수를 받을 수 없습니다.</strong></p>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="_5-테스트용-파일" tabindex="-1"><a class="header-anchor" href="#_5-테스트용-파일"><span>5. 테스트용 파일</span></a></h2>
 <ul>
 <li><code v-pre>sample-walk.bvh</code>: 걷는 모션</li>
 <li><code v-pre>sample-spin.bvh</code>: 수직축 중심 회전</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="_6-제출물-목록-압축된-zip-파일" tabindex="-1"><a class="header-anchor" href="#_6-제출물-목록-압축된-zip-파일"><span>6. 제출물 목록 (압축된 zip 파일)</span></a></h2>
 <ul>
 <li><code v-pre>.py</code> 파일 (main.py 포함)</li>
@@ -216,18 +243,25 @@
 <li><code v-pre>.bvh</code>, <code v-pre>.obj</code> 파일 (OBJ 렌더링용)</li>
 <li><code v-pre>.pdf</code> 리포트</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="_7-추가-정보" tabindex="-1"><a class="header-anchor" href="#_7-추가-정보"><span>7. 추가 정보</span></a></h2>
+</section>
+<section class="print-section">
 <h3 id="a-drop-callback-함수-주의사항" tabindex="-1"><a class="header-anchor" href="#a-drop-callback-함수-주의사항"><span>A. drop_callback 함수 주의사항</span></a></h3>
 <ul>
 <li><code v-pre>glfw</code> Python 바인딩에서는 C 버전과 다르게<br>
 <code v-pre>drop_callback(window, paths)</code>로만 호출됨<br>
 (paths는 파일 경로 리스트)</li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="b-문자열-처리-팁" tabindex="-1"><a class="header-anchor" href="#b-문자열-처리-팁"><span>B. 문자열 처리 팁</span></a></h3>
 <ul>
 <li>Python의 <code v-pre>split()</code> 등 문자열 처리 함수는<br>
 bvh 파싱 시 매우 유용함</li>
 </ul>
+</section>
 </div></template>
 
 

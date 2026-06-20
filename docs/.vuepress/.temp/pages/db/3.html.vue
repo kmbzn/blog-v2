@@ -1,5 +1,8 @@
-<template><div><h1 id="_3-sql" tabindex="-1"><a class="header-anchor" href="#_3-sql"><span>3. SQL</span></a></h1>
+<template><div><section class="print-section">
+<h1 id="_3-sql" tabindex="-1"><a class="header-anchor" href="#_3-sql"><span>3. SQL</span></a></h1>
 <DateMeta />
+</section>
+<section class="print-section">
 <h2 id="sql-parts" tabindex="-1"><a class="header-anchor" href="#sql-parts"><span>SQL Parts</span></a></h2>
 <ul>
 <li>DDL (Data Definition Language, 데이터 정의어)
@@ -38,6 +41,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="data-definition-language" tabindex="-1"><a class="header-anchor" href="#data-definition-language"><span>Data Definition Language</span></a></h2>
 <ul>
 <li>SQL DDL은 관계에 대한 정보 명시 허용, 다음 포함:
@@ -51,6 +56,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="ddl-domain-types-in-sql" tabindex="-1"><a class="header-anchor" href="#ddl-domain-types-in-sql"><span>DDL: Domain Types in SQL</span></a></h2>
 <ul>
 <li><code v-pre>char(n)</code>: 사용자 지정 길이 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">n</span></span></span></span>의 고정 길이 문자열</li>
@@ -62,6 +69,8 @@
 <li><code v-pre>float(n)</code>: 최소 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">n</span></span></span></span>자리의 사용자 지정 정밀도를 가진 부동 소수점 숫자</li>
 <li>추가적인 내용은 4장에서 다룸</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="ddl-create-table-construct" tabindex="-1"><a class="header-anchor" href="#ddl-create-table-construct"><span>DDL: Create Table Construct</span></a></h2>
 <ul>
 <li>SQL 관계는 <code v-pre>create table</code> 명령어를 사용하여 정의:
@@ -81,6 +90,8 @@
 <span class="line"></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="ddl-integrity-constraints-in-create-table" tabindex="-1"><a class="header-anchor" href="#ddl-integrity-constraints-in-create-table"><span>DDL: Integrity Constraints in Create Table</span></a></h2>
 <ul>
 <li>무결성 제약 조건의 유형
@@ -115,6 +126,8 @@
 <span class="line"></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="updates-to-tables" tabindex="-1"><a class="header-anchor" href="#updates-to-tables"><span>Updates to tables</span></a></h2>
 <ul>
 <li>Insert
@@ -150,6 +163,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="basic-query-structure" tabindex="-1"><a class="header-anchor" href="#basic-query-structure"><span>Basic Query Structure</span></a></h2>
 <ul>
 <li>일반적인 SQL 질의 형태:
@@ -165,6 +180,8 @@
 </li>
 <li>SQL 질의의 결과는 관계</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="the-select-clause" tabindex="-1"><a class="header-anchor" href="#the-select-clause"><span>The select Clause</span></a></h2>
 <ul>
 <li><code v-pre>select</code> 절은 질의 결과에서 원하는 속성을 나열</li>
@@ -223,6 +240,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="the-where-clause" tabindex="-1"><a class="header-anchor" href="#the-where-clause"><span>The where Clause</span></a></h2>
 <ul>
 <li><code v-pre>where</code> 절은 결과가 만족해야 하는 조건을 명시</li>
@@ -241,6 +260,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="the-from-clause" tabindex="-1"><a class="header-anchor" href="#the-from-clause"><span>The from Clause</span></a></h2>
 <ul>
 <li><code v-pre>from</code> 절은 질의에 관련된 관계를 나열</li>
@@ -254,6 +275,8 @@
 <li>공통 속성(예: <code v-pre>ID</code>)의 경우, 결과 테이블의 속성은 관계 이름을 사용하여 이름이 변경됨 (예: <code v-pre>instructor.ID</code>)</li>
 <li>카티전 프로덕트는 직접적으로는 그다지 유용하지 않지만, <code v-pre>where</code> 절 조건(관계 대수의 선택 연산)과 결합하면 유용</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="examples" tabindex="-1"><a class="header-anchor" href="#examples"><span>Examples</span></a></h2>
 <ul>
 <li>어떤 과목을 가르친 모든 강사의 이름과 <code v-pre>course_id</code> 찾기
@@ -268,6 +291,8 @@
 </li>
 <li>SQL은 중복을 허용함</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="the-rename-operation" tabindex="-1"><a class="header-anchor" href="#the-rename-operation"><span>The Rename Operation</span></a></h2>
 <ul>
 <li>SQL은 <code v-pre>as</code> 절을 사용하여 관계와 속성의 이름 변경을 허용:
@@ -283,6 +308,8 @@
 </li>
 <li><code v-pre>as</code> 키워드는 선택 사항이며 생략 가능 (<code v-pre>instructor as T</code> <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>≡</mo></mrow><annotation encoding="application/x-tex">\equiv</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4637em;"></span><span class="mrel">≡</span></span></span></span> <code v-pre>instructor T</code>)</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="string-operations" tabindex="-1"><a class="header-anchor" href="#string-operations"><span>String Operations</span></a></h2>
 <ul>
 <li>SQL은 문자열 비교를 위한 문자열 매칭 연산자 <code v-pre>like</code>를 포함하며, 두 개의 특수 문자를 사용한 패턴을 이용:
@@ -319,6 +346,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="ordering-the-display-of-tuples" tabindex="-1"><a class="header-anchor" href="#ordering-the-display-of-tuples"><span>Ordering the Display of Tuples</span></a></h2>
 <ul>
 <li>모든 강사의 이름을 알파벳 순으로 나열
@@ -337,6 +366,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="where-clause-predicates" tabindex="-1"><a class="header-anchor" href="#where-clause-predicates"><span>Where Clause Predicates</span></a></h2>
 <ul>
 <li>SQL은 <code v-pre>between</code> 비교 연산자를 포함</li>
@@ -356,6 +387,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="set-operations" tabindex="-1"><a class="header-anchor" href="#set-operations"><span>Set Operations</span></a></h2>
 <ul>
 <li>집합 연산 <code v-pre>union</code>, <code v-pre>intersect</code>, <code v-pre>except</code></li>
@@ -377,6 +410,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="aggregate-functions" tabindex="-1"><a class="header-anchor" href="#aggregate-functions"><span>Aggregate Functions</span></a></h2>
 <ul>
 <li>이 함수들은 관계 내 값들의 컬렉션(집합 또는 다중 집합)에 대해 작동하며 단일 값을 반환
@@ -393,6 +428,8 @@
 <li>모든 집계 함수(<code v-pre>count</code> 제외)는 빈 컬렉션에 적용될 때 <code v-pre>null</code>을 반환 (빈 컬렉션의 <code v-pre>count</code>는 0으로 정의됨)</li>
 <li><code v-pre>count</code> 함수는 다른 <code v-pre>non-null</code> 값처럼 모든 <code v-pre>null</code> 값을 계산</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="aggregate-functions-examples" tabindex="-1"><a class="header-anchor" href="#aggregate-functions-examples"><span>Aggregate Functions Examples</span></a></h2>
 <ul>
 <li>컴퓨터 과학 학과 강사들의 평균 급여 찾기
@@ -411,6 +448,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="aggregate-functions-–-group-by" tabindex="-1"><a class="header-anchor" href="#aggregate-functions-–-group-by"><span>Aggregate Functions – Group By</span></a></h2>
 <ul>
 <li><code v-pre>group by</code> 절을 사용하여 단일 튜플 집합이 아닌, 그룹화된 여러 튜플 집합에 개별적으로 집계 함수 적용 가능</li>
@@ -421,6 +460,8 @@
 </li>
 <li><code v-pre>group by</code> 절 사용 시, 각 그룹당 하나의 튜플만 출력됨</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="aggregation" tabindex="-1"><a class="header-anchor" href="#aggregation"><span>Aggregation</span></a></h2>
 <ul>
 <li>집계 함수 외의 <code v-pre>select</code> 절에 있는 속성들은 <code v-pre>group by</code> 목록에 나타나야 함
@@ -431,6 +472,8 @@
 </li>
 <li>특정 그룹(<code v-pre>dept_name</code>으로 정의됨)의 각 강사는 다른 ID를 가질 수 있지만, 각 그룹에 대해 하나의 튜플만 출력됨</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="aggregate-functions-–-having-clause" tabindex="-1"><a class="header-anchor" href="#aggregate-functions-–-having-clause"><span>Aggregate Functions – Having Clause</span></a></h2>
 <ul>
 <li><code v-pre>having</code> 절을 사용하여 출력될 각 그룹에 대한 조건 명시 가능</li>
@@ -451,6 +494,8 @@
 </ol>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="nested-subqueries" tabindex="-1"><a class="header-anchor" href="#nested-subqueries"><span>Nested Subqueries</span></a></h2>
 <ul>
 <li>SQL은 서브쿼리(subquery)의 중첩 메커니즘 제공</li>
@@ -464,6 +509,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="nested-subqueries-set-membership" tabindex="-1"><a class="header-anchor" href="#nested-subqueries-set-membership"><span>Nested Subqueries: Set Membership</span></a></h2>
 <ul>
 <li>2017년 가을과 2018년 봄에 제공된 과목 찾기<div class="language-sql line-numbers-mode" data-highlighter="prismjs" data-ext="sql"><pre v-pre><code class="language-sql"><span class="line"><span class="token keyword">select</span> <span class="token keyword">distinct</span> course_id</span>
@@ -498,6 +545,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="nested-subqueries-set-comparison-some" tabindex="-1"><a class="header-anchor" href="#nested-subqueries-set-comparison-some"><span>Nested Subqueries: Set comparison (“some”)</span></a></h2>
 <ul>
 <li>생물학(Biology) 학과에 있는 어떤 (적어도 한 명의) 강사보다 급여가 높은 강사들의 이름 찾기
@@ -511,6 +560,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="definition-of-some-clause" tabindex="-1"><a class="header-anchor" href="#definition-of-some-clause"><span>Definition of “some” Clause</span></a></h2>
 <ul>
 <li><code v-pre>F &lt;comp&gt; some r</code> <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>⇔</mo><mi mathvariant="normal">∃</mi><mi>t</mi><mo>∈</mo><mi>r</mi></mrow><annotation encoding="application/x-tex">\Leftrightarrow \exists t \in r</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.3669em;"></span><span class="mrel">⇔</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.7335em;vertical-align:-0.0391em;"></span><span class="mord">∃</span><span class="mord mathnormal">t</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">∈</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span></span></span></span> بحيث أن <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mi>F</mi><mo>&lt;</mo><mi>c</mi><mi>o</mi><mi>m</mi><mi>p</mi><mo>&gt;</mo><mi>t</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(F &lt;comp&gt; t)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.13889em;">F</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.7335em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">co</span><span class="mord mathnormal">m</span><span class="mord mathnormal">p</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">&gt;</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">t</span><span class="mclose">)</span></span></span></span></li>
@@ -522,6 +573,8 @@
 <li><code v-pre>(= some)</code> <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>≡</mo></mrow><annotation encoding="application/x-tex">\equiv</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4637em;"></span><span class="mrel">≡</span></span></span></span> <code v-pre>in</code></li>
 <li><code v-pre>(!= some)</code>은 <code v-pre>not in</code>과 동치가 아님</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="nested-subqueries-set-comparison-all" tabindex="-1"><a class="header-anchor" href="#nested-subqueries-set-comparison-all"><span>Nested Subqueries: Set comparison (“all”)</span></a></h2>
 <ul>
 <li>생물학 학과의 모든 강사의 급여보다 더 많은 급여를 받는 모든 강사의 이름 찾기
@@ -530,6 +583,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="definition-of-all-clause" tabindex="-1"><a class="header-anchor" href="#definition-of-all-clause"><span>Definition of “all” Clause</span></a></h2>
 <ul>
 <li><code v-pre>F &lt;comp&gt; all r</code> <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>⇔</mo><mi mathvariant="normal">∀</mi><mi>t</mi><mo>∈</mo><mi>r</mi><mo stretchy="false">(</mo><mi>F</mi><mo>&lt;</mo><mi>c</mi><mi>o</mi><mi>m</mi><mi>p</mi><mo>&gt;</mo><mi>t</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\Leftrightarrow \forall t \in r (F &lt;comp&gt; t)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.3669em;"></span><span class="mrel">⇔</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.7335em;vertical-align:-0.0391em;"></span><span class="mord">∀</span><span class="mord mathnormal">t</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">∈</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.13889em;">F</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.7335em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">co</span><span class="mord mathnormal">m</span><span class="mord mathnormal">p</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">&gt;</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">t</span><span class="mclose">)</span></span></span></span></li>
@@ -540,6 +595,8 @@
 <li><code v-pre>(= all)</code>은 <code v-pre>in</code>과 동치가 아님</li>
 <li><code v-pre>(!= all)</code> <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>≡</mo></mrow><annotation encoding="application/x-tex">\equiv</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4637em;"></span><span class="mrel">≡</span></span></span></span> <code v-pre>not in</code></li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="nested-subqueries-test-for-empty-relations" tabindex="-1"><a class="header-anchor" href="#nested-subqueries-test-for-empty-relations"><span>Nested Subqueries: Test for Empty Relations</span></a></h2>
 <ul>
 <li><code v-pre>exists</code> 구문은 인수 서브쿼리가 비어 있지 않으면 <code v-pre>true</code>를 반환</li>
@@ -557,6 +614,8 @@
 <li>SQL에서, 외부 쿼리의 상관 이름(변수 <code v-pre>S</code>)은 <code v-pre>where</code> 절의 서브쿼리에서 사용될 수 있음</li>
 <li>외부 쿼리의 상관 이름을 사용하는 서브쿼리를 상관 서브쿼리(correlated subquery)라고 함</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="use-of-not-exists-clause" tabindex="-1"><a class="header-anchor" href="#use-of-not-exists-clause"><span>Use of “not exists” Clause</span></a></h2>
 <ul>
 <li>생물학 학과에서 제공하는 모든 과목을 수강한 모든 학생 찾기</li>
@@ -574,6 +633,8 @@
 <li>첫 번째 중첩 쿼리는 생물학에서 제공하는 모든 과목을 나열</li>
 <li>두 번째 중첩 쿼리는 특정 학생이 수강한 모든 과목을 나열</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="nested-subqueries-test-for-absence-of-duplicate-tuples" tabindex="-1"><a class="header-anchor" href="#nested-subqueries-test-for-absence-of-duplicate-tuples"><span>Nested Subqueries: Test for Absence of Duplicate Tuples</span></a></h2>
 <ul>
 <li><code v-pre>unique</code> 구문은 서브쿼리 결과에 중복 튜플이 있는지 테스트</li>
@@ -586,6 +647,8 @@
 <span class="line"></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="subqueries-in-the-from-clause" tabindex="-1"><a class="header-anchor" href="#subqueries-in-the-from-clause"><span>Subqueries in the ‘from’ Clause</span></a></h2>
 <ul>
 <li>SQL은 <code v-pre>from</code> 절에서 서브쿼리 표현식을 사용하도록 허용</li>
@@ -606,6 +669,8 @@
 <span class="line"></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="nested-subqueries-with-clause" tabindex="-1"><a class="header-anchor" href="#nested-subqueries-with-clause"><span>Nested Subqueries: ‘With’ Clause</span></a></h2>
 <ul>
 <li><code v-pre>with</code> 절은 <code v-pre>with</code> 절이 발생하는 쿼리에서만 정의가 사용 가능한 임시 관계(임시 뷰)를 정의하는 방법 제공</li>
@@ -617,6 +682,8 @@
 <span class="line"></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="complex-queries-using-with-clause" tabindex="-1"><a class="header-anchor" href="#complex-queries-using-with-clause"><span>Complex Queries using ‘With’ Clause</span></a></h2>
 <ul>
 <li>총 급여가 모든 학과의 총 급여 평균보다 큰 모든 학과 찾기<div class="language-sql line-numbers-mode" data-highlighter="prismjs" data-ext="sql"><pre v-pre><code class="language-sql"><span class="line"><span class="token keyword">with</span> dept_total <span class="token punctuation">(</span>dept_name<span class="token punctuation">,</span> <span class="token keyword">value</span><span class="token punctuation">)</span> <span class="token keyword">as</span></span>
@@ -632,6 +699,8 @@
 <span class="line"></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="nested-subqueries-scalar-subquery" tabindex="-1"><a class="header-anchor" href="#nested-subqueries-scalar-subquery"><span>Nested Subqueries: Scalar Subquery</span></a></h2>
 <ul>
 <li>스칼라 서브쿼리는 단일 값이 예상되는 곳에 사용되는 서브쿼리</li>
@@ -646,6 +715,8 @@
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></li>
 <li>서브쿼리가 하나 이상의 결과 튜플을 반환하면 런타임 오류 발생</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="null-values" tabindex="-1"><a class="header-anchor" href="#null-values"><span>Null Values</span></a></h2>
 <ul>
 <li>튜플이 일부 속성에 대해 <code v-pre>null</code>로 표시되는 <code v-pre>null</code> 값을 가질 수 있음</li>
@@ -672,12 +743,16 @@
 <li>SQL에서 <code v-pre>P is unknown</code>은 술어 <code v-pre>P</code>가 <code v-pre>unknown</code>으로 평가되면 <code v-pre>true</code>로 평가됨</li>
 <li><code v-pre>where</code> 절 술어의 결과는 <code v-pre>unknown</code>으로 평가되면 <code v-pre>false</code>로 처리됨</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="modification-of-the-database" tabindex="-1"><a class="header-anchor" href="#modification-of-the-database"><span>Modification of the Database</span></a></h2>
 <ul>
 <li>주어진 관계에서 튜플 삭제</li>
 <li>주어진 관계에 새 튜플 삽입</li>
 <li>주어진 관계의 일부 튜플 값 업데이트</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="deletion" tabindex="-1"><a class="header-anchor" href="#deletion"><span>Deletion</span></a></h2>
 <ul>
 <li>모든 강사 삭제
@@ -711,6 +786,8 @@
 <span class="line"></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div></div></div></li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="insertion" tabindex="-1"><a class="header-anchor" href="#insertion"><span>Insertion</span></a></h2>
 <ul>
 <li><code v-pre>course</code>에 새 튜플 추가
@@ -737,6 +814,8 @@
 <li><code v-pre>instructor</code> 관계의 스키마: <code v-pre>(ID, name, dept_name, salary)</code></li>
 <li><code v-pre>select from where</code> 문은 그 결과 중 어떤 것이라도 관계에 삽입되기 전에 완전히 평가됨</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="updates" tabindex="-1"><a class="header-anchor" href="#updates"><span>Updates</span></a></h2>
 <ul>
 <li>모든 강사에게 5% 급여 인상
@@ -767,6 +846,7 @@
 <span class="line"></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></li>
 </ul>
+</section>
 </div></template>
 
 

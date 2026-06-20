@@ -1,6 +1,9 @@
-<template><div><h1 id="바벨-스쿼트-barbell-squat" tabindex="-1"><a class="header-anchor" href="#바벨-스쿼트-barbell-squat"><span>바벨 스쿼트 (Barbell Squat)</span></a></h1>
+<template><div><section class="print-section">
+<h1 id="바벨-스쿼트-barbell-squat" tabindex="-1"><a class="header-anchor" href="#바벨-스쿼트-barbell-squat"><span>바벨 스쿼트 (Barbell Squat)</span></a></h1>
 <DateMeta />
 <p>바벨 스쿼트는 바벨을 등에 올리고 쪼그려 앉았다 일어나는 운동으로, 웨이트 트레이닝의 <strong>3대 운동(벤치프레스, 스쿼트, 데드리프트)</strong> 중 하나다. 대퇴사두근·대둔근·햄스트링을 중심으로 하체 전체와 코어를 함께 사용하는 전신 복합 운동이며, 근력·근육량·골밀도·호르몬 분비 모두에서 가장 효율이 높은 단일 운동으로 꼽힌다.</p>
+</section>
+<section class="print-section">
 <h2 id="주요-사용-근육" tabindex="-1"><a class="header-anchor" href="#주요-사용-근육"><span>주요 사용 근육</span></a></h2>
 <table>
 <thead>
@@ -36,8 +39,12 @@
 </tr>
 </tbody>
 </table>
+</section>
+<section class="print-section">
 <h2 id="하이바-vs-로우바" tabindex="-1"><a class="header-anchor" href="#하이바-vs-로우바"><span>하이바 vs 로우바</span></a></h2>
 <p>스쿼트는 바를 어디에 놓느냐에 따라 자세와 근육 사용 비율이 달라진다.</p>
+</section>
+<section class="print-section">
 <h3 id="하이바-스쿼트-high-bar-squat" tabindex="-1"><a class="header-anchor" href="#하이바-스쿼트-high-bar-squat"><span>하이바 스쿼트 (High-Bar Squat)</span></a></h3>
 <ul>
 <li>바를 승모근 <strong>상부(트랩)</strong> 위에 올림</li>
@@ -47,6 +54,8 @@
 <li>올림픽 역도의 스쿼트 방식</li>
 <li><strong>입문자·일반 헬스인에게 권장</strong></li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="로우바-스쿼트-low-bar-squat" tabindex="-1"><a class="header-anchor" href="#로우바-스쿼트-low-bar-squat"><span>로우바 스쿼트 (Low-Bar Squat)</span></a></h3>
 <ul>
 <li>바를 후삼각근과 승모근 중간(스캐풀러 스파인) 위에 올림</li>
@@ -91,7 +100,11 @@
 </tr>
 </tbody>
 </table>
+</section>
+<section class="print-section">
 <h2 id="올바른-자세-하이바-기준" tabindex="-1"><a class="header-anchor" href="#올바른-자세-하이바-기준"><span>올바른 자세 (하이바 기준)</span></a></h2>
+</section>
+<section class="print-section">
 <h3 id="셋업" tabindex="-1"><a class="header-anchor" href="#셋업"><span>셋업</span></a></h3>
 <ol>
 <li>랙에서 바를 승모근 위에 올리고 양손으로 잡음 (좌우 대칭)</li>
@@ -99,6 +112,8 @@
 <li>발끝: 바깥쪽으로 <strong>15~30도</strong> 외회전</li>
 <li>시선: 정면 또는 약간 위</li>
 </ol>
+</section>
+<section class="print-section">
 <h3 id="하강-descent" tabindex="-1"><a class="header-anchor" href="#하강-descent"><span>하강 (Descent)</span></a></h3>
 <ol>
 <li>숨을 들이마시고 <strong>복압(IAP)</strong> 을 높여 코어를 단단히 잠금 (발살바 호흡)</li>
@@ -107,6 +122,8 @@
 <li>허리는 자연스러운 S자 커브 유지, 골반 후방경사(버트윙크) 피하기</li>
 <li><strong>깊이</strong>: 허벅지가 지면과 평행하거나 그 이하 (병행 이하를 <strong>풀스쿼트</strong>라 함)</li>
 </ol>
+</section>
+<section class="print-section">
 <h3 id="상승-ascent" tabindex="-1"><a class="header-anchor" href="#상승-ascent"><span>상승 (Ascent)</span></a></h3>
 <ol>
 <li>발바닥 전면으로 지면을 밀듯이 일어남</li>
@@ -114,6 +131,8 @@
 <li>상승 중 무릎이 안으로 무너지지 않게 의식적으로 외회전력 유지</li>
 <li>최상단에서 숨 내쉬기</li>
 </ol>
+</section>
+<section class="print-section">
 <h2 id="흔한-실수와-교정" tabindex="-1"><a class="header-anchor" href="#흔한-실수와-교정"><span>흔한 실수와 교정</span></a></h2>
 <table>
 <thead>
@@ -151,6 +170,8 @@
 </tr>
 </tbody>
 </table>
+</section>
+<section class="print-section">
 <h2 id="호흡-발살바-기법-valsalva-maneuver" tabindex="-1"><a class="header-anchor" href="#호흡-발살바-기법-valsalva-maneuver"><span>호흡: 발살바 기법 (Valsalva Maneuver)</span></a></h2>
 <p>무거운 중량 스쿼트에서 척추 보호를 위해 <strong>복강 내압</strong>(IAP, Intra-Abdominal Pressure)을 높이는 호흡법이 필수다.</p>
 <ol>
@@ -160,6 +181,8 @@
 <li>동작 완료 후(또는 최상단) 숨 내쉬기</li>
 </ol>
 <p>가벼운 중량에서는 내려가며 들이마시고 올라오며 내쉬는 방식도 가능하지만, <strong>85% 이상 중량에서는 발살바 기법이 안전을 위해 중요하다.</strong></p>
+</section>
+<section class="print-section">
 <h2 id="스쿼트-종류" tabindex="-1"><a class="header-anchor" href="#스쿼트-종류"><span>스쿼트 종류</span></a></h2>
 <table>
 <thead>
@@ -195,6 +218,8 @@
 </tr>
 </tbody>
 </table>
+</section>
+<section class="print-section">
 <h2 id="보조-장비" tabindex="-1"><a class="header-anchor" href="#보조-장비"><span>보조 장비</span></a></h2>
 <table>
 <thead>
@@ -232,6 +257,8 @@
 </tr>
 </tbody>
 </table>
+</section>
+<section class="print-section">
 <h2 id="프로그램" tabindex="-1"><a class="header-anchor" href="#프로그램"><span>프로그램</span></a></h2>
 <p>스쿼트 중량 향상을 위한 대표 프로그램:</p>
 <table>
@@ -274,6 +301,7 @@
 <p class="hint-container-title">부상 주의</p>
 <p>무릎 통증, 허리 통증이 지속된다면 중량을 낮추고 자세를 먼저 점검할 것. 통증이 있는 상태에서 고중량 진행은 부상을 심화시킬 수 있다. 지속되는 통증은 전문 의료 상담을 받아야 한다.</p>
 </div>
+</section>
 </div></template>
 
 

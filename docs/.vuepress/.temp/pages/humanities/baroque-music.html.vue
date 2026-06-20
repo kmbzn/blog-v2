@@ -1,19 +1,34 @@
-<template><div><h1 id="바로크-음악-baroque-music" tabindex="-1"><a class="header-anchor" href="#바로크-음악-baroque-music"><span>바로크 음악 (Baroque Music)</span></a></h1>
+<template><div><section class="print-section">
+<h1 id="바로크-음악-baroque-music" tabindex="-1"><a class="header-anchor" href="#바로크-음악-baroque-music"><span>바로크 음악 (Baroque Music)</span></a></h1>
 <DateMeta />
 <p>바로크(Baroque) 음악은 대략 1600년부터 1750년까지의 서양 예술 음악을 가리킨다. 르네상스(Renaissance) 음악에서 이어지고, 이후 고전주의(Classical) 시대로 넘어가는 음악 역사의 핵심 시기다. J.S. 바흐가 1750년 사망하면서 바로크 시대의 종언을 상징적으로 표시한다.</p>
 <p>&quot;바로크(Baroque)&quot;는 원래 포르투갈어 <strong>barroco</strong>, 즉 &quot;불규칙하게 생긴 진주&quot;를 뜻하는 단어에서 유래했다. 당시 이 시대 예술에 대한 부정적 평가(복잡하고 과도하다는 의미)로 쓰이던 단어였으나, 이후 이 시대 예술 전체를 가리키는 중립적 명칭으로 정착했다.</p>
+</section>
+<section class="print-section">
 <h2 id="바로크-음악의-핵심-특징" tabindex="-1"><a class="header-anchor" href="#바로크-음악의-핵심-특징"><span>바로크 음악의 핵심 특징</span></a></h2>
+</section>
+<section class="print-section">
 <h3 id="통주저음-basso-continuo" tabindex="-1"><a class="header-anchor" href="#통주저음-basso-continuo"><span>통주저음 (Basso Continuo)</span></a></h3>
 <p>바로크 음악의 가장 큰 특징. 저음 악기(첼로, 비올로네, 바순 등)가 화음의 기초 베이스라인을 지속적으로 연주하고, 건반 악기(하프시코드, 오르간)가 그 위에 즉흥적으로 화음을 채워 넣는다. 이 베이스-화성의 틀이 악곡 전체를 지탱한다.</p>
 <p>통주저음은 일종의 <strong>화성의 뼈대</strong>로, 모든 바로크 앙상블에서 항상 존재했다. 고전주의 시대에 접어들며 사라진 이 기법은 바로크 음악과 고전음악을 구분하는 핵심 차이 중 하나다.</p>
+</section>
+<section class="print-section">
 <h3 id="대위법-counterpoint" tabindex="-1"><a class="header-anchor" href="#대위법-counterpoint"><span>대위법 (Counterpoint)</span></a></h3>
 <p>여러 개의 독립적인 선율(성부)이 서로 어우러져 화성을 형성하는 기법. J.S. 바흐는 대위법의 최고 정점으로 꼽히며, 그의 <strong>푸가</strong>(Fugue)는 대위법의 완성형이다.</p>
 <p>푸가는 하나의 주제(subject)를 여러 성부가 돌아가며 모방·발전시키는 형식이다. 바흐의 평균율 클라비어 곡집 24쌍의 프렐류드와 푸가는 모든 장·단조를 한 쌍씩 다룬다.</p>
+</section>
+<section class="print-section">
 <h3 id="장식음-ornamentation" tabindex="-1"><a class="header-anchor" href="#장식음-ornamentation"><span>장식음 (Ornamentation)</span></a></h3>
 <p>바로크 악보에는 <strong>트릴(trill), 모르덴트(mordent), 아포지아투라(appoggiatura)</strong> 등의 장식음 기호가 가득하다. 연주자는 이 기호들을 시대 관습에 따라 해석해 즉흥적으로 구현해야 했다. 현대 편집 악보와 다른 해석이 많아, &quot;역사적 연주법(HIP, Historically Informed Performance)&quot;이 바로크 음악 해석의 중심 과제다.</p>
+</section>
+<section class="print-section">
 <h3 id="감정-표현의-이론화-정서론-affektenlehre" tabindex="-1"><a class="header-anchor" href="#감정-표현의-이론화-정서론-affektenlehre"><span>감정 표현의 이론화: 정서론 (Affektenlehre)</span></a></h3>
 <p>바로크 시대에는 음악이 특정 감정(분노, 슬픔, 기쁨 등)을 표현하고 청자에게 전달해야 한다는 이론이 발전했다. 이를 <strong>정서론</strong>(Theory of Affections)이라 한다. 특정 조성, 리듬 패턴, 음정이 특정 감정에 대응한다고 보았으며, 작곡가는 이 원칙에 따라 음악을 구성했다.</p>
+</section>
+<section class="print-section">
 <h2 id="주요-작곡가" tabindex="-1"><a class="header-anchor" href="#주요-작곡가"><span>주요 작곡가</span></a></h2>
+</section>
+<section class="print-section">
 <h3 id="요한-제바스티안-바흐-johann-sebastian-bach-1685–1750" tabindex="-1"><a class="header-anchor" href="#요한-제바스티안-바흐-johann-sebastian-bach-1685–1750"><span>요한 제바스티안 바흐 (Johann Sebastian Bach, 1685–1750)</span></a></h3>
 <p>바로크 음악의 정점이자 서양 음악사 최고의 작곡가 중 한 명. 독일 아이제나흐 출생. 라이프치히 성 토마스 교회(Thomaskirche)의 칸토르(Cantor)로 근무하며 방대한 교회 음악과 기악 작품을 남겼다.</p>
 <p><strong>주요 작품</strong></p>
@@ -52,6 +67,8 @@
 </tbody>
 </table>
 <p>바흐는 당대보다 사후에 재평가받았다. 1829년 펠릭스 멘델스존이 마태 수난곡을 100년 만에 부활 공연하면서 바흐의 대중적 재발견이 시작됐다.</p>
+</section>
+<section class="print-section">
 <h3 id="게오르크-프리드리히-헨델-george-frideric-handel-1685–1759" tabindex="-1"><a class="header-anchor" href="#게오르크-프리드리히-헨델-george-frideric-handel-1685–1759"><span>게오르크 프리드리히 헨델 (George Frideric Handel, 1685–1759)</span></a></h3>
 <p>바흐와 같은 해 태어난 독일 출신 작곡가. 이탈리아에서 오페라를 익히고 영국에 정착해 영국 음악계를 이끌었다.</p>
 <table>
@@ -76,6 +93,8 @@
 </tr>
 </tbody>
 </table>
+</section>
+<section class="print-section">
 <h3 id="안토니오-비발디-antonio-vivaldi-1678–1741" tabindex="-1"><a class="header-anchor" href="#안토니오-비발디-antonio-vivaldi-1678–1741"><span>안토니오 비발디 (Antonio Vivaldi, 1678–1741)</span></a></h3>
 <p>이탈리아 베네치아 출신. 협주곡(Concerto) 형식의 확립에 결정적인 역할을 했으며, 독주 악기 + 오케스트라의 대화 구조를 체계화했다.</p>
 <table>
@@ -97,10 +116,16 @@
 </tbody>
 </table>
 <p>비발디는 베네치아 고아원 오스페달레 델라 피에타(Ospedale della Pietà)의 음악 교사로 일하며 소녀들을 위한 방대한 협주곡을 작성했다.</p>
+</section>
+<section class="print-section">
 <h3 id="클라우디오-몬테베르디-claudio-monteverdi-1567–1643" tabindex="-1"><a class="header-anchor" href="#클라우디오-몬테베르디-claudio-monteverdi-1567–1643"><span>클라우디오 몬테베르디 (Claudio Monteverdi, 1567–1643)</span></a></h3>
 <p>르네상스에서 바로크로의 전환을 이끈 선구자. <strong>최초의 오페라</strong>로 간주되는 《오르페오(L'Orfeo, 1607)》를 작곡했다. 독창적인 불협화음 처리법과 극적 표현으로 바로크 음악의 기초를 닦았다.</p>
+</section>
+<section class="print-section">
 <h3 id="헨리-퍼셀-henry-purcell-1659–1695" tabindex="-1"><a class="header-anchor" href="#헨리-퍼셀-henry-purcell-1659–1695"><span>헨리 퍼셀 (Henry Purcell, 1659–1695)</span></a></h3>
 <p>영국 바로크의 대표 작곡가. 오페라 《디도와 에네아스(Dido and Aeneas, 1689)》의 〈디도의 탄식(Dido's Lament)〉은 비통한 그라운드 베이스(ground bass) 기법으로 유명하다.</p>
+</section>
+<section class="print-section">
 <h2 id="주요-음악-형식" tabindex="-1"><a class="header-anchor" href="#주요-음악-형식"><span>주요 음악 형식</span></a></h2>
 <table>
 <thead>
@@ -148,6 +173,8 @@
 </tr>
 </tbody>
 </table>
+</section>
+<section class="print-section">
 <h2 id="바로크-악기" tabindex="-1"><a class="header-anchor" href="#바로크-악기"><span>바로크 악기</span></a></h2>
 <p>바로크 시대에는 현대 악기와 다른 형태의 악기들이 사용됐다.</p>
 <table>
@@ -184,6 +211,8 @@
 </tr>
 </tbody>
 </table>
+</section>
+<section class="print-section">
 <h2 id="역사적-연주법-hip" tabindex="-1"><a class="header-anchor" href="#역사적-연주법-hip"><span>역사적 연주법 (HIP)</span></a></h2>
 <p>20세기 후반부터 니콜라우스 아르농쿠르, 구스타프 레온하르트, 존 엘리엇 가디너 등 지휘자들이 이끄는 <strong>역사적 연주법(Historically Informed Performance)</strong> 운동이 확산되었다.</p>
 <p>핵심 원칙:</p>
@@ -193,6 +222,8 @@
 <li>소규모 앙상블 편성 (낭만주의 시대의 대편성 오케스트라로 바흐를 연주하는 것에 대한 반성)</li>
 </ul>
 <p>현재 바로크 음악은 전통적인 현대 편성 연주와 HIP 연주 두 갈래가 공존하며, 각각의 해석이 미덕을 가진다.</p>
+</section>
+<section class="print-section">
 <h2 id="추천-입문-음악" tabindex="-1"><a class="header-anchor" href="#추천-입문-음악"><span>추천 입문 음악</span></a></h2>
 <table>
 <thead>
@@ -235,6 +266,7 @@
 </tr>
 </tbody>
 </table>
+</section>
 </div></template>
 
 

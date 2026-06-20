@@ -1,5 +1,8 @@
-<template><div><h1 id="_9-probabilitc-reasoning-3" tabindex="-1"><a class="header-anchor" href="#_9-probabilitc-reasoning-3"><span>9. Probabilitc Reasoning (3)</span></a></h1>
+<template><div><section class="print-section">
+<h1 id="_9-probabilitc-reasoning-3" tabindex="-1"><a class="header-anchor" href="#_9-probabilitc-reasoning-3"><span>9. Probabilitc Reasoning (3)</span></a></h1>
 <DateMeta />
+</section>
+<section class="print-section">
 <h2 id="approximate-inference" tabindex="-1"><a class="header-anchor" href="#approximate-inference"><span>Approximate Inference</span></a></h2>
 <ul>
 <li>Monte Carlo algorithms는 생성된 샘플 수에 따라 정확도가 달라지는 근사적인 (approximate) 해답을 제공
@@ -14,6 +17,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="direct-sampling-methods" tabindex="-1"><a class="header-anchor" href="#direct-sampling-methods"><span>Direct Sampling Methods</span></a></h2>
 <ul>
 <li>모든 샘플링 알고리즘의 기본 요소는 알려진 확률 분포에서 샘플을 생성하는 것</li>
@@ -24,6 +29,8 @@
 </li>
 <li>Pseudocode</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="notations" tabindex="-1"><a class="header-anchor" href="#notations"><span>Notations</span></a></h2>
 <ul>
 <li><span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>S</mi><mrow><mi>P</mi><mi>S</mi></mrow></msub><mo stretchy="false">(</mo><msub><mi>x</mi><mn>1</mn></msub><mo separator="true">,</mo><mo>…</mo><mo separator="true">,</mo><msub><mi>x</mi><mi>n</mi></msub><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">S_{PS}(x_1, \ldots, x_n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.05764em;">S</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3283em;"><span style="top:-2.55em;margin-left:-0.0576em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.05764em;">PS</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="minner">…</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span>는 <code v-pre>PRIOR-SAMPLE</code> 알고리즘에 의해 특정 이벤트가 생성될 확률
@@ -59,6 +66,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="rejection-sampling" tabindex="-1"><a class="header-anchor" href="#rejection-sampling"><span>Rejection Sampling</span></a></h2>
 <ul>
 <li>Rejection sampling (기각 샘플링)은 쉽게 샘플링할 수 있는 분포가 주어졌을 때 샘플링하기 어려운 분포에서 샘플을 생성하는 일반적인 방법.
@@ -98,7 +107,9 @@
 <span class="line">        C[j] ← C[j]+1 where x_j is the value of X in x</span>
 <span class="line">return NORMALIZE(C)</span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="challenges-in-rejection-sampling" tabindex="-1"><a class="header-anchor" href="#challenges-in-rejection-sampling"><span>Challenges in Rejection Sampling</span></a></h2>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h2 id="challenges-in-rejection-sampling" tabindex="-1"><a class="header-anchor" href="#challenges-in-rejection-sampling"><span>Challenges in Rejection Sampling</span></a></h2>
 <ul>
 <li>Rejection sampling의 복잡성은 주로 수용되는 (accepted) 샘플의 비율에 따라 달라지며, 이 비율은 정확히 증거의 사전 확률 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mo stretchy="false">(</mo><mi>e</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">P(e)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="mopen">(</span><span class="mord mathnormal">e</span><span class="mclose">)</span></span></span></span>와 같음</li>
 <li>복잡한 문제의 경우, 많은 증거 변수 (evidence variables)가 있으면 이 비율은 매우 작아짐 (vanishingly small)
@@ -107,6 +118,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="importance-sampling" tabindex="-1"><a class="header-anchor" href="#importance-sampling"><span>Importance Sampling</span></a></h2>
 <ul>
 <li>Importance sampling (중요도 샘플링)은 또 다른 분포 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Q</mi></mrow><annotation encoding="application/x-tex">Q</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8778em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">Q</span></span></span></span>로부터의 샘플을 사용하여 분포 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi></mrow><annotation encoding="application/x-tex">P</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span></span></span></span>로부터 샘플링하는 효과를 모방하는 것을 목표로 함
@@ -133,6 +146,8 @@
 <li>보정 계수는 과대 샘플링 (oversampling) 또는 과소 샘플링 (undersampling)을 보상</li>
 <li>사용하기 쉬우면서도 참 사후 분포 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mo stretchy="false">(</mo><mi>z</mi><mi mathvariant="normal">∣</mi><mi>e</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">P(z|e)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.04398em;">z</span><span class="mord">∣</span><span class="mord mathnormal">e</span><span class="mclose">)</span></span></span></span>에 최대한 가까운 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Q</mi></mrow><annotation encoding="application/x-tex">Q</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8778em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">Q</span></span></span></span>를 원함 가장 일반적인 접근 방식은 Likelihood weighting</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="likelihood-weighting" tabindex="-1"><a class="header-anchor" href="#likelihood-weighting"><span>Likelihood Weighting</span></a></h2>
 <ul>
 <li>Likelihood weighting (우도 가중) 알고리즘은 증거 변수 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi></mrow><annotation encoding="application/x-tex">E</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.05764em;">E</span></span></span></span>의 값을 고정하고, 모든 비증거 변수를 위상 정렬 순서로 샘플링하며, 각 변수는 부모에 조건화됨
@@ -175,7 +190,9 @@
 <span class="line">        else x[i] ← a random sample from P(X_i | parents(X_i))</span>
 <span class="line">    return x, w</span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="lawn-condition-example" tabindex="-1"><a class="header-anchor" href="#lawn-condition-example"><span>Lawn Condition Example</span></a></h2>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h2 id="lawn-condition-example" tabindex="-1"><a class="header-anchor" href="#lawn-condition-example"><span>Lawn Condition Example</span></a></h2>
 <ul>
 <li>Query: <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mo stretchy="false">(</mo><mtext>Rain</mtext><mi mathvariant="normal">∣</mi><mtext>Cloudy</mtext><mo>=</mo><mi>t</mi><mi>r</mi><mi>u</mi><mi>e</mi><mo separator="true">,</mo><mtext>WetGrass</mtext><mo>=</mo><mi>t</mi><mi>r</mi><mi>u</mi><mi>e</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">P(\text{Rain} | \text{Cloudy} = true, \text{WetGrass} = true)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="mopen">(</span><span class="mord text"><span class="mord">Rain</span></span><span class="mord">∣</span><span class="mord text"><span class="mord">Cloudy</span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8778em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">t</span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mord mathnormal">u</span><span class="mord mathnormal">e</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord text"><span class="mord">WetGrass</span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">t</span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mord mathnormal">u</span><span class="mord mathnormal">e</span><span class="mclose">)</span></span></span></span></li>
 <li>Process 예시:
@@ -189,6 +206,8 @@
 </li>
 <li>결과: 이벤트 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">[</mo><mi>t</mi><mi>r</mi><mi>u</mi><mi>e</mi><mo separator="true">,</mo><mi>f</mi><mi>a</mi><mi>l</mi><mi>s</mi><mi>e</mi><mo separator="true">,</mo><mi>t</mi><mi>r</mi><mi>u</mi><mi>e</mi><mo separator="true">,</mo><mi>t</mi><mi>r</mi><mi>u</mi><mi>e</mi><mo stretchy="false">]</mo></mrow><annotation encoding="application/x-tex">[true, false, true, true]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord mathnormal">t</span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mord mathnormal">u</span><span class="mord mathnormal">e</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mord mathnormal">a</span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mord mathnormal">se</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">t</span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mord mathnormal">u</span><span class="mord mathnormal">e</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">t</span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mord mathnormal">u</span><span class="mord mathnormal">e</span><span class="mclose">]</span></span></span></span>는 가중치 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0.45</mn></mrow><annotation encoding="application/x-tex">0.45</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">0.45</span></span></span></span>를 가지며, <code v-pre>Rain</code> = <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>T</mi><mi>r</mi><mi>u</mi><mi>e</mi></mrow><annotation encoding="application/x-tex">True</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">T</span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mord mathnormal">u</span><span class="mord mathnormal">e</span></span></span></span>로 집계</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="pros-and-cons-of-likelihood-weighting" tabindex="-1"><a class="header-anchor" href="#pros-and-cons-of-likelihood-weighting"><span>Pros and Cons of Likelihood Weighting</span></a></h2>
 <ul>
 <li>Likelihood weighting은 생성된 모든 샘플을 사용하기 때문에 Rejection sampling보다 훨씬 효율적일 수 있음</li>
@@ -199,16 +218,22 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="visualized-illustrations-for-likelihood-weighting" tabindex="-1"><a class="header-anchor" href="#visualized-illustrations-for-likelihood-weighting"><span>Visualized Illustrations for Likelihood Weighting</span></a></h2>
 <ul>
 <li>Likelihood Weighting은 증거 변수의 값을 고정하는 것으로 시작</li>
 <li>Bayesian Network의 조건부 확률을 사용하여 비증거 변수를 샘플링</li>
 <li>각 샘플에 우도 (모든 증거의 확률)를 가중치로 부여</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="python-programming-for-bayesian-networks" tabindex="-1"><a class="header-anchor" href="#python-programming-for-bayesian-networks"><span>Python Programming for Bayesian Networks</span></a></h2>
 <ul>
 <li><code v-pre>model.py</code>, <code v-pre>likelihood.py</code>, <code v-pre>inference.py</code>, <code v-pre>sample.py</code> 파일의 내용 제시</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="likelihood-py" tabindex="-1"><a class="header-anchor" href="#likelihood-py"><span><code v-pre>likelihood.py</code></span></a></h2>
 <ul>
 <li>Query 예시:</li>
@@ -221,6 +246,8 @@
 </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.13889em;">T</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">o</span><span class="mord mathnormal">n</span><span class="mspace nobreak"> </span><span class="mord mathnormal">t</span><span class="mord mathnormal">im</span><span class="mord mathnormal">e</span><span class="mord">∣</span><span class="mord mathnormal" style="margin-right:0.00773em;">R</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8778em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">n</span><span class="mord mathnormal">o</span><span class="mord mathnormal">n</span><span class="mord mathnormal">e</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">M</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">n</span><span class="mord mathnormal">o</span><span class="mclose">)</span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="mopen">(</span><span class="mord mathnormal">A</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">a</span><span class="mord mathnormal">tt</span><span class="mord mathnormal">e</span><span class="mord mathnormal">n</span><span class="mord mathnormal">d</span><span class="mord">∣</span><span class="mord mathnormal" style="margin-right:0.13889em;">T</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">o</span><span class="mord mathnormal">n</span><span class="mspace nobreak"> </span><span class="mord mathnormal">t</span><span class="mord mathnormal">im</span><span class="mord mathnormal">e</span><span class="mclose">)</span></span></span></span></span></p>
 <p v-pre class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mo>=</mo><mn>0.7</mn><mo>×</mo><mn>0.6</mn><mo>×</mo><mn>0.9</mn><mo>×</mo><mn>0.9</mn><mo>=</mo><mn>0.3402</mn></mrow><annotation encoding="application/x-tex">= 0.7 \times 0.6 \times 0.9 \times 0.9 = 0.3402
 </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.3669em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">0.7</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">0.6</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">0.9</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">0.9</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">0.3402</span></span></span></span></span></p>
+</section>
+<section class="print-section">
 <h2 id="inference-py" tabindex="-1"><a class="header-anchor" href="#inference-py"><span><code v-pre>inference.py</code></span></a></h2>
 <ul>
 <li>Verification by example
@@ -232,6 +259,7 @@
 </ul>
 </li>
 </ul>
+</section>
 </div></template>
 
 

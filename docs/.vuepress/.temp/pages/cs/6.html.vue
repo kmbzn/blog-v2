@@ -1,5 +1,8 @@
-<template><div><h1 id="_06-database-security" tabindex="-1"><a class="header-anchor" href="#_06-database-security"><span>06. Database Security</span></a></h1>
+<template><div><section class="print-section">
+<h1 id="_06-database-security" tabindex="-1"><a class="header-anchor" href="#_06-database-security"><span>06. Database Security</span></a></h1>
 <DateMeta />
+</section>
+<section class="print-section">
 <h2 id="데이터베이스-databases" tabindex="-1"><a class="header-anchor" href="#데이터베이스-databases"><span>데이터베이스 Databases</span></a></h2>
 <ul>
 <li>하나 이상의 애플리케이션에서 사용하기 위해 저장된 데이터의 구조화된 모음</li>
@@ -17,6 +20,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="dbms-architecture" tabindex="-1"><a class="header-anchor" href="#dbms-architecture"><span>DBMS Architecture</span></a></h2>
 <ul>
 <li>사용자와 애플리케이션은 SQL 인터페이스를 통해 DBMS와 상호작용함.</li>
@@ -24,6 +29,8 @@
 <li>Query Executor(쿼리 실행기)는 관계형 연산자를 사용하여 이 계획을 실행함.</li>
 <li>Storage Manager(저장 관리자)는 데이터베이스의 물리적 저장을 처리하며, 버퍼 관리자, 디스크 공간 관리자, 트랜잭션 관리자, 잠금 관리자, 복구 관리자 등의 하위 구성요소로 이루어짐.</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="relational-databases" tabindex="-1"><a class="header-anchor" href="#relational-databases"><span>Relational Databases</span></a></h2>
 <ul>
 <li>행과 열로 구성된 데이터 테이블</li>
@@ -34,6 +41,8 @@
 <li>데이터베이스에 접근하기 위해 relational query language(관계형 query어)를 사용</li>
 <li>사용자가 주어진 기준에 맞는 데이터를 요청할 수 있도록 허용</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="figure-5-2-relational-database-example" tabindex="-1"><a class="header-anchor" href="#figure-5-2-relational-database-example"><span>Figure 5.2 Relational Database Example</span></a></h2>
 <ul>
 <li><code v-pre>Staff</code>, <code v-pre>Branch</code>, <code v-pre>StaffBranch</code> 세 개의 테이블로 구성된 관계형 데이터베이스 예시</li>
@@ -41,6 +50,8 @@
 <li><code v-pre>Branch</code> 테이블은 <code v-pre>branchNo</code>(기본 키), <code v-pre>bAddress</code> 열을 가짐.</li>
 <li><code v-pre>StaffBranch</code> 테이블은 <code v-pre>Staff</code>와 <code v-pre>Branch</code>를 연결하며, <code v-pre>staffNo</code>와 <code v-pre>branchNo</code>를 외래 키로 가짐.</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="relational-database-elements" tabindex="-1"><a class="header-anchor" href="#relational-database-elements"><span>Relational Database Elements</span></a></h2>
 <ul>
 <li>Relation(관계), Table(테이블), File(파일)</li>
@@ -63,6 +74,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="structured-query-language-sql" tabindex="-1"><a class="header-anchor" href="#structured-query-language-sql"><span>Structured Query Language (SQL)</span></a></h2>
 <ul>
 <li>1970년대 중반 IBM에서 처음 개발됨.</li>
@@ -77,6 +90,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="sql-standard-query-language" tabindex="-1"><a class="header-anchor" href="#sql-standard-query-language"><span>SQL: Standard Query Language</span></a></h2>
 <ul>
 <li>SQL은 데이터베이스에 접근하고 관리(query)하게 함.</li>
@@ -88,6 +103,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="sql-syntax" tabindex="-1"><a class="header-anchor" href="#sql-syntax"><span>SQL Syntax</span></a></h2>
 <ul>
 <li><code v-pre>SELECT</code> 문은 데이터베이스의 하나 이상의 테이블에서 데이터를 선택하는 데 사용됨.</li>
@@ -108,6 +125,8 @@
 <span class="line"></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="owasp-top-10" tabindex="-1"><a class="header-anchor" href="#owasp-top-10"><span>OWASP top 10</span></a></h2>
 <ul>
 <li>2013 OWASP Top 10 보안 취약점 목록
@@ -125,6 +144,8 @@
 </ol>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="sql-injection-attack" tabindex="-1"><a class="header-anchor" href="#sql-injection-attack"><span>SQL Injection Attack</span></a></h2>
 <ul>
 <li>많은 웹 애플리케이션은 폼에서 사용자 입력을 받음.</li>
@@ -135,6 +156,8 @@
 </li>
 <li>SQL Injection Attack(인젝션 공격)은 사용자 입력에 SQL 문을 삽입하는 것을 포함함.</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="login-authentication-query" tabindex="-1"><a class="header-anchor" href="#login-authentication-query"><span>Login Authentication Query</span></a></h2>
 <ul>
 <li>사용자를 인증하기 위한 표준 query:
@@ -159,6 +182,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="some-improvements" tabindex="-1"><a class="header-anchor" href="#some-improvements"><span>Some improvements …</span></a></h2>
 <ul>
 <li>query 수정:
@@ -176,6 +201,8 @@
 </li>
 <li><code v-pre>$usern=&quot;M' ; drop table user;&quot;</code>와 같은 공격도 가능함.</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="correct-solution" tabindex="-1"><a class="header-anchor" href="#correct-solution"><span>Correct Solution</span></a></h2>
 <ul>
 <li>모든 &quot;악의적인&quot; 문자를 변경하는 Escape(이스케이프) 방법을 사용할 수 있음.
@@ -190,6 +217,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="database-access-control" tabindex="-1"><a class="header-anchor" href="#database-access-control"><span>Database Access Control</span></a></h2>
 <ul>
 <li>데이터베이스 access control 시스템은 다음을 결정함.
@@ -218,6 +247,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="sql-access-controls" tabindex="-1"><a class="header-anchor" href="#sql-access-controls"><span>SQL Access Controls</span></a></h2>
 <ul>
 <li>접근 권한 관리를 위한 두 가지 명령:
@@ -232,11 +263,15 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="cascading-authorizations" tabindex="-1"><a class="header-anchor" href="#cascading-authorizations"><span>Cascading Authorizations</span></a></h2>
 <ul>
 <li>권한의 연쇄적 취소를 의미함.</li>
 <li>예를 들어, 사용자 A가 B에게 권한을 부여하고, B가 C에게, C가 D에게 동일한 권한을 부여했을 때, A가 B의 권한을 취소(<code v-pre>REVOKE</code>)하면, B로부터 권한을 부여받은 C와 D의 권한도 연쇄적으로 취소됨.</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="role-based-access-control-rbac" tabindex="-1"><a class="header-anchor" href="#role-based-access-control-rbac"><span>Role-Based Access Control (RBAC)</span></a></h2>
 <ul>
 <li>역할 기반 access control는 관리 부담을 줄이고 보안을 향상시킴.</li>
@@ -255,6 +290,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="inference-attack" tabindex="-1"><a class="header-anchor" href="#inference-attack"><span>Inference Attack</span></a></h2>
 <ul>
 <li>query를 수행하고 수신된 합법적인 응답으로부터 승인되지 않은 정보를 추론하는 과정</li>
@@ -264,6 +301,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="inference-example" tabindex="-1"><a class="header-anchor" href="#inference-example"><span>Inference Example</span></a></h2>
 <ul>
 <li>공격자는 합법적인 통계 query를 조합하여 개인의 민감한 정보를 추론할 수 있음.</li>
@@ -276,6 +315,8 @@
 <li><code v-pre>(전공='CS' AND 성별='남')</code>인 사람의 평균 급여를 query하여 $50K라는 결과를 얻음.</li>
 <li>공격자는 <code v-pre>Jones</code>의 급여가 $50K라고 추론함.</li>
 </ol>
+</section>
+<section class="print-section">
 <h2 id="inference-countermeasures" tabindex="-1"><a class="header-anchor" href="#inference-countermeasures"><span>Inference Countermeasures</span></a></h2>
 <ul>
 <li>데이터베이스 설계 시 추론 탐지
@@ -295,6 +336,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="statistical-databases-sdb" tabindex="-1"><a class="header-anchor" href="#statistical-databases-sdb"><span>Statistical Databases (SDB)</span></a></h2>
 <ul>
 <li>개수 및 평균과 같은 통계적 성격의 데이터를 제공</li>
@@ -316,6 +359,8 @@
 <li>access control 목표는 데이터베이스의 기밀성을 손상시키지 않으면서 사용자에게 필요한 정보를 제공하는 것임.</li>
 <li>보안 문제는 추론의 문제임.</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="abstract-model-of-a-relational-database" tabindex="-1"><a class="header-anchor" href="#abstract-model-of-a-relational-database"><span>Abstract Model of a Relational Database</span></a></h2>
 <ul>
 <li>
@@ -323,6 +368,8 @@
 <p><span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>B</mi><mi>i</mi></msub><mo>=</mo><mo stretchy="false">(</mo><msub><mi>x</mi><mrow><mi>i</mi><mn>1</mn></mrow></msub><mi mathvariant="normal">∣</mi><mi mathvariant="normal">∣</mi><msub><mi>x</mi><mrow><mi>i</mi><mn>2</mn></mrow></msub><mi mathvariant="normal">∣</mi><mi mathvariant="normal">∣</mi><mo>…</mo><mi mathvariant="normal">∣</mi><mi mathvariant="normal">∣</mi><msub><mi>x</mi><mrow><mi>i</mi><mi>M</mi></mrow></msub><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">B_i = (x_{i1} || x_{i2} || \dots || x_{iM})</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.05017em;">B</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.0502em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">i</span><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord">∣∣</span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">i</span><span class="mord mtight">2</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord">∣∣</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="minner">…</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">∣∣</span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3283em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">i</span><span class="mord mathnormal mtight" style="margin-right:0.10903em;">M</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span></p>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="statistical-database-security" tabindex="-1"><a class="header-anchor" href="#statistical-database-security"><span>Statistical Database Security</span></a></h2>
 <ul>
 <li>characteristic formula(특성 공식) C 사용</li>
@@ -331,6 +378,8 @@
 <li>특성 공식 C의 query set(query 집합) <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>X</mi><mo stretchy="false">(</mo><mi>C</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">X(C)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.07847em;">X</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.07153em;">C</span><span class="mclose">)</span></span></span></span>는 C와 일치하는 레코드의 집합임.</li>
 <li>통계적 query는 query 집합에 대해 계산된 값을 생성하는 query임.</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="other-query-restrictions" tabindex="-1"><a class="header-anchor" href="#other-query-restrictions"><span>Other Query Restrictions</span></a></h2>
 <ul>
 <li>Query set overlap control(query 집합 중복 제어)
@@ -352,6 +401,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="protecting-against-inference" tabindex="-1"><a class="header-anchor" href="#protecting-against-inference"><span>Protecting Against Inference</span></a></h2>
 <ul>
 <li>추론 방지 기법은 크게 Query Restriction(query 제한)과 Perturbation(섭동)으로 나님.</li>
@@ -369,6 +420,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="perturbation" tabindex="-1"><a class="header-anchor" href="#perturbation"><span>Perturbation</span></a></h2>
 <ul>
 <li>원본 데이터에서 생성된 통계에 잡음(noise)을 추가</li>
@@ -389,12 +442,16 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="data-perturbation-techniques-data-swapping" tabindex="-1"><a class="header-anchor" href="#data-perturbation-techniques-data-swapping"><span>Data Perturbation Techniques: Data Swapping</span></a></h2>
 <ul>
 <li>Data swapping(데이터 스와핑)은 민감한 속성과 비민감 속성 간의 연관성을 끊기 위해 레코드 간에 비민감 속성 값을 교환하는 기법임.</li>
 <li>예를 들어, 특정 질병과 거주 도시 간의 연관성을 숨기기 위해, 두 레코드의 도시 값을 서로 바꿈.</li>
 <li>이 방법은 각 속성에 대한 1차 통계(예: 각 도시에 사는 사람의 수)는 보존하면서, 속성 간의 통계적 관계를 왜곡함.</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="database-encryption" tabindex="-1"><a class="header-anchor" href="#database-encryption"><span>Database Encryption</span></a></h2>
 <ul>
 <li>데이터베이스는 일반적으로 모든 조직에서 가장 가치 있는 정보 자원</li>
@@ -420,6 +477,8 @@
 <li>Client(클라이언트): 사용자 query를 서버에 저장된 암호화된 데이터에 대한 query로 변환하는 프론트엔드</li>
 <li>Server(서버): 데이터 소유자로부터 암호화된 데이터를 받아 클라이언트에 배포할 수 있도록 하는 조직</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="abstract-model-of-a-relational-database-1" tabindex="-1"><a class="header-anchor" href="#abstract-model-of-a-relational-database-1"><span>Abstract Model of a Relational Database</span></a></h2>
 <ul>
 <li>암호화
@@ -433,6 +492,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="encryption-scheme-for-database" tabindex="-1"><a class="header-anchor" href="#encryption-scheme-for-database"><span>Encryption Scheme for Database</span></a></h2>
 <ul>
 <li>index 값을 참조해서 해당 record만 복호화</li>
@@ -526,11 +587,15 @@
 </tbody>
 </table>
 <p>(b) Encrypted Employee Table with Indexes</p>
+</section>
+<section class="print-section">
 <h2 id="cloud-security" tabindex="-1"><a class="header-anchor" href="#cloud-security"><span>Cloud Security</span></a></h2>
 <ul>
 <li><strong>NIST</strong>는 cloud computing(클라우드 컴퓨팅)을 다음과 같이 정의함 <code v-pre>MELL11</code>:
 - &quot;최소한의 관리 노력이나 서비스 제공자와의 상호작용으로 신속하게 프로비저닝되고 해제될 수 있는 구성 가능한 컴퓨팅 자원(예: 네트워크, 서버, 스토리지, 애플리케이션, 서비스)의 공유 풀에 대해 유비쿼터스하고 편리하며 주문형 네트워크 접근을 가능하게 하는 모델. 이 클라우드 모델은 가용성을 증진시키며, 5가지 필수 특성, 3가지 서비스 모델, 4가지 배포 모델로 구성됨.&quot;</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="cloud-computing-elements" tabindex="-1"><a class="header-anchor" href="#cloud-computing-elements"><span>Cloud Computing Elements</span></a></h2>
 <ul>
 <li>5가지 필수 특성
@@ -558,10 +623,14 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="cloud-computing-context" tabindex="-1"><a class="header-anchor" href="#cloud-computing-context"><span>Cloud Computing Context</span></a></h2>
 <ul>
 <li>Cloud service provider: end user가 resource를 필요한 만큼 사용하고, 데이터를 저장할 수 있는 서비스 제공</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="cloud-security-risks" tabindex="-1"><a class="header-anchor" href="#cloud-security-risks"><span>Cloud Security Risks</span></a></h2>
 <ul>
 <li>CSA(Cloud Security Alliance)는 다음과 같은 클라우드 관련 주요 보안 위협을 나열함.
@@ -576,6 +645,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="data-protection-in-the-cloud" tabindex="-1"><a class="header-anchor" href="#data-protection-in-the-cloud"><span>Data Protection in the Cloud</span></a></h2>
 <ul>
 <li>클라우드에서는 데이터 유출 위협이 증가
@@ -597,6 +668,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="summary" tabindex="-1"><a class="header-anchor" href="#summary"><span>Summary</span></a></h2>
 <ul>
 <li>Database(데이터베이스): 구조화된 데이터 모음</li>
@@ -611,6 +684,7 @@
 <li>클라우드 컴퓨팅/보안/데이터 보호</li>
 <li>다중 인스턴스/다중 테넌트 모델</li>
 </ul>
+</section>
 </div></template>
 
 

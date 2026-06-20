@@ -1,5 +1,8 @@
-<template><div><h1 id="_13-data-storage-structures" tabindex="-1"><a class="header-anchor" href="#_13-data-storage-structures"><span>13. Data Storage Structures</span></a></h1>
+<template><div><section class="print-section">
+<h1 id="_13-data-storage-structures" tabindex="-1"><a class="header-anchor" href="#_13-data-storage-structures"><span>13. Data Storage Structures</span></a></h1>
 <DateMeta />
+</section>
+<section class="print-section">
 <h2 id="file-organization" tabindex="-1"><a class="header-anchor" href="#file-organization"><span>File Organization</span></a></h2>
 <ul>
 <li>데이터베이스는 파일(file)의 집합으로 저장</li>
@@ -18,6 +21,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="fixed-length-records" tabindex="-1"><a class="header-anchor" href="#fixed-length-records"><span>Fixed-Length Records</span></a></h2>
 <ul>
 <li>단순한 접근 방식:
@@ -35,6 +40,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="variable-length-records" tabindex="-1"><a class="header-anchor" href="#variable-length-records"><span>Variable-Length Records</span></a></h2>
 <ul>
 <li>가변 길이 레코드는 여러 방식으로 데이터베이스 시스템에서 발생:
@@ -80,6 +87,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="organization-of-records-in-files" tabindex="-1"><a class="header-anchor" href="#organization-of-records-in-files"><span>Organization of Records in Files</span></a></h2>
 <ul>
 <li>Heap 파일 조직
@@ -112,6 +121,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="heap-file-organization" tabindex="-1"><a class="header-anchor" href="#heap-file-organization"><span>Heap File Organization</span></a></h2>
 <ul>
 <li>레코드는 여유 공간이 있는 파일 어디에나 위치 가능</li>
@@ -129,6 +140,8 @@
 <li>Free space map은 주기적으로 디스크에 기록됨: 디스크 상의 맵은 오래된 정보일 수 있음</li>
 <li>일부 항목에 대해 잘못된 (오래된) 값을 가져도 괜찮음 (탐지되고 수정될 것)</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="sequential-file-organization" tabindex="-1"><a class="header-anchor" href="#sequential-file-organization"><span>Sequential File Organization</span></a></h2>
 <ul>
 <li>전체 파일을 순차적으로 처리해야 하는 애플리케이션에 적합</li>
@@ -148,6 +161,8 @@
 <li>물리적 순차성을 복원하기 위해 파일을 재구성해야 하며, 이는 비용이 많이 드는 작업</li>
 <li>B+-tree 파일 조직이 이 문제를 해결</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="multitable-clustering-file-organization" tabindex="-1"><a class="header-anchor" href="#multitable-clustering-file-organization"><span>Multitable Clustering File Organization</span></a></h2>
 <ul>
 <li>Multitable clustering 파일 조직을 사용하여 하나의 파일에 여러 관계 저장</li>
@@ -158,6 +173,8 @@
 <li>Cluster key: 어떤 레코드가 함께 저장될지 정의하는 속성</li>
 <li>예시에서는 <code v-pre>dept_name</code></li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="partitioning" tabindex="-1"><a class="header-anchor" href="#partitioning"><span>Partitioning</span></a></h2>
 <ul>
 <li>테이블 파티셔닝(Table partitioning)</li>
@@ -170,6 +187,8 @@
 <li>파티셔닝은 다른 파티션을 다른 저장 장치에 저장할 수 있게 함</li>
 <li>예: (자주 접근하는) 현재 연도의 transaction 파티션은 SSD에, (드물게 접근하는) 이전 연도는 자기 디스크에 저장</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="data-dictionary-storage" tabindex="-1"><a class="header-anchor" href="#data-dictionary-storage"><span>Data Dictionary Storage</span></a></h2>
 <ul>
 <li>관계형 데이터베이스 시스템은 관계의 스키마(schema)와 같이 관계에 대한 데이터를 유지해야 함</li>
@@ -215,7 +234,11 @@
 <li>데이터베이스 시작 시, 시스템 메타데이터는 빠른 접근을 위해 메모리 내 데이터 구조로 로드됨</li>
 <li>일부 데이터베이스 시스템은 위의 관계형 표현 대신 메타데이터를 위해 특화된 데이터 구조를 사용</li>
 </ul>
+</section>
+<section class="print-section">
 <h1 id="storage-access-and-database-buffer" tabindex="-1"><a class="header-anchor" href="#storage-access-and-database-buffer"><span>Storage Access and Database Buffer</span></a></h1>
+</section>
+<section class="print-section">
 <h2 id="storage-access" tabindex="-1"><a class="header-anchor" href="#storage-access"><span>Storage Access</span></a></h2>
 <ul>
 <li>순차 접근(Sequential access) 패턴
@@ -265,6 +288,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="buffer-manager" tabindex="-1"><a class="header-anchor" href="#buffer-manager"><span>Buffer Manager</span></a></h2>
 <ul>
 <li>프로그램은 디스크에서 블록이 필요할 때 버퍼 관리자를 호출</li>
@@ -352,6 +377,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="output-of-blocks" tabindex="-1"><a class="header-anchor" href="#output-of-blocks"><span>Output of Blocks</span></a></h2>
 <ul>
 <li>기본 블록 출력 정책
@@ -380,6 +407,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="buffer-replacement-policies" tabindex="-1"><a class="header-anchor" href="#buffer-replacement-policies"><span>Buffer-Replacement Policies</span></a></h2>
 <ul>
 <li>대부분의 운영 체제는 가장 최근에 사용되지 않은(Least Recently Used, LRU) 블록을 교체 (LRU 전략)</li>
@@ -408,6 +437,8 @@
 <li>예: 데이터 사전은 자주 접근됨</li>
 <li>휴리스틱(Heuristic): 데이터 사전 블록을 주 메모리 버퍼에 유지</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="reordering-of-writes-and-recovery" tabindex="-1"><a class="header-anchor" href="#reordering-of-writes-and-recovery"><span>Reordering of Writes and Recovery</span></a></h2>
 <ul>
 <li>운영 체제 또는 버퍼 관리자가 쓰기 순서를 재정렬할 수 있음</li>
@@ -424,6 +455,8 @@
 <li>저널링 파일 시스템(Journaling file system)은 별도의 log disk 없이도 이러한 로깅을 지원하는 파일 시스템</li>
 <li>저널링 없는 재정렬: 파일 시스템 데이터 손상 위험</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="column-oriented-storage" tabindex="-1"><a class="header-anchor" href="#column-oriented-storage"><span>Column-Oriented Storage</span></a></h2>
 <ul>
 <li>컬럼 기반 스토리지(columnar storage)라고도 알려짐</li>
@@ -432,6 +465,8 @@
 <li>쿼리가 테이블의 i번째 행의 전체 내용에 접근해야 하는 경우, 각 컬럼의 i번째 위치에 있는 값을 검색하여 행을 재구성</li>
 <li>가장 간단한 형태: 각 속성은 별도의 파일에 저장되고, 각 파일은 압축됨</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="columnar-representation" tabindex="-1"><a class="header-anchor" href="#columnar-representation"><span>Columnar Representation</span></a></h2>
 <ul>
 <li>컬럼 기반 스토리지의 단점
@@ -455,6 +490,8 @@
 <li>일부 데이터베이스는 두 표현을 모두 지원</li>
 <li>하이브리드 행/컬럼 스토어(hybrid row/column store)라고 불림</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="columnar-file-representation" tabindex="-1"><a class="header-anchor" href="#columnar-file-representation"><span>Columnar File Representation</span></a></h2>
 <ul>
 <li>ORC 및 Parquet: 파일 내에 컬럼 기반 스토리지를 갖는 파일 형식</li>
@@ -468,6 +505,7 @@
 </li>
 <li>스트라이프의 Index data 영역은 각 속성에 대해 해당 속성 값의 각 그룹(예: 10,000개)에 대한 스트라이프 내 시작점을 저장</li>
 </ul>
+</section>
 </div></template>
 
 

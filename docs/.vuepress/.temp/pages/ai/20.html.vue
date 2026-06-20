@@ -1,6 +1,11 @@
-<template><div><h1 id="_20-neural-networks-and-deep-learning-2" tabindex="-1"><a class="header-anchor" href="#_20-neural-networks-and-deep-learning-2"><span>20. Neural Networks and Deep Learning (2)</span></a></h1>
+<template><div><section class="print-section">
+<h1 id="_20-neural-networks-and-deep-learning-2" tabindex="-1"><a class="header-anchor" href="#_20-neural-networks-and-deep-learning-2"><span>20. Neural Networks and Deep Learning (2)</span></a></h1>
 <DateMeta />
+</section>
+<section class="print-section">
 <h1 id="more-details-on-feedforward-networks" tabindex="-1"><a class="header-anchor" href="#more-details-on-feedforward-networks"><span>More Details on Feedforward Networks</span></a></h1>
+</section>
+<section class="print-section">
 <h2 id="computation-of-feedforward-networks-review" tabindex="-1"><a class="header-anchor" href="#computation-of-feedforward-networks-review"><span>Computation of Feedforward Networks (Review)</span></a></h2>
 <ul>
 <li>Network 내의 각 node는 unit (또는 perceptron)이라 불림</li>
@@ -10,6 +15,8 @@
 <li><span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>g</mi><mi>j</mi></msub></mrow><annotation encoding="application/x-tex">g_j</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7167em;vertical-align:-0.2861em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">g</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.05724em;">j</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span></span></span></span>: unit <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>j</mi></mrow><annotation encoding="application/x-tex">j</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.854em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.05724em;">j</span></span></span></span>와 연관된 비선형 activation function</li>
 <li><span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi><msub><mi>n</mi><mi>j</mi></msub></mrow><annotation encoding="application/x-tex">in_j</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.9456em;vertical-align:-0.2861em;"></span><span class="mord mathnormal">i</span><span class="mord"><span class="mord mathnormal">n</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.05724em;">j</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span></span></span></span>: unit <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>j</mi></mrow><annotation encoding="application/x-tex">j</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.854em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.05724em;">j</span></span></span></span>로의 입력에 대한 weighted sum</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="feedforward-networks-with-another-notation" tabindex="-1"><a class="header-anchor" href="#feedforward-networks-with-another-notation"><span>Feedforward Networks with Another Notation</span></a></h2>
 <p><img src="@source/ai/image-34.png" alt="alt text"></p>
 <ul>
@@ -50,6 +57,8 @@
 <ul>
 <li>Feedforward nets는 일반적으로 fully-connected</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="how-to-count-the-number-of-layers-in-nns" tabindex="-1"><a class="header-anchor" href="#how-to-count-the-number-of-layers-in-nns"><span>How to Count the Number of Layers in NNs</span></a></h2>
 <ul>
 <li>Neural network의 layer 수 계산 용어에 혼란 존재</li>
@@ -57,7 +66,11 @@
 <li>Single-hidden-layer network: Hidden units의 layer 수를 세는 방식</li>
 <li>Two-layer network: Network 속성을 결정하는 데 중요한 adaptive weights의 layer 수를 세는 방식</li>
 </ul>
+</section>
+<section class="print-section">
 <h1 id="training-of-feedforward-nets" tabindex="-1"><a class="header-anchor" href="#training-of-feedforward-nets"><span>Training of Feedforward Nets</span></a></h1>
+</section>
+<section class="print-section">
 <h2 id="different-loss-error-functions-for-different-problems" tabindex="-1"><a class="header-anchor" href="#different-loss-error-functions-for-different-problems"><span>Different Loss (Error) Functions for Different Problems</span></a></h2>
 <ul>
 <li>Regression
@@ -102,6 +115,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="information-theory-review" tabindex="-1"><a class="header-anchor" href="#information-theory-review"><span>Information Theory (Review)</span></a></h2>
 <ul>
 <li>Entropy
@@ -123,6 +138,7 @@
 </ul>
 </li>
 </ul>
+</section>
 </div></template>
 
 

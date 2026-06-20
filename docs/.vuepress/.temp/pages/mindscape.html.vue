@@ -1,4 +1,5 @@
-<template><div><h1 id="mindscape-🔥" tabindex="-1"><a class="header-anchor" href="#mindscape-🔥"><span>Mindscape 🔥</span></a></h1>
+<template><div><section class="print-section">
+<h1 id="mindscape-🔥" tabindex="-1"><a class="header-anchor" href="#mindscape-🔥"><span>Mindscape 🔥</span></a></h1>
 <DateMeta />
 <p align="center">
   <img src="https://kmbzn.com/images/android-chrome-512x512.png" width="180" alt="Main Logo" />
@@ -14,6 +15,7 @@
 <p><strong>KeyBaseZone</strong>은 따라서 특정 주제에 국한된 기술 blog가 아니라, 핵심을 중심으로 구조화된 지식과 자율적 사유가 교차하는 <strong>정체성 기반의 지식 생태계</strong>로서 기능한다. <strong>KBZ</strong>라는 약어는 본래의 이니셜에서 출발하되, 의도적인 치환을 통해 고유한 기호로 탈바꿈된다. 이는 기존의 자기 정의를 고수하는 대신, 스스로 재해석하고 확장 가능한 정체성으로 전환하려는 시도를 상징한다.</p>
 <hr>
 <p>궁극적으로 <strong>KeyBaseZone</strong>은 <strong>핵심적 사유(Key)</strong>, <strong>구조화된 기반(Base)</strong>, <strong>다층적 표현의 공간(Zone)</strong> 을 융합하여 콘텐츠가 탄생하고 순환하며 진화하는 독립적인 지식 기반 시스템이다. 이것은 단순한 아카이브가 아닌, 끊임없는 구조화와 탈구조화, 탐색과 재구성을 통해 정체성을 만들어가는 철학적 실천의 장이자, 창의적 사고의 흐름이 멈추지 않는 하나의 <strong>확장된 지성 공간</strong>이다.</p>
+</section>
 </div></template>
 
 

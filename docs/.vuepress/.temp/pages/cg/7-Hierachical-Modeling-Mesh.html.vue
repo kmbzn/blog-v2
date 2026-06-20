@@ -1,5 +1,8 @@
-<template><div><h1 id="_7-hierarchical-modeling-mesh" tabindex="-1"><a class="header-anchor" href="#_7-hierarchical-modeling-mesh"><span>7 - Hierarchical Modeling, Mesh</span></a></h1>
+<template><div><section class="print-section">
+<h1 id="_7-hierarchical-modeling-mesh" tabindex="-1"><a class="header-anchor" href="#_7-hierarchical-modeling-mesh"><span>7 - Hierarchical Modeling, Mesh</span></a></h1>
 <DateMeta />
+</section>
+<section class="print-section">
 <h2 id="midterm-exam-announcement" tabindex="-1"><a class="header-anchor" href="#midterm-exam-announcement"><span>Midterm Exam Announcement</span></a></h2>
 <ul>
 <li>일시: 5월 7일 (수) 오후 6:30 ~ 7:30</li>
@@ -9,6 +12,8 @@
 <li>시험 시작 후 30분이 지나면 입실도 불가 (<strong>절대 지각 금지</strong>)</li>
 <li><strong>학생증 필수 지참</strong></li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="outline" tabindex="-1"><a class="header-anchor" href="#outline"><span>Outline</span></a></h2>
 <ul>
 <li><strong>Hierarchical Modeling</strong>
@@ -29,12 +34,16 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="hierarchical-modeling" tabindex="-1"><a class="header-anchor" href="#hierarchical-modeling"><span>Hierarchical Modeling</span></a></h2>
 <ul>
 <li>하위 구성 요소(자식)를 상위 구성 요소(부모)에 <strong>중첩</strong>하여 트리 구조로 표현</li>
 <li>각 파트는 고유한 <strong>body frame</strong>을 가짐</li>
 <li>각 파트의 움직임은 부모의 body frame 기준으로 기술됨</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="example-human-figure" tabindex="-1"><a class="header-anchor" href="#example-human-figure"><span>Example - Human Figure</span></a></h2>
 <ul>
 <li>각 파트는 다음과 같은 트리 구조를 가짐:
@@ -43,10 +52,14 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="human-figure-frames" tabindex="-1"><a class="header-anchor" href="#human-figure-frames"><span>Human Figure - Frames</span></a></h2>
 <ul>
 <li>각 파트는 고유한 body frame을 가짐</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="human-figure-movement-of-rhip-rknee-and-more-joints" tabindex="-1"><a class="header-anchor" href="#human-figure-movement-of-rhip-rknee-and-more-joints"><span>Human Figure - Movement of rhip &amp; rknee and more joints</span></a></h2>
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
   <iframe src="https://www.youtube.com/embed/Q7lhvMkCSCg"
@@ -80,12 +93,16 @@
 </li>
 <li>이는 하위 파트를 &quot;묶어서(group)&quot; 제어할 수 있게 해 줌</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="hierarchical-model" tabindex="-1"><a class="header-anchor" href="#hierarchical-model"><span>Hierarchical Model</span></a></h2>
 <ul>
 <li>계층적 모델은 일반적으로 <strong>트리 구조</strong>(tree structure)로 표현됨</li>
 <li>전체 장면(scene)을 표현하는 그래프 구조 <strong>scene graph</strong>도 예시</li>
 <li>각 노드는 <strong>부모 노드의 frame 기준의 변환</strong>을 가짐</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="rendering-hierarchical-models" tabindex="-1"><a class="header-anchor" href="#rendering-hierarchical-models"><span>Rendering Hierarchical Models</span></a></h2>
 <ul>
 <li>계층 모델을 렌더링하려면,<br>
@@ -98,6 +115,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="rendering-hierarchical-models-1" tabindex="-1"><a class="header-anchor" href="#rendering-hierarchical-models-1"><span>Rendering Hierarchical Models</span></a></h2>
 <ul>
 <li>각 노드는 <strong>부모 노드 기준의 변환</strong>(local transformation)을 가짐<br>
@@ -109,6 +128,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="rendering-hierarchical-models-2" tabindex="-1"><a class="header-anchor" href="#rendering-hierarchical-models-2"><span>Rendering Hierarchical Models</span></a></h2>
 <ul>
 <li>각 노드의 frame을 <strong>world frame 기준으로 표현</strong>해야 렌더링 가능<br>
@@ -119,6 +140,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="recall-post-right-multiplication" tabindex="-1"><a class="header-anchor" href="#recall-post-right-multiplication"><span>Recall: Post-(right) Multiplication</span></a></h2>
 <ul>
 <li><span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi mathvariant="bold">p</mi><mo mathvariant="bold" lspace="0em" rspace="0em">′</mo></msup><mo>=</mo><msub><mi mathvariant="bold">M</mi><mn mathvariant="bold">1</mn></msub><msub><mi mathvariant="bold">M</mi><mn mathvariant="bold">2</mn></msub><mi mathvariant="bold">p</mi></mrow><annotation encoding="application/x-tex">\mathbf{p&#x27;=M_1M_2p}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.9463em;vertical-align:-0.1944em;"></span><span class="mord"><span class="mord"><span class="mord mathbf">p</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7519em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathbf mtight">′</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mord"><span class="mord mathbf">M</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathbf mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord"><span class="mord mathbf">M</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathbf mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord mathbf">p</span></span></span></span></span> (M₂에 post-multiply)<br>
@@ -132,6 +155,8 @@
 <p>예:</p>
 <p v-pre class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msup><mi mathvariant="bold">p</mi><mo mathvariant="normal" lspace="0em" rspace="0em">′</mo></msup><mo>=</mo><mi mathvariant="bold">T</mi><mi mathvariant="bold">R</mi><mi mathvariant="bold">p</mi></mrow><annotation encoding="application/x-tex">\mathbf{p}&#x27; = \mathbf{T} \mathbf{R} \mathbf{p}
 </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.9963em;vertical-align:-0.1944em;"></span><span class="mord"><span class="mord mathbf">p</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8019em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8805em;vertical-align:-0.1944em;"></span><span class="mord mathbf">TRp</span></span></span></span></span></p>
+</section>
+<section class="print-section">
 <h2 id="interpretation-of-a-series-of-transformations" tabindex="-1"><a class="header-anchor" href="#interpretation-of-a-series-of-transformations"><span>Interpretation of a Series of Transformations</span></a></h2>
 <ul>
 <li>
@@ -190,6 +215,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="computing-global-transform-from-series-of-local-transforms" tabindex="-1"><a class="header-anchor" href="#computing-global-transform-from-series-of-local-transforms"><span>Computing Global Transform from Series of Local Transforms</span></a></h2>
 <ul>
 <li><span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi mathvariant="bold">p</mi><mn>4</mn></msub><mo>=</mo><msub><mi mathvariant="bold">M</mi><mn>1</mn></msub><msub><mi mathvariant="bold">M</mi><mn>2</mn></msub><msub><mi mathvariant="bold">M</mi><mn>3</mn></msub><msub><mi mathvariant="bold">M</mi><mn>4</mn></msub><msub><mi mathvariant="bold">p</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">\mathbf{p}_4 = \mathbf{M}_1 \mathbf{M}_2 \mathbf{M}_3 \mathbf{M}_4 \mathbf{p}_0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6389em;vertical-align:-0.1944em;"></span><span class="mord"><span class="mord mathbf">p</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">4</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8805em;vertical-align:-0.1944em;"></span><span class="mord"><span class="mord mathbf">M</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord"><span class="mord mathbf">M</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord"><span class="mord mathbf">M</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">3</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord"><span class="mord mathbf">M</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">4</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord"><span class="mord mathbf">p</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>
@@ -245,6 +272,8 @@
 <ul>
 <li>트리 구조 기반으로 각 노드의 global 변환 계산 가능</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="rendering-hierarchical-models-3" tabindex="-1"><a class="header-anchor" href="#rendering-hierarchical-models-3"><span>Rendering Hierarchical Models</span></a></h2>
 <ul>
 <li><span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6595em;"></span><span class="mord mathnormal">i</span></span></span></span>번째 노드가 단위 큐브로 렌더링된다고 가정할 때,
@@ -291,6 +320,8 @@
 </tr>
 </tbody>
 </table>
+</section>
+<section class="print-section">
 <h2 id="rendering-hierarchical-models-shape-transformation" tabindex="-1"><a class="header-anchor" href="#rendering-hierarchical-models-shape-transformation"><span>Rendering Hierarchical Models - Shape Transformation</span></a></h2>
 <ul>
 <li>만약 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6595em;"></span><span class="mord mathnormal">i</span></span></span></span>번째 노드가 단위 큐브가 아니라 특정 shape <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>S</mi><mi>i</mi></msub><mi>j</mi></mrow><annotation encoding="application/x-tex">S_ij</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8778em;vertical-align:-0.1944em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.05764em;">S</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.0576em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord mathnormal" style="margin-right:0.05724em;">j</span></span></span></span>로 렌더링된다면,
@@ -300,11 +331,17 @@
 </li>
 <li>특정 노드 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6595em;"></span><span class="mord mathnormal">i</span></span></span></span>의 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>j</mi></mrow><annotation encoding="application/x-tex">j</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.854em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.05724em;">j</span></span></span></span>번째 shape에 대해 shape 변환 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>S</mi><mi>i</mi></msub><mi>j</mi></mrow><annotation encoding="application/x-tex">S_ij</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8778em;vertical-align:-0.1944em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.05764em;">S</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.0576em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord mathnormal" style="margin-right:0.05724em;">j</span></span></span></span>를 사용할 수 있음</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="rendering-hierarchical-models-4" tabindex="-1"><a class="header-anchor" href="#rendering-hierarchical-models-4"><span>Rendering Hierarchical Models</span></a></h2>
 <ul>
 <li><span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6595em;"></span><span class="mord mathnormal">i</span></span></span></span>번째 노드마다 global transform <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>G</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">G_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">G</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>를 저장하여 렌더링 시 재사용 가능</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="quiz-1" tabindex="-1"><a class="header-anchor" href="#quiz-1"><span>Quiz 1</span></a></h2>
+</section>
+<section class="print-section">
 <h2 id="many-ways-to-digitally-encode-geometry" tabindex="-1"><a class="header-anchor" href="#many-ways-to-digitally-encode-geometry"><span>Many ways to digitally encode geometry</span></a></h2>
 <ul>
 <li><strong>EXPLICIT</strong>
@@ -325,6 +362,8 @@
 </li>
 <li>각 표현 방식은 과제/기하 유형에 따라 <strong>적합한 선택지가 다름</strong></li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="the-most-popular-representation-polygon-mesh" tabindex="-1"><a class="header-anchor" href="#the-most-popular-representation-polygon-mesh"><span>The Most Popular Representation: Polygon Mesh</span></a></h2>
 <ul>
 <li>단순한 표현으로 복잡한 3D 형상을 모델링 가능하며 렌더링 속도도 빠름</li>
@@ -335,6 +374,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="triangle-mesh" tabindex="-1"><a class="header-anchor" href="#triangle-mesh"><span>Triangle Mesh</span></a></h2>
 <ul>
 <li>일반적인 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span></span></span></span>각형은
@@ -352,6 +393,8 @@
 <li><span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span></span></span></span>각형도 triangle로 나눌 수 있음</li>
 <li>결론: Triangle mesh 중심으로 학습</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="representation-for-triangle-mesh" tabindex="-1"><a class="header-anchor" href="#representation-for-triangle-mesh"><span>Representation for Triangle Mesh</span></a></h2>
 <ul>
 <li>이 주제는 메모리에 정점을 저장하는 방식에 대한 것
@@ -367,6 +410,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="vertex-winding-order" tabindex="-1"><a class="header-anchor" href="#vertex-winding-order"><span>Vertex Winding Order</span></a></h2>
 <ul>
 <li>Vertex winding order는 <strong>다각형의 정점들이 나열</strong>되는 순서</li>
@@ -377,6 +422,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="separate-triangles" tabindex="-1"><a class="header-anchor" href="#separate-triangles"><span>Separate triangles</span></a></h2>
 <ul>
 <li>counter-clockwise 순서로 정점 나열</li>
@@ -391,6 +438,8 @@
 </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:3em;vertical-align:-1.25em;"></span><span class="mord"><span class="mtable"><span class="col-align-r"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.75em;"><span style="top:-3.91em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord text"><span class="mord">tri[0]</span></span></span></span><span style="top:-2.41em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord text"><span class="mord">tri[1]</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.25em;"><span></span></span></span></span></span><span class="col-align-l"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.75em;"><span style="top:-3.91em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.04398em;">z</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.044em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">)</span><span class="mpunct">,</span><span class="mspace"> </span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.04398em;">z</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.044em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">)</span><span class="mpunct">,</span><span class="mspace"> </span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.04398em;">z</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.044em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">)</span></span></span><span style="top:-2.41em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.04398em;">z</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.044em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">)</span><span class="mpunct">,</span><span class="mspace"> </span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.04398em;">z</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.044em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">)</span><span class="mpunct">,</span><span class="mspace"> </span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">3</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">3</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.04398em;">z</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.044em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">3</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.25em;"><span></span></span></span></span></span></span></span></span></span></span></span></p>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="separate-triangles-1" tabindex="-1"><a class="header-anchor" href="#separate-triangles-1"><span>Separate Triangles</span></a></h2>
 <ul>
 <li>단점:
@@ -405,6 +454,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="example-a-cube-of-length-2" tabindex="-1"><a class="header-anchor" href="#example-a-cube-of-length-2"><span>Example: a cube of length 2</span></a></h2>
 <ul>
 <li>정점 인덱스 및 위치 예:</li>
@@ -451,6 +502,8 @@
 </tr>
 </tbody>
 </table>
+</section>
+<section class="print-section">
 <h2 id="example-cube-in-separate-triangles" tabindex="-1"><a class="header-anchor" href="#example-cube-in-separate-triangles"><span>Example Cube in Separate Triangles</span></a></h2>
 <ul>
 <li>Separate triangle 표현 방식에서는
@@ -460,6 +513,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="indexed-triangle-set" tabindex="-1"><a class="header-anchor" href="#indexed-triangle-set"><span>Indexed triangle set</span></a></h2>
 <ul>
 <li>각 정점을 한 번만 저장</li>
@@ -487,6 +542,8 @@
 </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:5.16em;vertical-align:-2.33em;"></span><span class="mord"><span class="mtable"><span class="col-align-r"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.83em;"><span style="top:-5.49em;"><span class="pstrut" style="height:3.5em;"></span><span class="mord"><span class="mord text"><span class="mord">tInd[0]</span></span></span></span><span style="top:-3.99em;"><span class="pstrut" style="height:3.5em;"></span><span class="mord"><span class="mord text"><span class="mord">tInd[1]</span></span></span></span><span style="top:-1.83em;"><span class="pstrut" style="height:3.5em;"></span><span class="mord"></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:2.33em;"><span></span></span></span></span></span><span class="col-align-l"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.83em;"><span style="top:-5.6775em;"><span class="pstrut" style="height:3.6875em;"></span><span class="mord"><span class="mord"></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mopen">(</span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace"> </span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">2</span><span class="mpunct">,</span><span class="mspace"> </span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">1</span><span class="mclose">)</span></span></span><span style="top:-4.1775em;"><span class="pstrut" style="height:3.6875em;"></span><span class="mord"><span class="mord"></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mopen">(</span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace"> </span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">3</span><span class="mpunct">,</span><span class="mspace"> </span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">2</span><span class="mclose">)</span></span></span><span style="top:-2.0175em;"><span class="pstrut" style="height:3.6875em;"></span><span class="mord"><span class="mord"></span><span class="mord"><span class="mord">⋮</span><span class="mord rule" style="border-right-width:0em;border-top-width:1.5em;bottom:0em;"></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:2.33em;"><span></span></span></span></span></span></span></span></span></span></span></span></p>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="indexed-triangle-set-1" tabindex="-1"><a class="header-anchor" href="#indexed-triangle-set-1"><span>Indexed Triangle Set</span></a></h2>
 <ul>
 <li>메모리 효율적: 각 정점 위치는 한 번만 저장됨</li>
@@ -502,6 +559,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="example-cube-in-indexed-triangle-set" tabindex="-1"><a class="header-anchor" href="#example-cube-in-indexed-triangle-set"><span>Example Cube in Indexed Triangle Set</span></a></h2>
 <ul>
 <li>Indexed triangle set 방식에서는
@@ -511,7 +570,11 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="quiz-2" tabindex="-1"><a class="header-anchor" href="#quiz-2"><span>Quiz 2</span></a></h2>
+</section>
+<section class="print-section">
 <h2 id="creating-polygon-meshes" tabindex="-1"><a class="header-anchor" href="#creating-polygon-meshes"><span>Creating Polygon Meshes</span></a></h2>
 <ul>
 <li>일반적으로 polygon mesh는 3D 모델링 프로그램으로 생성됨
@@ -521,6 +584,8 @@
 </li>
 <li>응용프로그램(예: 게임)은 이 object file에서 정점과 인덱스를 로드하여 객체를 그림</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="_3d-model-file-formats" tabindex="-1"><a class="header-anchor" href="#_3d-model-file-formats"><span>3D Model File Formats</span></a></h2>
 <ul>
 <li>DXF – AutoCAD
@@ -546,6 +611,8 @@
 </li>
 <li>이 슬라이드에서는 OBJ 포맷을 자세히 살펴봄</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="obj-file-format" tabindex="-1"><a class="header-anchor" href="#obj-file-format"><span>OBJ File Format</span></a></h2>
 <div class="language-obj line-numbers-mode" data-highlighter="prismjs" data-ext="obj"><pre v-pre><code class="language-obj"><span class="line"># 주석</span>
 <span class="line"></span>
@@ -598,6 +665,8 @@
 <p>본 수업에서는 위 기능들은 사용하지 않음</p>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="an-obj-example" tabindex="-1"><a class="header-anchor" href="#an-obj-example"><span>An OBJ Example</span></a></h2>
 <div class="language-obj line-numbers-mode" data-highlighter="prismjs" data-ext="obj"><pre v-pre><code class="language-obj"><span class="line"># A simple cube</span>
 <span class="line">v 1.000000 -1.000000 -1.000000</span>
@@ -616,7 +685,9 @@
 <span class="line">f 3 7 8 4</span>
 <span class="line">f 5 1 4 8</span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="obj-sources" tabindex="-1"><a class="header-anchor" href="#obj-sources"><span>OBJ Sources</span></a></h2>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h2 id="obj-sources" tabindex="-1"><a class="header-anchor" href="#obj-sources"><span>OBJ Sources</span></a></h2>
 <ul>
 <li>
 <p><a href="https://free3d.com/" target="_blank" rel="noopener noreferrer">free3d.com</a></p>
@@ -635,6 +706,7 @@
 </ul>
 </li>
 </ul>
-<home/></div></template>
+<home/></section>
+</div></template>
 
 

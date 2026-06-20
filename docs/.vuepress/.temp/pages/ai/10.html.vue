@@ -1,5 +1,8 @@
-<template><div><h1 id="_10-machine-learning-1" tabindex="-1"><a class="header-anchor" href="#_10-machine-learning-1"><span>10. Machine Learning (1)</span></a></h1>
+<template><div><section class="print-section">
+<h1 id="_10-machine-learning-1" tabindex="-1"><a class="header-anchor" href="#_10-machine-learning-1"><span>10. Machine Learning (1)</span></a></h1>
 <DateMeta />
+</section>
+<section class="print-section">
 <h2 id="what-is-machine-learning" tabindex="-1"><a class="header-anchor" href="#what-is-machine-learning"><span>What is (Machine) Learning?</span></a></h2>
 <ul>
 <li>Agent가 세상을 관찰한 후 성능을 향상시키면 학습하는 것</li>
@@ -13,6 +16,8 @@
 </li>
 <li>본 과정에서는 다양한 machine learning model (알고리즘)을 탐색</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="three-types-of-learning-1-supervised-learning" tabindex="-1"><a class="header-anchor" href="#three-types-of-learning-1-supervised-learning"><span>Three Types of Learning (1): Supervised Learning</span></a></h2>
 <ul>
 <li>Input과 함께 제공되는 세 가지 type의 feedback이 있으며, 이는 세 가지 주요 학습 type을 결정</li>
@@ -25,12 +30,16 @@
 </li>
 </ul>
 <p><img src="@source/ai/image-10.png" alt="alt text"></p>
+</section>
+<section class="print-section">
 <h2 id="classification-vs-regression" tabindex="-1"><a class="header-anchor" href="#classification-vs-regression"><span>Classification vs. Regression</span></a></h2>
 <ul>
 <li>Output이 유한한 값 집합(예: sunny / cloudy / rainy 또는 true / false) 중 하나일 때, 학습 알고리즘을 classification이라 함</li>
 <li>Output이 숫자(예: 내일의 기온)일 때, 학습 알고리즘은 regression이라 불림</li>
 </ul>
 <p><img src="@source/ai/image-11.png" alt="alt text"></p>
+</section>
+<section class="print-section">
 <h2 id="three-types-of-learning-2-unsupervised-learning" tabindex="-1"><a class="header-anchor" href="#three-types-of-learning-2-unsupervised-learning"><span>Three Types of Learning (2): Unsupervised Learning</span></a></h2>
 <ul>
 <li>Unsupervised learning: Agent가 명시적인 feedback 없이 input의 pattern을 학습</li>
@@ -42,6 +51,8 @@
 </li>
 </ul>
 <p><img src="@source/ai/image-12.png" alt="alt text"></p>
+</section>
+<section class="print-section">
 <h2 id="three-types-of-learning-3-reinforcement-learning" tabindex="-1"><a class="header-anchor" href="#three-types-of-learning-3-reinforcement-learning"><span>Three Types of Learning (3): Reinforcement Learning</span></a></h2>
 <ul>
 <li>Reinforcement learning: Agent가 일련의 reinforcement (보상 및 처벌)로부터 학습</li>
@@ -49,6 +60,8 @@
 <li>Reinforcement 이전에 어떤 action이 가장 책임이 있는지 결정하고, 미래에 더 많은 보상을 목표로 action을 변경하는 것은 agent의 몫</li>
 </ul>
 <p><img src="@source/ai/image-13.png" alt="alt text"></p>
+</section>
+<section class="print-section">
 <h2 id="difference-between-rl-and-sl" tabindex="-1"><a class="header-anchor" href="#difference-between-rl-and-sl"><span>Difference between RL and SL</span></a></h2>
 <table>
 <thead>
@@ -72,6 +85,8 @@
 </tr>
 </tbody>
 </table>
+</section>
+<section class="print-section">
 <h2 id="self-supervised-learning" tabindex="-1"><a class="header-anchor" href="#self-supervised-learning"><span>Self-Supervised Learning</span></a></h2>
 <ul>
 <li>이전 세 가지 범주화 측면에서 unsupervised learning에 속함</li>
@@ -97,26 +112,42 @@
 </li>
 </ul>
 <p><img src="@source/ai/image-14.png" alt="alt text"></p>
+</section>
+<section class="print-section">
 <h1 id="basic-ml-algorithms" tabindex="-1"><a class="header-anchor" href="#basic-ml-algorithms"><span>Basic ML Algorithms</span></a></h1>
+</section>
+<section class="print-section">
 <h2 id="supervised-learning-k-nearest-neighbors" tabindex="-1"><a class="header-anchor" href="#supervised-learning-k-nearest-neighbors"><span>Supervised learning: (𝑘-)nearest neighbors</span></a></h2>
+</section>
+<section class="print-section">
 <h2 id="rain-prediction-problem" tabindex="-1"><a class="header-anchor" href="#rain-prediction-problem"><span>Rain Prediction Problem</span></a></h2>
 <p><img src="@source/ai/image-15.png" alt="alt text"></p>
+</section>
+<section class="print-section">
 <h2 id="rain-prediction-problem-→-supervised-learning" tabindex="-1"><a class="header-anchor" href="#rain-prediction-problem-→-supervised-learning"><span>Rain Prediction Problem → Supervised Learning</span></a></h2>
 <ul>
 <li>Supervised learning: Input-output 쌍의 data set이 주어지면, input을 output에 mapping하는 함수를 학습</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="rain-prediction-→-supervised-learning-→-classification" tabindex="-1"><a class="header-anchor" href="#rain-prediction-→-supervised-learning-→-classification"><span>Rain Prediction → Supervised Learning → Classification</span></a></h2>
 <ul>
 <li>Classification: Input point를 discrete category로 mapping하는 함수를 학습하는 supervised learning task</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="nearest-neighbor-classification" tabindex="-1"><a class="header-anchor" href="#nearest-neighbor-classification"><span>Nearest-Neighbor Classification</span></a></h2>
 <ul>
 <li>Nearest-neighbor classification: Input이 주어지면, 해당 input에서 가장 가까운 data point의 class를 선택하는 알고리즘</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="nearest-neighbors-classification" tabindex="-1"><a class="header-anchor" href="#nearest-neighbors-classification"><span><span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span></span></span></span>-Nearest-Neighbors Classification</span></a></h2>
 <ul>
 <li><span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span></span></span></span>-nearest-neighbor classification: Input이 주어지면, 해당 input에서 가장 가까운 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span></span></span></span>개의 data point 중 가장 일반적인 class를 선택하는 알고리즘</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="nearest-neighbors-algorithm" tabindex="-1"><a class="header-anchor" href="#nearest-neighbors-algorithm"><span><span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span></span></span></span>-Nearest-Neighbors Algorithm</span></a></h2>
 <ul>
 <li><span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span></span></span></span>-nearest neighbors algorithm (<span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span></span></span></span>-NN)은 classification과 regression 모두를 위한 non-parametric method</li>
@@ -129,6 +160,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="strengths-and-weaknesses-of-nn-algorithm" tabindex="-1"><a class="header-anchor" href="#strengths-and-weaknesses-of-nn-algorithm"><span>Strengths and Weaknesses of <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span></span></span></span>-NN Algorithm</span></a></h2>
 <ul>
 <li>강점
@@ -146,10 +179,18 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="is-it-class-a-or-class-b" tabindex="-1"><a class="header-anchor" href="#is-it-class-a-or-class-b"><span>Is It Class A or Class B?</span></a></h2>
 <p><img src="@source/ai/image-16.png" alt="alt text"></p>
+</section>
+<section class="print-section">
 <h1 id="basic-ml-algorithmss" tabindex="-1"><a class="header-anchor" href="#basic-ml-algorithmss"><span>Basic ML Algorithmss</span></a></h1>
+</section>
+<section class="print-section">
 <h3 id="unsupervised-learning-k-means-clustering" tabindex="-1"><a class="header-anchor" href="#unsupervised-learning-k-means-clustering"><span>Unsupervised learning: 𝑘-means clustering</span></a></h3>
+</section>
+<section class="print-section">
 <h2 id="means-clustering-algorithm" tabindex="-1"><a class="header-anchor" href="#means-clustering-algorithm"><span><span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span></span></span></span>-Means Clustering Algorithm</span></a></h2>
 <p><img src="@source/ai/image-17.png" alt="alt text"></p>
 <ul>
@@ -194,6 +235,7 @@ c-10,0,-16.667,5,-20,15z M410 15 H367 v585 v600 v585 h43z"/></svg></span></span>
 <li>할당이 더 이상 변경되지 않을 때 알고리즘은 수렴</li>
 <li>그러나 알고리즘이 최적(optimum)을 찾는 것이 보장되지는 않음</li>
 </ul>
+</section>
 </div></template>
 
 

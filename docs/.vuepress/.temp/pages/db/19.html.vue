@@ -1,5 +1,8 @@
-<template><div><h1 id="_19-recovery-system" tabindex="-1"><a class="header-anchor" href="#_19-recovery-system"><span>19. Recovery System</span></a></h1>
+<template><div><section class="print-section">
+<h1 id="_19-recovery-system" tabindex="-1"><a class="header-anchor" href="#_19-recovery-system"><span>19. Recovery System</span></a></h1>
 <DateMeta />
+</section>
+<section class="print-section">
 <h2 id="failure-classification" tabindex="-1"><a class="header-anchor" href="#failure-classification"><span>Failure Classification</span></a></h2>
 <ul>
 <li>Transaction 실패
@@ -25,6 +28,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="data-access" tabindex="-1"><a class="header-anchor" href="#data-access"><span>Data Access</span></a></h2>
 <ul>
 <li>Physical blocks는 디스크에 상주하는 블록</li>
@@ -59,6 +64,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="recovery-algorithms" tabindex="-1"><a class="header-anchor" href="#recovery-algorithms"><span>Recovery Algorithms</span></a></h2>
 <ul>
 <li>Transaction <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>T</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">T_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">T</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.1389em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>가 계좌 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi></mrow><annotation encoding="application/x-tex">A</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal">A</span></span></span></span>에서 계좌 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>B</mi></mrow><annotation encoding="application/x-tex">B</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.05017em;">B</span></span></span></span>로 50달러를 이체한다고 가정
@@ -92,6 +99,8 @@
 </ol>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h1 id="recovery-and-atomicity" tabindex="-1"><a class="header-anchor" href="#recovery-and-atomicity"><span>Recovery and Atomicity</span></a></h1>
 <ul>
 <li>실패에도 불구하고 atomicity를 보장하기 위해, 데이터베이스 자체를 수정하기 전에 수정 사항을 설명하는 정보를 stable storage에 출력</li>
@@ -107,6 +116,8 @@
 <p>소규모 데이터베이스를 위한 shadow-copy
 <img src="@source/db/image-18.png" alt=""></p>
 </blockquote>
+</section>
+<section class="print-section">
 <h2 id="log-based-recovery" tabindex="-1"><a class="header-anchor" href="#log-based-recovery"><span>Log-based Recovery</span></a></h2>
 <ul>
 <li>Log는 데이터베이스의 업데이트 활동 정보를 담은 log record의 sequence
@@ -135,6 +146,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="database-modification-schemes" tabindex="-1"><a class="header-anchor" href="#database-modification-schemes"><span>Database Modification Schemes</span></a></h2>
 <ul>
 <li>Database modification의 의미
@@ -166,6 +179,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="immediate-database-modification-example" tabindex="-1"><a class="header-anchor" href="#immediate-database-modification-example"><span>Immediate Database Modification Example</span></a></h2>
 <table>
 <thead>
@@ -241,6 +256,8 @@
 <ul>
 <li>참고: <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>B</mi><mi>X</mi></msub></mrow><annotation encoding="application/x-tex">B_X</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.05017em;">B</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3283em;"><span style="top:-2.55em;margin-left:-0.0502em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.07847em;">X</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>는 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>X</mi></mrow><annotation encoding="application/x-tex">X</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.07847em;">X</span></span></span></span>를 포함하는 블록을 의미</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="concurrency-control-and-recovery" tabindex="-1"><a class="header-anchor" href="#concurrency-control-and-recovery"><span>Concurrency Control and Recovery</span></a></h2>
 <ul>
 <li>동시 transactions 환경에서,
@@ -262,6 +279,8 @@
 </li>
 <li>다른 transactions의 log record들이 로그 내에 섞여 있을 수 있음.</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="undo-and-redo-operations" tabindex="-1"><a class="header-anchor" href="#undo-and-redo-operations"><span>Undo and Redo Operations</span></a></h2>
 <ul>
 <li>Transactions의 undo와 redo</li>
@@ -278,6 +297,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="recovering-from-failure" tabindex="-1"><a class="header-anchor" href="#recovering-from-failure"><span>Recovering from Failure</span></a></h2>
 <ul>
 <li>실패 후 복구 시
@@ -313,6 +334,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="immediate-db-modification-recovery-example" tabindex="-1"><a class="header-anchor" href="#immediate-db-modification-recovery-example"><span>Immediate DB Modification: Recovery Example</span></a></h2>
 <ul>
 <li>아래는 세 가지 시점에서의 로그 상태 표시</li>
@@ -377,6 +400,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="checkpoints" tabindex="-1"><a class="header-anchor" href="#checkpoints"><span>Checkpoints</span></a></h2>
 <ul>
 <li>로그에 기록된 모든 transactions를 redo/undo하는 것은 매우 느릴 수 있음.
@@ -416,6 +441,8 @@
 </li>
 </ul>
 <p><img src="@source/db/image-19.png" alt=""></p>
+</section>
+<section class="print-section">
 <h1 id="recovery-algorithm" tabindex="-1"><a class="header-anchor" href="#recovery-algorithm"><span>Recovery Algorithm</span></a></h1>
 <blockquote>
 <ul>
@@ -488,9 +515,15 @@
 </li>
 <li>Undo phase가 완료된 후, 정상적인 transaction 처리 시작 가능</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="example-of-recovery" tabindex="-1"><a class="header-anchor" href="#example-of-recovery"><span>Example of Recovery</span></a></h2>
 <p><img src="@source/db/image-20.png" alt=""></p>
+</section>
+<section class="print-section">
 <h1 id="buffer-management" tabindex="-1"><a class="header-anchor" href="#buffer-management"><span>Buffer Management</span></a></h1>
+</section>
+<section class="print-section">
 <h2 id="log-record-buffering" tabindex="-1"><a class="header-anchor" href="#log-record-buffering"><span>Log Record buffering</span></a></h2>
 <ul>
 <li>Log records는 stable storage로 직접(directly) 출력되는 대신 메인 메모리에 버퍼링됨</li>
@@ -510,6 +543,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="database-buffering" tabindex="-1"><a class="header-anchor" href="#database-buffering"><span>Database Buffering</span></a></h2>
 <ul>
 <li>데이터베이스는 데이터 블록의 in-memory buffer 유지
@@ -558,6 +593,7 @@
 </ol>
 </li>
 </ul>
+</section>
 </div></template>
 
 

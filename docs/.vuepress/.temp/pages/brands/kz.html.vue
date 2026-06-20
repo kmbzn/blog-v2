@@ -1,9 +1,14 @@
-<template><div><h1 id="kz" tabindex="-1"><a class="header-anchor" href="#kz"><span>KZ</span></a></h1>
+<template><div><section class="print-section">
+<h1 id="kz" tabindex="-1"><a class="header-anchor" href="#kz"><span>KZ</span></a></h1>
 <DateMeta />
 <p>KZ는 중국 광둥성 선전(深圳)에 본사를 둔 음향 브랜드다. 저렴한 가격에 다수의 드라이버를 탑재한 인이어 모니터(IEM)를 주력으로 생산하며, 이른바 <strong>치파이(Chi-Fi, Chinese Hi-Fi)</strong> 시장을 대표하는 브랜드 중 하나다.</p>
+</section>
+<section class="print-section">
 <h2 id="브랜드-개요" tabindex="-1"><a class="header-anchor" href="#브랜드-개요"><span>브랜드 개요</span></a></h2>
 <p>KZ는 2013년을 전후로 본격적으로 알려지기 시작했으며, 주로 AliExpress·Amazon 등 온라인 채널을 통해 전 세계에 제품을 공급한다. 5,000원대부터 시작하는 입문 제품부터 수십만 원대 플래그십까지 넓은 라인업을 보유하고 있으며, 동일 가격대의 타사 제품 대비 드라이버 구성이 풍부한 것이 특징이다.</p>
 <p>BA(Balanced Armature), DD(Dynamic Driver), 그리고 두 방식을 혼합한 하이브리드 구성을 모두 다루며, 근래에는 평판형(Planar) 드라이버를 탑재한 제품도 출시하고 있다.</p>
+</section>
+<section class="print-section">
 <h2 id="드라이버-방식" tabindex="-1"><a class="header-anchor" href="#드라이버-방식"><span>드라이버 방식</span></a></h2>
 <table>
 <thead>
@@ -31,7 +36,11 @@
 </tr>
 </tbody>
 </table>
+</section>
+<section class="print-section">
 <h2 id="주요-라인업" tabindex="-1"><a class="header-anchor" href="#주요-라인업"><span>주요 라인업</span></a></h2>
+</section>
+<section class="print-section">
 <h3 id="zsn-pro-x" tabindex="-1"><a class="header-anchor" href="#zsn-pro-x"><span>ZSN Pro X</span></a></h3>
 <p>KZ의 스테디셀러 입문 모델. 1DD+1BA 하이브리드 구성으로 가격 대비 균형 잡힌 음색을 제공한다. 분리형 케이블(0.75mm 2핀)을 채택해 업그레이드가 가능하다.</p>
 <ul>
@@ -40,6 +49,8 @@
 <li>임피던스: 24Ω</li>
 <li>감도: 112dB/mW</li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="zsx-terminator" tabindex="-1"><a class="header-anchor" href="#zsx-terminator"><span>ZSX (Terminator)</span></a></h3>
 <p>10개의 드라이버(1DD+5BA×2)를 탑재한 플래그십급 모델. KZ 제품 중 가장 많은 드라이버를 가진 라인업 중 하나로, 넓은 주파수 대역과 높은 해상도가 특징이다.</p>
 <ul>
@@ -47,23 +58,31 @@
 <li>임피던스: 18Ω</li>
 <li>감도: 112dB/mW</li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="zar" tabindex="-1"><a class="header-anchor" href="#zar"><span>ZAR</span></a></h3>
 <p>평판형(Planar) 드라이버와 BA를 결합한 하이브리드 구성의 모델. KZ가 평판 마그넷 드라이버를 도입한 대표 제품으로, 낮은 왜율과 넓은 음장이 특징이다.</p>
 <ul>
 <li>드라이버: 1 Planar + 8BA (채널당)</li>
 <li>임피던스: 32Ω</li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="dq6-dq6s" tabindex="-1"><a class="header-anchor" href="#dq6-dq6s"><span>DQ6 / DQ6S</span></a></h3>
 <p>3DD 트리플 다이나믹 드라이버를 탑재한 모델. 다이나믹 드라이버만의 자연스럽고 풍부한 저음이 강점으로, BA 특유의 차갑고 분석적인 음색이 맞지 않는 사용자에게 적합하다.</p>
 <ul>
 <li>드라이버: 3DD (채널당)</li>
 <li>임피던스: 32Ω</li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="pr1-pr2" tabindex="-1"><a class="header-anchor" href="#pr1-pr2"><span>PR1 / PR2</span></a></h3>
 <p>KZ의 순수 평판형(Planar) IEM 라인업. 치파이 브랜드 중 가격 대비 평판 드라이버 성능이 우수하다는 평가를 받는다.</p>
 <ul>
 <li>드라이버: 1 Planar (채널당)</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="케이블-및-액세서리" tabindex="-1"><a class="header-anchor" href="#케이블-및-액세서리"><span>케이블 및 액세서리</span></a></h2>
 <p>KZ는 대부분의 제품에 분리형 케이블을 채택한다. 주요 커넥터 규격:</p>
 <table>
@@ -89,6 +108,8 @@
 </tbody>
 </table>
 <p>케이블 교체를 통해 음색 튜닝이나 마이크 유무 변경이 가능하다.</p>
+</section>
+<section class="print-section">
 <h2 id="가격대" tabindex="-1"><a class="header-anchor" href="#가격대"><span>가격대</span></a></h2>
 <table>
 <thead>
@@ -112,6 +133,8 @@
 </tr>
 </tbody>
 </table>
+</section>
+<section class="print-section">
 <h2 id="구매처" tabindex="-1"><a class="header-anchor" href="#구매처"><span>구매처</span></a></h2>
 <p>KZ 제품은 국내 정식 유통이 제한적이므로 주로 해외 직구로 구입한다.</p>
 <ul>
@@ -119,9 +142,12 @@
 <li><strong>Amazon</strong> (배송 빠르나 가격 다소 높음)</li>
 <li><strong>Linsoul / HifiGo</strong> (오디오 전문 해외 쇼핑몰)</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="평가-및-한계" tabindex="-1"><a class="header-anchor" href="#평가-및-한계"><span>평가 및 한계</span></a></h2>
 <p>KZ는 가격 대비 드라이버 수와 스펙이 뛰어나지만, 튜닝 완성도에 대해서는 평가가 엇갈린다. 다수의 드라이버를 탑재했음에도 드라이버 간 크로스오버 설계가 미흡해 중역대 응집력이 떨어진다는 지적이 있으며, 고음이 과도하게 강조되는 경향이 있다. 이러한 이유로 순정 상태보다 이어팁 교체, 케이블 업그레이드 등으로 음색을 보정해 사용하는 경우가 많다.</p>
 <p>그럼에도 불구하고 IEM 입문자가 최소 비용으로 하이브리드·다드라이버 구성을 경험하기에 적합한 브랜드로 널리 인정받고 있다.</p>
+</section>
 </div></template>
 
 

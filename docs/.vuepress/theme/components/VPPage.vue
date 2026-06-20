@@ -125,4 +125,10 @@ html[data-theme='dark'] .tech-logos img[alt="GitHub"],
 html[data-theme='dark'] .tech-logos img[alt="ChatGPT"] {
   filter: invert(100%);
 }
+
+@media print {
+  .applause-wrapper {
+    display: none !important;
+  }
+}
 </style>

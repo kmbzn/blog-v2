@@ -1,5 +1,8 @@
-<template><div><h1 id="_5-agile" tabindex="-1"><a class="header-anchor" href="#_5-agile"><span>5. Agile</span></a></h1>
+<template><div><section class="print-section">
+<h1 id="_5-agile" tabindex="-1"><a class="header-anchor" href="#_5-agile"><span>5. Agile</span></a></h1>
 <DateMeta />
+</section>
+<section class="print-section">
 <h2 id="learning-goals" tabindex="-1"><a class="header-anchor" href="#learning-goals"><span>Learning Goals</span></a></h2>
 <ul>
 <li>Agile(애자일)을 iterative process practices(반복적 프로세스 프랙티스)의 집합이자 customer needs(고객 요구)와 development(개발)를 일치시키기 위한 business approach(비즈니스 접근 방식)로 정의</li>
@@ -7,16 +10,22 @@
 <li>scrum(스크럼)과 extreme programming(익스트림 프로그래밍) 요약, 프랙티스 이면의 동기 및 트레이드오프 제공</li>
 <li>주어진 현대 개발 프로세스에 가장 적합한 agile 전통의 process practices(프로세스 프랙티스) 식별 및 정당화</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="agile-software-development-is" tabindex="-1"><a class="header-anchor" href="#agile-software-development-is"><span>Agile Software Development Is…</span></a></h2>
 <ul>
 <li>다음 두 가지 모두 해당:</li>
 <li>(고품질 소프트웨어의 rapid delivery(신속한 전달)을 허용하는) software engineering best practices(소프트웨어 엔지니어링 모범 사례)의 집합</li>
 <li>(development(개발)을 customer needs(고객 요구) 및 goals(목표)와 일치시키는) business approach(비즈니스 접근 방식)</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="brief-history-of-agile" tabindex="-1"><a class="header-anchor" href="#brief-history-of-agile"><span>Brief History of Agile</span></a></h2>
 <ul>
 <li>[Agile의 간략한 역사 diagram]</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="the-manifesto-for-agile-software-development-2001" tabindex="-1"><a class="header-anchor" href="#the-manifesto-for-agile-software-development-2001"><span>The Manifesto for Agile Software Development(2001)</span></a></h2>
 <ul>
 <li>가치(Value)</li>
@@ -25,6 +34,8 @@
 <li>Contract negotiation(계약 협상)보다 Customer collaboration(고객과의 협력)</li>
 <li>Following a plan(계획 준수)보다 Responding to change(변화에 대응)</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="the-twelve-principles-of-agile-software-development" tabindex="-1"><a class="header-anchor" href="#the-twelve-principles-of-agile-software-development"><span>The Twelve Principles of Agile Software Development</span></a></h2>
 <ol>
 <li>Projects(프로젝트)는 motivated individuals(동기 부여된 개인)을 중심으로 구축되며, 이들은 신뢰받아야 함</li>
@@ -48,6 +59,8 @@
 </ul>
 </li>
 </ol>
+</section>
+<section class="print-section">
 <h2 id="agile-practices" tabindex="-1"><a class="header-anchor" href="#agile-practices"><span>Agile Practices</span></a></h2>
 <ul>
 <li>Backlogs(Product and Sprint)(백로그(제품 및 스프린트))</li>
@@ -80,12 +93,16 @@
 <li>Velocity tracking(속도 추적)</li>
 <li>Etc.</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="_40-hour-weeks" tabindex="-1"><a class="header-anchor" href="#_40-hour-weeks"><span>40-hour Weeks</span></a></h2>
 <ul>
 <li>2주 연속 overtime(초과 근무) 불가</li>
 <li>단발적인 overtime(초과 근무)라도 너무 잦으면 해결해야 할 더 깊은 문제의 징후</li>
 <li>불행히도, 특히 대한민국에서 따르기 가장 어려운 agile practice(애자일 프랙티스) 중 하나</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="planning-poker" tabindex="-1"><a class="header-anchor" href="#planning-poker"><span>Planning Poker</span></a></h2>
 <ul>
 <li>How to play(게임 방법)
@@ -103,6 +120,8 @@
 <li>Equal voice(동등한 발언권)</li>
 <li>Equal contribution(동등한 기여)</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="collective-ownership" tabindex="-1"><a class="header-anchor" href="#collective-ownership"><span>Collective Ownership</span></a></h2>
 <ul>
 <li>모든 programmer(프로그래머)는 기회가 보이면 언제든 시스템 어디에서나 모든 code(코드)를 개선</li>
@@ -110,11 +129,15 @@
 <li>Windows, Chrome, Android 등의 모든 라인을 누가 알 수 있는가</li>
 <li>더 작은 부분에 대해 collective ownership(공동 소유권) 구현 가능</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="kanban-board" tabindex="-1"><a class="header-anchor" href="#kanban-board"><span>Kanban Board</span></a></h2>
 <p>[Image of a Kanban board]</p>
 <ul>
 <li><a href="https://en.wikipedia.org/wiki/Kanban_board" target="_blank" rel="noopener noreferrer">https://en.wikipedia.org/wiki/Kanban_board</a></li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="simple-design" tabindex="-1"><a class="header-anchor" href="#simple-design"><span>Simple Design</span></a></h2>
 <ul>
 <li>&quot;모든 것을 한 번만 말하라&quot;
@@ -123,12 +146,16 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="on-site-customer" tabindex="-1"><a class="header-anchor" href="#on-site-customer"><span>On-site Customer</span></a></h2>
 <ul>
 <li>customer(고객)가 team(팀)과 full-time(상시) 함께 자리함</li>
 <li>On-site customer(상주 고객)는 특히 requirement elicitation(요구사항 도출) 및 testing(테스팅)에 매우 효과적</li>
 <li>불행히도, on-site customer(상주 고객)는 따르기 가장 어려운 agile practice(애자일 프랙티스) 중 하나</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="pair-programming" tabindex="-1"><a class="header-anchor" href="#pair-programming"><span>Pair Programming</span></a></h2>
 <ul>
 <li>Developers(개발자)가 pairs(쌍)을 이뤄 작업하며, 서로의 작업을 checking(확인)하고 항상 좋은 작업을 수행하도록 support(지원) 제공</li>
@@ -136,26 +163,36 @@
 <li>Driver(드라이버)는 code(코드) 작성</li>
 <li>Navigator(내비게이터)는 Driver(드라이버) 안내</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="short-development-cycle" tabindex="-1"><a class="header-anchor" href="#short-development-cycle"><span>Short Development Cycle</span></a></h2>
 <ul>
 <li>software development process(소프트웨어 개발 프로세스)가 design phase(설계 단계)부터 implementation phase(구현 단계), test(테스트) 및 deployment phase(배포 단계)까지의 전체 software development cycle(소프트웨어 개발 주기)이 short timespan(짧은 기간)(보통 몇 달 또는 몇 주) 내에 수행되는 방식으로 구성됨</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="small-releases" tabindex="-1"><a class="header-anchor" href="#small-releases"><span>Small Releases</span></a></h2>
 <ul>
 <li>시스템은 전체 문제를 해결하기 전, 몇 달 내에 production(운영 환경)에 배포됨</li>
 <li>새로운 releases(릴리스)는 매일에서 매월까지 자주 이루어짐</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="continuous-integration-ci" tabindex="-1"><a class="header-anchor" href="#continuous-integration-ci"><span>Continuous Integration(CI)</span></a></h2>
 <ul>
 <li>새로운 code(코드)는 최대 몇 시간 내에 현재 system(시스템)과 integrated(통합)됨</li>
 <li>통합 시, system(시스템)은 처음부터 built(빌드)되며 모든 tests(테스트)가 통과해야 함. 그렇지 않으면 변경 사항은 discarded(폐기)됨</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="test-driven-development" tabindex="-1"><a class="header-anchor" href="#test-driven-development"><span>Test-driven Development</span></a></h2>
 <ul>
 <li>Programmers(프로그래머)는 분 단위로 unit tests(단위 테스트) 작성</li>
 <li>이 tests(테스트)들은 수집되며, 모두 올바르게 실행되어야 함</li>
 <li>Customers(고객)는 iteration(반복) 내의 stories(스토리)에 대한 functional tests(기능 테스트) 작성</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="open-workspace" tabindex="-1"><a class="header-anchor" href="#open-workspace"><span>Open Workspace</span></a></h2>
 <ul>
 <li>Pros(장점)</li>
@@ -167,7 +204,11 @@
 <li>Distractions(집중 방해 요소)</li>
 <li>Anxiety(불안감)</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="software-development-problems-and-mitigating-agile-methods" tabindex="-1"><a class="header-anchor" href="#software-development-problems-and-mitigating-agile-methods"><span>Software Development Problems and Mitigating Agile Methods</span></a></h2>
+</section>
+<section class="print-section">
 <h3 id="requirement-changes-요구사항-변경" tabindex="-1"><a class="header-anchor" href="#requirement-changes-요구사항-변경"><span>Requirement changes(요구사항 변경)</span></a></h3>
 <ul>
 <li>Close relation with customer(고객과의 긴밀한 관계)</li>
@@ -176,17 +217,23 @@
 <li>Planning poker</li>
 <li>Kanban board</li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="scope-creep-범위-증가" tabindex="-1"><a class="header-anchor" href="#scope-creep-범위-증가"><span>Scope creep(범위 증가)</span></a></h3>
 <ul>
 <li>Short development cycle</li>
 <li>Small releases</li>
 <li>Planning poker</li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="architecture-erosion-아키텍처-침식" tabindex="-1"><a class="header-anchor" href="#architecture-erosion-아키텍처-침식"><span>Architecture erosion(아키텍처 침식)</span></a></h3>
 <ul>
 <li>Collective ownership(공동 소유권)</li>
 <li>Pair programming(페어 프로그래밍)</li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="under-or-overestimation-과소-또는-과대-추정-시간-및-예산-sticking-to-the-plan-계획-고수" tabindex="-1"><a class="header-anchor" href="#under-or-overestimation-과소-또는-과대-추정-시간-및-예산-sticking-to-the-plan-계획-고수"><span>Under- or overestimation(과소 또는 과대 추정)(시간 및 예산), sticking to the plan(계획 고수)</span></a></h3>
 <ul>
 <li>Close relation with customer</li>
@@ -194,15 +241,21 @@
 <li>Short development cycle</li>
 <li>Small releases</li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="bringing-in-new-developers-신규-개발자-투입-교육-시간-및-노력-steep-learning-curve-가파른-학습-곡선" tabindex="-1"><a class="header-anchor" href="#bringing-in-new-developers-신규-개발자-투입-교육-시간-및-노력-steep-learning-curve-가파른-학습-곡선"><span>Bringing in new developers(신규 개발자 투입)(교육 시간 및 노력), steep learning curve(가파른 학습 곡선)</span></a></h3>
 <ul>
 <li>Collective ownership</li>
 <li>Planning poker</li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="change-of-management-개발-과정-중-경영진-변경" tabindex="-1"><a class="header-anchor" href="#change-of-management-개발-과정-중-경영진-변경"><span>Change of management(개발 과정 중 경영진 변경)</span></a></h3>
 <ul>
 <li>Close relationship with customer</li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="introducing-new-bugs-소프트웨어-개발-중-새로운-버그-발생" tabindex="-1"><a class="header-anchor" href="#introducing-new-bugs-소프트웨어-개발-중-새로운-버그-발생"><span>Introducing new bugs(소프트웨어 개발 중 새로운 버그 발생)</span></a></h3>
 <ul>
 <li>40-hour week(주 40시간 근무)</li>
@@ -213,19 +266,27 @@
 <li>CI(지속적인 통합)</li>
 <li>Pair programming</li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="challenge-of-communication-의사소통의-어려움" tabindex="-1"><a class="header-anchor" href="#challenge-of-communication-의사소통의-어려움"><span>Challenge of communication(의사소통의 어려움)</span></a></h3>
 <ul>
 <li>Close relation with customer</li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="developer-turnover-개발자-이직" tabindex="-1"><a class="header-anchor" href="#developer-turnover-개발자-이직"><span>Developer turnover(개발자 이직)</span></a></h3>
 <ul>
 <li>Collective ownership</li>
 <li>40-hour week</li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="integration-issues-통합-문제" tabindex="-1"><a class="header-anchor" href="#integration-issues-통합-문제"><span>Integration issues(통합 문제)</span></a></h3>
 <ul>
 <li>Collective ownership</li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="difficulty-of-tracking-bugs-버그-추적의-어려움" tabindex="-1"><a class="header-anchor" href="#difficulty-of-tracking-bugs-버그-추적의-어려움"><span>Difficulty of tracking bugs(버그 추적의 어려움)</span></a></h3>
 <ul>
 <li>Collective ownership</li>
@@ -234,28 +295,42 @@
 <li>CI</li>
 <li>Tests</li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="disagreement-between-developers-개발자-간-불일치" tabindex="-1"><a class="header-anchor" href="#disagreement-between-developers-개발자-간-불일치"><span>Disagreement between developers(개발자 간 불일치)</span></a></h3>
 <ul>
 <li>Close relation with customer</li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="scheduling-problems-일정-문제-global-team-글로벌-팀" tabindex="-1"><a class="header-anchor" href="#scheduling-problems-일정-문제-global-team-글로벌-팀"><span>Scheduling problems(일정 문제)(global team(글로벌 팀))</span></a></h3>
 <ul>
 <li>Close relation with customer</li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="groupthink-그룹싱크-개발자들이-서로-동의하는-경향-공통-사고-fear-of-hurting-the-feelings-다른-개발자-감정-상할까-봐-두려움" tabindex="-1"><a class="header-anchor" href="#groupthink-그룹싱크-개발자들이-서로-동의하는-경향-공통-사고-fear-of-hurting-the-feelings-다른-개발자-감정-상할까-봐-두려움"><span>&quot;Groupthink&quot;(그룹싱크)(개발자들이 서로 동의하는 경향, 공통 사고), fear of hurting the feelings(다른 개발자 감정 상할까 봐 두려움)</span></a></h3>
 <ul>
 <li>Planning poker</li>
 <li>Pair programming</li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="challenges-with-integrating-with-legacy-code-레거시-코드-통합의-어려움" tabindex="-1"><a class="header-anchor" href="#challenges-with-integrating-with-legacy-code-레거시-코드-통합의-어려움"><span>Challenges with integrating with legacy code(레거시 코드 통합의 어려움)</span></a></h3>
 <ul>
 <li>Collective ownership</li>
 </ul>
+</section>
+<section class="print-section">
 <h1 id="scrum" tabindex="-1"><a class="header-anchor" href="#scrum"><span>Scrum</span></a></h1>
+</section>
+<section class="print-section">
 <h2 id="introduction-to-scrum" tabindex="-1"><a class="header-anchor" href="#introduction-to-scrum"><span>Introduction to Scrum</span></a></h2>
 <ul>
 <li>[Image illustrating the Scrum framework]</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="elements-of-scrum" tabindex="-1"><a class="header-anchor" href="#elements-of-scrum"><span>Elements of Scrum</span></a></h2>
 <ul>
 <li>Products(산출물):
@@ -273,6 +348,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="product-backlog-sprint-backlog" tabindex="-1"><a class="header-anchor" href="#product-backlog-sprint-backlog"><span>Product Backlog / Sprint Backlog</span></a></h2>
 <ul>
 <li>product backlog(제품 백로그)는 product(제품)를 위한 모든 features(기능)</li>
@@ -283,7 +360,11 @@
 <li>Acceptance criteria(인수 기준)이 정의되어야 함</li>
 <li>User Stories(사용자 스토리)가 자주 사용됨</li>
 </ul>
+</section>
+<section class="print-section">
 <h1 id="backlog-–-information-radiators" tabindex="-1"><a class="header-anchor" href="#backlog-–-information-radiators"><span>Backlog – Information Radiators</span></a></h1>
+</section>
+<section class="print-section">
 <h2 id="scrum-meetings" tabindex="-1"><a class="header-anchor" href="#scrum-meetings"><span>Scrum Meetings</span></a></h2>
 <ul>
 <li>Sprint Planning Meeting(스프린트 계획 회의)</li>
@@ -296,10 +377,14 @@
 <li>Sprint Review Meeting(스프린트 검토 회의)</li>
 <li>Product(제품) 검토</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="user-stories" tabindex="-1"><a class="header-anchor" href="#user-stories"><span>User Stories</span></a></h2>
 <ul>
 <li>[Image illustrating the user story format]</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="the-card" tabindex="-1"><a class="header-anchor" href="#the-card"><span>The Card</span></a></h2>
 <blockquote>
 <p>&quot;As a [role], I want [function], so that [value]&quot; -&gt; &quot;[역할]로서, [가치]를 위해 [기능]을 원한다&quot;</p>
@@ -307,24 +392,34 @@
 <ul>
 <li>3x5 카드에 맞아야 함</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="the-conversation" tabindex="-1"><a class="header-anchor" href="#the-conversation"><span>The Conversation</span></a></h2>
 <ul>
 <li>project(프로젝트)에 참여하는 모든 사람과 client(고객) 간의 열린 dialog(대화)</li>
 <li>필요시 Epic Stories(에픽 스토리) 분할</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="the-confirmation" tabindex="-1"><a class="header-anchor" href="#the-confirmation"><span>The Confirmation</span></a></h2>
 <ul>
 <li>task(작업)이 완료되었을 때를 보여주는 confirmation criterion(확인 기준)</li>
 <li>automated(자동화)되거나 manual(수동)일 수 있음</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="how-to-evaluate-user-story" tabindex="-1"><a class="header-anchor" href="#how-to-evaluate-user-story"><span>How to Evaluate User Story?</span></a></h2>
 <ul>
 <li><a href="http://dev.one80services.com/user-stories/writing-good-user-stories-hint-its-not-about-writing/" target="_blank" rel="noopener noreferrer">http://dev.one80services.com/user-stories/writing-good-user-stories-hint-its-not-about-writing/</a></li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="extreme-programming-xp" tabindex="-1"><a class="header-anchor" href="#extreme-programming-xp"><span>eXtreme Programming(XP)</span></a></h2>
 <ul>
 <li>[Image comparing human evolution to XP evolution]</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="xp-practices-subset-of-agile" tabindex="-1"><a class="header-anchor" href="#xp-practices-subset-of-agile"><span>XP Practices(subset of Agile!)</span></a></h2>
 <ul>
 <li>TDD(test-first approach)(테스트 우선 접근 방식)</li>
@@ -340,6 +435,8 @@
 <li>Sustainable pace(지속 가능한 속도). 40 hour work weeks(주 40시간 근무)</li>
 <li>Coding standards(코딩 표준), 특히 모든 code(코드)가 항상 변경될 수 있으므로</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="scrum-vs-xp" tabindex="-1"><a class="header-anchor" href="#scrum-vs-xp"><span>Scrum vs XP</span></a></h2>
 <table>
 <thead>
@@ -377,6 +474,8 @@
 </tr>
 </tbody>
 </table>
+</section>
+<section class="print-section">
 <h2 id="the-manifesto-for-agile-software-development-2001-1" tabindex="-1"><a class="header-anchor" href="#the-manifesto-for-agile-software-development-2001-1"><span>The Manifesto for Agile Software Development(2001)</span></a></h2>
 <ul>
 <li>가치(Value)</li>
@@ -385,6 +484,7 @@
 <li>Contract negotiation(계약 협상)보다 Customer collaboration(고객과의 협력)</li>
 <li>Following a plan(계획 준수)보다 Responding to change(변화에 대응)</li>
 </ul>
+</section>
 </div></template>
 
 

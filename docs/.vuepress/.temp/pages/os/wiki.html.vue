@@ -1,10 +1,19 @@
-<template><div><h1 id="project-02-xv6-risc-v-kernel-level-threads-implementation-wiki" tabindex="-1"><a class="header-anchor" href="#project-02-xv6-risc-v-kernel-level-threads-implementation-wiki"><span>Project 02: xv6 RISC-V Kernel-Level Threads Implementation - wiki</span></a></h1>
+<template><div><section class="print-section">
+<h1 id="project-02-xv6-risc-v-kernel-level-threads-implementation-wiki" tabindex="-1"><a class="header-anchor" href="#project-02-xv6-risc-v-kernel-level-threads-implementation-wiki"><span>Project 02: xv6 RISC-V Kernel-Level Threads Implementation - wiki</span></a></h1>
 <DateMeta />
+</section>
+<section class="print-section">
 <h2 id="design" tabindex="-1"><a class="header-anchor" href="#design"><span>Design</span></a></h2>
+</section>
+<section class="print-section">
 <h3 id="project-overview" tabindex="-1"><a class="header-anchor" href="#project-overview"><span>Project Overview</span></a></h3>
 <p>본 project의 핵심 목표는 xv6 RISC-V 기반 운영체제에 <strong>kernel-level thread</strong> (커널 수준 thread) 기능을 추가하는 것이다. xv6는 MIT에서 교육 목적으로 설계한 간결한 UNIX 기반 OS로, 다중 프로세스(multiprocessing)는 지원하지만 다중 스레드(multithreading)는 지원하지 않는다. 본 project는 <strong>기존 xv6의 process 관리 구조를 최대한 활용하면서</strong>, thread의 실행 컨텍스트(context), 자원 공유 방식, 동기화 시나리오 등을 구현하는 데 중점을 둔다.</p>
 <p>Thread는 process와 달리 주소 공간을 공유하며, 사용자 수준 stack과 register만 독립적이다. 따라서 xv6의 <code v-pre>proc</code> 구조체를 그대로 재활용하되, thread 여부를 나타내는 flag <code v-pre>is_thread</code>를 새롭게 추가하고, 그에 따라 <code v-pre>clone()</code>, <code v-pre>join()</code>, <code v-pre>exec()</code>, <code v-pre>kill()</code>, <code v-pre>sleep()</code>, <code v-pre>wakeup()</code> 등의 동작을 수정하였다.</p>
+</section>
+<section class="print-section">
 <h3 id="design-principles-and-requirements-strategy" tabindex="-1"><a class="header-anchor" href="#design-principles-and-requirements-strategy"><span>Design Principles and Requirements Strategy</span></a></h3>
+</section>
+<section class="print-section">
 <h4 id="_1-address-space-sharing-pagetable" tabindex="-1"><a class="header-anchor" href="#_1-address-space-sharing-pagetable"><span>1. Address Space Sharing (<code v-pre>pagetable</code>)</span></a></h4>
 <p>Thread의 본질은 <strong>하나의 주소 공간을 공유하는 다중 실행 경로</strong>이다. 따라서 <code v-pre>clone()</code>으로 새 thread를 생성할 때에는 <code v-pre>fork()</code>처럼 새로운 <code v-pre>pagetable</code>을 복사해서는 안 되고, 기존 process의 pagetable을 <strong>공유</strong>해야 한다. 단, trapframe과 context는 thread마다 개별적으로 가져야 하므로 <code v-pre>allocproc()</code>을 통해 새로운 <code v-pre>proc</code>을 할당한다.</p>
 <p><strong>변경 사항</strong></p>
@@ -12,6 +21,8 @@
 <li><code v-pre>uvmshare()</code> 함수를 직접 구현하여, 부모의 user PTE를 자식 pagetable에 직접 매핑함.</li>
 <li><code v-pre>clone()</code>에서 <code v-pre>np-&gt;pagetable = proc_pagetable(np);</code> 후 <code v-pre>uvmshare(np-&gt;pagetable, p-&gt;pagetable, p-&gt;sz);</code> 호출</li>
 </ul>
+</section>
+<section class="print-section">
 <h4 id="_2-user-stack-separation" tabindex="-1"><a class="header-anchor" href="#_2-user-stack-separation"><span>2. User Stack Separation</span></a></h4>
 <p>각 thread는 독립된 사용자 stack을 필요로 한다. 따라서 사용자 영역에서 <code v-pre>thread_create()</code>가 호출되면, <code v-pre>sbrk(PGSIZE)</code>로 1page 단위의 stack memory를 할당하고, 해당 주소를 <code v-pre>clone()</code>에 인자로 전달해야 한다. kernel에서는 <code v-pre>trapframe-&gt;sp</code>를 해당 주소의 top(<code v-pre>+PGSIZE</code>)로 설정하여 실행을 개시한다.</p>
 <p><strong>변경 사항</strong></p>
@@ -19,6 +30,8 @@
 <li><code v-pre>thread_create()</code>에서 page-aligned stack을 확보 (<code v-pre>s = sbrk(PGSIZE)</code>), 실패 시 -1 반환</li>
 <li><code v-pre>clone()</code> 내에서 stack 유효성 검증: null 체크, page-alignment 확인, <code v-pre>walkaddr()</code>로 물리 주소 검증</li>
 </ul>
+</section>
+<section class="print-section">
 <h4 id="_3-function-pointer-based-thread-entry-point" tabindex="-1"><a class="header-anchor" href="#_3-function-pointer-based-thread-entry-point"><span>3. Function Pointer-Based Thread Entry Point</span></a></h4>
 <p>xv6에서는 유저 함수 포인터를 직접 trapframe에 설정하여 진입점을 제공해야 한다. 따라서 <code v-pre>clone()</code>에서 <code v-pre>np-&gt;trapframe-&gt;epc = (uint64)fcn;</code>으로 fcn을 설정하고, arg1과 arg2는 각각 <code v-pre>a0</code>, <code v-pre>a1</code> register에 세팅한다. 이로써 새로 생성된 thread는 <code v-pre>usertrapret()</code> 이후 해당 함수로 jump하게 된다.</p>
 <p><strong>특이점</strong></p>
@@ -26,6 +39,8 @@
 <li>본 과제에서는 <code v-pre>fcn == 0x0</code> 인 경우가 정상적이며, 과제 명세에서 제공한 테스트가 이를 강제적으로 설정해두었음 → 무효 주소가 아님</li>
 <li>따라서 <code v-pre>fcn == 0</code>일 경우 예외 처리하지 않도록 함</li>
 </ul>
+</section>
+<section class="print-section">
 <h4 id="_4-thread-identification-is-thread" tabindex="-1"><a class="header-anchor" href="#_4-thread-identification-is-thread"><span>4. Thread Identification (<code v-pre>is_thread</code>)</span></a></h4>
 <p>process와 thread를 구분하기 위해 <code v-pre>proc</code> 구조체에 <code v-pre>is_thread</code> flag를 추가하였다. 이를 통해 <code v-pre>join()</code>, <code v-pre>exec()</code>, <code v-pre>kill()</code> 등에서 조건 분기를 수행할 수 있다.</p>
 <p><strong>적용 위치</strong></p>
@@ -33,6 +48,8 @@
 <li><code v-pre>clone()</code>에서는 <code v-pre>np-&gt;is_thread = 1;</code></li>
 <li><code v-pre>fork()</code>에서는 <code v-pre>np-&gt;is_thread = 0;</code>로 명시적으로 초기화</li>
 </ul>
+</section>
+<section class="print-section">
 <h4 id="_5-stack-address-reclamation-on-exit" tabindex="-1"><a class="header-anchor" href="#_5-stack-address-reclamation-on-exit"><span>5. Stack Address Reclamation on Exit</span></a></h4>
 <p>thread가 종료되면, 그 thread가 사용하던 stack은 더 이상 사용되지 않으므로, <code v-pre>join()</code> 시 해당 주소를 user에게 넘겨 <code v-pre>sbrk(-PGSIZE)</code>로 memory를 반납해야 한다.</p>
 <p><strong>구현 방식</strong></p>
@@ -41,6 +58,8 @@
 <li><code v-pre>join()</code> 시 <code v-pre>copyout()</code>을 통해 user stack 주소 전달</li>
 <li><code v-pre>thread_join()</code>에서 <code v-pre>sbrk(-PGSIZE)</code>로 회수</li>
 </ul>
+</section>
+<section class="print-section">
 <h4 id="_6-remove-all-threads-on-exec" tabindex="-1"><a class="header-anchor" href="#_6-remove-all-threads-on-exec"><span>6. Remove All Threads on <code v-pre>exec()</code></span></a></h4>
 <p><code v-pre>exec()</code>는 해당 process의 pagetable을 완전히 덮어씌우는 작업이다. 따라서 같은 pagetable을 공유하는 다른 thread들도 모두 제거하지 않으면 memory corruption이 발생한다.</p>
 <p><strong>해결 방식</strong></p>
@@ -48,6 +67,8 @@
 <li><code v-pre>exec()</code> 진입 시, <code v-pre>proc[NPROC]</code>을 순회하며 <code v-pre>pagetable == p-&gt;pagetable &amp;&amp; p != self</code>인 모든 proc에 대해 <code v-pre>freeproc()</code> 호출</li>
 <li>이후 새로운 pagetable을 <code v-pre>proc_pagetable()</code>로 재생성하고, ELF 바이너리 로드 수행</li>
 </ul>
+</section>
+<section class="print-section">
 <h4 id="_7-terminate-all-threads-on-kill" tabindex="-1"><a class="header-anchor" href="#_7-terminate-all-threads-on-kill"><span>7. Terminate All Threads on <code v-pre>kill()</code></span></a></h4>
 <p>RISC-V에서는 process를 죽이기 위해선 그 주소 공간을 공유하는 모든 thread를 종료시켜야 한다. 따라서 <code v-pre>kill(pid)</code>는 단일 pid를 대상으로 하되, 내부적으로는 해당 pagetable을 공유하는 모든 proc을 종료 처리해야 한다.</p>
 <p><strong>변경 사항</strong></p>
@@ -55,14 +76,20 @@
 <li><code v-pre>kill()</code> 내부에서 <code v-pre>target-&gt;pagetable</code>을 기준으로, 같은 pagetable을 공유하는 모든 proc에 대해 <code v-pre>p-&gt;killed = 1</code> 설정</li>
 <li><code v-pre>SLEEPING</code> 상태인 thread는 <code v-pre>RUNNABLE</code>로 변경하여 <code v-pre>sched()</code>에 진입 가능하게 함</li>
 </ul>
+</section>
+<section class="print-section">
 <h4 id="_8-separate-wait-join" tabindex="-1"><a class="header-anchor" href="#_8-separate-wait-join"><span>8. Separate wait/join</span></a></h4>
 <ul>
 <li>기존의 <code v-pre>wait()</code>는 process만 수거해야 한다.</li>
 <li>thread는 <code v-pre>join()</code>을 통해 수거하므로 <code v-pre>wait()</code>와는 독립적으로 구현된다.</li>
 <li><code v-pre>join()</code>은 <code v-pre>proc[NPROC]</code>을 순회하며 <code v-pre>parent == myproc()</code>이고 <code v-pre>is_thread == 1</code>이며 <code v-pre>ZOMBIE</code> 상태인 thread를 찾아 회수한다.</li>
 </ul>
+</section>
+<section class="print-section">
 <h4 id="_9-guarantee-sleep-wakeup-semantics" tabindex="-1"><a class="header-anchor" href="#_9-guarantee-sleep-wakeup-semantics"><span>9. Guarantee sleep/wakeup Semantics</span></a></h4>
 <p>thread가 <code v-pre>sleep()</code> 상태에 들어갈 때, <code v-pre>p-&gt;lock</code>을 반드시 먼저 획득한 후 <code v-pre>sched()</code>로 넘겨야 <code v-pre>wakeup()</code>에서의 동기화 문제가 발생하지 않는다. 이 구조는 기존 xv6에서 그대로 유지되며, thread 환경에서도 문제가 없다.</p>
+</section>
+<section class="print-section">
 <h3 id="design-key-summary" tabindex="-1"><a class="header-anchor" href="#design-key-summary"><span>Design Key Summary</span></a></h3>
 <table>
 <thead>
@@ -115,7 +142,11 @@
 </tbody>
 </table>
 <p>이러한 일관된 설계를 기반으로, xv6 위에 안전하고 가벼운 kernel thread 시스템을 구현할 수 있었으며, 이는 과제 명세에서 제공한 <code v-pre>thread_test.c</code>의 모든 테스트를 통과함으로써 그 기능적 완성도를 입증하였다.</p>
+</section>
+<section class="print-section">
 <h2 id="implementation" tabindex="-1"><a class="header-anchor" href="#implementation"><span>Implementation</span></a></h2>
+</section>
+<section class="print-section">
 <h3 id="overall-structure-overview" tabindex="-1"><a class="header-anchor" href="#overall-structure-overview"><span>Overall Structure Overview</span></a></h3>
 <p>이번 project는 xv6의 kernel과 사용자 영역 양쪽에 걸쳐 <strong>thread 시스템 전반을 아우르는 구현 변경</strong>을 필요로 한다. 구현은 크게 아래 4가지 layer로 나뉜다.</p>
 <ul>
@@ -125,7 +156,11 @@
 <li><strong>빌드 시스템 및 실행 파일 구성 (Makefile 변경)</strong></li>
 </ul>
 <p>각 영역에 대해 세부 구현과 핵심 변경 포인트를 순서대로 설명할 것이다.</p>
+</section>
+<section class="print-section">
 <h3 id="_1-system-call-implementation-kernel-sysproc-c" tabindex="-1"><a class="header-anchor" href="#_1-system-call-implementation-kernel-sysproc-c"><span>1. System Call Implementation (<code v-pre>kernel/sysproc.c</code>)</span></a></h3>
+</section>
+<section class="print-section">
 <h4 id="sys-clone" tabindex="-1"><a class="header-anchor" href="#sys-clone"><span><code v-pre>sys_clone()</code></span></a></h4>
 <div class="language-c line-numbers-mode" data-highlighter="prismjs" data-ext="c"><pre v-pre><code class="language-c"><span class="line">uint64 <span class="token function">sys_clone</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span></span>
 <span class="line"><span class="token punctuation">{</span></span>
@@ -142,6 +177,8 @@
 <li>인자의 순서와 의미는 <code v-pre>clone(void(*fcn)(void*,void*), void*, void*, void*)</code>와 정확히 일치하도록 전달된다.</li>
 <li>함수 포인터 주소(<code v-pre>fcn</code>)도 user space 값이므로 <code v-pre>uint64</code>로 처리한다.</li>
 </ul>
+</section>
+<section class="print-section">
 <h4 id="sys-join" tabindex="-1"><a class="header-anchor" href="#sys-join"><span>sys_join()</span></a></h4>
 <div class="language-c line-numbers-mode" data-highlighter="prismjs" data-ext="c"><pre v-pre><code class="language-c"><span class="line">uint64 <span class="token function">sys_join</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span></span>
 <span class="line"><span class="token punctuation">{</span></span>
@@ -154,7 +191,11 @@
 <li><code v-pre>join()</code>은 (void**) 형태로 user stack address를 전달받는다.</li>
 <li><code v-pre>void **stack</code> 형태를 <code v-pre>uint64</code>로 받되, 커널 내부에서는 type casting으로 복원한다.</li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="_2-kernel-internal-functions-kernel-proc-c" tabindex="-1"><a class="header-anchor" href="#_2-kernel-internal-functions-kernel-proc-c"><span>2. Kernel Internal Functions (<code v-pre>kernel/proc.c</code>)</span></a></h3>
+</section>
+<section class="print-section">
 <h4 id="clone" tabindex="-1"><a class="header-anchor" href="#clone"><span><code v-pre>clone()</code></span></a></h4>
 <ul>
 <li><code v-pre>allocproc()</code>을 통해 새로운 TCB를 할당한다.</li>
@@ -171,12 +212,16 @@
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul>
 <li><code v-pre>np-&gt;ustack = (uint64)stack;</code>은 join에서 stack 주소를 유저에 전달하기 위해 따로 저장하는 값이다.</li>
 </ul>
+</section>
+<section class="print-section">
 <h4 id="join" tabindex="-1"><a class="header-anchor" href="#join"><span><code v-pre>join()</code></span></a></h4>
 <ul>
 <li><code v-pre>proc[]</code> 배열 전체를 순회하며, <code v-pre>parent == myproc()</code>이면서 <code v-pre>is_thread == 1</code>인 자식만 확인한다.</li>
 <li><code v-pre>state == ZOMBIE</code>인 thread를 발견하면 <code v-pre>freeproc()</code>으로 회수하고, 그 thread의 <code v-pre>ustack</code> 값을 <code v-pre>copyout()</code>을 통해 유저에게 전달한다.</li>
 <li>수거할 thread가 없으면 sleep 상태로 대기한다.</li>
 </ul>
+</section>
+<section class="print-section">
 <h4 id="exec" tabindex="-1"><a class="header-anchor" href="#exec"><span><code v-pre>exec()</code></span></a></h4>
 <div class="language-c line-numbers-mode" data-highlighter="prismjs" data-ext="c"><pre v-pre><code class="language-c"><span class="line"><span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">struct</span> <span class="token class-name">proc</span> <span class="token operator">*</span>q <span class="token operator">=</span> proc<span class="token punctuation">;</span> q <span class="token operator">&lt;</span> <span class="token operator">&amp;</span>proc<span class="token punctuation">[</span>NPROC<span class="token punctuation">]</span><span class="token punctuation">;</span> q<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span></span>
 <span class="line">  <span class="token keyword">if</span><span class="token punctuation">(</span>q <span class="token operator">!=</span> p <span class="token operator">&amp;&amp;</span> q<span class="token operator">-></span>pagetable <span class="token operator">==</span> p<span class="token operator">-></span>pagetable<span class="token punctuation">)</span> <span class="token punctuation">{</span></span>
@@ -190,6 +235,8 @@
 <li><code v-pre>exec</code>을 호출한 현재 thread를 제외한, 같은 주소 공간을 공유하는 thread를 모두 제거한다.</li>
 <li>이 동작은 새로운 pagetable을 세팅하기 전에 반드시 이루어져야 한다.</li>
 </ul>
+</section>
+<section class="print-section">
 <h4 id="kill" tabindex="-1"><a class="header-anchor" href="#kill"><span><code v-pre>kill()</code></span></a></h4>
 <div class="language-c line-numbers-mode" data-highlighter="prismjs" data-ext="c"><pre v-pre><code class="language-c"><span class="line"><span class="token keyword">for</span> <span class="token punctuation">(</span>p <span class="token operator">=</span> proc<span class="token punctuation">;</span> p <span class="token operator">&lt;</span> <span class="token operator">&amp;</span>proc<span class="token punctuation">[</span>NPROC<span class="token punctuation">]</span><span class="token punctuation">;</span> p<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span></span>
 <span class="line">  <span class="token keyword">if</span> <span class="token punctuation">(</span>p<span class="token operator">-></span>pagetable <span class="token operator">==</span> target<span class="token operator">-></span>pagetable<span class="token punctuation">)</span> <span class="token punctuation">{</span></span>
@@ -203,12 +250,18 @@
 <li>단일 <code v-pre>pid</code>가 아닌 <strong>동일 주소 공간(pagetable)을 공유하는 모든 proc</strong>에 대해 <code v-pre>killed = 1</code> 설정</li>
 <li>이는 multi-thread 환경에서 올바른 <code v-pre>kill</code> semantics를 보장하기 위함이다.</li>
 </ul>
+</section>
+<section class="print-section">
 <h4 id="fork" tabindex="-1"><a class="header-anchor" href="#fork"><span><code v-pre>fork()</code></span></a></h4>
 <ul>
 <li>기존과 거의 동일하나, <code v-pre>is_thread = 0</code>으로 초기화하여 완전한 process 복제가 되도록 한다.</li>
 <li>thread가 아닌 process는 반드시 독립적인 주소 공간을 가진다.</li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="_3-user-level-library-user-thread-c-user-thread-h" tabindex="-1"><a class="header-anchor" href="#_3-user-level-library-user-thread-c-user-thread-h"><span>3. User-Level Library (<code v-pre>user/thread.c</code>, <code v-pre>user/thread.h</code>)</span></a></h3>
+</section>
+<section class="print-section">
 <h4 id="thread-create" tabindex="-1"><a class="header-anchor" href="#thread-create"><span><code v-pre>thread_create()</code></span></a></h4>
 <div class="language-c line-numbers-mode" data-highlighter="prismjs" data-ext="c"><pre v-pre><code class="language-c"><span class="line"><span class="token keyword">void</span> <span class="token operator">*</span>s <span class="token operator">=</span> <span class="token function">sbrk</span><span class="token punctuation">(</span>PGSIZE<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
 <span class="line"><span class="token keyword">if</span> <span class="token punctuation">(</span>s <span class="token operator">==</span> <span class="token punctuation">(</span><span class="token keyword">void</span><span class="token operator">*</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token number">1</span> <span class="token operator">||</span> <span class="token punctuation">(</span>uint64<span class="token punctuation">)</span>s <span class="token operator">%</span> PGSIZE<span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span></span>
@@ -218,6 +271,8 @@
 <li>Stack은 반드시 4KB 단위로 page-aligned 되어야 하며, 그렇지 않으면 clone이 실패한다.</li>
 <li>stack 할당은 동적이며, 유저가 직접 메모리를 할당하지 않아도 내부적으로 처리된다.</li>
 </ul>
+</section>
+<section class="print-section">
 <h4 id="thread-join" tabindex="-1"><a class="header-anchor" href="#thread-join"><span><code v-pre>thread_join()</code></span></a></h4>
 <div class="language-c line-numbers-mode" data-highlighter="prismjs" data-ext="c"><pre v-pre><code class="language-c"><span class="line"><span class="token keyword">void</span> <span class="token operator">*</span>s <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span></span>
 <span class="line"><span class="token keyword">int</span> pid <span class="token operator">=</span> <span class="token function">join</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>s<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
@@ -227,6 +282,8 @@
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul>
 <li>join이 성공적으로 종료된 thread의 stack 주소를 전달해주면, 이를 <code v-pre>sbrk(-PGSIZE)</code>로 반납하여 memory leak을 방지한다.</li>
 </ul>
+</section>
+<section class="print-section">
 <h4 id="thread-h" tabindex="-1"><a class="header-anchor" href="#thread-h"><span>thread.h</span></a></h4>
 <div class="language-c line-numbers-mode" data-highlighter="prismjs" data-ext="c"><pre v-pre><code class="language-c"><span class="line"><span class="token keyword">int</span> <span class="token function">thread_create</span><span class="token punctuation">(</span><span class="token keyword">void</span> <span class="token punctuation">(</span><span class="token operator">*</span>fcn<span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token operator">*</span><span class="token punctuation">,</span> <span class="token keyword">void</span><span class="token operator">*</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token keyword">void</span> <span class="token operator">*</span>arg1<span class="token punctuation">,</span> <span class="token keyword">void</span> <span class="token operator">*</span>arg2<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
 <span class="line"><span class="token keyword">int</span> <span class="token function">thread_join</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
@@ -235,6 +292,8 @@
 <li>사용자 레벨 API는 기존 pthread 스타일을 모방하여 최소한의 인터페이스를 제공한다.</li>
 <li>실제 시스템 콜은 내부적으로 clone/join을 호출한다.</li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="_4-build-configuration-changes-makefile-user" tabindex="-1"><a class="header-anchor" href="#_4-build-configuration-changes-makefile-user"><span>4. Build Configuration Changes (<code v-pre>Makefile.user</code>)</span></a></h3>
 <div class="language-makefile line-numbers-mode" data-highlighter="prismjs" data-ext="makefile"><pre v-pre><code class="language-makefile"><span class="line"><span class="token target symbol"><span class="token variable">$U/_thread_test</span></span><span class="token punctuation">:</span> <span class="token variable">$U/thread_test.o</span> <span class="token variable">$U/thread.o</span> <span class="token variable">$</span><span class="token punctuation">(</span>ULIB<span class="token punctuation">)</span></span>
 <span class="line"><span class="token target symbol"><span class="token variable">$U/_thread_fcn</span></span><span class="token punctuation">:</span>  <span class="token variable">$U/thread_fcn.o</span>  <span class="token variable">$</span><span class="token punctuation">(</span>ULIB<span class="token punctuation">)</span></span>
@@ -248,6 +307,8 @@
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div></div></div><ul>
 <li><code v-pre>user/usys.pl</code> 또는 equivalent 파일에서 system call table에 clone과 join을 명시적으로 추가해야 user code에서 호출 가능하다.</li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="summary-overall-flow" tabindex="-1"><a class="header-anchor" href="#summary-overall-flow"><span>Summary: Overall Flow</span></a></h3>
 <table>
 <thead>
@@ -284,40 +345,62 @@
 </tbody>
 </table>
 <p>이로써 xv6 내에 경량화된 multithreading 환경이 구축되며, <code v-pre>fork</code>와 <code v-pre>exec</code>의 기존 의미를 침해하지 않으면서도 thread 기반 병렬 처리와 자원 공유가 가능해진다.</p>
+</section>
+<section class="print-section">
 <h2 id="results" tabindex="-1"><a class="header-anchor" href="#results"><span>Results</span></a></h2>
 <p>각 test에서 수업에서 제공된 출력 예시와 실제 실행 결과의 차이를 비교하고, 그 차이가 발생한 원인을 분석하며, 결과가 논리적으로 타당한지를 설명한다.
 아래는 <code v-pre>user/thread_test.c</code> 실행 결과이다. 총 6개의 test를 모두 통과하였으며, 각각의 test는 특정 thread 기능의 정상 작동 여부를 확인한다.</p>
+</section>
+<section class="print-section">
 <h3 id="test-1-thread-creation-and-global-variable-sharing" tabindex="-1"><a class="header-anchor" href="#test-1-thread-creation-and-global-variable-sharing"><span>TEST#1: Thread Creation and Global Variable Sharing</span></a></h3>
+</section>
+<section class="print-section">
 <h4 id="comparison" tabindex="-1"><a class="header-anchor" href="#comparison"><span>Comparison</span></a></h4>
 <ul>
 <li>예시 출력에서는 thread 1, 2, 3이 먼저 실행되고 종료된 뒤, thread 0이 마지막에 실행된다.</li>
 <li>실제 결과에서는 thread 0이 가장 먼저 실행을 시작하고, 그 뒤로 1~4번 thread가 순차적으로 실행된다.</li>
 </ul>
+</section>
+<section class="print-section">
 <h4 id="analysis" tabindex="-1"><a class="header-anchor" href="#analysis"><span>Analysis</span></a></h4>
 <ul>
 <li>thread 0이 먼저 실행되는 것은 스케줄링 방식의 차이에 따른 것이다.</li>
 <li>각 thread의 실행 순서와 종료 시점은 예시와 다르지만, 전역 변수의 수정 및 main thread에서 그 결과를 확인하는 흐름은 동일하게 유지된다.</li>
 </ul>
+</section>
+<section class="print-section">
 <h4 id="conclusion" tabindex="-1"><a class="header-anchor" href="#conclusion"><span>Conclusion</span></a></h4>
 <ul>
 <li>논리적으로 문제가 없으며, xv6의 round-robin scheduler에 따라 실행 순서는 달라질 수 있으므로 출력 순서의 차이는 허용되는 것으로 봐야 할 것이다.</li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="test-2-argument-passing-and-independent-execution" tabindex="-1"><a class="header-anchor" href="#test-2-argument-passing-and-independent-execution"><span>TEST#2: Argument Passing and Independent Execution</span></a></h3>
+</section>
+<section class="print-section">
 <h4 id="comparison-1" tabindex="-1"><a class="header-anchor" href="#comparison-1"><span>Comparison</span></a></h4>
 <ul>
 <li>예시에서는 각 thread가 전달받은 <code v-pre>iter</code> 값을 정확히 출력한다.</li>
 <li>실제 결과에서도 <code v-pre>iter</code> 값이 <code v-pre>0</code>부터 <code v-pre>4000</code>까지 정확히 출력된다.</li>
 </ul>
+</section>
+<section class="print-section">
 <h4 id="conclusion-1" tabindex="-1"><a class="header-anchor" href="#conclusion-1"><span>Conclusion</span></a></h4>
 <ul>
 <li>출력 형식과 순서가 모두 일치하며, 기능적으로도 완벽히 구현되었기 때문에 별도의 설명 없이 <strong>통과</strong>로 판단된다.</li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="test-3-address-space-isolation-after-fork" tabindex="-1"><a class="header-anchor" href="#test-3-address-space-isolation-after-fork"><span>TEST#3: Address Space Isolation After Fork</span></a></h3>
+</section>
+<section class="print-section">
 <h4 id="comparison-2" tabindex="-1"><a class="header-anchor" href="#comparison-2"><span>Comparison</span></a></h4>
 <ul>
 <li>예시에서는 각 thread가 fork한 자식 process에서 &quot;start&quot; 및 &quot;end&quot; 메시지를 출력한다.</li>
 <li>실제 결과에서도 동일한 메시지가 출력된다.</li>
 </ul>
+</section>
+<section class="print-section">
 <h4 id="conclusion-2" tabindex="-1"><a class="header-anchor" href="#conclusion-2"><span>Conclusion</span></a></h4>
 <ul>
 <li>전체 구조와 흐름이 동일하며, 주소 공간 충돌 없이 fork 이후 자식 thread가 정상적으로 분리된 메모리에서 실행되었음을 확인할 수 있다.</li>
@@ -325,17 +408,25 @@
 <li>모든 자식과 부모 thread가 정상 종료</li>
 <li><strong>결과: nested thread 생성 및 실행 정상 처리</strong></li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="test-4-sbrk-and-memory-allocation-boundary-protection" tabindex="-1"><a class="header-anchor" href="#test-4-sbrk-and-memory-allocation-boundary-protection"><span>TEST#4: sbrk and Memory Allocation Boundary Protection</span></a></h3>
+</section>
+<section class="print-section">
 <h4 id="comparison-3" tabindex="-1"><a class="header-anchor" href="#comparison-3"><span>Comparison</span></a></h4>
 <ul>
 <li>예시에서는 <code v-pre>addr n at break = 0x...</code> 형태의 메시지를 출력한다.</li>
 <li>실제 결과에서는 여러 thread가 접근하면서 <code v-pre>usertrap</code> 및 <code v-pre>scause 0xf</code> 에러 메시지가 출력된다.</li>
 </ul>
+</section>
+<section class="print-section">
 <h4 id="analysis-1" tabindex="-1"><a class="header-anchor" href="#analysis-1"><span>Analysis</span></a></h4>
 <ul>
 <li>예시는 user program이 직접 할당 주소를 출력한 반면, 실제 구현에서는 커널 수준에서 메모리 보호 기작이 동작하여 trap이 발생했다.</li>
 <li>이는 thread가 할당하지 않은 page에 접근했을 때 보호가 발생했는지를 검증하기 위한 테스트이며, 예상된 동작이다.</li>
 </ul>
+</section>
+<section class="print-section">
 <h4 id="conclusion-3" tabindex="-1"><a class="header-anchor" href="#conclusion-3"><span>Conclusion</span></a></h4>
 <ul>
 <li>오히려 trap이 발생함으로써 보호되지 않은 메모리 접근을 차단함을 증명하였고, 이는 test의 의도와 부합하므로 통과로 간주할 수 있다.</li>
@@ -344,17 +435,25 @@
 <li>여러 thread에서 접근 오류(scause 0xf) 발생 → 예상된 행동</li>
 <li><strong>결과: 주소 공간 공유와 memory boundary test 성공</strong></li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="test-5-shared-pid-and-kill-behavior" tabindex="-1"><a class="header-anchor" href="#test-5-shared-pid-and-kill-behavior"><span>TEST#5: Shared PID and Kill Behavior</span></a></h3>
+</section>
+<section class="print-section">
 <h4 id="comparison-4" tabindex="-1"><a class="header-anchor" href="#comparison-4"><span>Comparison</span></a></h4>
 <ul>
 <li>예시에서는 thread 2만 조기 종료된다.</li>
 <li>실제 결과에서는 모든 thread가 동일한 <code v-pre>pid</code>로 시작하고, thread 0의 종료 메시지만 명시적으로 출력된다.</li>
 </ul>
+</section>
+<section class="print-section">
 <h4 id="analysis-2" tabindex="-1"><a class="header-anchor" href="#analysis-2"><span>Analysis</span></a></h4>
 <ul>
 <li>모든 thread가 동일한 <code v-pre>pid</code>를 공유하는 점은 예상된 결과이며, thread 2의 종료 로그 누락은 scheduling timing 차이일 가능성이 높다.</li>
 <li>join 이후 main이 종료되었으므로 나머지 thread들도 함께 종료된 것이다.</li>
 </ul>
+</section>
+<section class="print-section">
 <h4 id="conclusion-4" tabindex="-1"><a class="header-anchor" href="#conclusion-4"><span>Conclusion</span></a></h4>
 <ul>
 <li><code v-pre>kill</code> 관련 동작은 제대로 반영되었고, 모든 thread가 동일한 process의 일부로 정상 종료되었으므로 기능 구현에 문제는 없다.</li>
@@ -362,17 +461,25 @@
 <li>이는 thread가 독립적인 process가 아님을 증명</li>
 <li><strong>결과: 모든 thread는 동일한 process 내에서 실행됨</strong></li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="test-6-exec-and-thread-termination-behavior" tabindex="-1"><a class="header-anchor" href="#test-6-exec-and-thread-termination-behavior"><span>TEST#6: exec and Thread Termination Behavior</span></a></h3>
+</section>
+<section class="print-section">
 <h4 id="comparison-5" tabindex="-1"><a class="header-anchor" href="#comparison-5"><span>Comparison</span></a></h4>
 <ul>
 <li>예시에서는 exec 이후 &quot;thread exec test 0&quot; 메시지가 출력된다.</li>
 <li>실제 결과에서는 일부 thread가 먼저 trap을 발생시키고 이후 동일한 메시지가 출력된다.</li>
 </ul>
+</section>
+<section class="print-section">
 <h4 id="analysis-3" tabindex="-1"><a class="header-anchor" href="#analysis-3"><span>Analysis</span></a></h4>
 <ul>
 <li>exec이 호출되면 주소 공간이 새로운 program image로 대체되며, 기존의 모든 thread는 종료된다.</li>
 <li>그에 따라 접근 불가능한 공간에 있던 thread들이 trap을 발생시킨 뒤, 새로 실행된 image가 정상적으로 실행된 것이다.</li>
 </ul>
+</section>
+<section class="print-section">
 <h4 id="conclusion-5" tabindex="-1"><a class="header-anchor" href="#conclusion-5"><span>Conclusion</span></a></h4>
 <ul>
 <li>모든 trap은 exec에 따른 의도된 부작용이며, exec 이후 program이 정상 실행되었기 때문에 올바른 동작으로 판단된다.</li>
@@ -381,6 +488,8 @@
 <li><code v-pre>exec()</code> 이후 새로운 프로그램이 정상적으로 실행됨을 확인</li>
 <li><strong>결과: exec 이후 전체 process context 교체 성공</strong></li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="final-conclusion" tabindex="-1"><a class="header-anchor" href="#final-conclusion"><span>Final Conclusion</span></a></h2>
 <ul>
 <li>총 6개의 테스트 모두 통과</li>
@@ -391,21 +500,31 @@
 <li>따라서 <code v-pre>&quot;All tests passed&quot;</code> 라는 출력은 논리적으로 타당하고, 모든 요구 조건을 충족했다고 판단할 수 있다.</li>
 </ul>
 <img src="https://kmbzn.com/images/log.png" width="320">
+</section>
+<section class="print-section">
 <h2 id="troubleshooting" tabindex="-1"><a class="header-anchor" href="#troubleshooting"><span>Troubleshooting</span></a></h2>
 <p>thread 구현은 전통적인 process와 달리 <strong>주소 공간 공유</strong>, <strong>컨텍스트 분리</strong>, <strong>자원 회수 타이밍</strong> 등 다층적인 문제를 수반한다. 본 project 진행 과정에서 발생했던 대표적인 문제 사례들과, 그에 대한 원인 분석 및 해결 과정을 기술하도록 한다.</p>
+</section>
+<section class="print-section">
 <h3 id="_1-clone-infinite-thread-creation-→-pid-explosion" tabindex="-1"><a class="header-anchor" href="#_1-clone-infinite-thread-creation-→-pid-explosion"><span>1. <code v-pre>clone()</code> Infinite Thread Creation → PID Explosion</span></a></h3>
+</section>
+<section class="print-section">
 <h4 id="issue" tabindex="-1"><a class="header-anchor" href="#issue"><span>Issue</span></a></h4>
 <ul>
 <li><code v-pre>thread_create()</code>가 여러 번 호출되며 <code v-pre>clone()</code>이 실패했음에도 불구하고 계속해서 pid가 증가</li>
 <li><code v-pre>pid</code>가 64를 초과하며 시스템이 비정상 상태에 진입</li>
 <li><code v-pre>usertrap(): unexpected scause</code> 또는 <code v-pre>kerneltrap()</code>이 다수 발생</li>
 </ul>
+</section>
+<section class="print-section">
 <h4 id="cause" tabindex="-1"><a class="header-anchor" href="#cause"><span>Cause</span></a></h4>
 <ul>
 <li><code v-pre>thread_create()</code>에서 <code v-pre>sbrk(PGSIZE)</code>로 stack을 요청했으나 실패한 경우, 그 stack 주소가 <code v-pre>(void*)-1</code>이 됨</li>
 <li>이 상태로도 <code v-pre>clone()</code>이 호출되면, 커널 내 stack validation에서 실패하여 <code v-pre>-1</code>을 반환하지만, 사용자 코드는 이를 무시함</li>
 <li>그 결과 join이 불가능한 zombie thread가 계속 생성되어 <code v-pre>proc[]</code>을 소진함</li>
 </ul>
+</section>
+<section class="print-section">
 <h4 id="solution" tabindex="-1"><a class="header-anchor" href="#solution"><span>Solution</span></a></h4>
 <ul>
 <li><code v-pre>thread_create()</code>에서 stack이 할당 실패했거나 page alignment가 맞지 않으면 <strong>즉시 실패 처리</strong>하도록 변경</li>
@@ -418,18 +537,26 @@
 </ul>
 <div class="language-c line-numbers-mode" data-highlighter="prismjs" data-ext="c"><pre v-pre><code class="language-c"><span class="line"><span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>stack <span class="token operator">||</span> <span class="token punctuation">(</span>uint64<span class="token punctuation">)</span>stack <span class="token operator">&lt;</span> PGSIZE <span class="token operator">||</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> <span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h3 id="_2-error-on-fcn-0-→-test-failure" tabindex="-1"><a class="header-anchor" href="#_2-error-on-fcn-0-→-test-failure"><span>2. Error on <code v-pre>fcn == 0</code> → Test Failure</span></a></h3>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h3 id="_2-error-on-fcn-0-→-test-failure" tabindex="-1"><a class="header-anchor" href="#_2-error-on-fcn-0-→-test-failure"><span>2. Error on <code v-pre>fcn == 0</code> → Test Failure</span></a></h3>
+</section>
+<section class="print-section">
 <h4 id="issue-1" tabindex="-1"><a class="header-anchor" href="#issue-1"><span>Issue</span></a></h4>
 <ul>
 <li><code v-pre>clone()</code> 내에서 <code v-pre>if (!fcn) return -1;</code> 조건을 설정한 후, 모든 thread 생성이 실패</li>
 <li><code v-pre>thread_test</code>에서 <code v-pre>Thread 0 start</code>조차 출력되지 않음</li>
 </ul>
+</section>
+<section class="print-section">
 <h4 id="cause-1" tabindex="-1"><a class="header-anchor" href="#cause-1"><span>Cause</span></a></h4>
 <ul>
 <li>수업에서 제공한 test code에서 <code v-pre>thread_basic()</code> 함수의 주소가 실제로 <code v-pre>0x0</code>으로 설정되어 있음</li>
 <li>이는 xv6의 linker 및 loader 설정 상 일부 함수가 <code v-pre>.text</code> 세그먼트의 시작 주소인 <code v-pre>0x0</code>에 배치되기 때문</li>
 <li>xv6 riscv 환경에서는 <code v-pre>epc = 0</code>이 trap 없이 유효하게 실행되어야 하며, <code v-pre>0x0</code> 주소는 정상적인 실행 진입점임</li>
 </ul>
+</section>
+<section class="print-section">
 <h4 id="solution-1" tabindex="-1"><a class="header-anchor" href="#solution-1"><span>Solution</span></a></h4>
 <ul>
 <li><code v-pre>clone()</code> 내 <code v-pre>fcn</code> null-check 조건을 <strong>완전히 제거</strong></li>
@@ -437,25 +564,37 @@
 </ul>
 <div class="language-c line-numbers-mode" data-highlighter="prismjs" data-ext="c"><pre v-pre><code class="language-c"><span class="line"><span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>uint64<span class="token punctuation">)</span>fcn <span class="token operator">>=</span> MAXVA <span class="token operator">||</span> <span class="token operator">!</span><span class="token function">walkaddr</span><span class="token punctuation">(</span>p<span class="token operator">-></span>pagetable<span class="token punctuation">,</span> <span class="token punctuation">(</span>uint64<span class="token punctuation">)</span>fcn<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h3 id="_3-join-unable-to-collect-thread-infinite-wait" tabindex="-1"><a class="header-anchor" href="#_3-join-unable-to-collect-thread-infinite-wait"><span>3. join Unable to Collect Thread (Infinite Wait)</span></a></h3>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h3 id="_3-join-unable-to-collect-thread-infinite-wait" tabindex="-1"><a class="header-anchor" href="#_3-join-unable-to-collect-thread-infinite-wait"><span>3. join Unable to Collect Thread (Infinite Wait)</span></a></h3>
+</section>
+<section class="print-section">
 <h4 id="issue-2" tabindex="-1"><a class="header-anchor" href="#issue-2"><span>Issue</span></a></h4>
 <ul>
 <li><code v-pre>join()</code>을 호출했으나 <code v-pre>Thread X join failed</code>가 출력되며 테스트 실패</li>
 <li>thread는 종료되었으나 커널이 해당 상태를 인지하지 못함</li>
 </ul>
+</section>
+<section class="print-section">
 <h4 id="cause-2" tabindex="-1"><a class="header-anchor" href="#cause-2"><span>Cause</span></a></h4>
 <ul>
 <li>thread 종료 시 <code v-pre>state == ZOMBIE</code>가 되었지만, <code v-pre>join()</code>에서 접근 시 <code v-pre>np-&gt;lock</code>을 획득하지 않거나,
 이미 <code v-pre>freeproc()</code> 이후 lock을 해제한 뒤 상태를 확인하려 해 race condition이 발생</li>
 <li>또는 <code v-pre>p-&gt;lock</code>과 <code v-pre>wait_lock</code>을 동시에 사용하면서 deadlock이 발생할 수 있음</li>
 </ul>
+</section>
+<section class="print-section">
 <h4 id="solution-2" tabindex="-1"><a class="header-anchor" href="#solution-2"><span>Solution</span></a></h4>
 <ul>
 <li><code v-pre>join()</code> 내에서 반드시 <code v-pre>np-&gt;lock</code>을 획득한 뒤 <code v-pre>state</code>를 확인</li>
 <li><code v-pre>freeproc()</code>도 반드시 <code v-pre>np-&gt;lock</code>을 보유한 상태에서 호출하고, 해제는 이후에 수행</li>
 <li>sleep은 반드시 <code v-pre>p-&gt;lock</code> 없이 <code v-pre>wait_lock</code>만 보유한 상태에서만 호출해야 함</li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="_4-other-threads-usertrap-on-exec-→-panic" tabindex="-1"><a class="header-anchor" href="#_4-other-threads-usertrap-on-exec-→-panic"><span>4. Other Threads usertrap on <code v-pre>exec()</code> → panic</span></a></h3>
+</section>
+<section class="print-section">
 <h4 id="issue-3" tabindex="-1"><a class="header-anchor" href="#issue-3"><span>Issue</span></a></h4>
 <ul>
 <li><code v-pre>exec()</code> 테스트(<code v-pre>TEST#6</code>) 수행 시, 다른 thread들에서 다음과 같은 log 출력</li>
@@ -465,12 +604,16 @@
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><ul>
 <li>이후 커널 panic 또는 stack overflow 발생</li>
 </ul>
+</section>
+<section class="print-section">
 <h4 id="cause-3" tabindex="-1"><a class="header-anchor" href="#cause-3"><span>Cause</span></a></h4>
 <ul>
 <li><code v-pre>exec()</code>은 호출 thread의 pagetable을 완전히 새로운 것으로 교체하는 작업이다.</li>
 <li>그러나 같은 pagetable을 공유하는 다른 thread들이 아직 살아 있고, 해당 주소를 기준으로 명령어를 fetch하려고 하면 invalid memory trap이 발생</li>
 <li>특히, 이미 소멸된 함수 주소(<code v-pre>fcn</code>)로 점프하는 도중 문제가 발생</li>
 </ul>
+</section>
+<section class="print-section">
 <h4 id="solution-3" tabindex="-1"><a class="header-anchor" href="#solution-3"><span>Solution</span></a></h4>
 <ul>
 <li><code v-pre>exec()</code> 호출 시 현재 thread를 제외한 동일 pagetable의 thread를 <code v-pre>freeproc()</code>으로 제거</li>
@@ -486,17 +629,25 @@
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul>
 <li>결과적으로, <code v-pre>exec()</code>는 해당 process를 thread 단위가 아닌 &quot;주소 공간 단위&quot;로 완전히 재시작하는 함수로 보아야 한다.</li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="_5-only-some-threads-terminated-on-kill-pid-→-zombie-leak" tabindex="-1"><a class="header-anchor" href="#_5-only-some-threads-terminated-on-kill-pid-→-zombie-leak"><span>5. Only Some Threads Terminated on <code v-pre>kill(pid)</code> → zombie leak</span></a></h3>
+</section>
+<section class="print-section">
 <h4 id="issue-4" tabindex="-1"><a class="header-anchor" href="#issue-4"><span>Issue</span></a></h4>
 <ul>
 <li><code v-pre>kill(main_pid)</code> 호출 시 일부 thread는 여전히 돌고 있으며, <code v-pre>join()</code>도 반환하지 않음</li>
 <li><code v-pre>TEST#5</code>에서 thread 중 하나만 종료하고 나머지는 무한 루프에 빠짐</li>
 </ul>
+</section>
+<section class="print-section">
 <h4 id="cause-4" tabindex="-1"><a class="header-anchor" href="#cause-4"><span>Cause</span></a></h4>
 <ul>
 <li>기존 <code v-pre>kill()</code> 구현은 <code v-pre>pid</code>와 일치하는 단일 process만 종료 처리함</li>
 <li>그러나 thread 구조에서는 하나의 주소 공간에 여러 thread가 존재하며, 개별 pid만 종료해선 효과가 없음</li>
 </ul>
+</section>
+<section class="print-section">
 <h4 id="solution-4" tabindex="-1"><a class="header-anchor" href="#solution-4"><span>Solution</span></a></h4>
 <ul>
 <li><code v-pre>kill()</code> 구현을 확장하여 동일한 pagetable을 공유하는 모든 proc에 대해 <code v-pre>killed = 1</code> 설정</li>
@@ -510,17 +661,25 @@
 <span class="line">  <span class="token punctuation">}</span></span>
 <span class="line"><span class="token punctuation">}</span></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_6-stack-memory-leak-after-thread-join" tabindex="-1"><a class="header-anchor" href="#_6-stack-memory-leak-after-thread-join"><span>6. Stack Memory Leak after <code v-pre>thread_join()</code></span></a></h3>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h3 id="_6-stack-memory-leak-after-thread-join" tabindex="-1"><a class="header-anchor" href="#_6-stack-memory-leak-after-thread-join"><span>6. Stack Memory Leak after <code v-pre>thread_join()</code></span></a></h3>
+</section>
+<section class="print-section">
 <h4 id="issue-5" tabindex="-1"><a class="header-anchor" href="#issue-5"><span>Issue</span></a></h4>
 <ul>
 <li>thread 수거 이후에도 <code v-pre>sbrk()</code>된 메모리가 회수되지 않아, <code v-pre>sbrk(0)</code> 값이 계속 증가</li>
 <li>long-running process에서 memory exhaustion 발생</li>
 </ul>
+</section>
+<section class="print-section">
 <h4 id="cause-5" tabindex="-1"><a class="header-anchor" href="#cause-5"><span>Cause</span></a></h4>
 <ul>
 <li><code v-pre>join()</code>이 stack 주소를 유저에게 넘겨줬지만, 사용자가 이를 반납하지 않음</li>
 <li><code v-pre>thread_join()</code>은 <code v-pre>join()</code>을 호출만 하고 메모리 회수는 하지 않음</li>
 </ul>
+</section>
+<section class="print-section">
 <h4 id="solution-5" tabindex="-1"><a class="header-anchor" href="#solution-5"><span>Solution</span></a></h4>
 <ul>
 <li>사용자 라이브러리 수준에서 <code v-pre>thread_join()</code> 내부에서 직접 <code v-pre>sbrk(-PGSIZE)</code> 호출</li>
@@ -528,17 +687,25 @@
 </ul>
 <div class="language-c line-numbers-mode" data-highlighter="prismjs" data-ext="c"><pre v-pre><code class="language-c"><span class="line"><span class="token keyword">if</span> <span class="token punctuation">(</span>pid <span class="token operator">></span> <span class="token number">0</span> <span class="token operator">&amp;&amp;</span> s<span class="token punctuation">)</span> <span class="token function">sbrk</span><span class="token punctuation">(</span><span class="token operator">-</span>PGSIZE<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h3 id="_7-sleep-wakeup-deadlock" tabindex="-1"><a class="header-anchor" href="#_7-sleep-wakeup-deadlock"><span>7. sleep/wakeup Deadlock</span></a></h3>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h3 id="_7-sleep-wakeup-deadlock" tabindex="-1"><a class="header-anchor" href="#_7-sleep-wakeup-deadlock"><span>7. sleep/wakeup Deadlock</span></a></h3>
+</section>
+<section class="print-section">
 <h4 id="issues" tabindex="-1"><a class="header-anchor" href="#issues"><span>Issues</span></a></h4>
 <ul>
 <li><code v-pre>join()</code>에서 <code v-pre>sleep(p, &amp;wait_lock)</code> 이후 깨어나지 않거나, wakeup 이후에도 상태가 복구되지 않음</li>
 <li>Debugging 시 <code v-pre>sched()</code> 진입 후 다시 돌아오지 않거나 <code v-pre>panic: unlock</code> 발생</li>
 </ul>
+</section>
+<section class="print-section">
 <h4 id="cause-6" tabindex="-1"><a class="header-anchor" href="#cause-6"><span>Cause</span></a></h4>
 <ul>
 <li><code v-pre>sleep()</code>은 내부적으로 <code v-pre>p-&gt;lock</code>을 요구하며, 외부에서 이미 <code v-pre>p-&gt;lock</code>을 획득한 상태로 들어오면 중복 lock으로 crash</li>
 <li>또는 <code v-pre>wakeup()</code>과 <code v-pre>sleep()</code> 사이의 window에서 race condition이 발생할 수 있음</li>
 </ul>
+</section>
+<section class="print-section">
 <h4 id="solution-6" tabindex="-1"><a class="header-anchor" href="#solution-6"><span>Solution</span></a></h4>
 <ul>
 <li><code v-pre>sleep()</code> 호출 전 반드시 <code v-pre>p-&gt;lock</code>이 <strong>획득되어 있지 않도록 설계</strong></li>
@@ -555,6 +722,8 @@
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul>
 <li><code v-pre>wakeup()</code>은 lock 없이 작동해야 하므로 별도로 <code v-pre>p-&gt;lock</code>을 각 thread마다 획득하고 상태를 바꿔줌</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="summary-major-issues-list" tabindex="-1"><a class="header-anchor" href="#summary-major-issues-list"><span>Summary: Major Issues List</span></a></h2>
 <table>
 <thead>
@@ -603,7 +772,11 @@
 </tbody>
 </table>
 <p>이와 같은 반복적 debugging과 코드 개선을 통해, xv6에 안정적이고 정확한 kernel 수준 thread 시스템을 구현할 수 있었다.</p>
+</section>
+<section class="print-section">
 <h2 id="additional-content" tabindex="-1"><a class="header-anchor" href="#additional-content"><span>Additional Content</span></a></h2>
+</section>
+<section class="print-section">
 <h3 id="reference-notes-for-thread-implementation-in-xv6-risc-v" tabindex="-1"><a class="header-anchor" href="#reference-notes-for-thread-implementation-in-xv6-risc-v"><span>Reference Notes for Thread Implementation in xv6 RISC-V</span></a></h3>
 <ul>
 <li>
@@ -635,6 +808,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="additional-useful-references" tabindex="-1"><a class="header-anchor" href="#additional-useful-references"><span>Additional Useful References</span></a></h3>
 <p>https://github.com/mit-pdos/xv6-riscv<br>
 https://pdos.csail.mit.edu/6.828/2022/xv6/book-riscv-rev3.pdf</p>
@@ -643,6 +818,7 @@ https://pdos.csail.mit.edu/6.828/2022/xv6/book-riscv-rev3.pdf</p>
 <li>https://stackoverflow.com/questions/78141535/threading-using-jmp-buf-array-in-c-test-in-xv6 (x86 중심이므로 구조는 참조용)</li>
 </ul>
 <p>이상으로 본 project의 기술적 배경과 연관된 모든 핵심 요소들을 포함하였다.</p>
+</section>
 </div></template>
 
 

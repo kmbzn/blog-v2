@@ -1,5 +1,8 @@
-<template><div><h1 id="_17-software-testing" tabindex="-1"><a class="header-anchor" href="#_17-software-testing"><span>17. Software Testing</span></a></h1>
+<template><div><section class="print-section">
+<h1 id="_17-software-testing" tabindex="-1"><a class="header-anchor" href="#_17-software-testing"><span>17. Software Testing</span></a></h1>
 <DateMeta />
+</section>
+<section class="print-section">
 <h2 id="what-is-test-automation" tabindex="-1"><a class="header-anchor" href="#what-is-test-automation"><span>What is Test Automation?</span></a></h2>
 <blockquote>
 <p>The use of software to control the <strong>execution</strong> of tests, the <strong>comparison</strong> of actual outcomes to predicted outcomes, the <strong>setting up</strong> of test preconditions, and other test <strong>control</strong> and test <strong>reporting</strong> functions<br>
@@ -11,6 +14,8 @@
 <li>개인별 Test quality 편차 감소</li>
 <li>Regression testing 비용의 획기적 절감</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="software-testability" tabindex="-1"><a class="header-anchor" href="#software-testability"><span>Software Testability</span></a></h2>
 <blockquote>
 <p>The degree to which a system or component facilitates the establishment of test criteria and the performance of tests to determine whether those criteria have been met<br>
@@ -25,6 +30,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="observability-and-controllability" tabindex="-1"><a class="header-anchor" href="#observability-and-controllability"><span>Observability and Controllability</span></a></h2>
 <ul>
 <li>Observability
@@ -46,11 +53,15 @@
 </li>
 <li>Data abstraction은 Controllability와 Observability를 감소시킴</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="observability-and-controllability-definition" tabindex="-1"><a class="header-anchor" href="#observability-and-controllability-definition"><span>Observability and Controllability (Definition)</span></a></h2>
 <ul>
 <li>출력, 환경에 미치는 영향, 기타 Hardware 및 Software components 측면에서 프로그램의 동작을 관찰하기가 얼마나 쉬운가 (Observability)</li>
 <li>값, 연산, 동작 측면에서 프로그램에 필요한 입력을 제공하기가 얼마나 쉬운가 (Controllability)</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="components-of-a-test-case" tabindex="-1"><a class="header-anchor" href="#components-of-a-test-case"><span>Components of a Test Case</span></a></h2>
 <ul>
 <li>Test case는 명확한 구조를 가진 다중 부분 Artifact</li>
@@ -63,6 +74,8 @@
 <li>Software가 예상대로 동작할 때 생성되어야 하는 결과</li>
 <li>테스트 중인 Software의 실행을 완료하는 데 필요한 입력 값</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="affecting-controllability-and-observability" tabindex="-1"><a class="header-anchor" href="#affecting-controllability-and-observability"><span>Affecting Controllability and Observability</span></a></h2>
 <ul>
 <li>Prefix values
@@ -80,6 +93,8 @@
 </ol>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="putting-tests-together" tabindex="-1"><a class="header-anchor" href="#putting-tests-together"><span>Putting Tests Together</span></a></h2>
 <ul>
 <li>Test case
@@ -101,11 +116,15 @@
 </blockquote>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="test-automation-framework" tabindex="-1"><a class="header-anchor" href="#test-automation-framework"><span>Test Automation Framework</span></a></h2>
 <blockquote>
 <p>A set of assumptions, concepts, and tools that support test automation<br>
 <em>Test automation을 지원하는 가정, 개념 및 도구의 집합</em></p>
 </blockquote>
+</section>
+<section class="print-section">
 <h2 id="what-is-junit" tabindex="-1"><a class="header-anchor" href="#what-is-junit"><span>What is JUnit?</span></a></h2>
 <ul>
 <li>반복 가능한 Automated tests를 작성하고 실행하는 데 사용되는 Open source Java testing framework (표준)</li>
@@ -120,6 +139,8 @@
 <li>산업계에서 널리 사용됨</li>
 <li>독립형 Java 프로그램(Command line)으로 사용하거나 Eclipse, VSCode, IntelliJ 등 IDE 내에서 사용 가능</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="junit-tests" tabindex="-1"><a class="header-anchor" href="#junit-tests"><span>JUnit Tests</span></a></h2>
 <ul>
 <li>JUnit 테스트 대상
@@ -139,6 +160,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="writing-tests-for-junit" tabindex="-1"><a class="header-anchor" href="#writing-tests-for-junit"><span>Writing Tests for JUnit</span></a></h2>
 <ul>
 <li><code v-pre>org.junit.jupiter.api.Assertions</code> class의 Methods 사용 필요
@@ -158,6 +181,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="junit-test-fixtures" tabindex="-1"><a class="header-anchor" href="#junit-test-fixtures"><span>JUnit Test Fixtures</span></a></h2>
 <ul>
 <li>Test fixture는 테스트의 상태(state)를 의미
@@ -172,6 +197,8 @@
 <li><code v-pre>@Before</code> method에서 초기화되어야 함.</li>
 <li><code v-pre>@After</code> method에서 할당 해제 또는 재설정될 수 있음.</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="simple-junit-example" tabindex="-1"><a class="header-anchor" href="#simple-junit-example"><span>Simple JUnit Example</span></a></h2>
 <div class="language-java line-numbers-mode" data-highlighter="prismjs" data-ext="java"><pre v-pre><code class="language-java"><span class="line"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Calc</span></span>
 <span class="line"><span class="token punctuation">{</span></span>
@@ -198,6 +225,8 @@
 <li><code v-pre>@Test</code> annotation 사용</li>
 <li><code v-pre>assertTrue</code>를 사용하여 덧셈 결과 검증</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="testing-the-min-class" tabindex="-1"><a class="header-anchor" href="#testing-the-min-class"><span>Testing the Min Class</span></a></h2>
 <div class="language-java line-numbers-mode" data-highlighter="prismjs" data-ext="java"><pre v-pre><code class="language-java"><span class="line"><span class="token keyword">import</span> <span class="token import"><span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span></span><span class="token operator">*</span></span><span class="token punctuation">;</span></span>
 <span class="line"></span>
@@ -240,6 +269,8 @@
 <li>Generics 사용</li>
 <li>예외 처리 (<code v-pre>NullPointerException</code>, <code v-pre>ClassCastException</code>, <code v-pre>IllegalArgumentException</code>) 포함 로직</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="mintest-class" tabindex="-1"><a class="header-anchor" href="#mintest-class"><span><code v-pre>MinTest</code> Class</span></a></h2>
 <ul>
 <li>Test fixture 및 Pre-test setup method (Prefix)
@@ -275,7 +306,9 @@
 <span class="line">    list <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span> <span class="token comment">// redundant in this example</span></span>
 <span class="line"><span class="token punctuation">}</span></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="min-test-cases-nullpointerexception" tabindex="-1"><a class="header-anchor" href="#min-test-cases-nullpointerexception"><span>Min Test Cases: <code v-pre>NullPointerException</code></span></a></h2>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h2 id="min-test-cases-nullpointerexception" tabindex="-1"><a class="header-anchor" href="#min-test-cases-nullpointerexception"><span>Min Test Cases: <code v-pre>NullPointerException</code></span></a></h2>
 <div class="language-java line-numbers-mode" data-highlighter="prismjs" data-ext="java"><pre v-pre><code class="language-java"><span class="line"><span class="token annotation punctuation">@Test</span> <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">testForNullList</span><span class="token punctuation">(</span><span class="token punctuation">)</span></span>
 <span class="line"><span class="token punctuation">{</span></span>
 <span class="line">    list <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span></span>
@@ -319,6 +352,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="more-exception-test-cases-for-min" tabindex="-1"><a class="header-anchor" href="#more-exception-test-cases-for-min"><span>More Exception Test Cases for Min</span></a></h2>
 <div class="language-java line-numbers-mode" data-highlighter="prismjs" data-ext="java"><pre v-pre><code class="language-java"><span class="line"><span class="token annotation punctuation">@Test</span></span>
 <span class="line"><span class="token annotation punctuation">@SuppressWarnings</span> <span class="token punctuation">(</span><span class="token string">"unchecked"</span><span class="token punctuation">)</span></span>
@@ -345,6 +380,8 @@
 </li>
 <li><code v-pre>testEmptyList</code>: 빈 리스트에 대한 <code v-pre>IllegalArgumentException</code> 테스트</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="remaining-test-cases-for-min" tabindex="-1"><a class="header-anchor" href="#remaining-test-cases-for-min"><span>Remaining Test Cases for Min</span></a></h2>
 <div class="language-java line-numbers-mode" data-highlighter="prismjs" data-ext="java"><pre v-pre><code class="language-java"><span class="line"><span class="token annotation punctuation">@Test</span></span>
 <span class="line"><span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">testSingleElement</span><span class="token punctuation">(</span><span class="token punctuation">)</span></span>
@@ -367,6 +404,8 @@
 <li><code v-pre>testSingleElement</code>: 단일 요소 리스트 테스트</li>
 <li><code v-pre>testDoubleElement</code>: 두 요소 리스트 테스트</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="summary-seven-tests-for-min" tabindex="-1"><a class="header-anchor" href="#summary-seven-tests-for-min"><span>Summary: Seven Tests for Min</span></a></h2>
 <ul>
 <li>예외가 <strong>있는</strong> 5가지 테스트
@@ -382,6 +421,8 @@
 6. Single element<br>
 7. Two elements</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="data-driven-tests" tabindex="-1"><a class="header-anchor" href="#data-driven-tests"><span>Data-Driven Tests</span></a></h2>
 <ul>
 <li>문제점: 유사한 값으로 함수를 여러 번 테스트할 때 발생하는 Test code bloat(부풀리기) 방지 필요</li>
@@ -398,6 +439,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="example-junit-data-driven-unit-test" tabindex="-1"><a class="header-anchor" href="#example-junit-data-driven-unit-test"><span>Example JUnit Data-Driven Unit Test</span></a></h2>
 <div class="language-java line-numbers-mode" data-highlighter="prismjs" data-ext="java"><pre v-pre><code class="language-java"><span class="line"><span class="token keyword">import</span> <span class="token keyword">static</span> <span class="token import static"><span class="token namespace">org<span class="token punctuation">.</span>junit<span class="token punctuation">.</span>jupiter<span class="token punctuation">.</span>api<span class="token punctuation">.</span></span><span class="token operator">*</span></span><span class="token punctuation">;</span></span>
 <span class="line"><span class="token keyword">import</span> <span class="token keyword">static</span> <span class="token import static"><span class="token namespace">org<span class="token punctuation">.</span>junit<span class="token punctuation">.</span>jupiter<span class="token punctuation">.</span>params<span class="token punctuation">.</span>provider<span class="token punctuation">.</span></span><span class="token operator">*</span></span><span class="token punctuation">;</span></span>
@@ -427,6 +470,8 @@
 <li>Stream을 통해 Arguments(입력값, 기대값) 전달</li>
 <li>동일한 로직(<code v-pre>additionTest</code>)으로 여러 데이터 세트(1+1=2, 2+3=5) 검증</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="how-to-run-tests" tabindex="-1"><a class="header-anchor" href="#how-to-run-tests"><span>How to Run Tests</span></a></h2>
 <ul>
 <li>JUnit은 Test drivers 제공
@@ -442,12 +487,16 @@
 </li>
 <li>테스트 실패 시 JUnit은 실패 위치 및 발생한 Exceptions 정보 제공</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="junit-resources" tabindex="-1"><a class="header-anchor" href="#junit-resources"><span>JUnit Resources</span></a></h2>
 <ul>
 <li>JUnit 다운로드 및 문서 <a href="">junit.org</a></li>
 <li>JUnit 5 User Guide</li>
 <li>IntelliJ 블로그의 JUnit 5 테스트 작성 가이드</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="summary-of-unit-testing" tabindex="-1"><a class="header-anchor" href="#summary-of-unit-testing"><span>Summary of Unit Testing</span></a></h2>
 <ul>
 <li>테스트를 효율적이고 효과적으로 만드는 유일한 방법은 가능한 많이 자동화하는 것임.</li>
@@ -458,7 +507,11 @@
 <p><em>어떤 Test values를 사용할 것인가?</em><br>
 Test design의 문제이며 ... Test criteria의 목적</p>
 </blockquote>
+</section>
+<section class="print-section">
 <h1 id="test-suite-quality-metrics" tabindex="-1"><a class="header-anchor" href="#test-suite-quality-metrics"><span>Test Suite Quality Metrics</span></a></h1>
+</section>
+<section class="print-section">
 <h2 id="learning-goals" tabindex="-1"><a class="header-anchor" href="#learning-goals"><span>Learning Goals</span></a></h2>
 <ul>
 <li>Test suite quality metrics는 어떤 Suite를 사용할지 결정하는 데 도움을 줌.
@@ -469,6 +522,8 @@ Test design의 문제이며 ... Test criteria의 목적</p>
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="testing" tabindex="-1"><a class="header-anchor" href="#testing"><span>Testing</span></a></h2>
 <ul>
 <li>Module, Module 집합 또는 System 실행
@@ -483,6 +538,8 @@ Test design의 문제이며 ... Test criteria의 목적</p>
 <li>실제 결과 != 예상 결과<br>
 → Test case <strong>실패</strong></li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="testing-question" tabindex="-1"><a class="header-anchor" href="#testing-question"><span>Testing Question</span></a></h2>
 <ul>
 <li>언제 테스트를 중단해야(할 수) 있는가?</li>
@@ -500,6 +557,8 @@ Test design의 문제이며 ... Test criteria의 목적</p>
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="coverage" tabindex="-1"><a class="header-anchor" href="#coverage"><span>Coverage</span></a></h2>
 <ul>
 <li>Test suite가 모든 Requirements를 커버(&quot;checked&quot;)하기를 원함.</li>
@@ -511,6 +570,8 @@ Test design의 문제이며 ... Test criteria의 목적</p>
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="do-tests-cover-all-requirements" tabindex="-1"><a class="header-anchor" href="#do-tests-cover-all-requirements"><span>Do Tests Cover All Requirements?</span></a></h2>
 <ul>
 <li>이상적인 세계에서는 requirements와 test cases 간의 Traceability(추적성)가 존재</li>
@@ -522,11 +583,15 @@ Test design의 문제이며 ... Test criteria의 목적</p>
 </li>
 <li>항공우주 등 특정 산업을 제외하고 공식적인 Traceability는 드묾</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="an-approximation" tabindex="-1"><a class="header-anchor" href="#an-approximation"><span>An Approximation</span></a></h2>
 <ul>
 <li>Requirements에 대한 공식적인 Traceability가 없다고 가정</li>
 <li>따라서 프로그램이 요구되는 모든 좋은 일만 수행한다고 테스트하는 것은 불가능(또는 실행 불가능)</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="don-t-do-bad-things" tabindex="-1"><a class="header-anchor" href="#don-t-do-bad-things"><span>Don’t Do Bad Things</span></a></h2>
 <ul>
 <li>적어도 프로그램이 특정 &quot;나쁜 일&quot;을 하지 않는다는 것은 테스트할 수 있음.
@@ -540,12 +605,16 @@ Test design의 문제이며 ... Test criteria의 목적</p>
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="testing-to-find-bugs" tabindex="-1"><a class="header-anchor" href="#testing-to-find-bugs"><span>Testing to Find Bugs</span></a></h2>
 <ul>
 <li>프로그램이 &quot;나쁜 일&quot;을 하지 않는다는 확신을 얻기 위해 테스트함.</li>
 <li>즉, 버그가 없다는 확신</li>
 <li>핵심 논리적 관찰: Line X를 절대 테스트하지 않으면, Line X에 Bug가 존재하지 않는다는 것을 테스트로 배제할 수 없음.</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="" tabindex="-1"><a class="header-anchor" href="#"><span><span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mo>→</mo><mi>Q</mi></mrow><annotation encoding="application/x-tex">P \to Q</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8778em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">Q</span></span></span></span></span></a></h2>
 <p v-pre class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mtext>No text covers X</mtext><mo>→</mo><mtext>may have bug in X</mtext></mrow><annotation encoding="application/x-tex">\text{No text covers X} \to \text{may have bug in X}
 </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord text"><span class="mord">No text covers X</span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord text"><span class="mord">may have bug in X</span></span></span></span></span></span></p>
@@ -560,6 +629,8 @@ Test design의 문제이며 ... Test criteria의 목적</p>
 </li>
 <li>그러나 X를 테스트하는 것은 X의 정확성에 대해 작지만 <code v-pre>0</code>이 아닌 확신을 줌.</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="all-other-things-being-equal" tabindex="-1"><a class="header-anchor" href="#all-other-things-being-equal"><span>“All Other Things Being Equal”</span></a></h2>
 <ul>
 <li>Test A가 line 1, 2를 방문하고, Test B가 line 1, 2, 3, 4를 방문한다면,</li>
@@ -575,17 +646,23 @@ Test design의 문제이며 ... Test criteria의 목적</p>
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="simplifying-assumptions" tabindex="-1"><a class="header-anchor" href="#simplifying-assumptions"><span>Simplifying Assumptions</span></a></h2>
 <ul>
 <li>가정 1: 방문한 각 line에 대해 동일한 양의 확신(또는 정보)을 얻음.</li>
 <li>가정 2: 방문한 line당 얻는 확신(또는 정보)의 양은 양수임.</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="using-line-coverage" tabindex="-1"><a class="header-anchor" href="#using-line-coverage"><span>Using Line Coverage</span></a></h2>
 <ul>
 <li>리소스 예산(&quot;AOTBE&quot;, etc) 내에서 실행되는 두 Test suites가 있을 때, 하나만 실행할 수 있다면 Line coverage가 더 높은 것을 선호함.</li>
 <li>Coverage는 두 Test suites를 비교하고 &quot;더 나은&quot; 것을 선택하게 해주는 Metric</li>
 <li>이 정보를 사용하여 Software process의 의사 결정(&quot;테스트를 어떻게 해야 하는가?&quot;)을 안내함.</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="collecting-line-coverage" tabindex="-1"><a class="header-anchor" href="#collecting-line-coverage"><span>Collecting Line Coverage</span></a></h2>
 <ul>
 <li>가장 간단하게는 Print-statement debugging 방식</li>
@@ -596,6 +673,8 @@ Test design의 문제이며 ... Test criteria의 목적</p>
 </li>
 <li>실질적 우려: Observer effect (관찰이 현상을 변화시킴)</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="coverage-instrumentation" tabindex="-1"><a class="header-anchor" href="#coverage-instrumentation"><span>Coverage Instrumentation</span></a></h2>
 <ul>
 <li>Coverage instrumentation은 Observer effect를 최소화하는 방식으로 Coverage 정보를 기록하도록 프로그램을 수정함.
@@ -607,6 +686,8 @@ Test design의 문제이며 ... Test criteria의 목적</p>
 <li>속도를 너무 느리게 하지 않음 (중복 출력 전 확인?)</li>
 <li>Infinite loops를 도입하지 않음 (&quot;print&quot;를 &quot;print&quot; 호출로 계측?)</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="good-news-solved-problem" tabindex="-1"><a class="header-anchor" href="#good-news-solved-problem"><span>Good News: “Solved” Problem</span></a></h2>
 <ul>
 <li>잘 연구된 문제이며 다양한 형태의 Coverage에 대한 Push-button 솔루션이 존재함.
@@ -616,14 +697,20 @@ Test design의 문제이며 ... Test criteria의 목적</p>
 </li>
 <li>예: Python의 coverage, <code v-pre>gcc</code>의 <code v-pre>gcov</code>, Java의 <code v-pre>cobertura</code> 등</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="problems-with-line-coverage" tabindex="-1"><a class="header-anchor" href="#problems-with-line-coverage"><span>Problems with Line Coverage</span></a></h2>
 <ul>
 <li>Line coverage의 문제점은 무엇인가?</li>
 <li>100% Line coverage 상황에서도 프로그램에 여전히 버그가 있을 수 있는가?</li>
 <li>(재검토) Line X를 테스트해도 여전히 Line X에 버그가 있을 수 있음.</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="data-values-and-implicit-control-flow" tabindex="-1"><a class="header-anchor" href="#data-values-and-implicit-control-flow"><span>Data Values and Implicit Control Flow</span></a></h2>
 <p><img src="@source/se/image-77.png" alt="alt text"></p>
+</section>
+<section class="print-section">
 <h2 id="intuition" tabindex="-1"><a class="header-anchor" href="#intuition"><span>Intuition</span></a></h2>
 <ul>
 <li>많은 흥미로운 Data values는 Implicit 또는 Explicit 제어 변경을 유발함.
@@ -633,6 +720,8 @@ Test design의 문제이며 ... Test criteria의 목적</p>
 </li>
 <li>비공식적으로, 흥미로운 Data values를 커버하는 문제는 모든 Conditionals 분기를 커버하는 문제로 귀결될 수 있음.</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="branch-coverage" tabindex="-1"><a class="header-anchor" href="#branch-coverage"><span>Branch Coverage</span></a></h2>
 <ul>
 <li>Branch coverage는 Test suite에 의해 실행된 Conditional branches의 총수를 계산하는 Test suite quality metric (if-&gt;true와 if-&gt;false를 별도로 계산)</li>
@@ -642,6 +731,8 @@ Test design의 문제이며 ... Test criteria의 목적</p>
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="branch-vs-line" tabindex="-1"><a class="header-anchor" href="#branch-vs-line"><span>Branch vs. Line</span></a></h2>
 <ul>
 <li>Branch coverage는 일반적으로 Line coverage보다 더 많은 확신을 줌.</li>
@@ -652,6 +743,8 @@ Test design의 문제이며 ... Test criteria의 목적</p>
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="other-flavors" tabindex="-1"><a class="header-anchor" href="#other-flavors"><span>Other Flavors</span></a></h2>
 <ul>
 <li>Function Coverage: 호출된 Functions의 비율</li>
@@ -662,11 +755,15 @@ Test design의 문제이며 ... Test criteria의 목적</p>
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="mutation-testing" tabindex="-1"><a class="header-anchor" href="#mutation-testing"><span>Mutation Testing</span></a></h2>
 <ul>
 <li><strong>Mutation testing</strong> (또는 Mutation analysis)은 Test suite의 품질이 의도적으로 추가된 Defects를 찾는 수와 관련된 Test suite adequacy metric</li>
 <li>비공식적 설명: <em>&quot;Test suite가 보안 버그를 찾는 데 정말 훌륭하다고? 소스 코드에 <strong>의도적으로 버그를 추가</strong>해서 찾는지 봐야겠어!&quot;</em></li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="defect-seeding" tabindex="-1"><a class="header-anchor" href="#defect-seeding"><span>Defect Seeding</span></a></h2>
 <ul>
 <li><strong>Defect seeding</strong>은 프로그램에 의도적으로 Defect를 도입하는 과정
@@ -677,18 +774,24 @@ Test design의 문제이며 ... Test criteria의 목적</p>
 </li>
 <li>Mutation testing의 경우 Defect seeding은 일반적으로 자동으로 수행됨 (인간의 버그 모델 기반)</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="mutation-operators" tabindex="-1"><a class="header-anchor" href="#mutation-operators"><span>Mutation Operators</span></a></h2>
 <ul>
 <li>Mutation operator는 프로그램 지점을 체계적으로 변경함.</li>
 <li>Mutation testing에서 mutation operators는 역사적인 인간의 Defects를 모델로 함.
 <img src="@source/se/image-78.png" alt="alt text"></li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="mutant" tabindex="-1"><a class="header-anchor" href="#mutant"><span>Mutant</span></a></h2>
 <ul>
 <li><strong>Mutant</strong> (또는 <strong>Variant</strong>)는 하나 이상의 프로그램 위치에 하나 이상의 Mutation operators를 적용하여 생성된 원본 프로그램의 버전</li>
 <li>Mutant의 <strong>Order</strong>는 적용된 Mutation operators의 수
 <img src="@source/se/image-79.png" alt="alt text"></li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="competent-programmers" tabindex="-1"><a class="header-anchor" href="#competent-programmers"><span>Competent Programmers</span></a></h2>
 <ul>
 <li><strong>Competent programmer hypothesis</strong>: 프로그램 Faults는 구문적으로 작으며 몇 번의 키스트로크로 수정할 수 있다는 가설</li>
@@ -696,6 +799,8 @@ Test design의 문제이며 ... Test criteria의 목적</p>
 <li>따라서 mutants는 실제 Faults의 가능성 있는 효과를 시뮬레이션함.</li>
 <li>따라서 <em><strong>Test suite가 인위적인 Mutants를 잘 포착한다면, 프로그램의 알려지지 않은 실제 Faults도 잘 포착할 것임.</strong></em></li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="competent-really" tabindex="-1"><a class="header-anchor" href="#competent-really"><span>Competent? Really?</span></a></h2>
 <ul>
 <li>Competent programmer hypothesis가 사실인가?</li>
@@ -703,6 +808,8 @@ Test design의 문제이며 ... Test criteria의 목적</p>
 <li>인간이 단순한 오타(예: +를 -로)를 자주 내는 것은 사실임.</li>
 <li>그러나 일부 버그는 그보다 더 복잡한 것도 사실임.</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="coupling-effect" tabindex="-1"><a class="header-anchor" href="#coupling-effect"><span>Coupling Effect</span></a></h2>
 <ul>
 <li><strong>Coupling effect hypothesis</strong>: 복잡한 faults는 단순한 faults와 결합(Coupled)되어 있어, 프로그램의 모든 단순한 faults를 감지하는 Test suite가 높은 비율의 복잡한 faults도 감지할 것이라는 가설</li>
@@ -712,6 +819,8 @@ Test design의 문제이며 ... Test criteria의 목적</p>
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="mutation-testing-1" tabindex="-1"><a class="header-anchor" href="#mutation-testing-1"><span>Mutation Testing</span></a></h2>
 <ul>
 <li>Test suite가 원본은 통과하지만 Mutant는 실패하게 만들면, 해당 Mutant를 kill(감지, 드러냄)했다고 함.</li>
@@ -722,6 +831,8 @@ Test design의 문제이며 ... Test criteria의 목적</p>
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="mutation-analysis-pros-and-cons" tabindex="-1"><a class="header-anchor" href="#mutation-analysis-pros-and-cons"><span>Mutation Analysis: Pros and Cons</span></a></h2>
 <ul>
 <li>다른 Test suite adequacy criteria를 포함(Subsume)할 잠재력이 있음 (매우 좋을 수 있음)</li>
@@ -729,6 +840,8 @@ Test design의 문제이며 ... Test criteria의 목적</p>
 <li>어디에 적용하고 얼마나 자주 적용할 것인가? (보통 무작위지만 방법이 문제)</li>
 <li>It is <strong>very expensive</strong>. 1,000개의 Mutants를 만들면 Test suite를 1,000번 실행해야 함!</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="equivalent-mutant-problem" tabindex="-1"><a class="header-anchor" href="#equivalent-mutant-problem"><span>Equivalent Mutant Problem</span></a></h2>
 <ul>
 <li><code v-pre>x = a + b; y = c + d;</code>가 있을 때 두 문장을 바꾸는 경우를 가정</li>
@@ -744,6 +857,7 @@ Test design의 문제이며 ... Test criteria의 목적</p>
 </ul>
 </li>
 </ul>
+</section>
 </div></template>
 
 

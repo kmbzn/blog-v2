@@ -1,6 +1,9 @@
-<template><div><h1 id="신한카드-처음" tabindex="-1"><a class="header-anchor" href="#신한카드-처음"><span>신한카드 처음</span></a></h1>
+<template><div><section class="print-section">
+<h1 id="신한카드-처음" tabindex="-1"><a class="header-anchor" href="#신한카드-처음"><span>신한카드 처음</span></a></h1>
 <DateMeta />
 <p>신한카드 처음은 2024년 4월 출시된 신한카드의 젊은 층(MZ세대) 타겟 신용카드다. 월정액·구독 서비스와 디지털 소비를 주로 하는 라이프스타일에 최적화되어 있으며, 초년도 연회비 전액 캐시백 혜택이 특징이다.</p>
+</section>
+<section class="print-section">
 <h2 id="기본-정보" tabindex="-1"><a class="header-anchor" href="#기본-정보"><span>기본 정보</span></a></h2>
 <table>
 <thead>
@@ -32,7 +35,11 @@
 </tr>
 </tbody>
 </table>
+</section>
+<section class="print-section">
 <h2 id="주요-혜택" tabindex="-1"><a class="header-anchor" href="#주요-혜택"><span>주요 혜택</span></a></h2>
+</section>
+<section class="print-section">
 <h3 id="카테고리별-적립" tabindex="-1"><a class="header-anchor" href="#카테고리별-적립"><span>카테고리별 적립</span></a></h3>
 <table>
 <thead>
@@ -93,6 +100,8 @@
 </tr>
 </tbody>
 </table>
+</section>
+<section class="print-section">
 <h3 id="혜택-요약-예시-월-소비-패턴-기준" tabindex="-1"><a class="header-anchor" href="#혜택-요약-예시-월-소비-패턴-기준"><span>혜택 요약 예시 (월 소비 패턴 기준)</span></a></h3>
 <table>
 <thead>
@@ -131,9 +140,13 @@
 </tbody>
 </table>
 <p>마이신한포인트 1p = 1원 동등 가치로 사용 가능.</p>
+</section>
+<section class="print-section">
 <h2 id="전월실적-조건" tabindex="-1"><a class="header-anchor" href="#전월실적-조건"><span>전월실적 조건</span></a></h2>
 <p>월 30만원 이상 사용 시 카테고리별 혜택 적용.</p>
 <p>30만원 미만 사용 월에는 모든 추가 혜택 미적용, 기본 0.5% 적립만 제공.</p>
+</section>
+<section class="print-section">
 <h2 id="마이신한포인트-활용" tabindex="-1"><a class="header-anchor" href="#마이신한포인트-활용"><span>마이신한포인트 활용</span></a></h2>
 <ul>
 <li>신한카드 결제 대금 차감 (1p = 1원)</li>
@@ -142,6 +155,8 @@
 <li>항공 마일리지 전환 (아시아나 클럽, 대한항공 스카이패스)</li>
 <li>네이버페이, 카카오페이 포인트 전환</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="경쟁-카드-비교" tabindex="-1"><a class="header-anchor" href="#경쟁-카드-비교"><span>경쟁 카드 비교</span></a></h2>
 <table>
 <thead>
@@ -175,6 +190,8 @@
 </tbody>
 </table>
 <p>신한카드 처음은 <strong>OTT 구독과 카페 소비가 많은 20~30대</strong>에게 특히 유리하다. OTT 서비스 20% 적립은 시중 카드 중 최상위 수준이다.</p>
+</section>
+<section class="print-section">
 <h2 id="발급-팁" tabindex="-1"><a class="header-anchor" href="#발급-팁"><span>발급 팁</span></a></h2>
 <ul>
 <li>초년도 연회비 캐시백은 발급 후 익월 말일까지 한 번이라도 사용 시 자동 지급</li>
@@ -186,6 +203,7 @@
 <p class="hint-container-title">사회초년생에게 추천하는 이유</p>
 <p>첫 직장을 다니며 신용카드를 처음 만드는 경우, 연회비 부담 없이(초년도 무료) 일상 소비에서 가시적인 혜택을 바로 체감할 수 있는 카드다. 복잡한 조건보다는 자신이 자주 가는 카페·편의점, 쓰는 구독 서비스에서 혜택이 집중되기 때문에 추가 공부 없이도 자연스럽게 혜택을 받는다.</p>
 </div>
+</section>
 </div></template>
 
 

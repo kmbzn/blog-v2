@@ -1,5 +1,8 @@
-<template><div><h1 id="_11-concurrency" tabindex="-1"><a class="header-anchor" href="#_11-concurrency"><span>11. Concurrency</span></a></h1>
+<template><div><section class="print-section">
+<h1 id="_11-concurrency" tabindex="-1"><a class="header-anchor" href="#_11-concurrency"><span>11. Concurrency</span></a></h1>
 <DateMeta />
+</section>
+<section class="print-section">
 <h2 id="concurrency" tabindex="-1"><a class="header-anchor" href="#concurrency"><span>Concurrency</span></a></h2>
 <p>What do we study in this chapter?</p>
 <ul>
@@ -14,6 +17,8 @@
 <li>Concurrency in Functional Languages</li>
 <li>Statement-Level Concurrency</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="introduction" tabindex="-1"><a class="header-anchor" href="#introduction"><span>Introduction</span></a></h2>
 <p>Concurrency can occur at four levels:</p>
 <ul>
@@ -88,6 +93,8 @@
 <li>Many program applications are now spread over multiple machines, either locally or over a network</li>
 <li>분산 DB, 채팅 시스템, 온라인 게임 서버</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="introduction-to-subprogram-level-concurrency" tabindex="-1"><a class="header-anchor" href="#introduction-to-subprogram-level-concurrency"><span>Introduction to Subprogram-Level Concurrency</span></a></h2>
 <p>A task or process or thread is a program unit that can be in concurrent execution with other program units</p>
 <ul>
@@ -227,6 +234,8 @@
 <li>Monitors</li>
 <li>Message Passing</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="semaphores" tabindex="-1"><a class="header-anchor" href="#semaphores"><span>Semaphores</span></a></h2>
 <p>Dijkstra - 1965</p>
 <ul>
@@ -384,6 +393,8 @@
 <li>Unfortunately, ideal programmers are rare</li>
 <li>세마포어는 매우 정밀한 제어를 요구하며, 작은 실수 하나로도 치명적인 버그(데드락, 경쟁조건, 무한루프 등) 발생 가능</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="monitors" tabindex="-1"><a class="header-anchor" href="#monitors"><span>Monitors</span></a></h2>
 <p>Ada, Java, C#</p>
 <ul>
@@ -516,6 +527,8 @@
 <li>Monitors can be used to implement semaphores</li>
 <li>Support for cooperation synchronization is very similar as with semaphores, so it has the same problems</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="message-passing" tabindex="-1"><a class="header-anchor" href="#message-passing"><span>Message Passing</span></a></h2>
 <p>Message passing is a general model for concurrency</p>
 <ul>
@@ -533,6 +546,8 @@
 <li>A way to remember who is waiting to have its message accepted and some “fair” way of choosing the next message</li>
 <li>When a sender task’s message is accepted by a receiver task, the actual message transmission is called a rendezvous</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="ada-support-for-concurrency" tabindex="-1"><a class="header-anchor" href="#ada-support-for-concurrency"><span>Ada Support for Concurrency</span></a></h2>
 <p>The Ada 83 Message-Passing Model</p>
 <ul>
@@ -824,6 +839,8 @@
 <li>For distributed systems, message passing is a better model for concurrency</li>
 <li>프로세서 간 공유 메모리 접근이 불가능한 구조에서 → message passing은 유일하고 자연스러운 선택지</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="java-threads" tabindex="-1"><a class="header-anchor" href="#java-threads"><span>Java Threads</span></a></h2>
 <p>The concurrent units in Java are methods named run</p>
 <ul>
@@ -918,6 +935,8 @@
 <li>Not as powerful as Ada’s tasks</li>
 <li>No mechanism for communication, except through shared data</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="c-threads" tabindex="-1"><a class="header-anchor" href="#c-threads"><span>C# Threads</span></a></h2>
 <p>Loosely based on Java but there are significant differences</p>
 <ul>
@@ -955,6 +974,8 @@
 <li>Thread termination is cleaner than in Java</li>
 <li>Synchronization is more sophisticated</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="concurrency-in-functional-languages" tabindex="-1"><a class="header-anchor" href="#concurrency-in-functional-languages"><span>Concurrency in Functional Languages</span></a></h2>
 <p>Multilisp (extension to Scheme)
 Concurrent ML (extension to ML)
@@ -1091,6 +1112,8 @@ F#</p>
 <li><code v-pre>:=</code> assignment operator</li>
 <li>exclamation point (<code v-pre>!</code>) to get its value</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="statement-level-concurrency" tabindex="-1"><a class="header-anchor" href="#statement-level-concurrency"><span>Statement-Level Concurrency</span></a></h2>
 <p>Objective: Provide a mechanism that the programmer can use to inform compiler of ways it can map the program onto multiprocessor architecture</p>
 <ul>
@@ -1149,6 +1172,8 @@ F#</p>
 <li>Right side of all 1,000 assignments must be evaluated first, before any assignments take place → permits concurrent execution of all of the assignment statements</li>
 <li>이는 병렬 루프의 안전성(safety)을 확보</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="summary" tabindex="-1"><a class="header-anchor" href="#summary"><span>Summary</span></a></h2>
 <p>Concurrent execution can be at the instruction, statement, or subprogram level</p>
 <ul>
@@ -1158,6 +1183,7 @@ F#</p>
 <li>Mechanisms: semaphores, monitors, rendezvous, threads</li>
 <li>High-Performance Fortran provides statements for specifying how data is to be distributed over the memory units connected to multiple processors</li>
 </ul>
+</section>
 </div></template>
 
 

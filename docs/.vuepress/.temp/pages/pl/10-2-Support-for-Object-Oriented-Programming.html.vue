@@ -1,5 +1,8 @@
-<template><div><h1 id="_10-2-support-for-object-oriented-programming" tabindex="-1"><a class="header-anchor" href="#_10-2-support-for-object-oriented-programming"><span>10.2. Support for Object Oriented Programming</span></a></h1>
+<template><div><section class="print-section">
+<h1 id="_10-2-support-for-object-oriented-programming" tabindex="-1"><a class="header-anchor" href="#_10-2-support-for-object-oriented-programming"><span>10.2. Support for Object Oriented Programming</span></a></h1>
 <DateMeta />
+</section>
+<section class="print-section">
 <h2 id="support-for-object-oriented-programming" tabindex="-1"><a class="header-anchor" href="#support-for-object-oriented-programming"><span>Support for Object-Oriented Programming</span></a></h2>
 <ul>
 <li>What do we study in this chapter?</li>
@@ -8,6 +11,8 @@
 <li>Language examples</li>
 <li>Implementation of object-oriented constructs</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="object-oriented-programming-oop" tabindex="-1"><a class="header-anchor" href="#object-oriented-programming-oop"><span>Object-Oriented Programming (OOP)</span></a></h2>
 <ul>
 <li>
@@ -164,6 +169,8 @@
 <p>May be functionally useful, but not logical, for a class to inherit from another</p>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="dynamic-binding" tabindex="-1"><a class="header-anchor" href="#dynamic-binding"><span>Dynamic Binding</span></a></h2>
 <ul>
 <li>Since a hierarchy of classes exist, can exploit for polymorphism</li>
@@ -180,6 +187,8 @@
 <li>Includes at least one abstract method</li>
 <li>Cannot be instantiated</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="design-issues-for-oop-languages" tabindex="-1"><a class="header-anchor" href="#design-issues-for-oop-languages"><span>Design Issues for OOP Languages</span></a></h2>
 <ul>
 <li>Is everything an object? (Exclusivity of objects)</li>
@@ -261,6 +270,8 @@
 <li>Implicit or explicit initialization</li>
 <li>How are parent class members initialized when a subclass object is created?</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="support-for-oop-in-smalltalk" tabindex="-1"><a class="header-anchor" href="#support-for-oop-in-smalltalk"><span>Support for OOP in Smalltalk</span></a></h2>
 <ul>
 <li>Pure OO language -&gt; everything is an object</li>
@@ -315,7 +326,9 @@
 <span class="line">    numSides <span class="token operator">&lt;</span><span class="token operator">-</span> num</span>
 <span class="line"></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="support-for-oop-in-c" tabindex="-1"><a class="header-anchor" href="#support-for-oop-in-c"><span>Support for OOP in C++</span></a></h2>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h2 id="support-for-oop-in-c" tabindex="-1"><a class="header-anchor" href="#support-for-oop-in-c"><span>Support for OOP in C++</span></a></h2>
 <ul>
 <li>General Characteristics:</li>
 <li>Evolved from C and SIMULA 67</li>
@@ -480,6 +493,8 @@
 <li>Static binding is faster!</li>
 <li>Because of interpretation and dynamic binding, Smalltalk is ~10 times slower than C++</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="support-for-oop-in-objective-c" tabindex="-1"><a class="header-anchor" href="#support-for-oop-in-objective-c"><span>Support for OOP in Objective-C</span></a></h2>
 <ul>
 <li>Like C++, Objective-C adds support for OOP to C</li>
@@ -579,6 +594,8 @@
 <li>category: 클래스에 메서드를 추가할 수 있게 해주는 구조 (mixin 유사)</li>
 <li>protocol: 인터페이스 정의를 위한 구조 (Java의 interface와 유사)</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="support-for-oop-in-java" tabindex="-1"><a class="header-anchor" href="#support-for-oop-in-java"><span>Support for OOP in Java</span></a></h2>
 <ul>
 <li>Because of its close relationship to C++, focus is on the differences from that language</li>
@@ -664,6 +681,8 @@
 <li>Dynamic binding is used as “normal” way to bind method calls to method definitions</li>
 <li>Uses interfaces to provide a simple form of support for multiple inheritance</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="support-for-oop-in-c-1" tabindex="-1"><a class="header-anchor" href="#support-for-oop-in-c-1"><span>Support for OOP in C#</span></a></h2>
 <ul>
 <li>General characteristics</li>
@@ -734,6 +753,8 @@
 <li><code v-pre>struct</code> in C# (not in Java)</li>
 <li>Simpler than C++ for OOP</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="support-for-oop-in-ada-95" tabindex="-1"><a class="header-anchor" href="#support-for-oop-in-ada-95"><span>Support for OOP in Ada 95+</span></a></h2>
 <ul>
 <li>General Characteristics</li>
@@ -829,6 +850,8 @@
 <li>Ada includes no initialization of objects (e.g., constructors)</li>
 <li>Dynamic binding in C-based OOP languages is restricted to pointers and/or references to objects; Ada has no such restriction and is thus more orthogonal</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="support-for-oop-in-ruby" tabindex="-1"><a class="header-anchor" href="#support-for-oop-in-ruby"><span>Support for OOP in Ruby</span></a></h2>
 <ul>
 <li>General Characteristics</li>
@@ -854,6 +877,8 @@
 <li>-&gt; achieved by modules, mixin, etc..</li>
 <li>Access controls are weaker than those of other languages that support OOP</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="implementing-oo-constructs" tabindex="-1"><a class="header-anchor" href="#implementing-oo-constructs"><span>Implementing OO Constructs</span></a></h2>
 <ul>
 <li>Two interesting and challenging parts</li>
@@ -881,6 +906,8 @@
 <li>[EX] Java (multiple inheritance)</li>
 <li>There must be at least two different views available in the CIR—one for each of the parent classes, one of which includes the view for the subclass, C</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="support-for-object-oriented-programming-1" tabindex="-1"><a class="header-anchor" href="#support-for-object-oriented-programming-1"><span>Support for Object-Oriented Programming</span></a></h2>
 <ul>
 <li>Summary</li>
@@ -893,6 +920,7 @@
 <li>Ruby is a relatively recent pure OOP language; provides some new ideas in support for OOP</li>
 <li>Implementing OOP involves some new data structures</li>
 </ul>
+</section>
 </div></template>
 
 

@@ -1,5 +1,8 @@
-<template><div><h1 id="_12-design-patterns" tabindex="-1"><a class="header-anchor" href="#_12-design-patterns"><span>12. Design Patterns</span></a></h1>
+<template><div><section class="print-section">
+<h1 id="_12-design-patterns" tabindex="-1"><a class="header-anchor" href="#_12-design-patterns"><span>12. Design Patterns</span></a></h1>
 <DateMeta />
+</section>
+<section class="print-section">
 <h2 id="learning-goals" tabindex="-1"><a class="header-anchor" href="#learning-goals"><span>Learning Goals</span></a></h2>
 <ul>
 <li>Design pattern의 동기 이해 (솔루션의 template로서)</li>
@@ -7,6 +10,8 @@
 <li>Design pattern 사용 시점 논의</li>
 <li>문제 해결을 위한 적절한 design pattern 적용</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="design-challenges" tabindex="-1"><a class="header-anchor" href="#design-challenges"><span>Design Challenges</span></a></h2>
 <ul>
 <li>재사용을 위한 software 설계의 어려움.</li>
@@ -30,6 +35,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="design-principles" tabindex="-1"><a class="header-anchor" href="#design-principles"><span>Design Principles</span></a></h2>
 <blockquote>
 <p><em>Application에서 변화하는 부분을 식별하여 변하지 않는 부분과 분리</em>
@@ -38,6 +45,8 @@
 <em>상호작용하는 object 간의 loosely coupled design 추구</em>
 <em>Classes는 extension에 대해서 열려 있어야 하나, modification에 대해서는 닫혀 있어야 함.</em></p>
 </blockquote>
+</section>
+<section class="print-section">
 <h2 id="design-patterns" tabindex="-1"><a class="header-anchor" href="#design-patterns"><span>Design Patterns</span></a></h2>
 <blockquote>
 <p><em>&quot;각 패턴은 우리 환경에서 반복적으로 발생하는 문제와 그 문제에 대한 핵심 해결책을 설명함. 이 해결책은 두 번 다시 똑같은 방식으로 수행하지 않고도 백만 번 이상 사용 가능&quot;</em> (Christopher Alexander, 1977)</p>
@@ -50,13 +59,19 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="design-patterns-everywhere" tabindex="-1"><a class="header-anchor" href="#design-patterns-everywhere"><span>Design Patterns Everywhere!</span></a></h2>
+</section>
+<section class="print-section">
 <h2 id="history-of-patterns" tabindex="-1"><a class="header-anchor" href="#history-of-patterns"><span>History of Patterns</span></a></h2>
 <ul>
 <li>&quot;Pattern&quot;의 개념은 1977년 Christopher Alexander의 <em>A Pattern Language</em> (2543개 patterns)에서 처음 등장</li>
 <li>1990년 Gang of Four or &quot;GoF&quot;(Gamma, Helm, Johnson, Vlissides) 그룹이 design pattern 카탈로그 편찬</li>
 <li>1995년 책 <em>Design Patterns: Elements of Reusable Object-Oriented Software</em>는 이 분야의 고전</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="benefits-of-using-patterns" tabindex="-1"><a class="header-anchor" href="#benefits-of-using-patterns"><span>Benefits of Using Patterns</span></a></h2>
 <ul>
 <li>패턴은 공통 디자인 어휘
@@ -72,6 +87,8 @@
 </li>
 <li>문서화 개선 (더 적은 양 필요) 및 이해도 향상 (패턴은 한 번 잘 설명됨)</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="architecture-vs-design-patterns" tabindex="-1"><a class="header-anchor" href="#architecture-vs-design-patterns"><span>Architecture vs. Design Patterns</span></a></h2>
 <ul>
 <li>Architecture
@@ -103,6 +120,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="_4-essential-elements-of-design-patterns" tabindex="-1"><a class="header-anchor" href="#_4-essential-elements-of-design-patterns"><span>4 Essential Elements of Design Patterns</span></a></h2>
 <ul>
 <li><strong>Name</strong>: Pattern 식별</li>
@@ -110,6 +129,8 @@
 <li><strong>Solution</strong>: Design 구성 요소, 관계, 책임, 협업 기술</li>
 <li><strong>Consequences</strong>: Pattern 적용 결과 및 trade-off</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="how-to-describe-design-patterns-more-fully" tabindex="-1"><a class="header-anchor" href="#how-to-describe-design-patterns-more-fully"><span>How to Describe Design Patterns more fully</span></a></h2>
 <blockquote>
 <p><em>동료 개발자가 pattern을 평가, 선택, 활용할 수 있도록 정보 전달이 중요</em></p>
@@ -133,6 +154,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="organizing-design-patterns" tabindex="-1"><a class="header-anchor" href="#organizing-design-patterns"><span>Organizing Design Patterns</span></a></h2>
 <ul>
 <li>By <em>Purpose</em> (pattern의 역할 반영)
@@ -149,8 +172,12 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="design-patterns-space" tabindex="-1"><a class="header-anchor" href="#design-patterns-space"><span>Design Patterns Space</span></a></h2>
 <p><img src="@source/se/image-42.png" alt="alt text"></p>
+</section>
+<section class="print-section">
 <h2 id="creational-patterns" tabindex="-1"><a class="header-anchor" href="#creational-patterns"><span>Creational Patterns</span></a></h2>
 <blockquote>
 <p><em>&quot;System이 object 생성 방식과 독립적이도록 만들어라.&quot;</em></p>
@@ -164,6 +191,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="named-constructor-idiom" tabindex="-1"><a class="header-anchor" href="#named-constructor-idiom"><span>Named Constructor (Idiom)</span></a></h2>
 <ul>
 <li>Creational pattern에서 사용되는 기법</li>
@@ -178,11 +207,15 @@
 <span class="line">    String name<span class="token punctuation">;</span></span>
 <span class="line"><span class="token punctuation">}</span><span class="token punctuation">;</span></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="scenario-polymorphic-objects" tabindex="-1"><a class="header-anchor" href="#scenario-polymorphic-objects"><span>Scenario: Polymorphic Objects</span></a></h2>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h2 id="scenario-polymorphic-objects" tabindex="-1"><a class="header-anchor" href="#scenario-polymorphic-objects"><span>Scenario: Polymorphic Objects</span></a></h2>
 <ul>
 <li><strong>Problem</strong>: Client에게 type을 노출하지 않고 polymorphic object를 생성 및 사용</li>
 <li><strong>Solution</strong>: 원하는 type의 object를 생성하되, base class의 object를 반환하는 함수 작성</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="factory-pattern-function" tabindex="-1"><a class="header-anchor" href="#factory-pattern-function"><span>Factory Pattern (Function)</span></a></h2>
 <ul>
 <li>String이 factory에 생성할 type 전달</li>
@@ -199,7 +232,9 @@
 <span class="line"></span>
 <span class="line">Llama steve <span class="token operator">=</span> <span class="token function">llama_factory</span><span class="token punctuation">(</span><span class="token string">"Steve"</span><span class="token punctuation">,</span> <span class="token string">"ninja_llama"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="factory-pattern-class" tabindex="-1"><a class="header-anchor" href="#factory-pattern-class"><span>Factory Pattern (Class)</span></a></h2>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h2 id="factory-pattern-class" tabindex="-1"><a class="header-anchor" href="#factory-pattern-class"><span>Factory Pattern (Class)</span></a></h2>
 <ul>
 <li>Client가 (아마도) static method를 호출하여 올바른 type 생성</li>
 </ul>
@@ -216,7 +251,9 @@
 <span class="line">Llama steve <span class="token operator">=</span></span>
 <span class="line">    LlamaFactory<span class="token punctuation">.</span><span class="token function">make_ninja_llama</span><span class="token punctuation">(</span><span class="token string">"Steve"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="scenario-difficulty-based-enemies" tabindex="-1"><a class="header-anchor" href="#scenario-difficulty-based-enemies"><span>Scenario: Difficulty-Based Enemies</span></a></h2>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h2 id="scenario-difficulty-based-enemies" tabindex="-1"><a class="header-anchor" href="#scenario-difficulty-based-enemies"><span>Scenario: Difficulty-Based Enemies</span></a></h2>
 <ul>
 <li>Polymorphic Enemy class 계층 구조의 컴퓨터 게임 구현 중. 선택된 난이도에 따라 다른 버전의 enemy 생성을 원함</li>
 <li>&quot;Normal&quot; 난이도: Regular goomba</li>
@@ -232,7 +269,9 @@
 <span class="line">    goomby <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token function">SpikedGoomba</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
 <span class="line"><span class="token punctuation">}</span></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="solution-abstract-factory" tabindex="-1"><a class="header-anchor" href="#solution-abstract-factory"><span>Solution: Abstract Factory</span></a></h2>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h2 id="solution-abstract-factory" tabindex="-1"><a class="header-anchor" href="#solution-abstract-factory"><span>Solution: Abstract Factory</span></a></h2>
 <div class="language-diagram line-numbers-mode" data-highlighter="prismjs" data-ext="diagram"><pre v-pre><code class="language-diagram"><span class="line">          ┌────────────────────┐         </span>
 <span class="line">          │AbstractEnemyFactory│         </span>
 <span class="line">          │- create_goomba()   │         </span>
@@ -267,12 +306,16 @@
 <span class="line">│Spiked Goomba│</span>
 <span class="line">└─────────────┘</span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="scenario-global-application-state" tabindex="-1"><a class="header-anchor" href="#scenario-global-application-state"><span>Scenario: Global Application State</span></a></h2>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h2 id="scenario-global-application-state" tabindex="-1"><a class="header-anchor" href="#scenario-global-application-state"><span>Scenario: Global Application State</span></a></h2>
 <ul>
 <li>Global하게 access 가능한 application state 필요. Data 접근 및 갱신 제어 필요</li>
 <li>Bad solution: 순수 global 변수 (plz no)</li>
 <li>Less bad solution: 모든 state`를 class에 넣고 global instance 보유</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="aside-when-is-global-state-ok" tabindex="-1"><a class="header-anchor" href="#aside-when-is-global-state-ok"><span>Aside: When is Global State OK?</span></a></h2>
 <ul>
 <li>모든 곳에서 access 필요, parameter 전달이 코드를 과도하게 복잡하게 만듦</li>
@@ -283,6 +326,8 @@
 <p class="hint-container-title">경고</p>
 <p>Global 변수는 여전히 나쁨!</p>
 </div>
+</section>
+<section class="print-section">
 <h2 id="singleton-pattern" tabindex="-1"><a class="header-anchor" href="#singleton-pattern"><span>Singleton Pattern</span></a></h2>
 <ul>
 <li>&quot;Class가 단 하나의 instance`만 갖도록 보장하고, 이에 대한 global 접근 지점 제공&quot;</li>
@@ -294,7 +339,9 @@
 <span class="line">- static instance // the one instance</span>
 <span class="line">- Singleton() // ctor</span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="singleton-구현" tabindex="-1"><a class="header-anchor" href="#singleton-구현"><span>Singleton (구현)</span></a></h2>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h2 id="singleton-구현" tabindex="-1"><a class="header-anchor" href="#singleton-구현"><span>Singleton (구현)</span></a></h2>
 <div class="language-java line-numbers-mode" data-highlighter="prismjs" data-ext="java"><pre v-pre><code class="language-java"><span class="line"><span class="token keyword">class</span> <span class="token class-name">Singleton</span> <span class="token punctuation">{</span></span>
 <span class="line">    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token class-name">Singleton</span> <span class="token function">get_instance</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span></span>
 <span class="line">        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token class-name">Singleton</span><span class="token punctuation">.</span>instance <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span></span>
@@ -317,7 +364,9 @@
 <span class="line">    <span class="token punctuation">}</span></span>
 <span class="line"><span class="token punctuation">}</span></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="using-the-singleton" tabindex="-1"><a class="header-anchor" href="#using-the-singleton"><span>Using the Singleton</span></a></h2>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h2 id="using-the-singleton" tabindex="-1"><a class="header-anchor" href="#using-the-singleton"><span>Using the Singleton</span></a></h2>
 <ul>
 <li>Exercise: 이 code의 출력은?</li>
 </ul>
@@ -341,7 +390,9 @@
 <span class="line">    <span class="token punctuation">}</span></span>
 <span class="line"><span class="token punctuation">}</span></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="using-the-singleton-solution" tabindex="-1"><a class="header-anchor" href="#using-the-singleton-solution"><span>Using the Singleton (Solution)</span></a></h2>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h2 id="using-the-singleton-solution" tabindex="-1"><a class="header-anchor" href="#using-the-singleton-solution"><span>Using the Singleton (Solution)</span></a></h2>
 <ul>
 <li>Exercise: 이 code의 출력은?</li>
 </ul>
@@ -362,7 +413,9 @@
 <span class="line"><span class="token number">42</span></span>
 <span class="line"><span class="token number">43</span></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="singleton-get-instance" tabindex="-1"><a class="header-anchor" href="#singleton-get-instance"><span><code v-pre>Singleton.get_instance()</code></span></a></h2>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h2 id="singleton-get-instance" tabindex="-1"><a class="header-anchor" href="#singleton-get-instance"><span><code v-pre>Singleton.get_instance()</code></span></a></h2>
 <ul>
 <li>타이핑이 많음. 만약 이렇게 한다면?</li>
 </ul>
@@ -373,12 +426,16 @@
 <li>그래서, 좋은가? 좋지 않은가?</li>
 <li><code v-pre>Singleton.get_instance()</code>가 매번 동일한 object를 반환한다는 보장 없음</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="singleton-design-scenario" tabindex="-1"><a class="header-anchor" href="#singleton-design-scenario"><span>Singleton: Design Scenario</span></a></h2>
 <ul>
 <li>카드 게임 Euchre 컴퓨터 버전 구현 중. Game class가 게임 state 저장</li>
 <li>Application 시작 시, Euchre 한 게임 플레이 후 종료</li>
 <li>Game<code v-pre>을 singleton</code>으로 만들어야 하는가?</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="make-game-a-singleton" tabindex="-1"><a class="header-anchor" href="#make-game-a-singleton"><span>Make Game a Singleton?</span></a></h2>
 <ul>
 <li>찬성
@@ -394,6 +451,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="structural-patterns" tabindex="-1"><a class="header-anchor" href="#structural-patterns"><span>Structural Patterns</span></a></h2>
 <ul>
 <li>기존 class interface로부터 새로운 class interface 구축</li>
@@ -401,6 +460,8 @@
 <li>더 깔끔하고 특화된 interface 제공</li>
 <li>익숙한가?</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="adapter-pattern" tabindex="-1"><a class="header-anchor" href="#adapter-pattern"><span>Adapter Pattern</span></a></h2>
 <ul>
 <li>&quot;Class의 interface를 client가 기대하는 다른 interface로 변환&quot;</li>
@@ -425,7 +486,9 @@
 <span class="line">    <span class="token punctuation">}</span></span>
 <span class="line"><span class="token punctuation">}</span></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="adapter-in-action" tabindex="-1"><a class="header-anchor" href="#adapter-in-action"><span>Adapter in Action</span></a></h2>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h2 id="adapter-in-action" tabindex="-1"><a class="header-anchor" href="#adapter-in-action"><span>Adapter in Action</span></a></h2>
 <ul>
 <li>Solution: 제공된 기능과 원하는 기능 사이를 연결하는 <strong>adapter object</strong> 생성</li>
 </ul>
@@ -444,11 +507,15 @@
 <span class="line">    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token class-name">String</span> s <span class="token operator">:</span> adapter<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> <span class="token punctuation">}</span> <span class="token comment">// works</span></span>
 <span class="line"><span class="token punctuation">}</span></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="adapter-pattern-more-examples" tabindex="-1"><a class="header-anchor" href="#adapter-pattern-more-examples"><span>Adapter Pattern (More Examples)</span></a></h2>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h2 id="adapter-pattern-more-examples" tabindex="-1"><a class="header-anchor" href="#adapter-pattern-more-examples"><span>Adapter Pattern (More Examples)</span></a></h2>
 <ul>
 <li>C++ <code v-pre>fstream</code> 초기 구현</li>
 <li>C FILE macro를 위한 Adapter</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="other-structural-patterns" tabindex="-1"><a class="header-anchor" href="#other-structural-patterns"><span>Other Structural Patterns</span></a></h2>
 <ul>
 <li>Composite: Client가 개별 object와 object 그룹을 동일하게 처리
@@ -462,6 +529,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="composite-pattern" tabindex="-1"><a class="header-anchor" href="#composite-pattern"><span>Composite Pattern</span></a></h2>
 <ul>
 <li>Example: 그리기 편집기 같은 그래픽 application
@@ -471,16 +540,22 @@
 </li>
 </ul>
 <p><img src="@source/se/image-46.png" alt="alt text"></p>
+</section>
+<section class="print-section">
 <h2 id="behavioral-patterns" tabindex="-1"><a class="header-anchor" href="#behavioral-patterns"><span>Behavioral Patterns</span></a></h2>
 <ul>
 <li>&quot;Behavioral 패턴은 algorithm 및 object 간 책임 할당과 관련&quot;</li>
 <li>이미 본 Behavioral pattern: Iterator pattern</li>
 <li>구현 방식과 무관하게 container 순회를 위한 통일된 interface</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="scenario-lock-on-in-action-adventure-game" tabindex="-1"><a class="header-anchor" href="#scenario-lock-on-in-action-adventure-game"><span>Scenario: “Lock-on” in Action-Adventure Game</span></a></h2>
 <blockquote>
 <p><em>&quot;플레이어 캐릭터가 적에게 “lock-on”(이동과 상관없이 적을 향해 얼굴을 돌림)할 수 있는 컴퓨터 게임을 구현 중이다. lock-on된 적이 쓰러지면 캐릭터는 해당 적을 더 이상 조준하지 않아야 한다.&quot;</em></p>
 </blockquote>
+</section>
+<section class="print-section">
 <h2 id="lock-on-not-so-good-implementation" tabindex="-1"><a class="header-anchor" href="#lock-on-not-so-good-implementation"><span>“Lock-on”: Not-so-good Implementation</span></a></h2>
 <ul>
 <li>Enemy가 쓰러지면, player character의 <code v-pre>release_lock_on()</code> 호출</li>
@@ -515,6 +590,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="observer-pattern-a-k-a-publish-subscribe" tabindex="-1"><a class="header-anchor" href="#observer-pattern-a-k-a-publish-subscribe"><span>Observer Pattern (a.k.a. “Publish-Subscribe”)</span></a></h2>
 <blockquote>
 <p><em>&quot;객체 간 일대다 종속성을 정의하여, 객체의 상태가 변경될 때 모든 종속 객체가 자동으로 통지받고 update되도록 한다.&quot;</em></p>
@@ -560,11 +637,15 @@
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul>
 <li>Exercise: &quot;Received update&quot;가 몇 번 출력되는가?</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="observer-for-lock-on-feature" tabindex="-1"><a class="header-anchor" href="#observer-for-lock-on-feature"><span>Observer for “Lock-on” Feature</span></a></h2>
 <p><img src="@source/se/image-48.png" alt="alt text"></p>
 <blockquote>
 <p><em>Abstract란 “파생 클래스는 이 method를 반드시 재정의해야 한다”는 의미</em></p>
 </blockquote>
+</section>
+<section class="print-section">
 <h2 id="observer-for-lock-on-feature-implementation" tabindex="-1"><a class="header-anchor" href="#observer-for-lock-on-feature-implementation"><span>Observer for “Lock-on” Feature (Implementation)</span></a></h2>
 <div class="language-csharp line-numbers-mode" data-highlighter="prismjs" data-ext="cs"><pre v-pre><code class="language-csharp"><span class="line"><span class="token keyword">class</span> <span class="token class-name">Enemy</span> <span class="token punctuation">{</span></span>
 <span class="line">    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token return-type class-name"><span class="token keyword">void</span></span> <span class="token function">subscribe</span><span class="token punctuation">(</span><span class="token class-name">EnemyObserver</span> observer<span class="token punctuation">)</span> <span class="token punctuation">{</span></span>
@@ -598,16 +679,22 @@
 <span class="line">    <span class="token keyword">private</span> <span class="token class-name">Enemy</span> target<span class="token punctuation">;</span></span>
 <span class="line"><span class="token punctuation">}</span></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="observer-update-functions" tabindex="-1"><a class="header-anchor" href="#observer-update-functions"><span>Observer <code v-pre>update_</code> Functions</span></a></h2>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h2 id="observer-update-functions" tabindex="-1"><a class="header-anchor" href="#observer-update-functions"><span>Observer <code v-pre>update_</code> Functions</span></a></h2>
 <ul>
 <li>여러 <code v-pre>update_</code> 함수는 세분화 유지</li>
 <li>Update에 관심 없는 observer는 무시 가능 (빈 구현)</li>
 <li>Observer가 data를 가져오게(pull) 하는 것보다, 새 data를 parameter로 전달(push)하는 것이 일반적</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="scenario-damage-dealing-in-action-game" tabindex="-1"><a class="header-anchor" href="#scenario-damage-dealing-in-action-game"><span>Scenario: Damage-Dealing in Action Game</span></a></h2>
 <blockquote>
 <p><em>&quot;플레이어 캐릭터가 다양한 적과 전투를 벌이는 컴퓨터 게임을 제작 중이다. 플레이어나 적이 공격을 받으면 피해를 입고, 체력이 0이 되면 사망, 플레이어가 사망하면 게임이 종료된다. 적이 사망하면 아이템을 drop한다. 그렇지 않으면 플레이어/적은 뒤로 밀려나며 소리를 내뱉는다.&quot;</em></p>
 </blockquote>
+</section>
+<section class="print-section">
 <h2 id="damage-dealing-first-design" tabindex="-1"><a class="header-anchor" href="#damage-dealing-first-design"><span>Damage-Dealing: First Design</span></a></h2>
 <ul>
 <li>참고: <code v-pre>receive_hit()</code>은 Actor가 damage 입을 때 호출됨
@@ -650,12 +737,18 @@
 <span class="line">    <span class="token punctuation">}</span></span>
 <span class="line"><span class="token punctuation">}</span></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="template-method-pattern" tabindex="-1"><a class="header-anchor" href="#template-method-pattern"><span>Template Method Pattern</span></a></h2>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h2 id="template-method-pattern" tabindex="-1"><a class="header-anchor" href="#template-method-pattern"><span>Template Method Pattern</span></a></h2>
 <blockquote>
 <p><em>&quot;“알고리즘의 골격을 하나의 작업으로 정의하고 일부 단계를 하위 클래스로 미루는 패턴이다. templete method 패턴은 알고리즘의 구조를 변경하지 않으면서 하위 클래스가 알고리즘의 특정 단계를 재정의할 수 있도록 한다.”&quot;</em></p>
 </blockquote>
+</section>
+<section class="print-section">
 <h2 id="damage-dealing-template-method" tabindex="-1"><a class="header-anchor" href="#damage-dealing-template-method"><span>Damage-Dealing: Template Method</span></a></h2>
 <p><img src="@source/se/image-50.png" alt="alt text"></p>
+</section>
+<section class="print-section">
 <h2 id="damage-dealing-template-method-implementation" tabindex="-1"><a class="header-anchor" href="#damage-dealing-template-method-implementation"><span>Damage-Dealing: Template Method (Implementation)</span></a></h2>
 <div class="language-java line-numbers-mode" data-highlighter="prismjs" data-ext="java"><pre v-pre><code class="language-java"><span class="line"><span class="token class-name">Abstract</span> <span class="token keyword">class</span> <span class="token class-name">Actor</span> <span class="token punctuation">{</span></span>
 <span class="line">    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">receive_hit</span><span class="token punctuation">(</span><span class="token keyword">float</span> damage<span class="token punctuation">)</span> <span class="token punctuation">{</span></span>
@@ -691,7 +784,9 @@
 <span class="line">    <span class="token punctuation">}</span></span>
 <span class="line"><span class="token punctuation">}</span></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="template-method-the-hollywood-principle" tabindex="-1"><a class="header-anchor" href="#template-method-the-hollywood-principle"><span>Template Method: The “Hollywood Principle”</span></a></h2>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h2 id="template-method-the-hollywood-principle" tabindex="-1"><a class="header-anchor" href="#template-method-the-hollywood-principle"><span>Template Method: The “Hollywood Principle”</span></a></h2>
 <ul>
 <li>첫 구현: Derived class가 Base class의 <code v-pre>receive_hit()</code> 호출</li>
 <li>Template method 구현: Non-virtual base class <code v-pre>receive_hit()</code>이 derived class method 호출</li>
@@ -699,12 +794,15 @@
 <blockquote>
 <p><em>&quot;Don’t call us, we’ll call you!&quot;</em></p>
 </blockquote>
+</section>
+<section class="print-section">
 <h2 id="exercise-updating-our-algorithm" tabindex="-1"><a class="header-anchor" href="#exercise-updating-our-algorithm"><span>Exercise: Updating our Algorithm</span></a></h2>
 <ul>
 <li>Knock back될 수 없는 <code v-pre>TurretEnemy</code> 추가 가정</li>
 <li>새 enemy type 포함하도록 design 수정
 [UML 다이어그램: Slide 54와 동일]</li>
 </ul>
+</section>
 </div></template>
 
 

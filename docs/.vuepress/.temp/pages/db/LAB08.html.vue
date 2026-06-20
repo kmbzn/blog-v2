@@ -1,5 +1,8 @@
-<template><div><h1 id="b-tree" tabindex="-1"><a class="header-anchor" href="#b-tree"><span>B+tree</span></a></h1>
+<template><div><section class="print-section">
+<h1 id="b-tree" tabindex="-1"><a class="header-anchor" href="#b-tree"><span>B+tree</span></a></h1>
 <DateMeta />
+</section>
+<section class="print-section">
 <h2 id="b-tree-operation-deletion" tabindex="-1"><a class="header-anchor" href="#b-tree-operation-deletion"><span>B+tree Operation : Deletion</span></a></h2>
 <ul>
 <li>Function <code v-pre>delete(value K, pointer P)</code>
@@ -106,6 +109,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="질문-만약-node가-이미-제일-왼쪽인-상태에서-key-rotation을-해야하는-상황이라면" tabindex="-1"><a class="header-anchor" href="#질문-만약-node가-이미-제일-왼쪽인-상태에서-key-rotation을-해야하는-상황이라면"><span>(질문) 만약 node가 이미 제일 왼쪽인 상태에서 Key Rotation을 해야하는 상황이라면?</span></a></h2>
 <ul>
 <li>
@@ -138,6 +143,7 @@
 </ul>
 </li>
 </ul>
+</section>
 </div></template>
 
 

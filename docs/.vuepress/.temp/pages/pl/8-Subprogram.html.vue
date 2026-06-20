@@ -1,5 +1,8 @@
-<template><div><h1 id="_8-subprogram" tabindex="-1"><a class="header-anchor" href="#_8-subprogram"><span>8. Subprogram</span></a></h1>
+<template><div><section class="print-section">
+<h1 id="_8-subprogram" tabindex="-1"><a class="header-anchor" href="#_8-subprogram"><span>8. Subprogram</span></a></h1>
 <DateMeta />
+</section>
+<section class="print-section">
 <h2 id="subprogram" tabindex="-1"><a class="header-anchor" href="#subprogram"><span>Subprogram</span></a></h2>
 <ul>
 <li>
@@ -68,7 +71,9 @@
 <span class="line"><span class="token hvariable">add</span> <span class="token operator">::</span> <span class="token constant">Int</span> <span class="token operator">-></span> <span class="token constant">Int</span> <span class="token operator">-></span> <span class="token constant">Int</span></span>
 <span class="line"><span class="token hvariable">add</span> <span class="token hvariable">a</span> <span class="token hvariable">b</span> <span class="token operator">=</span> <span class="token hvariable">a</span> <span class="token operator">+</span> <span class="token hvariable">b</span></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="today-s-contents" tabindex="-1"><a class="header-anchor" href="#today-s-contents"><span>Today's Contents</span></a></h2>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h2 id="today-s-contents" tabindex="-1"><a class="header-anchor" href="#today-s-contents"><span>Today's Contents</span></a></h2>
 <ul>
 <li>Fundamentals of subprograms</li>
 <li>Design issues</li>
@@ -83,6 +88,8 @@
 <li>Closures</li>
 <li>Coroutines</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="fundamentals-of-subprograms" tabindex="-1"><a class="header-anchor" href="#fundamentals-of-subprograms"><span>Fundamentals of subprograms</span></a></h2>
 <ul>
 <li>General characteristics
@@ -589,6 +596,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="design-issues-for-subprograms" tabindex="-1"><a class="header-anchor" href="#design-issues-for-subprograms"><span>Design issues for subprograms</span></a></h2>
 <ul>
 <li>Choice of one or more parameter-passing methods
@@ -632,6 +641,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="local-referencing-environments" tabindex="-1"><a class="header-anchor" href="#local-referencing-environments"><span>Local referencing environments</span></a></h2>
 <ul>
 <li>
@@ -686,7 +697,9 @@
 <span class="line">        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"I'm nested!"</span><span class="token punctuation">)</span></span>
 <span class="line">    inner<span class="token punctuation">(</span><span class="token punctuation">)</span></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="parameter-passing-methods" tabindex="-1"><a class="header-anchor" href="#parameter-passing-methods"><span>Parameter passing methods</span></a></h2>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h2 id="parameter-passing-methods" tabindex="-1"><a class="header-anchor" href="#parameter-passing-methods"><span>Parameter passing methods</span></a></h2>
 <ul>
 <li>
 <p>Semantics models</p>
@@ -1369,6 +1382,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="parameter-that-are-subprograms" tabindex="-1"><a class="header-anchor" href="#parameter-that-are-subprograms"><span>Parameter that are subprograms</span></a></h2>
 <ul>
 <li>
@@ -1402,6 +1417,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="calling-subprograms-indirectly" tabindex="-1"><a class="header-anchor" href="#calling-subprograms-indirectly"><span>Calling subprograms indirectly</span></a></h2>
 <ul>
 <li>In a certain situation (event handling in GUI), subprograms must be called indirectly</li>
@@ -1458,7 +1475,9 @@
 <span class="line">chgfun1 <span class="token operator">+=</span> fun2<span class="token punctuation">;</span> <span class="token comment">// fun2도 추가 → 멀티캐스트 delegate</span></span>
 <span class="line"><span class="token class-name"><span class="token keyword">int</span></span> result <span class="token operator">=</span> <span class="token function">chgfun1</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// fun1(5), fun2(5) 순으로 실행됨</span></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="overloaded-subprograms" tabindex="-1"><a class="header-anchor" href="#overloaded-subprograms"><span>Overloaded subprograms</span></a></h2>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h2 id="overloaded-subprograms" tabindex="-1"><a class="header-anchor" href="#overloaded-subprograms"><span>Overloaded subprograms</span></a></h2>
 <ul>
 <li>The same name and referencing environments as another</li>
 <li>But, unique protocol (number, order types of parameters and return types)</li>
@@ -1531,7 +1550,9 @@
 <span class="line"><span class="token punctuation">}</span></span>
 <span class="line"><span class="token comment">// error: method func(int,int) is already defined</span></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="generic-subprograms" tabindex="-1"><a class="header-anchor" href="#generic-subprograms"><span>Generic subprograms</span></a></h2>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h2 id="generic-subprograms" tabindex="-1"><a class="header-anchor" href="#generic-subprograms"><span>Generic subprograms</span></a></h2>
 <ul>
 <li>
 <p>Reusability is important for productivity</p>
@@ -1678,7 +1699,9 @@
 <span class="line">→ <span class="token punctuation">(</span><span class="token punctuation">(</span>x<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token operator">></span> <span class="token punctuation">(</span>y<span class="token punctuation">)</span> <span class="token operator">?</span> <span class="token punctuation">(</span>x<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token operator">:</span> <span class="token punctuation">(</span>y<span class="token punctuation">)</span><span class="token punctuation">)</span></span>
 <span class="line"><span class="token comment">// x is increased twice</span></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="design-issues-for-functions" tabindex="-1"><a class="header-anchor" href="#design-issues-for-functions"><span>Design issues for functions</span></a></h2>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h2 id="design-issues-for-functions" tabindex="-1"><a class="header-anchor" href="#design-issues-for-functions"><span>Design issues for functions</span></a></h2>
 <ul>
 <li>Side effect allowed?
 <ul>
@@ -1702,6 +1725,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="user-defined-overloaded-operators" tabindex="-1"><a class="header-anchor" href="#user-defined-overloaded-operators"><span>User-defined overloaded operators</span></a></h2>
 <ul>
 <li>Operator can be also overloaded</li>
@@ -1744,7 +1769,9 @@
 <div class="language-python line-numbers-mode" data-highlighter="prismjs" data-ext="py"><pre v-pre><code class="language-python"><span class="line"><span class="token keyword">def</span> <span class="token function">__add__</span> <span class="token punctuation">(</span>self<span class="token punctuation">,</span> second<span class="token punctuation">)</span><span class="token punctuation">:</span></span>
 <span class="line">    <span class="token keyword">return</span> Complex<span class="token punctuation">(</span>self<span class="token punctuation">.</span>real <span class="token operator">+</span> second<span class="token punctuation">.</span>real<span class="token punctuation">,</span> self<span class="token punctuation">.</span>imag <span class="token operator">+</span> second<span class="token punctuation">.</span>imag<span class="token punctuation">)</span></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="closures" tabindex="-1"><a class="header-anchor" href="#closures"><span>Closures</span></a></h2>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h2 id="closures" tabindex="-1"><a class="header-anchor" href="#closures"><span>Closures</span></a></h2>
 <ul>
 <li>Function is also object</li>
 <li>Can be pass to other function, returned by function and stored in data structure</li>
@@ -1921,7 +1948,9 @@
 <span class="line"><span class="token comment"># sum:70</span></span>
 <span class="line"><span class="token comment"># 8 11 14 17 20</span></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="coroutines" tabindex="-1"><a class="header-anchor" href="#coroutines"><span>Coroutines</span></a></h2>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h2 id="coroutines" tabindex="-1"><a class="header-anchor" href="#coroutines"><span>Coroutines</span></a></h2>
 <ul>
 <li>
 <p>Special subprogram</p>
@@ -1983,6 +2012,7 @@
 <span class="line"><span class="token comment"># callee 3: 20</span></span>
 <span class="line"><span class="token comment"># StopIteration</span></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></div></template>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+</div></template>
 
 

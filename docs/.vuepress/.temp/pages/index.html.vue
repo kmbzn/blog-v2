@@ -1,9 +1,12 @@
-<template><div><h1 id="keybasezone" tabindex="-1"><a class="header-anchor" href="#keybasezone"><span>KeyBaseZone</span></a></h1>
+<template><div><section class="print-section">
+<h1 id="keybasezone" tabindex="-1"><a class="header-anchor" href="#keybasezone"><span>KeyBaseZone</span></a></h1>
 <DateMeta />
 <p align="left">
   <img src="https://kmbzn.com/images/profile.jpg" width="360" alt="Profile" />
 </p>  
 <p><em>Welcome to my personal page...</em></p>
+</section>
+<section class="print-section">
 <h2 id="👤-about-me" tabindex="-1"><a class="header-anchor" href="#👤-about-me"><span>👤 About Me</span></a></h2>
 <table>
 <thead>
@@ -40,8 +43,12 @@
 </tbody>
 </table>
 <img src="https://ghchart.rshah.org/kmbzn" alt="GitHub chart">
+</section>
+<section class="print-section">
 <h2 id="📚-topics" tabindex="-1"><a class="header-anchor" href="#📚-topics"><span>📚 Topics</span></a></h2>
 <p>다음과 같은 주제에 대해 다루고자 합니다.</p>
+</section>
+<section class="print-section">
 <h3 id="computer-science" tabindex="-1"><a class="header-anchor" href="#computer-science"><span>Computer Science</span></a></h3>
 <ul>
 <li>운영체제: <code v-pre>Linux</code>, <code v-pre>xv6</code>, CPU scheduling, System call, Virtual Memory</li>
@@ -49,6 +56,8 @@
 <li>자료 구조: Stack &amp; Queue, Binary Search Tree, Hash table, Graph</li>
 <li>네트워크: <code v-pre>TCP/IP</code>, <code v-pre>HTTP</code>/<code v-pre>HTTPS</code>, DNS, Socket</li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="design" tabindex="-1"><a class="header-anchor" href="#design"><span>Design</span></a></h3>
 <ul>
 <li>로고 디자인 및 visual identity 구성</li>
@@ -59,12 +68,16 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="it-기기-활용-및-디지털-repair" tabindex="-1"><a class="header-anchor" href="#it-기기-활용-및-디지털-repair"><span>IT 기기 활용 및 디지털 repair</span></a></h3>
 <ul>
 <li>다양한 플랫폼 기반 기기 간의 workflow 연동</li>
 <li>Tech 보조 기기 활용 및 리뷰</li>
 <li>데이터 복구, 부품 교체 등 종합적인 IT 기기 관리 및 수리</li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="실생활-관심사" tabindex="-1"><a class="header-anchor" href="#실생활-관심사"><span>실생활 관심사</span></a></h3>
 <ul>
 <li>Watch industry: 브랜드 헤리티지, movements, 디자인, 스타일, 착용 경험</li>
@@ -73,6 +86,8 @@
 <li>국제 시사 및 사회 이슈: 세계 뉴스, 정치, 경제, 사회적 사건 등 전반적인 동향</li>
 <li>인문학적 관심: 세계사, 언어의 역사, 세계 인문 환경 등 문화와 지성의 흐름에 대한 이해</li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="건강-및-영양" tabindex="-1"><a class="header-anchor" href="#건강-및-영양"><span>건강 및 영양</span></a></h3>
 <ul>
 <li>건강한 체중 증가를 위한 식습관 및 생활 습관 설계, 개선 노력</li>
@@ -82,6 +97,8 @@
 <blockquote>
 <p><em>전공 기반의 기술적 분석부터 시각적 표현, 실생활의 경험, 인문학적 관점까지 다양한 관심사를 자유롭게 정리하고 공유하는 공간입니다.</em></p>
 </blockquote>
+</section>
+<section class="print-section">
 <h2 id="🍴-how-to-fork-this-blog" tabindex="-1"><a class="header-anchor" href="#🍴-how-to-fork-this-blog"><span>🍴 How to Fork This Blog</span></a></h2>
 <p>If you'd like to create your own blog based on this one, built with <strong>VuePress v2</strong>:</p>
 <ol>
@@ -130,8 +147,12 @@
 <p>This blog is powered by <strong><a href="https://v2.vuepress.vuejs.org/" target="_blank" rel="noopener noreferrer">VuePress v2</a></strong> for static site generation.<br>
 Make sure you have <strong>Node.js</strong> installed before building the site.</p>
 </blockquote>
+</section>
+<section class="print-section">
 <h2 id="📬-contact" tabindex="-1"><a class="header-anchor" href="#📬-contact"><span>📬 Contact</span></a></h2>
 <p>For inquiries or feedback, feel free to reach out via GitHub Issues or email at <code v-pre>kmbzn24@gmail.com</code>.</p>
+</section>
+<section class="print-section">
 <h2 id="📝-license" tabindex="-1"><a class="header-anchor" href="#📝-license"><span>📝 License</span></a></h2>
 <ul>
 <li>You may freely <strong>use, copy, modify, and distribute</strong> the blog framework (excluding posts and images), for <strong>both personal and commercial purposes</strong>.</li>
@@ -148,6 +169,7 @@ Make sure you have <strong>Node.js</strong> installed before building the site.<
 </blockquote>
 <p>If you wish to use any part of the content commercially, please contact me via email.</p>
 <p>For full MIT License terms, refer to the <a href="https://github.com/kmbzn/blog-v2/blob/master/LICENSE" target="_blank" rel="noopener noreferrer"><code v-pre>LICENSE</code></a> file in the repository.</p>
+</section>
 </div></template>
 
 

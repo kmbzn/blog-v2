@@ -1,5 +1,8 @@
-<template><div><h1 id="_10-1-abstract-data-types-and-encapsulation-constructs" tabindex="-1"><a class="header-anchor" href="#_10-1-abstract-data-types-and-encapsulation-constructs"><span>10.1. Abstract Data Types and Encapsulation Constructs</span></a></h1>
+<template><div><section class="print-section">
+<h1 id="_10-1-abstract-data-types-and-encapsulation-constructs" tabindex="-1"><a class="header-anchor" href="#_10-1-abstract-data-types-and-encapsulation-constructs"><span>10.1. Abstract Data Types and Encapsulation Constructs</span></a></h1>
 <DateMeta />
+</section>
+<section class="print-section">
 <h2 id="what-do-we-study-in-this-chapter" tabindex="-1"><a class="header-anchor" href="#what-do-we-study-in-this-chapter"><span>What do we study in this chapter?</span></a></h2>
 <ul>
 <li>The concept of abstraction</li>
@@ -9,6 +12,8 @@
 <li>Encapsulation constructs</li>
 <li>Naming encapsulations</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="abstraction" tabindex="-1"><a class="header-anchor" href="#abstraction"><span>Abstraction</span></a></h2>
 <ul>
 <li>View/representation of entity that includes only the most significant attributes</li>
@@ -34,6 +39,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="abstract-data-type-adt" tabindex="-1"><a class="header-anchor" href="#abstract-data-type-adt"><span>Abstract data type (ADT)</span></a></h2>
 <ul>
 <li>Language-defined types as ADT
@@ -80,6 +87,8 @@
 </li>
 <li>[EX] Stack: Only allows access to the data element at one of its ends, the top. <code v-pre>pop()</code> is used as getter for element at top</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="design-issue" tabindex="-1"><a class="header-anchor" href="#design-issue"><span>Design issue</span></a></h2>
 <ul>
 <li>What is the form of the container for the interface to the type?</li>
@@ -87,6 +96,8 @@
 <li>What access controls are provided?</li>
 <li>Is the specification of the type physically separate from its implementation?</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="language-example-ada" tabindex="-1"><a class="header-anchor" href="#language-example-ada"><span>Language example (Ada)</span></a></h2>
 <ul>
 <li>United states department of defence (DOD) issued to prevent explosion of the number of programming languages</li>
@@ -316,6 +327,8 @@
 <li>The first commercial language to support abstract data types (along with Modula-2)</li>
 <li>Although Ada's design of abstract data types may seem complicated and repetitious, it clearly provides what is necessary</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="language-example-c" tabindex="-1"><a class="header-anchor" href="#language-example-c"><span>Language example (C++)</span></a></h2>
 <ul>
 <li>Encapsulation is via classes</li>
@@ -424,6 +437,8 @@
 <li>Ada packages are more general encapsulations (like module)</li>
 <li>Designed for more than data abstraction</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="language-example-objective-c" tabindex="-1"><a class="header-anchor" href="#language-example-objective-c"><span>Language example (Objective-C)</span></a></h2>
 <ul>
 <li>Based on C, Smalltalk (for method calls)</li>
@@ -628,6 +643,8 @@
 <li>Interfaces and implementation sections</li>
 <li>Constructors must be explicitly called</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="language-example-java" tabindex="-1"><a class="header-anchor" href="#language-example-java"><span>Language example (Java)</span></a></h2>
 <ul>
 <li>Similar to C++, except:
@@ -718,6 +735,8 @@
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul>
 <li>Abstract data types is similar to that of C++</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="language-example-c-1" tabindex="-1"><a class="header-anchor" href="#language-example-c-1"><span>Language example (C#)</span></a></h2>
 <ul>
 <li>Based on C++, Java</li>
@@ -768,7 +787,9 @@
 <span class="line"><span class="token range operator">..</span><span class="token punctuation">.</span></span>
 <span class="line">oldDegreeDays <span class="token operator">=</span> w<span class="token punctuation">.</span>DegreeDays<span class="token punctuation">;</span></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="language-example-ruby" tabindex="-1"><a class="header-anchor" href="#language-example-ruby"><span>Language example (Ruby)</span></a></h2>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h2 id="language-example-ruby" tabindex="-1"><a class="header-anchor" href="#language-example-ruby"><span>Language example (Ruby)</span></a></h2>
 <ul>
 <li>Encapsulation construct: <code v-pre>class … end</code></li>
 <li>Variable names:
@@ -1013,6 +1034,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="parameterized-adts" tabindex="-1"><a class="header-anchor" href="#parameterized-adts"><span>Parameterized ADTs</span></a></h2>
 <ul>
 <li>Can design an ADT to store any element type (e.g. stack ADT)</li>
@@ -1139,6 +1162,8 @@
 <li>Generic classes were added to C# in its 2005 version (<code v-pre>Array</code>, <code v-pre>List</code>, <code v-pre>Stack</code>, <code v-pre>Queue</code>, and <code v-pre>Dictionary</code>)</li>
 <li>Allow its elements to be indexed</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="encapsulation-constructs" tabindex="-1"><a class="header-anchor" href="#encapsulation-constructs"><span>Encapsulation constructs</span></a></h2>
 <ul>
 <li>Multiple-type encapsulations are needed for larger programs</li>
@@ -1233,6 +1258,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="naming-encapsulations" tabindex="-1"><a class="header-anchor" href="#naming-encapsulations"><span>Naming encapsulations</span></a></h2>
 <ul>
 <li>Large programs:
@@ -1311,7 +1338,9 @@
 <span class="line">MyStuff<span class="token punctuation">.</span>mymethod1<span class="token punctuation">(</span>x<span class="token punctuation">)</span></span>
 <span class="line"><span class="token operator">...</span></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="summary" tabindex="-1"><a class="header-anchor" href="#summary"><span>Summary</span></a></h2>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h2 id="summary" tabindex="-1"><a class="header-anchor" href="#summary"><span>Summary</span></a></h2>
 <ul>
 <li>The concept of ADTs and their use in program design was a milestone in the development of languages</li>
 <li>Two primary features of ADTs are the packaging of data with their associated operations and information hiding</li>
@@ -1321,6 +1350,7 @@
 <li>Ada, C++, Java 5.0, and C# 2005 support parameterized ADTs</li>
 <li>C++, C#, Java, Ada, and Ruby provide naming encapsulations</li>
 </ul>
+</section>
 </div></template>
 
 

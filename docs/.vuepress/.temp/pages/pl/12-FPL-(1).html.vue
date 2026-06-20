@@ -1,5 +1,8 @@
-<template><div><h1 id="_12-fpl-1" tabindex="-1"><a class="header-anchor" href="#_12-fpl-1"><span>12. FPL (1)</span></a></h1>
+<template><div><section class="print-section">
+<h1 id="_12-fpl-1" tabindex="-1"><a class="header-anchor" href="#_12-fpl-1"><span>12. FPL (1)</span></a></h1>
 <DateMeta />
+</section>
+<section class="print-section">
 <h2 id="functional-programming-languages" tabindex="-1"><a class="header-anchor" href="#functional-programming-languages"><span>Functional Programming Languages</span></a></h2>
 <p>What do we study in this chapter?</p>
 <ul>
@@ -14,6 +17,8 @@
 <li>Support for Functional Programming in Primarily Imperative Languages</li>
 <li>Comparison of Functional and Imperative Languages</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="introduction" tabindex="-1"><a class="header-anchor" href="#introduction"><span>Introduction</span></a></h2>
 <p>The design of imperative language</p>
 <ul>
@@ -46,6 +51,8 @@
 <li>Scheme is a small, static-scoped dialect of LISP</li>
 <li>ML, Haskell, OCaml, and F#: typed functional programming languages</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="mathematical-functions" tabindex="-1"><a class="header-anchor" href="#mathematical-functions"><span>Mathematical Functions</span></a></h2>
 <p>Mapping member of domain(정의역) set to range(치역) set</p>
 <ul>
@@ -105,6 +112,8 @@
 <li><span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>λ</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mi>x</mi><mo>∗</mo><mi>x</mi><mo>∗</mo><mi>x</mi></mrow><annotation encoding="application/x-tex">\lambda(x) x * x * x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">λ</span><span class="mopen">(</span><span class="mord mathnormal">x</span><span class="mclose">)</span><span class="mord mathnormal">x</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.4653em;"></span><span class="mord mathnormal">x</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">x</span></span></span></span>는 익명 함수</li>
 <li><code v-pre>(2)</code>는 인자 적용(application)</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="functional-forms" tabindex="-1"><a class="header-anchor" href="#functional-forms"><span>Functional forms</span></a></h2>
 <p>A higher-order function, or functional form</p>
 <ul>
@@ -153,7 +162,9 @@
 <span class="line">result <span class="token operator">=</span> <span class="token builtin">list</span><span class="token punctuation">(</span><span class="token builtin">map</span><span class="token punctuation">(</span><span class="token keyword">lambda</span> x<span class="token punctuation">:</span> x <span class="token operator">*</span> x<span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span></span>
 <span class="line"></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="fundamentals-of-functional-programming-languages" tabindex="-1"><a class="header-anchor" href="#fundamentals-of-functional-programming-languages"><span>Fundamentals of Functional Programming Languages</span></a></h2>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h2 id="fundamentals-of-functional-programming-languages" tabindex="-1"><a class="header-anchor" href="#fundamentals-of-functional-programming-languages"><span>Fundamentals of Functional Programming Languages</span></a></h2>
 <p>Objective of design of FPL</p>
 <ul>
 <li>Mimic mathematical functions</li>
@@ -186,6 +197,8 @@
 <li>A set of primitive functions are provided (smaller number is good)</li>
 <li>FPL은 보통 적은 수의 기본 함수만 제공하고, 그걸 조합해서 복잡한 동작을 만들게 유도함.</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="original-lisp" tabindex="-1"><a class="header-anchor" href="#original-lisp"><span>Original Lisp</span></a></h2>
 <p>The first functional language</p>
 <ul>
@@ -197,6 +210,8 @@
 <li>All LISP dialects include imperative-language features</li>
 <li>Imperative-style variables, assignment statements, and iteration</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="lisp-data-types-and-structures" tabindex="-1"><a class="header-anchor" href="#lisp-data-types-and-structures"><span>Lisp Data Types and Structures</span></a></h2>
 <p>Data object types: originally only atoms and lists</p>
 <ul>
@@ -222,6 +237,8 @@
 <li><code v-pre>(A B C)</code></li>
 <li><code v-pre>[A] → [B] → [C] → NIL</code></li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="lisp-interpretation" tabindex="-1"><a class="header-anchor" href="#lisp-interpretation"><span>Lisp Interpretation</span></a></h2>
 <p>The first requirement for the universal LISP function</p>
 <ul>
@@ -275,6 +292,8 @@
 <li>Before 1975, dialects of LISP are dynamic scoping</li>
 <li>Contemporary dialects use static scoping or can choose static or dynamic.</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="origins-of-scheme" tabindex="-1"><a class="header-anchor" href="#origins-of-scheme"><span>Origins of Scheme</span></a></h2>
 <p>A mid-1970s dialect of Lisp, designed to be a cleaner, more modern, and simpler version than the contemporary dialects of Lisp</p>
 <ul>
@@ -284,6 +303,8 @@
 <li>They can be the values of expressions and elements of lists</li>
 <li>They can be assigned to variables, passed as parameters, and returned from functions</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="the-scheme-interpreter" tabindex="-1"><a class="header-anchor" href="#the-scheme-interpreter"><span>The Scheme Interpreter</span></a></h2>
 <p>Scheme의 인터프리터 동작 방식</p>
 <ul>
@@ -303,6 +324,8 @@
 <li>메타프로그래밍 (코드를 조작하는 코드)을 구현할 때</li>
 <li>REPL을 구현할 때 (eval이 핵심 함수)</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="primitive-function-evaluation" tabindex="-1"><a class="header-anchor" href="#primitive-function-evaluation"><span>Primitive Function Evaluation</span></a></h2>
 <p>Primitive Function Evaluation의 과정</p>
 <ul>
@@ -315,6 +338,8 @@
 <li>[반환] The value of the last expression in the body is the value of the function</li>
 <li>Scheme에서는 마지막 식의 결과값이 전체 함수의 반환값</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="primitive-functions-lambda-expressions" tabindex="-1"><a class="header-anchor" href="#primitive-functions-lambda-expressions"><span>Primitive Functions &amp; LAMBDA Expressions</span></a></h2>
 <p>Primitive Arithmetic Functions: <code v-pre>+</code>, <code v-pre>-</code>, <code v-pre>*</code> , <code v-pre>/</code>, <code v-pre>MODULO</code>, <code v-pre>ROUND</code>, <code v-pre>MAX</code>, <code v-pre>MIN</code>, <code v-pre>LOG</code>, <code v-pre>SIN</code>, and <code v-pre>SQRT</code></p>
 <ul>
@@ -383,6 +408,8 @@
 <li>Lambda expressions can have any number of parameters</li>
 <li>[EX] <code v-pre>(LAMBDA (a b x) (+ (* a x x) (* b x)))</code></li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="special-form-function-define" tabindex="-1"><a class="header-anchor" href="#special-form-function-define"><span>Special Form Function: DEFINE</span></a></h2>
 <p>DEFINE - Two forms:</p>
 <ul>
@@ -401,6 +428,8 @@
 <li>The first parameter is never evaluated</li>
 <li>The second parameter is evaluated and bound to the first parameter</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="output-functions" tabindex="-1"><a class="header-anchor" href="#output-functions"><span>Output Functions</span></a></h2>
 <p>Usually not needed</p>
 <ul>
@@ -409,6 +438,8 @@
 <li>Scheme has <code v-pre>PRINTF</code>, which is similar to the <code v-pre>printf</code> function of C</li>
 <li>대부분의 표준 Scheme에는 없고, 일부 구현에서만 지원</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="display-and-read-functions" tabindex="-1"><a class="header-anchor" href="#display-and-read-functions"><span>Display and Read Functions</span></a></h2>
 <p>DISPLAY function: simply prints the arguments</p>
 <ul>
@@ -422,6 +453,8 @@ hello</li>
 <li><code v-pre>(DEFINE x (READ))</code>
 7</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="numeric-predicate-functions" tabindex="-1"><a class="header-anchor" href="#numeric-predicate-functions"><span>Numeric Predicate Functions</span></a></h2>
 <p>A predicate function is one that returns a Boolean value</p>
 <ul>
@@ -444,6 +477,8 @@ hello</li>
 <li><code v-pre>(EVEN? x)</code> returns <code v-pre>()</code></li>
 <li><code v-pre>(ODD? x)</code> returns <code v-pre>#T</code></li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="control-flow" tabindex="-1"><a class="header-anchor" href="#control-flow"><span>Control Flow</span></a></h2>
 <p>Selection- the special form, IF (two-way selector function)</p>
 <ul>
@@ -487,7 +522,9 @@ hello</li>
 <span class="line"><span class="token punctuation">(</span><span class="token function">leap?</span> <span class="token number">2024</span><span class="token punctuation">)</span> <span class="token comment">; returns #T</span></span>
 <span class="line"></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="list-functions" tabindex="-1"><a class="header-anchor" href="#list-functions"><span>List Functions</span></a></h2>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h2 id="list-functions" tabindex="-1"><a class="header-anchor" href="#list-functions"><span>List Functions</span></a></h2>
 <p>QUOTE - takes one parameter; returns the parameter without evaluation</p>
 <ul>
 <li>QUOTE is required because the Scheme interpreter, named EVAL, always evaluates parameters to function applications before applying the function</li>
@@ -567,6 +604,8 @@ hello</li>
 <li><code v-pre>= (CONS 'apple (CONS 'orange (CONS 'grape '())))</code></li>
 <li>내부적으로는 CONS를 여러 번 중첩해서 리스트를 만드는 것과 같음</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="predicate-function" tabindex="-1"><a class="header-anchor" href="#predicate-function"><span>Predicate Function</span></a></h2>
 <p>Predicate Function: EQ? (객체의 동일성(identity)을 비교)</p>
 <ul>
@@ -612,6 +651,8 @@ hello</li>
 <li><code v-pre>(NULL? 'A)</code> returns <code v-pre>#F</code> ; 심볼은 리스트도, 빈 리스트도 아님</li>
 <li><code v-pre>(NULL? '(()))</code> yields <code v-pre>#F</code> ; 요소로 빈 리스트를 가진 리스트 → 비어있지 않음</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="example-scheme-function-sort" tabindex="-1"><a class="header-anchor" href="#example-scheme-function-sort"><span>Example Scheme Function: sort</span></a></h2>
 <div class="language-scheme line-numbers-mode" data-highlighter="prismjs" data-ext="scheme"><pre v-pre><code class="language-scheme"><span class="line"><span class="token punctuation">(</span><span class="token function">DEFINE</span> <span class="token punctuation">(</span><span class="token function">insert</span> atm lst<span class="token punctuation">)</span></span>
 <span class="line">  <span class="token punctuation">(</span><span class="token function">COND</span></span>
@@ -666,6 +707,8 @@ hello</li>
 <p>아니면 → 첫 원소는 빼서 sort로 정렬한 나머지에 insert함수로 삽입</p>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="example-c-function-sort" tabindex="-1"><a class="header-anchor" href="#example-c-function-sort"><span>Example C Function: sort</span></a></h2>
 <div class="language-c line-numbers-mode" data-highlighter="prismjs" data-ext="c"><pre v-pre><code class="language-c"><span class="line"><span class="token comment">// insert: 정렬된 리스트에 value 삽입</span></span>
 <span class="line">Node<span class="token operator">*</span> <span class="token function">insert</span><span class="token punctuation">(</span><span class="token keyword">int</span> value<span class="token punctuation">,</span> Node<span class="token operator">*</span> lst<span class="token punctuation">)</span> <span class="token punctuation">{</span></span>
@@ -723,6 +766,8 @@ hello</li>
 <p>아니면 → 첫 원소는 빼서 sort로 정렬한 나머지에 insert함수로 삽입</p>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="example-scheme-function-member" tabindex="-1"><a class="header-anchor" href="#example-scheme-function-member"><span>Example Scheme Function: member</span></a></h2>
 <div class="language-scheme line-numbers-mode" data-highlighter="prismjs" data-ext="scheme"><pre v-pre><code class="language-scheme"><span class="line"><span class="token punctuation">(</span><span class="token function">DEFINE</span> <span class="token punctuation">(</span><span class="token builtin">member</span> atm a_list<span class="token punctuation">)</span></span>
 <span class="line">  <span class="token punctuation">(</span><span class="token function">COND</span></span>
@@ -743,7 +788,9 @@ hello</li>
 <span class="line"><span class="token punctuation">}</span></span>
 <span class="line"></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="example-scheme-function-equalsimp" tabindex="-1"><a class="header-anchor" href="#example-scheme-function-equalsimp"><span>Example Scheme Function: equalsimp</span></a></h2>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h2 id="example-scheme-function-equalsimp" tabindex="-1"><a class="header-anchor" href="#example-scheme-function-equalsimp"><span>Example Scheme Function: equalsimp</span></a></h2>
 <ul>
 <li>equalsimp takes two simple lists as parameters; returns #T if the two simple lists are equal; #F otherwise</li>
 </ul>
@@ -771,7 +818,9 @@ hello</li>
 <span class="line"><span class="token punctuation">}</span></span>
 <span class="line"></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="example-scheme-function-equal" tabindex="-1"><a class="header-anchor" href="#example-scheme-function-equal"><span>Example Scheme Function: equal</span></a></h2>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h2 id="example-scheme-function-equal" tabindex="-1"><a class="header-anchor" href="#example-scheme-function-equal"><span>Example Scheme Function: equal</span></a></h2>
 <ul>
 <li>equal takes two general lists as parameters;</li>
 <li>Complex than simple list case because sublist must be traced (리스트 안에 sublist가 있어도 비교 가능)</li>
@@ -791,6 +840,8 @@ hello</li>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul>
 <li>equal is equivalent to <code v-pre>EQUAL?</code> (but slower than <code v-pre>EQ?</code> and <code v-pre>EQV?</code>)</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="example-scheme-function-append" tabindex="-1"><a class="header-anchor" href="#example-scheme-function-append"><span>Example Scheme Function: append</span></a></h2>
 <ul>
 <li>append takes two lists as parameters;</li>
@@ -805,7 +856,9 @@ hello</li>
 <span class="line">                <span class="token punctuation">(</span><span class="token builtin">append</span> <span class="token punctuation">(</span><span class="token function">CDR</span> list1<span class="token punctuation">)</span> list2<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">; 나머지(list1의 꼬리)와 list2를 재귀적으로 이어붙임</span></span>
 <span class="line"></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="example-scheme-function-guess" tabindex="-1"><a class="header-anchor" href="#example-scheme-function-guess"><span>Example Scheme Function: guess</span></a></h2>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h2 id="example-scheme-function-guess" tabindex="-1"><a class="header-anchor" href="#example-scheme-function-guess"><span>Example Scheme Function: guess</span></a></h2>
 <ul>
 <li>guess takes two lists as parameters;</li>
 <li>Yields a simple list that contains the common elements of its two parameter lists</li>
@@ -821,7 +874,9 @@ hello</li>
 <span class="line"><span class="token punctuation">(</span><span class="token function">guess</span> <span class="token punctuation">'</span><span class="token punctuation">(</span>A B C D<span class="token punctuation">)</span> <span class="token punctuation">'</span><span class="token punctuation">(</span>B D F<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">; → (B D)</span></span>
 <span class="line"></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="example-scheme-function-adder" tabindex="-1"><a class="header-anchor" href="#example-scheme-function-adder"><span>Example Scheme Function: adder</span></a></h2>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h2 id="example-scheme-function-adder" tabindex="-1"><a class="header-anchor" href="#example-scheme-function-adder"><span>Example Scheme Function: adder</span></a></h2>
 <ul>
 <li>adder takes lists as parameters;</li>
 <li>Yields sum of the lists (숫자로만 구성된 리스트의 합을 계산하는 함수)</li>
@@ -866,7 +921,9 @@ hello</li>
 <span class="line"><span class="token punctuation">}</span></span>
 <span class="line"></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="example-scheme-function-let" tabindex="-1"><a class="header-anchor" href="#example-scheme-function-let"><span>Example Scheme Function: LET</span></a></h2>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h2 id="example-scheme-function-let" tabindex="-1"><a class="header-anchor" href="#example-scheme-function-let"><span>Example Scheme Function: LET</span></a></h2>
 <ul>
 <li>LET is actually shorthand for a LAMBDA expression applied to a parameter</li>
 <li>LET은 이름에 값을 임시로 바인딩하고, 그 값을 표현식 안에서 사용하는 구조</li>
@@ -879,6 +936,8 @@ hello</li>
 <li>LET 내부에서 바인딩된 이름은 다시 <code v-pre>SET!</code> 등으로 바꿀 수 없음</li>
 <li>변수 재정의는 불가능: 단순히 값 하나를 일시적으로 할당할 뿐</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="let-example" tabindex="-1"><a class="header-anchor" href="#let-example"><span>LET Example</span></a></h2>
 <ul>
 <li>이차방정식의 근의 공식을 이용해 두 근을 구하는 함수</li>
@@ -894,7 +953,9 @@ hello</li>
 <span class="line">          <span class="token punctuation">(</span><span class="token operator">-</span> minus_b_over_2a root_part_over_2a<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span></span>
 <span class="line"></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="tail-recursion-in-scheme" tabindex="-1"><a class="header-anchor" href="#tail-recursion-in-scheme"><span>Tail Recursion in Scheme</span></a></h2>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h2 id="tail-recursion-in-scheme" tabindex="-1"><a class="header-anchor" href="#tail-recursion-in-scheme"><span>Tail Recursion in Scheme</span></a></h2>
 <ul>
 <li>Definition: A function is tail recursive if its recursive call is the last operation in the function → 즉, 재귀 호출 뒤에 아무 연산도 남지 않아야 함</li>
 <li>A tail recursive function can be automatically converted by a compiler to use iteration, making it faster</li>
@@ -927,7 +988,9 @@ hello</li>
 <span class="line">  <span class="token punctuation">(</span><span class="token function">facthelper</span> n <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span></span>
 <span class="line"></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="functional-form-composition" tabindex="-1"><a class="header-anchor" href="#functional-form-composition"><span>Functional Form - Composition</span></a></h2>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h2 id="functional-form-composition" tabindex="-1"><a class="header-anchor" href="#functional-form-composition"><span>Functional Form - Composition</span></a></h2>
 <ul>
 <li>If h is the composition of f and g, <code v-pre>h(x) = f(g(x))</code> (두 함수 f와 g를 합쳐서 새로운 함수 h를 만드는 것)</li>
 </ul>
@@ -989,6 +1052,8 @@ is equivalent to CADDR</p>
 <p><code v-pre>compose CAR ...</code> → <code v-pre>CAR(CDDR(x))</code> → 즉, CADDR</p>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="functional-form-–-apply-to-all" tabindex="-1"><a class="header-anchor" href="#functional-form-–-apply-to-all"><span>Functional Form – Apply-to-All</span></a></h2>
 <ul>
 <li>Apply to All - one form in Scheme is map</li>
@@ -1026,7 +1091,9 @@ is equivalent to CADDR</p>
 <span class="line"><span class="token punctuation">(</span><span class="token function">FILTER</span> EVEN? <span class="token punctuation">'</span><span class="token punctuation">(</span><span class="token number">1</span> <span class="token number">2</span> <span class="token number">3</span> <span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">; → (2 4)</span></span>
 <span class="line"></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="functions-that-build-code" tabindex="-1"><a class="header-anchor" href="#functions-that-build-code"><span>Functions That Build Code</span></a></h2>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h2 id="functions-that-build-code" tabindex="-1"><a class="header-anchor" href="#functions-that-build-code"><span>Functions That Build Code</span></a></h2>
 <p>It is possible in Scheme to define a function that builds Scheme code and requests its interpretation</p>
 <ul>
 <li>Scheme은 “코드를 데이터처럼” 다룰 수 있는 언어</li>
@@ -1046,6 +1113,8 @@ is equivalent to CADDR</p>
 <li><code v-pre>(EVAL (make-def 'x 42) (interaction-environment))</code></li>
 <li><code v-pre>x</code> ; → 42</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="adding-a-list-of-numbers" tabindex="-1"><a class="header-anchor" href="#adding-a-list-of-numbers"><span>Adding a List of Numbers</span></a></h2>
 <p>The parameter is a list of numbers to be added;</p>
 <ul>
@@ -1073,6 +1142,7 @@ is equivalent to CADDR</p>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul>
 <li>리스트의 숫자들을 다 더해야 하는데, <code v-pre>+</code> 연산자를 리스트 앞에 붙여서 하나의 Scheme 코드로 만든 뒤, 그걸 EVAL로 실행하는 방식</li>
 </ul>
+</section>
 </div></template>
 
 

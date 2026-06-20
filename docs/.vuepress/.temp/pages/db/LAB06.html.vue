@@ -1,5 +1,8 @@
-<template><div><h1 id="web-application-development" tabindex="-1"><a class="header-anchor" href="#web-application-development"><span>Web Application Development</span></a></h1>
+<template><div><section class="print-section">
+<h1 id="web-application-development" tabindex="-1"><a class="header-anchor" href="#web-application-development"><span>Web Application Development</span></a></h1>
 <DateMeta />
+</section>
+<section class="print-section">
 <h2 id="목차" tabindex="-1"><a class="header-anchor" href="#목차"><span>목차</span></a></h2>
 <ul>
 <li><code v-pre>Node.js</code></li>
@@ -13,6 +16,8 @@
 <li>Middleware (미들웨어)</li>
 <li>Config (설정), <code v-pre>.env</code></li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="about-node-js" tabindex="-1"><a class="header-anchor" href="#about-node-js"><span>About <code v-pre>Node.js</code></span></a></h2>
 <ul>
 <li>JavaScript Runtime (자바스크립트 런타임)</li>
@@ -22,6 +27,8 @@
 <li>요청을 받은 후 해당 요청이 끝나기 전에 다음 요청을 받을 수 있음</li>
 <li>Asynchronous IO (비동기 입출력)를 지원하므로 IO를 처리하는 동안 blocking (블로킹)하지 않음</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="asynchronous-request-processing" tabindex="-1"><a class="header-anchor" href="#asynchronous-request-processing"><span>Asynchronous Request Processing</span></a></h2>
 <ul>
 <li>Synchronous Request Processing (동기 요청 처리)
@@ -57,6 +64,8 @@
 </ol>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="callback-function" tabindex="-1"><a class="header-anchor" href="#callback-function"><span>Callback Function</span></a></h2>
 <ul>
 <li>비동기 작업(Asynchronous operation)이 완료되었을 때 호출되는 함수(Function)</li>
@@ -76,7 +85,11 @@
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul>
 <li>파일을 읽어온 후 에러(Error)가 있으면 콘솔창(Console)에 에러를 출력하고 그렇지 않은 경우 읽어온 데이터(Data)를 출력</li>
 </ul>
+</section>
+<section class="print-section">
 <h1 id="node-js-project-structure" tabindex="-1"><a class="header-anchor" href="#node-js-project-structure"><span><code v-pre>Node.js</code> Project Structure</span></a></h1>
+</section>
+<section class="print-section">
 <h2 id="npm-package-json" tabindex="-1"><a class="header-anchor" href="#npm-package-json"><span>npm, <code v-pre>package.json</code></span></a></h2>
 <ul>
 <li>npm (Node Package Manager)
@@ -107,6 +120,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="router" tabindex="-1"><a class="header-anchor" href="#router"><span>Router</span></a></h2>
 <ul>
 <li>Router의 역할
@@ -120,6 +135,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="controller" tabindex="-1"><a class="header-anchor" href="#controller"><span>Controller</span></a></h2>
 <ul>
 <li>Controller의 역할
@@ -141,6 +158,8 @@
 </li>
 <li>이를 통해 코드를 더 깔끔하고 유지보수하기 쉽게 함</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="middleware" tabindex="-1"><a class="header-anchor" href="#middleware"><span>Middleware</span></a></h2>
 <ul>
 <li>Middleware의 역할
@@ -156,6 +175,8 @@
 </li>
 <li>권한 검사 (Authorization): 관리자만 접근할 수 있는 페이지인지 확인</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="config-env" tabindex="-1"><a class="header-anchor" href="#config-env"><span>Config, <code v-pre>.env</code></span></a></h2>
 <ul>
 <li>역할
@@ -175,6 +196,7 @@
 </ul>
 </li>
 </ul>
+</section>
 </div></template>
 
 

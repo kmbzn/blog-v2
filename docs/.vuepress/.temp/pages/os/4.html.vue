@@ -1,5 +1,8 @@
-<template><div><h1 id="_4-threads" tabindex="-1"><a class="header-anchor" href="#_4-threads"><span>4. Threads</span></a></h1>
+<template><div><section class="print-section">
+<h1 id="_4-threads" tabindex="-1"><a class="header-anchor" href="#_4-threads"><span>4. Threads</span></a></h1>
 <DateMeta />
+</section>
+<section class="print-section">
 <h2 id="다루는-주제" tabindex="-1"><a class="header-anchor" href="#다루는-주제"><span>다루는 주제</span></a></h2>
 <ul>
 <li>A. 스레드 개념</li>
@@ -7,7 +10,11 @@
 <li>C. 스레딩 관련 이슈</li>
 <li>D. 사례</li>
 </ul>
+</section>
+<section class="print-section">
 <h1 id="a-스레드-개념" tabindex="-1"><a class="header-anchor" href="#a-스레드-개념"><span>A. 스레드 개념</span></a></h1>
+</section>
+<section class="print-section">
 <h2 id="개념" tabindex="-1"><a class="header-anchor" href="#개념"><span>개념</span></a></h2>
 <ul>
 <li>스레드는 흔히 경량 프로세스(lightweight process)라 불림
@@ -19,6 +26,8 @@
 </li>
 </ul>
 <p><img src="@source/os/image.png" alt=""></p>
+</section>
+<section class="print-section">
 <h2 id="프로세스-vs-스레드" tabindex="-1"><a class="header-anchor" href="#프로세스-vs-스레드"><span>프로세스 vs. 스레드</span></a></h2>
 <ul>
 <li>프로세스
@@ -44,8 +53,12 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="단일-스레드-vs-멀티-스레드-애플리케이션" tabindex="-1"><a class="header-anchor" href="#단일-스레드-vs-멀티-스레드-애플리케이션"><span>단일 스레드 vs. 멀티 스레드 애플리케이션</span></a></h2>
 <p><img src="@source/os/image-1.png" alt=""></p>
+</section>
+<section class="print-section">
 <h2 id="스레드-예제-–-생성과-종료" tabindex="-1"><a class="header-anchor" href="#스레드-예제-–-생성과-종료"><span>스레드 예제 – 생성과 종료</span></a></h2>
 <div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code class="language-text"><span class="line">#include &lt;pthread.h></span>
 <span class="line">#include &lt;stdio.h></span>
@@ -86,6 +99,8 @@
 <li><code v-pre>thread_func</code>는 스레드가 생성된 후 실행할 C 루틴임</li>
 <li><code v-pre>arg</code>를 통해 <code v-pre>start_routine</code>에 단일 인자를 전달할 수 있음</li>
 </ol>
+</section>
+<section class="print-section">
 <h2 id="pthreads-apis" tabindex="-1"><a class="header-anchor" href="#pthreads-apis"><span>Pthreads APIs</span></a></h2>
 <ul>
 <li><code v-pre>pthread_t pthread_self()</code>: 자신의 스레드 ID를 가져옴</li>
@@ -93,6 +108,8 @@
 <li><code v-pre>int pthread_join(pthread_t thread, void status_ptr)</code>: 다른 스레드가 종료될 때까지 대기</li>
 <li><code v-pre>int pthread_detach(pthread_t thread)</code>: 스레드가 종료될 때 할당된 자원을 즉시 회수할 수 있음을 나타냄 (분리된 스레드는 join될 수 없음)</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="스레드의-실행-특성" tabindex="-1"><a class="header-anchor" href="#스레드의-실행-특성"><span>스레드의 실행 특성</span></a></h2>
 <ul>
 <li>스레드는 실행 상태(실행 중, 준비, 대기)를 가짐</li>
@@ -101,6 +118,8 @@
 <li>한 스레드가 전역 변수를 수정하면 프로세스 내 다른 모든 스레드가 변경 사항을 확인 가능</li>
 <li>한 스레드가 연 파일은 다른 스레드에서도 사용 가능</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="thread-private-data" tabindex="-1"><a class="header-anchor" href="#thread-private-data"><span>Thread Private Data</span></a></h2>
 <ul>
 <li>스택에 저장되는 변수는 스레드 private 데이터임
@@ -115,6 +134,8 @@
 </li>
 <li>변수 a와 b는 각 스레드에 대해 독립적임</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="스레드-로컬-변수-thread-local-variables" tabindex="-1"><a class="header-anchor" href="#스레드-로컬-변수-thread-local-variables"><span>스레드 로컬 변수 (Thread Local Variables)</span></a></h2>
 <ul>
 <li>모든 루틴에서 접근 가능한 전역 데이터이나, 각 스레드는 데이터의 독립적인 사본만을 가짐<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code class="language-text"><span class="line">__thread void * mydata;</span>
@@ -127,6 +148,8 @@
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></li>
 <li><code v-pre>mydata</code> 변수는 스레드에 로컬하므로, 각 스레드는 해당 변수에 대해 서로 다른 값을 가질 수 있음</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="이점-benefits" tabindex="-1"><a class="header-anchor" href="#이점-benefits"><span>이점 Benefits</span></a></h2>
 <ul>
 <li>응답성 (Responsiveness)
@@ -151,6 +174,8 @@
 </li>
 <li>동시성 프로그래밍 모델 제공</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="예시-웹-서버를-위한-멀티스레딩" tabindex="-1"><a class="header-anchor" href="#예시-웹-서버를-위한-멀티스레딩"><span>예시: 웹 서버를 위한 멀티스레딩</span></a></h2>
 <p><img src="@source/os/image-2.png" alt=""></p>
 <ul>
@@ -159,6 +184,8 @@
 <img src="@source/os/image-3.png" alt="">
 <img src="@source/os/image-4.png" alt=""></li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="processes-threads-and-tasks" tabindex="-1"><a class="header-anchor" href="#processes-threads-and-tasks"><span>Processes, Threads, and Tasks</span></a></h3>
 <ul>
 <li>태스크의 용어적 정의
@@ -175,7 +202,11 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h1 id="b-멀티스레딩-모델" tabindex="-1"><a class="header-anchor" href="#b-멀티스레딩-모델"><span>B. 멀티스레딩 모델</span></a></h1>
+</section>
+<section class="print-section">
 <h2 id="사용자-스레드-user-threads" tabindex="-1"><a class="header-anchor" href="#사용자-스레드-user-threads"><span>사용자 스레드 (User Threads)</span></a></h2>
 <ul>
 <li>사용자 수준의 스레드 라이브러리에 의해 관리됨
@@ -187,6 +218,8 @@
 <li>단점: 커널이 단일 스레드 방식일 경우, 하나의 사용자 스레드가 시스템 콜로 차단되면 프로세스 전체가 차단됨</li>
 <li>사례: POSIX Pthreads, Mach C-threads</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="커널-스레드-kernel-threads" tabindex="-1"><a class="header-anchor" href="#커널-스레드-kernel-threads"><span>커널 스레드 (Kernel Threads)</span></a></h2>
 <ul>
 <li>커널에 의해 직접 지원됨</li>
@@ -194,6 +227,8 @@
 <li>사용자 스레드보다 생성 및 관리가 느림</li>
 <li>사례: Windows, Solaris, Linux 등</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="멀티스레딩-모델의-종류" tabindex="-1"><a class="header-anchor" href="#멀티스레딩-모델의-종류"><span>멀티스레딩 모델의 종류</span></a></h2>
 <p><img src="@source/os/image-5.png" alt=""></p>
 <ul>
@@ -201,7 +236,11 @@
 <li>일대일(One-to-One): 각 사용자 스레드가 개별 커널 스레드에 매핑됨 (Windows, OS/2 등)</li>
 <li>다대다(Many-to-Many): 여러 사용자 스레드가 그보다 적거나 같은 수의 커널 스레드에 매핑됨 (Solaris 2 등)</li>
 </ul>
+</section>
+<section class="print-section">
 <h1 id="c-스레딩-관련-이슈" tabindex="-1"><a class="header-anchor" href="#c-스레딩-관련-이슈"><span>C. 스레딩 관련 이슈</span></a></h1>
+</section>
+<section class="print-section">
 <h2 id="fork-시스템-콜의-의미" tabindex="-1"><a class="header-anchor" href="#fork-시스템-콜의-의미"><span>fork() 시스템 콜의 의미</span></a></h2>
 <ul>
 <li>한 스레드가 <code v-pre>fork()</code>를 호출할 경우 두 가지 가능성이 존재
@@ -212,6 +251,8 @@
 </li>
 <li>많은 시스템이 두 가지 변형된 <code v-pre>fork()</code>를 모두 제공하여 절충</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="기타-시스템-콜-관련-이슈" tabindex="-1"><a class="header-anchor" href="#기타-시스템-콜-관련-이슈"><span>기타 시스템 콜 관련 이슈</span></a></h2>
 <ul>
 <li>프로세스 내 모든 스레드는 파일 디스크립터 집합을 공유</li>
@@ -219,6 +260,8 @@
 <li>공통 주소 공간을 공유</li>
 <li><code v-pre>mmap</code>, <code v-pre>brk</code>와 같은 시스템 콜을 통한 동시 수정 시 스레드 안전(thread-safe)을 보장해야</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="스택-오버플로우-stack-overflow" tabindex="-1"><a class="header-anchor" href="#스택-오버플로우-stack-overflow"><span>스택 오버플로우 (Stack Overflow)</span></a></h2>
 <ul>
 <li>UNIX 프로세스 스택 오버플로우 시 커널이 이를 감지하고 자동 확장</li>
@@ -226,6 +269,8 @@
 <li>사용자 스레드 라이브러리가 스택 끝에 쓰기 방지 페이지를 할당하여 보호</li>
 <li>오버플로우 발생 시 보호 오류가 발생하고 커널이 SIGSEGV 신호를 해당 스레드에 보냄</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="스레드-풀-thread-pool" tabindex="-1"><a class="header-anchor" href="#스레드-풀-thread-pool"><span>스레드 풀 (Thread Pool)</span></a></h2>
 <ul>
 <li>프로세스 시작 시 미리 일정 수의 스레드를 생성하여 풀에 저장</li>
@@ -233,7 +278,11 @@
 <li>장점: 새 스레드 생성보다 처리가 빠르며, 시스템이 지원 가능한 스레드 수를 제한할 수 있음</li>
 <li>웹 서버 멀티스레딩에 유용</li>
 </ul>
+</section>
+<section class="print-section">
 <h1 id="d-사례" tabindex="-1"><a class="header-anchor" href="#d-사례"><span>D. 사례</span></a></h1>
+</section>
+<section class="print-section">
 <h2 id="solaris-2-스레드" tabindex="-1"><a class="header-anchor" href="#solaris-2-스레드"><span>Solaris 2 스레드</span></a></h2>
 <ul>
 <li>커널 및 사용자 수준 모두에서 스레드 지원</li>
@@ -252,8 +301,11 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="solaris-process" tabindex="-1"><a class="header-anchor" href="#solaris-process"><span>Solaris Process</span></a></h2>
 <p><img src="@source/os/image-7.png" alt=""></p>
+</section>
 </div></template>
 
 

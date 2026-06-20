@@ -1,19 +1,28 @@
-<template><div><h1 id="herman-miller" tabindex="-1"><a class="header-anchor" href="#herman-miller"><span>Herman Miller</span></a></h1>
+<template><div><section class="print-section">
+<h1 id="herman-miller" tabindex="-1"><a class="header-anchor" href="#herman-miller"><span>Herman Miller</span></a></h1>
 <DateMeta />
 <p>Herman Miller는 1905년 미국 미시간주 제일랜드(Zeeland)에서 설립된 미국의 프리미엄 가구 브랜드다. 오피스 체어, 책상, 수납 시스템을 중심으로 한 작업 환경 가구에서 세계 최고 수준의 인지도를 보유하며, 특히 <strong>에어론 체어</strong>(Aeron Chair)는 세계에서 가장 많이 팔린 단일 오피스 체어 모델로 기록되어 있다.</p>
+</section>
+<section class="print-section">
 <h2 id="브랜드-역사" tabindex="-1"><a class="header-anchor" href="#브랜드-역사"><span>브랜드 역사</span></a></h2>
 <p>1905년 스타 퍼니처(Star Furniture Company)로 설립되었으며, 1923년 창업자의 사위인 D.J. De Pree가 회사를 인수하면서 장인어른의 이름을 따 <strong>Herman Miller Furniture Company</strong>로 개명했다.</p>
 <p>1930–40년대 디자이너 길버트 로드(Gilbert Rohde)와의 협업으로 모더니즘 가구로 방향을 전환했고, 1945년 이후 조지 넬슨(George Nelson)이 디자인 디렉터로 합류하면서 현대 사무 가구 분야의 선구자로 자리잡았다.</p>
 <p>1956년에는 찰스·레이 임스(Charles &amp; Ray Eames) 부부와 협업해 <strong>임스 라운지 체어</strong>(Eames Lounge Chair)를 출시했다. 이 의자는 현재도 생산·판매 중이며, MoMA 영구 소장품으로 등재되어 있다.</p>
 <p>2021년 경쟁사 Knoll을 인수했으며, 2022년 모회사 MillerKnoll로 통합되었다.</p>
+</section>
+<section class="print-section">
 <h2 id="에어론-체어-aeron-chair" tabindex="-1"><a class="header-anchor" href="#에어론-체어-aeron-chair"><span>에어론 체어 (Aeron Chair)</span></a></h2>
 <p><img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Aeron_Chair_by_Herman_Miller_(9446986497).jpg" alt="Aeron Chair by Herman Miller"></p>
 <p>에어론 체어는 1994년 빌 스텀프(Bill Stumpf)와 돈 채드윅(Don Chadwick)이 공동 설계해 Herman Miller에서 출시한 오피스 체어다. 출시 당시 기존 오피스 체어 디자인의 모든 관습을 깼으며, 이후 오피스 체어의 기준을 바꾼 제품으로 평가받는다.</p>
 <p>출시 이후 현재까지 800만 개 이상이 판매되었으며, MoMA 영구 소장품으로 등재되어 있다.</p>
+</section>
+<section class="print-section">
 <h3 id="디자인-철학-업홀스터리-없는-의자" tabindex="-1"><a class="header-anchor" href="#디자인-철학-업홀스터리-없는-의자"><span>디자인 철학: 업홀스터리 없는 의자</span></a></h3>
 <p><img src="https://upload.wikimedia.org/wikipedia/commons/c/ce/Aeron_chair_Brooklyn_Museum.jpg" alt="Aeron Chair Brooklyn Museum"></p>
 <p>기존 오피스 체어는 폼(foam)과 패브릭으로 덮인 업홀스터리 구조였다. 에어론 체어는 이를 완전히 버리고 <strong>8Z 펠리클</strong>(8Z Pellicle)이라는 탄성 메시 소재를 채택했다. 이 소재는 신체 윤곽에 맞게 탄력적으로 반응하면서, 공기 순환을 허용해 열 축적을 최소화한다.</p>
 <p>메시 구조는 단순한 소재 교체가 아니라, <strong>착석 압력 분산 방식 자체를 바꾼 것</strong>이다. 업홀스터리 의자는 중앙 압력이 집중되는 반면, 메시 서스펜션은 체중을 좌면 전체에 균일하게 분산시킨다.</p>
+</section>
+<section class="print-section">
 <h3 id="뉴-에어론-new-aeron-2016" tabindex="-1"><a class="header-anchor" href="#뉴-에어론-new-aeron-2016"><span>뉴 에어론 (New Aeron, 2016)</span></a></h3>
 <p><img src="https://upload.wikimedia.org/wikipedia/commons/d/d3/Aeron_Chair.jpg" alt="Aeron Chair"></p>
 <p>2016년, 출시 22년 만에 대규모 업데이트가 이루어졌다. 외형을 크게 바꾸지 않으면서 인체공학적 성능을 전면 개선했다.</p>
@@ -61,6 +70,8 @@
 </table>
 <p><strong>포스추어핏 SL (PostureFit SL)</strong></p>
 <p>뉴 에어론에서 업그레이드된 요추 지지 장치. 기존 요추 지지대가 하나의 판 형태였던 것을, 천골(Sacral)과 요추(Lumbar) 두 부위를 독립적으로 지지하는 이중 구조로 변경했다. 척추의 자연스러운 S자 굴곡을 유지해 장시간 착석 시 피로를 줄인다.</p>
+</section>
+<section class="print-section">
 <h3 id="사이즈-선택" tabindex="-1"><a class="header-anchor" href="#사이즈-선택"><span>사이즈 선택</span></a></h3>
 <p>에어론 체어는 A·B·C 세 가지 사이즈로 제공된다.</p>
 <table>
@@ -94,6 +105,8 @@
 </tbody>
 </table>
 <p>한국 성인 남성 평균 체형은 B 사이즈가 대부분 적합하며, 키가 작은 편이라면 A 사이즈를 고려할 수 있다.</p>
+</section>
+<section class="print-section">
 <h3 id="팔걸이-옵션" tabindex="-1"><a class="header-anchor" href="#팔걸이-옵션"><span>팔걸이 옵션</span></a></h3>
 <table>
 <thead>
@@ -114,9 +127,13 @@
 </tbody>
 </table>
 <p>장시간 타이핑이 많은 작업자라면 4D 팔걸이가 필수에 가깝다.</p>
+</section>
+<section class="print-section">
 <h3 id="틸트-옵션" tabindex="-1"><a class="header-anchor" href="#틸트-옵션"><span>틸트 옵션</span></a></h3>
 <p><strong>틸트 림이터 (Tilt Limiter)</strong>: 등받이 기울기 각도를 3단계(0°, 15°, 25°)로 제한 설정 가능. 원하는 자세를 유지하기 좋다.</p>
 <p><strong>포워드 틸트 (Forward Tilt)</strong>: 앉은 자세에서 앞으로 약간 기울어진 포지션을 고정. 모니터를 가까이 보는 작업자에게 유용하다.</p>
+</section>
+<section class="print-section">
 <h2 id="가격" tabindex="-1"><a class="header-anchor" href="#가격"><span>가격</span></a></h2>
 <p>국내 Herman Miller 공식 판매처 기준(2025년 기준):</p>
 <table>
@@ -142,6 +159,8 @@
 </tbody>
 </table>
 <p>Herman Miller는 새 제품에 <strong>12년 보증</strong>을 제공한다. 리퍼비시 공인 제품도 2년 보증이 있어 가성비 측면에서 고려할 만하다.</p>
+</section>
+<section class="print-section">
 <h2 id="에어론-vs-경쟁-제품" tabindex="-1"><a class="header-anchor" href="#에어론-vs-경쟁-제품"><span>에어론 vs 경쟁 제품</span></a></h2>
 <table>
 <thead>
@@ -179,11 +198,14 @@
 </tr>
 </tbody>
 </table>
+</section>
+<section class="print-section">
 <h2 id="임스-라운지-체어-eames-lounge-chair-1956" tabindex="-1"><a class="header-anchor" href="#임스-라운지-체어-eames-lounge-chair-1956"><span>임스 라운지 체어 (Eames Lounge Chair, 1956)</span></a></h2>
 <p>에어론과 함께 Herman Miller를 상징하는 또 하나의 아이콘. 찰스·레이 임스 부부가 설계한 성형합판(molded plywood)과 가죽 쿠션의 조합으로, 1956년 출시 이후 단 한 번의 단종 없이 지금도 동일한 디자인으로 생산된다.</p>
 <p>국내 가격 기준 약 900만원 ~ 1,200만원대이며, 의자 디자인 역사에서 가장 중요한 작품 중 하나로 꼽힌다.</p>
 <hr>
 <p><em>이미지 출처: Wikimedia Commons, CC BY-SA 2.0 / CC BY-SA 4.0</em></p>
+</section>
 </div></template>
 
 

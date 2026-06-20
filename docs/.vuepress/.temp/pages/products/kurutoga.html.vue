@@ -1,6 +1,9 @@
-<template><div><h1 id="쿠루토가-kurutoga" tabindex="-1"><a class="header-anchor" href="#쿠루토가-kurutoga"><span>쿠루토가 (KURUTOGA)</span></a></h1>
+<template><div><section class="print-section">
+<h1 id="쿠루토가-kurutoga" tabindex="-1"><a class="header-anchor" href="#쿠루토가-kurutoga"><span>쿠루토가 (KURUTOGA)</span></a></h1>
 <DateMeta />
 <p>쿠루토가(クルトガ, KURUTOGA)는 미쓰비시 연필(三菱鉛筆, uni 브랜드)에서 개발한 기계식 샤프펜슬 시리즈다. &quot;쿠루쿠루(くるくる, 빙글빙글) + 토가루(とがる, 날카로워지다)&quot;의 합성어로, 필기 중 심이 자동으로 회전해 항상 뾰족한 상태를 유지하는 특허 메커니즘이 핵심이다.</p>
+</section>
+<section class="print-section">
 <h2 id="쿠루토가-메커니즘" tabindex="-1"><a class="header-anchor" href="#쿠루토가-메커니즘"><span>쿠루토가 메커니즘</span></a></h2>
 <p>일반 샤프펜슬로 필기하면 심의 한쪽 면만 닳아 점점 비스듬해진다. 쿠루토가는 필기 중 종이에 압력이 가해질 때마다 심이 자동으로 <strong>9도씩 회전</strong>한다.</p>
 <div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code class="language-text"><span class="line">stroke 1 → 9°  회전</span>
@@ -11,10 +14,16 @@
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>40회 획마다 1회전으로, 심 전체가 균일하게 마모되면서 항상 원뿔형 뾰족함을 유지한다.</p>
 <p><strong>쿠루토가 어드밴스(Advanced)</strong> 모델에서는 회전각이 2배(18도/획)로 개선되어 더 빠르게 균일 마모를 실현한다.</p>
 <hr>
+</section>
+<section class="print-section">
 <h2 id="전용-심-uni-nano-dia" tabindex="-1"><a class="header-anchor" href="#전용-심-uni-nano-dia"><span>전용 심: uni &quot;nano dia&quot;</span></a></h2>
 <p>쿠루토가는 일반 샤프심보다 <strong>강도와 밀도가 높은 전용 nano dia 심</strong>과 함께 사용하도록 설계되어 있다. 회전 메커니즘에서 발생하는 비틀림 힘에 견디기 위해 흑연 입자를 나노 수준으로 처리해 밀도를 높였다. 일반 심도 호환되지만, 전용 심 사용 시 부러짐이 현저히 줄어든다.</p>
 <hr>
+</section>
+<section class="print-section">
 <h2 id="라인업" tabindex="-1"><a class="header-anchor" href="#라인업"><span>라인업</span></a></h2>
+</section>
+<section class="print-section">
 <h3 id="스탠다드-standard" tabindex="-1"><a class="header-anchor" href="#스탠다드-standard"><span>스탠다드 (Standard)</span></a></h3>
 <p>가장 기본형. 0.5mm 단일 경도 HB만 있는 게 아니라 0.3mm / 0.5mm 심 경도 2B~H까지 다양하게 구성된다. 플라스틱 바디로 가볍고 저렴하다.</p>
 <ul>
@@ -22,6 +31,8 @@
 <li>바디: ABS 플라스틱</li>
 <li>가격: 약 2,000~3,000원</li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="어드밴스-advance" tabindex="-1"><a class="header-anchor" href="#어드밴스-advance"><span>어드밴스 (Advance)</span></a></h3>
 <p>스탠다드 대비 회전각 2배, 그립부 고무 개선. 일상적인 필기와 시험에 가장 많이 쓰이는 모델.</p>
 <ul>
@@ -30,18 +41,24 @@
 <li>특징: 2배속 회전 메커니즘</li>
 <li>가격: 약 4,000~5,000원</li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="어드밴스-업그레이드-advance-upgrade" tabindex="-1"><a class="header-anchor" href="#어드밴스-업그레이드-advance-upgrade"><span>어드밴스 업그레이드 (Advance Upgrade)</span></a></h3>
 <p>어드밴스 + 클립 내장 에어 쿠션 구조 추가. 필기 충격을 완화해 심 부러짐을 추가로 줄인다.</p>
 <ul>
 <li>심경: 0.3 / 0.5mm</li>
 <li>특징: 에어 쿠션 + 2배속 회전</li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="쿠루토가-라쳇-ratchet" tabindex="-1"><a class="header-anchor" href="#쿠루토가-라쳇-ratchet"><span>쿠루토가 라쳇 (Ratchet)</span></a></h3>
 <p>심을 내리는 클릭 방식이 기존 방식과 다른 <strong>래칫(ratchet) 기구</strong> 사용. 클릭할 때마다 정확히 0.5mm씩 내려온다. 일본에서 학생 수험용으로 특히 인기가 높다.</p>
 <ul>
 <li>심경: 0.5mm</li>
 <li>특징: 래칫 클릭 방식, 일정량 배출</li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="메탈-metal" tabindex="-1"><a class="header-anchor" href="#메탈-metal"><span>메탈 (Metal)</span></a></h3>
 <p>알루미늄 바디로 내구성과 고급감을 높인 모델. 쿠루토가 메커니즘에 금속 소재를 더해 데스크탑 펜으로도 손색없다.</p>
 <ul>
@@ -49,6 +66,8 @@
 <li>바디: 알루미늄</li>
 <li>가격: 약 12,000~15,000원</li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="다이브-dive" tabindex="-1"><a class="header-anchor" href="#다이브-dive"><span>다이브 (Dive)</span></a></h3>
 <p>2019년 출시, 쿠루토가 라인업 중 가장 현대적인 디자인. 사각형 그립과 미니멀한 클립이 특징. 0.5mm 단일.</p>
 <ul>
@@ -57,6 +76,8 @@
 <li>특징: 각진 그립, 낮은 무게중심</li>
 </ul>
 <hr>
+</section>
+<section class="print-section">
 <h2 id="심경-선택-가이드" tabindex="-1"><a class="header-anchor" href="#심경-선택-가이드"><span>심경 선택 가이드</span></a></h2>
 <table>
 <thead>
@@ -86,6 +107,8 @@
 </table>
 <p>쿠루토가 메커니즘의 효과는 <strong>0.5mm에서 가장 뚜렷</strong>하다. 0.3mm에서도 작동하지만 심이 워낙 가늘어 뾰족함 유지보다 부러짐 방지가 더 중요해진다.</p>
 <hr>
+</section>
+<section class="print-section">
 <h2 id="경쟁-제품-비교" tabindex="-1"><a class="header-anchor" href="#경쟁-제품-비교"><span>경쟁 제품 비교</span></a></h2>
 <table>
 <thead>
@@ -125,12 +148,15 @@
 </table>
 <p><strong>쿠루토가 vs Zebra DelGuard</strong>: 쿠루토가는 &quot;항상 뾰족하게&quot;, DelGuard는 &quot;심이 안 부러지게&quot;를 각각 해결한다. 선명한 필기를 원하면 쿠루토가, 빠른 필기로 자주 부러뜨리는 경우에는 DelGuard가 유리하다.</p>
 <hr>
+</section>
+<section class="print-section">
 <h2 id="구매-팁" tabindex="-1"><a class="header-anchor" href="#구매-팁"><span>구매 팁</span></a></h2>
 <ul>
 <li><strong>국내 구매</strong>: 문구점, 다이소(기본형), 교보문고, 알라딘, 쿠팡</li>
 <li><strong>일본 직구</strong>: 일반 쿠루토가는 국내가와 큰 차이 없음. 한정 컬러나 메탈 고급형은 일본 직구가 저렴할 수 있음</li>
 <li><strong>전용 심</strong>: uni &quot;nano dia&quot; 심이 권장이나, Pentel Ain Stein 심도 호환되며 좋은 평가를 받는다</li>
 </ul>
+</section>
 </div></template>
 
 

@@ -1,10 +1,17 @@
-<template><div><h1 id="jinhao-金豪" tabindex="-1"><a class="header-anchor" href="#jinhao-金豪"><span>JINHAO (金豪)</span></a></h1>
+<template><div><section class="print-section">
+<h1 id="jinhao-金豪" tabindex="-1"><a class="header-anchor" href="#jinhao-金豪"><span>JINHAO (金豪)</span></a></h1>
 <DateMeta />
 <p>JINHAO(金豪, 진하오)는 중국 상하이에 본사를 둔 필기구 브랜드다. 1988년 장시성(江西省)에서 설립되어 2003년 상하이로 이전했으며, 수천 원대의 극저가 만년필부터 고급 수지·금속 바디의 상위 모델까지 폭넓은 라인업을 보유하고 있다. 서구 만년필 커뮤니티에서는 <strong>치파이(Chi-Fi) 만년필</strong>의 대표 브랜드로 인정받는다.</p>
+</section>
+<section class="print-section">
 <h2 id="브랜드-개요" tabindex="-1"><a class="header-anchor" href="#브랜드-개요"><span>브랜드 개요</span></a></h2>
 <p>공식 사명은 <strong>상하이 천구 문구</strong>(Shanghai Qiangu Stationery Co., Ltd)이며, JINHAO는 주력 브랜드명이다. &quot;金豪&quot;는 한자로 &quot;금빛 호탁함&quot; 혹은 &quot;황금 붓털&quot;로 해석되며, 필기구 브랜드명으로 적절한 뜻을 가진다.</p>
 <p>약 300명의 직원과 두 개의 제조 공장을 운영하며, ISO 9001:2000 품질 인증을 보유하고 있다. AliExpress, Amazon 등을 통해 전 세계에 직배송하며, 국내에서는 네이버쇼핑·쿠팡 등에서 구입 가능하다.</p>
+</section>
+<section class="print-section">
 <h2 id="주요-제품-라인" tabindex="-1"><a class="header-anchor" href="#주요-제품-라인"><span>주요 제품 라인</span></a></h2>
+</section>
+<section class="print-section">
 <h3 id="jinhao-9019-jinhao-century" tabindex="-1"><a class="header-anchor" href="#jinhao-9019-jinhao-century"><span>Jinhao 9019 / Jinhao Century</span></a></h3>
 <p>JINHAO의 현 플래그십 라인. 대구경 아크릴 수지 바디에 수성 피스톤 필러 방식을 채택했다. 다양한 반투명 컬러와 마블 패턴이 있으며, 금도금 또는 스틸 닙(nib)을 선택할 수 있다. 실용성과 심미성을 모두 갖춘 모델로, 만년필 입문자에게 가장 많이 추천되는 라인 중 하나다.</p>
 <ul>
@@ -13,6 +20,8 @@
 <li>닙: #6 스틸 / 금도금</li>
 <li>가격: ₩5,000 ~ ₩15,000</li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="jinhao-159" tabindex="-1"><a class="header-anchor" href="#jinhao-159"><span>Jinhao 159</span></a></h3>
 <p>Montblanc Meisterstück 149에서 영감을 받은 대형 금속 바디 만년필. 무게감과 존재감이 뚜렷하며, 금도금 #6 닙을 기본 탑재한다. 카트리지/컨버터 양용이며, 금속 바디 특유의 묵직한 필기감을 원하는 사용자에게 적합하다.</p>
 <ul>
@@ -21,6 +30,8 @@
 <li>캡: 스크류 방식</li>
 <li>가격: ₩8,000 ~ ₩20,000</li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="jinhao-x750-x450" tabindex="-1"><a class="header-anchor" href="#jinhao-x750-x450"><span>Jinhao X750 / X450</span></a></h3>
 <p>JINHAO의 스테디셀러. 풀사이즈 스냅캡 만년필로, 다양한 컬러와 패턴의 수지 바디가 특징이다. X750은 표준 크기, X450은 슬림한 형태다. 스틸 닙의 필기 품질이 가격 대비 뛰어나 입문 만년필로 오랫동안 인기를 유지하고 있다.</p>
 <ul>
@@ -29,6 +40,8 @@
 <li>닙: 스틸 (EF / F / M 선택)</li>
 <li>가격: ₩3,000 ~ ₩8,000</li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="jinhao-shark-상어-만년필" tabindex="-1"><a class="header-anchor" href="#jinhao-shark-상어-만년필"><span>Jinhao Shark (상어 만년필)</span></a></h3>
 <p>JINHAO를 대중에게 알린 아이콘적인 제품. 상어 지느러미를 형상화한 독특한 캡 디자인으로, 세계 만년필 커뮤니티에서 밈(meme)에 가까운 존재감을 갖는다. 어린이·학생용으로도 적합할 만큼 저렴하고 가볍다.</p>
 <ul>
@@ -36,6 +49,8 @@
 <li>닙: 스틸 (F / M)</li>
 <li>가격: ₩1,500 ~ ₩3,000</li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="jinhao-9016-80-스켈레톤" tabindex="-1"><a class="header-anchor" href="#jinhao-9016-80-스켈레톤"><span>Jinhao 9016 / 80 (스켈레톤)</span></a></h3>
 <p>바디 전체가 투명한 데모스트레이터(demonstrator) 모델. 잉크 잔량을 시각적으로 확인할 수 있으며, 피스톤 필러 방식이라 잉크병에서 직접 흡입한다. 투명 바디에 채색된 잉크가 맺히는 시각적 효과가 뛰어나 컬러 잉크 사용자에게 특히 인기가 높다.</p>
 <ul>
@@ -43,6 +58,8 @@
 <li>필링: 피스톤 / 트위스트 컨버터</li>
 <li>가격: ₩3,000 ~ ₩8,000</li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="jinhao-100" tabindex="-1"><a class="header-anchor" href="#jinhao-100"><span>Jinhao 100</span></a></h3>
 <p>원통형 대구경 바디에 금도금 닙을 탑재한 중상급 모델. 무게 중심이 높고 그립감이 좋다. JINHAO 라인업 중 디자인과 완성도가 가장 균형 잡힌 모델로 평가받으며, 평소 수지 만년필을 쓰던 사용자가 업그레이드 시 고려하는 선택지 중 하나다.</p>
 <ul>
@@ -50,6 +67,8 @@
 <li>닙: 금도금 스틸</li>
 <li>가격: ₩10,000 ~ ₩20,000</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="닙-nib-규격" tabindex="-1"><a class="header-anchor" href="#닙-nib-규격"><span>닙(Nib) 규격</span></a></h2>
 <p>JINHAO는 대부분의 제품에 표준 규격 닙을 사용해 교체가 용이하다.</p>
 <table>
@@ -79,6 +98,8 @@
 </tbody>
 </table>
 <p>JINHAO #6 닙은 BOCK 규격과 호환되어, Goulet Pens 등 해외 업체에서 판매하는 서드파티 닙으로 교체가 가능하다.</p>
+</section>
+<section class="print-section">
 <h2 id="잉크-시스템" tabindex="-1"><a class="header-anchor" href="#잉크-시스템"><span>잉크 시스템</span></a></h2>
 <table>
 <thead>
@@ -103,6 +124,8 @@
 </tbody>
 </table>
 <p>국제 표준 카트리지(유럽식 단구 카트리지)를 사용하므로 Pilot, Lamy, Waterman 등의 카트리지와도 호환된다.</p>
+</section>
+<section class="print-section">
 <h2 id="가격대-및-구매처" tabindex="-1"><a class="header-anchor" href="#가격대-및-구매처"><span>가격대 및 구매처</span></a></h2>
 <table>
 <thead>
@@ -136,9 +159,12 @@
 <li>Goulet Pens (미국 / 신뢰도 높음)</li>
 <li>국내: 네이버쇼핑, 쿠팡 (가격 프리미엄 있음)</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="평가" tabindex="-1"><a class="header-anchor" href="#평가"><span>평가</span></a></h2>
 <p>JINHAO의 가장 큰 강점은 <strong>가격 대비 필기 품질</strong>이다. 닙 품질 편차가 있는 것이 단점으로 지적되지만, 가격을 감안하면 대부분 허용 범위 내다. 특히 2010년대 중반 이후 품질 관리가 개선되면서 커뮤니티 평가가 꾸준히 상승했다.</p>
 <p>만년필 입문자에게 JINHAO X750이나 9019 라인을 1~2개 구입해 사용해보는 것이 흔히 권장되며, 이후 Pilot, LAMY, Sailor 등 상위 브랜드로 넘어가는 관문 역할을 하는 브랜드다.</p>
+</section>
 </div></template>
 
 

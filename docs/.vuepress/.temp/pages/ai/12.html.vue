@@ -1,5 +1,8 @@
-<template><div><h1 id="_12-machine-learning-3" tabindex="-1"><a class="header-anchor" href="#_12-machine-learning-3"><span>12. Machine Learning (3)</span></a></h1>
+<template><div><section class="print-section">
+<h1 id="_12-machine-learning-3" tabindex="-1"><a class="header-anchor" href="#_12-machine-learning-3"><span>12. Machine Learning (3)</span></a></h1>
 <DateMeta />
+</section>
+<section class="print-section">
 <h2 id="error-rate-and-two-different-datasets-recap" tabindex="-1"><a class="header-anchor" href="#error-rate-and-two-different-datasets-recap"><span>Error Rate and Two Different Datasets (Recap)</span></a></h2>
 <ul>
 <li>Optimal fit은 Error Rate를 최소화하는 hypothesis
@@ -14,6 +17,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="from-error-rates-to-loss-functions" tabindex="-1"><a class="header-anchor" href="#from-error-rates-to-loss-functions"><span>From Error Rates to Loss Functions</span></a></h2>
 <ul>
 <li>Error Rate 최소화에 대한 문제 제기
@@ -44,6 +49,8 @@
 </li>
 <li><span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>L</mi><mo stretchy="false">(</mo><mi>y</mi><mo separator="true">,</mo><mtext> </mtext><mi>y</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">L(y,~y)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">L</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="mpunct">,</span><span class="mspace nobreak"> </span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="mclose">)</span></span></span></span>는 항상 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">0</span></span></span></span></li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="and-loss-functions" tabindex="-1"><a class="header-anchor" href="#and-loss-functions"><span><span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>L</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">L_1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">L</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> and <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>L</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">L_2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">L</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> Loss Functions</span></a></h2>
 <ul>
 <li>일반적으로 작은 Error가 큰 Error보다 좋음.</li>
@@ -58,6 +65,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="generalization-loss" tabindex="-1"><a class="header-anchor" href="#generalization-loss"><span>Generalization Loss</span></a></h2>
 <ul>
 <li>학습 Agent는 보게 될 모든 Input-output 쌍에 대한 Expected Loss를 최소화하는 Hypothesis를 선택하여 Expected Utility를 최대화</li>
@@ -74,6 +83,8 @@
 </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7387em;"></span><span class="mord"><span class="mord mathnormal">h</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7387em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mbin mtight">∗</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1.0215em;vertical-align:-0.2715em;"></span><span class="mord"><span class="mord text"><span class="mord">argmin</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.242em;"><span style="top:-2.4559em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">h</span><span class="mrel mtight">∈</span><span class="mord mathcal mtight" style="margin-right:0.00965em;">H</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2715em;"><span></span></span></span></span></span></span><span class="mord text"><span class="mord">GenLoss</span></span><span class="mopen">(</span><span class="mord mathnormal">h</span><span class="mclose">)</span></span></span></span></span></p>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="empirical-loss" tabindex="-1"><a class="header-anchor" href="#empirical-loss"><span>Empirical Loss</span></a></h2>
 <ul>
 <li>대부분의 경우 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mo stretchy="false">(</mo><mi>x</mi><mo separator="true">,</mo><mtext> </mtext><mi>y</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">P(x,~y)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="mopen">(</span><span class="mord mathnormal">x</span><span class="mpunct">,</span><span class="mspace nobreak"> </span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="mclose">)</span></span></span></span>는 알려져 있지 않으므로, 학습 Agent는 크기 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span></span></span></span>의 예제 집합 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="script">E</mi></mrow><annotation encoding="application/x-tex">\mathcal{E}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathcal" style="margin-right:0.08944em;">E</span></span></span></span>에 대한 Empirical Loss로 Generalization Loss를 추정</li>
@@ -84,6 +95,8 @@
 </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.9579em;"></span><span class="mord"><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.9579em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathnormal">h</span></span><span style="top:-3.2634em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.25em;"><span class="mord">^</span></span></span></span></span></span></span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7387em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mbin mtight">∗</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1.1302em;vertical-align:-0.3802em;"></span><span class="mord"><span class="mord text"><span class="mord">argmin</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.242em;"><span style="top:-2.4559em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">h</span><span class="mrel mtight">∈</span><span class="mord mathcal mtight" style="margin-right:0.00965em;">H</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2715em;"><span></span></span></span></span></span></span><span class="mord"><span class="mord text"><span class="mord">EmpLoss</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2342em;"><span style="top:-2.4559em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">L</span><span class="mpunct mtight">,</span><span class="mspace nobreak mtight"><span class="mtight"> </span></span><span class="mord mathcal mtight" style="margin-right:0.08944em;">E</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.3802em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathnormal">h</span><span class="mclose">)</span></span></span></span></span></p>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="four-reasons-why-may-differ-from" tabindex="-1"><a class="header-anchor" href="#four-reasons-why-may-differ-from"><span>Four Reasons Why <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mover accent="true"><mi>h</mi><mo>^</mo></mover><mo>∗</mo></msup></mrow><annotation encoding="application/x-tex">\hat{h}^*</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.9579em;"></span><span class="mord"><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.9579em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathnormal">h</span></span><span style="top:-3.2634em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.25em;"><span class="mord">^</span></span></span></span></span></span></span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.6887em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mbin mtight">∗</span></span></span></span></span></span></span></span></span></span></span> May Differ from <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi></mrow><annotation encoding="application/x-tex">f</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span></span></span></span></span></a></h2>
 <ol>
 <li>Unrealizability
@@ -111,6 +124,8 @@
 </ul>
 </li>
 </ol>
+</section>
+<section class="print-section">
 <h2 id="regularization" tabindex="-1"><a class="header-anchor" href="#regularization"><span>Regularization</span></a></h2>
 <ul>
 <li>Occam's Razor에 기반하여, 적절한 성능으로 문제를 해결하면서 가능한 한 Simple한 Hypothesis를 찾고자 함.</li>
@@ -133,33 +148,46 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="hyperparameter-tuning" tabindex="-1"><a class="header-anchor" href="#hyperparameter-tuning"><span>Hyperparameter Tuning</span></a></h2>
+</section>
+<section class="print-section">
 <h3 id="hand-tuning" tabindex="-1"><a class="header-anchor" href="#hand-tuning"><span>Hand-tuning</span></a></h3>
 <ul>
 <li>과거 경험을 바탕으로 Parameter 값을 추측, Model 학습, Validation Data로 성능 측정, 분석 후 새로운 Parameter 값을 직관적으로 제안</li>
 <li>만족스러운 성능을 얻을 때까지 반복</li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="grid-search" tabindex="-1"><a class="header-anchor" href="#grid-search"><span>Grid-search</span></a></h3>
 <ul>
 <li>Hyperparameter의 수가 적고 각각 가능한 값의 수가 적을 경우 적합</li>
 <li>모든 값의 조합을 시도하고 Validation Data에서 가장 잘 수행되는 것을 확인</li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="random-search" tabindex="-1"><a class="header-anchor" href="#random-search"><span>Random search</span></a></h3>
 <ul>
 <li>가능한 값의 조합이 너무 많은 경우, 모든 가능한 Hyperparameter 설정 집합에서 Uniform하게 Sampling하여 시간과 계산 자원을 할애할 수 있는 만큼 반복</li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="bayesian-optimization" tabindex="-1"><a class="header-anchor" href="#bayesian-optimization"><span>Bayesian optimization</span></a></h3>
 <ul>
 <li>Hyperparameter 값을 선택하는 작업을 Machine Learning 문제 자체로 간주</li>
 <li>Hyperparameter 값의 Vector <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="bold">x</mi></mrow><annotation encoding="application/x-tex">\mathbf{x}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4444em;"></span><span class="mord mathbf">x</span></span></span></span>를 Input으로, 해당 Hyperparameter로 구축된 Model의 Validation Set에 대한 Total Loss <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi></mrow><annotation encoding="application/x-tex">y</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span></span></span></span>를 Output으로 생각</li>
 <li>Loss <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi></mrow><annotation encoding="application/x-tex">y</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span></span></span></span>를 최소화하는 함수 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mo>=</mo><mi>f</mi><mo stretchy="false">(</mo><mi mathvariant="bold">x</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">y = f(\mathbf{x})</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathbf">x</span><span class="mclose">)</span></span></span></span>를 찾는 것을 목표로 함.</li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="population-based-training-pbt" tabindex="-1"><a class="header-anchor" href="#population-based-training-pbt"><span>Population-based Training (PBT)</span></a></h3>
 <ul>
 <li>Random search를 사용하여 각각 다른 Hyperparameter 값을 가진 Model Population을 훈련하는 것으로 시작</li>
 <li>다음 세대의 Model은 이전 세대의 성공적인 값과 Genetic Algorithms에서처럼 Random Mutation을 통해 Hyperparameter를 선택하여 훈련</li>
 <li>Random Search + Bayesian Optimization의 결합</li>
 </ul>
+</section>
 </div></template>
 
 

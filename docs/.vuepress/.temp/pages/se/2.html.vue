@@ -1,9 +1,14 @@
-<template><div><h1 id="_2-introduction-to-software-engineering" tabindex="-1"><a class="header-anchor" href="#_2-introduction-to-software-engineering"><span>2. Introduction to Software Engineering</span></a></h1>
+<template><div><section class="print-section">
+<h1 id="_2-introduction-to-software-engineering" tabindex="-1"><a class="header-anchor" href="#_2-introduction-to-software-engineering"><span>2. Introduction to Software Engineering</span></a></h1>
 <DateMeta />
+</section>
+<section class="print-section">
 <h2 id="software-is-a-skin-that-surrounds-our-civilization" tabindex="-1"><a class="header-anchor" href="#software-is-a-skin-that-surrounds-our-civilization"><span>Software is a Skin that Surrounds Our Civilization</span></a></h2>
 <ul>
 <li><em>Dr. Mark Harman</em>의 인용구</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="spectacular-software-failures-2000" tabindex="-1"><a class="header-anchor" href="#spectacular-software-failures-2000"><span>Spectacular Software Failures(~2000)</span></a></h2>
 <ul>
 <li>Intel의 Pentium FDIV 결함: 홍보(Public relations) 악몽</li>
@@ -14,6 +19,8 @@
 <li>NASA의 Mars lander: 1999년 9월, unit integration fault(단위 통합 오류)로 추락</li>
 <li>Ariane 5 폭발: 수백만 달러 손실</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="spectacular-software-failures-2000-1" tabindex="-1"><a class="header-anchor" href="#spectacular-software-failures-2000-1"><span>Spectacular Software Failures(2000~)</span></a></h2>
 <ul>
 <li>Healthcare 웹사이트: 출시와 동시에 반복적으로 다운—load tested(부하 테스트) 전무</li>
@@ -22,6 +29,8 @@
 <li>Northeast blackout(북동부 대정전): 5천만 명 피해, 60억 달러(USD) 손실 ... 경보 시스템 장애</li>
 <li>Boeing 737 Max: 과도하게 공격적인 software flight overrides(소프트웨어 비행 개입)(MCAS)로 인해 추락</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="_2024-crowdstrike-incident" tabindex="-1"><a class="header-anchor" href="#_2024-crowdstrike-incident"><span>2024 CrowdStrike Incident</span></a></h2>
 <ul>
 <li>2024년 7월 19일, CrowdStrike의 Falcon 보안 소프트웨어에 대한 결함 있는 드라이버 업데이트로 인해 850만 대의 Windows 시스템 충돌 발생.</li>
@@ -29,11 +38,15 @@
 <li><a href="https://x.com/akothari/status/1814202068531552666" target="_blank" rel="noopener noreferrer">https://x.com/akothari/status/1814202068531552666</a></li>
 <li><a href="https://upload.wikimedia.org/wikipedia/commons/9/94/CrowdStrike_BSOD_at_LGA.jpg" target="_blank" rel="noopener noreferrer">https://upload.wikimedia.org/wikipedia/commons/9/94/CrowdStrike_BSOD_at_LGA.jpg</a></li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="vasa" tabindex="-1"><a class="header-anchor" href="#vasa"><span>Vasa</span></a></h2>
 <ul>
 <li>1626년에서 1628년 사이에 건조된 스웨덴 군함</li>
 <li>1628년 8월 10일, 처녀 항해에서 약 1,300m 항해 후 침몰</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="vasa-syndrome" tabindex="-1"><a class="header-anchor" href="#vasa-syndrome"><span>Vasa Syndrome</span></a></h2>
 <ul>
 <li>Requirement(요구사항)</li>
@@ -41,6 +54,8 @@
 <li>Metrics(지표)</li>
 <li>QA(품질 보증)</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="complex-software-engineering-issues-involved" tabindex="-1"><a class="header-anchor" href="#complex-software-engineering-issues-involved"><span>Complex Software Engineering Issues Involved</span></a></h2>
 <ul>
 <li>Requirements
@@ -64,6 +79,8 @@
 <li>DevOps(데브옵스)</li>
 <li>Metrics</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="licenses" tabindex="-1"><a class="header-anchor" href="#licenses"><span>Licenses</span></a></h2>
 <ul>
 <li>kernel-level privilege(커널 수준 권한)로 실행되는 Software(소프트웨어)는 시스템을 충돌(BSOD)시키고 부팅을 막을 수 있음.</li>
@@ -74,6 +91,8 @@
 <li>왜곡된 인센티브(incentives)</li>
 <li>제한된 책임(Limited liability)</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="forces-behind-the-emergence-of-s-w-engineering" tabindex="-1"><a class="header-anchor" href="#forces-behind-the-emergence-of-s-w-engineering"><span>Forces Behind the Emergence of S/W Engineering</span></a></h2>
 <ul>
 <li>소프트웨어의 낮은 품질.</li>
@@ -85,6 +104,8 @@
 <li>소프트웨어에 대한 수요 증가</li>
 <li>더 크고 복잡한 S/W 시스템에 대한 요구</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="software-crisis" tabindex="-1"><a class="header-anchor" href="#software-crisis"><span>Software Crisis</span></a></h2>
 <ul>
 <li>A: 2%(납품되어 작동)</li>
@@ -93,6 +114,8 @@
 <li>D: 20%(사용되었으나 광범위하게 재작업되었거나 폐기됨)</li>
 <li>E: 30%(비용은 지불했으나 납품되지 않음)</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="why-software-development-is-so-difficult" tabindex="-1"><a class="header-anchor" href="#why-software-development-is-so-difficult"><span>Why Software Development is so Difficult?</span></a></h2>
 <ul>
 <li>Characteristics(특징)
@@ -111,6 +134,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="why-software-project-fail" tabindex="-1"><a class="header-anchor" href="#why-software-project-fail"><span>Why Software Project Fail?</span></a></h2>
 <ul>
 <li>S/W 마인드 부족</li>
@@ -120,39 +145,53 @@
 <li>엔지니어링(engineering)이란 무엇인가? 그리고 해킹(hacking)/프로그래밍(programming)과 어떻게 다른가?</li>
 <li>Software Engineering?</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="computer-program" tabindex="-1"><a class="header-anchor" href="#computer-program"><span>Computer Program</span></a></h2>
 <ul>
 <li>Computer program(컴퓨터 프로그램)이란 무엇인가?</li>
 <li>Algorithm(알고리즘)의 표현?</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="software" tabindex="-1"><a class="header-anchor" href="#software"><span>Software</span></a></h2>
 <ul>
 <li>소프트웨어란 무엇인가?</li>
 <li>단일 목표(문제 해결)를 위해 작동하는 프로그램의 집합?</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="what-is-software" tabindex="-1"><a class="header-anchor" href="#what-is-software"><span>What is Software?</span></a></h2>
 <blockquote>
 <p>“소프트웨어는 입력을 획득하고 이를 조작하여 소프트웨어 사용자가 결정한 기능과 성능 측면에서 원하는 출력을 생성하기 위한 명령어 집합. 또한 사용자가 소프트웨어 시스템을 이해할 수 있도록 하는 소프트웨어 매뉴얼과 같은 문서 집합도 포함.”<br>
 <em>Bharat Bhushan Agarwal and Sumit Prakash Tayal, Software Engineering, Laxmi Publications, 2009</em></p>
 </blockquote>
+</section>
+<section class="print-section">
 <h2 id="description-of-the-software" tabindex="-1"><a class="header-anchor" href="#description-of-the-software"><span>Description of the Software</span></a></h2>
 <ul>
 <li>소프트웨어는 그 capabilities(능력)에 의해 기술됨. 이 능력은 실행하는 functions(기능), 제공하는 features(특징), 제공하는 facilities(편의 기능)와 관련됨.</li>
 <li>판매 주문 처리를 위해 작성된 소프트웨어는 다양한 시장 부문의 다양한 유형의 판매 주문을 처리하기 위한 다양한 기능을 가짐. 예를 들어, 특징은 다중 통화 컴퓨팅 처리, 제품, 판매 및 세금 상태 업데이트. 편의 기능은 판매 주문 인쇄, 고객에게 이메일 발송, 상품 발송을 위한 상점 부서로의 보고서 등이 될 수 있음.</li>
 <li><em>Bharat Bhushan Agarwal and Sumit Prakash Tayal, Software Engineering, Laxmi Publications, 2009</em></li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="examples-of-programs-or-software" tabindex="-1"><a class="header-anchor" href="#examples-of-programs-or-software"><span>Examples of Programs or Software?</span></a></h2>
 <ul>
 <li>세 숫자의 평균 계산</li>
 <li>세 숫자 중 최솟값 찾기</li>
 <li>가방 안의 빨간 공 개수 세기</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="examples-of-software-or-programs" tabindex="-1"><a class="header-anchor" href="#examples-of-software-or-programs"><span>Examples of Software or Programs?</span></a></h2>
 <ul>
 <li>Operating System(운영체제)?</li>
 <li>Microsoft Office?</li>
 <li>한양 포털?</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="software-engineering" tabindex="-1"><a class="header-anchor" href="#software-engineering"><span>Software Engineering</span></a></h2>
 <ul>
 <li>“소프트웨어의 analysis(분석), design, implementation(구현) 및 maintenance에 대한 systematic approach(체계적인 접근 방식).”</li>
@@ -162,6 +201,8 @@
 <li>“소프트웨어 공학은 high-quality software(고품질 소프트웨어)를 설계하고 개발하는 것에 관한 것.”</li>
 <li>(Shari Lawrence Pfleeger in Software Engineering --The Production of Quality Software)</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="_1968-nato-conference-on-software-engineering" tabindex="-1"><a class="header-anchor" href="#_1968-nato-conference-on-software-engineering"><span>1968 NATO Conference on Software Engineering</span></a></h2>
 <ul>
 <li>도발적인 제목
@@ -173,6 +214,8 @@
 <li>“Software crisis(소프트웨어 위기)”</li>
 <li><a href="http://homepages.cs.ncl.ac.uk/brian.randell/NATO/nato1968.PDF" target="_blank" rel="noopener noreferrer">http://homepages.cs.ncl.ac.uk/brian.randell/NATO/nato1968.PDF</a></li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="what-is-software-engineering" tabindex="-1"><a class="header-anchor" href="#what-is-software-engineering"><span>What is Software Engineering?</span></a></h2>
 <ul>
 <li>수백 명의 저자가 소프트웨어 공학에 대한 개인적인 정의를 내렸지만, Fritz Bauer [제1회 NATO 소프트웨어 공학 컨퍼런스]가 제안한 정의가 기반을 제공:</li>
@@ -180,12 +223,16 @@
 <li>IEEE <code v-pre>IEEE93</code>는 더 포괄적인 정의를 개발</li>
 <li>“소프트웨어 공학:(1) 소프트웨어의 development(개발), operation(운영), maintenance에 systematic(체계적), disciplined(훈련된), quantifiable(정량화 가능한) 접근 방식을 적용하는 것; 즉, 공학을 소프트웨어에 적용하는 것.(2)(1)에서의 접근 방식에 대한 study(연구).”</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="software-engineering-1" tabindex="-1"><a class="header-anchor" href="#software-engineering-1"><span>Software Engineering</span></a></h2>
 <ul>
 <li>(1)에서의 접근 방식에 대한 연구</li>
 <li>소프트웨어의 개발, 운영, 유지보수에 체계적, 훈련된, 정량화 가능한 접근 방식을 적용하는 것; 즉, 공학을 소프트웨어에 적용하는 것.</li>
 <li><code v-pre>IEEE93</code></li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="by-systematic-we-mean" tabindex="-1"><a class="header-anchor" href="#by-systematic-we-mean"><span>By “Systematic” we mean</span></a></h2>
 <ul>
 <li>잘 정의된 활동 순서를 따르는 것,
@@ -200,6 +247,8 @@
 </li>
 <li>참고: “입력”과 “출력”은 대부분 요구사항, 소프트웨어 명세, 소프트웨어 자체, 문서, 테스트 입/출력 및 유사한 software artifacts(소프트웨어 산출물)를 지칭.</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="by-disciplined-we-mean" tabindex="-1"><a class="header-anchor" href="#by-disciplined-we-mean"><span>By “disciplined” we mean:</span></a></h2>
 <ul>
 <li>각 프로세스가 조직적 원칙(principles)을 사용하여 수행됨
@@ -210,10 +259,14 @@
 <li>중간 결과는 물론 최종 결과도 신중하게 문서화됨,</li>
 <li>조치는 그 원인, 관련된 개인, 발생 시간 및 상황에 대해 traceable(추적 가능)함.</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="by-quantifiable-we-mean" tabindex="-1"><a class="header-anchor" href="#by-quantifiable-we-mean"><span>By “quantifiable” we mean:</span></a></h2>
 <ul>
 <li>요구되는 노력의 규모와 범위(출력 코드, 데이터, 문서의 크기, 인력, 기간, 개발 예산, 예상 오류율 및 사용자 지원)가 정당하고 수용 가능한 범위 내에서 예측 가능함</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="topics-in-software-engineering" tabindex="-1"><a class="header-anchor" href="#topics-in-software-engineering"><span>Topics in Software Engineering</span></a></h2>
 <ul>
 <li>소프트웨어 개발을 위한 프로세스 고려사항</li>
@@ -224,6 +277,8 @@
 <li>시간 및 team management(팀 관리)</li>
 <li>소프트웨어 개발의 경제학(Economics)</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="process-consideration-for-software-development" tabindex="-1"><a class="header-anchor" href="#process-consideration-for-software-development"><span>Process Consideration for Software Development</span></a></h2>
 <ul>
 <li>초기에 문제를 어떻게 피하는가?</li>
@@ -235,6 +290,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="requirements-elicitation-documentation-and-evaluation" tabindex="-1"><a class="header-anchor" href="#requirements-elicitation-documentation-and-evaluation"><span>Requirements Elicitation, Documentation, and Evaluation</span></a></h2>
 <ul>
 <li>고객이 정말로 원하는 것을 어떻게 파악하는가?</li>
@@ -242,11 +299,15 @@
 <li>성공을 객관적으로 어떻게 측정할 수 있는가?</li>
 <li>기대치(expectations)를 어떻게 신뢰성 있게 문서화할 수 있는가?</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="design-for-quality-attributes" tabindex="-1"><a class="header-anchor" href="#design-for-quality-attributes"><span>Design for Quality Attributes</span></a></h2>
 <ul>
 <li>수백만 사용자로 scale(확장)할 수 있는 시스템을 어떻게 설계하는가?</li>
 <li>시스템에 security(보안)를 어떻게 설계해 넣는가?</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="strategies-for-quality-assurance" tabindex="-1"><a class="header-anchor" href="#strategies-for-quality-assurance"><span>Strategies for Quality Assurance</span></a></h2>
 <ul>
 <li>주어진 시스템에 가장 적합한 품질 보증 전략은 무엇인가?</li>
@@ -256,12 +317,16 @@
 <li>usability(사용성), scalability(확장성), reliability(신뢰성), performance(성능)를 평가할 수 있는가?</li>
 <li>특정 보안 문제의 부재를 statically(정적으로) 보장할 수 있는가?</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="empirical-methods-in-software-engineering" tabindex="-1"><a class="header-anchor" href="#empirical-methods-in-software-engineering"><span>Empirical Methods in Software Engineering</span></a></h2>
 <ul>
 <li>성능, 보안, 신뢰성과 같은 품질 속성을 어떻게 측정할 수 있는...</li>
 <li>사용자가 시스템과 상호작용하는 방식을 어떻게 측정할 수 있는...</li>
 <li>그 차이가 중요한지 어떻게 알 수 있는가?</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="time-and-team-management" tabindex="-1"><a class="header-anchor" href="#time-and-team-management"><span>Time and Team Management</span></a></h2>
 <ul>
 <li>프로젝트 기간과 비용을 어떻게 추정하는가?</li>
@@ -271,16 +336,21 @@
 <li>팀원을 어떻게 선발하고 동기를 부여하는가?</li>
 <li>social loafing(사회적 태만)과 같은 팀 역학(team dynamics)을 어떻게 다루는가?</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="economics-of-software-development" tabindex="-1"><a class="header-anchor" href="#economics-of-software-development"><span>Economics of Software Development</span></a></h2>
 <ul>
 <li>Business models(비즈니스 모델)</li>
 <li>Outsourcing(아웃소싱)</li>
 <li>Open source(오픈 소스)</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="computer-science-and-software-engineering" tabindex="-1"><a class="header-anchor" href="#computer-science-and-software-engineering"><span>Computer Science and Software Engineering</span></a></h2>
 <ul>
 <li>Computer Science(컴퓨터 과학)와 소프트웨어 공학 간의 관계</li>
 </ul>
+</section>
 </div></template>
 
 

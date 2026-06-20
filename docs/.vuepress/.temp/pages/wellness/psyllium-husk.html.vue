@@ -1,13 +1,18 @@
-<template><div><h1 id="차전자피-psyllium-husk" tabindex="-1"><a class="header-anchor" href="#차전자피-psyllium-husk"><span>차전자피 (Psyllium Husk)</span></a></h1>
+<template><div><section class="print-section">
+<h1 id="차전자피-psyllium-husk" tabindex="-1"><a class="header-anchor" href="#차전자피-psyllium-husk"><span>차전자피 (Psyllium Husk)</span></a></h1>
 <DateMeta />
 <p align="center">
   <img src="https://drvegan.com/cdn/shop/files/Psyllium_Husk.jpg?v=1689267974&width=1200" width="240" alt="Main Logo" />
 </p>
+</section>
+<section class="print-section">
 <h2 id="차전자피란" tabindex="-1"><a class="header-anchor" href="#차전자피란"><span>차전자피란?</span></a></h2>
 <ul>
 <li>차전자피는 <strong>Plantago ovata</strong> 식물의 씨앗 껍질(husk)에서 추출한 수용성 식이섬유입니다.</li>
 <li>수분을 머금으면 팽창하는 성질이 있어, 장 건강을 비롯한 다양한 신체 기능에 도움을 줍니다.</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="주요-효능" tabindex="-1"><a class="header-anchor" href="#주요-효능"><span>주요 효능</span></a></h2>
 <ul>
 <li><strong>장 건강 개선</strong>
@@ -42,6 +47,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="실용적-활용-분말-제품" tabindex="-1"><a class="header-anchor" href="#실용적-활용-분말-제품"><span>실용적 활용: 분말 제품</span></a></h2>
 <ul>
 <li><strong>차전자피는 분말 형태로 인터넷에서 저렴하게 구매 가능</strong></li>
@@ -53,6 +60,8 @@
 </li>
 <li>식전 섭취 시 <strong>포만감 유도</strong>, 식후 섭취 시 <strong>혈당과 소화 조절</strong> 가능</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="제조-공정" tabindex="-1"><a class="header-anchor" href="#제조-공정"><span>제조 공정</span></a></h2>
 <ul>
 <li><strong>수확</strong>: 인도 등지에서 Plantago ovata 식물 수확</li>
@@ -61,6 +70,8 @@
 <li><strong>분말화</strong>: 미세하게 분쇄하여 파우더 형태로 가공</li>
 <li><strong>패키징</strong>: 수분 흡수를 방지하기 위해 밀봉 포장</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="요약" tabindex="-1"><a class="header-anchor" href="#요약"><span>요약</span></a></h2>
 <table>
 <thead>
@@ -92,6 +103,7 @@
 </tr>
 </tbody>
 </table>
+</section>
 </div></template>
 
 

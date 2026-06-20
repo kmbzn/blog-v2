@@ -1,11 +1,16 @@
-<template><div><h1 id="_1-introduction" tabindex="-1"><a class="header-anchor" href="#_1-introduction"><span>1. Introduction</span></a></h1>
+<template><div><section class="print-section">
+<h1 id="_1-introduction" tabindex="-1"><a class="header-anchor" href="#_1-introduction"><span>1. Introduction</span></a></h1>
 <DateMeta />
+</section>
+<section class="print-section">
 <h2 id="data-database-dbms와-db-app-직관적-개념들" tabindex="-1"><a class="header-anchor" href="#data-database-dbms와-db-app-직관적-개념들"><span>Data, Database, DBMS와 DB App: 직관적 개념들</span></a></h2>
 <ul>
 <li>Data: '누군가'와 관련 (높은 엔트로피)</li>
 <li>Database, DBMS: '조직'과 관련</li>
 <li>DB App: '사용자'와 관련 (낮은 엔트로피)</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="database와-dbms" tabindex="-1"><a class="header-anchor" href="#database와-dbms"><span>Database와 DBMS</span></a></h2>
 <ul>
 <li>데이터베이스: 관련된 데이터의 논리적 집합
@@ -32,6 +37,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="데이터-모델" tabindex="-1"><a class="header-anchor" href="#데이터-모델"><span>데이터 모델</span></a></h2>
 <ul>
 <li>관계형 모델 (by Ted Codd)
@@ -53,6 +60,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="schema와-instance" tabindex="-1"><a class="header-anchor" href="#schema와-instance"><span>Schema와 Instance</span></a></h2>
 <ul>
 <li>프로그래밍 언어에서 variable과 value의 개념과 유사</li>
@@ -77,6 +86,8 @@
 </li>
 <li>인스턴스 (Instance): 특정 시점에서의 데이터베이스의 실제 내용(contents)</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="data-definition-language-ddl-데이터-정의어" tabindex="-1"><a class="header-anchor" href="#data-definition-language-ddl-데이터-정의어"><span>Data Definition Language (DDL, 데이터 정의어)</span></a></h2>
 <ul>
 <li>Database schema를 정의하기 위한 명세적 표기</li>
@@ -106,6 +117,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="data-manipulation-language-dml-데이터-조작어" tabindex="-1"><a class="header-anchor" href="#data-manipulation-language-dml-데이터-조작어"><span>Data Manipulation Language (DML, 데이터 조작어)</span></a></h2>
 <ul>
 <li>적절한 데이터 모델에 의해 조직된 데이터에 접근하고 업데이트하기 위한 언어</li>
@@ -127,6 +140,8 @@
 </li>
 <li>DML에서 정보 탐색과 관련된 부분을 query language라고 함</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="sql-language" tabindex="-1"><a class="header-anchor" href="#sql-language"><span>SQL Language</span></a></h2>
 <ul>
 <li>SQL language는 DDL과 DML 모두를 수행</li>
@@ -147,6 +162,8 @@
 <li>embedded SQL을 가능하게 하기 위한 언어 확장</li>
 <li>데이터베이스에 SQL query를 보낼 수 있게끔 하는 애플리케이션 프로그램 인터페이스(ODBC나 JDBC와 같은)</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="database-design" tabindex="-1"><a class="header-anchor" href="#database-design"><span>Database design</span></a></h2>
 <p>데이터베이스의 일반적 구조를 디자인하는 과정</p>
 <ul>
@@ -164,6 +181,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="데이터베이스-엔진" tabindex="-1"><a class="header-anchor" href="#데이터베이스-엔진"><span>데이터베이스 엔진</span></a></h2>
 <p>데이터베이스 시스템은 전체 시스템의 각 책임을 처리하는 module로 분할됨</p>
 <p>데이터베이스 시스템의 기능적 요소는 다음과 같이 구분할 수 있음</p>
@@ -172,6 +191,8 @@
 <li>The query processor</li>
 <li>The transaction management</li>
 </ol>
+</section>
+<section class="print-section">
 <h2 id="storage-manager" tabindex="-1"><a class="header-anchor" href="#storage-manager"><span>Storage Manager</span></a></h2>
 <ul>
 <li>DB의 low-level 데이터와 응용 프로그램과 시스템에 제출된 쿼리를 제공하는 프로그램 모듈</li>
@@ -192,6 +213,8 @@
 <li>데이터 dictionary(사전): 데이터베이스의 구조에 관한 메타 데이터 저장, 특히 데이터베이스의 스키마</li>
 <li>Indices: 데이터 요소들에 빠른 접근을 가능케 함, 데이터베이스 인덱스는 그러한 특정한 값을 가진 데이터 아이템에 포인터를 제공함.</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="query-processor" tabindex="-1"><a class="header-anchor" href="#query-processor"><span>Query Processor</span></a></h2>
 <p>쿼리 프로세서 구성 요소</p>
 <ul>
@@ -203,6 +226,8 @@
 </li>
 <li>쿼리 해석 엔진은 DML 컴파일러에 의해 생성된 low-level의 지시사항들을 해석함</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="트랜잭션-관리" tabindex="-1"><a class="header-anchor" href="#트랜잭션-관리"><span>트랜잭션 관리</span></a></h2>
 <p>트랜잭션(Transaction)은 데이터베이스 응용 프로그램에서 하나의 논리적 기능을 수행하는 일련의 연산(operations)들의 집합</p>
 <p>트랜잭션의 네 가지 주요 특성</p>
@@ -227,6 +252,7 @@
 </ul>
 </li>
 </ul>
+</section>
 </div></template>
 
 

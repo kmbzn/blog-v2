@@ -1,6 +1,3 @@
----
-sitemap: false
----
 # Final Exam
 
 ## 1. Parameter Passing Methods
@@ -150,7 +147,7 @@ subprogram 호출 시 runtime stack에 쌓이는 프레임 구조.
 static link는 ARI에 추가된 포인터로, 자신을 감싸는 lexical parent의 ARI를 가리킴.
 
 ```
-Bigsub:   A(offset=3), B(offset=4), C(offset=5)    [depth=0]
+Bigsub:   A(offset=3), B(offset=4), C(offset=5)   [depth=0]
   Sub1:   A(offset=3)                              [depth=1]
   Sub2:   B(offset=4)                              [depth=1]
     Sub3: E(offset=4)                              [depth=2]

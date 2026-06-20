@@ -1,22 +1,33 @@
-<template><div><h1 id="_2024-computer-security-final-exam" tabindex="-1"><a class="header-anchor" href="#_2024-computer-security-final-exam"><span>2024 Computer Security Final Exam</span></a></h1>
+<template><div><section class="print-section">
+<h1 id="_2024-computer-security-final-exam" tabindex="-1"><a class="header-anchor" href="#_2024-computer-security-final-exam"><span>2024 Computer Security Final Exam</span></a></h1>
 <DateMeta />
 <ul>
 <li>총 16문항, 100점 만점</li>
 <li>2024.12.11.</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="_1-define-the-following-terms-6점" tabindex="-1"><a class="header-anchor" href="#_1-define-the-following-terms-6점"><span>1. <strong>Define</strong> the following terms. [6점]</span></a></h2>
+</section>
+<section class="print-section">
 <h3 id="fuzzing-technique" tabindex="-1"><a class="header-anchor" href="#fuzzing-technique"><span>fuzzing technique</span></a></h3>
 <ul>
 <li>소프트웨어의 잠재적 보안 취약점을 발견하기 위해 무작위의 유효하지 않거나 기형적 데이터를 입력값으로 주입하여 충돌/오작동을 모니터링하는 테스팅 기법</li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="aslr-address-space-layout-randomization" tabindex="-1"><a class="header-anchor" href="#aslr-address-space-layout-randomization"><span>ASLR(Address Space Layout Randomization)</span></a></h3>
 <ul>
 <li>공격자가 메모리 주소를 예측하는 것을 방지하기 위해 stack, heap 등 주요 데이터 구조의 메모리 위치를 무작위로 재배치하는 기법</li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="policy" tabindex="-1"><a class="header-anchor" href="#policy"><span><span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>W</mi><mo>⊕</mo><mi>X</mi></mrow><annotation encoding="application/x-tex">W \oplus X</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7667em;vertical-align:-0.0833em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">W</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">⊕</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.07847em;">X</span></span></span></span> policy</span></a></h3>
 <ul>
 <li>메모리 페이지가 write 권한과 execute 권한을 동시에 가질 수 없도록 강제하는 보안 정책</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="_2-select-all-the-correct-explanation-about-a-process-5점" tabindex="-1"><a class="header-anchor" href="#_2-select-all-the-correct-explanation-about-a-process-5점"><span>2. <strong>Select all</strong> the correct explanation about a process. [5점]</span></a></h2>
 <ul>
 <li>(1) Process is a program in execution. (O)</li>
@@ -24,6 +35,8 @@
 <li>(3) Multi-threaded process has one program counter per thread. (O)</li>
 <li>(4) <s>A process has its own physical memory space.</s> (X)</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="_3-select-all-the-correct-explanation-about-malware-analysis-methods-5점" tabindex="-1"><a class="header-anchor" href="#_3-select-all-the-correct-explanation-about-malware-analysis-methods-5점"><span>3. <strong>Select all</strong> the correct explanation about malware analysis methods. [5점]</span></a></h2>
 <ul>
 <li>(1) The static analysis method analyzes executable files without execution. (O)</li>
@@ -32,6 +45,8 @@
 <li>(4) <s>The dynamic analysis method cannot analyze malware with an encrypted code section.</s> (X)</li>
 <li>(5) The dynamic analysis method can analyze only a part of a code section. (O)</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="_4-what-are-the-execution-results-of-the-following-code-statements-10점" tabindex="-1"><a class="header-anchor" href="#_4-what-are-the-execution-results-of-the-following-code-statements-10점"><span>4. What are the execution results of the following code statements? [10점]</span></a></h2>
 <ol>
 <li><code v-pre>free(NULL)</code>
@@ -64,26 +79,38 @@
 </ul>
 </li>
 </ol>
+</section>
+<section class="print-section">
 <h2 id="_5-explain-the-dll-injection-attack-and-the-process-injection-attack-6점" tabindex="-1"><a class="header-anchor" href="#_5-explain-the-dll-injection-attack-and-the-process-injection-attack-6점"><span>5. Explain the dll injection attack and the process injection attack. [6점]</span></a></h2>
 <ul>
 <li><strong>DLL Injection</strong>: 타겟 process가 악성 dll 파일을 강제로 load하게 하여, 해당 process의 memory space와 권한 내에서 코드를 실행하는 기법</li>
 <li><strong>Process Injection</strong>: 타겟 process의 memory space에 직접 악성 코드를 삽입(write)하고 실행 흐름을 조작하여 이를 실행시키는 공격</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="_6-packing-기술에-대하여-다음-물음에-답하시오-9점" tabindex="-1"><a class="header-anchor" href="#_6-packing-기술에-대하여-다음-물음에-답하시오-9점"><span>6. Packing 기술에 대하여 다음 물음에 답하시오. [9점]</span></a></h2>
+</section>
+<section class="print-section">
 <h3 id="a-explain-the-packing-technology" tabindex="-1"><a class="header-anchor" href="#a-explain-the-packing-technology"><span>a. Explain the packing technology.</span></a></h3>
 <ul>
 <li>실행 파일의 코드를 압축하거나 난독화(Obfuscation)하여 분석가가 내부 로직을 파악하기 어렵게 만들고, 정적 분석을 방해하는 기술</li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="b-explain-how-to-find-out-whether-a-section-is-packed-or-not" tabindex="-1"><a class="header-anchor" href="#b-explain-how-to-find-out-whether-a-section-is-packed-or-not"><span>b. Explain how to find out whether a section is packed or not.</span></a></h3>
 <ul>
 <li><strong>Entropy</strong>: 섹션의 엔트로피가 매우 높게 측정됨 (압축/암호화된 데이터의 특성)</li>
 <li><strong>Size Mismatch</strong>: <code v-pre>VirtualSize</code> (메모리에 로드된 크기)가 <code v-pre>RawSize</code> (파일 상의 크기)보다 현저히 큼.</li>
 <li><strong>Section Name</strong>: 표준적이지 않은 섹션 이름(UPX1 등) 존재</li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="c-explain-the-technology-used-by-the-themida-packer" tabindex="-1"><a class="header-anchor" href="#c-explain-the-technology-used-by-the-themida-packer"><span>c. Explain the technology used by the Themida packer.</span></a></h3>
 <ul>
 <li>Themida packer technology Code Virtualization을 사용. 원본 코드를 자체적인 가상 CPU(VM)가 해석할 수 있는 독자적인 bytecode로 변환하여 실행하고, 강력한 anti-debugging 및 anti-tampering 기능을 포함함.</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="_7-in-case-of-analyzing-the-file-system-of-firmware-list-the-things-that-need-to-be-analyzed-6점" tabindex="-1"><a class="header-anchor" href="#_7-in-case-of-analyzing-the-file-system-of-firmware-list-the-things-that-need-to-be-analyzed-6점"><span>7. In case of analyzing the file system of firmware, list the things that need to be analyzed. [6점]</span></a></h2>
 <ul>
 <li><strong>File System Type</strong>(<code v-pre>squashfs</code>, <code v-pre>cramfs</code>, <code v-pre>jffs2</code> 등) 식별 및 구조 분석</li>
@@ -91,15 +118,21 @@
 <li><strong>Kernal &amp; Bootloader</strong>: 부팅 시퀀스 및 커널 설정 분석</li>
 <li><strong>Application Binaries</strong>: 웹 서버, 데몬 등 실행 파일의 취약점 분석</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="_8-why-a-deallocation-function-should-not-throw-an-exception-5점" tabindex="-1"><a class="header-anchor" href="#_8-why-a-deallocation-function-should-not-throw-an-exception-5점"><span>8. Why a deallocation function should not throw an exception? [5점]</span></a></h2>
 <ul>
 <li><code v-pre>free</code>나 소멸자(Destructor)는 예외 처리 과정(Stack Unwinding) 중에 호출될 수 있음. 만약 이때 또 다른 예외가 발생하면(Double fault), 런타임이 이를 처리하지 못하고 프로그램을 즉시 강제 종료(<code v-pre>std::terminate</code>)시키기 때문</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="_9-explain-how-got-global-offset-table-table-works-and-explain-how-an-attacker-can-attack-by-modifying-the-got-table-6점" tabindex="-1"><a class="header-anchor" href="#_9-explain-how-got-global-offset-table-table-works-and-explain-how-an-attacker-can-attack-by-modifying-the-got-table-6점"><span>9. Explain how GOT (Global Offset Table) table works, and explain how an attacker can attack by modifying the GOT table. [6점]</span></a></h2>
 <ul>
 <li>Dynamic linking 과정에서 외부 라이브러리 함수(<code v-pre>printf</code> 같은)의 실제 메모리 주소를 저장하는 테이블. 함수 호출 시 PLT(Procedure Linkage Table)를 거쳐 GOT에 저장된 주소로 점프함.</li>
 <li>Attack: GOT Overwrite. 공격자가 GOT에 저장된 정상 함수(<code v-pre>printf</code>)의 주소를 악성 코드나 공격 함수(<code v-pre>system</code>)의 주소로 덮어씀. 이후 해당 함수 호출 시 공격자가 의도한 코드가 실행됨.</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="_10-explain-about-rootkit-malware-how-a-rootkit-can-hide-attacker-s-activities-5점" tabindex="-1"><a class="header-anchor" href="#_10-explain-about-rootkit-malware-how-a-rootkit-can-hide-attacker-s-activities-5점"><span>10. Explain about <code v-pre>rootkit</code> malware. How a <code v-pre>rootkit</code> can hide attacker's activities. [5점]</span></a></h2>
 <ul>
 <li>정의: 관리자 권한(root)을 획득/유지하고, 시스템 내에서 자신의 존재를 숨기기 위해 설계된 악성 소프트웨어 모듈</li>
@@ -110,6 +143,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="_11-among-defense-methods-against-stack-buffer-overflow-attack-stack-smashing-protector-ssp-uses-stack-guard-explain-with-a-picture-how-ssp-organized-the-stack-frame-for-a-function-5점" tabindex="-1"><a class="header-anchor" href="#_11-among-defense-methods-against-stack-buffer-overflow-attack-stack-smashing-protector-ssp-uses-stack-guard-explain-with-a-picture-how-ssp-organized-the-stack-frame-for-a-function-5점"><span>11. Among defense methods against stack buffer overflow attack, Stack-Smashing Protector(SSP) uses 'stack guard'. Explain with a picture how SSP organized the stack frame for a function. [5점]</span></a></h2>
 <pre><code>  High Address                           
 ┌──────────────┐                         
@@ -128,25 +163,37 @@
 <li>Mechanism: 함수 종료(return) 직전에 canary값이 변조되었는지 검사</li>
 <li>Buffer overflow로 인해 값이 바뀌었다면 공격으로 간주하고 프로그램 실행 중단</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="_12-explain-the-rop-return-oriented-programming-attack-method-with-picture-explain-how-the-libc-library-binary-file-is-used-in-the-rop-attack-5점" tabindex="-1"><a class="header-anchor" href="#_12-explain-the-rop-return-oriented-programming-attack-method-with-picture-explain-how-the-libc-library-binary-file-is-used-in-the-rop-attack-5점"><span>12. Explain the ROP(Return-Oriented Programming) attack method with picture. Explain how the <code v-pre>libc</code> library binary file is used in the ROP attack. [5점]</span></a></h2>
 <ul>
 <li>Method: 메모리에 이미 로드된 코드 중 <code v-pre>ret</code>(return) 명령어로 끝나는 작은 코드 조각(Sequence)들을 체인처럼 gadget으로 연결하여 공격자가 원하는 동작을 수행하게 하는 기법. (Stack에 gadget들의 주소를 연속으로 배치하여 <code v-pre>ret</code> 실행 시 다음 gadget으로 이동)</li>
 <li><code v-pre>libc</code> usage: <code v-pre>libc</code> 라이브러리는 프로그램 실행 시 메모리에 로드되며, 매우 방대한 코드를 포함하고 있음. 공격자는 <code v-pre>libc</code> 내부에 다양한 기계어 코드 조각(gadget)들을 조합하여 거의 모든 로직(Turing complete)을 구성할 수 있어, NX bit(실행 방지) 보호 기법을 우회하는데 사용됨.</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="_13-answer-the-following-questions-on-ddos-attacks-6점" tabindex="-1"><a class="header-anchor" href="#_13-answer-the-following-questions-on-ddos-attacks-6점"><span>13. Answer the following questions on DDoS attacks. [6점]</span></a></h2>
+</section>
+<section class="print-section">
 <h3 id="a-what-is-the-definition-of-a-ddos-attack" tabindex="-1"><a class="header-anchor" href="#a-what-is-the-definition-of-a-ddos-attack"><span>(a) What is the definition of a DDoS attack?</span></a></h3>
 <ul>
 <li>분산된 다수의 좀비 PC(Botnet)을 이용해 특정 대상에게 동시에 막대한 양의 트래픽을 전송하여, 시스템 자원을 고갈시키고 정상적인 서비스를 불가능하게 만드는 공격</li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="b-explain-how-the-syn-flooding-attack-works" tabindex="-1"><a class="header-anchor" href="#b-explain-how-the-syn-flooding-attack-works"><span>(b) Explain how the SYN flooding attack works.</span></a></h3>
 <ul>
 <li>공격자가 spoofed IP로 대량의 <code v-pre>SYN</code> 패킷만 전송하고, 서버의 <code v-pre>SYN-ACK</code> 응답에 대해 <code v-pre>ACK</code>를 보내지 않음. 서버는 연결을 맺기 위해 half-open 상태로 대기하며 backlog queue를 가득 채우게 되어, 더 이상 새로운 정상 연결을 수락할 수 없게 됨.</li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="c-explain-one-or-two-defense-mechhanism-against-the-syn-flooding-attack" tabindex="-1"><a class="header-anchor" href="#c-explain-one-or-two-defense-mechhanism-against-the-syn-flooding-attack"><span>(c) Explain one or two defense mechhanism against the SYN flooding attack.</span></a></h3>
 <ul>
 <li>SYN Cookies: <code v-pre>SYN</code> 요청 시 서버의 자원(queue)를 할당하지 않고, 연결 정보를 암호화하여 sequence number(cookie)로 클라이언트에 전송. 나중에 클라이언트가 올바른 <code v-pre>ACK</code>를 보낼 때만 자원 할당</li>
 <li>Time-out 감소: Half-open 상태의 대기 시간을 줄여 자원을 빠르게 회수</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="_14-point-out-lines-with-errors-and-correct-the-lines-an-error-can-be-a-syntax-error-or-a-semantic-error-7점" tabindex="-1"><a class="header-anchor" href="#_14-point-out-lines-with-errors-and-correct-the-lines-an-error-can-be-a-syntax-error-or-a-semantic-error-7점"><span>14. Point out lines with errors, and correct the lines. (An error can be a syntax error or a semantic error.) [7점]</span></a></h2>
 <div class="language-c line-numbers-mode" data-highlighter="prismjs" data-ext="c"><pre v-pre><code class="language-c"><span class="line">wchar_twide_str1<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> L<span class="token string">"0123456789"</span><span class="token punctuation">;</span></span>
 <span class="line"><span class="token class-name">wchar_t</span><span class="token operator">*</span>wide_str2 <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token class-name">wchar_t</span><span class="token operator">*</span><span class="token punctuation">)</span> <span class="token function">malloc</span><span class="token punctuation">(</span><span class="token function">strlen</span><span class="token punctuation">(</span>wide_str1<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
@@ -177,7 +224,11 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="_15-what-can-be-wrong-in-the-following-two-example-code-6점" tabindex="-1"><a class="header-anchor" href="#_15-what-can-be-wrong-in-the-following-two-example-code-6점"><span>15. What can be wrong in the following two example code? [6점]</span></a></h2>
+</section>
+<section class="print-section">
 <h3 id="예제-1" tabindex="-1"><a class="header-anchor" href="#예제-1"><span>예제 1</span></a></h3>
 <div class="language-c line-numbers-mode" data-highlighter="prismjs" data-ext="c"><pre v-pre><code class="language-c"><span class="line"><span class="token keyword">char</span> dst<span class="token punctuation">[</span><span class="token number">16</span><span class="token punctuation">]</span><span class="token punctuation">;</span></span>
 <span class="line"><span class="token keyword">char</span> src<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">"0123456789"</span><span class="token punctuation">;</span></span>
@@ -190,6 +241,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="예제-2" tabindex="-1"><a class="header-anchor" href="#예제-2"><span>예제 2</span></a></h3>
 <div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code class="language-text"><span class="line">char dst[6];</span>
 <span class="line">char src[] = "0123456789";</span>
@@ -203,6 +256,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="_16-다음-코드에-대하여-물음에-답하시오-8점" tabindex="-1"><a class="header-anchor" href="#_16-다음-코드에-대하여-물음에-답하시오-8점"><span>16. 다음 코드에 대하여 물음에 답하시오. [8점]</span></a></h2>
 <div class="language-c line-numbers-mode" data-highlighter="prismjs" data-ext="c"><pre v-pre><code class="language-c"><span class="line"><span class="token comment">/* 'user' is a string that is input from a user. */</span></span>
 <span class="line"><span class="token keyword">char</span> outbuf<span class="token punctuation">[</span><span class="token number">512</span><span class="token punctuation">]</span><span class="token punctuation">;</span></span>
@@ -210,10 +265,14 @@
 <span class="line"><span class="token function">sprintf</span><span class="token punctuation">(</span>buffer<span class="token punctuation">,</span> <span class="token string">"ERR Wrong command: %.400s"</span><span class="token punctuation">,</span> user<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
 <span class="line"><span class="token function">sprintf</span><span class="token punctuation">(</span>outbuf<span class="token punctuation">,</span> buffer<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="a-in-line-3-how-the-buffer-overflow-can-be-prevented" tabindex="-1"><a class="header-anchor" href="#a-in-line-3-how-the-buffer-overflow-can-be-prevented"><span>a. In line 3, how the buffer overflow can be prevented?</span></a></h3>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h3 id="a-in-line-3-how-the-buffer-overflow-can-be-prevented" tabindex="-1"><a class="header-anchor" href="#a-in-line-3-how-the-buffer-overflow-can-be-prevented"><span>a. In line 3, how the buffer overflow can be prevented?</span></a></h3>
 <ul>
 <li>Format specifier에 Precision(정밀도) 제한자 <code v-pre>%.400s</code>를 사용하여, <code v-pre>user</code> 입력값 중 최대 400문자까지만 읽어오도록 제한했기 때문에 <code v-pre>buffer</code>(512 bytes) 넘침을 방지했습니다.</li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="b-explain-whether-the-buffer-overflow-is-possible-or-not-in-the-above-code-if-so-explain-your-answer-with-a-specific-example" tabindex="-1"><a class="header-anchor" href="#b-explain-whether-the-buffer-overflow-is-possible-or-not-in-the-above-code-if-so-explain-your-answer-with-a-specific-example"><span>b. Explain whether the buffer overflow is possible or not in the above code. If so, explain your answer with a specific example.</span></a></h3>
 <ul>
 <li>가능합니다.</li>
@@ -225,6 +284,7 @@ Line 4 실행 시 <code v-pre>sprintf</code>는 이를 해석하여 stack의 값
 </ul>
 </li>
 </ul>
+</section>
 </div></template>
 
 

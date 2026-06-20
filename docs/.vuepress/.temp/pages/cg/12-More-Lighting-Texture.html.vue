@@ -1,5 +1,8 @@
-<template><div><h1 id="_12-more-lighting-texture" tabindex="-1"><a class="header-anchor" href="#_12-more-lighting-texture"><span>12 - More Lighting, Texture</span></a></h1>
+<template><div><section class="print-section">
+<h1 id="_12-more-lighting-texture" tabindex="-1"><a class="header-anchor" href="#_12-more-lighting-texture"><span>12 - More Lighting, Texture</span></a></h1>
 <DateMeta />
+</section>
+<section class="print-section">
 <h2 id="revised-class-schedule" tabindex="-1"><a class="header-anchor" href="#revised-class-schedule"><span>Revised Class Schedule</span></a></h2>
 <ul>
 <li>이전에 공유된 강의 일정 및 기말 시험 범위에 오류가 있었습니다.</li>
@@ -12,6 +15,8 @@ https://learning.hanyang.ac.kr/courses/178704/discussion_topics/418144</li>
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="final-exam-announcement" tabindex="-1"><a class="header-anchor" href="#final-exam-announcement"><span>Final Exam Announcement</span></a></h2>
 <ul>
 <li>
@@ -33,6 +38,8 @@ https://learning.hanyang.ac.kr/courses/178704/discussion_topics/418144</li>
 <p>학생증을 반드시 지참할 것</p>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="outline" tabindex="-1"><a class="header-anchor" href="#outline"><span>Outline</span></a></h2>
 <ul>
 <li>
@@ -55,13 +62,19 @@ https://learning.hanyang.ac.kr/courses/178704/discussion_topics/418144</li>
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h1 id="more-lighting" tabindex="-1"><a class="header-anchor" href="#more-lighting"><span>More Lighting</span></a></h1>
+</section>
+<section class="print-section">
 <h2 id="recall-reflection-of-general-materials" tabindex="-1"><a class="header-anchor" href="#recall-reflection-of-general-materials"><span>Recall: Reflection of General Materials</span></a></h2>
 <ul>
 <li>많은 재질의 표면은 diffuse reflection과 specular reflection을 모두 가짐</li>
 <li>표면의 반사 특성은 분포 함수(distribution function)로 표현 가능</li>
 <li>→ BRDF</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="bidirectional-reflectance-distribution-function-brdf" tabindex="-1"><a class="header-anchor" href="#bidirectional-reflectance-distribution-function-brdf"><span>Bidirectional Reflectance Distribution Function (BRDF)</span></a></h2>
 <ul>
 <li>
@@ -78,6 +91,8 @@ https://learning.hanyang.ac.kr/courses/178704/discussion_topics/418144</li>
 </ul>
 <p v-pre class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi>f</mi><mi>r</mi></msub><mo stretchy="false">(</mo><msub><mi>θ</mi><mi>i</mi></msub><mo separator="true">,</mo><msub><mi>ϕ</mi><mi>i</mi></msub><mo separator="true">;</mo><msub><mi>θ</mi><mi>o</mi></msub><mo separator="true">,</mo><msub><mi>ϕ</mi><mi>o</mi></msub><mo stretchy="false">)</mo><mo>≥</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">f_r(\theta_i, \phi_i; \theta_o, \phi_o) \ge 0
 </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:-0.1076em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.02778em;">r</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.02778em;">θ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.0278em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord mathnormal">ϕ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">;</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.02778em;">θ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:-0.0278em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">o</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord mathnormal">ϕ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">o</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≥</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">0</span></span></span></span></span></p>
+</section>
+<section class="print-section">
 <h2 id="examples-of-brdf" tabindex="-1"><a class="header-anchor" href="#examples-of-brdf"><span>Examples of BRDF</span></a></h2>
 <p><em>(theoretical approximation, not from measurement)</em></p>
 <ul>
@@ -86,6 +101,8 @@ https://learning.hanyang.ac.kr/courses/178704/discussion_topics/418144</li>
 <li>대리석 바닥과 같이 광택이 있는 표면</li>
 <li>사과처럼 복합 반사를 가진 재질</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="phong-illumination-model-brdf" tabindex="-1"><a class="header-anchor" href="#phong-illumination-model-brdf"><span>Phong Illumination Model &amp; BRDF</span></a></h2>
 <ul>
 <li>Phong 모델은 다음 두 가지를 가진 BRDF를 모델링함:
@@ -95,6 +112,8 @@ https://learning.hanyang.ac.kr/courses/178704/discussion_topics/418144</li>
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="measuring-brdf" tabindex="-1"><a class="header-anchor" href="#measuring-brdf"><span>Measuring BRDF</span></a></h2>
 <ul>
 <li>특정 재질의 BRDF는 다음과 같은 장비로 측정 가능:
@@ -103,6 +122,8 @@ https://learning.hanyang.ac.kr/courses/178704/discussion_topics/418144</li>
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="using-measured-brdf-for-rendering" tabindex="-1"><a class="header-anchor" href="#using-measured-brdf-for-rendering"><span>Using Measured BRDF for Rendering</span></a></h2>
 <ul>
 <li>측정된 BRDF는 렌더링에 사용될 수 있음</li>
@@ -134,6 +155,8 @@ https://learning.hanyang.ac.kr/courses/178704/discussion_topics/418144</li>
 </tr>
 </tbody>
 </table>
+</section>
+<section class="print-section">
 <h2 id="local-vs-global-illumination" tabindex="-1"><a class="header-anchor" href="#local-vs-global-illumination"><span>Local vs. Global Illumination</span></a></h2>
 <ul>
 <li><strong>Local (또는 direct, non-global) illumination</strong>
@@ -156,12 +179,16 @@ https://learning.hanyang.ac.kr/courses/178704/discussion_topics/418144</li>
 </li>
 </ul>
 <p>(그림: 직접 조명 + 간접 조명 = 전역 조명)</p>
+</section>
+<section class="print-section">
 <h2 id="phong-illumination-model-local-global-illumination" tabindex="-1"><a class="header-anchor" href="#phong-illumination-model-local-global-illumination"><span>Phong Illumination Model &amp; Local, Global Illumination</span></a></h2>
 <ul>
 <li>Phong 조명 모델은 기본적으로 <strong>local illumination model</strong></li>
 <li>간접 조명은 주변광(ambient component)으로만 <strong>대략적으로 근사됨</strong></li>
 </ul>
 <p>(그림: Phong direct vs. ambient 근사 비교)</p>
+</section>
+<section class="print-section">
 <h2 id="texture-mapping" tabindex="-1"><a class="header-anchor" href="#texture-mapping"><span>Texture Mapping</span></a></h2>
 <ul>
 <li>
@@ -181,6 +208,8 @@ https://learning.hanyang.ac.kr/courses/178704/discussion_topics/418144</li>
 </li>
 </ul>
 <p>(그림: 고정밀 vs. 텍스처 적용 모델)</p>
+</section>
+<section class="print-section">
 <h2 id="uv-mapping" tabindex="-1"><a class="header-anchor" href="#uv-mapping"><span>UV Mapping</span></a></h2>
 <ul>
 <li>
@@ -197,6 +226,8 @@ https://learning.hanyang.ac.kr/courses/178704/discussion_topics/418144</li>
 </li>
 </ul>
 <p>(그림: UV 좌표 및 매핑 예시)</p>
+</section>
+<section class="print-section">
 <h2 id="texture-mapping-process" tabindex="-1"><a class="header-anchor" href="#texture-mapping-process"><span>Texture Mapping Process</span></a></h2>
 <ol>
 <li>표면의 점을 UV 공간(UV map)에서의 점에 매핑 (UV mapping)</li>
@@ -207,6 +238,8 @@ https://learning.hanyang.ac.kr/courses/178704/discussion_topics/418144</li>
 <li>Step 1이 바로 우리가 정의해야 할 <strong>texture coordinate function</strong></li>
 </ul>
 <p>(그림: 지구 표면 UV로 펴기)</p>
+</section>
+<section class="print-section">
 <h2 id="defining-texture-coordinate-function" tabindex="-1"><a class="header-anchor" href="#defining-texture-coordinate-function"><span>Defining Texture Coordinate Function:</span></a></h2>
 <ol>
 <li>Creating &quot;UV map&quot;</li>
@@ -219,6 +252,8 @@ https://learning.hanyang.ac.kr/courses/178704/discussion_topics/418144</li>
 </li>
 <li>필요 시, 아티스트가 수작업으로 UV 좌표를 추가 보정하기도 함</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="unwrapping" tabindex="-1"><a class="header-anchor" href="#unwrapping"><span>&quot;Unwrapping&quot;</span></a></h2>
 <ul>
 <li>자동 &quot;unwrapping&quot; 알고리즘
@@ -229,9 +264,13 @@ https://learning.hanyang.ac.kr/courses/178704/discussion_topics/418144</li>
 </li>
 </ul>
 <p>(그림: 다양한 unwrap 예시)</p>
+</section>
+<section class="print-section">
 <h2 id="uv-map-examples" tabindex="-1"><a class="header-anchor" href="#uv-map-examples"><span>UV Map Examples</span></a></h2>
 <p>(그림: 나무 상자 및 버섯 모델의 UV 매핑 예시)</p>
 <p>(그림: 캐릭터, 자동차 등 다양한 UV 매핑 예시)</p>
+</section>
+<section class="print-section">
 <h2 id="defining-texture-coordinate-function-1" tabindex="-1"><a class="header-anchor" href="#defining-texture-coordinate-function-1"><span>Defining Texture Coordinate Function:</span></a></h2>
 <ol start="2">
 <li>Projections to Parametric Surfaces</li>
@@ -240,6 +279,8 @@ https://learning.hanyang.ac.kr/courses/178704/discussion_topics/418144</li>
 <li>사각형, 구, 원기둥 등 파라메트릭 표면(parametric surfaces)과 유사한 객체는</li>
 <li>해당 파라메트릭 표면에 정점을 투사하여 텍스처 좌표 함수를 정의할 수 있음</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="examples-of-coordinate-functions" tabindex="-1"><a class="header-anchor" href="#examples-of-coordinate-functions"><span>Examples of coordinate functions</span></a></h2>
 <p>Planar projection</p>
 <p>(그림: 평면 투영에 의한 UV 분포)
@@ -247,6 +288,8 @@ Spherical projection</p>
 <p>(그림: 구면 투영에 의한 지구 텍스처 적용)</p>
 <p>Cylindrical projection</p>
 <p>(그림: 실린더 형태로 투영된 텍스처)</p>
+</section>
+<section class="print-section">
 <h2 id="rendering-texture-mapped-objects" tabindex="-1"><a class="header-anchor" href="#rendering-texture-mapped-objects"><span>Rendering Texture-Mapped Objects</span></a></h2>
 <div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code class="language-text"><span class="line">for each pixel:</span>
 <span class="line">(u, v) = texture coordinates at pixel</span>
@@ -263,6 +306,8 @@ Spherical projection</p>
 </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal">u</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">v</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0037em;">α</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.0037em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal">u</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">v</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0037em;">α</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.0037em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal">u</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">v</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0037em;">α</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.0037em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">3</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal">u</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">3</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">v</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">3</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span></span></p>
 <p v-pre class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi>α</mi><mn>1</mn></msub><mo>+</mo><msub><mi>α</mi><mn>2</mn></msub><mo>+</mo><msub><mi>α</mi><mn>3</mn></msub><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\alpha_1 + \alpha_2 + \alpha_3 = 1
 </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0037em;">α</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.0037em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.7333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0037em;">α</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.0037em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.5806em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0037em;">α</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.0037em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">3</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span></span></p>
+</section>
+<section class="print-section">
 <h2 id="diffuse-specular-normal-maps" tabindex="-1"><a class="header-anchor" href="#diffuse-specular-normal-maps"><span>Diffuse, Specular, Normal Maps</span></a></h2>
 <ul>
 <li>텍스처 맵을 통해 정의할 수 있는 표면 속성은?
@@ -275,6 +320,8 @@ Spherical projection</p>
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="examples-of-diffuse-specular-normal-map" tabindex="-1"><a class="header-anchor" href="#examples-of-diffuse-specular-normal-map"><span>Examples of Diffuse, Specular, Normal Map</span></a></h2>
 <p>(왼쪽부터)</p>
 <ul>
@@ -291,6 +338,8 @@ Spherical projection</p>
 <li>normal</li>
 <li>texture map</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="normal-mapping-motivation" tabindex="-1"><a class="header-anchor" href="#normal-mapping-motivation"><span>Normal Mapping - Motivation</span></a></h2>
 <ul>
 <li>
@@ -309,6 +358,8 @@ Spherical projection</p>
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="normal-mapping-basic-idea" tabindex="-1"><a class="header-anchor" href="#normal-mapping-basic-idea"><span>Normal Mapping - Basic Idea</span></a></h2>
 <p>목표: 고폴리 모델처럼 보이는 저폴리 모델 만들기</p>
 <ol>
@@ -316,12 +367,16 @@ Spherical projection</p>
 <li>그 텍스처 이미지를 저폴리 모델에 적용</li>
 </ol>
 <p>(그림: normal 전파 예시)</p>
+</section>
+<section class="print-section">
 <h2 id="normal-mapping-example" tabindex="-1"><a class="header-anchor" href="#normal-mapping-example"><span>Normal Mapping - Example</span></a></h2>
 <ul>
 <li>좌: high-poly (814 triangles)</li>
 <li>중: simplified (900 triangles)</li>
 <li>우: 더 간단한 모델 (200 triangles)</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="normal-mapping-details" tabindex="-1"><a class="header-anchor" href="#normal-mapping-details"><span>Normal Mapping - Details</span></a></h2>
 <ul>
 <li>고폴리(high-poly) 모델의 normal vector를 각 픽셀의 RGB 값으로 인코딩</li>
@@ -356,6 +411,8 @@ Spherical projection</p>
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="bump-mapping" tabindex="-1"><a class="header-anchor" href="#bump-mapping"><span>Bump Mapping</span></a></h2>
 <ul>
 <li>
@@ -376,8 +433,12 @@ Spherical projection</p>
 <p>normal은 높이맵으로부터 계산하여 적용</p>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="bump-mapping-example" tabindex="-1"><a class="header-anchor" href="#bump-mapping-example"><span>Bump Mapping Example</span></a></h2>
 <p>(그림: 원본 오브젝트 + bump map = bump가 적용된 결과)</p>
+</section>
+<section class="print-section">
 <h2 id="displacement-mapping" tabindex="-1"><a class="header-anchor" href="#displacement-mapping"><span>Displacement Mapping</span></a></h2>
 <ul>
 <li>
@@ -394,6 +455,8 @@ Spherical projection</p>
 </li>
 </ul>
 <p>(그림: subdivision 정도에 따른 displacement 차이)</p>
+</section>
+<section class="print-section">
 <h2 id="demo-normal-bump-displacement-mapping" tabindex="-1"><a class="header-anchor" href="#demo-normal-bump-displacement-mapping"><span>[Demo] Normal / Bump / Displacement Mapping</span></a></h2>
 <ul>
 <li>Normal mapping / Displacement mapping
@@ -407,6 +470,8 @@ Spherical projection</p>
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="light-map" tabindex="-1"><a class="header-anchor" href="#light-map"><span>Light Map</span></a></h2>
 <ul>
 <li>light map은 사전 계산된 조명 정보를 저장하는 데 사용됨</li>
@@ -433,6 +498,8 @@ Spherical projection</p>
 </tbody>
 </table>
 <p>(이미지: 텍스처만 적용된 장면 vs. 라이트맵이 적용된 장면 비교)</p>
+</section>
+<section class="print-section">
 <h2 id="shadow-map" tabindex="-1"><a class="header-anchor" href="#shadow-map"><span>Shadow Map</span></a></h2>
 <ul>
 <li>light view에서의 depth map을 이용해 샘플 지점이 보이는지를 판단
@@ -442,6 +509,8 @@ Spherical projection</p>
 </li>
 </ul>
 <p>(그림: teapot을 기준으로 광원 방향에서 깊이 확인)</p>
+</section>
+<section class="print-section">
 <h2 id="environment-map" tabindex="-1"><a class="header-anchor" href="#environment-map"><span>Environment Map</span></a></h2>
 <ul>
 <li>복잡한 거울같은 효과를 갖는 객체 시뮬레이션
@@ -452,6 +521,8 @@ Spherical projection</p>
 </li>
 </ul>
 <p>(그림: 구면에 적용된 environment map)</p>
+</section>
+<section class="print-section">
 <h2 id="practice-online-demos" tabindex="-1"><a class="header-anchor" href="#practice-online-demos"><span>[Practice] Online Demos</span></a></h2>
 <ul>
 <li>
@@ -474,7 +545,11 @@ Spherical projection</p>
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h1 id="_12-lab-texture-mapping" tabindex="-1"><a class="header-anchor" href="#_12-lab-texture-mapping"><span>12 - Lab - Texture Mapping</span></a></h1>
+</section>
+<section class="print-section">
 <h2 id="outline-1" tabindex="-1"><a class="header-anchor" href="#outline-1"><span>Outline</span></a></h2>
 <ul>
 <li>Pillow 설치</li>
@@ -484,6 +559,8 @@ Spherical projection</p>
 <li>텍스처 래핑</li>
 <li>다중 텍스처</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="install-pillow" tabindex="-1"><a class="header-anchor" href="#install-pillow"><span>Install Pillow</span></a></h2>
 <ul>
 <li>
@@ -500,6 +577,8 @@ Spherical projection</p>
 <li>문서:<br>
 https://pillow.readthedocs.io/en/stable/index.html</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="code-1-triangle-texture" tabindex="-1"><a class="header-anchor" href="#code-1-triangle-texture"><span>[Code] 1-triangle-texture</span></a></h2>
 <ul>
 <li>&quot;5-Lab-3DTransformations-VertProcess/1/3-lookat.py&quot;에서 시작</li>
@@ -659,6 +738,8 @@ https://pillow.readthedocs.io/en/stable/index.html</li>
 <span class="line"><span class="token function">glUniform1i</span><span class="token punctuation">(</span>loc_texture1<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
 <span class="line"></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>(이미지 설명: 좌측 하단 그림은 지구 텍스처를 삼각형에 매핑한 예시임)</p>
+</section>
+<section class="print-section">
 <h2 id="code-2-triangle-texture-color" tabindex="-1"><a class="header-anchor" href="#code-2-triangle-texture-color"><span>[Code] 2-triangle-texture-color</span></a></h2>
 <ul>
 <li>vertex 색상과 텍스처를 함께 사용할 수 있음</li>
@@ -670,6 +751,8 @@ https://pillow.readthedocs.io/en/stable/index.html</li>
 <span class="line"><span class="token punctuation">}</span></span>
 <span class="line"></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>(이미지 설명: 색상이 적용된 지구 이미지의 텍스처 예시)</p>
+</section>
+<section class="print-section">
 <h2 id="code-3-triangle-texture-filter" tabindex="-1"><a class="header-anchor" href="#code-3-triangle-texture-filter"><span>[Code] 3-triangle-texture-filter</span></a></h2>
 <ul>
 <li>더 큰 삼각형을 그려보자</li>
@@ -715,6 +798,8 @@ https://pillow.readthedocs.io/en/stable/index.html</li>
 <span class="line">        img <span class="token operator">=</span> Image<span class="token punctuation">.</span><span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">"./230px-Solarsystemscope_texture_8k_earth_daymap.jpg"</span><span class="token punctuation">)</span></span>
 <span class="line"></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>(이미지 설명: Python 코드에서 MIN/MAG 필터를 GL_LINEAR 또는 GL_NEAREST로 설정하는 예시)</p>
+</section>
+<section class="print-section">
 <h2 id="code-4-triangle-texture-mipmaps" tabindex="-1"><a class="header-anchor" href="#code-4-triangle-texture-mipmaps"><span>[Code] 4-triangle-texture-mipmaps</span></a></h2>
 <ul>
 <li>고해상도 텍스처를 멀리 있는 물체에 사용할 경우, 한 픽셀에 모든 정보가 들어가 비효율적임</li>
@@ -743,7 +828,9 @@ https://pillow.readthedocs.io/en/stable/index.html</li>
 <span class="line"></span>
 <span class="line">    glGenerateMipmap<span class="token punctuation">(</span>GL_TEXTURE_2D<span class="token punctuation">)</span></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="code-5-triangle-texture-wrap" tabindex="-1"><a class="header-anchor" href="#code-5-triangle-texture-wrap"><span>[Code] 5-triangle-texture-wrap</span></a></h2>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h2 id="code-5-triangle-texture-wrap" tabindex="-1"><a class="header-anchor" href="#code-5-triangle-texture-wrap"><span>[Code] 5-triangle-texture-wrap</span></a></h2>
 <ul>
 <li>
 <p>텍스처 좌표가 <code v-pre>(0.0, 1.0)</code> 범위를 벗어날 경우 OpenGL은 어떻게 처리할까?</p>
@@ -787,7 +874,9 @@ https://pillow.readthedocs.io/en/stable/index.html</li>
 <span class="line">    <span class="token keyword">try</span><span class="token punctuation">:</span></span>
 <span class="line">        <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="code-6-cube-multiple-textures" tabindex="-1"><a class="header-anchor" href="#code-6-cube-multiple-textures"><span>[Code] 6-cube-multiple-textures</span></a></h2>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h2 id="code-6-cube-multiple-textures" tabindex="-1"><a class="header-anchor" href="#code-6-cube-multiple-textures"><span>[Code] 6-cube-multiple-textures</span></a></h2>
 <ul>
 <li>두 개의 이미지를 로드하여 diffuse map과 specular map으로 각각 사용</li>
 <li>다양한 조명 효과 표현 가능</li>
@@ -896,6 +985,7 @@ specular은 <code v-pre>texture_specular</code>로부터 샘플링</li>
 <span class="line">        <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span></span>
 <span class="line">    <span class="token punctuation">)</span></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></div></template>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+</div></template>
 
 

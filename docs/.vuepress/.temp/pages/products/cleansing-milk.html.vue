@@ -1,7 +1,12 @@
-<template><div><h1 id="클렌징-밀크-cleansing-milk" tabindex="-1"><a class="header-anchor" href="#클렌징-밀크-cleansing-milk"><span>클렌징 밀크 (Cleansing Milk)</span></a></h1>
+<template><div><section class="print-section">
+<h1 id="클렌징-밀크-cleansing-milk" tabindex="-1"><a class="header-anchor" href="#클렌징-밀크-cleansing-milk"><span>클렌징 밀크 (Cleansing Milk)</span></a></h1>
 <DateMeta />
+</section>
+<section class="print-section">
 <h2 id="왜-밀크-인가" tabindex="-1"><a class="header-anchor" href="#왜-밀크-인가"><span>왜 &quot;밀크&quot;인가</span></a></h2>
 <p>클렌징 밀크(Cleansing Milk)는 외관과 질감이 우유(milk)를 닮은 유백색의 에멀전(emulsion) 형태 클렌저다. 기름과 물이 계면활성제에 의해 균일하게 혼합된 상태로, 실제 우유의 지방과 물이 에멀전을 이루는 것과 같은 원리다. 색상, 농도, 부드러운 질감 모두 우유와 유사해 이 이름이 붙었다.</p>
+</section>
+<section class="print-section">
 <h3 id="에멀전이란" tabindex="-1"><a class="header-anchor" href="#에멀전이란"><span>에멀전이란</span></a></h3>
 <p>에멀전은 두 가지 서로 섞이지 않는 액체(주로 기름과 물) 중 하나가 다른 하나에 미세한 방울 형태로 분산된 상태다. 클렌징 밀크는 <strong>수중유(O/W, Oil in Water)</strong> 에멀전으로, 소량의 오일이 물 속에 분산되어 있다.</p>
 <ul>
@@ -10,6 +15,8 @@
 <li>클렌징 폼: 계면활성제 + 물 위주, 거품 생성</li>
 </ul>
 <hr>
+</section>
+<section class="print-section">
 <h2 id="클렌징-밀크의-세정-원리" tabindex="-1"><a class="header-anchor" href="#클렌징-밀크의-세정-원리"><span>클렌징 밀크의 세정 원리</span></a></h2>
 <p>클렌징 밀크에 포함된 오일 성분이 피지, 선크림, 가벼운 메이크업 등의 유성 오염물과 <strong>&quot;유사한 것은 유사한 것을 녹인다(like dissolves like)&quot;</strong> 원리로 결합한다. 동시에 물 베이스의 연속상(continuous phase)이 피부에서 쉽게 씻겨 나가도록 돕는다.</p>
 <p>세정력 순서 (일반적으로):</p>
@@ -17,6 +24,8 @@
 <span class="line"></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><p>방수 마스카라, 워터프루프 파운데이션 등의 <strong>내수성 화장품은 클렌징 밀크만으로 완전 제거가 어려울 수 있다</strong>. 이 경우 더블 클렌징(클렌징 오일 → 클렌징 폼)이 권장된다.</p>
 <hr>
+</section>
+<section class="print-section">
 <h2 id="어떤-피부에-적합한가" tabindex="-1"><a class="header-anchor" href="#어떤-피부에-적합한가"><span>어떤 피부에 적합한가</span></a></h2>
 <p>클렌징 밀크는 <strong>건성, 극건성, 민감성</strong> 피부에 특히 잘 맞는다.</p>
 <table>
@@ -51,7 +60,11 @@
 </table>
 <p>특히 피부 장벽이 약하거나 아토피성 피부에서, 거품 클렌저의 강한 계면활성제(라우릴황산나트륨 등)가 자극이 되는 경우 클렌징 밀크로 대체하면 세정 후 건조함이 크게 줄어드는 경우가 많다.</p>
 <hr>
+</section>
+<section class="print-section">
 <h2 id="사용-방법" tabindex="-1"><a class="header-anchor" href="#사용-방법"><span>사용 방법</span></a></h2>
+</section>
+<section class="print-section">
 <h3 id="기본-사용법" tabindex="-1"><a class="header-anchor" href="#기본-사용법"><span>기본 사용법</span></a></h3>
 <ol>
 <li><strong>건조한 얼굴</strong>에 적당량(500원 동전 크기)을 덜어낸다</li>
@@ -63,6 +76,8 @@
 <p class="hint-container-title">유화의 중요성</p>
 <p>3번 단계에서 소량의 물을 먼저 추가해 유화시키는 것이 중요하다. 바로 물로 씻으면 오일이 피부에 남을 수 있고, 먼저 유화시키면 오염물과 오일이 함께 깔끔하게 씻겨 내려간다.</p>
 </div>
+</section>
+<section class="print-section">
 <h3 id="더블-클렌징-시" tabindex="-1"><a class="header-anchor" href="#더블-클렌징-시"><span>더블 클렌징 시</span></a></h3>
 <p>워터프루프 제품이나 자외선 차단제를 사용했다면:</p>
 <ol>
@@ -70,9 +85,13 @@
 <li>(2차) 클렌징 밀크로 마무리 세정</li>
 </ol>
 <p>이 경우 클렌징 밀크는 잔여 오일기를 정리하는 마지막 단계에서 부드럽게 마무리하는 역할을 한다.</p>
+</section>
+<section class="print-section">
 <h3 id="티슈오프-방법-선택" tabindex="-1"><a class="header-anchor" href="#티슈오프-방법-선택"><span>티슈오프 방법 (선택)</span></a></h3>
 <p>물로 씻기 어려운 상황에서, 클렌징 밀크를 바른 후 화장솜이나 티슈로 닦아내는 방식도 가능하다. 단, 이 방법은 완전한 세정보다 피부 자극이 있을 수 있어 일상적 사용보다는 비상용으로 적합하다.</p>
 <hr>
+</section>
+<section class="print-section">
 <h2 id="클렌징-밀크-vs-다른-클렌저-비교" tabindex="-1"><a class="header-anchor" href="#클렌징-밀크-vs-다른-클렌저-비교"><span>클렌징 밀크 vs 다른 클렌저 비교</span></a></h2>
 <table>
 <thead>
@@ -130,6 +149,8 @@
 </tbody>
 </table>
 <hr>
+</section>
+<section class="print-section">
 <h2 id="주요-성분-읽기" tabindex="-1"><a class="header-anchor" href="#주요-성분-읽기"><span>주요 성분 읽기</span></a></h2>
 <p>클렌징 밀크 구매 시 확인할 성분:</p>
 <p><strong>좋은 성분</strong></p>
@@ -145,6 +166,8 @@
 <li>향료(Fragrance/Parfum): 민감성 피부에서 자극 가능</li>
 </ul>
 <hr>
+</section>
+<section class="print-section">
 <h2 id="추천-제품" tabindex="-1"><a class="header-anchor" href="#추천-제품"><span>추천 제품</span></a></h2>
 <table>
 <thead>
@@ -192,6 +215,7 @@
 <p class="hint-container-title">클렌징 밀크와 클렌징 로션의 차이</p>
 <p>클렌징 밀크와 클렌징 로션은 본질적으로 같은 포뮬라 타입이다. 로션은 밀크보다 약간 점도가 높은 경향이 있지만, 브랜드마다 명칭을 혼용하는 경우가 많아 실질적 차이보다는 마케팅적 명칭 차이로 보는 것이 적절하다.</p>
 </div>
+</section>
 </div></template>
 
 

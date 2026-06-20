@@ -1,8 +1,13 @@
-<template><div><h1 id="프로젝트-03" tabindex="-1"><a class="header-anchor" href="#프로젝트-03"><span>프로젝트 03</span></a></h1>
+<template><div><section class="print-section">
+<h1 id="프로젝트-03" tabindex="-1"><a class="header-anchor" href="#프로젝트-03"><span>프로젝트 03</span></a></h1>
 <DateMeta />
+</section>
+<section class="print-section">
 <h2 id="가상-메모리-파일-시스템" tabindex="-1"><a class="header-anchor" href="#가상-메모리-파일-시스템"><span>가상 메모리 &amp; 파일 시스템</span></a></h2>
 <p>제출 기한: 2025. 06. 10. (화) 24:00
 운영체제</p>
+</section>
+<section class="print-section">
 <h2 id="개요" tabindex="-1"><a class="header-anchor" href="#개요"><span>개요</span></a></h2>
 <ul>
 <li>쓰기 시 복사 (Copy-on-Write) Fork
@@ -21,7 +26,11 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h1 id="쓰기-시-복사-copy-on-write-fork" tabindex="-1"><a class="header-anchor" href="#쓰기-시-복사-copy-on-write-fork"><span>쓰기 시 복사 (Copy-on-Write) Fork</span></a></h1>
+</section>
+<section class="print-section">
 <h2 id="개요-1" tabindex="-1"><a class="header-anchor" href="#개요-1"><span>개요</span></a></h2>
 <ul>
 <li>문제점: <code v-pre>fork()</code>에서의 비효율적인 메모리 복사
@@ -41,6 +50,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="cow-fork-구조" tabindex="-1"><a class="header-anchor" href="#cow-fork-구조"><span>COW Fork 구조</span></a></h2>
 <ul>
 <li>초기 상태
@@ -65,6 +76,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="구현-과제" tabindex="-1"><a class="header-anchor" href="#구현-과제"><span>구현 과제</span></a></h2>
 <ul>
 <li>수정할 핵심 함수
@@ -84,6 +97,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="cow-테스트-결과" tabindex="-1"><a class="header-anchor" href="#cow-테스트-결과"><span>Cow 테스트 결과</span></a></h2>
 <ul>
 <li><code v-pre>simplest()</code>: 기본적인 COW 메모리 할당 및 동작 검증</li>
@@ -97,7 +112,11 @@
 <span class="line">...</span>
 <span class="line">ALL COW TESTS PASSED</span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h1 id="대용량-파일" tabindex="-1"><a class="header-anchor" href="#대용량-파일"><span>대용량 파일</span></a></h1>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h1 id="대용량-파일" tabindex="-1"><a class="header-anchor" href="#대용량-파일"><span>대용량 파일</span></a></h1>
+</section>
+<section class="print-section">
 <h2 id="개요-2" tabindex="-1"><a class="header-anchor" href="#개요-2"><span>개요</span></a></h2>
 <ul>
 <li>문제점: xv6의 제한된 파일 크기
@@ -118,8 +137,14 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="현재-블록-주소-지정-계층-구조" tabindex="-1"><a class="header-anchor" href="#현재-블록-주소-지정-계층-구조"><span>현재 블록 주소 지정 계층 구조</span></a></h2>
+</section>
+<section class="print-section">
 <h2 id="블록-주소-지정-계층-구조" tabindex="-1"><a class="header-anchor" href="#블록-주소-지정-계층-구조"><span>블록 주소 지정 계층 구조</span></a></h2>
+</section>
+<section class="print-section">
 <h2 id="구현-과제-1" tabindex="-1"><a class="header-anchor" href="#구현-과제-1"><span>구현 과제</span></a></h2>
 <ul>
 <li>상수 및 구조체
@@ -138,13 +163,19 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="대용량-파일-테스트-결과" tabindex="-1"><a class="header-anchor" href="#대용량-파일-테스트-결과"><span>대용량 파일 테스트 결과</span></a></h2>
 <ul>
 <li>대용량 파일 생성 및 순차적 쓰기</li>
 <li>파일 크기 검증</li>
 <li>데이터 무결성 검증</li>
 </ul>
+</section>
+<section class="print-section">
 <h1 id="심볼릭-링크" tabindex="-1"><a class="header-anchor" href="#심볼릭-링크"><span>심볼릭 링크</span></a></h1>
+</section>
+<section class="print-section">
 <h2 id="개요-3" tabindex="-1"><a class="header-anchor" href="#개요-3"><span>개요</span></a></h2>
 <ul>
 <li>문제점: xv6의 경직된 파일 참조
@@ -163,6 +194,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="심볼릭-링크-구조" tabindex="-1"><a class="header-anchor" href="#심볼릭-링크-구조"><span>심볼릭 링크 구조</span></a></h2>
 <ul>
 <li>파일 타입 확장
@@ -190,6 +223,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h1 id="구현-과제-2" tabindex="-1"><a class="header-anchor" href="#구현-과제-2"><span>구현 과제</span></a></h1>
 <ul>
 <li>새로운 구성 요소
@@ -206,6 +241,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h1 id="심볼릭-링크-테스트-결과" tabindex="-1"><a class="header-anchor" href="#심볼릭-링크-테스트-결과"><span>심볼릭 링크 테스트 결과</span></a></h1>
 <ul>
 <li><code v-pre>testsymlink()</code> - 핵심 기능 테스트
@@ -226,13 +263,17 @@
 <span class="line">test concurrent symlinks: OK</span>
 <span class="line">...</span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h1 id="평가" tabindex="-1"><a class="header-anchor" href="#평가"><span>평가</span></a></h1>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h1 id="평가" tabindex="-1"><a class="header-anchor" href="#평가"><span>평가</span></a></h1>
 <ul>
 <li>완성도 xv6 운영체제는 명세서 요구사항에 따라 정확하게 동작해야 합니다.</li>
 <li>위키 &amp; 커밋 기록 채점은 위키 문서를 기반으로 하므로, 위키는 가능한 한 상세하게 작성해야 합니다.</li>
 <li>제출 기한 제출 기한을 반드시 엄수해야 합니다. 마감 기한 이후에는 0점 처리되며, 점수가 수정됩니다.</li>
 <li>어떤 복사본도 표절하지 마십시오!!!</li>
 </ul>
+</section>
+<section class="print-section">
 <h1 id="위키" tabindex="-1"><a class="header-anchor" href="#위키"><span>위키</span></a></h1>
 <ul>
 <li>설계 프로젝트 요구사항을 충족하기 위한 구현 접근 방식을 간략하게 설명하세요.</li>
@@ -245,6 +286,8 @@
 <li>문제 해결 발생한 문제, 적용된 해결책 및 미해결 문제를 설명하세요.</li>
 <li>관련이 있는 경우 추가 내용을 포함할 수 있습니다.</li>
 </ul>
+</section>
+<section class="print-section">
 <h1 id="제출" tabindex="-1"><a class="header-anchor" href="#제출"><span>제출</span></a></h1>
 <ul>
 <li>구현한 코드와 위키를 GitHub를 통해 제출하세요.
@@ -260,12 +303,15 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h1 id="q-a" tabindex="-1"><a class="header-anchor" href="#q-a"><span>Q&amp;A</span></a></h1>
 <ul>
 <li>프로젝트 관련 질문은 LMS의 'Project 03 질문 게시판'을 이용해 주세요.</li>
 <li>이메일로 보낸 질문에는 답변하지 않습니다.</li>
 <li>프로젝트와 관련 없는 질문은 Q&amp;A 게시판을 이용하거나 이메일로 보내주세요.</li>
 </ul>
+</section>
 </div></template>
 
 

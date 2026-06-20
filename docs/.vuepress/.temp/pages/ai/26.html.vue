@@ -1,7 +1,12 @@
-<template><div><h1 id="_26-attention-mechanism-and-self-attention" tabindex="-1"><a class="header-anchor" href="#_26-attention-mechanism-and-self-attention"><span>26. Attention Mechanism and Self-Attention</span></a></h1>
+<template><div><section class="print-section">
+<h1 id="_26-attention-mechanism-and-self-attention" tabindex="-1"><a class="header-anchor" href="#_26-attention-mechanism-and-self-attention"><span>26. Attention Mechanism and Self-Attention</span></a></h1>
 <DateMeta />
+</section>
+<section class="print-section">
 <h1 id="sequence-to-sequence-models" tabindex="-1"><a class="header-anchor" href="#sequence-to-sequence-models"><span>Sequence-to-Sequence Models</span></a></h1>
 <p>Focusing on neural machine translation</p>
+</section>
+<section class="print-section">
 <h2 id="machine-translation" tabindex="-1"><a class="header-anchor" href="#machine-translation"><span>Machine Translation</span></a></h2>
 <ul>
 <li><strong>Machine Translation (MT)</strong>
@@ -17,6 +22,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="neural-machine-translation" tabindex="-1"><a class="header-anchor" href="#neural-machine-translation"><span>Neural Machine Translation</span></a></h2>
 <ul>
 <li><strong>Neural Machine Translation (NMT)</strong>
@@ -27,6 +34,8 @@
 </li>
 </ul>
 <p><img src="@source/ai/image-75.png" alt=""></p>
+</section>
+<section class="print-section">
 <h2 id="sequence-to-sequence-is-versatile" tabindex="-1"><a class="header-anchor" href="#sequence-to-sequence-is-versatile"><span>Sequence-to-Sequence is Versatile!</span></a></h2>
 <ul>
 <li><strong>Encoder-Decoder model</strong>이라는 일반적인 개념
@@ -44,6 +53,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="neural-machine-translation-nmt" tabindex="-1"><a class="header-anchor" href="#neural-machine-translation-nmt"><span>Neural Machine Translation (NMT)</span></a></h2>
 <ul>
 <li>Sequence-to-sequence model은 <strong>Conditional Language Model</strong>의 한 예시
@@ -66,11 +77,19 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="training-a-neural-machine-translation-system" tabindex="-1"><a class="header-anchor" href="#training-a-neural-machine-translation-system"><span>Training a Neural Machine Translation System</span></a></h2>
 <p><img src="@source/ai/image-76.png" alt=""></p>
+</section>
+<section class="print-section">
 <h1 id="introduction-to-attention" tabindex="-1"><a class="header-anchor" href="#introduction-to-attention"><span>Introduction to Attention</span></a></h1>
+</section>
+<section class="print-section">
 <h2 id="the-bottleneck-problem-of-seq2seq" tabindex="-1"><a class="header-anchor" href="#the-bottleneck-problem-of-seq2seq"><span>The Bottleneck Problem of Seq2Seq</span></a></h2>
 <p><img src="@source/ai/image-77.png" alt=""></p>
+</section>
+<section class="print-section">
 <h2 id="attention" tabindex="-1"><a class="header-anchor" href="#attention"><span>Attention</span></a></h2>
 <ul>
 <li><strong>Attention</strong> (mechanism)은 bottleneck 문제에 대한 해결책 제공
@@ -79,12 +98,16 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="sequence-to-sequence-with-attention" tabindex="-1"><a class="header-anchor" href="#sequence-to-sequence-with-attention"><span>Sequence-to-Sequence with Attention</span></a></h2>
 <p><img src="@source/ai/image-110.png" alt="alt text"></p>
 <p><img src="@source/ai/image-78.png" alt=""></p>
 <p><img src="@source/ai/image-79.png" alt=""></p>
 <p><img src="@source/ai/image-80.png" alt=""></p>
 <p><img src="@source/ai/image-81.png" alt=""></p>
+</section>
+<section class="print-section">
 <h2 id="attention-in-equations" tabindex="-1"><a class="header-anchor" href="#attention-in-equations"><span>Attention: In Equations</span></a></h2>
 <ul>
 <li>Procedure
@@ -112,6 +135,8 @@
 </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord"><span class="mord mathnormal">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2806em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">t</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">;</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord mathnormal">s</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2806em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">t</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">]</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">∈</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8991em;"></span><span class="mord"><span class="mord mathbb">R</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8991em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span><span class="mord mathnormal mtight">h</span></span></span></span></span></span></span></span></span></span></span></span></span></p>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="attention-is-great" tabindex="-1"><a class="header-anchor" href="#attention-is-great"><span>Attention is Great!</span></a></h2>
 <ul>
 <li>Attention은 NMT 성능을 크게 향상
@@ -143,6 +168,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="attention-is-a-general-deep-learning-technique" tabindex="-1"><a class="header-anchor" href="#attention-is-a-general-deep-learning-technique"><span>Attention is A General Deep Learning Technique</span></a></h2>
 <ul>
 <li>Attention이 machine Translation을 위한 sequence-to-sequence model을 개선하는 훌륭한 방법임을 확인
@@ -173,8 +200,12 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h1 id="from-rnn-to-attention-based-nlp-models-self-attention" tabindex="-1"><a class="header-anchor" href="#from-rnn-to-attention-based-nlp-models-self-attention"><span>From RNN to Attention-Based NLP Models Self-Attention</span></a></h1>
 <p>Self-Attention</p>
+</section>
+<section class="print-section">
 <h2 id="as-of-last-lecture-recurrent-models-for-most-nlp" tabindex="-1"><a class="header-anchor" href="#as-of-last-lecture-recurrent-models-for-most-nlp"><span>As of Last Lecture: Recurrent Models for (Most) NLP</span></a></h2>
 <p><img src="@source/ai/image-83.png" alt=""></p>
 <ul>
@@ -186,6 +217,8 @@
 <li>그 후, 출력(Translation, Sentence, Summary)을 sequence로 정의하고 생성을 위해 LSTM 사용</li>
 <li>유연한 memory 접근을 위해 attention 사용</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="same-goals-different-building-blocks" tabindex="-1"><a class="header-anchor" href="#same-goals-different-building-blocks"><span>Same Goals, Different Building Blocks</span></a></h2>
 <p><img src="@source/ai/image-84.png" alt=""></p>
 <ul>
@@ -196,6 +229,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="issues-with-recurrent-models-linear-interaction-distance" tabindex="-1"><a class="header-anchor" href="#issues-with-recurrent-models-linear-interaction-distance"><span>Issues with Recurrent Models: Linear Interaction Distance</span></a></h2>
 <ul>
 <li>RNN은 &quot;Left-to-right&quot;로 unrolled(입력을 받아들여 처리)됨
@@ -210,6 +245,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="issues-with-recurrent-models-linear-interaction-distance-1" tabindex="-1"><a class="header-anchor" href="#issues-with-recurrent-models-linear-interaction-distance-1"><span>Issues with Recurrent Models: Linear Interaction Distance</span></a></h2>
 <p><img src="@source/ai/image-85.png" alt=""></p>
 <ul>
@@ -225,6 +262,8 @@
 </li>
 </ul>
 <p><img src="@source/ai/image-86.png" alt=""></p>
+</section>
+<section class="print-section">
 <h2 id="issues-with-recurrent-models-lack-of-parallelizability" tabindex="-1"><a class="header-anchor" href="#issues-with-recurrent-models-lack-of-parallelizability"><span>Issues with Recurrent Models: Lack of Parallelizability</span></a></h2>
 <ul>
 <li>Forward 및 backward pass는 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mtext>sequence length</mtext><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(\text{sequence length})</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord text"><span class="mord">sequence length</span></span><span class="mclose">)</span></span></span></span>의 unparallelizable(병렬화 불가)한 연산을 포함
@@ -237,6 +276,8 @@
 </ul>
 <p><img src="@source/ai/image-87.png" alt=""></p>
 <p><img src="@source/ai/image-88.png" alt=""></p>
+</section>
+<section class="print-section">
 <h2 id="if-not-recurrence-then-what-how-about-attention" tabindex="-1"><a class="header-anchor" href="#if-not-recurrence-then-what-how-about-attention"><span>If Not Recurrence, Then What? How About Attention?</span></a></h2>
 <ul>
 <li>Attention은 각 단어의 representations를 <strong>Query</strong>로 취급하여 <strong>Values</strong> 집합의 정보에 접근하고 통합
@@ -248,13 +289,19 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="attention-as-a-soft-averaging-lookup-table" tabindex="-1"><a class="header-anchor" href="#attention-as-a-soft-averaging-lookup-table"><span>Attention as a Soft, Averaging Lookup Table</span></a></h2>
 <ul>
 <li>Attention을 Key-Value store에서의 fuzzy lookup 수행으로 생각할 수 있음</li>
 </ul>
 <p><img src="@source/ai/image-90.png" alt=""></p>
+</section>
+<section class="print-section">
 <h2 id="self-attention-hypothetical-example" tabindex="-1"><a class="header-anchor" href="#self-attention-hypothetical-example"><span>Self-Attention Hypothetical Example</span></a></h2>
 <p><img src="@source/ai/image-91.png" alt=""></p>
+</section>
+<section class="print-section">
 <h2 id="self-attention-keys-queries-values-from-the-same-sequence" tabindex="-1"><a class="header-anchor" href="#self-attention-keys-queries-values-from-the-same-sequence"><span>Self-Attention: Keys, Queries, <strong>Values</strong> from the Same Sequence</span></a></h2>
 <ul>
 <li>단어장 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>V</mi></mrow><annotation encoding="application/x-tex">V</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.22222em;">V</span></span></span></span> 내의 단어 sequence <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>w</mi><mrow><mn>1</mn><mo>:</mo><mi>n</mi></mrow></msub></mrow><annotation encoding="application/x-tex">w_{1:n}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5806em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.02691em;">w</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.0269em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span><span class="mrel mtight">:</span><span class="mord mathnormal mtight">n</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> 가정
@@ -279,6 +326,8 @@
 </ol>
 <p v-pre class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi>o</mi><mi>i</mi></msub><mo>=</mo><munder><mo>∑</mo><mi>j</mi></munder><msub><mi>α</mi><mrow><mi>i</mi><mo separator="true">,</mo><mi>j</mi></mrow></msub><msub><mi>v</mi><mi>j</mi></msub></mrow><annotation encoding="application/x-tex">o_i = \sum_{j} \alpha_{i,j} v_j
 </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5806em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">o</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:2.4638em;vertical-align:-1.4138em;"></span><span class="mop op-limits"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.05em;"><span style="top:-1.8723em;margin-left:0em;"><span class="pstrut" style="height:3.05em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.05724em;">j</span></span></span></span><span style="top:-3.05em;"><span class="pstrut" style="height:3.05em;"></span><span><span class="mop op-symbol large-op">∑</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.4138em;"><span></span></span></span></span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0037em;">α</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.0037em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">i</span><span class="mpunct mtight">,</span><span class="mord mathnormal mtight" style="margin-right:0.05724em;">j</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">v</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.05724em;">j</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span></span></span></span></span></p>
+</section>
+<section class="print-section">
 <h2 id="barriers-solutions-for-self-attention-as-a-building-block" tabindex="-1"><a class="header-anchor" href="#barriers-solutions-for-self-attention-as-a-building-block"><span>Barriers &amp; Solutions for Self-Attention as A Building Block</span></a></h2>
 <ul>
 <li><strong>Barrier</strong>(장애물): 순서에 대한 고유한 개념 부재
@@ -299,6 +348,7 @@
 </ul>
 </li>
 </ul>
+</section>
 </div></template>
 
 

@@ -1,5 +1,8 @@
-<template><div><h1 id="_14-i-o-systems" tabindex="-1"><a class="header-anchor" href="#_14-i-o-systems"><span>14. I/O Systems</span></a></h1>
+<template><div><section class="print-section">
+<h1 id="_14-i-o-systems" tabindex="-1"><a class="header-anchor" href="#_14-i-o-systems"><span>14. I/O Systems</span></a></h1>
 <DateMeta />
+</section>
+<section class="print-section">
 <h2 id="i-o-hardware" tabindex="-1"><a class="header-anchor" href="#i-o-hardware"><span>I/O Hardware</span></a></h2>
 <ul>
 <li>다양한 I/O 장치 존재</li>
@@ -51,6 +54,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="polling" tabindex="-1"><a class="header-anchor" href="#polling"><span>Polling</span></a></h2>
 <ul>
 <li>장치 상태 판단 방식
@@ -71,6 +76,8 @@
 </li>
 <li>이럴 경우, 인터럽트 방식으로 하드웨어 컨트롤러가 CPU에 알림</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="interrupts" tabindex="-1"><a class="header-anchor" href="#interrupts"><span>Interrupts</span></a></h2>
 <ul>
 <li>CPU는 interrupt-request line이라는 선을 통해 인터럽트 감지
@@ -102,6 +109,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="a-kernel-i-o-structure" tabindex="-1"><a class="header-anchor" href="#a-kernel-i-o-structure"><span>A Kernel I/O Structure</span></a></h2>
 <ul>
 <li>커널 I/O 구조는 다음으로 구성
@@ -113,6 +122,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="application-i-o-interface" tabindex="-1"><a class="header-anchor" href="#application-i-o-interface"><span>Application I/O Interface</span></a></h2>
 <ul>
 <li>I/O 시스템 호출은 다양한 장치 동작을 일반화된 클래스에 캡슐화함
@@ -131,6 +142,8 @@
 </li>
 <li>디바이스 드라이버 계층은 커널로부터 장치 제어기 차이를 숨김</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="block-and-character-devices" tabindex="-1"><a class="header-anchor" href="#block-and-character-devices"><span>Block and Character Devices</span></a></h2>
 <ul>
 <li>Block devices: 디스크 드라이브 포함
@@ -148,6 +161,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="blocking-and-nonblocking-i-o" tabindex="-1"><a class="header-anchor" href="#blocking-and-nonblocking-i-o"><span>Blocking and Nonblocking I/O</span></a></h2>
 <ul>
 <li>Blocking I/O
@@ -172,12 +187,18 @@
 </li>
 <li>I/O 서브시스템은 I/O 완료 시점에 시그널을 보냄</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="kernel-i-o-subsystem" tabindex="-1"><a class="header-anchor" href="#kernel-i-o-subsystem"><span>Kernel I/O Subsystem</span></a></h2>
+</section>
+<section class="print-section">
 <h3 id="scheduling" tabindex="-1"><a class="header-anchor" href="#scheduling"><span>Scheduling</span></a></h3>
 <ul>
 <li>각 장치별 큐로 I/O 요청 순서 정렬</li>
 <li>공정성 유지 시도</li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="buffering" tabindex="-1"><a class="header-anchor" href="#buffering"><span>Buffering</span></a></h3>
 <ul>
 <li>장치 간 전송 시 데이터를 메모리에 임시 저장</li>
@@ -189,12 +210,16 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="caching" tabindex="-1"><a class="header-anchor" href="#caching"><span>Caching</span></a></h3>
 <ul>
 <li>성능 핵심</li>
 <li>디스크 데이터의 복사본을 빠른 메모리에 유지</li>
 <li>단일 복사본 보장 (buffer holds only copy)</li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="spooling" tabindex="-1"><a class="header-anchor" href="#spooling"><span>Spooling</span></a></h3>
 <ul>
 <li>장치 출력 임시 보관</li>
@@ -204,6 +229,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="error-handling" tabindex="-1"><a class="header-anchor" href="#error-handling"><span>Error Handling</span></a></h3>
 <ul>
 <li>OS는 다양한 오류 복구 가능
@@ -218,6 +245,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="kernel-data-structures" tabindex="-1"><a class="header-anchor" href="#kernel-data-structures"><span>Kernel Data Structures</span></a></h3>
 <ul>
 <li>장치 상태 추적용 구조체 유지
@@ -227,6 +256,8 @@
 </li>
 <li>버퍼, 메모리, dirty 블록 등 다양한 트래킹 구조 사용</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="performance" tabindex="-1"><a class="header-anchor" href="#performance"><span>Performance</span></a></h2>
 <ul>
 <li>I/O는 시스템 성능에 큰 영향을 미침
@@ -247,6 +278,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="concluding-the-os-course" tabindex="-1"><a class="header-anchor" href="#concluding-the-os-course"><span>Concluding the OS course…</span></a></h2>
 <blockquote>
 <p>Operating System is…</p>
@@ -254,6 +287,7 @@
 <p><em>a collection of Cheating Schemes.</em></p>
 </blockquote>
 </blockquote>
+</section>
 </div></template>
 
 

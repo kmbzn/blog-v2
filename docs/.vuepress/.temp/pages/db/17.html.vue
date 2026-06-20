@@ -1,4 +1,5 @@
-<template><div><h1 id="_17-transactions" tabindex="-1"><a class="header-anchor" href="#_17-transactions"><span>17. Transactions</span></a></h1>
+<template><div><section class="print-section">
+<h1 id="_17-transactions" tabindex="-1"><a class="header-anchor" href="#_17-transactions"><span>17. Transactions</span></a></h1>
 <DateMeta />
 <ul>
 <li>Transaction
@@ -31,6 +32,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="example-of-fund-transfer" tabindex="-1"><a class="header-anchor" href="#example-of-fund-transfer"><span>Example of Fund Transfer</span></a></h2>
 <ul>
 <li>계좌 <code v-pre>A</code>에서 계좌 <code v-pre>B</code>로 $50를 이체하는 transaction</li>
@@ -47,6 +50,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="example-of-fund-transfer-1" tabindex="-1"><a class="header-anchor" href="#example-of-fund-transfer-1"><span>Example of Fund transfer</span></a></h2>
 <ul>
 <li>Consistency 요구사항
@@ -81,6 +86,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="acid-properties" tabindex="-1"><a class="header-anchor" href="#acid-properties"><span>ACID properties</span></a></h2>
 <ul>
 <li>데이터의 무결성(Integrity)을 보존하기 위해, database system은 transaction의 다음 속성들을 보장해야 함.
@@ -97,6 +104,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="transaction-state" tabindex="-1"><a class="header-anchor" href="#transaction-state"><span>Transaction state</span></a></h2>
 <ul>
 <li>Transaction은 다음 상태 중 하나여야 함.
@@ -114,6 +123,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="transaction-atomicity-and-durability" tabindex="-1"><a class="header-anchor" href="#transaction-atomicity-and-durability"><span>Transaction atomicity and durability</span></a></h2>
 <ul>
 <li>Transaction이 committed 또는 aborted 되면 종료(Terminated)된 것으로 간주</li>
@@ -137,6 +148,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="transaction-isolation" tabindex="-1"><a class="header-anchor" href="#transaction-isolation"><span>Transaction Isolation</span></a></h2>
 <ul>
 <li>System에서 다수의 transaction이 concurrent 하게 실행되는 것이 허용됨. 장점은 다음과 같음:
@@ -156,6 +169,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="schedules" tabindex="-1"><a class="header-anchor" href="#schedules"><span>Schedules</span></a></h2>
 <ul>
 <li>Schedule
@@ -181,6 +196,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="serializability" tabindex="-1"><a class="header-anchor" href="#serializability"><span>Serializability</span></a></h2>
 <ul>
 <li>기본 가정(Basic assumption): 각 transaction은 database consistency를 보존함.
@@ -212,6 +229,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="conflicting-instructions" tabindex="-1"><a class="header-anchor" href="#conflicting-instructions"><span>Conflicting Instructions</span></a></h2>
 <ul>
 <li>Transaction <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>T</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">T_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">T</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.1389em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>와 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>T</mi><mi>j</mi></msub></mrow><annotation encoding="application/x-tex">T_j</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.9694em;vertical-align:-0.2861em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">T</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.1389em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.05724em;">j</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span></span></span></span>의 명령어 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>l</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">l_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8444em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.0197em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>와 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>l</mi><mi>j</mi></msub></mrow><annotation encoding="application/x-tex">l_j</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.9805em;vertical-align:-0.2861em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.0197em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.05724em;">j</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span></span></span></span>는 다음 조건에서 충돌(Conflict)함.
@@ -234,6 +253,8 @@
 </li>
 <li>만약 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>l</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">l_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8444em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.0197em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>와 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>l</mi><mi>j</mi></msub></mrow><annotation encoding="application/x-tex">l_j</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.9805em;vertical-align:-0.2861em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.0197em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.05724em;">j</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span></span></span></span>가 schedule 내에서 연속적이고 서로 conflict하지 않는다면, schedule 내에서 위치를 서로 바꾸더라도 결과는 동일하게 유지됨</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="conflict-serializability" tabindex="-1"><a class="header-anchor" href="#conflict-serializability"><span>Conflict serializability</span></a></h2>
 <ul>
 <li>만약 schedule <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>S</mi></mrow><annotation encoding="application/x-tex">S</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.05764em;">S</span></span></span></span>가 non-conflicting 명령어들의 일련의 swap을 통해 schedule <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>S</mi><mo mathvariant="normal" lspace="0em" rspace="0em">′</mo></msup></mrow><annotation encoding="application/x-tex">S&#x27;</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7519em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.05764em;">S</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7519em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span></span></span></span></span>로 변환될 수 있다면, <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>S</mi></mrow><annotation encoding="application/x-tex">S</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.05764em;">S</span></span></span></span>와 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>S</mi><mo mathvariant="normal" lspace="0em" rspace="0em">′</mo></msup></mrow><annotation encoding="application/x-tex">S&#x27;</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7519em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.05764em;">S</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7519em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span></span></span></span></span>는 conflict equivalent 하다고 함.</li>
@@ -249,6 +270,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="testing-for-conflict-serializability" tabindex="-1"><a class="header-anchor" href="#testing-for-conflict-serializability"><span>Testing for conflict serializability</span></a></h2>
 <ul>
 <li>일련의 transaction <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">{</mo><msub><mi>T</mi><mn>1</mn></msub><mo separator="true">,</mo><mtext> </mtext><msub><mi>T</mi><mn>2</mn></msub><mo separator="true">,</mo><mtext> </mtext><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mo separator="true">,</mo><mtext> </mtext><msub><mi>T</mi><mi>n</mi></msub><mo stretchy="false">}</mo></mrow><annotation encoding="application/x-tex">\{T_1, ~T_2, ~..., ~T_n\}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">{</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">T</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.1389em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace nobreak"> </span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">T</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.1389em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace nobreak"> </span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">...</span><span class="mpunct">,</span><span class="mspace nobreak"> </span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">T</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:-0.1389em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">}</span></span></span></span>에 대한 schedule 고려</li>
@@ -285,8 +308,12 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="example-schedule-schedule-a" tabindex="-1"><a class="header-anchor" href="#example-schedule-schedule-a"><span>Example schedule (Schedule A)</span></a></h2>
 <p><img src="@source/db/image-14.png" alt="alt text"></p>
+</section>
+<section class="print-section">
 <h2 id="recoverable-schedules" tabindex="-1"><a class="header-anchor" href="#recoverable-schedules"><span>Recoverable schedules</span></a></h2>
 <ul>
 <li>Concurrently 실행되는 transaction들에 대한 transaction failure의 영향
@@ -312,6 +339,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="cascadeless-schedules" tabindex="-1"><a class="header-anchor" href="#cascadeless-schedules"><span>Cascadeless schedules</span></a></h2>
 <ul>
 <li>Cascading rollback
@@ -335,6 +364,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="concurrency-control" tabindex="-1"><a class="header-anchor" href="#concurrency-control"><span>Concurrency control</span></a></h2>
 <ul>
 <li>Database system은 모든 schedule이 다음을 만족하도록 보장하는 메커니즘을 제공해야 함.
@@ -370,6 +401,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="weak-levels-of-consistency" tabindex="-1"><a class="header-anchor" href="#weak-levels-of-consistency"><span>Weak Levels of consistency</span></a></h2>
 <ul>
 <li>일부 어플리케이션은 serializable하지 않은 schedule을 허용하면서 약한 수준의 consistency를 감수함.</li>
@@ -387,6 +420,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="levels-of-consistency-in-sql-92" tabindex="-1"><a class="header-anchor" href="#levels-of-consistency-in-sql-92"><span>Levels of consistency in SQL-92</span></a></h2>
 <ul>
 <li>SQL 표준은 transaction이 다른 transaction에 대해 nonserializable하게 실행될 수 있음을 명시하도록 허용</li>
@@ -410,6 +445,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="optional-transaction-definition-in-sql" tabindex="-1"><a class="header-anchor" href="#optional-transaction-definition-in-sql"><span>(Optional) Transaction definition in SQL</span></a></h2>
 <ul>
 <li>SQL에서 transaction은 암시적으로 시작됨</li>
@@ -432,6 +469,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="optional-transactions-as-sql-statements" tabindex="-1"><a class="header-anchor" href="#optional-transactions-as-sql-statements"><span>(Optional) Transactions as SQL statements</span></a></h2>
 <ul>
 <li>예시
@@ -461,6 +500,7 @@
 </ul>
 </li>
 </ul>
+</section>
 </div></template>
 
 

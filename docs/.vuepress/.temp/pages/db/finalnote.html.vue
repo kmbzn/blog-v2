@@ -1,11 +1,16 @@
-<template><div><h1 id="final-note" tabindex="-1"><a class="header-anchor" href="#final-note"><span>Final Note</span></a></h1>
+<template><div><section class="print-section">
+<h1 id="final-note" tabindex="-1"><a class="header-anchor" href="#final-note"><span>Final Note</span></a></h1>
 <DateMeta />
+</section>
+<section class="print-section">
 <h2 id="_1-인덱싱-indexing-b-tree" tabindex="-1"><a class="header-anchor" href="#_1-인덱싱-indexing-b-tree"><span>1. 인덱싱 (Indexing) - B+ Tree</span></a></h2>
 <p>가장 확실하게 나오는 유형으로, B+ Tree의 구조 변화를 직접 그릴 수 있어야 함.</p>
 <ul>
 <li>B+ Tree 연산: 초기화 상태에서 시작하여 값의 삽입(Insert) 및 삭제(Delete) 과정 수행</li>
 <li>구조 변화: 삽입 시 노드 분할(Split)과 삭제 시 병합(Merge) 과정을 포함하여 최종 결과 트리 그리기</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="_2-쿼리-처리-및-최적화-query-processing-optimization" tabindex="-1"><a class="header-anchor" href="#_2-쿼리-처리-및-최적화-query-processing-optimization"><span>2. 쿼리 처리 및 최적화 (Query Processing &amp; Optimization)</span></a></h2>
 <p>계산 문제가 다수 출제되는 파트. 공식을 정확히 암기해야</p>
 <ul>
@@ -22,6 +27,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="_3-트랜잭션-관리-transaction-management" tabindex="-1"><a class="header-anchor" href="#_3-트랜잭션-관리-transaction-management"><span>3. 트랜잭션 관리 (Transaction Management)</span></a></h2>
 <p>스케줄의 정합성과 성질을 판단하는 이론 및 판별 문제</p>
 <ul>
@@ -39,6 +46,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="_4-회복-시스템-recovery-system" tabindex="-1"><a class="header-anchor" href="#_4-회복-시스템-recovery-system"><span>4. 회복 시스템 (Recovery System)</span></a></h2>
 <p>로그 기반 회복 기법에 대한 이해를 물음. PPT 예제 상황을 잘 봐두는 것이 중요</p>
 <ul>
@@ -50,6 +59,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="_5-관계형-데이터베이스-설계-relational-database-design" tabindex="-1"><a class="header-anchor" href="#_5-관계형-데이터베이스-설계-relational-database-design"><span>5. 관계형 데이터베이스 설계 (Relational Database Design)</span></a></h2>
 <p>기말 범위는 아니지만 중간고사 범위에서 1문제 기초적인 내용 출제</p>
 <ul>
@@ -58,6 +69,8 @@
 </ul>
 <p>정리해주신 Final Note와 족보(기출 경향)를 바탕으로, 실제 시험에 나올 법한 변형 문제 5세트를 출제했습니다.</p>
 <p>교재 연습문제 스타일을 유지하되, 족보에서 언급된 포인트(계산, 그리기, OX 판단, 로그 분석)를 집중적으로 반영했습니다.</p>
+</section>
+<section class="print-section">
 <h3 id="_1-indexing-b-tree" tabindex="-1"><a class="header-anchor" href="#_1-indexing-b-tree"><span>1. Indexing (B+ Tree)</span></a></h3>
 <p>유형: 삽입/삭제에 따른 구조 변화 그리기 (족보 1순위)</p>
 <p>[English Problem]
@@ -81,6 +94,8 @@ After construction, show the steps to delete the value 23 and describe how the t
 </ul>
 </li>
 </ol>
+</section>
+<section class="print-section">
 <h3 id="_2-query-processing-cost-calculation" tabindex="-1"><a class="header-anchor" href="#_2-query-processing-cost-calculation"><span>2. Query Processing (Cost Calculation)</span></a></h3>
 <p>유형: 조인 비용(Block Transfer, Seek) 계산 (공식 암기 필수)</p>
 <p>[English Problem]
@@ -121,6 +136,8 @@ Let relations <span v-pre class="katex"><span class="katex-mathml"><math xmlns="
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="_3-transaction-management-schedule-properties" tabindex="-1"><a class="header-anchor" href="#_3-transaction-management-schedule-properties"><span>3. Transaction Management (Schedule Properties)</span></a></h3>
 <p>유형: Conflict Serializable, Recoverable, Cascadeless 판단 (OX 문제)</p>
 <p>[English Problem]
@@ -162,6 +179,8 @@ Consider the following schedule <span v-pre class="katex"><span class="katex-mat
 </ul>
 </li>
 </ol>
+</section>
+<section class="print-section">
 <h3 id="_4-recovery-system-log-analysis" tabindex="-1"><a class="header-anchor" href="#_4-recovery-system-log-analysis"><span>4. Recovery System (Log Analysis)</span></a></h3>
 <p>유형: 체크포인트 이후 Crash 발생 시 Redo/Undo 리스트 및 변수 값 (족보 완벽 대응)</p>
 <p>[English Problem]
@@ -209,6 +228,8 @@ Consider the following log records. Suppose the system crashes right after the l
 </ol>
 <p>네, 요청하신 대로 속성을 A부터 H까지(8개) 늘려서, 조금 더 복잡한 종속성 관계를 가진 제3정규형(3NF) 변환 문제를 출제해 드립니다.</p>
 <p>이 문제는 후보키 찾기, 이행적 종속성(Transitive Dependency), 부분 함수 종속성(Partial Dependency) 개념을 모두 테스트할 수 있는 아주 좋은 유형입니다.</p>
+</section>
+<section class="print-section">
 <h3 id="📚-relational-database-design-advanced" tabindex="-1"><a class="header-anchor" href="#📚-relational-database-design-advanced"><span>📚 Relational Database Design (Advanced)</span></a></h3>
 <p>[English Problem]
 Consider the relation schema <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mo stretchy="false">(</mo><mi>A</mi><mo separator="true">,</mo><mi>B</mi><mo separator="true">,</mo><mi>C</mi><mo separator="true">,</mo><mi>D</mi><mo separator="true">,</mo><mi>E</mi><mo separator="true">,</mo><mi>F</mi><mo separator="true">,</mo><mi>G</mi><mo separator="true">,</mo><mi>H</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">R(A, B, C, D, E, F, G, H)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.00773em;">R</span><span class="mopen">(</span><span class="mord mathnormal">A</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.05017em;">B</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.07153em;">C</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">D</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.05764em;">E</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">F</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">G</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.08125em;">H</span><span class="mclose">)</span></span></span></span> and the following set of functional dependencies <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi></mrow><annotation encoding="application/x-tex">F</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">F</span></span></span></span>:</p>
@@ -242,7 +263,11 @@ Consider the relation schema <span v-pre class="katex"><span class="katex-mathml
 <li>이 릴레이션이 왜 제3정규형(3NF)이 아닌지 설명하시오. 3NF 조건을 위반하는 모든 함수적 종속성을 식별하시오.</li>
 <li><span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi></mrow><annotation encoding="application/x-tex">R</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.00773em;">R</span></span></span></span>을 3NF를 만족하는 릴레이션 집합으로 분해하시오. 분해는 무손실 조인(Lossless join)과 종속성 보존(Dependency preservation)을 만족해야 합니다.</li>
 </ol>
+</section>
+<section class="print-section">
 <h3 id="💡-solution-guide-풀이-및-해설" tabindex="-1"><a class="header-anchor" href="#💡-solution-guide-풀이-및-해설"><span>💡 Solution Guide (풀이 및 해설)</span></a></h3>
+</section>
+<section class="print-section">
 <h4 id="_1-후보키-찾기-finding-candidate-key" tabindex="-1"><a class="header-anchor" href="#_1-후보키-찾기-finding-candidate-key"><span>1. 후보키 찾기 (Finding Candidate Key)</span></a></h4>
 <p>후보키를 찾기 위해, 어떤 속성들이 다른 모든 속성을 결정할 수 있는지 폐포(Closure)를 구해봅니다.</p>
 <ul>
@@ -269,6 +294,8 @@ Consider the relation schema <span v-pre class="katex"><span class="katex-mathml
 </li>
 </ul>
 <p>👉 Candidate Key: <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mi>A</mi><mo separator="true">,</mo><mi>B</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(A, B)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal">A</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.05017em;">B</span><span class="mclose">)</span></span></span></span></p>
+</section>
+<section class="print-section">
 <h4 id="_2-3nf-위반-분석-violation-check" tabindex="-1"><a class="header-anchor" href="#_2-3nf-위반-분석-violation-check"><span>2. 3NF 위반 분석 (Violation Check)</span></a></h4>
 <p>3NF의 조건: 함수적 종속성 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>α</mi><mo>→</mo><mi>β</mi></mrow><annotation encoding="application/x-tex">\alpha \to \beta</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal" style="margin-right:0.0037em;">α</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.05278em;">β</span></span></span></span>에 대해, 다음 중 하나라도 만족해야 합니다.</p>
 <ol>
@@ -304,6 +331,8 @@ Consider the relation schema <span v-pre class="katex"><span class="katex-mathml
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h4 id="_3-3nf-분해-decomposition" tabindex="-1"><a class="header-anchor" href="#_3-3nf-분해-decomposition"><span>3. 3NF 분해 (Decomposition)</span></a></h4>
 <p>3NF 분해 알고리즘(Canonical Cover 기반 합성)을 사용하여 각 종속성을 별도의 테이블로 만듭니다.</p>
 <p>분해된 릴레이션 집합:</p>
@@ -339,6 +368,7 @@ Consider the relation schema <span v-pre class="katex"><span class="katex-mathml
 <p v-pre class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi>R</mi><mn>5</mn></msub><mo stretchy="false">(</mo><munder accentunder="true"><mi>G</mi><mo stretchy="true">‾</mo></munder><mo separator="true">,</mo><mi>H</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">R_5(\underline{G}, H)
 </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.00773em;">R</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.0077em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">5</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord underline"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.6833em;"><span style="top:-2.84em;"><span class="pstrut" style="height:3em;"></span><span class="underline-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal">G</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2em;"><span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.08125em;">H</span><span class="mclose">)</span></span></span></span></span></p>
 <p><em>(밑줄은 각 릴레이션의 기본키)</em></p>
+</section>
 </div></template>
 
 

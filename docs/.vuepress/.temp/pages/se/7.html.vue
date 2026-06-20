@@ -1,5 +1,8 @@
-<template><div><h1 id="_7-requirements-elicitation-and-documentation" tabindex="-1"><a class="header-anchor" href="#_7-requirements-elicitation-and-documentation"><span>7. Requirements Elicitation and Documentation</span></a></h1>
+<template><div><section class="print-section">
+<h1 id="_7-requirements-elicitation-and-documentation" tabindex="-1"><a class="header-anchor" href="#_7-requirements-elicitation-and-documentation"><span>7. Requirements Elicitation and Documentation</span></a></h1>
 <DateMeta />
+</section>
+<section class="print-section">
 <h2 id="learning-goals" tabindex="-1"><a class="header-anchor" href="#learning-goals"><span>Learning Goals</span></a></h2>
 <ul>
 <li>Stakeholders(이해관계자) 정의 및 식별</li>
@@ -7,7 +10,11 @@
 <li>Use cases(유즈케이스) 및 user stories(사용자 스토리)를 사용한 요구사항 문서화</li>
 <li>우선순위에 따른 conflicts(충돌) 인식 및 해결</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="requirement-elicitation" tabindex="-1"><a class="header-anchor" href="#requirement-elicitation"><span>Requirement Elicitation</span></a></h2>
+</section>
+<section class="print-section">
 <h2 id="typical-steps" tabindex="-1"><a class="header-anchor" href="#typical-steps"><span>Typical Steps</span></a></h2>
 <ul>
 <li>이해관계자 식별</li>
@@ -23,6 +30,8 @@
 </li>
 <li>요구를 해결하기 위한 대안 탐색</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="question" tabindex="-1"><a class="header-anchor" href="#question"><span>Question</span></a></h2>
 <ul>
 <li>이 시스템은 누구를 위한 것인가?</li>
@@ -36,12 +45,16 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="stakeholder" tabindex="-1"><a class="header-anchor" href="#stakeholder"><span>Stakeholder</span></a></h2>
 <ul>
 <li>시스템에 의해 직간접적으로 영향을 받을 모든 개인 또는 그룹.</li>
 <li>이해관계자들은 의견이 다를 수 있음.</li>
 <li>Requirements process(요구사항 프로세스)는 충돌을 해결하기 위한 negotiation(협상)을 촉발해야 함.</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="defining-actors-agents" tabindex="-1"><a class="header-anchor" href="#defining-actors-agents"><span>Defining Actors/Agents</span></a></h2>
 <ul>
 <li>An actor(액터)는 이벤트를 완료할 목적으로 시스템과 상호작용하는 entity(개체) [Jacobson, 1992].
@@ -51,6 +64,8 @@
 </li>
 <li>액터는 사용자, 조직, 장치 또는 an external system(외부 시스템)일 수 있음.</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="stakeholder-analysis-criteria-for-identifying-relevant-stakeholders" tabindex="-1"><a class="header-anchor" href="#stakeholder-analysis-criteria-for-identifying-relevant-stakeholders"><span>Stakeholder Analysis: Criteria for Identifying Relevant Stakeholders</span></a></h2>
 <ul>
 <li>조직 내 관련 직위</li>
@@ -60,8 +75,14 @@
 <li>Influence in system acceptance(시스템 수용에 미치는 영향력)</li>
 <li>개인적인 목표 및 conflicts of interest(이해 상충)</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="stakeholders-a-nasa-example" tabindex="-1"><a class="header-anchor" href="#stakeholders-a-nasa-example"><span>Stakeholders: A NASA example</span></a></h2>
+</section>
+<section class="print-section">
 <h2 id="interviews" tabindex="-1"><a class="header-anchor" href="#interviews"><span>Interviews</span></a></h2>
+</section>
+<section class="print-section">
 <h2 id="interview-trade-offs" tabindex="-1"><a class="header-anchor" href="#interview-trade-offs"><span>Interview Trade-offs</span></a></h2>
 <ul>
 <li>Strengths(강점)
@@ -82,6 +103,8 @@
 <li>Organizational issues(조직적 문제), 예: 정치</li>
 <li>인터뷰 진행자의 기술에 좌우됨</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="interview-process" tabindex="-1"><a class="header-anchor" href="#interview-process"><span>Interview Process</span></a></h2>
 <ul>
 <li>관심 있는 이해관계자 및 수집할 대상 정보 식별.</li>
@@ -91,6 +114,8 @@
 <li>중요한 발견 사항 보고.</li>
 <li>인터뷰 대상자와 보고서의 타당성 확인.</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="example-identifying-problems" tabindex="-1"><a class="header-anchor" href="#example-identifying-problems"><span>Example: Identifying Problems</span></a></h2>
 <ul>
 <li>일상 업무에서 어떤 문제에 부딪히는가? 표준적인 해결 방법이 있는가, 혹은 workaround(차선책)를 사용하는가?
@@ -108,6 +133,8 @@
 <li>확인 차원에서, 제가 현재 솔루션에 대해 당신이 가진 문제들을 올바르게 이해했는가?</li>
 <li>겪고 있는 다른 문제가 있는가? 있다면, 무엇인가?</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="example-questions-the-user-environment" tabindex="-1"><a class="header-anchor" href="#example-questions-the-user-environment"><span>Example Questions: The User Environment</span></a></h2>
 <ul>
 <li>시스템의 사용자는 누가 될 것인가?</li>
@@ -121,6 +148,8 @@
 <li>향후 시스템에 대해 어떤 교육 요구를 예상하는가?</li>
 <li>어떤 종류의 documentation(문서화)를 기대하는가?</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="capturing-vs-synthesizing" tabindex="-1"><a class="header-anchor" href="#capturing-vs-synthesizing"><span>Capturing vs Synthesizing</span></a></h2>
 <ul>
 <li>엔지니어는 많은 출처로부터 요구사항을 획득
@@ -138,6 +167,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="interview-advice" tabindex="-1"><a class="header-anchor" href="#interview-advice"><span>Interview Advice</span></a></h2>
 <ul>
 <li>사전에 인터뷰 대상자에 대한 기본 정보(역할, 책임 등)를 파악</li>
@@ -151,6 +182,8 @@
 <li>현재 시스템/대안과 대조. 충돌 및 priorities(우선순위) 탐색</li>
 <li>후속 질문 계획</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="guidelines-for-effective-interviews" tabindex="-1"><a class="header-anchor" href="#guidelines-for-effective-interviews"><span>Guidelines for Effective Interviews</span></a></h2>
 <ul>
 <li>문제의 전체 범위를 다루기 위해 적절한 인터뷰 대상자 샘플 식별
@@ -194,7 +227,11 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="prototypes-mockups-stories" tabindex="-1"><a class="header-anchor" href="#prototypes-mockups-stories"><span>Prototypes, Mockups, Stories</span></a></h2>
+</section>
+<section class="print-section">
 <h2 id="wireframe-mockup-and-prototype" tabindex="-1"><a class="header-anchor" href="#wireframe-mockup-and-prototype"><span>Wireframe, Mockup, and Prototype</span></a></h2>
 <ul>
 <li>WIREFRAME(와이어프레임)
@@ -231,6 +268,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="mockups-prototypes-stories" tabindex="-1"><a class="header-anchor" href="#mockups-prototypes-stories"><span>Mockups, Prototypes, Stories</span></a></h2>
 <ul>
 <li>인간: 백지상태에서 문제를 해결하는 것보다 해결책이 올바른지 인식하는 데 더 능숙함.</li>
@@ -244,7 +283,11 @@
 </li>
 <li>“보면 알게 될 것이다(I’ll know it when I see it)”</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="storyboarding-and-scenarios" tabindex="-1"><a class="header-anchor" href="#storyboarding-and-scenarios"><span>Storyboarding and Scenarios</span></a></h2>
+</section>
+<section class="print-section">
 <h2 id="story" tabindex="-1"><a class="header-anchor" href="#story"><span>Story</span></a></h2>
 <ul>
 <li>Who(누가) 플레이어인가</li>
@@ -254,6 +297,8 @@
 <li>What if(만약) 이러한 이벤트가 발생한다면</li>
 <li>What(무엇이) 결과적으로 잘못될 수 있는가</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="storyboards" tabindex="-1"><a class="header-anchor" href="#storyboards"><span>Storyboards</span></a></h2>
 <ul>
 <li>Storyboards(스토리보드)는 시나리오를 설명: 암묵적인 목표를 충족하는 시스템 구성요소 간의 일반적인 상호작용 순서.
@@ -278,8 +323,14 @@
 <li>장점: 구체적, 서술적 설명 지원</li>
 <li>단점: inherently partial(본질적으로 부분적).</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="storyboard-example" tabindex="-1"><a class="header-anchor" href="#storyboard-example"><span>Storyboard Example</span></a></h2>
+</section>
+<section class="print-section">
 <h2 id="documenting-requirements" tabindex="-1"><a class="header-anchor" href="#documenting-requirements"><span>Documenting Requirements</span></a></h2>
+</section>
+<section class="print-section">
 <h2 id="many-different-forms" tabindex="-1"><a class="header-anchor" href="#many-different-forms"><span>Many Different Forms</span></a></h2>
 <ul>
 <li>Informal(비공식적) vs formal(정형적)</li>
@@ -288,6 +339,8 @@
 <li>구조화된 텍스트가 실제 현업에서 일반적</li>
 <li>Traceability(추적성) 및 process integration(프로세스 통합)을 위해 도구 지원됨</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="software-requirements-specification-srs" tabindex="-1"><a class="header-anchor" href="#software-requirements-specification-srs"><span>Software Requirements Specification(SRS)</span></a></h2>
 <ul>
 <li>구조화된 요구사항 문서</li>
@@ -298,19 +351,27 @@
 </li>
 <li>종종 contracts(계약)의 기반이 됨</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="activity-diagrams" tabindex="-1"><a class="header-anchor" href="#activity-diagrams"><span>Activity Diagrams</span></a></h2>
 <ul>
 <li>Activity diagrams(액티비티 다이어그램)(또는 flow charts)은 그래프 표기법으로 로직을 표현</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="sequence-diagrams" tabindex="-1"><a class="header-anchor" href="#sequence-diagrams"><span>Sequence Diagrams</span></a></h2>
 <ul>
 <li>Sequence diagrams(시퀀스 다이어그램)은 그래프 표기법으로 상호작용을 표현</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="formal-specifications" tabindex="-1"><a class="header-anchor" href="#formal-specifications"><span>Formal Specifications</span></a></h2>
 <ul>
 <li>기계 인터페이스에서의 공유된 동작에 대한 논리적 표현</li>
 <li>도메인 속성과 행위자 행동을 pre-and post-conditions(사전 및 사후 조건)로 연결하는 것 포함</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="grounding-formal-specifications" tabindex="-1"><a class="header-anchor" href="#grounding-formal-specifications"><span>Grounding Formal Specifications</span></a></h2>
 <ul>
 <li><span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">∀</mi><mi>s</mi><mi mathvariant="normal">∀</mi><mi>c</mi><mo stretchy="false">(</mo><mtext>enrolled</mtext><mo stretchy="false">(</mo><mi>s</mi><mo separator="true">,</mo><mi>c</mi><mo stretchy="false">)</mo><mo>⇒</mo><mtext>student</mtext><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo><mo>∧</mo><mtext>course</mtext><mo stretchy="false">(</mo><mi>c</mi><mo stretchy="false">)</mo><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\forall s \forall c(\text{enrolled}(s, c) \Rightarrow \text{student}(s) \land \text{course}(c))</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">∀</span><span class="mord mathnormal">s</span><span class="mord">∀</span><span class="mord mathnormal">c</span><span class="mopen">(</span><span class="mord text"><span class="mord">enrolled</span></span><span class="mopen">(</span><span class="mord mathnormal">s</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">c</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">⇒</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord text"><span class="mord">student</span></span><span class="mopen">(</span><span class="mord mathnormal">s</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">∧</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord text"><span class="mord">course</span></span><span class="mopen">(</span><span class="mord mathnormal">c</span><span class="mclose">))</span></span></span></span></li>
@@ -319,6 +380,8 @@
 <li>Bob: 학생만 과목에 등록하는가? 그렇지 않은 것 같음.</li>
 <li>Alice: 하지만 그것이 내가 <code v-pre>student</code>라고 의미한 바임!</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="designations-as-explanations" tabindex="-1"><a class="header-anchor" href="#designations-as-explanations"><span>Designations as Explanations</span></a></h2>
 <ul>
 <li>만약 사람이 과목에 등록했다면, 그 사람은 <code v-pre>student</code>임:</li>
@@ -326,12 +389,16 @@
 <li>사람은, 학생이 등록된 과목이 있는 경우에만, 그리고 그 경우에만 <code v-pre>student</code>임</li>
 <li><span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">∀</mi><mi>s</mi><mo stretchy="false">(</mo><mtext>student</mtext><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo><mo>⇔</mo><mi mathvariant="normal">∃</mi><mi>c</mi><mtext>enrolled</mtext><mo stretchy="false">(</mo><mi>s</mi><mo separator="true">,</mo><mi>c</mi><mo stretchy="false">)</mo><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\forall s(\text{student}(s) \Leftrightarrow \exists c \text{enrolled}(s, c))</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">∀</span><span class="mord mathnormal">s</span><span class="mopen">(</span><span class="mord text"><span class="mord">student</span></span><span class="mopen">(</span><span class="mord mathnormal">s</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">⇔</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">∃</span><span class="mord mathnormal">c</span><span class="mord text"><span class="mord">enrolled</span></span><span class="mopen">(</span><span class="mord mathnormal">s</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">c</span><span class="mclose">))</span></span></span></span></li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="use-case" tabindex="-1"><a class="header-anchor" href="#use-case"><span>Use Case</span></a></h2>
 <ul>
 <li>목표를 달성하기 위해 시스템을 사용하는 액터에 대한 텍스트 스토리.</li>
 <li>유즈케이스는 다이어그램이 아니라, 텍스트임.</li>
 <li>주로 functional requirements(기능적 요구사항) 역할을 함(“시스템은 ~해야 한다”는 기술과 대조/결합).</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="use-case-name-title" tabindex="-1"><a class="header-anchor" href="#use-case-name-title"><span>Use Case Name(Title)</span></a></h2>
 <ul>
 <li>Scope(범위): System under design(설계 중인 시스템)</li>
@@ -347,6 +414,8 @@
 <li>Frequency of occurrence(발생 빈도):</li>
 <li>Miscellaneous(기타): SafeHomeProduct</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="example-of-use-case-for-safehome" tabindex="-1"><a class="header-anchor" href="#example-of-use-case-for-safehome"><span>Example of Use Case for SafeHome</span></a></h2>
 <ul>
 <li>
@@ -405,6 +474,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="use-case-1" tabindex="-1"><a class="header-anchor" href="#use-case-1"><span>Use Case</span></a></h2>
 <ul>
 <li>우리는 different granularities(다양한 세분성)의 많은 유형에 대해 이야기함:
@@ -421,6 +492,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="user-stories" tabindex="-1"><a class="header-anchor" href="#user-stories"><span>User Stories</span></a></h2>
 <ul>
 <li>구현 예정인, 사용자가 가치 있게 여기는 기능에 대한 비공식적 설명</li>
@@ -428,6 +501,8 @@
 <li>일반적인 agile development(애자일 개발) 프랙티스</li>
 <li>Template(템플릿): “&lt;역할&gt;로서, &lt;혜택&gt;을 얻기 위해 &lt;기능&gt;을 원한다”</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="user-stories-example" tabindex="-1"><a class="header-anchor" href="#user-stories-example"><span>User Stories Example</span></a></h2>
 <ul>
 <li>사용자로서, 내 전체 하드 드라이브를 백업할 수 있음</li>
@@ -438,12 +513,20 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="use-of-user-stories" tabindex="-1"><a class="header-anchor" href="#use-of-user-stories"><span>Use of User Stories</span></a></h2>
 <ul>
 <li>사용자 스토리 보드를 유지하고, “epics(에픽)”으로 그룹화</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="industrial-requirements-tools" tabindex="-1"><a class="header-anchor" href="#industrial-requirements-tools"><span>Industrial Requirements Tools</span></a></h2>
+</section>
+<section class="print-section">
 <h2 id="resolving-conflicts" tabindex="-1"><a class="header-anchor" href="#resolving-conflicts"><span>Resolving Conflicts</span></a></h2>
+</section>
+<section class="print-section">
 <h2 id="types-of-inconsistency" tabindex="-1"><a class="header-anchor" href="#types-of-inconsistency"><span>Types of Inconsistency</span></a></h2>
 <ul>
 <li>Terminology clash(용어 충돌): 동일한 개념이 다른 기술에서 다르게 명명됨
@@ -472,6 +555,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="handling-inconsistencies" tabindex="-1"><a class="header-anchor" href="#handling-inconsistencies"><span>Handling Inconsistencies</span></a></h2>
 <ul>
 <li>용어, 명칭, 구조: Build glossary(용어집), domain model(도메인 모델) 구축</li>
@@ -482,15 +567,21 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="resolution-strategies" tabindex="-1"><a class="header-anchor" href="#resolution-strategies"><span>Resolution Strategies</span></a></h2>
 <ul>
 <li>충돌을 식별하고 해결하기 위한 다양한 특정 프로세스, heuristics(휴리스틱), techniques(기법) 존재.</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="requirement-traceability" tabindex="-1"><a class="header-anchor" href="#requirement-traceability"><span>Requirement Traceability</span></a></h2>
 <ul>
 <li>요구사항 간의 연결 유지</li>
 <li>무엇이 무엇으로부터 비롯되는가</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="requirement-prioritization" tabindex="-1"><a class="header-anchor" href="#requirement-prioritization"><span>Requirement Prioritization</span></a></h2>
 <ul>
 <li>비용, 시간 및 기타 제한</li>
@@ -498,6 +589,7 @@
 <li>있으면 좋은 것(Nice to have)</li>
 <li>Value contribution(가치 기여)에 기반한 전략</li>
 </ul>
+</section>
 </div></template>
 
 

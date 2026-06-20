@@ -1,5 +1,8 @@
-<template><div><h1 id="_2-rendering-basics" tabindex="-1"><a class="header-anchor" href="#_2-rendering-basics"><span>2 - Rendering Basics</span></a></h1>
+<template><div><section class="print-section">
+<h1 id="_2-rendering-basics" tabindex="-1"><a class="header-anchor" href="#_2-rendering-basics"><span>2 - Rendering Basics</span></a></h1>
 <DateMeta />
+</section>
+<section class="print-section">
 <h2 id="outline" tabindex="-1"><a class="header-anchor" href="#outline"><span>Outline</span></a></h2>
 <ul>
 <li>Rendering의 기본 개념</li>
@@ -10,6 +13,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="basic-concepts-rendering" tabindex="-1"><a class="header-anchor" href="#basic-concepts-rendering"><span>Basic Concepts: Rendering</span></a></h2>
 <ul>
 <li>Rendering은 <strong>컴퓨터 프로그램을 통해 2D 또는 3D 장면(scene)으로부터 이미지를 생성</strong>하는 과정<br>
@@ -22,6 +27,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="basic-concepts-frame-buffer" tabindex="-1"><a class="header-anchor" href="#basic-concepts-frame-buffer"><span>Basic Concepts: Frame Buffer</span></a></h2>
 <ul>
 <li><strong>Frame buffer</strong>는 raster 디스플레이 장치에 보낼 비트맵 이미지를 저장하는 메모리 영역</li>
@@ -33,6 +40,8 @@
 </li>
 <li>보통 <strong>그래픽 카드의 메모리</strong>에 저장됨</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="basic-concepts-double-buffering" tabindex="-1"><a class="header-anchor" href="#basic-concepts-double-buffering"><span>Basic Concepts: Double Buffering</span></a></h2>
 <ul>
 <li>Rendering과 displaying을 위해 <strong>두 개의 frame buffer 사용</strong>
@@ -44,11 +53,15 @@
 <li>→ <strong>프레임 속도 향상</strong>, <strong>flickering 감소</strong></li>
 <li>대부분의 그래픽 애플리케이션은 <strong>double buffering 사용</strong></li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="basic-concepts-image-plane" tabindex="-1"><a class="header-anchor" href="#basic-concepts-image-plane"><span>Basic Concepts: Image Plane</span></a></h2>
 <ul>
 <li>Image plane은 사용자가 가상 3D scene의 렌더링된 이미지를 보는 실제 디스플레이 화면을 개념적으로 나타내는 평면</li>
 <li>즉, 화면을 통해 보여지는 이미지를 투영하는 기준이 되는 개념적 위치를 의미</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="example-of-rendering-a-3d-scene" tabindex="-1"><a class="header-anchor" href="#example-of-rendering-a-3d-scene"><span>Example of Rendering a 3D Scene</span></a></h2>
 <ul>
 <li>3D Scene 예시 (Camera 위치에서 image plane을 통해 scene이 렌더링됨)</li>
@@ -58,11 +71,15 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="render-output" tabindex="-1"><a class="header-anchor" href="#render-output"><span>Render Output</span></a></h2>
 <ul>
 <li>렌더링 결과는 <strong>picture elements 또는 pixels</strong>로 구성된 <strong>2D 이미지</strong></li>
 <li>즉, 렌더링이란 <strong>3D 장면 정보에 기반하여 각 픽셀의 색상을 계산하는 과정</strong></li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="rendering-approaches" tabindex="-1"><a class="header-anchor" href="#rendering-approaches"><span>Rendering Approaches</span></a></h2>
 <ul>
 <li>각 픽셀의 색상을 어떻게 계산할 것인가?</li>
@@ -75,6 +92,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="rasterization" tabindex="-1"><a class="header-anchor" href="#rasterization"><span>Rasterization</span></a></h2>
 <ul>
 <li><strong>Primitive-by-primitive 방식</strong>
@@ -92,6 +111,8 @@
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul>
 <li>예시: 삼각형 하나가 화면에 렌더링됨</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="rasterization-pipeline" tabindex="-1"><a class="header-anchor" href="#rasterization-pipeline"><span>Rasterization Pipeline</span></a></h2>
 <p>(3D 장면의 기하 정보를 픽셀 단위의 2D 이미지로 변환하는 일련의 처리 과정)</p>
 <ul>
@@ -145,6 +166,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="ray-tracing-레이-트레이싱" tabindex="-1"><a class="header-anchor" href="#ray-tracing-레이-트레이싱"><span>Ray Tracing 레이 트레이싱</span></a></h2>
 <ul>
 <li><em>Pixel-by-pixel</em> 방식</li>
@@ -163,10 +186,14 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="rasterization-vs-ray-tracing" tabindex="-1"><a class="header-anchor" href="#rasterization-vs-ray-tracing"><span>Rasterization vs. Ray Tracing</span></a></h2>
 <ul>
 <li>(Nvidia에서 제공한 비교 시각화 자료)</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="rasterization-–-pros-cons" tabindex="-1"><a class="header-anchor" href="#rasterization-–-pros-cons"><span>Rasterization – Pros &amp; Cons</span></a></h2>
 <ul>
 <li><strong>장점</strong>
@@ -187,6 +214,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="ray-tracing-–-pros-cons" tabindex="-1"><a class="header-anchor" href="#ray-tracing-–-pros-cons"><span>Ray Tracing – Pros &amp; Cons</span></a></h2>
 <ul>
 <li><strong>장점</strong>
@@ -208,6 +237,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="recent-ray-tracing-technology" tabindex="-1"><a class="header-anchor" href="#recent-ray-tracing-technology"><span>Recent Ray Tracing Technology</span></a></h2>
 <ul>
 <li>그러나 이 단점들은 더 이상 완전히 사실이 아님
@@ -234,6 +265,8 @@
           frameborder="0" allowfullscreen>
   </iframe>
 </div>
+</section>
+<section class="print-section">
 <h2 id="in-this-course" tabindex="-1"><a class="header-anchor" href="#in-this-course"><span>In This Course,</span></a></h2>
 <ul>
 <li>
@@ -280,6 +313,7 @@ Mesh, Lighting, Texture Mapping, Curves</li>
 </ul>
 </li>
 </ul>
-<home/></div></template>
+<home/></section>
+</div></template>
 
 

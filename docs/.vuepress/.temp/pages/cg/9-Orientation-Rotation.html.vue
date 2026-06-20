@@ -1,5 +1,8 @@
-<template><div><h1 id="_9-orientation-rotation" tabindex="-1"><a class="header-anchor" href="#_9-orientation-rotation"><span>9 - Orientation &amp; Rotation</span></a></h1>
+<template><div><section class="print-section">
+<h1 id="_9-orientation-rotation" tabindex="-1"><a class="header-anchor" href="#_9-orientation-rotation"><span>9 - Orientation &amp; Rotation</span></a></h1>
 <DateMeta />
+</section>
+<section class="print-section">
 <h2 id="outline" tabindex="-1"><a class="header-anchor" href="#outline"><span>Outline</span></a></h2>
 <ul>
 <li>
@@ -28,7 +31,11 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h1 id="basic-concepts" tabindex="-1"><a class="header-anchor" href="#basic-concepts"><span>Basic Concepts</span></a></h1>
+</section>
+<section class="print-section">
 <h2 id="state-vs-movement" tabindex="-1"><a class="header-anchor" href="#state-vs-movement"><span>State vs Movement</span></a></h2>
 <ul>
 <li><strong>position : translation</strong>
@@ -51,6 +58,8 @@
 <blockquote>
 <p>기준 좌표계: Some reference frame</p>
 </blockquote>
+</section>
+<section class="print-section">
 <h2 id="orientation-vs-rotation" tabindex="-1"><a class="header-anchor" href="#orientation-vs-rotation"><span>Orientation vs. Rotation</span></a></h2>
 <p>(and Position vs. Translation)</p>
 <ul>
@@ -84,6 +93,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="similarity-in-operations" tabindex="-1"><a class="header-anchor" href="#similarity-in-operations"><span>Similarity in Operations</span></a></h2>
 <ul>
 <li><strong>Point &amp; vector</strong>
@@ -109,6 +120,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="degrees-of-freedom-dof" tabindex="-1"><a class="header-anchor" href="#degrees-of-freedom-dof"><span>Degrees of Freedom (DOF)</span></a></h2>
 <ul>
 <li>
@@ -139,6 +152,8 @@
 (이동 3개 + 회전 3개)</p>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="euler-s-rotation-theorem" tabindex="-1"><a class="header-anchor" href="#euler-s-rotation-theorem"><span>Euler's Rotation Theorem</span></a></h2>
 <ul>
 <li><strong>정리 (Theorem)</strong>
@@ -151,6 +166,8 @@
 <strong>강체(rigid body)의 임의의 이동 중 물체의 한 점이 고정되어 있다면</strong>,<br>
 이는 항상 <strong>어떤 축을 중심으로 하는 단일 회전</strong>으로 표현 가능하다.</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="euler-s-rotation-theorem-1" tabindex="-1"><a class="header-anchor" href="#euler-s-rotation-theorem-1"><span>Euler's Rotation Theorem</span></a></h2>
 <ul>
 <li>3D 회전 (즉, 한 점이 고정된 상태의 모든 움직임)은<br>
@@ -160,7 +177,11 @@
 <p><span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>θ</mi></mrow><annotation encoding="application/x-tex">\theta</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">θ</span></span></span></span>: 회전 각도<br>
 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">n</span></span></span></span>: 회전 축 (단위 벡터)</p>
 </blockquote>
+</section>
+<section class="print-section">
 <h1 id="_3d-orientation-rotation-representations" tabindex="-1"><a class="header-anchor" href="#_3d-orientation-rotation-representations"><span>3D Orientation &amp; Rotation Representations</span></a></h1>
+</section>
+<section class="print-section">
 <h2 id="describing-3d-rotation-orientation" tabindex="-1"><a class="header-anchor" href="#describing-3d-rotation-orientation"><span>Describing 3D Rotation &amp; Orientation</span></a></h2>
 <ul>
 <li>
@@ -176,6 +197,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="euler-angles" tabindex="-1"><a class="header-anchor" href="#euler-angles"><span>Euler Angles</span></a></h2>
 <ul>
 <li>
@@ -193,6 +216,8 @@
 <blockquote>
 <p>단, 같은 축이 연속해서 나타나지 않는 한 조합은 가능</p>
 </blockquote>
+</section>
+<section class="print-section">
 <h2 id="example-zxz-euler-angles" tabindex="-1"><a class="header-anchor" href="#example-zxz-euler-angles"><span>Example: ZXZ Euler Angles</span></a></h2>
 <ol>
 <li><span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Z</mi></mrow><annotation encoding="application/x-tex">Z</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.07153em;">Z</span></span></span></span>축 기준으로 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>α</mi></mrow><annotation encoding="application/x-tex">\alpha</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal" style="margin-right:0.0037em;">α</span></span></span></span>만큼 회전</li>
@@ -229,6 +254,8 @@ H403z M403 1759 V0 H319 V1759 v0 v1759 h84z"/></svg></span></span></span><span c
 M347 1759 V0 H263 V1759 v0 v1759 h84z"/></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.55em;"><span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:1em;"></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.00773em;">R</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:-0.0077em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.04398em;">z</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.05556em;">γ</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:3.6em;vertical-align:-1.55em;"></span><span class="minner"><span class="mopen"><span class="delimsizing mult"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.05em;"><span style="top:-4.05em;"><span class="pstrut" style="height:5.6em;"></span><span style="width:0.667em;height:3.600em;"><svg xmlns="http://www.w3.org/2000/svg" width="0.667em" height="3.600em" viewBox="0 0 667 3600"><path d="M403 1759 V84 H666 V0 H319 V1759 v0 v1759 h347 v-84
 H403z M403 1759 V0 H319 V1759 v0 v1759 h84z"/></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.55em;"><span></span></span></span></span></span></span><span class="mord"><span class="mtable"><span class="col-align-c"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.05em;"><span style="top:-4.21em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mop">cos</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.05556em;">γ</span></span></span><span style="top:-3.01em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mop">sin</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.05556em;">γ</span></span></span><span style="top:-1.81em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.55em;"><span></span></span></span></span></span><span class="arraycolsep" style="width:0.5em;"></span><span class="arraycolsep" style="width:0.5em;"></span><span class="col-align-c"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.05em;"><span style="top:-4.21em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">−</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mop">sin</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.05556em;">γ</span></span></span><span style="top:-3.01em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mop">cos</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.05556em;">γ</span></span></span><span style="top:-1.81em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.55em;"><span></span></span></span></span></span><span class="arraycolsep" style="width:0.5em;"></span><span class="arraycolsep" style="width:0.5em;"></span><span class="col-align-c"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.05em;"><span style="top:-4.21em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">0</span></span></span><span style="top:-3.01em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">0</span></span></span><span style="top:-1.81em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.55em;"><span></span></span></span></span></span></span></span><span class="mclose"><span class="delimsizing mult"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.05em;"><span style="top:-4.05em;"><span class="pstrut" style="height:5.6em;"></span><span style="width:0.667em;height:3.600em;"><svg xmlns="http://www.w3.org/2000/svg" width="0.667em" height="3.600em" viewBox="0 0 667 3600"><path d="M347 1759 V0 H0 V84 H263 V1759 v0 v1759 H0 v84 H347z
 M347 1759 V0 H263 V1759 v0 v1759 h84z"/></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.55em;"><span></span></span></span></span></span></span></span></span></span></span></span></p>
+</section>
+<section class="print-section">
 <h2 id="example-yaw-pitch-roll-convention" tabindex="-1"><a class="header-anchor" href="#example-yaw-pitch-roll-convention"><span>Example: Yaw-Pitch-Roll Convention</span></a></h2>
 <p>(ZYX Euler Angles)</p>
 <ul>
@@ -241,6 +268,8 @@ M347 1759 V0 H263 V1759 v0 v1759 h84z"/></svg></span></span></span><span class="
 </ol>
 <p v-pre class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>R</mi><mo>=</mo><msub><mi>R</mi><mi>z</mi></msub><mo stretchy="false">(</mo><mtext>yaw</mtext><mo stretchy="false">)</mo><mo>⋅</mo><msub><mi>R</mi><mi>y</mi></msub><mo stretchy="false">(</mo><mtext>pitch</mtext><mo stretchy="false">)</mo><mo>⋅</mo><msub><mi>R</mi><mi>x</mi></msub><mo stretchy="false">(</mo><mtext>roll</mtext><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">R = R_z(\text{yaw}) \cdot R_y(\text{pitch}) \cdot R_x(\text{roll})
 </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.00773em;">R</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.00773em;">R</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:-0.0077em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.04398em;">z</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord text"><span class="mord">yaw</span></span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1.0361em;vertical-align:-0.2861em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.00773em;">R</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:-0.0077em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.03588em;">y</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord text"><span class="mord">pitch</span></span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.00773em;">R</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:-0.0077em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">x</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord text"><span class="mord">roll</span></span><span class="mclose">)</span></span></span></span></span></p>
+</section>
+<section class="print-section">
 <h2 id="recall-3d-rotation-matrix-about-principle-axes" tabindex="-1"><a class="header-anchor" href="#recall-3d-rotation-matrix-about-principle-axes"><span>Recall: 3D Rotation Matrix about Principle Axes</span></a></h2>
 <ul>
 <li><span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">x</span></span></span></span>축 회전:</li>
@@ -278,6 +307,8 @@ M347 1759 V0 H263 V1759 v0 v1759 h84z"/></svg></span></span></span><span class="
 </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.00773em;">R</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:-0.0077em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.04398em;">z</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.02778em;">θ</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:3.6em;vertical-align:-1.55em;"></span><span class="minner"><span class="mopen"><span class="delimsizing mult"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.05em;"><span style="top:-4.05em;"><span class="pstrut" style="height:5.6em;"></span><span style="width:0.667em;height:3.600em;"><svg xmlns="http://www.w3.org/2000/svg" width="0.667em" height="3.600em" viewBox="0 0 667 3600"><path d="M403 1759 V84 H666 V0 H319 V1759 v0 v1759 h347 v-84
 H403z M403 1759 V0 H319 V1759 v0 v1759 h84z"/></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.55em;"><span></span></span></span></span></span></span><span class="mord"><span class="mtable"><span class="col-align-c"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.05em;"><span style="top:-4.21em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mop">cos</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">θ</span></span></span><span style="top:-3.01em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mop">sin</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">θ</span></span></span><span style="top:-1.81em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.55em;"><span></span></span></span></span></span><span class="arraycolsep" style="width:0.5em;"></span><span class="arraycolsep" style="width:0.5em;"></span><span class="col-align-c"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.05em;"><span style="top:-4.21em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">−</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mop">sin</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">θ</span></span></span><span style="top:-3.01em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mop">cos</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">θ</span></span></span><span style="top:-1.81em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.55em;"><span></span></span></span></span></span><span class="arraycolsep" style="width:0.5em;"></span><span class="arraycolsep" style="width:0.5em;"></span><span class="col-align-c"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.05em;"><span style="top:-4.21em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">0</span></span></span><span style="top:-3.01em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">0</span></span></span><span style="top:-1.81em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.55em;"><span></span></span></span></span></span></span></span><span class="mclose"><span class="delimsizing mult"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.05em;"><span style="top:-4.05em;"><span class="pstrut" style="height:5.6em;"></span><span style="width:0.667em;height:3.600em;"><svg xmlns="http://www.w3.org/2000/svg" width="0.667em" height="3.600em" viewBox="0 0 667 3600"><path d="M347 1759 V0 H0 V84 H263 V1759 v0 v1759 H0 v84 H347z
 M347 1759 V0 H263 V1759 v0 v1759 h84z"/></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.55em;"><span></span></span></span></span></span></span></span></span></span></span></span></p>
+</section>
+<section class="print-section">
 <h2 id="gimbal-lock" tabindex="-1"><a class="header-anchor" href="#gimbal-lock"><span>Gimbal Lock</span></a></h2>
 <ul>
 <li>Euler 각을 사용할 경우, 두 회전 축이 정렬되면 일시적으로 <strong>자유도(DOF)를 잃게 됨</strong></li>
@@ -292,6 +323,8 @@ M347 1759 V0 H263 V1759 v0 v1759 h84z"/></svg></span></span></span><span class="
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="demo-euler-angles" tabindex="-1"><a class="header-anchor" href="#demo-euler-angles"><span>[Demo] Euler Angles</span></a></h2>
 <p>![Euler Angle Demo 이미지]</p>
 <p><a href="https://compsc290-s2016.github.io/CoursePage/Materials/EulerAnglesViz/index.html" target="_blank" rel="noopener noreferrer">https://compsc290-s2016.github.io/CoursePage/Materials/EulerAnglesViz/index.html</a></p>
@@ -303,6 +336,8 @@ M347 1759 V0 H263 V1759 v0 v1759 h84z"/></svg></span></span></span><span class="
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="rotation-vector-axis-angle" tabindex="-1"><a class="header-anchor" href="#rotation-vector-axis-angle"><span>Rotation Vector (Axis-Angle)</span></a></h2>
 <ul>
 <li>회전 벡터(rotation vector)
@@ -320,12 +355,16 @@ M347 1759 V0 H263 V1759 v0 v1759 h84z"/></svg></span></span></span><span class="
 <p><span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>θ</mi></mrow><annotation encoding="application/x-tex">\theta</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">θ</span></span></span></span>: 회전 각도<br>
 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover accent="true"><mi mathvariant="bold">v</mi><mo>^</mo></mover></mrow><annotation encoding="application/x-tex">\hat{\mathbf{v}}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7079em;"></span><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7079em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathbf" style="margin-right:0.01597em;">v</span></span><span style="top:-3.0134em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.2222em;"><span class="mord">^</span></span></span></span></span></span></span></span></span></span>: 회전 축 (단위 벡터)</p>
 </blockquote>
+</section>
+<section class="print-section">
 <h2 id="rotation-vector-axis-angle-1" tabindex="-1"><a class="header-anchor" href="#rotation-vector-axis-angle-1"><span>Rotation Vector (Axis-Angle)</span></a></h2>
 <ul>
 <li>회전 벡터는 <strong>exponential coordinates</strong> 라고도 불림</li>
 <li>명칭 유래가 궁금하다면 다음을 참고:<br>
 <a href="http://hades.mech.northwestern.edu/images/2/25/MR-v2.pdf" target="_blank" rel="noopener noreferrer">Modern Robotics, Section 3.2.3</a></li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="rotation-matrix" tabindex="-1"><a class="header-anchor" href="#rotation-matrix"><span>Rotation Matrix</span></a></h2>
 <ul>
 <li>회전 행렬 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi></mrow><annotation encoding="application/x-tex">R</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.00773em;">R</span></span></span></span>은 다음을 정의함:
@@ -360,6 +399,8 @@ M347 1759 V0 H263 V1759 v0 v1759 h84z"/></svg></span></span></span><span class="
 <p>3차원 회전 행렬의 집합은 <strong><span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>S</mi><mi>O</mi><mo stretchy="false">(</mo><mn>3</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">SO(3)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">SO</span><span class="mopen">(</span><span class="mord">3</span><span class="mclose">)</span></span></span></span></strong>, 즉 special orthogonal group을 구성함</p>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="geometric-properties-of-rotation-matrix" tabindex="-1"><a class="header-anchor" href="#geometric-properties-of-rotation-matrix"><span>Geometric Properties of Rotation Matrix</span></a></h2>
 <ul>
 <li>
@@ -409,6 +450,8 @@ ji = -k,\quad kj = -i,\quad ik = -j
 </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:4.5241em;vertical-align:-2.0121em;"></span><span class="mord"><span class="mtable"><span class="col-align-r"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.5121em;"><span style="top:-4.6479em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathnormal">i</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.05724em;">j</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03148em;">k</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span><span style="top:-3.1479em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.05724em;">ij</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span><span class="mpunct">,</span><span class="mspace" style="margin-right:1em;"></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.03148em;">jk</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mord mathnormal">i</span><span class="mpunct">,</span><span class="mspace" style="margin-right:1em;"></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">ki</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mord mathnormal" style="margin-right:0.05724em;">j</span></span></span><span style="top:-1.6479em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal">ji</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mord">−</span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span><span class="mpunct">,</span><span class="mspace" style="margin-right:1em;"></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.05724em;">kj</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mord">−</span><span class="mord mathnormal">i</span><span class="mpunct">,</span><span class="mspace" style="margin-right:1em;"></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.03148em;">ik</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mord">−</span><span class="mord mathnormal" style="margin-right:0.05724em;">j</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:2.0121em;"><span></span></span></span></span></span><span class="col-align-l"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:2.5121em;"><span style="top:-4.6479em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mord mathnormal" style="margin-right:0.03148em;">ijk</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mord">−</span><span class="mord">1</span></span></span></span></span></span></span></span></span></span></span></span></span></p>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="quaternions" tabindex="-1"><a class="header-anchor" href="#quaternions"><span>Quaternions</span></a></h2>
 <ul>
 <li>
@@ -429,6 +472,8 @@ ji = -k,\quad kj = -i,\quad ik = -j
 </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">q</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6667em;vertical-align:-0.0833em;"></span><span class="mord mathnormal" style="margin-right:0.02691em;">w</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.4444em;"></span><span class="mord mathbf" style="margin-right:0.01597em;">v</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.02691em;">w</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">x</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.04398em;">z</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.02691em;">w</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathbf" style="margin-right:0.01597em;">v</span><span class="mclose">)</span></span></span></span></span></p>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="unit-quaternions" tabindex="-1"><a class="header-anchor" href="#unit-quaternions"><span>Unit Quaternions</span></a></h2>
 <ul>
 <li>
@@ -450,6 +495,8 @@ ji = -k,\quad kj = -i,\quad ik = -j
 <p>또는</p>
 <p v-pre class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>q</mi><mo>=</mo><mi>w</mi><mo>+</mo><mi>x</mi><mi>i</mi><mo>+</mo><mi>y</mi><mi>j</mi><mo>+</mo><mi>z</mi><mi>k</mi><mo>=</mo><mo stretchy="false">(</mo><mi>w</mi><mo separator="true">,</mo><mi mathvariant="bold">v</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">q = w + x i + y j + z k = (w, \mathbf{v})
 </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">q</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6667em;vertical-align:-0.0833em;"></span><span class="mord mathnormal" style="margin-right:0.02691em;">w</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.7429em;vertical-align:-0.0833em;"></span><span class="mord mathnormal">x</span><span class="mord mathnormal">i</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.854em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="mord mathnormal" style="margin-right:0.05724em;">j</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal" style="margin-right:0.04398em;">z</span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.02691em;">w</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathbf" style="margin-right:0.01597em;">v</span><span class="mclose">)</span></span></span></span></span></p>
+</section>
+<section class="print-section">
 <h2 id="unit-quaternions-1" tabindex="-1"><a class="header-anchor" href="#unit-quaternions-1"><span>Unit Quaternions</span></a></h2>
 <ul>
 <li>
@@ -464,6 +511,8 @@ ji = -k,\quad kj = -i,\quad ik = -j
 <p>단, 회전 쿼터니언은 다음과 같음:</p>
 <p v-pre class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>q</mi><mo>=</mo><mrow><mo fence="true">(</mo><mi>cos</mi><mo>⁡</mo><mfrac><mi>θ</mi><mn>2</mn></mfrac><mo separator="true">,</mo><mtext>  </mtext><mover accent="true"><mi mathvariant="bold">u</mi><mo>^</mo></mover><mi>sin</mi><mo>⁡</mo><mfrac><mi>θ</mi><mn>2</mn></mfrac><mo fence="true">)</mo></mrow></mrow><annotation encoding="application/x-tex">q = \left( \cos \frac{\theta}{2}, \; \hat{\mathbf{u}} \sin \frac{\theta}{2} \right)
 </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">q</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:2.4em;vertical-align:-0.95em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;"><span class="delimsizing size3">(</span></span><span class="mop">cos</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.3714em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">2</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.02778em;">θ</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7079em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathbf">u</span></span><span style="top:-3.0134em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.2222em;"><span class="mord">^</span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mop">sin</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.3714em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">2</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.02778em;">θ</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mclose delimcenter" style="top:0em;"><span class="delimsizing size3">)</span></span></span></span></span></span></span></p>
+</section>
+<section class="print-section">
 <h2 id="unit-quaternions-2" tabindex="-1"><a class="header-anchor" href="#unit-quaternions-2"><span>Unit Quaternions</span></a></h2>
 <ul>
 <li>
@@ -495,7 +544,11 @@ ji = -k,\quad kj = -i,\quad ik = -j
 </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.9963em;vertical-align:-0.1944em;"></span><span class="mord"><span class="mord mathbf">p</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8019em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathbf mtight">′</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1.1141em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">q</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">q</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathbf">p</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">q</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">q</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose"><span class="mclose">)</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">−</span><span class="mord mtight">1</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1.1205em;vertical-align:-0.2564em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">q</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">q</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathbf">p</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">q</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8641em;"><span style="top:-2.4436em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">−</span><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2564em;"><span></span></span></span></span></span></span><span class="mclose">)</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">q</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8641em;"><span style="top:-2.4436em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">−</span><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2564em;"><span></span></span></span></span></span></span></span></span></span></span></p>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="which-representation-to-use" tabindex="-1"><a class="header-anchor" href="#which-representation-to-use"><span>Which Representation to Use?</span></a></h2>
+</section>
+<section class="print-section">
 <h3 id="_1-addition-of-rotations" tabindex="-1"><a class="header-anchor" href="#_1-addition-of-rotations"><span>1) &quot;Addition&quot; of Rotations</span></a></h3>
 <ul>
 <li>
@@ -520,6 +573,8 @@ ji = -k,\quad kj = -i,\quad ik = -j
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="_2-subtraction-of-rotations" tabindex="-1"><a class="header-anchor" href="#_2-subtraction-of-rotations"><span>2) &quot;Subtraction&quot; of Rotations</span></a></h3>
 <ul>
 <li>
@@ -546,6 +601,8 @@ ji = -k,\quad kj = -i,\quad ik = -j
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="_3-interpolation-of-rotations" tabindex="-1"><a class="header-anchor" href="#_3-interpolation-of-rotations"><span>3) Interpolation of Rotations</span></a></h3>
 <ul>
 <li>
@@ -562,6 +619,8 @@ ji = -k,\quad kj = -i,\quad ik = -j
 <p>👉 <strong>안 된다!</strong></p>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="interpolating-each-element-of-rotation-matrices-unit-quaternions" tabindex="-1"><a class="header-anchor" href="#interpolating-each-element-of-rotation-matrices-unit-quaternions"><span>Interpolating Each Element of Rotation Matrices / Unit Quaternions?</span></a></h2>
 <ul>
 <li>예: 단위 행렬 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>R</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">R_0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.00773em;">R</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.0077em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> 과 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">x</span></span></span></span>축으로 90도 회전한 행렬 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>R</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">R_1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.00773em;">R</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.0077em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>의 보간을 시도</li>
@@ -611,6 +670,8 @@ M347 1759 V0 H263 V1759 v0 v1759 h84z"/></svg></span></span></span><span class="
 <ul>
 <li>마찬가지로, unit quaternion의 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mi>w</mi><mo separator="true">,</mo><mi>x</mi><mo separator="true">,</mo><mi>y</mi><mo separator="true">,</mo><mi>z</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(w, x, y, z)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.02691em;">w</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">x</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.04398em;">z</span><span class="mclose">)</span></span></span></span> 값을 단순히 보간해도 의미 없음</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="interpolating-rotation-vectors" tabindex="-1"><a class="header-anchor" href="#interpolating-rotation-vectors"><span>Interpolating Rotation Vectors?</span></a></h2>
 <ul>
 <li>
@@ -624,6 +685,8 @@ M347 1759 V0 H263 V1759 v0 v1759 h84z"/></svg></span></span></span><span class="
 <p>하지만 실제 방향의 변화 측면에서는 균등하지 않음<br>
 👉 <strong>올바른 방식 아님</strong></p>
 </blockquote>
+</section>
+<section class="print-section">
 <h2 id="interpolating-euler-angles" tabindex="-1"><a class="header-anchor" href="#interpolating-euler-angles"><span>Interpolating Euler Angles?</span></a></h2>
 <ul>
 <li>
@@ -634,6 +697,8 @@ M347 1759 V0 H263 V1759 v0 v1759 h84z"/></svg></span></span></span><span class="
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="slerp" tabindex="-1"><a class="header-anchor" href="#slerp"><span>Slerp</span></a></h2>
 <ul>
 <li>
@@ -653,6 +718,8 @@ M347 1759 V0 H263 V1759 v0 v1759 h84z"/></svg></span></span></span><span class="
 <blockquote>
 <p>여기서 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi></mrow><annotation encoding="application/x-tex">t</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6151em;"></span><span class="mord mathnormal">t</span></span></span></span>는 지수(power) 연산이며 전치(transpose)가 아님</p>
 </blockquote>
+</section>
+<section class="print-section">
 <h2 id="slerp-with-rotation-matrices" tabindex="-1"><a class="header-anchor" href="#slerp-with-rotation-matrices"><span>Slerp with Rotation Matrices</span></a></h2>
 <ul>
 <li>
@@ -678,6 +745,8 @@ M347 1759 V0 H263 V1759 v0 v1759 h84z"/></svg></span></span></span><span class="
 <p><span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>log</mi><mo>⁡</mo><mo stretchy="false">(</mo><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\log()</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mopen">(</span><span class="mclose">)</span></span></span></span>: 회전 행렬 → 회전 벡터</p>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="exp-log-details" tabindex="-1"><a class="header-anchor" href="#exp-log-details"><span>Exp &amp; Log Details</span></a></h2>
 <ul>
 <li>
@@ -701,6 +770,8 @@ M347 1759 V0 H263 V1759 v0 v1759 h84z"/></svg></span></span></span><span class="
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="exp-log" tabindex="-1"><a class="header-anchor" href="#exp-log"><span>Exp &amp; Log</span></a></h2>
 <ul>
 <li>실습 팁:
@@ -711,6 +782,8 @@ M347 1759 V0 H263 V1759 v0 v1759 h84z"/></svg></span></span></span><span class="
 </li>
 <li>직접 구현도 가능하며 복잡하지 않음</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="slerp-with-quaternions" tabindex="-1"><a class="header-anchor" href="#slerp-with-quaternions"><span>Slerp with Quaternions</span></a></h2>
 <ul>
 <li>쿼터니언 기반 slerp:</li>
@@ -729,6 +802,8 @@ M347 1759 V0 H263 V1759 v0 v1759 h84z"/></svg></span></span></span><span class="
 <li>Euler 각이나 회전 벡터에 대해서는 직접 slerp 불가<br>
 → 회전 행렬이나 unit quaternion으로 변환 후 적용 필요</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="comparison-of-interpolation-methods" tabindex="-1"><a class="header-anchor" href="#comparison-of-interpolation-methods"><span>Comparison of Interpolation Methods</span></a></h2>
 <ul>
 <li>
@@ -741,12 +816,16 @@ M347 1759 V0 H263 V1759 v0 v1759 h84z"/></svg></span></span></span><span class="
 </li>
 </ul>
 <p><a href="https://youtu.be/YX0AMKMnGkU" target="_blank" rel="noopener noreferrer">https://youtu.be/YX0AMKMnGkU</a></p>
+</section>
+<section class="print-section">
 <h2 id="demo-slerp" tabindex="-1"><a class="header-anchor" href="#demo-slerp"><span>[Demo] Slerp</span></a></h2>
 <p><a href="https://nccastaff.bournemouth.ac.uk/jmacey/WebGL/QuatSlerp/" target="_blank" rel="noopener noreferrer">https://nccastaff.bournemouth.ac.uk/jmacey/WebGL/QuatSlerp/</a></p>
 <ul>
 <li>&quot;Start Rotation&quot; 및 &quot;End Rotation&quot; 변경</li>
 <li>&quot;Interpolate&quot; 슬라이더 이동해보기</li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="_3-interpolation-of-rotations-summary" tabindex="-1"><a class="header-anchor" href="#_3-interpolation-of-rotations-summary"><span>3) Interpolation of Rotations: Summary</span></a></h3>
 <ul>
 <li>
@@ -771,6 +850,8 @@ M347 1759 V0 H263 V1759 v0 v1759 h84z"/></svg></span></span></span><span class="
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="_4-continuity-correspondence" tabindex="-1"><a class="header-anchor" href="#_4-continuity-correspondence"><span>4) Continuity / Correspondence</span></a></h3>
 <ul>
 <li>❌ Euler angles, Rotation vector:
@@ -806,6 +887,8 @@ M347 1759 V0 H263 V1759 v0 v1759 h84z"/></svg></span></span></span><span class="
 <li>9개의 매개변수 사용</li>
 <li>일대일 대응 및 연속 표현 가능</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="again-which-representation-to-use" tabindex="-1"><a class="header-anchor" href="#again-which-representation-to-use"><span>Again: Which Representation to Use?</span></a></h2>
 <ul>
 <li><strong>일반적인 조언</strong>:
@@ -820,6 +903,8 @@ M347 1759 V0 H263 V1759 v0 v1759 h84z"/></svg></span></span></span><span class="
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="pros-cons-of-euler-angles" tabindex="-1"><a class="header-anchor" href="#pros-cons-of-euler-angles"><span>Pros &amp; Cons of Euler Angles</span></a></h2>
 <p>🔻 단점:</p>
 <ul>
@@ -833,6 +918,8 @@ M347 1759 V0 H263 V1759 v0 v1759 h84z"/></svg></span></span></span><span class="
 <li>실제 기구(hardware)의 3축 조인트 상태 표현에 적합<br>
 (예: 로봇 관절이나 짐벌 등)</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="pros-cons-of-rotation-vector" tabindex="-1"><a class="header-anchor" href="#pros-cons-of-rotation-vector"><span>Pros &amp; Cons of Rotation Vector</span></a></h2>
 <p>🔻 정확한 <strong>&quot;덧셈&quot;</strong>, <strong>&quot;뺄셈&quot;</strong>, <strong>보간</strong> 연산이 불가능<br>
 🔻 불연속성 및 다대일 대응</p>
@@ -844,6 +931,8 @@ M347 1759 V0 H263 V1759 v0 v1759 h84z"/></svg></span></span></span><span class="
 <ul>
 <li>Euler angle도 3개지만 gimbal lock 문제 존재</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="pros-cons-of-rotation-matrix" tabindex="-1"><a class="header-anchor" href="#pros-cons-of-rotation-matrix"><span>Pros &amp; Cons of Rotation Matrix</span></a></h2>
 <p>🔺 정확한 <strong>&quot;덧셈&quot;</strong>, <strong>&quot;뺄셈&quot;</strong>, <strong>보간</strong> 연산 가능<br>
 🔺 연속적인 일대일 대응 (매우 좋음)<br>
@@ -854,6 +943,8 @@ M347 1759 V0 H263 V1759 v0 v1759 h84z"/></svg></span></span></span><span class="
 </ul>
 <p>🔻 매개변수 수가 많음 (9개)<br>
 🔻 계산 비용이 조금 더 크며, 수치적으로 약간 덜 안정적 (unit quaternion 대비)</p>
+</section>
+<section class="print-section">
 <h2 id="pros-cons-of-unit-quaternion" tabindex="-1"><a class="header-anchor" href="#pros-cons-of-unit-quaternion"><span>Pros &amp; Cons of Unit Quaternion</span></a></h2>
 <p>🔺 정확한 <strong>&quot;덧셈&quot;</strong>, <strong>&quot;뺄셈&quot;</strong>, <strong>보간</strong> 연산 가능<br>
 🔺 연속 표현 가능<br>
@@ -861,6 +952,8 @@ M347 1759 V0 H263 V1759 v0 v1759 h84z"/></svg></span></span></span><span class="
 🔺 회전 행렬보다 계산이 빠르고 수치적으로 안정적</p>
 <p>🔻 두 쿼터니언이 하나의 회전을 표현 (two-to-one, <strong>antipodal equivalence</strong>)<br>
 🔻 숫자 체계가 직관적이지 않음</p>
+</section>
+<section class="print-section">
 <h2 id="conversion-between-representations" tabindex="-1"><a class="header-anchor" href="#conversion-between-representations"><span>Conversion between Representations</span></a></h2>
 <ul>
 <li>
@@ -887,13 +980,21 @@ M347 1759 V0 H263 V1759 v0 v1759 h84z"/></svg></span></span></span><span class="
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h1 id="_9-lab-orientation-rotation" tabindex="-1"><a class="header-anchor" href="#_9-lab-orientation-rotation"><span>9 - Lab - Orientation &amp; Rotation</span></a></h1>
+</section>
+<section class="print-section">
 <h2 id="개요" tabindex="-1"><a class="header-anchor" href="#개요"><span>개요</span></a></h2>
 <ul>
 <li>Euler Angles (오일러 각)</li>
 <li>Slerp</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="euler-angles-오일러-각" tabindex="-1"><a class="header-anchor" href="#euler-angles-오일러-각"><span>Euler Angles (오일러 각)</span></a></h2>
+</section>
+<section class="print-section">
 <h3 id="코드-euler-angles" tabindex="-1"><a class="header-anchor" href="#코드-euler-angles"><span>[코드] Euler-angles</span></a></h3>
 <ul>
 <li>
@@ -1014,12 +1115,18 @@ M347 1759 V0 H263 V1759 v0 v1759 h84z"/></svg></span></span></span><span class="
 <span class="line">    Mz <span class="token operator">=</span> M <span class="token operator">*</span> glm<span class="token punctuation">.</span>translate<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">2.5</span><span class="token punctuation">)</span><span class="token punctuation">)</span></span>
 <span class="line">    draw_cube<span class="token punctuation">(</span>vao_cube<span class="token punctuation">,</span> P<span class="token operator">*</span>V<span class="token operator">*</span>Mz<span class="token punctuation">,</span> Mz<span class="token punctuation">,</span> glm<span class="token punctuation">.</span>vec3<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span> unif_locs_lighting<span class="token punctuation">)</span></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="slerp-1" tabindex="-1"><a class="header-anchor" href="#slerp-1"><span>Slerp</span></a></h2>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h2 id="slerp-1" tabindex="-1"><a class="header-anchor" href="#slerp-1"><span>Slerp</span></a></h2>
+</section>
+<section class="print-section">
 <h3 id="recall-slerp" tabindex="-1"><a class="header-anchor" href="#recall-slerp"><span>Recall: Slerp</span></a></h3>
 <ul>
 <li>$ \text{slerp}(R_1, R_2, t) = R_1(R_1^T R_2)^t = R_1 \exp(t \cdot \log(R_1^T R_2)) $</li>
 <li>이 예제는 이 공식을 구현합니다.</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="대안-alternatives" tabindex="-1"><a class="header-anchor" href="#대안-alternatives"><span>대안 (Alternatives)</span></a></h2>
 <p>다음과 같은 대안들을 직접 구현하고 테스트해 볼 수 있습니다.</p>
 <ul>
@@ -1040,10 +1147,14 @@ M347 1759 V0 H263 V1759 v0 v1759 h84z"/></svg></span></span></span><span class="
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="exp-log-1" tabindex="-1"><a class="header-anchor" href="#exp-log-1"><span>Exp &amp; Log</span></a></h2>
 <p>이 예제는 지수 함수 <code v-pre>exp()</code>와 로그 함수 <code v-pre>log()</code>를 구현하기 위해 <strong>PyGLM</strong> 함수를 사용합니다. 하지만 <code v-pre>log()</code>의 경우, PyGLM 라이브러리에는 회전 행렬(rotation matrix)을 회전 벡터(rotation vector)로 직접 변환하는 함수가 없습니다.</p>
 <p>따라서 다음과 같은 순서로 변환을 수행합니다.
 <strong>회전 행렬</strong> ➡️ <strong>단위 쿼터니언(unit quaternion)</strong> ➡️ <strong>회전 벡터</strong></p>
+</section>
+<section class="print-section">
 <h2 id="코드-2-slerp" tabindex="-1"><a class="header-anchor" href="#코드-2-slerp"><span>[코드] 2-slerp</span></a></h2>
 <p>다음은 <code v-pre>slerp</code>를 구현하는 전체 Python 코드 예제입니다.</p>
 <div class="language-python line-numbers-mode" data-highlighter="prismjs" data-ext="py"><pre v-pre><code class="language-python"><span class="line"><span class="token comment"># ZYX 오일러 각을 회전 행렬로 변환하는 함수</span></span>
@@ -1098,6 +1209,7 @@ M347 1759 V0 H263 V1759 v0 v1759 h84z"/></svg></span></span></span><span class="
 <span class="line">    Mx <span class="token operator">=</span> M <span class="token operator">*</span> glm<span class="token punctuation">.</span>translate<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">2.5</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment"># 원본 슬라이드와 다르게 X축으로 이동시켜 구별</span></span>
 <span class="line">    draw_cube<span class="token punctuation">(</span>vao_cube<span class="token punctuation">,</span> P<span class="token operator">*</span>V<span class="token operator">*</span>Mx<span class="token punctuation">,</span> Mx<span class="token punctuation">,</span> glm<span class="token punctuation">.</span>vec3<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">,</span> unif_locs_lighting<span class="token punctuation">)</span></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></div></template>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+</div></template>
 
 

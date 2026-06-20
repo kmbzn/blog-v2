@@ -1,4 +1,5 @@
-<template><div><h1 id="firmware-analysis-report" tabindex="-1"><a class="header-anchor" href="#firmware-analysis-report"><span>Firmware Analysis Report</span></a></h1>
+<template><div><section class="print-section">
+<h1 id="firmware-analysis-report" tabindex="-1"><a class="header-anchor" href="#firmware-analysis-report"><span>Firmware Analysis Report</span></a></h1>
 <DateMeta />
 <ul>
 <li>분석 대상: 국내 중소기업(SyncView) IP 카메라 펌웨어 (<code v-pre>74.2.64.31-libPPPP_API_20160721.bin</code>)</li>
@@ -7,17 +8,25 @@
 <li>학번: 2021024057</li>
 <li>작성일: 2025년 11월 23일</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="_1-분석-대상-펌웨어-및-다운로드-경로" tabindex="-1"><a class="header-anchor" href="#_1-분석-대상-펌웨어-및-다운로드-경로"><span>1. 분석 대상 펌웨어 및 다운로드 경로</span></a></h2>
 <p>본 보고서에서는 국내 중소기업(SyncView)에서 판매된 IP 카메라 모델(<code v-pre>SVR-700A</code>)의 공식 업데이트 파일인
 <code v-pre>74.2.64.31-libPPPP_API_20160721.bin</code>을 분석 대상으로 선정하였다.
 해당 파일은 제작사 자료실/다운로드/프로그램 페이지에서 다운로드할 수 있었으며,<br>
 <a href="http://syncview.co.kr/atboard.php?lm=64&amp;grp1=support&amp;grp2=download&amp;sch_tab_option=2&amp;page_uid=67" target="_blank" rel="noopener noreferrer">http://syncview.co.kr/atboard.php?lm=64&amp;grp1=support&amp;grp2=download&amp;sch_tab_option=2&amp;page_uid=67</a><br>
 확장자는 <code v-pre>.bin</code>이지만 실제로는 <code v-pre>ZIP</code> 기반의 압축 파일임을 확인할 수 있었다.</p>
+</section>
+<section class="print-section">
 <h2 id="_2-분석-절차-procedure" tabindex="-1"><a class="header-anchor" href="#_2-분석-절차-procedure"><span>2. 분석 절차 (Procedure)</span></a></h2>
+</section>
+<section class="print-section">
 <h3 id="_2-1-파일-식별-file-identification" tabindex="-1"><a class="header-anchor" href="#_2-1-파일-식별-file-identification"><span>2.1 파일 식별 (File Identification)</span></a></h3>
 <p>처음에는 확장자가 <code v-pre>.bin</code>이었으나, 내부 헤더에 <code v-pre>PK\x03\x04</code> 시그니처가 존재해 <code v-pre>ZIP</code> 구조로 되어있음을 판단하였다.</p>
 <p>[스크린샷 첨부 1: binwalk 또는 file 명령 결과]</p>
 <p>이후 확장자를 <code v-pre>.zip</code>으로 변경한 뒤 압축 해제를 시도하는 방식으로 file system을 추출할 수 있었다.</p>
+</section>
+<section class="print-section">
 <h3 id="_2-2-파일-시스템-추출-filesystem-extraction" tabindex="-1"><a class="header-anchor" href="#_2-2-파일-시스템-추출-filesystem-extraction"><span>2.2 파일 시스템 추출 (Filesystem Extraction)</span></a></h3>
 <p>펌웨어 압축 해제 결과, 다음과 같은 디렉토리 구조를 확인할 수 있었다.</p>
 <div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code class="language-text"><span class="line">/init</span>
@@ -41,10 +50,16 @@
 <ul>
 <li>펌웨어가 최종적으로 편집된 날짜가 <code v-pre>2016년 7월 21일</code>로 확인되어, 해당 제품은 현재는 더이상 판매되지 않는 단종된 제품으로 추정된다.</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="_3-디렉토리-구조-분석-directory-hierarchy-analysis" tabindex="-1"><a class="header-anchor" href="#_3-디렉토리-구조-분석-directory-hierarchy-analysis"><span>3. 디렉토리 구조 분석 (Directory Hierarchy Analysis)</span></a></h2>
+</section>
+<section class="print-section">
 <h3 id="_3-1-init" tabindex="-1"><a class="header-anchor" href="#_3-1-init"><span>3.1 <code v-pre>/init/</code></span></a></h3>
 <p><code v-pre>ipcam.sh</code> 하나만 존재하며, 카메라 부팅 시 실행되는 초기화 스크립트로 추정된다.
 부팅 과정에서 네트워크 설정, 프로세스 시작, 장치 초기화 등을 담당했을 것으로 판단된다.</p>
+</section>
+<section class="print-section">
 <h3 id="_3-2-system-bin" tabindex="-1"><a class="header-anchor" href="#_3-2-system-bin"><span>3.2 <code v-pre>/system/bin/</code></span></a></h3>
 <p>실질적으로 장치의 기능을 담당하는 핵심 실행파일들이 이 디렉토리에 집중되어 있다고 할 수 있다.</p>
 <ul>
@@ -54,20 +69,30 @@
 <li><code v-pre>gmail_thread</code>: 이메일 알림 기능</li>
 </ul>
 <p>이 디렉토리 내부의 encoder가 분석의 핵심이며, 실제로 문자열 분석 결과 하드코딩된 <code v-pre>root</code> 계정 정보가 존재하였다.</p>
+</section>
+<section class="print-section">
 <h3 id="_3-3-system-drivers-system-lib" tabindex="-1"><a class="header-anchor" href="#_3-3-system-drivers-system-lib"><span>3.3 <code v-pre>/system/drivers</code>, <code v-pre>/system/lib</code></span></a></h3>
 <p>두 폴더는 존재만 하고 파일이 비어 있음.
 이는 해당 장치 커널이나 드라이버가 별도의 파티션에 존재하거나 ROM에 내장된 형태임을 의미한다.</p>
+</section>
+<section class="print-section">
 <h3 id="_3-4-www-wireless" tabindex="-1"><a class="header-anchor" href="#_3-4-www-wireless"><span>3.4 <code v-pre>/www/</code>, <code v-pre>/Wireless/</code></span></a></h3>
 <p>두 디렉토리는 비어 있었다.
 보통 IP 카메라 펌웨어에서는 <code v-pre>/www/</code> 내부에 HTML/JS/CGI 웹 UI가 존재할 수 있지만,
 본 펌웨어에서는 이러한 웹 UI 요소가 전부 encoder 바이너리 내부에 통합된 형태로 구성되어 있음이 확인되었다.</p>
 <p>이는 제조사가 저장 공간을 줄이기 위해 웹 UI를 개별 파일이 아닌
 내장된 웹서버 코드(embedded web server)로 처리한 구조이다.</p>
+</section>
+<section class="print-section">
 <h2 id="_4-하드코딩된-정보-분석-hardcoded-credentials-analysis" tabindex="-1"><a class="header-anchor" href="#_4-하드코딩된-정보-분석-hardcoded-credentials-analysis"><span>4. 하드코딩된 정보 분석 (Hardcoded Credentials Analysis)</span></a></h2>
 <p>본 분석의 핵심은 펌웨어 내부에 하드코딩된 계정·패스워드·그 해시값이 존재하는지 확인하는 것이다.</p>
 <p>이를 위해 <code v-pre>strings</code> 명령으로 실행 바이너리 내부 문자열을 추출하였다.</p>
+</section>
+<section class="print-section">
 <h3 id="_4-1-system-system-bin-encoder-문자열-분석" tabindex="-1"><a class="header-anchor" href="#_4-1-system-system-bin-encoder-문자열-분석"><span>4.1 <code v-pre>/system/system/bin/encoder</code> 문자열 분석</span></a></h3>
 <p>문자열 추출 결과, 명백한 <code v-pre>root</code> 계정 정보가 포함되어 있음을 확인하였다.</p>
+</section>
+<section class="print-section">
 <h4 id="발견된-hard-coded된-etc-passwd-정보" tabindex="-1"><a class="header-anchor" href="#발견된-hard-coded된-etc-passwd-정보"><span>발견된 hard-coded된 <code v-pre>/etc/passwd</code> 정보</span></a></h4>
 <div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code class="language-text"><span class="line">/etc/passwd</span>
 <span class="line">root:vRNT.4lCplkng:0:0:Adminstrator:/:/bin/sh</span>
@@ -84,6 +109,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="_4-2-외부-서버로-username-password를-평문-전송하는-코드-발견" tabindex="-1"><a class="header-anchor" href="#_4-2-외부-서버로-username-password를-평문-전송하는-코드-발견"><span>4.2 외부 서버로 <code v-pre>username/password</code>를 평문 전송하는 코드 발견</span></a></h3>
 <p><code v-pre>encoder</code> 바이너리에는 아래와 같은 문자열이 포함되어 있었다.</p>
 <div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code class="language-text"><span class="line">GET /api/userip.asp?username=%s&amp;userpwd=%s&amp;vertype=924 ...</span>
@@ -96,21 +123,35 @@
 <li>인증 정보 탈취 가능</li>
 <li>DDNS 서버 문제가 발생할 경우, 전 세계 IP캠 계정의 유출 위험</li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="_4-3-admin-문자열-존재" tabindex="-1"><a class="header-anchor" href="#_4-3-admin-문자열-존재"><span>4.3 admin 문자열 존재</span></a></h3>
 <p>encoder.txt에는 <code v-pre>admin</code> 문자열이 다수 등장한다.
 이는 웹 UI 기본 계정이 <code v-pre>admin</code>일 가능성이 높음을 시사한다.</p>
+</section>
+<section class="print-section">
 <h2 id="_5-보안적-함의-security-implications" tabindex="-1"><a class="header-anchor" href="#_5-보안적-함의-security-implications"><span>5. 보안적 함의 (Security Implications)</span></a></h2>
 <p>본 펌웨어가 가지는 보안 취약성들은 다음과 같다.</p>
+</section>
+<section class="print-section">
 <h3 id="_5-1-루트-계정이-펌웨어에-고정" tabindex="-1"><a class="header-anchor" href="#_5-1-루트-계정이-펌웨어에-고정"><span>5.1. 루트 계정이 펌웨어에 고정</span></a></h3>
 <p>펌웨어 내부에 root 계정 정보가 포함되어 있어, 펌웨어 유출 시 누구나 해시를 cracking해
 장치 관리자 권한을 탈취할 가능성이 있다.</p>
+</section>
+<section class="print-section">
 <h3 id="_5-2-사용자-인증-정보가-평문으로-전송됨" tabindex="-1"><a class="header-anchor" href="#_5-2-사용자-인증-정보가-평문으로-전송됨"><span>5.2. 사용자 인증 정보가 평문으로 전송됨</span></a></h3>
 <p><code v-pre>username/password</code>가 <code v-pre>HTTP</code> <code v-pre>GET</code> 요청에 직접 포함되어 있어, 암호화되지 않은 채 외부로 유출된다.</p>
+</section>
+<section class="print-section">
 <h3 id="_5-3-기본-admin-계정이-제거되지-않음" tabindex="-1"><a class="header-anchor" href="#_5-3-기본-admin-계정이-제거되지-않음"><span>5.3. 기본 admin 계정이 제거되지 않음</span></a></h3>
 <p>웹 UI 내부에서 기본 계정(admin)이 존재하는 것으로 확인되며, 기본 비밀번호 변경 강제 기능도 존재하지 않는다.</p>
+</section>
+<section class="print-section">
 <h3 id="_5-4-바이너리-내부에-인증-관련-문자열이-노출" tabindex="-1"><a class="header-anchor" href="#_5-4-바이너리-내부에-인증-관련-문자열이-노출"><span>5.4. 바이너리 내부에 인증 관련 문자열이 노출</span></a></h3>
 <p>문자열 분석만으로 계정 관리 구조, CGI 호출 방식, DDNS 인증 루틴이 모두 노출되는 구조로
 reverse engineering에 지나치게 취약하다.</p>
+</section>
+<section class="print-section">
 <h2 id="_6-결론-conclusion" tabindex="-1"><a class="header-anchor" href="#_6-결론-conclusion"><span>6. 결론 (Conclusion)</span></a></h2>
 <p>이번 분석을 통해 확인한 바,</p>
 <ul>
@@ -122,6 +163,7 @@ reverse engineering에 지나치게 취약하다.</p>
 </ul>
 <p>이상으로, 본 펌웨어는 보안적으로 취약하며
 하드코딩 계정·평문 인증 정보 전송 등 심각한 구조적 문제가 존재함을 확인할 수 있었다.</p>
+</section>
 </div></template>
 
 

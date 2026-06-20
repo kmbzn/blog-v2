@@ -1,13 +1,18 @@
-<template><div><h1 id="project-02-implementing-a-simple-kernel-level-thread" tabindex="-1"><a class="header-anchor" href="#project-02-implementing-a-simple-kernel-level-thread"><span>Project 02: Implementing a simple kernel-level thread</span></a></h1>
+<template><div><section class="print-section">
+<h1 id="project-02-implementing-a-simple-kernel-level-thread" tabindex="-1"><a class="header-anchor" href="#project-02-implementing-a-simple-kernel-level-thread"><span>Project 02: Implementing a simple kernel-level thread</span></a></h1>
 <DateMeta />
 <p>Operating System</p>
 <p>Due date<br>
 2025. 05. 28. 23:59</p>
+</section>
+<section class="print-section">
 <h2 id="overview-개요" tabindex="-1"><a class="header-anchor" href="#overview-개요"><span>Overview 개요</span></a></h2>
 <ul>
 <li>이 프로젝트는 xv6 운영체제에서 커널 수준 스레드(kernel-level thread)의 단순화된 버전을 구현하는 것이다.</li>
 <li>커널 수준 스레드는 하나의 프로세스가 여러 실행 컨텍스트(레지스터 상태, 스택)를 가지면서 주소 공간, 파일 descriptor 등의 자원을 공유하는 구조를 가능하게 한다.</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="key-implementation-requirements-핵심-구현-요구사항" tabindex="-1"><a class="header-anchor" href="#key-implementation-requirements-핵심-구현-요구사항"><span>Key Implementation Requirements 핵심 구현 요구사항</span></a></h2>
 <ul>
 <li>새로운 시스템 호출 <code v-pre>clone()</code>을 구현해 새로운 커널 수준 스레드를 생성</li>
@@ -15,6 +20,8 @@
 <li>사용자 수준 라이브러리 함수 <code v-pre>thread_create()</code>와 <code v-pre>thread_join()</code>을 작성하여 위 시스템 호출을 감쌈</li>
 <li><code v-pre>kernel/proc.c</code> 내의 관련 함수들을 수정하여 커널 수준 스레드가 올바르게 동작하도록 할 것</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="special-characteristics-특성" tabindex="-1"><a class="header-anchor" href="#special-characteristics-특성"><span>Special Characteristics 특성</span></a></h2>
 <p>이 xv6 커널 수준 스레드는 기존의 일반적인 스레드와 다음과 같은 차이점이 있다</p>
 <ul>
@@ -23,6 +30,8 @@
 <li>어떤 스레드라도 <code v-pre>exit()</code>을 호출하면 해당 스레드는 종료된다</li>
 <li><code v-pre>proc</code> 구조체를 스레드 제어 블록(TCB)로 재사용할 수 있다</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="api-details-system-calls-시스템-콜" tabindex="-1"><a class="header-anchor" href="#api-details-system-calls-시스템-콜"><span>API Details: System calls 시스템 콜</span></a></h2>
 <div class="language-c line-numbers-mode" data-highlighter="prismjs" data-ext="c"><pre v-pre><code class="language-c"><span class="line"><span class="token keyword">int</span> <span class="token function">clone</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">(</span><span class="token operator">*</span>fcn<span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token operator">*</span><span class="token punctuation">,</span> <span class="token keyword">void</span><span class="token operator">*</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token keyword">void</span> <span class="token operator">*</span>arg1<span class="token punctuation">,</span> <span class="token keyword">void</span> <span class="token operator">*</span>arg2<span class="token punctuation">,</span> <span class="token keyword">void</span> <span class="token operator">*</span>stack<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
 <span class="line"></span></code></pre>
@@ -40,6 +49,8 @@
 <li><code v-pre>stack</code>: 종료된 스레드의 스택 주소를 저장할 포인터</li>
 <li>성공 시 종료된 스레드의 PID 반환, 실패 시 -1 반환</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="api-details-user-library-functions-사용자-라이브러리-함수" tabindex="-1"><a class="header-anchor" href="#api-details-user-library-functions-사용자-라이브러리-함수"><span>API Details: User Library Functions 사용자 라이브러리 함수</span></a></h2>
 <ul>
 <li><code v-pre>user/thread.h</code>와 <code v-pre>user/thread.c</code>에 구현</li>
@@ -57,6 +68,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="system-call-modifications-시스템-콜-수정" tabindex="-1"><a class="header-anchor" href="#system-call-modifications-시스템-콜-수정"><span>System Call Modifications 시스템 콜 수정</span></a></h2>
 <ul>
 <li>
@@ -71,6 +84,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="tips-for-development-개발을-위한-팁" tabindex="-1"><a class="header-anchor" href="#tips-for-development-개발을-위한-팁"><span>Tips for Development 개발을 위한 팁</span></a></h2>
 <ul>
 <li>
@@ -93,6 +108,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="wiki-위키" tabindex="-1"><a class="header-anchor" href="#wiki-위키"><span>Wiki 위키</span></a></h2>
 <ul>
 <li><strong>Design</strong>: 요구사항 충족을 위한 구현 접근 방식 설명</li>
@@ -101,6 +118,8 @@
 <li><strong>Troubleshooting</strong>: 문제 상황과 해결 과정 서술</li>
 <li><strong>Additional content</strong>: 필요 시 관련 자료 포함 가능</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="evaluation-평가" tabindex="-1"><a class="header-anchor" href="#evaluation-평가"><span>Evaluation 평가</span></a></h2>
 <ul>
 <li>
@@ -116,6 +135,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="submission-제출" tabindex="-1"><a class="header-anchor" href="#submission-제출"><span>Submission 제출</span></a></h2>
 <ul>
 <li>GitHub를 통해 코드와 위키를 제출
@@ -131,6 +152,7 @@
 </ul>
 </li>
 </ul>
+</section>
 </div></template>
 
 

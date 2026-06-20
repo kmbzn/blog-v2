@@ -1,5 +1,8 @@
-<template><div><h1 id="_6-requirements" tabindex="-1"><a class="header-anchor" href="#_6-requirements"><span>6. Requirements</span></a></h1>
+<template><div><section class="print-section">
+<h1 id="_6-requirements" tabindex="-1"><a class="header-anchor" href="#_6-requirements"><span>6. Requirements</span></a></h1>
 <DateMeta />
+</section>
+<section class="print-section">
 <h2 id="learning-goals" tabindex="-1"><a class="header-anchor" href="#learning-goals"><span>Learning Goals</span></a></h2>
 <ul>
 <li>Software engineering(소프트웨어 공학)에서 requirements(요구사항)의 중요성과 어려움 설명</li>
@@ -7,8 +10,12 @@
 <li>Functional requirements(기능적 요구사항)와 quality requirements(품질 요구사항) 간의 구별 및 예시 제공; 비공식적 기술과 verifiable requirements(검증 가능한 요구사항) 간의 구별 및 예시 제공.</li>
 <li>품질 요구사항을 측정 가능한 방식으로 기술</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="overly-simplified-definition" tabindex="-1"><a class="header-anchor" href="#overly-simplified-definition"><span>Overly Simplified Definition</span></a></h2>
 <p>요구사항은 시스템이 무엇을 할 것인지(What)를 말함 (어떻게(How) 할 것인지가 아님).</p>
+</section>
+<section class="print-section">
 <h2 id="fred-brooks-on-requirements" tabindex="-1"><a class="header-anchor" href="#fred-brooks-on-requirements"><span>Fred Brooks, on Requirements</span></a></h2>
 <ul>
 <li>소프트웨어 시스템 구축에서 가장 어려운 단일 부분은 정확히 무엇을 만들지 결정하는 것임.</li>
@@ -16,6 +23,8 @@
 <li>잘못 수행되었을 때 결과 시스템을 그토록 심각하게 손상시키는 다른 부분은 없음.</li>
 <li>나중에 바로잡기 더 어려운 부분은 없음.</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="a-problem-that-stands-the-test-of-time" tabindex="-1"><a class="header-anchor" href="#a-problem-that-stands-the-test-of-time"><span>A Problem That Stands the Test of Time…</span></a></h2>
 <ul>
 <li>350개 기업의 8000개 프로젝트에 대한 1994년 설문조사 결과: 31%의 프로젝트가 완료 전 취소; 16%의 프로젝트가 예산 내 정시 납품
@@ -36,12 +45,18 @@
 </ol>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="why-is-this-hard" tabindex="-1"><a class="header-anchor" href="#why-is-this-hard"><span>Why Is This Hard?</span></a></h2>
+</section>
+<section class="print-section">
 <h2 id="communication-problem" tabindex="-1"><a class="header-anchor" href="#communication-problem"><span>Communication Problem</span></a></h2>
 <ul>
 <li>목표: 무엇을 만들어야 하는지 파악.</li>
 <li>올바른 것이 만들어지도록 그 아이디어들을 표현.</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="overall-problems" tabindex="-1"><a class="header-anchor" href="#overall-problems"><span>Overall Problems</span></a></h2>
 <ul>
 <li>관련된 하위 문제?</li>
@@ -50,52 +65,78 @@
 <li>기대되는 품질?</li>
 <li>어떤 품질과 가격으로 얼마나 빨리 제공?</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="examples-of-requirements" tabindex="-1"><a class="header-anchor" href="#examples-of-requirements"><span>Examples of Requirements</span></a></h2>
 <p>[suspicious link removed]</p>
+</section>
+<section class="print-section">
 <h2 id="user-stories-사용자-스토리" tabindex="-1"><a class="header-anchor" href="#user-stories-사용자-스토리"><span>User Stories(사용자 스토리)</span></a></h2>
+</section>
+<section class="print-section">
 <h2 id="the-card" tabindex="-1"><a class="header-anchor" href="#the-card"><span>The Card</span></a></h2>
 <ul>
 <li>“[역할]로서, [가치]를 위해 [기능]을 원한다”</li>
 <li>3x5 카드에 맞아야 함</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="how-to-evaluate-user-story" tabindex="-1"><a class="header-anchor" href="#how-to-evaluate-user-story"><span>How to Evaluate User Story?</span></a></h2>
 <p><a href="http://dev.one80services.com/user-stories/writing-good-user-stories-hint-its-not-about-writing/" target="_blank" rel="noopener noreferrer">http://dev.one80services.com/user-stories/writing-good-user-stories-hint-its-not-about-writing/</a></p>
+</section>
+<section class="print-section">
 <h1 id="invests-원칙" tabindex="-1"><a class="header-anchor" href="#invests-원칙"><span>INVESTS 원칙</span></a></h1>
+</section>
+<section class="print-section">
 <h2 id="independent-독립적" tabindex="-1"><a class="header-anchor" href="#independent-독립적"><span>Independent(독립적)</span></a></h2>
 <ul>
 <li>순서에 관계없이 일정 계획 가능.</li>
 <li>개념적으로 중복되지 않음</li>
 <li>항상 가능한 것은 아님</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="negotiable-협상-가능" tabindex="-1"><a class="header-anchor" href="#negotiable-협상-가능"><span>Negotiable(협상 가능)</span></a></h2>
 <ul>
 <li>세부 사항은 개발 중에 협상됨</li>
 <li>좋은 스토리는 세부 사항이 아닌 본질을 포착</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="valuable-가치-있는" tabindex="-1"><a class="header-anchor" href="#valuable-가치-있는"><span>Valuable(가치 있는)</span></a></h2>
 <ul>
 <li>이 스토리는 누군가(가급적 고객)에게 가치가 있어야 함</li>
 <li>특히 이슈를 분할할 때 관련됨</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="estimable-추정-가능한" tabindex="-1"><a class="header-anchor" href="#estimable-추정-가능한"><span>Estimable(추정 가능한)</span></a></h2>
 <ul>
 <li>크기를 작게 유지하는 데 도움</li>
 <li>우리가 올바르게 협상했는지 확인</li>
 <li>“계획은 아무것도 아니며, 계획하는 것이 전부다” - 드와이트 D. 아이젠하워</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="small-작은" tabindex="-1"><a class="header-anchor" href="#small-작은"><span>Small(작은)</span></a></h2>
 <ul>
 <li>3x5 카드에 맞음</li>
 <li>최대 2 person-weeks(인-주)의 작업량</li>
 <li>너무 큼 == 추정 불가능</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="testable-테스트-가능한" tabindex="-1"><a class="header-anchor" href="#testable-테스트-가능한"><span>Testable(테스트 가능한)</span></a></h2>
 <ul>
 <li>작업에 대한 이해 보장</li>
 <li>언제 작업을 “완료”로 표시할 수 있는지 앎</li>
 <li>테스트 불가능 == 이해하지 못함</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="requirements-in-software-projects" tabindex="-1"><a class="header-anchor" href="#requirements-in-software-projects"><span>Requirements in Software Projects</span></a></h2>
+</section>
+<section class="print-section">
 <h2 id="less-simplified-definition-online-shopping" tabindex="-1"><a class="header-anchor" href="#less-simplified-definition-online-shopping"><span>Less Simplified Definition: Online Shopping</span></a></h2>
 <ul>
 <li>Stories: Scenarios(시나리오), Use Cases(유스 케이스), User Stories
@@ -115,6 +156,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="what-is-requirements-engineering" tabindex="-1"><a class="header-anchor" href="#what-is-requirements-engineering"><span>What is Requirements Engineering?</span></a></h2>
 <ul>
 <li>Knowledge acquisition(지식 획득) – 시스템에 대한 관련 세부 정보를 어떻게 포착하는가?
@@ -130,6 +173,8 @@
 </li>
 <li>때때로 requirements definition(요구사항 정의)과 requirements specification(요구사항 명세)을 구별하는 것을 볼 수 있음.</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="functional-requirements" tabindex="-1"><a class="header-anchor" href="#functional-requirements"><span>Functional Requirements</span></a></h2>
 <ul>
 <li>기계가 해야 할 일
@@ -148,6 +193,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="quality-non-functional-requirements" tabindex="-1"><a class="header-anchor" href="#quality-non-functional-requirements"><span>Quality/Non-functional Requirements</span></a></h2>
 <ul>
 <li>시스템의 기능이 아니라, 그 기능을 전달하는 품질을 명시.</li>
@@ -158,10 +205,16 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="environment-and-the-machine" tabindex="-1"><a class="header-anchor" href="#environment-and-the-machine"><span>Environment and the Machine</span></a></h2>
 <p>Pamela Zave &amp; Michael Jackson, “Four Dark Corners of Requirements Engineering,”
 ACM Transactions on Software Engineering and Methodology, 6(1): 1-30, 1997.</p>
+</section>
+<section class="print-section">
 <h2 id="example-automobile" tabindex="-1"><a class="header-anchor" href="#example-automobile"><span>Example: Automobile</span></a></h2>
+</section>
+<section class="print-section">
 <h2 id="airbus-braking-system" tabindex="-1"><a class="header-anchor" href="#airbus-braking-system"><span>Airbus Braking System</span></a></h2>
 <ul>
 <li>Airbus A320-200 비행기에는 소프트웨어 기반 제동 시스템이 있음:
@@ -173,7 +226,11 @@ ACM Transactions on Software Engineering and Methodology, 6(1): 1-30, 1997.</p>
 </li>
 <li>제동 시스템을 작동시키려면 비행기 바퀴가 지면에 닿아야 함.</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="lufthansa-flight-2904" tabindex="-1"><a class="header-anchor" href="#lufthansa-flight-2904"><span>Lufthansa Flight 2904</span></a></h2>
+</section>
+<section class="print-section">
 <h2 id="lufthansa-flight-2904-1" tabindex="-1"><a class="header-anchor" href="#lufthansa-flight-2904-1"><span>Lufthansa Flight 2904</span></a></h2>
 <p>두 가지 “지상 착지” 조건이 있음:</p>
 <ol>
@@ -185,6 +242,8 @@ ACM Transactions on Software Engineering and Methodology, 6(1): 1-30, 1997.</p>
 <li>Reverse thrust는 양쪽 주 착륙 장치에서 조건 1에 활성화</li>
 <li>휠 브레이크 활성화는 회전 게인과 조건 2에 따라 다름</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="why-didn-t-it-stop" tabindex="-1"><a class="header-anchor" href="#why-didn-t-it-stop"><span>Why Didn’t It Stop?</span></a></h2>
 <ul>
 <li>제동 시스템이 활성화되지 않음
@@ -199,21 +258,33 @@ ACM Transactions on Software Engineering and Methodology, 6(1): 1-30, 1997.</p>
 </li>
 <li>조종사가 소프트웨어 결정을 수동으로 무시할 방법이 없음</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="implementation-bias-구현-편향" tabindex="-1"><a class="header-anchor" href="#implementation-bias-구현-편향"><span>Implementation Bias(구현 편향)</span></a></h2>
 <p>요구사항은 시스템이 무엇을 할 것인지(What)를 말함(어떻게(How) 할 것인지가 아님).</p>
+</section>
+<section class="print-section">
 <h2 id="why-not-how" tabindex="-1"><a class="header-anchor" href="#why-not-how"><span>Why not “How”?</span></a></h2>
+</section>
+<section class="print-section">
 <h2 id="avoiding-implementation-bias" tabindex="-1"><a class="header-anchor" href="#avoiding-implementation-bias"><span>Avoiding Implementation Bias</span></a></h2>
 <ul>
 <li>요구사항은 환경-기계 인터페이스에서 관찰 가능한 것을 기술.</li>
 <li>Indicative mood(직설법)는 환경을(있는 그대로, as-is) 기술</li>
 <li>Optative mood는 기계가 포함된 환경을(될 모습, to-be) 기술.</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="this-can-be-subtle" tabindex="-1"><a class="header-anchor" href="#this-can-be-subtle"><span>This Can Be Subtle</span></a></h2>
 <ul>
 <li>“사전은 해시 테이블에 저장되어야 한다(shall)” vs. “소프트웨어는 5초 이내에 요청에 응답해야 한다(shall).”</li>
 <li>“what” vs. “how” 대신, “이 요구사항이 기계 도메인만의 속성인가?”라고 질문.</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="quality-requirements" tabindex="-1"><a class="header-anchor" href="#quality-requirements"><span>Quality Requirements</span></a></h2>
+</section>
+<section class="print-section">
 <h2 id="functional-requirements-1" tabindex="-1"><a class="header-anchor" href="#functional-requirements-1"><span>Functional Requirements</span></a></h2>
 <ul>
 <li>기계가 해야 할 일
@@ -232,6 +303,8 @@ ACM Transactions on Software Engineering and Methodology, 6(1): 1-30, 1997.</p>
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="quality-non-functional-requirements-1" tabindex="-1"><a class="header-anchor" href="#quality-non-functional-requirements-1"><span>Quality/Non-functional Requirements</span></a></h2>
 <ul>
 <li>시스템의 기능이 아니라, 그 기능을 전달하는 품질을 명시.</li>
@@ -242,16 +315,22 @@ ACM Transactions on Software Engineering and Methodology, 6(1): 1-30, 1997.</p>
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="here-is-the-thing" tabindex="-1"><a class="header-anchor" href="#here-is-the-thing"><span>Here is the thing</span></a></h2>
 <ul>
 <li>누가 느리고, 비효율적이며, 유지보수하기 어려운 시스템을 요구하겠는가?</li>
 <li>품질 요구사항을 생각하는 더 좋은 방법은 대안적인 구현 중에서 선택하는 데 도움이 되는 design criteria(설계 기준)로 보는 것.</li>
 <li>질문: 제품이 허용 가능한 수준이 되려면 이러한 요구사항을 어느 정도까지 만족해야 하는가?</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="quality-requirements-examples" tabindex="-1"><a class="header-anchor" href="#quality-requirements-examples"><span>Quality Requirements Examples</span></a></h2>
 <ul>
 <li>웹에서 비디오 판매?</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="expressing-quality-requirements" tabindex="-1"><a class="header-anchor" href="#expressing-quality-requirements"><span>Expressing Quality Requirements</span></a></h2>
 <ul>
 <li>요구사항은 계약의 역할을 함: 테스트 가능/반증 가능해야 함.</li>
@@ -262,6 +341,8 @@ ACM Transactions on Software Engineering and Methodology, 6(1): 1-30, 1997.</p>
 </li>
 <li>Verifiable non-functional requirement: 객관적으로 테스트할 수 있는 일부 측정 기준을 사용한 기술.</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="examples" tabindex="-1"><a class="header-anchor" href="#examples"><span>Examples</span></a></h2>
 <ul>
 <li>Confidentiality(기밀성) 요구사항: 직원이 아닌 이용자는 다른 사람이 어떤 책을 빌렸는지 절대 알 수 없음.</li>
@@ -291,13 +372,21 @@ ACM Transactions on Software Engineering and Methodology, 6(1): 1-30, 1997.</p>
 </li>
 <li>Interface(인터페이스) 요구사항, interoperability(상호운용성) 요구사항, compliance(준수성) 요구사항, architectural(아키텍처) 요구사항, development(개발) 요구사항 등.</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="informal-vs-verifiable-example" tabindex="-1"><a class="header-anchor" href="#informal-vs-verifiable-example"><span>Informal vs. Verifiable Example</span></a></h2>
 <ul>
 <li>비공식적 목표: “시스템은 숙련된 관제사가 사용하기 쉬워야 하며, 사용자 오류가 최소화되도록 구성되어야 함.”</li>
 <li>검증 가능한 비기능적 요구사항: “숙련된 관제사는 총 2시간의 교육 후에 모든 시스템 기능을 사용할 수 있어야 함. 이 교육 후, 숙련된 사용자가 저지르는 평균 오류 수는 하루 평균 2개를 초과하지 않아야 함.”</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="requirement-metrics-요구사항-측정-기준" tabindex="-1"><a class="header-anchor" href="#requirement-metrics-요구사항-측정-기준"><span>Requirement Metrics(요구사항 측정 기준)</span></a></h2>
+</section>
+<section class="print-section">
 <h2 id="activities-of-requirements-engineering" tabindex="-1"><a class="header-anchor" href="#activities-of-requirements-engineering"><span>Activities of Requirements Engineering</span></a></h2>
+</section>
+<section class="print-section">
 <h2 id="what-is-requirements-engineering-re" tabindex="-1"><a class="header-anchor" href="#what-is-requirements-engineering-re"><span>What is Requirements Engineering(RE)?</span></a></h2>
 <ul>
 <li>Knowledge acquisition – 시스템에 대한 관련 세부 정보를 어떻게 포착하는가?
@@ -313,6 +402,8 @@ ACM Transactions on Software Engineering and Methodology, 6(1): 1-30, 1997.</p>
 </li>
 <li>때때로 requirements definition과 requirements specification을 구별하는 것을 볼 수 있음.</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="why-what-who-of-re" tabindex="-1"><a class="header-anchor" href="#why-what-who-of-re"><span>Why, What, Who of RE</span></a></h2>
 <ul>
 <li>System-as-is(현재 시스템)
@@ -347,6 +438,8 @@ ACM Transactions on Software Engineering and Methodology, 6(1): 1-30, 1997.</p>
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="the-why-dimension" tabindex="-1"><a class="header-anchor" href="#the-why-dimension"><span>The WHY Dimension</span></a></h2>
 <ul>
 <li>System-to-be의 Objectives 식별, 분석, 구체화
@@ -369,6 +462,8 @@ Objectives</li>
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="the-what-dimension" tabindex="-1"><a class="header-anchor" href="#the-what-dimension"><span>The WHAT Dimension</span></a></h2>
 <ul>
 <li>System-to-be의 기능적 서비스(소프트웨어 서비스, 관련 수동 절차) 식별 및 정의
@@ -390,6 +485,8 @@ Objectives</li>
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="the-who-dimension" tabindex="-1"><a class="header-anchor" href="#the-who-dimension"><span>The WHO Dimension</span></a></h2>
 <ul>
 <li>System-to-be 구성 요소 간에 목표, 서비스, 제약에 대한 책임 할당
@@ -410,6 +507,8 @@ Objectives</li>
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="typical-steps-iterative" tabindex="-1"><a class="header-anchor" href="#typical-steps-iterative"><span>Typical Steps(Iterative)</span></a></h2>
 <ul>
 <li>Identifying stakeholders(이해관계자 식별)</li>
@@ -419,6 +518,8 @@ Objectives</li>
 <li>Documentation/specification(문서화/명세화)</li>
 <li>Consolidation / quality assurance(통합 / 품질 보증)</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="target-qualities-for-re-process" tabindex="-1"><a class="header-anchor" href="#target-qualities-for-re-process"><span>Target Qualities for RE Process</span></a></h2>
 <ul>
 <li>Objectives, requirements, assumptions의 Completeness</li>
@@ -433,6 +534,8 @@ Objectives</li>
 <li>RD 항목의 Modifiability(수정 가능성)</li>
 <li>RD 항목의 Traceability(추적성)</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="types-of-re-errors-flaws" tabindex="-1"><a class="header-anchor" href="#types-of-re-errors-flaws"><span>Types of RE Errors &amp; Flaws</span></a></h2>
 <ul>
 <li>Omission(누락)</li>
@@ -451,6 +554,8 @@ Objectives</li>
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="errors-in-a-requirements-document" tabindex="-1"><a class="header-anchor" href="#errors-in-a-requirements-document"><span>Errors in a Requirements Document</span></a></h2>
 <ul>
 <li>Omission: 문제 세계(problem world)의 피처가 RD 항목에 기술되지 않음
@@ -480,6 +585,8 @@ Objectives</li>
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="flaws-in-a-requirements-document" tabindex="-1"><a class="header-anchor" href="#flaws-in-a-requirements-document"><span>Flaws in a Requirements Document</span></a></h2>
 <ul>
 <li>Noise: 문제 세계 피처에 대한 정보를 제공하지 않는 RD 항목(변형: 통제되지 않는 중복)
@@ -528,6 +635,8 @@ Objectives</li>
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="documenting-requirements" tabindex="-1"><a class="header-anchor" href="#documenting-requirements"><span>Documenting Requirements</span></a></h2>
 <ul>
 <li>Free unrestricted text(자유로운 비정형 텍스트)</li>
@@ -535,6 +644,7 @@ Objectives</li>
 <li>Diagrams(다이어그램)</li>
 <li>Formal specifications(정형 명세)</li>
 </ul>
+</section>
 </div></template>
 
 

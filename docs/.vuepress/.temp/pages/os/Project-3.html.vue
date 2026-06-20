@@ -1,8 +1,13 @@
-<template><div><h1 id="project-03" tabindex="-1"><a class="header-anchor" href="#project-03"><span>Project 03</span></a></h1>
+<template><div><section class="print-section">
+<h1 id="project-03" tabindex="-1"><a class="header-anchor" href="#project-03"><span>Project 03</span></a></h1>
 <DateMeta />
+</section>
+<section class="print-section">
 <h2 id="virtual-memory-file-system" tabindex="-1"><a class="header-anchor" href="#virtual-memory-file-system"><span>Virtual Memory &amp; File system</span></a></h2>
 <p>Due date: 2025. 06. 10. (Tue) 24:00<br>
 Operating System</p>
+</section>
+<section class="print-section">
 <h2 id="overview" tabindex="-1"><a class="header-anchor" href="#overview"><span>Overview</span></a></h2>
 <ul>
 <li>Copy-on-Write Fork
@@ -21,7 +26,11 @@ Operating System</p>
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h1 id="copy-on-write-fork" tabindex="-1"><a class="header-anchor" href="#copy-on-write-fork"><span>Copy-on-Write Fork</span></a></h1>
+</section>
+<section class="print-section">
 <h2 id="overview-1" tabindex="-1"><a class="header-anchor" href="#overview-1"><span>Overview</span></a></h2>
 <ul>
 <li>Problem: Inefficient memory copying in fork()
@@ -41,6 +50,8 @@ Operating System</p>
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="cow-fork-architecture" tabindex="-1"><a class="header-anchor" href="#cow-fork-architecture"><span>COW Fork Architecture</span></a></h2>
 <ul>
 <li>Initial State:
@@ -65,6 +76,8 @@ Operating System</p>
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="implementation-tasks" tabindex="-1"><a class="header-anchor" href="#implementation-tasks"><span>Implementation Tasks</span></a></h2>
 <ul>
 <li>Core Functions to Modify:
@@ -84,6 +97,8 @@ Operating System</p>
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="cow-test-result" tabindex="-1"><a class="header-anchor" href="#cow-test-result"><span>Cow Test Result</span></a></h2>
 <ul>
 <li>simplest(): Basic COW Memory Allocation and Behavior Verification</li>
@@ -97,7 +112,11 @@ Operating System</p>
 <span class="line">...</span>
 <span class="line">ALL COW TESTS PASSED</span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h1 id="large-files" tabindex="-1"><a class="header-anchor" href="#large-files"><span>Large Files</span></a></h1>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h1 id="large-files" tabindex="-1"><a class="header-anchor" href="#large-files"><span>Large Files</span></a></h1>
+</section>
+<section class="print-section">
 <h2 id="overview-2" tabindex="-1"><a class="header-anchor" href="#overview-2"><span>Overview</span></a></h2>
 <ul>
 <li>Problem: Limited file size in xv6
@@ -118,8 +137,14 @@ Operating System</p>
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="current-block-addressing-hierarchy" tabindex="-1"><a class="header-anchor" href="#current-block-addressing-hierarchy"><span>Current Block Addressing Hierarchy</span></a></h2>
+</section>
+<section class="print-section">
 <h2 id="block-addressing-hierarchy" tabindex="-1"><a class="header-anchor" href="#block-addressing-hierarchy"><span>Block Addressing Hierarchy</span></a></h2>
+</section>
+<section class="print-section">
 <h2 id="implementation-tasks-1" tabindex="-1"><a class="header-anchor" href="#implementation-tasks-1"><span>Implementation Tasks</span></a></h2>
 <ul>
 <li>Constants and Structures:
@@ -138,13 +163,19 @@ Operating System</p>
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="largefile-test-result" tabindex="-1"><a class="header-anchor" href="#largefile-test-result"><span>Largefile Test Result</span></a></h2>
 <ul>
 <li>Large File Creation and Sequential Writing</li>
 <li>File Size Validation</li>
 <li>Data Integrity Verification</li>
 </ul>
+</section>
+<section class="print-section">
 <h1 id="symbolic-links" tabindex="-1"><a class="header-anchor" href="#symbolic-links"><span>Symbolic Links</span></a></h1>
+</section>
+<section class="print-section">
 <h2 id="overview-3" tabindex="-1"><a class="header-anchor" href="#overview-3"><span>Overview</span></a></h2>
 <ul>
 <li>Problem: Rigid file referencing in xv6
@@ -163,6 +194,8 @@ Operating System</p>
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="symbolic-links-architecture" tabindex="-1"><a class="header-anchor" href="#symbolic-links-architecture"><span>Symbolic Links Architecture</span></a></h2>
 <ul>
 <li>File Type Extension:
@@ -190,6 +223,8 @@ Operating System</p>
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h1 id="implementation-tasks-2" tabindex="-1"><a class="header-anchor" href="#implementation-tasks-2"><span>Implementation Tasks</span></a></h1>
 <ul>
 <li>New Components:
@@ -206,6 +241,8 @@ Operating System</p>
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h1 id="symlink-test-result" tabindex="-1"><a class="header-anchor" href="#symlink-test-result"><span>Symlink Test Result</span></a></h1>
 <ul>
 <li><code v-pre>testsymlink()</code> - Core Functionality Testing
@@ -226,13 +263,17 @@ Operating System</p>
 <span class="line">test concurrent symlinks: OK</span>
 <span class="line">...</span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h1 id="evaluation" tabindex="-1"><a class="header-anchor" href="#evaluation"><span>Evaluation</span></a></h1>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h1 id="evaluation" tabindex="-1"><a class="header-anchor" href="#evaluation"><span>Evaluation</span></a></h1>
 <ul>
 <li>Completeness The xv6 operating system must function correctly according to the specification requirements.</li>
 <li>Wiki &amp; Commit History Grading will be based on the wiki documentation, so the wiki should be written in as much detail as possible.</li>
 <li>Deadline The submission deadline must be strictly observed. After the deadline, you will get 0 points, and scores will be revised.</li>
 <li>DO NOT PLAGIARIZE ANY COPY!!!</li>
 </ul>
+</section>
+<section class="print-section">
 <h1 id="wiki" tabindex="-1"><a class="header-anchor" href="#wiki"><span>Wiki</span></a></h1>
 <ul>
 <li>Design Outline your implementation approach for meeting the project requirements.</li>
@@ -245,6 +286,8 @@ Operating System</p>
 <li>Troubleshooting Describe any problems encountered, solutions applied, and any unresolved issues.</li>
 <li>Additional content may be included if relevant.</li>
 </ul>
+</section>
+<section class="print-section">
 <h1 id="submission" tabindex="-1"><a class="header-anchor" href="#submission"><span>Submission</span></a></h1>
 <ul>
 <li>Submit your implemented code and wiki through GitHub.
@@ -260,12 +303,15 @@ Operating System</p>
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h1 id="q-a" tabindex="-1"><a class="header-anchor" href="#q-a"><span>Q&amp;A</span></a></h1>
 <ul>
 <li>For questions related to the project, please use the question board 'Project 03 Question Board' on the LMS.</li>
 <li>Questions sent by email will not be answered.</li>
 <li>For questions not related to the project, please use the Q&amp;A board or send an email.</li>
 </ul>
+</section>
 </div></template>
 
 

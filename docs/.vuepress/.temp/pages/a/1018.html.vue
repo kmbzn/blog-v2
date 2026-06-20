@@ -1,4 +1,5 @@
-<template><div><h1 id="_1018번-체스판-다시-칠하기" tabindex="-1"><a class="header-anchor" href="#_1018번-체스판-다시-칠하기"><span>1018번: 체스판 다시 칠하기</span></a></h1>
+<template><div><section class="print-section">
+<h1 id="_1018번-체스판-다시-칠하기" tabindex="-1"><a class="header-anchor" href="#_1018번-체스판-다시-칠하기"><span>1018번: 체스판 다시 칠하기</span></a></h1>
 <DateMeta />
 <p><a href="https://www.acmicpc.net/problem/1018" target="_blank" rel="noopener noreferrer">https://www.acmicpc.net/problem/1018</a></p>
 <p>난이도: <strong>실버 IV</strong></p>
@@ -28,6 +29,8 @@
 <p>따라서 이 정의를 따르면 체스판을 색칠하는 경우는 두 가지뿐이다.<br>
 하지만 사실 어떤 경우를 두고 생각하더라도 이것이 크게 중요한 문제는 아닐 것입니다.</p>
 <hr>
+</section>
+<section class="print-section">
 <h2 id="idea-1" tabindex="-1"><a class="header-anchor" href="#idea-1"><span>Idea 1.</span></a></h2>
 <p>체스판이기 때문에, 두 가지 <code v-pre>case</code>에 대해 모두 계산할 필요 없이, 한 가지의 <code v-pre>case</code>에 대해 &quot;다시 칠해야 하는 정사각형의 수&quot;를 계산한 후, <code v-pre>64 (8 x 8)</code>에서 그 값을 빼 준다면 다른 한 가지 <code v-pre>case</code>에 대해서 계산한 값이 됩니다.<br>
 따라서, 이 두 값 중에 더 작은 값을 택하기만 하면 됩니다.</p>
@@ -44,6 +47,8 @@
 <span class="line">    <span class="token keyword">return</span> res</span>
 <span class="line"></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><hr>
+</section>
+<section class="print-section">
 <h2 id="idea-2" tabindex="-1"><a class="header-anchor" href="#idea-2"><span>Idea 2.</span></a></h2>
 <p><code v-pre>(row + col) % 2</code>는 완전한 체스판 중에서 첫 번째 칸에 검정색이 칠해진 체스판의 <code v-pre>(row, col)</code> 위치에 칠해져야 할 값이고,<br>
 <code v-pre>arr[i + row][j + col]</code>은 단위 체스판에서 <code v-pre>(row, col)</code> 위치에 칠해진 값입니다.<br>
@@ -53,6 +58,8 @@
 <p>이 함수를 모든 가능한 단위 체스판에 대해서 수행한 뒤, 최솟값을 최종적으로 출력하면 됩니다.<br>
 함수의 수행 횟수는 <code v-pre>(N - 7) x (M - 7)</code>회가 될 것입니다.</p>
 <hr>
+</section>
+<section class="print-section">
 <h2 id="완성된-code" tabindex="-1"><a class="header-anchor" href="#완성된-code"><span>완성된 code</span></a></h2>
 <div class="language-python line-numbers-mode" data-highlighter="prismjs" data-ext="py"><pre v-pre><code class="language-python"><span class="line">N<span class="token punctuation">,</span> M <span class="token operator">=</span> <span class="token builtin">map</span><span class="token punctuation">(</span><span class="token builtin">int</span><span class="token punctuation">,</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span></span>
 <span class="line"></span>
@@ -85,6 +92,7 @@
 <span class="line"></span>
 <span class="line"><span class="token keyword">print</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></div></template>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+</div></template>
 
 

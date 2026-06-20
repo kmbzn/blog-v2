@@ -1,9 +1,14 @@
-<template><div><h1 id="_11-machine-learning-2" tabindex="-1"><a class="header-anchor" href="#_11-machine-learning-2"><span>11. Machine Learning (2)</span></a></h1>
+<template><div><section class="print-section">
+<h1 id="_11-machine-learning-2" tabindex="-1"><a class="header-anchor" href="#_11-machine-learning-2"><span>11. Machine Learning (2)</span></a></h1>
 <DateMeta />
+</section>
+<section class="print-section">
 <h2 id="more-details-on-supervised-machine-learning" tabindex="-1"><a class="header-anchor" href="#more-details-on-supervised-machine-learning"><span>More Details on (Supervised) Machine Learning</span></a></h2>
 <ul>
 <li>분야 파악에 필요한 핵심 concepts</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="supervised-learning" tabindex="-1"><a class="header-anchor" href="#supervised-learning"><span>Supervised Learning</span></a></h2>
 <ul>
 <li>Supervised learning의 공식적인 작업</li>
@@ -17,6 +22,8 @@
 <li>출력 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>y</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">y_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>: Ground truth (또는 gold-standard)</li>
 <li>Model이 예측하도록 요청받는 실제 정답</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="how-do-we-choose-a-hypothesis-space" tabindex="-1"><a class="header-anchor" href="#how-do-we-choose-a-hypothesis-space"><span>How Do We Choose a Hypothesis Space?</span></a></h2>
 <ul>
 <li>데이터 생성 process에 대한 사전 지식 활용</li>
@@ -25,6 +32,8 @@
 <li>또는 여러 hypothesis spaces를 시도하고 가장 잘 작동하는 것을 평가</li>
 </ul>
 <p><img src="@source/ai/image-18.png" alt="alt text"></p>
+</section>
+<section class="print-section">
 <h2 id="how-do-we-choose-a-good-hypothesis-from-the-hypothesis-space" tabindex="-1"><a class="header-anchor" href="#how-do-we-choose-a-good-hypothesis-from-the-hypothesis-space"><span>How Do We Choose a Good Hypothesis from the Hypothesis Space?</span></a></h2>
 <ul>
 <li>일관된(consistent) hypothesis 기대: Training set의 모든 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">x_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5806em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>에 대해 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi><mo stretchy="false">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo stretchy="false">)</mo><mo>=</mo><msub><mi>y</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">h(x_i) = y_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">h</span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></li>
@@ -33,6 +42,8 @@
 <li>Test set: <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mi>j</mi></msub><mo separator="true">,</mo><mtext> </mtext><msub><mi>y</mi><mi>j</mi></msub><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(x_j,~ y_j)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.0361em;vertical-align:-0.2861em;"></span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.05724em;">j</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace nobreak"> </span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.05724em;">j</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span> 쌍의 두 번째 sample로 평가</li>
 <li><span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi></mrow><annotation encoding="application/x-tex">h</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal">h</span></span></span></span>가 test set의 출력을 정확하게 예측하면 '일반화(generalizes well)'가 잘 되었다고 함</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="bias-and-variance" tabindex="-1"><a class="header-anchor" href="#bias-and-variance"><span>Bias and Variance</span></a></h2>
 <ul>
 <li>Hypothesis space 분석 방법: Bias (데이터셋과 무관)와 variance (training set 간의 차이)</li>
@@ -45,6 +56,8 @@
 <li>High variance: 12차 다항식(degree-12 polynomials)은 높은 variance를 가짐 (x축 양 끝에서 두 함수가 매우 다름)</li>
 <li>함수가 훈련된 특정 data set에 너무 집중하여, 보지 못한 데이터(unseen data)에서 성능이 저하될 때: Overfitting</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="bias-variance-tradeoff" tabindex="-1"><a class="header-anchor" href="#bias-variance-tradeoff"><span>Bias-Variance Tradeoff</span></a></h2>
 <ul>
 <li>종종 bias-variance tradeoff 발생</li>
@@ -54,6 +67,8 @@
 <li>&quot;필요 없이 (실체의) 복수성(plurality)을 가정해서는 안 된다&quot;는 원칙. 의심스러운 설명을 &quot;깎아내는(shave off)&quot; 데 사용됨</li>
 </ul>
 <p><img src="@source/ai/image-19.png" alt="alt text"></p>
+</section>
+<section class="print-section">
 <h2 id="how-to-find-the-best-hypothesis" tabindex="-1"><a class="header-anchor" href="#how-to-find-the-best-hypothesis"><span>How to Find the Best Hypothesis</span></a></h2>
 <ul>
 <li>Supervised learning: Data가 주어졌을 때 가장 확률이 높은 hypothesis <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>h</mi><mo>∗</mo></msup></mrow><annotation encoding="application/x-tex">h^*</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord"><span class="mord mathnormal">h</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.6887em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mbin mtight">∗</span></span></span></span></span></span></span></span></span></span></span> 선택</li>
@@ -66,7 +81,11 @@
 <li>Q: <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="script">H</mi></mrow><annotation encoding="application/x-tex">\mathcal{H}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathcal" style="margin-right:0.00965em;">H</span></span></span></span>를 모든 컴퓨터 program 또는 모든 Turing machine의 class로 사용하지 않는 이유?</li>
 <li>A: Hypothesis space의 표현력(expressiveness)과 그 공간 내에서 좋은 hypothesis를 찾는 계산 복잡성(computational complexity) 간의 tradeoff 때문</li>
 </ul>
+</section>
+<section class="print-section">
 <h1 id="model-selection-and-optimization" tabindex="-1"><a class="header-anchor" href="#model-selection-and-optimization"><span>Model Selection and Optimization</span></a></h1>
+</section>
+<section class="print-section">
 <h2 id="i-i-d-assumption" tabindex="-1"><a class="header-anchor" href="#i-i-d-assumption"><span>I.I.D. Assumption</span></a></h2>
 <ul>
 <li>Machine learning의 목표: 미래의 예시(future examples)에 최적으로 맞는 hypothesis 선택</li>
@@ -80,6 +99,8 @@
 </li>
 <li>이 두 방정식을 만족하는 예시: Independent and identically distributed (독립 항등 분포) 또는 i.i.d.</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="error-rate-and-two-different-datasets" tabindex="-1"><a class="header-anchor" href="#error-rate-and-two-different-datasets"><span>Error Rate and Two Different Datasets</span></a></h2>
 <ul>
 <li>Optimal fit 정의: Error rate (오차율)를 최소화하는 hypothesis</li>
@@ -91,6 +112,8 @@
 <li>Training set: Hypothesis 생성용</li>
 <li>Test set: Hypothesis 평가용</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="hyperparameters-and-three-datasets" tabindex="-1"><a class="header-anchor" href="#hyperparameters-and-three-datasets"><span>Hyperparameters and Three Datasets</span></a></h2>
 <ul>
 <li>단일 hypothesis 생성 시: Training/test set 분리로 충분</li>
@@ -100,6 +123,8 @@
 <li>개별 hypothesis는 test set을 보지 않았지만, 연구자를 통해 전체 process가 test set을 &quot;엿봄&quot;</li>
 <li>해결책: Training, experimenting, hyperparameter-tuning, re-training 등이 모두 끝날 때까지 test set을 완전히 분리(hold out)</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="three-datasets-and-cross-validation" tabindex="-1"><a class="header-anchor" href="#three-datasets-and-cross-validation"><span>Three Datasets and Cross-Validation</span></a></h2>
 <ul>
 <li>3개의 data set 필요
@@ -120,6 +145,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="model-selection-and-optimization-1" tabindex="-1"><a class="header-anchor" href="#model-selection-and-optimization-1"><span>Model Selection and Optimization</span></a></h2>
 <ul>
 <li>예시: 선형 함수(linear function)는 data set에 underfit, 고차 다항식(high-degree polynomial)은 overfit</li>
@@ -127,6 +154,8 @@
 <li>Model (class) selection (hypothesis space 선택): 좋은 hypothesis space 선택</li>
 <li>Optimization (또는 training): 해당 space 내에서 최상의 hypothesis 탐색</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="model-selection" tabindex="-1"><a class="header-anchor" href="#model-selection"><span>Model Selection</span></a></h2>
 <ul>
 <li>Model selection의 일부는 질적(qualitative)이고 주관적(subjective)</li>
@@ -134,8 +163,12 @@
 <li>Model selection의 일부는 양적(quantitative)이고 경험적(empirical)</li>
 <li>예: Polynomials class 내에서, validation data set 성능에 기반하여 <code v-pre>Degree = 2</code> 선택</li>
 </ul>
+</section>
+<section class="print-section">
 <h1 id="an-algorithm-for-model-selection" tabindex="-1"><a class="header-anchor" href="#an-algorithm-for-model-selection"><span>An Algorithm for Model Selection</span></a></h1>
 <p><img src="@source/ai/image-20.png" alt="v"></p>
+</section>
+<section class="print-section">
 <h2 id="two-different-patterns-that-occur-in-model-selection" tabindex="-1"><a class="header-anchor" href="#two-different-patterns-that-occur-in-model-selection"><span>Two Different Patterns That Occur in Model Selection</span></a></h2>
 <p><img src="@source/ai/image-21.png" alt="alt text"></p>
 <ul>
@@ -145,6 +178,7 @@
 <li>(b) Validation error가 (약간의 변동과 함께) 지속적으로 감소 시작</li>
 <li>이는 서로 다른 model class가 초과 용량(excess capacity)을 어떻게 활용하는지, 그리고 그것이 당면한 문제와 얼마나 잘 일치하는지에 따라 달라짐</li>
 </ul>
+</section>
 </div></template>
 
 

@@ -1,6 +1,9 @@
-<template><div><h1 id="frederique-constant" tabindex="-1"><a class="header-anchor" href="#frederique-constant"><span>Frédérique Constant</span></a></h1>
+<template><div><section class="print-section">
+<h1 id="frederique-constant" tabindex="-1"><a class="header-anchor" href="#frederique-constant"><span>Frédérique Constant</span></a></h1>
 <DateMeta />
 <p>Frédérique Constant(프레드릭 콘스탄트)는 1988년 스위스 제네바에서 피터 스타스(Peter Stas)와 알레타 스타스(Aletta Stas) 부부가 설립한 독립 시계 브랜드다. 브랜드명은 설립자 증조할머니와 증조할아버지의 이름에서 각각 따왔다. &quot;접근 가능한 럭셔리(Accessible Luxury)&quot;를 핵심 포지셔닝으로 삼아, 인하우스 무브먼트를 스위스 명품 브랜드 중 가장 합리적인 가격대에 제공하는 것이 전략적 차별점이다.</p>
+</section>
+<section class="print-section">
 <h2 id="브랜드-개요" tabindex="-1"><a class="header-anchor" href="#브랜드-개요"><span>브랜드 개요</span></a></h2>
 <table>
 <thead>
@@ -37,9 +40,13 @@
 </tbody>
 </table>
 <p>2016년 일본 시티즌 워치 그룹(Citizen Watch Group)에 인수되었으나, 브랜드 독립성과 제네바 생산 체계는 유지하고 있다.</p>
+</section>
+<section class="print-section">
 <h2 id="인하우스-무브먼트" tabindex="-1"><a class="header-anchor" href="#인하우스-무브먼트"><span>인하우스 무브먼트</span></a></h2>
 <p>Frédérique Constant의 가장 중요한 강점은 <strong>스위스 럭셔리 시계 중 가장 낮은 가격대에서 인하우스(자체 제작) 무브먼트를 제공한다는 것</strong>이다.</p>
 <p>대부분의 동급 가격대 브랜드들이 ETA 2824나 Sellita SW200 같은 범용 무브먼트를 탑재하는 반면, FC는 자체 칼리버를 설계·제조한다.</p>
+</section>
+<section class="print-section">
 <h3 id="주요-칼리버" tabindex="-1"><a class="header-anchor" href="#주요-칼리버"><span>주요 칼리버</span></a></h3>
 <table>
 <thead>
@@ -83,7 +90,11 @@
 </tbody>
 </table>
 <p>특히 FC-700 연력 무브먼트는 동급 기능 대비 가격이 낮아 칼렌더 시계 입문에 자주 추천된다.</p>
+</section>
+<section class="print-section">
 <h2 id="주요-컬렉션" tabindex="-1"><a class="header-anchor" href="#주요-컬렉션"><span>주요 컬렉션</span></a></h2>
+</section>
+<section class="print-section">
 <h3 id="classics-클래식스" tabindex="-1"><a class="header-anchor" href="#classics-클래식스"><span>Classics (클래식스)</span></a></h3>
 <p>브랜드의 상징적인 라인. 아치형 러그, 둥근 케이스, 로마 숫자 또는 인덱스 다이얼의 전통적인 드레스워치 감성이 특징이다.</p>
 <ul>
@@ -93,6 +104,8 @@
 <li>케이스: 스틸 / 로즈골드 PVD</li>
 <li>가격대: CHF 700 ~ 2,000 (약 100만원 ~ 300만원)</li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="slimline" tabindex="-1"><a class="header-anchor" href="#slimline"><span>Slimline</span></a></h3>
 <p>얇은 케이스(~5mm)와 미니멀한 다이얼이 특징인 드레스워치 라인. 연력·문페이즈·미닛리피터(Minute Repeater) 등 복잡 기능 버전도 있다. NOMOS Glashütte의 경쟁 포지션으로 자주 언급된다.</p>
 <ul>
@@ -100,10 +113,16 @@
 <li>무브먼트: FC-200 (수동) / FC-710 (만년력)</li>
 <li>가격대: CHF 800 ~ 3,000</li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="runabout" tabindex="-1"><a class="header-anchor" href="#runabout"><span>Runabout</span></a></h3>
 <p>1930~50년대 목제 모터보트에서 영감을 받은 스포티한 라인. 스크류 백(caseback)에 배 문양 조각, 브라운 계열 스트랩이 특징이다. 남성적이고 캐주얼한 감성을 원하는 이들에게 적합하다.</p>
+</section>
+<section class="print-section">
 <h3 id="persuasion" tabindex="-1"><a class="header-anchor" href="#persuasion"><span>Persuasion</span></a></h3>
 <p>빈티지 감성의 트리컴프(tri-compax) 크로노그래프 라인. 레트로 팬다 다이얼, 빈티지 폰트 등으로 50~60년대 레이싱 시계 감성을 현대적으로 재해석했다.</p>
+</section>
+<section class="print-section">
 <h2 id="가격대" tabindex="-1"><a class="header-anchor" href="#가격대"><span>가격대</span></a></h2>
 <table>
 <thead>
@@ -141,6 +160,8 @@
 </tr>
 </tbody>
 </table>
+</section>
+<section class="print-section">
 <h2 id="포지셔닝" tabindex="-1"><a class="header-anchor" href="#포지셔닝"><span>포지셔닝</span></a></h2>
 <p>Frédérique Constant는 스위스 시계 시장에서 <strong>진입장벽이 낮은 인하우스 무브먼트 브랜드</strong>라는 명확한 위치를 점한다.</p>
 <table>
@@ -180,6 +201,8 @@
 </tbody>
 </table>
 <p>NOMOS와 자주 비교되는 브랜드다. NOMOS가 바우하우스 미니멀리즘을 강하게 추구한다면, FC는 보다 클래식하고 전통적인 드레스워치 미학에 가깝다.</p>
+</section>
+<section class="print-section">
 <h2 id="구매-시-고려사항" tabindex="-1"><a class="header-anchor" href="#구매-시-고려사항"><span>구매 시 고려사항</span></a></h2>
 <ul>
 <li>공식 판매처: 국내 일부 시계 편집숍, 온라인 공식 스토어</li>
@@ -189,6 +212,7 @@
 </ul>
 <hr>
 <p><em><a href="https://www.frederique-constant.com" target="_blank" rel="noopener noreferrer">공식 웹사이트</a></em></p>
+</section>
 </div></template>
 
 

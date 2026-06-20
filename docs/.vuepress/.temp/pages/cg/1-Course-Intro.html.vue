@@ -1,5 +1,8 @@
-<template><div><h1 id="_1-course-intro" tabindex="-1"><a class="header-anchor" href="#_1-course-intro"><span>1 - Course Intro</span></a></h1>
+<template><div><section class="print-section">
+<h1 id="_1-course-intro" tabindex="-1"><a class="header-anchor" href="#_1-course-intro"><span>1 - Course Intro</span></a></h1>
 <DateMeta />
+</section>
+<section class="print-section">
 <h2 id="course-information" tabindex="-1"><a class="header-anchor" href="#course-information"><span>Course Information</span></a></h2>
 <ul>
 <li>Course Homepage
@@ -14,6 +17,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="what-is-computer-graphics" tabindex="-1"><a class="header-anchor" href="#what-is-computer-graphics"><span>What is Computer Graphics?</span></a></h2>
 <ul>
 <li>컴퓨터를 이용하여 시각적 콘텐츠를 생성하고, 조작하며, 화면에 표시하는 기술을 연구하는 학문
@@ -44,6 +49,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="course-overview" tabindex="-1"><a class="header-anchor" href="#course-overview"><span>Course Overview</span></a></h2>
 <ul>
 <li>Computer Graphics: 수학을 시각화하는 기술</li>
@@ -68,6 +75,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="prerequisites" tabindex="-1"><a class="header-anchor" href="#prerequisites"><span>Prerequisites</span></a></h2>
 <ul>
 <li>선형대수학에 대한 기본 지식
@@ -87,10 +96,14 @@
 </li>
 <li>예술적 감각은 필요 없음!</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="textbook" tabindex="-1"><a class="header-anchor" href="#textbook"><span>Textbook</span></a></h2>
 <ul>
 <li>교재: 강의 슬라이드</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="schedule-subject-to-change" tabindex="-1"><a class="header-anchor" href="#schedule-subject-to-change"><span>Schedule (subject to change)</span></a></h2>
 <table>
 <thead>
@@ -178,6 +191,8 @@
 </tr>
 </tbody>
 </table>
+</section>
+<section class="print-section">
 <h2 id="lectures-labs" tabindex="-1"><a class="header-anchor" href="#lectures-labs"><span>Lectures &amp; Labs</span></a></h2>
 <ul>
 <li>강의와 실습은 같은 날에 함께 진행됨</li>
@@ -195,6 +210,8 @@
 </li>
 <li>한 번의 [강의+실습] 세션은 총 4시간이며 중간 휴식 없음!</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="assignments" tabindex="-1"><a class="header-anchor" href="#assignments"><span>Assignments</span></a></h2>
 <ul>
 <li>실습마다 과제가 있음</li>
@@ -216,6 +233,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="assignments-grading" tabindex="-1"><a class="header-anchor" href="#assignments-grading"><span>Assignments - Grading</span></a></h2>
 <ul>
 <li>과제 제출 (또는 재제출)은 실습 시간 내 15:45 이전까지
@@ -233,6 +252,8 @@
 </li>
 <li>당일 23:59 이후 제출: 불가</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="projects" tabindex="-1"><a class="header-anchor" href="#projects"><span>Projects</span></a></h2>
 <ul>
 <li>총 3개의 프로젝트가 주어짐
@@ -248,6 +269,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="policy-for-projects" tabindex="-1"><a class="header-anchor" href="#policy-for-projects"><span>Policy for Projects</span></a></h2>
 <ul>
 <li><strong>기한 초과 제출 시 점수 없음</strong>
@@ -262,6 +285,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="grading" tabindex="-1"><a class="header-anchor" href="#grading"><span>Grading</span></a></h2>
 <table>
 <thead>
@@ -301,6 +326,8 @@
 </li>
 <li><strong>중간고사 or 기말고사 결시 → F</strong></li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="grading-policy" tabindex="-1"><a class="header-anchor" href="#grading-policy"><span>Grading Policy</span></a></h2>
 <ul>
 <li>
@@ -335,6 +362,8 @@
 <p><strong>성적은 이번 학기 두 개의 computer graphics 수업 전체 학생을 통합하여 계산함</strong></p>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="important-midterm-final-exams" tabindex="-1"><a class="header-anchor" href="#important-midterm-final-exams"><span>[Important] Midterm &amp; Final Exams</span></a></h2>
 <ul>
 <li>시험은 아래 일정에 진행되며,<br>
@@ -342,6 +371,8 @@
 <li><strong>중간고사: 5월 7일 (수) 6:00~8:00 PM</strong></li>
 <li><strong>기말고사: 6월 18일 (수) 6:00~8:00 PM</strong></li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="language" tabindex="-1"><a class="header-anchor" href="#language"><span>Language</span></a></h2>
 <ul>
 <li>수업은 주로 영어로 진행</li>
@@ -353,6 +384,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="questions-–-slido-com" tabindex="-1"><a class="header-anchor" href="#questions-–-slido-com"><span>Questions – Slido.com</span></a></h2>
 <ul>
 <li>강의 후, LMS의 &quot;Q&amp;A 게시판&quot;에 질문 작성
@@ -362,6 +395,8 @@
 </li>
 <li>강의 중에는 온라인 익명 Q&amp;A 플랫폼: <strong>slido.com</strong> 사용</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="just-try-asking-a-question" tabindex="-1"><a class="header-anchor" href="#just-try-asking-a-question"><span>Just Try Asking a Question!</span></a></h2>
 <ul>
 <li>접속: <a href="https://www.slido.com/" target="_blank" rel="noopener noreferrer">slido.com</a></li>
@@ -374,6 +409,8 @@
 </li>
 <li><strong>질문은 영어로 자유롭게!</strong></li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="questions-–-slido-com-1" tabindex="-1"><a class="header-anchor" href="#questions-–-slido-com-1"><span>Questions – Slido.com</span></a></h2>
 <ul>
 <li>slido.com에서는 다음이 가능함:
@@ -395,12 +432,16 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="quiz-attendance-–-slido-com" tabindex="-1"><a class="header-anchor" href="#quiz-attendance-–-slido-com"><span>Quiz &amp; Attendance – Slido.com</span></a></h2>
 <ul>
 <li>각 강의당 퀴즈 문제 3개 출제 (slido.com polls 사용)</li>
 <li>문제는 매우 간단하며, <strong>2분 이내로 제출해야 함</strong></li>
 <li><strong>출석은 퀴즈 제출을 기준으로 측정됨</strong></li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="quiz-–-slido-com" tabindex="-1"><a class="header-anchor" href="#quiz-–-slido-com"><span>Quiz – Slido.com</span></a></h2>
 <ul>
 <li>
@@ -445,6 +486,8 @@
 <p><strong>지각 3회는 결석 1회로 처리</strong></p>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="quiz-attendance-–-slido-com-1" tabindex="-1"><a class="header-anchor" href="#quiz-attendance-–-slido-com-1"><span>Quiz &amp; Attendance – Slido.com</span></a></h2>
 <ul>
 <li><strong>출석하지 않은</strong> 상태에서 <strong>퀴즈만 제출하는</strong> 경우 <strong>적발 시</strong>
@@ -454,6 +497,8 @@
 </li>
 <li>→ <strong>두 번의 강의 모두 결석</strong>으로 처리!</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="about-laptop" tabindex="-1"><a class="header-anchor" href="#about-laptop"><span>About Laptop</span></a></h2>
 <ul>
 <li>강의와 실습에 <strong>노트북 지참 필수</strong>
@@ -473,6 +518,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="checking-opengl-version" tabindex="-1"><a class="header-anchor" href="#checking-opengl-version"><span>Checking OpenGL Version</span></a></h2>
 <ul>
 <li>
@@ -503,6 +550,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="classroom-etiquette" tabindex="-1"><a class="header-anchor" href="#classroom-etiquette"><span>Classroom Etiquette</span></a></h2>
 <ul>
 <li><strong>수업 중 다른 학생에게 피해를 주는 행동은 하지 말 것</strong><br>
@@ -515,6 +564,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="my-recommendation" tabindex="-1"><a class="header-anchor" href="#my-recommendation"><span>My Recommendation</span></a></h2>
 <ul>
 <li>
@@ -534,6 +585,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="lab-session" tabindex="-1"><a class="header-anchor" href="#lab-session"><span>Lab Session</span></a></h2>
 <ul>
 <li><strong>오늘은 실습 세션이 없음</strong></li>
@@ -544,11 +597,14 @@
 </li>
 <li><em>Assignment 1 (&quot;1 - Assignment.pdf&quot;)를 다음 강의 전까지 LMS로 제출할 것</em></li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="lastly" tabindex="-1"><a class="header-anchor" href="#lastly"><span>Lastly...</span></a></h2>
 <ul>
 <li>위 모든 정책에 동의한다면, <strong>다음 강의에서 봅시다!</strong></li>
 <li>동의하지 않는다면, <strong>다른 수업 수강을 고려해주세요.</strong></li>
 </ul>
+</section>
 </div></template>
 
 

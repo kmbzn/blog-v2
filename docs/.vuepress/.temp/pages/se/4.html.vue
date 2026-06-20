@@ -1,5 +1,8 @@
-<template><div><h1 id="_4-process-models" tabindex="-1"><a class="header-anchor" href="#_4-process-models"><span>4. Process Models</span></a></h1>
+<template><div><section class="print-section">
+<h1 id="_4-process-models" tabindex="-1"><a class="header-anchor" href="#_4-process-models"><span>4. Process Models</span></a></h1>
 <DateMeta />
+</section>
+<section class="print-section">
 <h2 id="learning-goals" tabindex="-1"><a class="header-anchor" href="#learning-goals"><span>Learning Goals</span></a></h2>
 <ul>
 <li>Process(프로세스) 고려 사항의 필요성 이해</li>
@@ -7,15 +10,23 @@
 <li>Iteration(반복)을 통한 project(프로젝트) 및 engineering(엔지니어링) risks(위험) 해결</li>
 <li>Process quality(프로세스 품질) 보장</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="the-waterfall-model" tabindex="-1"><a class="header-anchor" href="#the-waterfall-model"><span>The Waterfall Model</span></a></h2>
 <ul>
 <li>[폭포수 모델 diagram]</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="margaret-hamilton" tabindex="-1"><a class="header-anchor" href="#margaret-hamilton"><span>Margaret Hamilton</span></a></h2>
+</section>
+<section class="print-section">
 <h2 id="the-v-model-80s-90s" tabindex="-1"><a class="header-anchor" href="#the-v-model-80s-90s"><span>The &quot;V&quot; Model(80s, 90s)</span></a></h2>
 <ul>
 <li>[V 모델 diagram]</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="when-is-waterfall-appropriate" tabindex="-1"><a class="header-anchor" href="#when-is-waterfall-appropriate"><span>When is Waterfall Appropriate?</span></a></h2>
 <ol>
 <li>Requirements(요구사항)가 사전에 알려짐</li>
@@ -25,6 +36,8 @@
 <li>요구사항 구현을 위한 architecture(아키텍처)가 잘 이해됨</li>
 <li>순차적으로 진행하기에 충분한 시간이 있음</li>
 </ol>
+</section>
+<section class="print-section">
 <h2 id="key-challenge-change" tabindex="-1"><a class="header-anchor" href="#key-challenge-change"><span>Key Challenge: Change</span></a></h2>
 <ul>
 <li>Software(소프트웨어)는 변경 가능한(&quot;soft&quot;) 것처럼 보임</li>
@@ -32,6 +45,8 @@
 <li>Customers(고객)는 종종 무엇이 변경하기 쉽고 무엇이 어려운지 이해하지 못함</li>
 <li>&quot;Good enough(충분히 좋음)&quot; vs. &quot;optimal(최적)&quot;</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="early-improvement-sequencing" tabindex="-1"><a class="header-anchor" href="#early-improvement-sequencing"><span>Early Improvement: Sequencing</span></a></h2>
 <ul>
 <li>초기 소프트웨어 고려 사항 강제</li>
@@ -50,6 +65,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="a-natural-engineering-process" tabindex="-1"><a class="header-anchor" href="#a-natural-engineering-process"><span>A Natural Engineering Process?</span></a></h2>
 <ul>
 <li>[왼쪽 박스]
@@ -69,16 +86,22 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="iteration" tabindex="-1"><a class="header-anchor" href="#iteration"><span>Iteration!</span></a></h2>
 <ul>
 <li>초기 및 빈번한 feedback(피드백)</li>
 <li>지속적인 adaptation(적응) 지원</li>
 <li>Risks(위험) 우선 해결</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="the-spiral-model-barry-boehm" tabindex="-1"><a class="header-anchor" href="#the-spiral-model-barry-boehm"><span>The Spiral Model(Barry Boehm)</span></a></h2>
 <ul>
 <li>[나선형 모델 diagram]</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="software-engineering-risks" tabindex="-1"><a class="header-anchor" href="#software-engineering-risks"><span>Software Engineering Risks</span></a></h2>
 <ul>
 <li>Project risks(프로젝트 위험)
@@ -98,11 +121,15 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="cone-of-uncertainty" tabindex="-1"><a class="header-anchor" href="#cone-of-uncertainty"><span>Cone of Uncertainty</span></a></h2>
 <ul>
 <li>[불확실성의 원뿔]</li>
 <li>Steve McConnell. 1996. Rapid Development</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="mitigation-of-risk-through-process-interventions-examples" tabindex="-1"><a class="header-anchor" href="#mitigation-of-risk-through-process-interventions-examples"><span>Mitigation of Risk Through Process Interventions(Examples)</span></a></h2>
 <ul>
 <li>Risk-driven process(위험 주도 프로세스)
@@ -128,6 +155,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="key-iterative-processes" tabindex="-1"><a class="header-anchor" href="#key-iterative-processes"><span>Key: Iterative Processes</span></a></h2>
 <ul>
 <li>Interleaving(인터리빙) 및 repeating(반복)
@@ -142,6 +171,8 @@
 <li>하지만 언제, 어떤 sequence(순서)로, 얼마나 자주?</li>
 <li>결정을 내리기 위해 어떤 measurements(측정)이 필요한가?</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="iteration-decision" tabindex="-1"><a class="header-anchor" href="#iteration-decision"><span>Iteration Decision</span></a></h2>
 <ul>
 <li>너무 느린 경우?
@@ -161,7 +192,11 @@
 </li>
 <li>-&gt; risks(위험) 및 measurement data(측정 데이터) 기반으로 추진; project(프로젝트)별 결정</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="process-quality" tabindex="-1"><a class="header-anchor" href="#process-quality"><span>Process Quality</span></a></h2>
+</section>
+<section class="print-section">
 <h2 id="process-evaluation" tabindex="-1"><a class="header-anchor" href="#process-evaluation"><span>Process Evaluation</span></a></h2>
 <ul>
 <li>우리 project(프로젝트)는 얼마나 predictable(예측 가능)한가?</li>
@@ -169,6 +204,8 @@
 <li>8%가 quality(품질) 데이터 수집</li>
 <li>60%는 process(프로세스)를 monitor(모니터링)하지 않음</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="process-improvement-loop" tabindex="-1"><a class="header-anchor" href="#process-improvement-loop"><span>Process Improvement Loop</span></a></h2>
 <ul>
 <li>[프로세스 개선 루프 diagram]</li>
@@ -185,6 +222,8 @@
 <li>Analyzing difference(차이 분석)</li>
 <li>Acting(조치)</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="defect-prevention-process-ibm-1985" tabindex="-1"><a class="header-anchor" href="#defect-prevention-process-ibm-1985"><span>Defect Prevention Process, IBM 1985</span></a></h2>
 <ul>
 <li>mishap(사고) 발생 시:</li>
@@ -204,6 +243,8 @@
 </ul>
 </li>
 </ol>
+</section>
+<section class="print-section">
 <h2 id="six-sigma-motorola-1985" tabindex="-1"><a class="header-anchor" href="#six-sigma-motorola-1985"><span>Six Sigma, Motorola 1985</span></a></h2>
 <ul>
 <li>&quot;Six Sigma(식스 시그마)는 원인을 식별 및 제거하고 variability(변동성)를 최소화하여 process outputs(프로세스 산출물)의 quality(품질)를 개선하고 defects(결함)를 100만 개당 3.4개로 줄이는 것을 추구함. manufacturing(제조) 및 services(서비스)에 적용 가능함. statistical methods(통계적 방법)를 사용하며, 조직 내부에 전문가(&quot;Champions&quot;, &quot;Black Belts&quot;, &quot;Green Belts&quot;)들로 구성된 특별한 infrastructure(인프라)를 생성함.&quot;</li>
@@ -226,16 +267,22 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="google-sre-process" tabindex="-1"><a class="header-anchor" href="#google-sre-process"><span>Google SRE Process</span></a></h2>
 <ul>
 <li>Blame-free postmortem culture(비난 없는 사후 검토 문화)</li>
 <li>&quot;이러한 incidents(사건)로부터 배우는 공식화된 process(프로세스)가 없다면, 사건들은 무한정 재발할 수 있음.&quot;</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="process-standards" tabindex="-1"><a class="header-anchor" href="#process-standards"><span>Process Standards</span></a></h2>
 <ul>
 <li>[소프트웨어 측정 관련 책 표지]</li>
 <li><em>C. Ebert and R. Dumke, Software Measurement,: Establish – Extract – Evaluate – Execute, Springer, 2007</em></li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="capability-maturity-model-cmm" tabindex="-1"><a class="header-anchor" href="#capability-maturity-model-cmm"><span>Capability Maturity Model(CMM)</span></a></h2>
 <ul>
 <li>customer(고객)는 조직이 원하는 product(제품)를 delivering(제공)할 능력이 있다는 confidence(신뢰)를 얻어야 함</li>
@@ -252,6 +299,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="sei-s-capability-maturity-model-integration" tabindex="-1"><a class="header-anchor" href="#sei-s-capability-maturity-model-integration"><span>SEI's Capability Maturity Model(Integration)</span></a></h2>
 <ul>
 <li>Process(프로세스)가 아닌 meta-process(메타 프로세스)</li>
@@ -262,6 +311,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="the-cmmi-framework" tabindex="-1"><a class="header-anchor" href="#the-cmmi-framework"><span>The CMMI Framework</span></a></h2>
 <ul>
 <li>[CMMI 프레임워크 수준 diagram]</li>
@@ -272,14 +323,20 @@
 <li>Level 5 &quot;Optimizing&quot;(최적화): Focus on process improvement(프로세스 개선에 집중)</li>
 <li>Higher Risk - Lower Productivity/Quality(고위험 - 저생산성/품질) -&gt; Lower Risk - Higher Productivity/Quality(저위험 - 고생산성/품질)</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="key-practices-of-each-cmmi-level" tabindex="-1"><a class="header-anchor" href="#key-practices-of-each-cmmi-level"><span>Key Practices of Each CMMI Level</span></a></h2>
 <ul>
 <li>[CMMI 수준별 Key Practices 표]</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="capability-maturity-model-cmm-1" tabindex="-1"><a class="header-anchor" href="#capability-maturity-model-cmm-1"><span>Capability Maturity Model(CMM)</span></a></h2>
 <ul>
 <li>[CM 수준별 Key Process Areas(KPA) diagram]</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="capability-maturity-model-cmm-2" tabindex="-1"><a class="header-anchor" href="#capability-maturity-model-cmm-2"><span>Capability Maturity Model(CMM)</span></a></h2>
 <ul>
 <li>Common features of key practices(핵심 프랙티스의 공통 특징)
@@ -298,6 +355,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="capability-maturity-model-cmm-3" tabindex="-1"><a class="header-anchor" href="#capability-maturity-model-cmm-3"><span>Capability Maturity Model(CMM)</span></a></h2>
 <ul>
 <li>Application of the CMM(CMM의 적용)
@@ -331,6 +390,8 @@
 <li>All content extracted.</li>
 </ul>
 <p>Looks good.</p>
+</section>
+<section class="print-section">
 <h2 id="capability-maturity-model-cmm-4" tabindex="-1"><a class="header-anchor" href="#capability-maturity-model-cmm-4"><span>Capability Maturity Model(CMM)</span></a></h2>
 <ul>
 <li>Capability Maturity Model Integration(CMMI)
@@ -345,6 +406,8 @@
 <li>People(인력) CMM</li>
 <li>Supplier Source(공급업체 소스) CMM</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="process-tradeoffs" tabindex="-1"><a class="header-anchor" href="#process-tradeoffs"><span>Process Tradeoffs</span></a></h2>
 <ul>
 <li>(참고: 많은 산업 환경(예: 자동차 산업)에서의 성공 사례)</li>
@@ -359,6 +422,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="summary" tabindex="-1"><a class="header-anchor" href="#summary"><span>Summary</span></a></h2>
 <ul>
 <li>Sequential process models(순차적 프로세스 모델)은 &quot;coding(코딩) 전 생각&quot;을 강조</li>
@@ -366,6 +431,7 @@
 <li>Risks(위험) 해결을 위한 Iteration(반복)</li>
 <li>Process(프로세스) 측정, 지속적인 process(프로세스) 개선</li>
 </ul>
+</section>
 </div></template>
 
 

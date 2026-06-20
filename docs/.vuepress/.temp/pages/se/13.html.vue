@@ -1,5 +1,8 @@
-<template><div><h1 id="_13-intro-to-qa-testing" tabindex="-1"><a class="header-anchor" href="#_13-intro-to-qa-testing"><span>13. Intro to QA Testing</span></a></h1>
+<template><div><section class="print-section">
+<h1 id="_13-intro-to-qa-testing" tabindex="-1"><a class="header-anchor" href="#_13-intro-to-qa-testing"><span>13. Intro to QA Testing</span></a></h1>
 <DateMeta />
+</section>
+<section class="print-section">
 <h2 id="learning-goals" tabindex="-1"><a class="header-anchor" href="#learning-goals"><span>Learning Goals</span></a></h2>
 <ul>
 <li>Testing을 (비구조적) 차원에서 coverage를 달성하기 위한 활동으로 간주</li>
@@ -8,6 +11,8 @@
 <li>Testing을 프로젝트의 lifecycle 및 practice에 통합</li>
 <li>Test plan 개요 작성</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="quality-assurance-qa-is-hard" tabindex="-1"><a class="header-anchor" href="#quality-assurance-qa-is-hard"><span>Quality Assurance (QA) is <strong>HARD</strong></span></a></h2>
 <ul>
 <li>QA &amp; Software Testing은 MS에서 도전적인 과제</li>
@@ -48,6 +53,8 @@
 </tbody>
 </table>
 <p><img src="@source/se/image-51.png" alt="alt text"></p>
+</section>
+<section class="print-section">
 <h2 id="qa-has-many-facets" tabindex="-1"><a class="header-anchor" href="#qa-has-many-facets"><span>QA has Many Facets</span></a></h2>
 <ul>
 <li>Questions</li>
@@ -56,6 +63,8 @@
 <li>시스템이 사용자의 요구를 충족하는지 어떻게 보장하는가?</li>
 <li>시스템이 잘못 동작하지 않는지 어떻게 보장하는가?</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="verification-vs-validation" tabindex="-1"><a class="header-anchor" href="#verification-vs-validation"><span>Verification vs Validation</span></a></h2>
 <ul>
 <li>Verification: 시스템이 specification을 충족하는가?
@@ -79,11 +88,15 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="brief-case-discussion" tabindex="-1"><a class="header-anchor" href="#brief-case-discussion"><span>Brief Case Discussion</span></a></h2>
 <p><img src="@source/se/image-52.png" alt="alt text"></p>
 <blockquote>
 <p><em>어떤 qualities가 중요하며, 어떻게 그것을 보장할 수 있을까?</em></p>
 </blockquote>
+</section>
+<section class="print-section">
 <h2 id="very-important" tabindex="-1"><a class="header-anchor" href="#very-important"><span>Very Important</span></a></h2>
 <ul>
 <li>모든 품질 문제를 완벽하게 해결할 수 있는 단일 analysis technique은 없음</li>
@@ -93,6 +106,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="definition-software-analysis" tabindex="-1"><a class="header-anchor" href="#definition-software-analysis"><span>Definition: Software Analysis</span></a></h2>
 <blockquote>
 <p>Software artifact의 속성을 결정하기 위한 체계적인 조사</p>
@@ -107,6 +122,8 @@
 <li>수동: Manual testing, inspection, modeling</li>
 <li>Code, system, module, execution trace, test case, design 또는 requirements 문서</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="principle-techniques" tabindex="-1"><a class="header-anchor" href="#principle-techniques"><span>Principle Techniques</span></a></h2>
 <ul>
 <li>Dynamic:
@@ -122,6 +139,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="no-single-technique" tabindex="-1"><a class="header-anchor" href="#no-single-technique"><span>No Single Technique</span></a></h2>
 <ul>
 <li>모든 품질 문제를 완벽하게 해결할 수 있는 단일 analysis technique은 없음</li>
@@ -131,6 +150,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="what-is-testing" tabindex="-1"><a class="header-anchor" href="#what-is-testing"><span>What is Testing?</span></a></h2>
 <ul>
 <li>통제된 환경에서 test data로 code를 직접 실행</li>
@@ -150,6 +171,8 @@
 </li>
 <li>&quot;Testing shows the presence, not the absence of bugs.” -Edsger W. Dijkstra 1969</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="software-errors" tabindex="-1"><a class="header-anchor" href="#software-errors"><span>Software Errors</span></a></h2>
 <ul>
 <li>Functional errors</li>
@@ -172,6 +195,8 @@
 <li>API usage errors</li>
 <li>…</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="what-are-we-covering" tabindex="-1"><a class="header-anchor" href="#what-are-we-covering"><span>What are We Covering?</span></a></h2>
 <ul>
 <li>Program/system 기능:
@@ -193,6 +218,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="traditional-coverage" tabindex="-1"><a class="header-anchor" href="#traditional-coverage"><span>“Traditional” Coverage</span></a></h2>
 <ul>
 <li>Statement</li>
@@ -201,6 +228,8 @@
 <li>Path (?)</li>
 <li>MC/DC</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="we-can-measure-coverage-on-almost-anything" tabindex="-1"><a class="header-anchor" href="#we-can-measure-coverage-on-almost-anything"><span>We Can Measure Coverage on Almost Anything</span></a></h2>
 <ul>
 <li>Testing을 위한 일반적인 adequacy criteria는 program execution 또는 specification space의 전체 &quot;coverage&quot;에 근접</li>
@@ -208,12 +237,16 @@
 <li>가장 자주 testing에 적용되지만, 모든 verification 활동에 적용 가능</li>
 <li>측정된 항목 중 적어도 한 번 실행되거나 평가된 항목의 총 수에 대한 비율로 표현. 보통 백분율로 표현</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="testing-levels" tabindex="-1"><a class="header-anchor" href="#testing-levels"><span>Testing Levels</span></a></h2>
 <ul>
 <li>Unit testing</li>
 <li>Integration testing</li>
 <li>System testing</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="junit" tabindex="-1"><a class="header-anchor" href="#junit"><span>JUnit</span></a></h2>
 <ul>
 <li>Java를 위한 인기 있는 unit-testing framework</li>
@@ -221,6 +254,8 @@
 <li>Tool 지원 가능</li>
 <li>Design mechanism으로 사용 가능</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="test-driven-development" tabindex="-1"><a class="header-anchor" href="#test-driven-development"><span>Test Driven Development</span></a></h2>
 <ul>
 <li>Test 우선!</li>
@@ -238,10 +273,14 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="continuous-integration" tabindex="-1"><a class="header-anchor" href="#continuous-integration"><span>Continuous Integration</span></a></h2>
 <ul>
 <li>자동으로 build, test 및 결과 표시</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="regression-testing" tabindex="-1"><a class="header-anchor" href="#regression-testing"><span>Regression Testing</span></a></h2>
 <ul>
 <li>일반적인 model:
@@ -261,7 +300,11 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h1 id="the-oracle-problem" tabindex="-1"><a class="header-anchor" href="#the-oracle-problem"><span>The Oracle Problem</span></a></h1>
+</section>
+<section class="print-section">
 <h2 id="what-are-we-covering-1" tabindex="-1"><a class="header-anchor" href="#what-are-we-covering-1"><span>What are We Covering?</span></a></h2>
 <ul>
 <li>Program/system 기능:
@@ -283,6 +326,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="usability-testing" tabindex="-1"><a class="header-anchor" href="#usability-testing"><span>Usability Testing</span></a></h2>
 <ul>
 <li>Specification?</li>
@@ -292,6 +337,8 @@
 <li>Automation?</li>
 <li>Coverage?</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="automating-gui-web-testing" tabindex="-1"><a class="header-anchor" href="#automating-gui-web-testing"><span>Automating GUI/Web Testing</span></a></h2>
 <ul>
 <li>어려움</li>
@@ -311,6 +358,8 @@
 <li>(Model을 GUI와 분리하여 GUI testing 부하 방지)</li>
 <li>Functional correctness를 넘어서?</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="manual-testing" tabindex="-1"><a class="header-anchor" href="#manual-testing"><span>Manual Testing?</span></a></h2>
 <ul>
 <li>Live System?</li>
@@ -319,13 +368,19 @@
 <li>Effort, Costs?</li>
 <li>Reproducible?</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="usability-a-b-testing" tabindex="-1"><a class="header-anchor" href="#usability-a-b-testing"><span>Usability: A/B Testing</span></a></h2>
 <ul>
 <li>Control (A)과 treatment (B)인 두 가지 variant를 이용한 통제된 무작위 experiment</li>
 <li>한 사용자 그룹에는 A (현재 시스템) 제공, 다른 무작위 그룹에는 B 제시. 결과 비교</li>
 <li>Web 또는 GUI 기반 application에서 자주 사용됨 (특히 광고 또는 GUI 요소 배치/design 결정 test)</li>
 </ul>
+</section>
+<section class="print-section">
 <h1 id="example" tabindex="-1"><a class="header-anchor" href="#example"><span>Example</span></a></h1>
+</section>
+<section class="print-section">
 <h2 id="what-are-we-covering-2" tabindex="-1"><a class="header-anchor" href="#what-are-we-covering-2"><span>What are We Covering?</span></a></h2>
 <ul>
 <li>Program/system 기능:
@@ -347,6 +402,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="security-robustness-testing" tabindex="-1"><a class="header-anchor" href="#security-robustness-testing"><span>Security/Robustness Testing</span></a></h2>
 <ul>
 <li>Specification?</li>
@@ -356,6 +413,8 @@
 <li>Automation?</li>
 <li>Coverage?</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="random-testing" tabindex="-1"><a class="header-anchor" href="#random-testing"><span>Random Testing</span></a></h2>
 <ul>
 <li>Program의 input domain에서 무작위로 input 독립적 선택
@@ -369,11 +428,15 @@
 <li>Random testing은 program의 faultiness에 대한 확률적 보장 제공</li>
 <li>예: Failure 없이 약 23,000개 input (N = 23,000)을 사용한 random testing은 90% 신뢰도 (C = 0.9)로 program이 10,000번 중 1번 (F = 104) 이상 failure하지 않음을 입증</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="reliability-fuzz-testing" tabindex="-1"><a class="header-anchor" href="#reliability-fuzz-testing"><span>Reliability: Fuzz Testing</span></a></h2>
 <ul>
 <li>Program, device 또는 system에 malformed (비정상) 및 unexpected input data를 feed하여 security 관련 defect 또는 denial of service, degradation of service 또는 기타 원치 않는 behavior로 이어지는 critical flaw를 찾는 negative software testing 방법 (A. Takanen et al, 2008)</li>
 <li>Fuzz test를 생성하거나 fuzz testing을 수행하는 데 사용되는 program 및 framework를 fuzzer라고 함</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="types-of-faulty-found" tabindex="-1"><a class="header-anchor" href="#types-of-faulty-found"><span>Types of Faulty Found</span></a></h2>
 <ul>
 <li>Pointer/array errors</li>
@@ -385,6 +448,8 @@
 <li>Undocumented features</li>
 <li>...Possible tradeoffs?</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="fuzzing-process" tabindex="-1"><a class="header-anchor" href="#fuzzing-process"><span>Fuzzing Process</span></a></h2>
 <ul>
 <li>Seed pool</li>
@@ -410,15 +475,21 @@
 <li>새 path를 cover하지 않는 input 버리기</li>
 <li>새 path를 cover하는 input을 pool에 추가</li>
 </ol>
+</section>
+<section class="print-section">
 <h2 id="unit-and-regression-testing-for-performance" tabindex="-1"><a class="header-anchor" href="#unit-and-regression-testing-for-performance"><span>Unit and Regression Testing for Performance</span></a></h2>
 <ul>
 <li>Critical component의 execution time 측정</li>
 <li>Execution time을 log로 기록하고 시간에 따라 비교</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="profiling" tabindex="-1"><a class="header-anchor" href="#profiling"><span>Profiling</span></a></h2>
 <ul>
 <li>Execution time 및 memory 병목 현상 찾기</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="performance-testing-during-design" tabindex="-1"><a class="header-anchor" href="#performance-testing-during-design"><span>Performance Testing During Design</span></a></h2>
 <ul>
 <li>Modeling 및 simulation
@@ -427,12 +498,16 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="stress-testing" tabindex="-1"><a class="header-anchor" href="#stress-testing"><span>Stress Testing</span></a></h2>
 <ul>
 <li>Robustness testing technique: 정상 작동 한계를 넘어 test</li>
 <li>System granularity의 모든 level에서 적용 가능</li>
 <li>Stress test는 일반적으로 heavy load 하에서의 robustness, availability, error handling에 중점</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="soak-testing" tabindex="-1"><a class="header-anchor" href="#soak-testing"><span>Soak Testing</span></a></h2>
 <ul>
 <li>문제: System이 인위적으로 제한된 execution 조건 하에서는 예상대로 작동할 수 있음
@@ -443,7 +518,11 @@
 <li>Soak testing: 상당한 load 하에 상당한 time 동안 system을 testing (긍정)</li>
 <li>주어진 duration과 threshold 하에서 simulated 환경의 test 대상 반응 확인에 사용</li>
 </ul>
+</section>
+<section class="print-section">
 <h1 id="chaos-engineering" tabindex="-1"><a class="header-anchor" href="#chaos-engineering"><span>Chaos Engineering</span></a></h1>
+</section>
+<section class="print-section">
 <h2 id="chaos-monkey" tabindex="-1"><a class="header-anchor" href="#chaos-monkey"><span>Chaos Monkey</span></a></h2>
 <ul>
 <li>Netflix infrastructure testing system</li>
@@ -453,7 +532,11 @@
 <li>System architecture가 계획되지 않은/무작위 outage에 resilient한지 확인하기 위해 component의 failure 강제</li>
 <li>Netflix는 chaos monkey code를 open-source로 공개</li>
 </ul>
+</section>
+<section class="print-section">
 <h1 id="brief-case-discussion-1" tabindex="-1"><a class="header-anchor" href="#brief-case-discussion-1"><span>Brief Case Discussion</span></a></h1>
+</section>
+<section class="print-section">
 <h2 id="what-are-we-covering-3" tabindex="-1"><a class="header-anchor" href="#what-are-we-covering-3"><span>What are We Covering?</span></a></h2>
 <ul>
 <li>Program/system 기능:
@@ -475,6 +558,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="completeness" tabindex="-1"><a class="header-anchor" href="#completeness"><span>Completeness?</span></a></h2>
 <ul>
 <li>통계적 threshold
@@ -500,6 +585,8 @@
 <li>경험 법칙: Error detection rate가 떨어질 때 (testing investment 대비 diminishing returns 의미)</li>
 <li>가장 일반적: Time 또는 money 소진</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="limits-of-testing" tabindex="-1"><a class="header-anchor" href="#limits-of-testing"><span>Limits of Testing</span></a></h2>
 <ul>
 <li>실행되지 않은 code의 bug를 찾을 수 없으며, bug 부재 보장 불가</li>
@@ -519,6 +606,7 @@
 <li>Verification, not validation</li>
 <li>...</li>
 </ul>
+</section>
 </div></template>
 
 

@@ -1,5 +1,8 @@
-<template><div><h1 id="_13-fpl-2" tabindex="-1"><a class="header-anchor" href="#_13-fpl-2"><span>13. FPL (2)</span></a></h1>
+<template><div><section class="print-section">
+<h1 id="_13-fpl-2" tabindex="-1"><a class="header-anchor" href="#_13-fpl-2"><span>13. FPL (2)</span></a></h1>
 <DateMeta />
+</section>
+<section class="print-section">
 <h2 id="common-lisp" tabindex="-1"><a class="header-anchor" href="#common-lisp"><span>Common Lisp</span></a></h2>
 <ul>
 <li>Common Lisp는 1980년대 초반 여러 Lisp 방언(dialect)의 특징을 통합하여 만들어진 대형 언어임</li>
@@ -182,6 +185,8 @@
 <li><code v-pre>SETF</code>, <code v-pre>LET</code> 등으로 값 할당된 변수 → 바인딩됨</li>
 <li>아무 할당도 없는 일반 심볼 → 바인딩되지 않음 → 에러 발생</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="ml" tabindex="-1"><a class="header-anchor" href="#ml"><span>ML</span></a></h2>
 <p>A static-scoped functional language with syntax that is closer to Pascal than to Lisp</p>
 <ul>
@@ -488,6 +493,8 @@
 <span class="line">((add 3) 4) *)</span></span>
 <span class="line"></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>커링 + partial evaluation을 이용하면, 재사용 가능한 특화 함수를 쉽게 만들 수 있음</p>
+</section>
+<section class="print-section">
 <h2 id="haskell" tabindex="-1"><a class="header-anchor" href="#haskell"><span>Haskell</span></a></h2>
 <ul>
 <li>Similar to ML: Syntax, static scoped, strongly typed, type inferencing, pattern matching</li>
@@ -1081,7 +1088,9 @@
 <span class="line"><span class="token builtin">any</span> <span class="token builtin">odd</span> <span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">]</span>  <span class="token comment">-- False</span></span>
 <span class="line"><span class="token builtin">any</span> <span class="token builtin">odd</span> <span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">]</span>  <span class="token comment">-- True</span></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="lazy-evaluation" tabindex="-1"><a class="header-anchor" href="#lazy-evaluation"><span>Lazy Evaluation</span></a></h2>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h2 id="lazy-evaluation" tabindex="-1"><a class="header-anchor" href="#lazy-evaluation"><span>Lazy Evaluation</span></a></h2>
 <p>A language is strict if it requires all actual parameters to be fully evaluated</p>
 <ul>
 <li>Does not depend on the order in which the parameters are evaluated</li>
@@ -1134,7 +1143,9 @@
 <span class="line"><span class="token hvariable">member2</span> <span class="token number">16</span> <span class="token hvariable">squares</span>  <span class="token comment">-- True</span></span>
 <span class="line"><span class="token hvariable">member2</span> <span class="token number">5</span> <span class="token hvariable">squares</span>   <span class="token comment">-- False (빠르게 종료)</span></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="f" tabindex="-1"><a class="header-anchor" href="#f"><span>F#</span></a></h2>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h2 id="f" tabindex="-1"><a class="header-anchor" href="#f"><span>F#</span></a></h2>
 <ul>
 <li>Based on Ocaml, which is a descendant of ML and Haskell</li>
 <li>Fundamentally a functional language, but with imperative features (mutable, loop) and supports OOP
@@ -1567,6 +1578,8 @@
 <li>It is the first functional language that is designed for interoperability with other widely used languages (널리 사용되는 언어(C#, VB.NET 등)들과의 .NET 기반 상호운용성이 뛰어남. 즉, F# 코드와 C# 코드를 섞어서 사용할 수 있음)</li>
 <li>At its release, it had an elaborate and well developed IDE and library of utility software (Visual Studio IDE 및 다양한 유틸리티 라이브러리와 함께 출시되어 실무에 바로 사용할 수 있는 환경을 제공함)</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="support-for-functional-programming-in-primarily-imperative-languages" tabindex="-1"><a class="header-anchor" href="#support-for-functional-programming-in-primarily-imperative-languages"><span>Support for Functional Programming in Primarily Imperative Languages</span></a></h2>
 <ul>
 <li>Support for functional programming is increasingly creeping into imperative languages
@@ -1717,7 +1730,9 @@
 <span class="line">times5 <span class="token operator">=</span> times<span class="token punctuation">.</span>curry<span class="token punctuation">.</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span>  <span class="token comment"># 첫 번째 인자를 5로 고정한 새로운 함수</span></span>
 <span class="line">x5 <span class="token operator">=</span> times5<span class="token punctuation">.</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span>           <span class="token comment"># sets x5 to 15 (두 번째 인자만 주면 결과 계산됨)</span></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="comparing-functional-and-imperative-languages" tabindex="-1"><a class="header-anchor" href="#comparing-functional-and-imperative-languages"><span>Comparing Functional and Imperative Languages</span></a></h2>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h2 id="comparing-functional-and-imperative-languages" tabindex="-1"><a class="header-anchor" href="#comparing-functional-and-imperative-languages"><span>Comparing Functional and Imperative Languages</span></a></h2>
 <ul>
 <li>Imperative Languages:
 <ul>
@@ -1740,6 +1755,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="summary" tabindex="-1"><a class="header-anchor" href="#summary"><span>Summary</span></a></h2>
 <ul>
 <li>Functional programming languages use function application, conditional expressions, recursion, and functional forms to control program execution</li>
@@ -1752,6 +1769,7 @@
 <li>Some primarily imperative languages now incorporate some support for functional programming</li>
 <li>Purely functional languages have advantages over imperative alternatives, but still are not very widely used</li>
 </ul>
+</section>
 </div></template>
 
 

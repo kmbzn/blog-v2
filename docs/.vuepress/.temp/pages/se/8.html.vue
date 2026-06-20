@@ -1,5 +1,8 @@
-<template><div><h1 id="_8-architecture" tabindex="-1"><a class="header-anchor" href="#_8-architecture"><span>8. Architecture</span></a></h1>
+<template><div><section class="print-section">
+<h1 id="_8-architecture" tabindex="-1"><a class="header-anchor" href="#_8-architecture"><span>8. Architecture</span></a></h1>
 <DateMeta />
+</section>
+<section class="print-section">
 <h2 id="learning-goals" tabindex="-1"><a class="header-anchor" href="#learning-goals"><span>Learning Goals</span></a></h2>
 <ul>
 <li>architectural reasoning(아키텍처 추론)의 abstraction level(추상화 수준) 이해</li>
@@ -8,7 +11,11 @@
 <li>목적에 적합한 아키텍처를 기술하기 위해 notation(표기법)과 views(뷰) 사용</li>
 <li>모호함 없이 명확하게 아키텍처 문서화</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="where-we-are" tabindex="-1"><a class="header-anchor" href="#where-we-are"><span>Where We Are</span></a></h2>
+</section>
+<section class="print-section">
 <h2 id="quality-requirements-now-what" tabindex="-1"><a class="header-anchor" href="#quality-requirements-now-what"><span>Quality Requirements, Now What?</span></a></h2>
 <ul>
 <li>&quot;highly available(고가용성)이어야 함&quot;.</li>
@@ -16,16 +23,24 @@
 <li>&quot;extensible(확장 가능)해야 함&quot;.</li>
 <li>&quot;hardware resources(하드웨어 자원)를 효율적으로 사용해야 함&quot;.</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="software-architecture" tabindex="-1"><a class="header-anchor" href="#software-architecture"><span>Software Architecture</span></a></h2>
+</section>
+<section class="print-section">
 <h2 id="software-architecture-1" tabindex="-1"><a class="header-anchor" href="#software-architecture-1"><span>Software Architecture</span></a></h2>
 <ul>
 <li>프로그램 또는 컴퓨팅 시스템의 software architecture는 시스템의 구조 또는 구조들로서, software elements(소프트웨어 요소), 해당 요소들의 externally visible properties(외부에 보이는 속성), 그리고 그들 간의 relationships(관계)를 포함함.</li>
 <li>[Bass et al., Software Architecture in Practice 2nd ed., 2003]</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="software-architecture-example" tabindex="-1"><a class="header-anchor" href="#software-architecture-example"><span>Software Architecture Example</span></a></h2>
 <ul>
 <li>좋음?</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="why-architecture-bass-et-al-2003" tabindex="-1"><a class="header-anchor" href="#why-architecture-bass-et-al-2003"><span>Why Architecture? [Bass et al., 2003]</span></a></h2>
 <ul>
 <li>가장 이른 design decisions(설계 결정) 표현.</li>
@@ -65,6 +80,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="beyond-functional-correctness" tabindex="-1"><a class="header-anchor" href="#beyond-functional-correctness"><span>Beyond Functional Correctness</span></a></h2>
 <ul>
 <li>품질이 중요함. 예:
@@ -80,9 +97,17 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="case-study-architecture-and-quality-at-twitter-now-x" tabindex="-1"><a class="header-anchor" href="#case-study-architecture-and-quality-at-twitter-now-x"><span>Case Study: Architecture and Quality at Twitter(Now X…)</span></a></h2>
+</section>
+<section class="print-section">
 <h2 id="twitter-suffered-from-over-capacity" tabindex="-1"><a class="header-anchor" href="#twitter-suffered-from-over-capacity"><span>Twitter Suffered From Over Capacity</span></a></h2>
+</section>
+<section class="print-section">
 <h2 id="due-to-the-big-event" tabindex="-1"><a class="header-anchor" href="#due-to-the-big-event"><span>…due to the Big Event</span></a></h2>
+</section>
+<section class="print-section">
 <h2 id="inspecting-the-state-of-engineering" tabindex="-1"><a class="header-anchor" href="#inspecting-the-state-of-engineering"><span>Inspecting the State of Engineering</span></a></h2>
 <ul>
 <li>세계 최대 규모의 Ruby on Rails 설치 중 하나 운영
@@ -97,6 +122,8 @@
 <li>최적화의 딜레마: 코드 가독성 vs 성능 트레이드오프</li>
 <li><a href="https://blog.x.com/engineering/en_us/a/2013/new-tweets-per-second-record-and-how" target="_blank" rel="noopener noreferrer">https://blog.x.com/engineering/en_us/a/2013/new-tweets-per-second-record-and-how</a></li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="twitter-s-quality-requirements-redesign-goals" tabindex="-1"><a class="header-anchor" href="#twitter-s-quality-requirements-redesign-goals"><span>Twitter's Quality Requirements / Redesign goals??</span></a></h2>
 <ul>
 <li>Improve median latency(중앙값 지연 시간 개선); lower outliers(이상치 감소)</li>
@@ -110,13 +137,19 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="caching" tabindex="-1"><a class="header-anchor" href="#caching"><span>Caching</span></a></h2>
+</section>
+<section class="print-section">
 <h2 id="jvm-vs-rubyvm" tabindex="-1"><a class="header-anchor" href="#jvm-vs-rubyvm"><span>JVM vs RubyVM</span></a></h2>
 <ul>
 <li>Rails 서버는 호스트당 200-300 requests / sec 가능</li>
 <li>JVM에서의 Scala 경험; 신뢰 수준</li>
 <li>JVM으로 재작성하여 호스트당 10-20k requests / sec 허용</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="programming-model" tabindex="-1"><a class="header-anchor" href="#programming-model"><span>Programming Model</span></a></h2>
 <ul>
 <li>Ruby model: Concurrency(동시성) at process level(프로세스 수준); 요청이 큐에 쌓여 하나의 프로세스가 처리</li>
@@ -128,6 +161,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="independent-systems" tabindex="-1"><a class="header-anchor" href="#independent-systems"><span>Independent Systems</span></a></h2>
 <ul>
 <li>&quot;모놀리식 환경에서는 전체 코드베이스를 이해하는 전문가 또는 모듈/클래스 수준의 명확한 소유자가 필요했음. 안타깝게도 코드베이스가 너무 커져서 글로벌 전문가를 두기 어려웠고, 실제로는 모듈/클래스 수준의 명확한 소유자 방식이 작동하지 않았음. 코드베이스 유지가 점점 더 어려워졌고, 팀들은 특정 기능을 이해하기 위해 '고고학 발굴'을 하거나, 발생하는 대규모 장애를 이해하기 위해 '고래 사냥 원정대'를 조직하는 데 끊임없이 시간을 보냈음.&quot;</li>
@@ -138,6 +173,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="storage" tabindex="-1"><a class="header-anchor" href="#storage"><span>Storage</span></a></h2>
 <ul>
 <li>Single-master MySQL database bottleneck(단일 마스터 MySQL 데이터베이스 병목 현상)</li>
@@ -150,6 +187,8 @@
 </li>
 <li>&quot;대략 정렬 가능한&quot; ID를 가진 distributed database(분산 데이터베이스)(Gizzard on MySQL)로 이동</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="data-driven-decisions" tabindex="-1"><a class="header-anchor" href="#data-driven-decisions"><span>Data-Driven Decisions</span></a></h2>
 <ul>
 <li>작고 독립적인 서비스 다수, 개수 증가</li>
@@ -160,13 +199,19 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="success-story-天空の城ラピュタ-castle-in-the-sky" tabindex="-1"><a class="header-anchor" href="#success-story-天空の城ラピュタ-castle-in-the-sky"><span>Success Story: 天空の城ラピュタ(Castle in the sky)</span></a></h2>
+</section>
+<section class="print-section">
 <h2 id="data-driven-decisions-1" tabindex="-1"><a class="header-anchor" href="#data-driven-decisions-1"><span>Data-Driven Decisions</span></a></h2>
 <ul>
 <li>일본에서 8월 3일 토요일, 사람들이 &lt;천공의 성 라퓨타&gt; 방영을 시청하며 트위터에 몰려들어, 초당 143,199 트윗이라는 정점을 기록함.</li>
 <li>New Tweets per second(TPS) record(초당 신규 트윗 수 기록): 143,199 TPS.</li>
 <li>Typical day(평상시): 5억 개 이상의 트윗 전송; 평균 5,700 TPS</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="key-insights-twitter-case-study" tabindex="-1"><a class="header-anchor" href="#key-insights-twitter-case-study"><span>Key Insights: Twitter Case Study</span></a></h2>
 <ul>
 <li>Architectural decisions(아키텍처 결정)은 개별 모듈뿐만 아니라 전체 시스템에 영향</li>
@@ -175,8 +220,14 @@
 <li>아키텍처 결정을 explicit(명시적)하게 만듦</li>
 <li>질문: 원래 아키텍트가 잘못된 결정을 내렸는가?</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="architecture-is-evolving" tabindex="-1"><a class="header-anchor" href="#architecture-is-evolving"><span>Architecture is Evolving</span></a></h2>
+</section>
+<section class="print-section">
 <h2 id="architecture-vs-object-level-design" tabindex="-1"><a class="header-anchor" href="#architecture-vs-object-level-design"><span>Architecture vs(Object-level) Design</span></a></h2>
+</section>
+<section class="print-section">
 <h2 id="levels-of-abstraction" tabindex="-1"><a class="header-anchor" href="#levels-of-abstraction"><span>Levels of Abstraction</span></a></h2>
 <ul>
 <li>Requirements(요구사항)
@@ -200,7 +251,11 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="architecture-vs-design" tabindex="-1"><a class="header-anchor" href="#architecture-vs-design"><span>Architecture vs Design</span></a></h2>
+</section>
+<section class="print-section">
 <h2 id="architectural-questions" tabindex="-1"><a class="header-anchor" href="#architectural-questions"><span>Architectural Questions</span></a></h2>
 <ul>
 <li>Eclipse를 plugin(플러그인)으로 어떻게 확장하는가?</li>
@@ -209,6 +264,8 @@
 <li>firewalls(방화벽)을 어디에 두어야 하는가?</li>
 <li>subsystems(하위 시스템) 간의 interface(인터페이스)는 무엇인가?</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="design-questions" tabindex="-1"><a class="header-anchor" href="#design-questions"><span>Design Questions</span></a></h2>
 <ul>
 <li>Eclipse에 메뉴 항목을 어떻게 추가하는가?</li>
@@ -219,12 +276,16 @@
 <li>objects(객체) 간의 인터페이스는 무엇인가?
 Objects</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="architecture-disentangled" tabindex="-1"><a class="header-anchor" href="#architecture-disentangled"><span>Architecture Disentangled</span></a></h2>
 <ul>
 <li>Architecture as structures and relations(구조와 관계로서의 아키텍처)(the actual system - 실제 시스템)</li>
 <li>Architecture as documentation(문서화로서의 아키텍처)(representations of the system - 시스템의 표현)</li>
 <li>Architecture as(design) process((설계) 프로세스로서의 아키텍처)(activities around the other two - 다른 두 가지를 둘러싼 활동)</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="why-document-architecture" tabindex="-1"><a class="header-anchor" href="#why-document-architecture"><span>Why Document Architecture?</span></a></h2>
 <ul>
 <li>시스템을 위한 Blueprint(청사진)
@@ -241,7 +302,11 @@ Objects</li>
 </li>
 <li>Support traceability(추적성 지원).</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="different-views" tabindex="-1"><a class="header-anchor" href="#different-views"><span>Different Views</span></a></h2>
+</section>
+<section class="print-section">
 <h2 id="common-views-in-documenting-software-architecture" tabindex="-1"><a class="header-anchor" href="#common-views-in-documenting-software-architecture"><span>Common Views in Documenting Software Architecture</span></a></h2>
 <ul>
 <li>Static View(정적 뷰)
@@ -260,6 +325,8 @@ Objects</li>
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="views-and-purposes" tabindex="-1"><a class="header-anchor" href="#views-and-purposes"><span>Views and Purposes</span></a></h2>
 <ul>
 <li>모든 뷰는 목적과 일치해야 함.</li>
@@ -273,7 +340,11 @@ Objects</li>
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="online-shopping-architecture" tabindex="-1"><a class="header-anchor" href="#online-shopping-architecture"><span>Online Shopping Architecture</span></a></h2>
+</section>
+<section class="print-section">
 <h2 id="selecting-a-notation" tabindex="-1"><a class="header-anchor" href="#selecting-a-notation"><span>Selecting a Notation</span></a></h2>
 <ul>
 <li>목적에 적합</li>
@@ -287,6 +358,8 @@ Objects</li>
 <li>Formal notations(정형 표기법) 사용 가능</li>
 <li>다이어그램을 계층적으로 그리고 뷰 단위로 분해</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="what-is-wrong-today" tabindex="-1"><a class="header-anchor" href="#what-is-wrong-today"><span>What is Wrong Today?</span></a></h2>
 <ul>
 <li>현업의 실제 문서화는 다음으로 구성됨
@@ -305,6 +378,8 @@ Objects</li>
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="what-could-the-arrow-mean" tabindex="-1"><a class="header-anchor" href="#what-could-the-arrow-mean"><span>What Could the Arrow Mean?</span></a></h2>
 <ul>
 <li>많은 가능성
@@ -320,6 +395,8 @@ Objects</li>
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="guidelines-avoiding-ambiguity" tabindex="-1"><a class="header-anchor" href="#guidelines-avoiding-ambiguity"><span>Guidelines: Avoiding Ambiguity</span></a></h2>
 <ul>
 <li>항상 legend(범례) 포함</li>
@@ -342,21 +419,40 @@ Objects</li>
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="common-software-architectures" tabindex="-1"><a class="header-anchor" href="#common-software-architectures"><span>Common Software Architectures</span></a></h2>
+</section>
+<section class="print-section">
 <h2 id="pipes-and-filters" tabindex="-1"><a class="header-anchor" href="#pipes-and-filters"><span>Pipes and Filters</span></a></h2>
 <ul>
 <li><a href="https://medium.com/@e0324913/pipe-and-filter-software-architecture-cdf47a14d789" target="_blank" rel="noopener noreferrer">https://medium.com/@e0324913/pipe-and-filter-software-architecture-cdf47a14d789</a></li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="pipes-and-filters-example-compilers" tabindex="-1"><a class="header-anchor" href="#pipes-and-filters-example-compilers"><span>Pipes and Filters Example: Compilers</span></a></h2>
+</section>
+<section class="print-section">
 <h2 id="object-oriented-organization" tabindex="-1"><a class="header-anchor" href="#object-oriented-organization"><span>Object-Oriented Organization</span></a></h2>
 <ul>
 <li>David Garlan and Mary Shaw, CMU/SEI-94-TR-021</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="event-driven-architecture" tabindex="-1"><a class="header-anchor" href="#event-driven-architecture"><span>Event-Driven Architecture</span></a></h2>
+</section>
+<section class="print-section">
 <h2 id="event-driven-architecture-example-html-dom-javascript" tabindex="-1"><a class="header-anchor" href="#event-driven-architecture-example-html-dom-javascript"><span>Event-Driven Architecture Example: HTML DOM + JavaScript</span></a></h2>
+</section>
+<section class="print-section">
 <h2 id="blackboard-architecture" tabindex="-1"><a class="header-anchor" href="#blackboard-architecture"><span>Blackboard Architecture</span></a></h2>
+</section>
+<section class="print-section">
 <h2 id="layered-architecture" tabindex="-1"><a class="header-anchor" href="#layered-architecture"><span>Layered Architecture</span></a></h2>
+</section>
+<section class="print-section">
 <h2 id="layered-architecture-example-internet-protocol-suite" tabindex="-1"><a class="header-anchor" href="#layered-architecture-example-internet-protocol-suite"><span>Layered Architecture Example: Internet Protocol Suite</span></a></h2>
+</section>
 </div></template>
 
 

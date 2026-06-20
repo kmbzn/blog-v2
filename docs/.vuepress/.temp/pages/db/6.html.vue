@@ -1,5 +1,8 @@
-<template><div><h1 id="_6-e-r-model" tabindex="-1"><a class="header-anchor" href="#_6-e-r-model"><span>6. E-R Model</span></a></h1>
+<template><div><section class="print-section">
+<h1 id="_6-e-r-model" tabindex="-1"><a class="header-anchor" href="#_6-e-r-model"><span>6. E-R Model</span></a></h1>
 <DateMeta />
+</section>
+<section class="print-section">
 <h2 id="overview-of-the-design-process" tabindex="-1"><a class="header-anchor" href="#overview-of-the-design-process"><span>Overview of the Design Process</span></a></h2>
 <ul>
 <li>Design Phases(설계 단계)
@@ -31,6 +34,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="design-approaches" tabindex="-1"><a class="header-anchor" href="#design-approaches"><span>Design Approaches</span></a></h2>
 <ul>
 <li>Entity-Relationship Model(개체-관계 모델) (본 장에서 다룸)
@@ -51,7 +56,11 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h1 id="outline-of-the-entity-relationship-model" tabindex="-1"><a class="header-anchor" href="#outline-of-the-entity-relationship-model"><span>Outline of the Entity-Relationship Model</span></a></h1>
+</section>
+<section class="print-section">
 <h2 id="entity-sets" tabindex="-1"><a class="header-anchor" href="#entity-sets"><span>Entity Sets</span></a></h2>
 <ul>
 <li>개체(entity)는 존재하며 다른 객체와 구별되는 객체
@@ -77,6 +86,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="entity-sets-instructor-and-student" tabindex="-1"><a class="header-anchor" href="#entity-sets-instructor-and-student"><span>Entity Sets: instructor and student</span></a></h2>
 <ul>
 <li>ER 다이어그램에서 개체 집합은 다음과 같이 그래픽으로 표현 가능:
@@ -87,6 +98,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="relationship-sets" tabindex="-1"><a class="header-anchor" href="#relationship-sets"><span>Relationship Sets</span></a></h2>
 <ul>
 <li>관계는 여러 개체 간의 연관성
@@ -104,6 +117,8 @@
 <li>도식적으로, 관련된 개체 사이에 선을 그림</li>
 <li>ER 다이어그램에서 다이아몬드는 관계 집합을 나타냄</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="relationship-sets-with-attributes" tabindex="-1"><a class="header-anchor" href="#relationship-sets-with-attributes"><span>Relationship Sets with Attributes</span></a></h2>
 <ul>
 <li>속성은 관계 집합과도 연관될 수 있음</li>
@@ -131,6 +146,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="complex-attributes" tabindex="-1"><a class="header-anchor" href="#complex-attributes"><span>Complex Attributes</span></a></h2>
 <ul>
 <li>속성 유형:
@@ -152,11 +169,15 @@
 </li>
 <li>복합 속성은 속성을 하위 부분(다른 속성)으로 나눌 수 있게 함</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="representing-complex-attributes-in-er-diagram" tabindex="-1"><a class="header-anchor" href="#representing-complex-attributes-in-er-diagram"><span>Representing Complex Attributes in ER Diagram</span></a></h2>
 <ul>
 <li>다중값 속성(Multivalued attribute)</li>
 <li>파생 속성(Derived attribute)</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="mapping-cardinality-constraints" tabindex="-1"><a class="header-anchor" href="#mapping-cardinality-constraints"><span>Mapping Cardinality Constraints</span></a></h2>
 <ul>
 <li>다른 개체가 관계 집합을 통해 연관될 수 있는 개체의 수를 표현</li>
@@ -171,6 +192,8 @@
 </li>
 <li>참고: A와 B의 일부 요소는 다른 집합의 어떤 요소에도 매핑되지 않을 수 있음</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="representing-cardinality-constraints-in-er-diagram" tabindex="-1"><a class="header-anchor" href="#representing-cardinality-constraints-in-er-diagram"><span>Representing Cardinality Constraints in ER Diagram</span></a></h2>
 <ul>
 <li>카디널리티 제약 조건은 관계 집합과 개체 집합 사이에 방향성 있는 선(→, &quot;일&quot;) 또는 방향성 없는 선(—, &quot;다&quot;)을 그려 표현</li>
@@ -199,6 +222,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="mapping-cardinalities-affect-er-design" tabindex="-1"><a class="header-anchor" href="#mapping-cardinalities-affect-er-design"><span>Mapping Cardinalities affect ER Design</span></a></h2>
 <ul>
 <li>관계 카디널리티는 관계 속성의 배치에 영향을 줄 수 있음:
@@ -208,6 +233,8 @@
 </li>
 <li><code v-pre>advisor</code> 관계가 일대다 카디널리티를 가진다고 가정</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="total-and-partial-participation" tabindex="-1"><a class="header-anchor" href="#total-and-partial-participation"><span>Total and Partial Participation</span></a></h2>
 <ul>
 <li>전체 참여(Total participation) (이중선으로 표시): 개체 집합의 모든 개체는 관계 집합에서 최소 하나의 관계에 참여
@@ -223,6 +250,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="notation-for-expressing-more-complex-constraints" tabindex="-1"><a class="header-anchor" href="#notation-for-expressing-more-complex-constraints"><span>Notation for Expressing More Complex Constraints</span></a></h2>
 <ul>
 <li>선에는 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>l</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi>h</mi></mrow><annotation encoding="application/x-tex">l..h</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mord">..</span><span class="mord mathnormal">h</span></span></span></span> 형태로 최소 및 최대 카디널리티가 연관될 수 있으며, 여기서 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>l</mi></mrow><annotation encoding="application/x-tex">l</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span></span></span></span>은 최소, <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi></mrow><annotation encoding="application/x-tex">h</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal">h</span></span></span></span>는 최대 카디널리티</li>
@@ -236,6 +265,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="cardinality-constraints-on-ternary-relationship" tabindex="-1"><a class="header-anchor" href="#cardinality-constraints-on-ternary-relationship"><span>Cardinality Constraints on Ternary Relationship</span></a></h2>
 <ul>
 <li>카디널리티 제약 조건을 나타내기 위해 3진(또는 그 이상의 차수) 관계에서 나오는 화살표는 최대 하나만 허용</li>
@@ -252,6 +283,8 @@
 </li>
 <li>혼동을 피하기 위해 하나 이상의 화살표는 금지</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="primary-key" tabindex="-1"><a class="header-anchor" href="#primary-key"><span>Primary Key</span></a></h2>
 <ul>
 <li>기본 키는 주어진 개체 집합 내의 개체와 주어진 관계 집합 내의 관계를 구별하는 방법을 제공</li>
@@ -263,6 +296,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="primary-key-for-entity-sets" tabindex="-1"><a class="header-anchor" href="#primary-key-for-entity-sets"><span>Primary Key for Entity Sets</span></a></h2>
 <ul>
 <li>정의에 따라, 개별 개체는 구별됨</li>
@@ -271,6 +306,8 @@
 <li>개체 집합 내 어떤 두 개체도 모든 속성에 대해 정확히 동일한 값을 가질 수 없음</li>
 <li>개체 집합의 키는 개체 집합 내의 개체를 서로 구별하기에 충분한 속성 집합</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="primary-key-for-relationship-sets" tabindex="-1"><a class="header-anchor" href="#primary-key-for-relationship-sets"><span>Primary Key for Relationship Sets</span></a></h2>
 <ul>
 <li>관계 집합의 다양한 관계를 구별하기 위해, 관계 집합에 있는 개체의 개별 기본 키 사용</li>
@@ -292,6 +329,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="choice-of-primary-key-for-binary-relationship" tabindex="-1"><a class="header-anchor" href="#choice-of-primary-key-for-binary-relationship"><span>Choice of Primary key for Binary Relationship</span></a></h2>
 <ul>
 <li>관계 집합의 기본 키 선택은 관계 집합의 매핑 카디널리티에 따라 달라짐 (이진 관계 집합 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi></mrow><annotation encoding="application/x-tex">R</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.00773em;">R</span></span></span></span> 가정)</li>
@@ -312,6 +351,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="weak-entity-sets" tabindex="-1"><a class="header-anchor" href="#weak-entity-sets"><span>Weak Entity Sets</span></a></h2>
 <ul>
 <li><code v-pre>course_id</code>, <code v-pre>semester</code>, <code v-pre>year</code>, <code v-pre>sec_id</code>로 고유하게 식별되는 <code v-pre>section</code> 개체를 고려</li>
@@ -336,6 +377,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="weak-entity-sets-cont" tabindex="-1"><a class="header-anchor" href="#weak-entity-sets-cont"><span>Weak Entity Sets (Cont.)</span></a></h2>
 <ul>
 <li>모든 약한 개체는 식별 개체와 연관되어야 함; 즉, 약한 개체 집합은 식별 개체 집합에 존재 종속적(existence dependent)임</li>
@@ -343,6 +386,8 @@
 <li>식별 개체 집합은 그것이 식별하는 약한 개체 집합을 소유(own)한다고 함</li>
 <li>약한 개체 집합을 식별 개체 집합과 연관시키는 관계를 식별 관계(identifying relationship)라고 함</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="expressing-weak-entity-sets" tabindex="-1"><a class="header-anchor" href="#expressing-weak-entity-sets"><span>Expressing Weak Entity Sets</span></a></h2>
 <ul>
 <li>E-R 다이어그램에서, 약한 개체 집합은 이중 사각형으로 표시</li>
@@ -350,6 +395,8 @@
 <li>약한 개체 집합을 식별 강한 개체 집합에 연결하는 관계 집합은 이중 다이아몬드로 표시</li>
 <li><code v-pre>section</code>의 기본 키 = (<code v-pre>course_id</code>, <code v-pre>sec_id</code>, <code v-pre>semester</code>, <code v-pre>year</code>)</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="redundant-attributes" tabindex="-1"><a class="header-anchor" href="#redundant-attributes"><span>Redundant Attributes</span></a></h2>
 <ul>
 <li>다음과 같은 개체 집합이 있다고 가정:
@@ -363,8 +410,14 @@
 <li><code v-pre>dept_name</code>을 제거한 후에도 <code v-pre>student</code> 개체 집합은 여전히 강한 개체 집합으로 남음 (<code v-pre>ID</code>를 기본 키로 가짐)</li>
 <li>그러나, 테이블(관계형 모델)로 다시 변환할 때, 어떤 경우에는 속성이 다시 도입됨</li>
 </ul>
+</section>
+<section class="print-section">
 <h1 id="e-r-diagram-for-a-university-enterprise" tabindex="-1"><a class="header-anchor" href="#e-r-diagram-for-a-university-enterprise"><span>E-R Diagram for a University Enterprise</span></a></h1>
+</section>
+<section class="print-section">
 <h2 id="reducing-e-r-diagrams-to-relational-schemas" tabindex="-1"><a class="header-anchor" href="#reducing-e-r-diagrams-to-relational-schemas"><span>Reducing E-R Diagrams to Relational Schemas</span></a></h2>
+</section>
+<section class="print-section">
 <h2 id="reduction-to-relation-schemas" tabindex="-1"><a class="header-anchor" href="#reduction-to-relation-schemas"><span>Reduction to Relation Schemas</span></a></h2>
 <ul>
 <li>E-R 다이어그램을 따르는 데이터베이스는 관계 스키마(테이블)의 집합으로 표현될 수 있음</li>
@@ -380,6 +433,8 @@
 <li>강한 개체 집합은 동일한 속성을 가진 스키마로 축소됨: <code v-pre>student</code>(<code v-pre>ID</code>, <code v-pre>name</code>, <code v-pre>tot_cred</code>)</li>
 <li>약한 개체 집합은 식별 강한 개체 집합의 기본 키를 위한 열을 포함하는 테이블이 됨: <code v-pre>section</code>(<code v-pre>course_id</code>, <code v-pre>sec_id</code>, <code v-pre>sem</code>, <code v-pre>year</code>)</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="representation-of-entity-sets-with-composite-attributes" tabindex="-1"><a class="header-anchor" href="#representation-of-entity-sets-with-composite-attributes"><span>Representation of Entity Sets with Composite Attributes</span></a></h2>
 <ul>
 <li>복합 속성은 각 구성 요소 속성에 대해 별도의 속성을 생성하여 평탄화(flattened out)됨</li>
@@ -394,6 +449,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="representation-of-entity-sets-with-multivalued-attributes" tabindex="-1"><a class="header-anchor" href="#representation-of-entity-sets-with-multivalued-attributes"><span>Representation of Entity Sets with Multivalued Attributes</span></a></h2>
 <ul>
 <li>개체 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi></mrow><annotation encoding="application/x-tex">E</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.05764em;">E</span></span></span></span>의 다중값 속성 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi></mrow><annotation encoding="application/x-tex">M</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">M</span></span></span></span>은 별도의 스키마 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi><mi>M</mi></mrow><annotation encoding="application/x-tex">EM</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">EM</span></span></span></span>으로 표현됨</li>
@@ -401,6 +458,8 @@
 <li>예: <code v-pre>instructor</code>의 다중값 속성 <code v-pre>phone_number</code>는 <code v-pre>inst_phone</code>(<code v-pre>ID</code>, <code v-pre>phone_number</code>) 스키마로 표현됨</li>
 <li>다중값 속성의 각 값은 스키마 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi><mi>M</mi></mrow><annotation encoding="application/x-tex">EM</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">EM</span></span></span></span>에 대한 관계의 별도 튜플에 매핑됨</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="representing-relationship-sets" tabindex="-1"><a class="header-anchor" href="#representing-relationship-sets"><span>Representing Relationship Sets</span></a></h2>
 <ul>
 <li>기본 규칙 (다대다 관계 집합용)
@@ -410,6 +469,8 @@
 </li>
 <li>예: <code v-pre>advisor</code> 관계 집합의 스키마: <code v-pre>advisor</code> = (<code v-pre>s_ID</code>, <code v-pre>i_ID</code>)</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="combination-of-schemas-for-removing-redundancy" tabindex="-1"><a class="header-anchor" href="#combination-of-schemas-for-removing-redundancy"><span>Combination of Schemas for Removing Redundancy</span></a></h2>
 <ul>
 <li>&quot;다(many)&quot; 쪽에서 전체 참여인 다대일 및 일대다 관계 집합
@@ -433,7 +494,11 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h1 id="extended-e-r-features" tabindex="-1"><a class="header-anchor" href="#extended-e-r-features"><span>Extended E-R Features</span></a></h1>
+</section>
+<section class="print-section">
 <h2 id="specialization" tabindex="-1"><a class="header-anchor" href="#specialization"><span>Specialization</span></a></h2>
 <ul>
 <li>개체 집합은 집합 내 다른 개체와 어떤 면에서 구별되는 개체의 하위 그룹을 포함할 수 있음</li>
@@ -446,6 +511,8 @@
 <li>이 관계를 ISA 관계라고 함 (예: <code v-pre>student</code> &quot;is a&quot; <code v-pre>person</code>)</li>
 <li>속성 상속(Attribute inheritance): 하위 수준 개체 집합은 연결된 상위 수준 개체 집합의 모든 속성과 관계 참여를 상속함</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="specialization-example" tabindex="-1"><a class="header-anchor" href="#specialization-example"><span>Specialization Example</span></a></h2>
 <ul>
 <li>중첩 특수화(Overlapping specialization)
@@ -463,6 +530,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="representing-specialization-via-schemas" tabindex="-1"><a class="header-anchor" href="#representing-specialization-via-schemas"><span>Representing Specialization via Schemas</span></a></h2>
 <ul>
 <li>방법 1:
@@ -479,6 +548,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="generalization" tabindex="-1"><a class="header-anchor" href="#generalization"><span>Generalization</span></a></h2>
 <ul>
 <li>동일한 특징을 공유하는 여러 개체 집합을 상위 수준 개체 집합으로 결합하는 하향식(bottom-up) 설계 프로세스</li>
@@ -487,6 +558,8 @@
 <li>E-R 다이어그램에서 동일한 방식으로 표현됨</li>
 <li>특수화와 일반화 용어는 상호 교환적으로 사용됨</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="completeness-constraint" tabindex="-1"><a class="header-anchor" href="#completeness-constraint"><span>Completeness constraint</span></a></h2>
 <ul>
 <li>완전성 제약 조건(Completeness constraint): 상위 수준 개체 집합의 개체가 일반화 내의 하위 수준 개체 집합 중 적어도 하나에 속해야 하는지 여부를 명시</li>
@@ -494,6 +567,8 @@
 <li><code v-pre>partial</code> (기본값): 개체는 하위 수준 개체 집합 중 하나에 속할 필요가 없음</li>
 <li>ER 다이어그램에 &quot;total&quot; 키워드를 추가하고 해당 키워드에서 적용되는 속이 빈 화살표 머리(비연관 일반화의 경우) 또는 화살표 머리 집합(중첩 일반화의 경우)으로 점선을 그려 전체 일반화를 명시 가능</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="aggregation" tabindex="-1"><a class="header-anchor" href="#aggregation"><span>Aggregation</span></a></h2>
 <ul>
 <li>앞서 본 3진 관계 <code v-pre>proj_guide</code>를 고려</li>
@@ -515,6 +590,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="aggregation-reduction-to-relational-schemas" tabindex="-1"><a class="header-anchor" href="#aggregation-reduction-to-relational-schemas"><span>Aggregation: Reduction to Relational Schemas</span></a></h2>
 <ul>
 <li>집합화를 나타내기 위해 다음을 포함하는 스키마 생성
@@ -531,12 +608,18 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h1 id="design-issues" tabindex="-1"><a class="header-anchor" href="#design-issues"><span>Design Issues</span></a></h1>
+</section>
+<section class="print-section">
 <h2 id="common-mistakes-in-e-r-diagrams" tabindex="-1"><a class="header-anchor" href="#common-mistakes-in-e-r-diagrams"><span>Common Mistakes in E-R Diagrams</span></a></h2>
 <ul>
 <li>(a) 관계를 사용하는 대신, 개체 집합(<code v-pre>department</code>)의 기본 키(<code v-pre>dept_name</code>)를 다른 개체 집합(<code v-pre>student</code>)의 속성으로 사용</li>
 <li>(b) 다중값 속성이 필요한 상황에서 단일값 속성(<code v-pre>assignment</code>, <code v-pre>marks</code>)을 가진 관계 사용 (참고: 한 과목 제공에서 여러 과제가 있을 수 있음)</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="e-r-design-decisions" tabindex="-1"><a class="header-anchor" href="#e-r-design-decisions"><span>E-R Design Decisions</span></a></h2>
 <ul>
 <li>객체를 나타내기 위해 속성 또는 개체 집합 사용 (예: <code v-pre>phone_numbers</code>)</li>
@@ -546,6 +629,7 @@
 <li>특수화/일반화 사용: 설계의 모듈성(modularity)에 기여</li>
 <li>집합화 사용: 집합 개체 집합을 내부 구조의 세부 사항에 대한 걱정 없이 단일 단위로 취급 가능</li>
 </ul>
+</section>
 </div></template>
 
 

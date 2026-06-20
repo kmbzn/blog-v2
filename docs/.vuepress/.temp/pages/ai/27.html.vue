@@ -1,9 +1,16 @@
-<template><div><h1 id="_27-transformers" tabindex="-1"><a class="header-anchor" href="#_27-transformers"><span>27. Transformers</span></a></h1>
+<template><div><section class="print-section">
+<h1 id="_27-transformers" tabindex="-1"><a class="header-anchor" href="#_27-transformers"><span>27. Transformers</span></a></h1>
 <DateMeta />
+</section>
+<section class="print-section">
 <h1 id="self-attention" tabindex="-1"><a class="header-anchor" href="#self-attention"><span>Self-Attention</span></a></h1>
 <p>Modeling sequence without recurrence</p>
+</section>
+<section class="print-section">
 <h2 id="review-sequence-to-sequence-with-attention" tabindex="-1"><a class="header-anchor" href="#review-sequence-to-sequence-with-attention"><span>Review: Sequence-to-Sequence with Attention</span></a></h2>
 <p><img src="@source/ai/image-104.png" alt="alt text"></p>
+</section>
+<section class="print-section">
 <h2 id="if-not-recurrence-then-what-how-about-attention" tabindex="-1"><a class="header-anchor" href="#if-not-recurrence-then-what-how-about-attention"><span>If Not Recurrence, Then What? How About Attention?</span></a></h2>
 <ul>
 <li>Attention은 각 단어의 표현을 Query로 취급하여 Value 집합의 정보에 접근 및 통합함.
@@ -15,6 +22,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="self-attention-keys-queries-values-from-the-same-sequence" tabindex="-1"><a class="header-anchor" href="#self-attention-keys-queries-values-from-the-same-sequence"><span>Self-Attention: Keys, Queries, Values from the Same Sequence</span></a></h2>
 <ul>
 <li>단어 sequence <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>w</mi><mrow><mn>1</mn><mo>:</mo><mi>n</mi></mrow></msub></mrow><annotation encoding="application/x-tex">w_{1:n}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5806em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.02691em;">w</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.0269em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span><span class="mrel mtight">:</span><span class="mord mathnormal mtight">n</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> (어휘 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>V</mi></mrow><annotation encoding="application/x-tex">V</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.22222em;">V</span></span></span></span>) 가정
@@ -39,6 +48,8 @@
 </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5806em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">o</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:2.4638em;vertical-align:-1.4138em;"></span><span class="mop op-limits"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.05em;"><span style="top:-1.8723em;margin-left:0em;"><span class="pstrut" style="height:3.05em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.05724em;">j</span></span></span><span style="top:-3.05em;"><span class="pstrut" style="height:3.05em;"></span><span><span class="mop op-symbol large-op">∑</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.4138em;"><span></span></span></span></span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0037em;">α</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.0037em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.05724em;">ij</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">v</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.05724em;">j</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span></span></span></span></span></p>
 </li>
 </ol>
+</section>
+<section class="print-section">
 <h2 id="self-attention-as-a-building-block" tabindex="-1"><a class="header-anchor" href="#self-attention-as-a-building-block"><span>Self-Attention as a Building Block</span></a></h2>
 <ul>
 <li>다이어그램과 같이 LSTM 레이어를 쌓는 것처럼 Self-Attention 블록을 쌓음.</li>
@@ -53,8 +64,12 @@
 <p>Self-Attention은 입력의 순서에 대해서 알지 못함.
 <img src="@source/ai/image-106.png" alt="alt text"></p>
 </blockquote>
+</section>
+<section class="print-section">
 <h2 id="barriers-solutions-for-self-attention-as-a-building-block" tabindex="-1"><a class="header-anchor" href="#barriers-solutions-for-self-attention-as-a-building-block"><span>Barriers &amp; Solutions for Self-Attention as A Building Block</span></a></h2>
 <p><img src="@source/ai/image-107.png" alt="alt text"></p>
+</section>
+<section class="print-section">
 <h2 id="fixing-the-first-self-attention-problem-sequence-order" tabindex="-1"><a class="header-anchor" href="#fixing-the-first-self-attention-problem-sequence-order"><span>Fixing the First Self-Attention Problem: Sequence Order</span></a></h2>
 <ul>
 <li>Self-Attention에는 순서 정보가 없으므로 Key, Query, Value에 문장의 순서를 인코딩해야 함.</li>
@@ -70,6 +85,8 @@
 </ul>
 <p v-pre class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mover accent="true"><mi>x</mi><mo>~</mo></mover><mi>i</mi></msub><mo>=</mo><msub><mi>x</mi><mi>i</mi></msub><mo>+</mo><msub><mi>p</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">\tilde{x}_i = x_i + p_i
 </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8179em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.6679em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathnormal">x</span></span><span style="top:-3.35em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.2222em;"><span class="mord">~</span></span></span></span></span></span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.7333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord"><span class="mord mathnormal">p</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span></p>
+</section>
+<section class="print-section">
 <h2 id="position-representation-vectors-through-sinusoids" tabindex="-1"><a class="header-anchor" href="#position-representation-vectors-through-sinusoids"><span>Position Representation Vectors Through Sinusoids</span></a></h2>
 <ul>
 <li><strong>Sinusoidal position representations</strong>(사인파 위치 표현)
@@ -92,6 +109,8 @@
 </li>
 </ul>
 <p><img src="@source/ai/image-108.png" alt="alt text"></p>
+</section>
+<section class="print-section">
 <h2 id="position-representation-vectors-learned-from-scratch" tabindex="-1"><a class="header-anchor" href="#position-representation-vectors-learned-from-scratch"><span>Position Representation Vectors Learned from Scratch</span></a></h2>
 <ul>
 <li><strong>Learned absolute position representations</strong>(학습된 절대 위치 표현)
@@ -115,6 +134,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="adding-non-linearities-in-self-attention" tabindex="-1"><a class="header-anchor" href="#adding-non-linearities-in-self-attention"><span>Adding Non-Linearities in Self-Attention</span></a></h2>
 <ul>
 <li>Self-Attention에는 elementwise(요소별) 비선형성이 존재하지 않음.
@@ -132,6 +153,8 @@
 </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5806em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">m</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">M</span><span class="mord mathnormal">L</span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="mopen">(</span><span class="mord"><span class="mord text"><span class="mord text"><span class="mord">output</span></span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2175em;"><span style="top:-2.4559em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2441em;"><span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span></span></p>
 <p v-pre class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mo>=</mo><msub><mi>W</mi><mn>2</mn></msub><mo>⋅</mo><mtext>ReLU</mtext><mo stretchy="false">(</mo><msub><mi>W</mi><mn>1</mn></msub><mo>⋅</mo><msub><mtext>output</mtext><mi>i</mi></msub><mo>+</mo><msub><mi>b</mi><mn>1</mn></msub><mo stretchy="false">)</mo><mo>+</mo><msub><mi>b</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">= W_2 \cdot \text{ReLU}(W_1 \cdot \text{\text{output}}_i + b_1) + b_2
 </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.3669em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">W</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.1389em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord text"><span class="mord">ReLU</span></span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">W</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.1389em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.8592em;vertical-align:-0.2441em;"></span><span class="mord"><span class="mord text"><span class="mord text"><span class="mord">output</span></span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2175em;"><span style="top:-2.4559em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2441em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathnormal">b</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.8444em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">b</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span></p>
+</section>
+<section class="print-section">
 <h2 id="masking-the-future-in-self-attention" tabindex="-1"><a class="header-anchor" href="#masking-the-future-in-self-attention"><span>Masking the Future in Self-Attention</span></a></h2>
 <ul>
 <li>Decoder에서 Self-Attention을 사용하려면 미래를 볼 수 없도록 해야 함.
@@ -143,6 +166,8 @@
 </ul>
 <p v-pre class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi>e</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub><mo>=</mo><mrow><mo fence="true">{</mo><mtable rowspacing="0.36em" columnalign="left left" columnspacing="1em"><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><msubsup><mi>q</mi><mi>i</mi><mi>T</mi></msubsup><msub><mi>k</mi><mi>j</mi></msub><mo separator="true">,</mo></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mi>j</mi><mo>≤</mo><mi>i</mi></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mo>−</mo><mi mathvariant="normal">∞</mi><mo separator="true">,</mo></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mi>j</mi><mo>&gt;</mo><mi>i</mi></mrow></mstyle></mtd></mtr></mtable></mrow></mrow><annotation encoding="application/x-tex">e_{ij} = \begin{cases} q_i^T k_j, &amp; j \le i \\ -\infty, &amp; j &gt; i \end{cases}
 </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7167em;vertical-align:-0.2861em;"></span><span class="mord"><span class="mord mathnormal">e</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.05724em;">ij</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:3em;vertical-align:-1.25em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;"><span class="delimsizing size4">{</span></span><span class="mord"><span class="mtable"><span class="col-align-l"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.69em;"><span style="top:-3.69em;"><span class="pstrut" style="height:3.008em;"></span><span class="mord"><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">q</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8413em;"><span style="top:-2.4413em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.13889em;">T</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2587em;"><span></span></span></span></span></span></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03148em;">k</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.0315em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.05724em;">j</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span><span class="mpunct">,</span></span></span><span style="top:-2.25em;"><span class="pstrut" style="height:3.008em;"></span><span class="mord"><span class="mord">−</span><span class="mord">∞</span><span class="mpunct">,</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.19em;"><span></span></span></span></span></span><span class="arraycolsep" style="width:1em;"></span><span class="col-align-l"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.69em;"><span style="top:-3.69em;"><span class="pstrut" style="height:3.008em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.05724em;">j</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mord mathnormal">i</span></span></span><span style="top:-2.25em;"><span class="pstrut" style="height:3.008em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.05724em;">j</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">&gt;</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mord mathnormal">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.19em;"><span></span></span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span></p>
+</section>
+<section class="print-section">
 <h2 id="necessities-for-a-self-attention-building-block" tabindex="-1"><a class="header-anchor" href="#necessities-for-a-self-attention-building-block"><span>Necessities for a Self-Attention Building Block</span></a></h2>
 <ul>
 <li><strong>Self-Attention</strong>
@@ -168,8 +193,12 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h1 id="transformers" tabindex="-1"><a class="header-anchor" href="#transformers"><span>Transformers</span></a></h1>
 <p>Self-Attention에 기반한 Neural Networks</p>
+</section>
+<section class="print-section">
 <h2 id="transformer" tabindex="-1"><a class="header-anchor" href="#transformer"><span>Transformer</span></a></h2>
 <ul>
 <li>오직 Attention 메커니즘으로만 설계된 신경망 아키텍처 (CNN이나 RNN 없이).
@@ -184,6 +213,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="the-transformer-decoder" tabindex="-1"><a class="header-anchor" href="#the-transformer-decoder"><span>The Transformer Decoder</span></a></h2>
 <ul>
 <li><strong>Transformer Decoder</strong>는 <strong>Language Model</strong>과 같은 시스템을 구축하는 방식
@@ -195,14 +226,20 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="recall-the-self-attention-hypothetical-example" tabindex="-1"><a class="header-anchor" href="#recall-the-self-attention-hypothetical-example"><span>Recall the Self-Attention Hypothetical Example</span></a></h2>
 <p><img src="@source/ai/image-95.png" alt=""></p>
+</section>
+<section class="print-section">
 <h2 id="hypothetical-example-of-multi-head-attention" tabindex="-1"><a class="header-anchor" href="#hypothetical-example-of-multi-head-attention"><span>Hypothetical Example of Multi-Head Attention</span></a></h2>
 <p><img src="@source/ai/image-113.png" alt=""></p>
 <ul>
 <li>Attention head 1은 entity(개체)들에 집중</li>
 <li>Attention head 2는 구문적(문법적)으로 관련된 단어들에 집중</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="sequence-stacked-form-of-attention" tabindex="-1"><a class="header-anchor" href="#sequence-stacked-form-of-attention"><span>Sequence-Stacked Form of Attention</span></a></h2>
 <ul>
 <li>행렬을 통한 Key-Query-Value Attention 계산 방식
@@ -219,6 +256,8 @@
 <p v-pre class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mtext>output</mtext><mo>=</mo><mtext>softmax</mtext><mo stretchy="false">(</mo><mi>X</mi><mi>Q</mi><mo stretchy="false">(</mo><mi>X</mi><mi>K</mi><msup><mo stretchy="false">)</mo><mi>T</mi></msup><mo stretchy="false">)</mo><mi>X</mi><mi>V</mi><mo>∈</mo><msup><mi mathvariant="double-struck">R</mi><mrow><mi>n</mi><mo>×</mo><mi>d</mi></mrow></msup></mrow><annotation encoding="application/x-tex">\text{output} = \text{softmax}(XQ(XK)^T)XV \in \mathbb{R}^{n \times d}
 </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8095em;vertical-align:-0.1944em;"></span><span class="mord text"><span class="mord">output</span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1.1413em;vertical-align:-0.25em;"></span><span class="mord text"><span class="mord">softmax</span></span><span class="mopen">(</span><span class="mord mathnormal">XQ</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.07847em;">X</span><span class="mord mathnormal" style="margin-right:0.07153em;">K</span><span class="mclose"><span class="mclose">)</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8913em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.13889em;">T</span></span></span></span></span></span></span></span><span class="mclose">)</span><span class="mord mathnormal" style="margin-right:0.07847em;">X</span><span class="mord mathnormal" style="margin-right:0.22222em;">V</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">∈</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8991em;"></span><span class="mord"><span class="mord mathbb">R</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8991em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">n</span><span class="mbin mtight">×</span><span class="mord mathnormal mtight">d</span></span></span></span></span></span></span></span></span></span></span></span></span></p>
 <p><img src="@source/ai/image-97.png" alt=""></p>
+</section>
+<section class="print-section">
 <h2 id="multi-headed-attention" tabindex="-1"><a class="header-anchor" href="#multi-headed-attention"><span>Multi-Headed Attention</span></a></h2>
 <ul>
 <li>문장의 여러 위치를 동시에 보고 싶다면?
@@ -245,6 +284,8 @@
 <li>여기서 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Y</mi><mo>∈</mo><msup><mi mathvariant="double-struck">R</mi><mrow><mi>d</mi><mo>×</mo><mi>d</mi></mrow></msup></mrow><annotation encoding="application/x-tex">Y \in \mathbb{R}^{d \times d}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7224em;vertical-align:-0.0391em;"></span><span class="mord mathnormal" style="margin-right:0.22222em;">Y</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">∈</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8491em;"></span><span class="mord"><span class="mord mathbb">R</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8491em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">d</span><span class="mbin mtight">×</span><span class="mord mathnormal mtight">d</span></span></span></span></span></span></span></span></span></span></span></span>.</li>
 <li>각 head는 서로 다른 것을 보고, Value 벡터를 다르게 구성</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="multi-head-self-attention-is-computationally-efficient" tabindex="-1"><a class="header-anchor" href="#multi-head-self-attention-is-computationally-efficient"><span>Multi-Head Self-Attention is Computationally Efficient</span></a></h2>
 <ul>
 <li><span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi></mrow><annotation encoding="application/x-tex">h</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal">h</span></span></span></span>개의 Attention head를 계산하더라도 비용이 크게 증가하지 않음.
@@ -259,6 +300,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="scaled-dot-product-vaswani-et-al-2017" tabindex="-1"><a class="header-anchor" href="#scaled-dot-product-vaswani-et-al-2017"><span>Scaled Dot Product [Vaswani et al., 2017]</span></a></h2>
 <ul>
 <li>&quot;Scaled Dot Product&quot; Attention은 학습을 도움.
@@ -296,6 +339,8 @@ c-22.3,46.7,-33.8,70.3,-34.5,71c-4.7,4.7,-12.3,7,-23,7s-12,-1,-12,-1
 s-109,-253,-109,-253c-72.7,-168,-109.3,-252,-110,-252c-10.7,8,-22,16.7,-34,26
 c-22,17.3,-33.3,26,-34,26s-26,-26,-26,-26s76,-59,76,-59s76,-60,76,-60z
 M1001 80h400000v40h-400000z"/></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.305em;"><span></span></span></span></span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07847em;">X</span><span class="mord"><span class="mord mathnormal">Q</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.01968em;">l</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07153em;">K</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8413em;"><span style="top:-2.4169em;margin-left:-0.0715em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.01968em;">l</span></span></span><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.13889em;">T</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2831em;"><span></span></span></span></span></span></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07847em;">X</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8413em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.13889em;">T</span></span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.13em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord mathnormal" style="margin-right:0.07847em;">X</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.22222em;">V</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361em;"><span style="top:-2.55em;margin-left:-0.2222em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.01968em;">l</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span></p>
+</section>
+<section class="print-section">
 <h2 id="the-transformer-decoder-1" tabindex="-1"><a class="header-anchor" href="#the-transformer-decoder-1"><span>The Transformer Decoder</span></a></h2>
 <ul>
 <li>두 가지 최적화 trick
@@ -306,6 +351,8 @@ M1001 80h400000v40h-400000z"/></svg></span></span></span><span class="vlist-s">�
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="residual-connections-he-et-al-2016" tabindex="-1"><a class="header-anchor" href="#residual-connections-he-et-al-2016"><span>Residual Connections [He et al., 2016]</span></a></h2>
 <ul>
 <li>Residual connections는 모델 학습을 돕는 trick
@@ -319,6 +366,8 @@ M1001 80h400000v40h-400000z"/></svg></span></span></span><span class="vlist-s">�
 </ul>
 <p><img src="@source/ai/image-99.png" alt=""></p>
 <p><img src="@source/ai/image-100.png" alt=""></p>
+</section>
+<section class="print-section">
 <h2 id="layer-normalization-ba-et-al-2016" tabindex="-1"><a class="header-anchor" href="#layer-normalization-ba-et-al-2016"><span>Layer Normalization [Ba et al., 2016]</span></a></h2>
 <ul>
 <li>Layer normalization은 모델 학습 속도를 높이는 trick
@@ -348,6 +397,8 @@ M1001 80h400000v40h-400000z"/></svg></span></span></span><span class="vlist-s">�
 </span></p>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="the-transformer-decoder-2" tabindex="-1"><a class="header-anchor" href="#the-transformer-decoder-2"><span>The Transformer Decoder</span></a></h2>
 <ul>
 <li>Transformer Decoder Block들의 Stack 구조인 Transformer Decoder</li>
@@ -361,6 +412,8 @@ M1001 80h400000v40h-400000z"/></svg></span></span></span><span class="vlist-s">�
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="the-transformer-encoder" tabindex="-1"><a class="header-anchor" href="#the-transformer-encoder"><span>The Transformer Encoder</span></a></h2>
 <ul>
 <li>Transformer Decoder는 Language Model과 같이 Unidirectional(단방향) 문맥으로 제한됨.</li>
@@ -371,6 +424,8 @@ M1001 80h400000v40h-400000z"/></svg></span></span></span><span class="vlist-s">�
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="the-transformer-encoder-decoder" tabindex="-1"><a class="header-anchor" href="#the-transformer-encoder-decoder"><span>The Transformer Encoder-Decoder</span></a></h2>
 <ul>
 <li>Machine Translation에서 소스 문장을 양방향 모델로 처리하고 타겟을 단방향 모델로 생성했던 것을 상기</li>
@@ -381,6 +436,8 @@ M1001 80h400000v40h-400000z"/></svg></span></span></span><span class="vlist-s">�
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="cross-attention" tabindex="-1"><a class="header-anchor" href="#cross-attention"><span>Cross-Attention</span></a></h2>
 <ul>
 <li>Self-Attention은 Key, Query, Value가 동일한 소스에서 옴.</li>
@@ -398,6 +455,8 @@ M1001 80h400000v40h-400000z"/></svg></span></span></span><span class="vlist-s">�
 </li>
 </ul>
 <p><img src="@source/ai/image-103.png" alt=""></p>
+</section>
+<section class="print-section">
 <h2 id="a-graphical-explanation-of-transformers-3blue-1brown" tabindex="-1"><a class="header-anchor" href="#a-graphical-explanation-of-transformers-3blue-1brown"><span>A Graphical Explanation of Transformers (3Blue 1Brown)</span></a></h2>
 <ul>
 <li>Transformers (how LLMs work) explained visually
@@ -412,6 +471,7 @@ M1001 80h400000v40h-400000z"/></svg></span></span></span><span class="vlist-s">�
 </li>
 </ul>
 <p><img src="@source/ai/image-102.png" alt=""></p>
+</section>
 </div></template>
 
 

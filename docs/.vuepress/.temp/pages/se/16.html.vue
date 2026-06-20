@@ -1,5 +1,8 @@
-<template><div><h1 id="_16-static-analysis" tabindex="-1"><a class="header-anchor" href="#_16-static-analysis"><span>16. Static Analysis</span></a></h1>
+<template><div><section class="print-section">
+<h1 id="_16-static-analysis" tabindex="-1"><a class="header-anchor" href="#_16-static-analysis"><span>16. Static Analysis</span></a></h1>
 <DateMeta />
+</section>
+<section class="print-section">
 <h2 id="learning-goals" tabindex="-1"><a class="header-anchor" href="#learning-goals"><span>Learning Goals</span></a></h2>
 <ul>
 <li>한 문장으로 정적 분석 정의 및 정적 분석이 목표로 하는 Bug 유형 설명</li>
@@ -10,6 +13,8 @@
 <li>정적 분석이 왜 Sound, Complete, Terminating할 수 없는지에 대한 고차원적 설명 및 분석 설계의 trade-off 평가</li>
 <li>정적 분석을 수행하는 도구의 특성 파악 및 선택</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="goto-fail" tabindex="-1"><a class="header-anchor" href="#goto-fail"><span><code v-pre>goto fail;</code></span></a></h2>
 <div class="language-c line-numbers-mode" data-highlighter="prismjs" data-ext="c"><pre v-pre><code class="language-c"><span class="line"><span class="token keyword">static</span> OSStatus</span>
 <span class="line"><span class="token function">SSLVerifySignedServerKeyExchange</span><span class="token punctuation">(</span>SSLContext <span class="token operator">*</span>ctx<span class="token punctuation">,</span> bool isRsa<span class="token punctuation">,</span> SSLBuffer signedParams<span class="token punctuation">,</span> <span class="token class-name">uint8_t</span> <span class="token operator">*</span>signature<span class="token punctuation">,</span> UInt16 signatureLen<span class="token punctuation">)</span> <span class="token punctuation">{</span></span>
@@ -29,7 +34,9 @@
 <span class="line">    <span class="token keyword">return</span> err<span class="token punctuation">;</span></span>
 <span class="line"><span class="token punctuation">}</span></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="a-bug-in-the-old-linux-kernel" tabindex="-1"><a class="header-anchor" href="#a-bug-in-the-old-linux-kernel"><span>A Bug in the Old Linux Kernel</span></a></h2>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h2 id="a-bug-in-the-old-linux-kernel" tabindex="-1"><a class="header-anchor" href="#a-bug-in-the-old-linux-kernel"><span>A Bug in the Old Linux Kernel</span></a></h2>
 <div class="language-c line-numbers-mode" data-highlighter="prismjs" data-ext="c"><pre v-pre><code class="language-c"><span class="line"><span class="token comment">/* from Linux 2.3.99 drivers/block/raid5.c */</span></span>
 <span class="line"><span class="token keyword">static</span> <span class="token keyword">struct</span> <span class="token class-name">buffer_head</span> <span class="token operator">*</span></span>
 <span class="line"><span class="token function">get_free_buffer</span><span class="token punctuation">(</span><span class="token keyword">struct</span> <span class="token class-name">stripe_head</span> <span class="token operator">*</span> sh<span class="token punctuation">,</span> <span class="token keyword">int</span> b_size<span class="token punctuation">)</span> <span class="token punctuation">{</span></span>
@@ -45,7 +52,9 @@
 <span class="line">    <span class="token keyword">return</span> bh<span class="token punctuation">;</span></span>
 <span class="line"><span class="token punctuation">}</span></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="could-you-have-found-them" tabindex="-1"><a class="header-anchor" href="#could-you-have-found-them"><span>Could You Have Found Them?</span></a></h2>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h2 id="could-you-have-found-them" tabindex="-1"><a class="header-anchor" href="#could-you-have-found-them"><span>Could You Have Found Them?</span></a></h2>
 <ul>
 <li>이러한 Bug들이 얼마나 자주 발생할 것인가</li>
 <li>Driver Bug
@@ -60,12 +69,16 @@
 <li>교훈: 일부 결함은 테스트나 검사를 통해 발견하기 매우 어려움</li>
 </ul>
 <p><a href="https://www.cnet.com/news/privacy/klocwork-our-source-code-analyzer-caught-apples-gotofail-bug/" target="_blank" rel="noopener noreferrer">https://www.cnet.com/news/privacy/klocwork-our-source-code-analyzer-caught-apples-gotofail-bug/</a></p>
+</section>
+<section class="print-section">
 <h2 id="defects-of-interest" tabindex="-1"><a class="header-anchor" href="#defects-of-interest"><span>Defects of Interest</span></a></h2>
 <ul>
 <li>테스트와 대조적으로 일반적이지 않거나 강제하기 어려운 실행 경로상에 존재</li>
 <li>이러한 결함을 찾기 위해 모든 경로를 구체적으로 실행(또는 해석/분석)하는 것은 불가능</li>
 <li>실제로 원하는 것은 프로그램의 전체 가능한 상태 공간(State Space)을 확인하여 특정 속성을 검사하는 것</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="defects-static-analysis-can-catch" tabindex="-1"><a class="header-anchor" href="#defects-static-analysis-can-catch"><span>Defects Static Analysis Can Catch</span></a></h2>
 <ul>
 <li>단순하고 기계적인 설계 규칙을 일관되게 따르지 않음으로 인해 발생하는 결함.
@@ -81,7 +94,11 @@
 </li>
 <li>Key: 단순하고 기계적인 설계 규칙 준수 여부 확인</li>
 </ul>
+</section>
+<section class="print-section">
 <h1 id="defining-static-analysis" tabindex="-1"><a class="header-anchor" href="#defining-static-analysis"><span>Defining Static Analysis</span></a></h1>
+</section>
+<section class="print-section">
 <h2 id="what-is-static-analysis" tabindex="-1"><a class="header-anchor" href="#what-is-static-analysis"><span>What is Static Analysis?</span></a></h2>
 <ul>
 <li>프로그램 상태 공간의 추상화에 대한 체계적인 검사
@@ -101,6 +118,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="the-bad-news-rice-s-theorem" tabindex="-1"><a class="header-anchor" href="#the-bad-news-rice-s-theorem"><span>The Bad News: Rice’s Theorem</span></a></h2>
 <blockquote>
 <p>&quot;튜링 머신에 의해 인식되는 언어에 대한 비자명한 속성은 결정 불가능하다&quot; (Henry Gordon Rice, 1953)</p>
@@ -108,6 +127,8 @@
 <ul>
 <li>모든 정적 분석은 필연적으로 Incomplete하거나 Unsound하거나 Undecidable함 (혹은 이것들의 복합)</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="soundness-and-completeness" tabindex="-1"><a class="header-anchor" href="#soundness-and-completeness"><span>Soundness and Completeness</span></a></h2>
 <table>
 <thead>
@@ -147,7 +168,11 @@
 </li>
 </ul>
 <p><img src="@source/se/image-92.png" alt="alt text"></p>
+</section>
+<section class="print-section">
 <h1 id="simple-syntactic-and-structural-analyses" tabindex="-1"><a class="header-anchor" href="#simple-syntactic-and-structural-analyses"><span>Simple Syntactic and Structural Analyses</span></a></h1>
+</section>
+<section class="print-section">
 <h2 id="syntactic-analysis" tabindex="-1"><a class="header-anchor" href="#syntactic-analysis"><span>Syntactic Analysis</span></a></h2>
 <ul>
 <li>특정 패턴의 모든 발생 찾기</li>
@@ -166,6 +191,8 @@
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul>
 <li>Grep 명령어 예시: <code v-pre>grep &quot;if \(logger\.Debug\(&quot; . -r</code></li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="type-analysis" tabindex="-1"><a class="header-anchor" href="#type-analysis"><span>Type Analysis</span></a></h2>
 <div class="language-java line-numbers-mode" data-highlighter="prismjs" data-ext="java"><pre v-pre><code class="language-java"><span class="line"><span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span></span>
 <span class="line">    <span class="token keyword">int</span> a <span class="token operator">=</span> <span class="token function">computeSomething</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
@@ -174,7 +201,9 @@
 <span class="line">        <span class="token function">doMoreStuff</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
 <span class="line"><span class="token punctuation">}</span></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="abstraction-abstract-syntax-tree" tabindex="-1"><a class="header-anchor" href="#abstraction-abstract-syntax-tree"><span>Abstraction: Abstract Syntax Tree</span></a></h2>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h2 id="abstraction-abstract-syntax-tree" tabindex="-1"><a class="header-anchor" href="#abstraction-abstract-syntax-tree"><span>Abstraction: Abstract Syntax Tree</span></a></h2>
 <ul>
 <li>소스 코드의 구문 구조를 트리로 표현
 <ul>
@@ -189,6 +218,8 @@
 <li>컴파일러를 통해 생성 가능</li>
 <li>예시: <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>5</mn><mo>+</mo><mo stretchy="false">(</mo><mn>2</mn><mo>+</mo><mn>3</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">5 + (2 + 3)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">5</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">2</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">3</span><span class="mclose">)</span></span></span></span></li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="type-checking" tabindex="-1"><a class="header-anchor" href="#type-checking"><span>Type Checking</span></a></h2>
 <ul>
 <li>Class X, Logger 등의 구조 및 메서드 호출 관계를 보여주는 다이어그램 및 코드</li>
@@ -220,6 +251,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="abstract-syntax-tree-walker" tabindex="-1"><a class="header-anchor" href="#abstract-syntax-tree-walker"><span>Abstract Syntax Tree Walker</span></a></h2>
 <ul>
 <li><code v-pre>Logger.inDebug</code> 체크 외부에서 디버깅 로그를 표시하지 않는지 확인</li>
@@ -238,25 +271,37 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="structural-analysis" tabindex="-1"><a class="header-anchor" href="#structural-analysis"><span>Structural Analysis</span></a></h2>
 <p><img src="@source/se/image-93.png" alt="alt text"></p>
+</section>
+<section class="print-section">
 <h1 id="bug-finding" tabindex="-1"><a class="header-anchor" href="#bug-finding"><span>Bug Finding</span></a></h1>
+</section>
+<section class="print-section">
 <h2 id="structural-analysis-to-detect-goto-fail" tabindex="-1"><a class="header-anchor" href="#structural-analysis-to-detect-goto-fail"><span>Structural Analysis to Detect goto fail;?</span></a></h2>
 <ul>
 <li><code v-pre>goto fail;</code> 중복 코드가 포함된 <code v-pre>SSLVerifySignedServerKeyExchange</code> 함수 코드 재제시</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="summary-of-syntactic-structural-analyses" tabindex="-1"><a class="header-anchor" href="#summary-of-syntactic-structural-analyses"><span>Summary of Syntactic/Structural Analyses</span></a></h2>
 <ul>
 <li>Token 스트림 또는 코드 구조(AST) 분석</li>
 <li>패턴을 찾는 데 유용</li>
 <li>실행 경로와 무관한 국소적/구조적 속성</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="tools" tabindex="-1"><a class="header-anchor" href="#tools"><span>Tools</span></a></h2>
 <ul>
 <li>Checkstyle</li>
 <li>다수의 Linter (C, JS, Python 등)</li>
 <li>Find bugs (일부 분석)</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="tools-compilers" tabindex="-1"><a class="header-anchor" href="#tools-compilers"><span>Tools: Compilers</span></a></h2>
 <ul>
 <li>
@@ -285,7 +330,11 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h1 id="control-flow-analysis" tabindex="-1"><a class="header-anchor" href="#control-flow-analysis"><span>Control-Flow Analysis</span></a></h1>
+</section>
+<section class="print-section">
 <h2 id="control-dataflow-analysis" tabindex="-1"><a class="header-anchor" href="#control-dataflow-analysis"><span>Control/Dataflow Analysis</span></a></h2>
 <ul>
 <li>Control Flow Graph를 통한 경로로 모든 가능한 실행에 대해 추론
@@ -297,6 +346,8 @@
 <li>관심 있는 속성과 관련된 값/상태만 포착하는 Abstract domain 정의</li>
 <li>그래프를 통한 모든 가능한 실행(경로)에 대해 가능한 모든 구체적인 값 대신 Abstract state 추적</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="control-flow-graphs" tabindex="-1"><a class="header-anchor" href="#control-flow-graphs"><span>Control Flow Graphs</span></a></h2>
 <ul>
 <li>프로그램을 통한 제어 흐름의 트리/그래프 기반 표현
@@ -317,6 +368,8 @@
 <ul>
 <li>노드 0~6으로 구성된 그래프 구조</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="control-flow-graphs-cfg" tabindex="-1"><a class="header-anchor" href="#control-flow-graphs-cfg"><span>Control Flow Graphs (CFG)</span></a></h2>
 <div class="language-java line-numbers-mode" data-highlighter="prismjs" data-ext="java"><pre v-pre><code class="language-java"><span class="line"><span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span></span>
 <span class="line">    <span class="token function">doStuff</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
@@ -328,11 +381,15 @@
 <span class="line"><span class="token punctuation">}</span></span>
 <span class="line"></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><img src="@source/se/image-95.png" alt="alt text"></p>
+</section>
+<section class="print-section">
 <h2 id="a-bug-in-the-old-linux-kernel-1" tabindex="-1"><a class="header-anchor" href="#a-bug-in-the-old-linux-kernel-1"><span>A Bug in the Old Linux Kernel</span></a></h2>
 <ul>
 <li>리눅스 RAID 드라이버(<code v-pre>raid5.c</code>)의 <code v-pre>get_free_buffer</code> 함수 코드</li>
 <li>해당 함수에 대한 Control Flow Graph 그리기 (단순화 포함)</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="example-of-a-cfg" tabindex="-1"><a class="header-anchor" href="#example-of-a-cfg"><span>Example of a CFG</span></a></h2>
 <ul>
 <li><code v-pre>int foo()</code> 함수 예제 코드
@@ -345,6 +402,8 @@
 <li>동일한 <code v-pre>foo()</code> 함수의 흐름도 표현 반복</li>
 </ul>
 <p><img src="@source/se/image-96.png" alt="alt text"></p>
+</section>
+<section class="print-section">
 <h2 id="control-dataflow-analysis-1" tabindex="-1"><a class="header-anchor" href="#control-dataflow-analysis-1"><span>Control/Dataflow Analysis</span></a></h2>
 <ul>
 <li>Control Flow Graph를 통한 경로로 모든 가능한 실행에 대해 추론
@@ -356,6 +415,8 @@
 <li>관심 있는 속성과 관련된 값/상태만 포착하는 Abstract domain 정의</li>
 <li>그래프를 통한 모든 가능한 실행(경로)에 대해 가능한 모든 구체적인 값 대신 Abstract state 추적</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="abstract-domain-lattices" tabindex="-1"><a class="header-anchor" href="#abstract-domain-lattices"><span>Abstract Domain: Lattices</span></a></h2>
 <ul>
 <li>Lattice <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi><mo>=</mo><mo stretchy="false">(</mo><mi>S</mi><mo separator="true">,</mo><mi>r</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">D = (S, r)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">D</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.05764em;">S</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mclose">)</span></span></span></span>
@@ -376,6 +437,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="example-of-a-lattice" tabindex="-1"><a class="header-anchor" href="#example-of-a-lattice"><span>Example of a Lattice</span></a></h2>
 <ul>
 <li>
@@ -386,6 +449,8 @@
 <p><img src="@source/se/image-97.png" alt="alt text"></p>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="say-what-why-we-need-it" tabindex="-1"><a class="header-anchor" href="#say-what-why-we-need-it"><span>Say What? Why We Need It?</span></a></h2>
 <ul>
 <li>모든 프로그램 지점에서 관심 속성과 관련된 모든 가능한 값 추적</li>
@@ -397,6 +462,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="abstract-domain-interrupt-checker" tabindex="-1"><a class="header-anchor" href="#abstract-domain-interrupt-checker"><span>Abstract Domain: Interrupt Checker</span></a></h2>
 <div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code class="language-text"><span class="line">      maybe-enabled</span>
 <span class="line">    /               \</span>
@@ -404,7 +471,9 @@
 <span class="line">      \          /</span>
 <span class="line">            ?</span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="reasoning-about-a-cfg" tabindex="-1"><a class="header-anchor" href="#reasoning-about-a-cfg"><span>Reasoning about a CFG</span></a></h2>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h2 id="reasoning-about-a-cfg" tabindex="-1"><a class="header-anchor" href="#reasoning-about-a-cfg"><span>Reasoning about a CFG</span></a></h2>
 <ul>
 <li>분석은 프로그램 지점(노드 사이의 지점)에서 상태를 업데이트함.</li>
 <li>각 노드에 대해
@@ -416,6 +485,8 @@
 <li>각 프로그램 지점의 상태가 변하지 않을 때까지 후행 노드(Successors)와 전체 그래프를 통해 반복</li>
 <li><strong>Output: 각 프로그램 지점에서의 상태</strong></li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="an-interrupt-checker" tabindex="-1"><a class="header-anchor" href="#an-interrupt-checker"><span>An Interrupt Checker</span></a></h2>
 <ul>
 <li><strong>Abstraction</strong>
@@ -431,6 +502,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="transfer-function" tabindex="-1"><a class="header-anchor" href="#transfer-function"><span>Transfer Function</span></a></h2>
 <ul>
 <li>가정: 블록 전 프로그램 지점의 Interrupt enabled<div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code class="language-text"><span class="line">        ↓</span>
@@ -443,6 +516,8 @@
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></li>
 <li>블록 후 프로그램 지점: Interrupt disabled</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="join" tabindex="-1"><a class="header-anchor" href="#join"><span>Join</span></a></h2>
 <ul>
 <li>가정: 블록 전 프로그램 지점의 Interrupt disabled</li>
@@ -471,7 +546,9 @@
 <span class="line"></span>
 <span class="line">                   interrupts...???</span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="join-branching" tabindex="-1"><a class="header-anchor" href="#join-branching"><span>Join/Branching</span></a></h2>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h2 id="join-branching" tabindex="-1"><a class="header-anchor" href="#join-branching"><span>Join/Branching</span></a></h2>
 <ul>
 <li>다수의 이전 상태로부터 오는/가는 정보를 어떻게 처리할 것인가</li>
 <li>분기(Branch)에 도달했을 때 수행할 작업
@@ -493,6 +570,8 @@
 </li>
 <li>조건문뿐만 아니라 루프, Switch, Exception도 해당됨</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="interrupt-analysis-join-function" tabindex="-1"><a class="header-anchor" href="#interrupt-analysis-join-function"><span>Interrupt Analysis: Join Function</span></a></h2>
 <ul>
 <li>Abstraction
@@ -510,6 +589,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="example-of-the-interrupt-analysis" tabindex="-1"><a class="header-anchor" href="#example-of-the-interrupt-analysis"><span>Example of the Interrupt Analysis</span></a></h2>
 <ul>
 <li><code v-pre>foo()</code> 함수 예제에 대한 분석 추적</li>
@@ -517,6 +598,8 @@
 <li>문제 발생 지점: <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>σ</mi><mo>→</mo></mrow><annotation encoding="application/x-tex">\sigma →</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">σ</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">→</span></span></span></span> Maybe-enabled
 <img src="@source/se/image-98.png" alt="alt text"></li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="abstraction" tabindex="-1"><a class="header-anchor" href="#abstraction"><span>Abstraction</span></a></h2>
 <ul>
 <li>간단한 코드 예제
@@ -527,6 +610,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="too-simple" tabindex="-1"><a class="header-anchor" href="#too-simple"><span>Too Simple?</span></a></h2>
 <ul>
 <li>함수당 전역 상태(Control flow analysis)만 추적하는 것도 유용함.
@@ -549,12 +634,18 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h1 id="data-flow-analysis" tabindex="-1"><a class="header-anchor" href="#data-flow-analysis"><span>Data-Flow Analysis</span></a></h1>
+</section>
+<section class="print-section">
 <h2 id="data-vs-control-flow" tabindex="-1"><a class="header-anchor" href="#data-vs-control-flow"><span>Data- VS. Control-Flow</span></a></h2>
 <ul>
 <li>Dataflow: 프로그램 내 변수(일부 부분 집합) 각각에 대한 Abstract value 추적</li>
 <li>Control flow: 해당 함수에 대한 전역(Global) 상태 추적</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="example-zero-null-pointer-analysis" tabindex="-1"><a class="header-anchor" href="#example-zero-null-pointer-analysis"><span>Example: Zero/Null-pointer Analysis</span></a></h2>
 <ul>
 <li>변수 x가 0이 될 수 있는가?
@@ -565,11 +656,15 @@
 <li>원본 Domain: <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span></span></span></span>은 모든 변수를 정수로 매핑</li>
 <li>Abstraction: 모든 변수는 Non zero(NZ), Zero(Z), 또는 Maybe zero(MZ)임</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="zero-analysis-transfer" tabindex="-1"><a class="header-anchor" href="#zero-analysis-transfer"><span>Zero Analysis Transfer</span></a></h2>
 <ul>
 <li>어떤 연산이 관련되어 있는가?</li>
 <li>변수를 업데이트할 수 있는 모든 연산!</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="zero-analysis-join-per-variable" tabindex="-1"><a class="header-anchor" href="#zero-analysis-join-per-variable"><span>Zero Analysis Join (per Variable)</span></a></h2>
 <ul>
 <li>Join(Zero, Zero) → Zero</li>
@@ -577,6 +672,8 @@
 <li>Join(Zero, Not-zero) → Maybe-zero</li>
 <li>Join(Maybe-zero, *) → Maybe-zero</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="example" tabindex="-1"><a class="header-anchor" href="#example"><span>Example</span></a></h2>
 <div class="language-c line-numbers-mode" data-highlighter="prismjs" data-ext="c"><pre v-pre><code class="language-c"><span class="line">x <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span></span>
 <span class="line">y <span class="token operator">=</span> x<span class="token punctuation">;</span></span>
@@ -608,6 +705,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="abstraction-at-work" tabindex="-1"><a class="header-anchor" href="#abstraction-at-work"><span>Abstraction at Work</span></a></h2>
 <ul>
 <li>가능한 상태의 수는 거대함.
@@ -626,6 +725,8 @@
 </li>
 <li>모든 루프 반복에 대해 외삽(Extrapolate)</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="termination-intuition" tabindex="-1"><a class="header-anchor" href="#termination-intuition"><span>Termination Intuition</span></a></h2>
 <ul>
 <li>Termination을 항상 보장하지는 않음. 수렴(fixed point)하지 않을 수 있음.</li>
@@ -642,6 +743,8 @@
 <li>Flow function은 수학적 함수임</li>
 <li>각 고정점에서의 Dataflow analysis 상태는 데이터 값임</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="the-bad-news-rice-s-theorem-1" tabindex="-1"><a class="header-anchor" href="#the-bad-news-rice-s-theorem-1"><span>The Bad News: Rice’s Theorem</span></a></h2>
 <blockquote>
 <p><strong>&quot;튜링 머신에 의해 인식되는 언어에 대한 비자명한 속성은 결정 불가능하다&quot;  (Henry Gordon Rice, 1953)</strong></p>
@@ -649,6 +752,8 @@
 <ul>
 <li>모든 정적 분석은 필연적으로 Incomplete하거나 Unsound하거나 Undecidable함 (혹은 이것들의 복합)</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="computability-theory-says" tabindex="-1"><a class="header-anchor" href="#computability-theory-says"><span>Computability Theory says…</span></a></h2>
 <ul>
 <li>정지 문제(Halting problem): 주어진 프로그램이 주어진 입력에 대해 정지/종료할지 결정하는 문제</li>
@@ -663,13 +768,17 @@
 <span class="line">  <span class="token keyword">if</span> halts<span class="token punctuation">(</span>g<span class="token punctuation">)</span><span class="token punctuation">:</span></span>
 <span class="line">    loop_forever<span class="token punctuation">(</span><span class="token punctuation">)</span></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="ok-so" tabindex="-1"><a class="header-anchor" href="#ok-so"><span>OK, So?</span></a></h2>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h2 id="ok-so" tabindex="-1"><a class="header-anchor" href="#ok-so"><span>OK, So?</span></a></h2>
 <ul>
 <li>어떤 프로그램이 비자명한 속성(절대 Null 역참조 안 함, 항상 모든 파일 핸들 해제 등)을 갖는지 정적으로 항상 알 수 있다면, 정지 문제도 일반적으로 해결할 수 있음</li>
 <li>...그러나 정지 문제는 명백히 불가능함.</li>
 <li>따라서, 완벽한 정적 분석은 없음. 항상 False positive나 False negative(또는 둘 다)를 가짐</li>
 <li>모든 도구는 trade-off를 가짐</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="sound-vs-heuristic-analysis-vs-reality" tabindex="-1"><a class="header-anchor" href="#sound-vs-heuristic-analysis-vs-reality"><span>Sound vs. Heuristic Analysis vs. Reality</span></a></h2>
 <ul>
 <li>Heuristic Analysis
@@ -687,6 +796,8 @@
 </li>
 <li>그러나 실제로는, 언어가 복잡하며, 모든 도구는 내부적으로 무엇을 모델링할지/실제 abstraction을 어떻게 할지에 대한 결정이 필요함.</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="example-null-pointers" tabindex="-1"><a class="header-anchor" href="#example-null-pointers"><span>Example: Null Pointers</span></a></h2>
 <div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code class="language-text"><span class="line">int foo() {</span>
 <span class="line">    Integer x = new Integer(6);</span>
@@ -694,6 +805,8 @@
 <span class="line">}</span>
 <span class="line"></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><img src="@source/se/image-99.png" alt="alt text"></p>
+</section>
+<section class="print-section">
 <h2 id="what-about-that-function-call" tabindex="-1"><a class="header-anchor" href="#what-about-that-function-call"><span>What About that Function Call?</span></a></h2>
 <ul>
 <li>몇 가지 간단한 옵션
@@ -712,8 +825,12 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="try-catch" tabindex="-1"><a class="header-anchor" href="#try-catch"><span>Try-Catch?</span></a></h2>
 <p><img src="@source/se/image-100.png" alt="alt text"></p>
+</section>
+<section class="print-section">
 <h2 id="design-choices-representation-and-abstract-domain" tabindex="-1"><a class="header-anchor" href="#design-choices-representation-and-abstract-domain"><span>Design Choices: Representation and Abstract Domain</span></a></h2>
 <ul>
 <li>Try/catch를 모델링하지 않는다면 어떠한가</li>
@@ -725,6 +842,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="upshot-analysis-as-approximation" tabindex="-1"><a class="header-anchor" href="#upshot-analysis-as-approximation"><span>Upshot: Analysis as Approximation</span></a></h2>
 <ul>
 <li>분석은 실제적으로 근사(Approximate)해야 함.
@@ -756,6 +875,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="summary" tabindex="-1"><a class="header-anchor" href="#summary"><span>Summary</span></a></h2>
 <ul>
 <li>정적 분석: 프로그램을 실행하지 않고 프로그램 소스를 체계적으로 자동 분석</li>
@@ -769,6 +890,7 @@
 </li>
 <li>분석은 Unsound하거나 Incomplete하거나 둘 다임.</li>
 </ul>
+</section>
 </div></template>
 
 

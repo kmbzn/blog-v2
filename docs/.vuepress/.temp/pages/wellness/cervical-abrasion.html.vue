@@ -1,6 +1,9 @@
-<template><div><h1 id="치경부-마모증" tabindex="-1"><a class="header-anchor" href="#치경부-마모증"><span>치경부 마모증</span></a></h1>
+<template><div><section class="print-section">
+<h1 id="치경부-마모증" tabindex="-1"><a class="header-anchor" href="#치경부-마모증"><span>치경부 마모증</span></a></h1>
 <DateMeta />
 <p>치경부 마모증(Cervical Abrasion, Non-carious Cervical Lesion)은 치아의 치경부(잇몸과 치아가 만나는 경계선 부근)가 마모되어 패이는 현상이다. 보기에는 치아 뿌리 쪽이 V자 또는 U자 형태로 팬 것처럼 보인다.</p>
+</section>
+<section class="print-section">
 <h2 id="원인" tabindex="-1"><a class="header-anchor" href="#원인"><span>원인</span></a></h2>
 <p>치경부 마모증은 단일 원인이 아닌 <strong>세 가지 요소의 복합 작용</strong>으로 발생하는 것으로 알려져 있다.</p>
 <table>
@@ -26,6 +29,8 @@
 </tbody>
 </table>
 <p>일반적으로 가장 큰 원인은 <strong>잘못된 칫솔질 방법</strong>이다. 가로 방향으로 강하게 닦거나, 딱딱한 칫솔모를 사용하는 경우 진행이 빠르다.</p>
+</section>
+<section class="print-section">
 <h2 id="증상" tabindex="-1"><a class="header-anchor" href="#증상"><span>증상</span></a></h2>
 <ul>
 <li><strong>이시림(시린이)</strong>: 찬 음식, 찬 공기, 달콤한 음식에 날카롭게 반응</li>
@@ -33,7 +38,11 @@
 <li><strong>육안 확인 가능</strong>: 거울로 보면 치아 옆면 하단에 홈이 패여 있음</li>
 <li>진행하면 상아질이 점점 더 노출되어 자극 전달이 심해짐</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="치료-레진-충전" tabindex="-1"><a class="header-anchor" href="#치료-레진-충전"><span>치료: 레진 충전</span></a></h2>
+</section>
+<section class="print-section">
 <h3 id="치료-원리" tabindex="-1"><a class="header-anchor" href="#치료-원리"><span>치료 원리</span></a></h3>
 <p>패인 부위를 <strong>복합 레진</strong>(Composite Resin)으로 채워 노출된 상아질을 덮는 방식이다. 순서:</p>
 <ol>
@@ -45,9 +54,13 @@
 <li><strong>형태 조정·연마</strong>: 교합에 맞게 다듬고, 표면을 연마하여 마감</li>
 </ol>
 <p>레진은 치아색과 거의 동일하게 색상을 맞출 수 있어 충전 후 외관상 티가 거의 나지 않는다.</p>
+</section>
+<section class="print-section">
 <h3 id="이시림-개선-효과" tabindex="-1"><a class="header-anchor" href="#이시림-개선-효과"><span>이시림 개선 효과</span></a></h3>
 <p>레진 충전 후 노출되어 있던 상아질 소관(dentinal tubule)이 막히면서, 온도·압력 자극이 치수(신경)까지 전달되는 경로가 차단된다. 대부분의 경우 <strong>시술 직후 또는 며칠 내로 이시림이 현저히 줄어든다.</strong></p>
 <p>다만, 레진 자체가 경화 시 약간의 수축이 있어 시술 직후 일시적으로 시린 감각이 증가할 수 있다. 이는 며칠 내 자연스럽게 가라앉는다.</p>
+</section>
+<section class="print-section">
 <h3 id="비용" tabindex="-1"><a class="header-anchor" href="#비용"><span>비용</span></a></h3>
 <p>비급여 항목이므로 치과마다 다르지만 일반적으로:</p>
 <table>
@@ -73,6 +86,8 @@
 </tbody>
 </table>
 <p>여러 치아를 동시에 시술하면 치과에 따라 할인이 적용되기도 한다.</p>
+</section>
+<section class="print-section">
 <h3 id="수명" tabindex="-1"><a class="header-anchor" href="#수명"><span>수명</span></a></h3>
 <p>레진 충전의 수명은 조건에 따라 차이가 크다.</p>
 <table>
@@ -98,6 +113,8 @@
 </tbody>
 </table>
 <p>레진은 시간이 지나면서 변색·마모·탈락이 발생할 수 있다. 탈락해도 치아 자체가 손상되지는 않으므로 재충전이 가능하다.</p>
+</section>
+<section class="print-section">
 <h2 id="예방" tabindex="-1"><a class="header-anchor" href="#예방"><span>예방</span></a></h2>
 <p>치료 후에도 원인 습관을 교정하지 않으면 재발한다.</p>
 <ul>
@@ -110,6 +127,7 @@
 <p class="hint-container-title">전동 칫솔</p>
 <p>치경부 마모증이 있는 경우 진동 방식의 전동 칫솔보다 소닉 방식 전동 칫솔이 좀 더 적합할 수 있다. 다만 어떤 칫솔이든 너무 강하게 누르지 않는 것이 핵심이다.</p>
 </div>
+</section>
 </div></template>
 
 

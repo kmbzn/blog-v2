@@ -1,5 +1,8 @@
-<template><div><h1 id="_02-정보보안정책-및-법규" tabindex="-1"><a class="header-anchor" href="#_02-정보보안정책-및-법규"><span>02. 정보보안정책 및 법규</span></a></h1>
+<template><div><section class="print-section">
+<h1 id="_02-정보보안정책-및-법규" tabindex="-1"><a class="header-anchor" href="#_02-정보보안정책-및-법규"><span>02. 정보보안정책 및 법규</span></a></h1>
 <DateMeta />
+</section>
+<section class="print-section">
 <h2 id="법규" tabindex="-1"><a class="header-anchor" href="#법규"><span>법규</span></a></h2>
 <ul>
 <li>법: 국회에서 정함. 예: 개인정보보호법</li>
@@ -7,7 +10,11 @@
 <li>지침, 규정: 상위 법령에 따라 구체적인 해당 기관의 내용을 반영. 예: 국가정보보안기본지침</li>
 <li>가이드라인</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="소프트웨어-개발-보안-가이드라인" tabindex="-1"><a class="header-anchor" href="#소프트웨어-개발-보안-가이드라인"><span>소프트웨어 개발 보안 가이드라인</span></a></h2>
+</section>
+<section class="print-section">
 <h3 id="주요-내용" tabindex="-1"><a class="header-anchor" href="#주요-내용"><span>주요 내용</span></a></h3>
 <ul>
 <li>소프트웨어 개발 보안 방법론</li>
@@ -16,6 +23,8 @@
 <li>보안 기능</li>
 <li>코드 오류</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="소프트웨어-보안-취약점" tabindex="-1"><a class="header-anchor" href="#소프트웨어-보안-취약점"><span>소프트웨어 보안 취약점</span></a></h2>
 <ul>
 <li>SW 보안 취약점은 다음의 경우에 발생함.
@@ -28,23 +37,33 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="소프트웨어-개발-생명-주기" tabindex="-1"><a class="header-anchor" href="#소프트웨어-개발-생명-주기"><span>소프트웨어 개발 생명 주기</span></a></h2>
 <ul>
 <li>정의단계: What (계획, 요구분석)</li>
 <li>개발단계: How (설계, 개발, 테스트)</li>
 <li>유지보수단계: Change (적응, 예방, 폐기)</li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="프로세스-흐름" tabindex="-1"><a class="header-anchor" href="#프로세스-흐름"><span>프로세스 흐름</span></a></h3>
 <blockquote>
 <p>타당성 검토 → 개발계획 → 요구사항 분석 → 설계 → 개발 → 테스트 → 유지보수 → 폐기</p>
 </blockquote>
+</section>
+<section class="print-section">
 <h2 id="소프트웨어-개발-보안-적용-효과" tabindex="-1"><a class="header-anchor" href="#소프트웨어-개발-보안-적용-효과"><span>소프트웨어 개발 보안 적용 효과</span></a></h2>
+</section>
+<section class="print-section">
 <h3 id="windows" tabindex="-1"><a class="header-anchor" href="#windows"><span>(Windows)</span></a></h3>
 <ul>
 <li>제품 발표 후 1년간 공격 취약점 수가 45% 감소
     - Windows XP (After SDL v3.0): 119
     - Windows Vista: 66</li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="sql-server" tabindex="-1"><a class="header-anchor" href="#sql-server"><span>(SQL Server)</span></a></h3>
 <ul>
 <li>제품 발표 후 3년간 공격 취약점 수가 91% 감소
@@ -52,6 +71,8 @@
     - SQL Server 2005: 3</li>
 <li>출처: Microsoft Security Blog and Microsoft TechNet Security Blog</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="외부환경-분석-법-규정-등-에-따른-보안-항목-식별" tabindex="-1"><a class="header-anchor" href="#외부환경-분석-법-규정-등-에-따른-보안-항목-식별"><span>외부환경 분석(법, 규정 등)에 따른 보안 항목 식별</span></a></h2>
 <table>
 <thead>
@@ -79,7 +100,11 @@
 </tr>
 </tbody>
 </table>
+</section>
+<section class="print-section">
 <h2 id="설계-단계-보안-설계-기준" tabindex="-1"><a class="header-anchor" href="#설계-단계-보안-설계-기준"><span>설계 단계 보안 설계 기준</span></a></h2>
+</section>
+<section class="print-section">
 <h3 id="입력-데이터-검증-및-표현" tabindex="-1"><a class="header-anchor" href="#입력-데이터-검증-및-표현"><span>입력 데이터 검증 및 표현</span></a></h3>
 <table>
 <thead>
@@ -142,6 +167,8 @@
 </tr>
 </tbody>
 </table>
+</section>
+<section class="print-section">
 <h3 id="보안-기능" tabindex="-1"><a class="header-anchor" href="#보안-기능"><span>보안 기능</span></a></h3>
 <p>- 인증, 접근통제, 권한관리, 비밀번호 등의 정책이 적절하게 반영될 수 있도록 설계</p>
 <table>
@@ -195,6 +222,8 @@
 </tr>
 </tbody>
 </table>
+</section>
+<section class="print-section">
 <h2 id="구현-단계-보안-취약점-제거" tabindex="-1"><a class="header-anchor" href="#구현-단계-보안-취약점-제거"><span>구현 단계 보안 취약점 제거</span></a></h2>
 <table>
 <thead>
@@ -286,7 +315,11 @@
 </tr>
 </tbody>
 </table>
+</section>
+<section class="print-section">
 <h2 id="sw-공급망-보안-가이드라인" tabindex="-1"><a class="header-anchor" href="#sw-공급망-보안-가이드라인"><span>SW 공급망 보안 가이드라인</span></a></h2>
+</section>
+<section class="print-section">
 <h3 id="필요성" tabindex="-1"><a class="header-anchor" href="#필요성"><span>필요성</span></a></h3>
 <ul>
 <li>디지털 제품 및 서비스에 포함된 악성코드 또는 보안 취약점은 사전에 탐지하기가 어렵고, 사고가 발생하면 광범위한 피해와 함께 사고가 연이어 발생하는 특징을 가짐.</li>
@@ -298,15 +331,21 @@
 <li>미국은 바이든 행정부의 행정명령(<code v-pre>EO 14028</code>, '21.5월) 이후 보안 관리 자체 증명서를 제출하도록 제도화하였음.</li>
 <li>EU는 SW 공급망 보안을 의무화하는 Cyber Resilience Act(사이버 복원력 법) 제정 발의(‘22.9월) 후 EU 의회 및 이사회의 의결('24.3월) 등 제도화를 추진 중</li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="sw-공급망" tabindex="-1"><a class="header-anchor" href="#sw-공급망"><span>SW 공급망</span></a></h3>
 <ul>
 <li>오픈소스의 사용 확대</li>
 <li>SW 부품 공급의 분업화</li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="사고-사례" tabindex="-1"><a class="header-anchor" href="#사고-사례"><span>사고 사례</span></a></h3>
 <ul>
 <li>국내외 사고 사례 및 피해 규모</li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="sw-공급망-공격-유형" tabindex="-1"><a class="header-anchor" href="#sw-공급망-공격-유형"><span>SW 공급망 공격 유형</span></a></h3>
 <ol>
 <li>공개 SW 보안 취약점(Vulnerabilities in OSS): 공개 SW에 취약한 코드 또는 유해한 구성요소가 포함되어 취약성이 공개 SW를 사용하는 모든 SW에 전파</li>
@@ -317,40 +356,56 @@
 <li>내부 리포지토리(Private Repositories): 공격자가 기업 내부에서 사용 중인 코드 저장소에 침입하여 악성코드를 삽입</li>
 <li>공급사 및 협력사(Suppliers and Business Partners): SW 부품 또는 완제품 개발사, 공급사 등으로부터 외부 서비스를 제공받는 경우 관리되지 않는 타사 위험(Risk)이 내부 시스템으로 전이</li>
 </ol>
+</section>
+<section class="print-section">
 <h3 id="sbom" tabindex="-1"><a class="header-anchor" href="#sbom"><span>SBOM</span></a></h3>
 <ul>
 <li>SBOM: SW Bill of Materials</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="시큐어-코딩-가이드라인" tabindex="-1"><a class="header-anchor" href="#시큐어-코딩-가이드라인"><span>시큐어 코딩 가이드라인</span></a></h2>
+</section>
+<section class="print-section">
 <h3 id="행정안전부-가이드라인" tabindex="-1"><a class="header-anchor" href="#행정안전부-가이드라인"><span>행정안전부 가이드라인</span></a></h3>
 <ul>
 <li>시큐어코딩 가이드(C, Java) - 2014년</li>
 <li>행정안전부 &gt; 정책자료 &gt; 간행물 &gt; 간행물</li>
 <li><a href="https://www.mois.go.kr/frt/bbs/type001/commonSelectBoardArticle.do?bbsId=BBSMSTR_000000000012&amp;nttId=42152" target="_blank" rel="noopener noreferrer">https://www.mois.go.kr/frt/bbs/type001/commonSelectBoardArticle.do?bbsId=BBSMSTR_000000000012&amp;nttId=42152</a></li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="misra" tabindex="-1"><a class="header-anchor" href="#misra"><span>MISRA</span></a></h2>
 <ul>
 <li>임베디드 시스템과 소프트웨어에 대한 안전한 가이드라인을 제공함.</li>
 <li>MISRA C 2020: <a href="https://www.misra.org.uk/misra-c/" target="_blank" rel="noopener noreferrer">https://www.misra.org.uk/misra-c/</a></li>
 <li><code v-pre>MISRA Compliance:2020</code> 문서는 안전 및 보안이 중요한 소프트웨어 개발에서 널리 사용되는 MISRA 코딩 표준 준수 달성을 위한 가이드라인을 제공하며, 주요 내용은 다음과 같음.</li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="목적-및-범위" tabindex="-1"><a class="header-anchor" href="#목적-및-범위"><span>목적 및 범위</span></a></h3>
 <ul>
 <li>MISRA 가이드라인은 주로 C와 C++에서 안전하고 보안적인 애플리케이션 개발을 보장</li>
 <li>이 문서는 MISRA 준수의 의미와 준수 프레임워크 구성 방법을 정의</li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="소프트웨어-개발-프로세스" tabindex="-1"><a class="header-anchor" href="#소프트웨어-개발-프로세스"><span>소프트웨어 개발 프로세스</span></a></h3>
 <ul>
 <li>준수는 개발 시작부터 내재화되어야 함.</li>
 <li>교육, 스타일 가이드, 도구 관리 및 런타임 동작 고려 사항을 포함</li>
 <li>컴파일러와 정적 분석 도구의 선택 및 검증이 중요</li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="준수의-기본-원칙" tabindex="-1"><a class="header-anchor" href="#준수의-기본-원칙"><span>준수의 기본 원칙</span></a></h3>
 <ul>
 <li>가이드라인은 Rules(규칙, 도구로 강제 가능) 또는 Directives(지침, 사람의 검토 필요)로 분류됨.</li>
 <li>적용 범위: 일부 규칙은 파일 단위(번역 단위)로 검사되지만, 다른 규칙은 시스템 전체 분석이 필요</li>
 <li>Guideline Enforcement Plan(GEP, 가이드라인 시행 계획)은 체계적인 규칙 검사를 보장</li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="편차-처리" tabindex="-1"><a class="header-anchor" href="#편차-처리"><span>편차 처리</span></a></h3>
 <ul>
 <li>준수는 모든 규칙을 엄격하게 따르는 것을 의미하지 않으며, 정당화되고 문서화된 경우 Deviations(편차)가 허용됨.</li>
@@ -364,6 +419,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="가이드라인-재분류" tabindex="-1"><a class="header-anchor" href="#가이드라인-재분류"><span>가이드라인 재분류</span></a></h3>
 <ul>
 <li>프로젝트는 필요에 더 잘 맞도록 MISRA 규칙 범주를 조정할 수 있음.</li>
@@ -376,11 +433,15 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="채택된-코드-및-준수-과제" tabindex="-1"><a class="header-anchor" href="#채택된-코드-및-준수-과제"><span>채택된 코드 및 준수 과제</span></a></h3>
 <ul>
 <li>서드파티, 레거시, 라이브러리 코드는 완전히 준수하지 않을 수 있음.</li>
 <li>바이너리 전용 코드는 MISRA 준수 여부를 확인할 수 없으므로 특별한 고려가 필요</li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="준수-주장" tabindex="-1"><a class="header-anchor" href="#준수-주장"><span>준수 주장</span></a></h3>
 <ul>
 <li>준수는 조직 전체가 아닌 프로젝트 수준에서만 주장할 수 있음.</li>
@@ -392,18 +453,26 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="부록-체크리스트-및-예시" tabindex="-1"><a class="header-anchor" href="#부록-체크리스트-및-예시"><span>부록: 체크리스트 및 예시</span></a></h3>
 <ul>
 <li>부록에는 준수 체크리스트, 편차 기록 예시, 편차 허가 예시가 포함됨.</li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="결론" tabindex="-1"><a class="header-anchor" href="#결론"><span>결론</span></a></h3>
 <ul>
 <li><code v-pre>MISRA Compliance:2020</code>은 체계적인 코딩 표준, 도구, 편차 관리를 통해 소프트웨어의 안전성, 보안성, 유지보수성을 보장하는 구조화된 프레임워크를 제공함. 적절한 시행은 소프트웨어 결함을 줄이고 신뢰성을 높이며, 자동차, 항공 우주, 의료 기기와 같은 산업의 규제 요구 사항을 지원.</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="개인정보보호-관련-법규" tabindex="-1"><a class="header-anchor" href="#개인정보보호-관련-법규"><span>개인정보보호 관련 법규</span></a></h2>
 <ul>
 <li>개인정보: 개인을 식별할 수 있는 정보</li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="데이터-3법" tabindex="-1"><a class="header-anchor" href="#데이터-3법"><span>데이터 3법</span></a></h3>
 <ul>
 <li>개인정보보호법, 정보통신망법, 신용정보법</li>
@@ -415,6 +484,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="개인정보보호법-주요-개정-사항-개인정보-보호법-주요-개정-사항" tabindex="-1"><a class="header-anchor" href="#개인정보보호법-주요-개정-사항-개인정보-보호법-주요-개정-사항"><span>개인정보보호법 주요 개정 사항## 개인정보 보호법 주요 개정 사항</span></a></h2>
 <table>
 <thead>
@@ -478,6 +549,7 @@
 </tr>
 </tbody>
 </table>
+</section>
 </div></template>
 
 

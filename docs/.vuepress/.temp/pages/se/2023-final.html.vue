@@ -1,5 +1,8 @@
-<template><div><h1 id="_2023년-기말고사" tabindex="-1"><a class="header-anchor" href="#_2023년-기말고사"><span>2023년 기말고사</span></a></h1>
+<template><div><section class="print-section">
+<h1 id="_2023년-기말고사" tabindex="-1"><a class="header-anchor" href="#_2023년-기말고사"><span>2023년 기말고사</span></a></h1>
 <DateMeta />
+</section>
+<section class="print-section">
 <h3 id="_1-다음-요구사항과-컨셉-모델을-보고-물음에-답하시오-25점" tabindex="-1"><a class="header-anchor" href="#_1-다음-요구사항과-컨셉-모델을-보고-물음에-답하시오-25점"><span>1. 다음 요구사항과 컨셉 모델을 보고 물음에 답하시오. (25점)</span></a></h3>
 <blockquote>
 <p>당신은 주문형 인쇄 서비스를 개발하고자 한다.<br>
@@ -38,6 +41,8 @@
 3. 다음 설명을 읽고 설명에 맞게 UML Swimlane Diagram을 그리시오. (10점)
 - 주문이 확정되면 온라인 영업, 회계, 배송, 인쇄 4개의 팀이 주문을 처리한다. 온라인 영업팀에서 주문을 인쇄팀으로 보내면 인쇄팀에서 관련 PDF 파일을 검사한다. 파일이 적합하지 않은 경우 고객에게 새 파일을 요청한다. 파일이 적합하면 회계팀에 신용 카드로 청구하라는 알림이 전송된다. 이 작업이 완료되는 동안 인쇄팀은 실제 인쇄를 수행하고 결과를 배송팀으로 보낸다. 배송팀에서 인쇄된 제품을 수령하고 회계팀으로부터 결제가 성공적으로 완료되었다는 확인을 받으면 제품이 고객에게 배송된다.
 <img src="@source/se/image-89.png" alt=""></p>
+</section>
+<section class="print-section">
 <h3 id="_2-당신은-경쟁사의-제품을-역공학으로-분석하여-다음과-같은-코드를-작성할-수-있었다-어떤-디자인-패턴을-사용하고-있고-어떤-class와-method가-해당-디자인-패턴과-관련되어-있는지-설명하시오-총-2개-15점" tabindex="-1"><a class="header-anchor" href="#_2-당신은-경쟁사의-제품을-역공학으로-분석하여-다음과-같은-코드를-작성할-수-있었다-어떤-디자인-패턴을-사용하고-있고-어떤-class와-method가-해당-디자인-패턴과-관련되어-있는지-설명하시오-총-2개-15점"><span>2. 당신은 경쟁사의 제품을 역공학으로 분석하여 다음과 같은 코드를 작성할 수 있었다. 어떤 디자인 패턴을 사용하고 있고 어떤 class와 method가 해당 디자인 패턴과 관련되어 있는지 설명하시오. (총 2개) (15점)</span></a></h3>
 <div class="language-java line-numbers-mode" data-highlighter="prismjs" data-ext="java"><pre v-pre><code class="language-java"><span class="line"><span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">I1</span> <span class="token punctuation">{</span></span>
 <span class="line">    <span class="token keyword">public</span> <span class="token class-name">I2</span> <span class="token function">method1</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
@@ -111,6 +116,8 @@
 <blockquote>
 <p><em>(참고: <code v-pre>C1</code> 클래스의 <code v-pre>method1()</code>이 <code v-pre>I2</code> 인터페이스의 구현체인 <code v-pre>C2</code> 인스턴스를 생성하여 반환하는 구조는 factory method 패턴에도 해당함.)</em></p>
 </blockquote>
+</section>
+<section class="print-section">
 <h3 id="_3-formal-inspection에-대한-다음-질문에-답하시오-20점" tabindex="-1"><a class="header-anchor" href="#_3-formal-inspection에-대한-다음-질문에-답하시오-20점"><span>3. Formal inspection에 대한 다음 질문에 답하시오. (20점)</span></a></h3>
 <ol>
 <li>Formal inspection의 절차와 각 참여자들의 역할에 대해 서술하시오. (5점)
@@ -134,6 +141,8 @@
 </ul>
 </li>
 </ol>
+</section>
+<section class="print-section">
 <h3 id="_4-다음-테스팅에-대한-질문에-답하시오-40점" tabindex="-1"><a class="header-anchor" href="#_4-다음-테스팅에-대한-질문에-답하시오-40점"><span>4. 다음 테스팅에 대한 질문에 답하시오. (40점)</span></a></h3>
 <ol>
 <li>2개의 test suite A, B가 있다. A는 B보다 분기 커버리지가 더 높고 B는 A보다 이전 버전의 프로그램에서 더 많은 버그를 찾았다. 만약 두 test suite 중에 1개를 선택해서 사용해야 한다면 어떤 걸 선택해서 사용하겠는가? 그 이유는 무엇인가? (5점)
@@ -167,6 +176,7 @@
 </ul>
 </li>
 </ol>
+</section>
 </div></template>
 
 

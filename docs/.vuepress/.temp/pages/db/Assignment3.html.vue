@@ -1,4 +1,5 @@
-<template><div><h1 id="implementing-augmented-b-tree" tabindex="-1"><a class="header-anchor" href="#implementing-augmented-b-tree"><span>Implementing Augmented B+tree</span></a></h1>
+<template><div><section class="print-section">
+<h1 id="implementing-augmented-b-tree" tabindex="-1"><a class="header-anchor" href="#implementing-augmented-b-tree"><span>Implementing Augmented B+tree</span></a></h1>
 <DateMeta />
 <ul>
 <li>이번 과제의 목표: 다음 두 가지 B+ tree 구현</li>
@@ -18,12 +19,16 @@
 <li>B+tree application 종료 시, 실제 레코드 삭제 및 남은 레코드로 B+tree 재구성</li>
 <li>실제 레코드 삭제 및 B+tree 재구성을 위한 효율적인 방법 고안 및 구현</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="disk-based-b-tree" tabindex="-1"><a class="header-anchor" href="#disk-based-b-tree"><span>Disk-based B+tree</span></a></h2>
 <ul>
 <li>B+ tree의 노드 하나를 한 페이지(4KB)에 저장하는 방식으로 B+ tree 전체를 한 파일에 저장</li>
 <li>파일은 Disk에 저장되므로, B+tree management 프로그램이 종료되어도 B+tree 구조와 내용 유지</li>
 <li>Data file은 Header Page, Internal Page, Leaf Page, Free Page 등으로 구성됨 (슬라이드 4 다이어그램 참조)</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="specification" tabindex="-1"><a class="header-anchor" href="#specification"><span>Specification</span></a></h2>
 <ul>
 <li><code v-pre>main.c</code>는 다음 기능을 수행하도록 구현됨
@@ -104,6 +109,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="specification-logical-deletion-applied-b-tree" tabindex="-1"><a class="header-anchor" href="#specification-logical-deletion-applied-b-tree"><span>Specification (Logical Deletion Applied B+ tree)</span></a></h2>
 <ul>
 <li><code v-pre>db_reorganize()</code> 함수 구현 필요</li>
@@ -118,6 +125,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="specification-1" tabindex="-1"><a class="header-anchor" href="#specification-1"><span>Specification</span></a></h2>
 <ul>
 <li>제공된 링크의 repository를 사용하여 과제 수행 후 github에 push</li>
@@ -139,6 +148,8 @@
 <li>Normal B+ tree 구현 코드를 Logical Deletion Applied B+ tree에 활용 가능</li>
 <li>제공된 in-memory B+tree 코드를 참고</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="judging-system" tabindex="-1"><a class="header-anchor" href="#judging-system"><span>Judging System</span></a></h2>
 <ul>
 <li>채점 환경 (Default Version)
@@ -152,6 +163,8 @@
 <li>과제 수행 시 최대 메모리 사용량을 <code v-pre>1MiB</code>로 제한</li>
 <li>메모리 사용량이 <code v-pre>1MiB</code>를 초과하는 경우 <strong>큰 감점 부여</strong> 가능</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="submit" tabindex="-1"><a class="header-anchor" href="#submit"><span>Submit</span></a></h2>
 <ul>
 <li>Code
@@ -171,6 +184,7 @@
 </ul>
 </li>
 </ul>
+</section>
 </div></template>
 
 

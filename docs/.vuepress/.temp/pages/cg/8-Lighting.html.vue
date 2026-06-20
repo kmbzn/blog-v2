@@ -1,5 +1,8 @@
-<template><div><h1 id="_8-lighting" tabindex="-1"><a class="header-anchor" href="#_8-lighting"><span>8 - Lighting</span></a></h1>
+<template><div><section class="print-section">
+<h1 id="_8-lighting" tabindex="-1"><a class="header-anchor" href="#_8-lighting"><span>8 - Lighting</span></a></h1>
 <DateMeta />
+</section>
+<section class="print-section">
 <h2 id="개요" tabindex="-1"><a class="header-anchor" href="#개요"><span>개요</span></a></h2>
 <ul>
 <li>물체의 가시 색상 (Visible Color of Objects)</li>
@@ -12,6 +15,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="물체의-가시-색상" tabindex="-1"><a class="header-anchor" href="#물체의-가시-색상"><span>물체의 가시 색상</span></a></h2>
 <ul>
 <li>빛이 물체에 닿으면, 일부는 흡수되고 일부는 반사됨</li>
@@ -26,6 +31,8 @@
 <blockquote>
 <p>Room for one colour, Olafur Eliasson</p>
 </blockquote>
+</section>
+<section class="print-section">
 <h2 id="물체의-가시-색상-계산하기" tabindex="-1"><a class="header-anchor" href="#물체의-가시-색상-계산하기"><span>물체의 가시 색상 계산하기</span></a></h2>
 <ul>
 <li>컴퓨터 그래픽스(CG)에서는 색상을 일반적으로 <code v-pre>R</code>, <code v-pre>G</code>, <code v-pre>B</code> 성분으로 표현함</li>
@@ -41,6 +48,8 @@
 </li>
 <li><strong>빛과 재질의 RGB 성분을 성분별 곱셈 (element-wise multiplication)</strong> 하는 것이 <strong>표면 반사의 근사 모델</strong>로 적절함</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="물체의-색상-계산하기-예시" tabindex="-1"><a class="header-anchor" href="#물체의-색상-계산하기-예시"><span>물체의 색상 계산하기: 예시</span></a></h2>
 <ul>
 <li>예시:
@@ -63,6 +72,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="빛의-반사" tabindex="-1"><a class="header-anchor" href="#빛의-반사"><span>빛의 반사</span></a></h2>
 <ul>
 <li>빛은 물체에 의해 흡수(absorbed), 발산(emitted), 산란(scattered), 반사(reflected), 굴절(refracted)될 수 있음</li>
@@ -82,6 +93,8 @@
 <blockquote>
 <p><em>Computer Graphics에서는 산란과 반사를 모두 <strong>반사</strong>(reflection)로 통칭함</em></p>
 </blockquote>
+</section>
+<section class="print-section">
 <h2 id="난반사-diffuse-reflection" tabindex="-1"><a class="header-anchor" href="#난반사-diffuse-reflection"><span>난반사 Diffuse reflection</span></a></h2>
 <ul>
 <li>특정 파장의 빛을 <strong>모든 방향으로 고르게 산란</strong>
@@ -95,6 +108,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="난반사-lambert의-코사인-법칙" tabindex="-1"><a class="header-anchor" href="#난반사-lambert의-코사인-법칙"><span>난반사 - Lambert의 코사인 법칙</span></a></h2>
 <ul>
 <li>작은 표면에서 반사되는 에너지는 <strong>입사광 방향과 표면 법선 사이의 각도의 cosine</strong>에 비례함</li>
@@ -113,12 +128,16 @@
 <p><em>이 이미지는 Brown 대학 Andy van Dam 교수 강의자료에서 인용됨</em><br>
 http://cs.brown.edu/courses/cs1230/lectures.shtml</p>
 </blockquote>
+</section>
+<section class="print-section">
 <h2 id="완전-정반사" tabindex="-1"><a class="header-anchor" href="#완전-정반사"><span>완전 정반사</span></a></h2>
 <ul>
 <li>매끄럽고 평탄한 표면에서 <strong>거울과 같은 반사</strong> 발생<br>
 → 거울상의 이미지 생성</li>
 <li><strong>시점에 의존적인(view-dependent)</strong> 특성</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="완전-정반사-반사-법칙" tabindex="-1"><a class="header-anchor" href="#완전-정반사-반사-법칙"><span>완전 정반사 - 반사 법칙</span></a></h2>
 <ul>
 <li>
@@ -139,6 +158,8 @@ http://cs.brown.edu/courses/cs1230/lectures.shtml</p>
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="불완전-정반사-a-k-a-glossy-reflection" tabindex="-1"><a class="header-anchor" href="#불완전-정반사-a-k-a-glossy-reflection"><span>불완전 정반사 (a.k.a. Glossy Reflection)</span></a></h2>
 <ul>
 <li>광택이 있으나 거울처럼 완전히 매끄럽지 않은 표면에서의 반사
@@ -149,6 +170,8 @@ http://cs.brown.edu/courses/cs1230/lectures.shtml</p>
 </li>
 <li><strong>시점에 의존적인(view-dependent)</strong> 특성</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="일반-재질의-반사" tabindex="-1"><a class="header-anchor" href="#일반-재질의-반사"><span>일반 재질의 반사</span></a></h2>
 <ul>
 <li>대부분의 재질 표면은 <strong>diffuse reflection</strong>과 <strong>(비이상적인) specular reflection</strong>을 동시에 가짐</li>
@@ -161,12 +184,16 @@ http://cs.brown.edu/courses/cs1230/lectures.shtml</p>
 <p><em>이 이미지는 Brown 대학 Andy van Dam 교수 강의자료에서 인용됨</em><br>
 http://cs.brown.edu/courses/cs1230/lectures.shtml</p>
 </blockquote>
+</section>
+<section class="print-section">
 <h2 id="lighting-or-illumination" tabindex="-1"><a class="header-anchor" href="#lighting-or-illumination"><span>Lighting (or Illumination)</span></a></h2>
 <ul>
 <li>컴퓨터 그래픽스에서 lighting (또는 illumination)은<br>
 빛의 효과를 계산하는 과정을 의미함<br>
 → 물체 표면 색상 및 하이라이트 계산</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="phong-조명-모델" tabindex="-1"><a class="header-anchor" href="#phong-조명-모델"><span>Phong 조명 모델</span></a></h2>
 <ul>
 <li>컴퓨터 그래픽스에서 가장 널리 사용되는 “고전적” 조명 모델 중 하나
@@ -214,6 +241,8 @@ http://cs.brown.edu/courses/cs1230/lectures.shtml</p>
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="ambient-성분" tabindex="-1"><a class="header-anchor" href="#ambient-성분"><span>Ambient 성분</span></a></h2>
 <p v-pre class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi>I</mi><mi>a</mi></msub><mo>=</mo><msub><mi>l</mi><mi>a</mi></msub><mo>⋅</mo><msub><mi>m</mi><mi>a</mi></msub></mrow><annotation encoding="application/x-tex">I_a = l_a \cdot m_a
 </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07847em;">I</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:-0.0785em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">a</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8444em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:-0.0197em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">a</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.5806em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">m</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">a</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span></p>
@@ -223,6 +252,8 @@ http://cs.brown.edu/courses/cs1230/lectures.shtml</p>
 <li><span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>I</mi><mi>a</mi></msub></mrow><annotation encoding="application/x-tex">I_a</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07847em;">I</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:-0.0785em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">a</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>: 최종 ambient 색 결과</li>
 <li><span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>⋅</mo></mrow><annotation encoding="application/x-tex">\cdot</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4445em;"></span><span class="mord">⋅</span></span></span></span>: 성분별 곱셈 (element-wise multiplication)</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="결과" tabindex="-1"><a class="header-anchor" href="#결과"><span>결과</span></a></h2>
 <p v-pre class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>I</mi><mo>=</mo><msub><mi>l</mi><mi>a</mi></msub><mo>⋅</mo><msub><mi>m</mi><mi>a</mi></msub></mrow><annotation encoding="application/x-tex">I = l_a \cdot m_a
 </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.07847em;">I</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8444em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:-0.0197em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">a</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.5806em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">m</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">a</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span></p>
@@ -230,6 +261,8 @@ http://cs.brown.edu/courses/cs1230/lectures.shtml</p>
 <p><em>이 이미지는 텍사스 A&amp;M 대학교의 Huamin Qu 교수 슬라이드에서 인용됨</em><br>
 http://faculty.cs.tamu.edu/schaefer/CSCE441/notes.html</p>
 </blockquote>
+</section>
+<section class="print-section">
 <h2 id="diffuse-성분" tabindex="-1"><a class="header-anchor" href="#diffuse-성분"><span>Diffuse 성분</span></a></h2>
 <p v-pre class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi>I</mi><mi>d</mi></msub><mo>=</mo><msub><mi>l</mi><mi>d</mi></msub><mo>⋅</mo><msub><mi>m</mi><mi>d</mi></msub><mo>⋅</mo><mi>cos</mi><mo>⁡</mo><mi>θ</mi><mo>=</mo><msub><mi>l</mi><mi>d</mi></msub><mo>⋅</mo><msub><mi>m</mi><mi>d</mi></msub><mo>⋅</mo><mo stretchy="false">(</mo><mi mathvariant="bold">L</mi><mo>⋅</mo><mi mathvariant="bold">N</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">I_d = l_d \cdot m_d \cdot \cos{\theta} = l_d \cdot m_d \cdot (\mathbf{L} \cdot \mathbf{N})
 </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07847em;">I</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361em;"><span style="top:-2.55em;margin-left:-0.0785em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">d</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8444em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361em;"><span style="top:-2.55em;margin-left:-0.0197em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">d</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.5945em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">m</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">d</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mop">cos</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.02778em;">θ</span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8444em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361em;"><span style="top:-2.55em;margin-left:-0.0197em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">d</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.5945em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">m</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">d</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathbf">L</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathbf">N</span><span class="mclose">)</span></span></span></span></span></p>
@@ -256,6 +289,8 @@ http://faculty.cs.tamu.edu/schaefer/CSCE441/notes.html</p>
 <p><span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>I</mi><mi>d</mi></msub></mrow><annotation encoding="application/x-tex">I_d</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07847em;">I</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361em;"><span style="top:-2.55em;margin-left:-0.0785em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">d</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>: 표면 지점에서의 diffuse 결과 색상</p>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="결과-1" tabindex="-1"><a class="header-anchor" href="#결과-1"><span>결과</span></a></h2>
 <p v-pre class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>I</mi><mo>=</mo><msub><mi>l</mi><mi>a</mi></msub><mo>⋅</mo><msub><mi>m</mi><mi>a</mi></msub></mrow><annotation encoding="application/x-tex">I = l_a \cdot m_a
 </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.07847em;">I</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8444em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:-0.0197em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">a</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.5806em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">m</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">a</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span></p>
@@ -263,6 +298,8 @@ http://faculty.cs.tamu.edu/schaefer/CSCE441/notes.html</p>
 <p v-pre class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>I</mi><mo>=</mo><msub><mi>l</mi><mi>a</mi></msub><mo>⋅</mo><msub><mi>m</mi><mi>a</mi></msub><mo>+</mo><msub><mi>l</mi><mi>d</mi></msub><mo>⋅</mo><msub><mi>m</mi><mi>d</mi></msub><mo>⋅</mo><mo stretchy="false">(</mo><mi mathvariant="bold">L</mi><mo>⋅</mo><mi mathvariant="bold">N</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">I = l_a \cdot m_a + l_d \cdot m_d \cdot (\mathbf{L} \cdot \mathbf{N})
 </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.07847em;">I</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8444em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:-0.0197em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">a</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.7333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">m</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">a</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.8444em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361em;"><span style="top:-2.55em;margin-left:-0.0197em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">d</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.5945em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">m</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">d</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathbf">L</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathbf">N</span><span class="mclose">)</span></span></span></span></span></p>
 <p>(그림: ambient + diffuse 성분 적용)</p>
+</section>
+<section class="print-section">
 <h2 id="specular-성분" tabindex="-1"><a class="header-anchor" href="#specular-성분"><span>Specular 성분</span></a></h2>
 <p v-pre class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi>I</mi><mi>s</mi></msub><mo>=</mo><msub><mi>l</mi><mi>s</mi></msub><mo>⋅</mo><msub><mi>m</mi><mi>s</mi></msub><mo>⋅</mo><msup><mrow><mi>cos</mi><mo>⁡</mo></mrow><mi>n</mi></msup><mi>α</mi><mo>=</mo><msub><mi>l</mi><mi>s</mi></msub><mo>⋅</mo><msub><mi>m</mi><mi>s</mi></msub><mo>⋅</mo><mo stretchy="false">(</mo><mi mathvariant="bold">V</mi><mo>⋅</mo><mi mathvariant="bold">R</mi><msup><mo stretchy="false">)</mo><mi>n</mi></msup></mrow><annotation encoding="application/x-tex">I_s = l_s \cdot m_s \cdot \cos^n{\alpha} = l_s \cdot m_s \cdot (\mathbf{V} \cdot \mathbf{R})^n
 </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07847em;">I</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:-0.0785em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">s</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8444em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:-0.0197em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">s</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.5945em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">m</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">s</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.7144em;"></span><span class="mop"><span class="mop">cos</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7144em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">n</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0037em;">α</span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8444em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:-0.0197em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">s</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.5945em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">m</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">s</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathbf" style="margin-right:0.01597em;">V</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathbf">R</span><span class="mclose"><span class="mclose">)</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7144em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">n</span></span></span></span></span></span></span></span></span></span></span></span></p>
@@ -289,6 +326,8 @@ http://faculty.cs.tamu.edu/schaefer/CSCE441/notes.html</p>
 <p><span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>I</mi><mi>s</mi></msub></mrow><annotation encoding="application/x-tex">I_s</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07847em;">I</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:-0.0785em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">s</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>: 표면 지점에서의 specular 결과 색상</p>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="결과-2" tabindex="-1"><a class="header-anchor" href="#결과-2"><span>결과</span></a></h2>
 <p v-pre class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>I</mi><mo>=</mo><msub><mi>l</mi><mi>a</mi></msub><mo>⋅</mo><msub><mi>m</mi><mi>a</mi></msub></mrow><annotation encoding="application/x-tex">I = l_a \cdot m_a
 </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.07847em;">I</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8444em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:-0.0197em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">a</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.5806em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">m</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">a</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span></p>
@@ -314,6 +353,8 @@ http://faculty.cs.tamu.edu/schaefer/CSCE441/notes.html</p>
 <li><span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>=</mo><mn>500</mn></mrow><annotation encoding="application/x-tex">n = 500</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">500</span></span></span></span></li>
 </ul>
 <p>(그림: 광택 계수 n이 커질수록 specular highlight가 좁아짐)</p>
+</section>
+<section class="print-section">
 <h2 id="demo-phong-illumination" tabindex="-1"><a class="header-anchor" href="#demo-phong-illumination"><span>[Demo] Phong Illumination</span></a></h2>
 <ul>
 <li>http://www.cs.toronto.edu/~jacobson/phong-demo/</li>
@@ -325,6 +366,8 @@ http://faculty.cs.tamu.edu/schaefer/CSCE441/notes.html</p>
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="shading" tabindex="-1"><a class="header-anchor" href="#shading"><span>Shading</span></a></h2>
 <ul>
 <li>물체 표면에 나타나는 색상 분포의 변화
@@ -346,6 +389,8 @@ http://faculty.cs.tamu.edu/schaefer/CSCE441/notes.html</p>
 <li><strong>Polygon shading</strong>:<br>
 조명 모델을 기반으로 다각형 내부 각 픽셀의 색상을 결정하는 과정</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="surface-normal" tabindex="-1"><a class="header-anchor" href="#surface-normal"><span>Surface Normal</span></a></h2>
 <ul>
 <li>특정 지점에서 표면에 수직인 벡터<br>
@@ -363,6 +408,8 @@ http://faculty.cs.tamu.edu/schaefer/CSCE441/notes.html</p>
 </li>
 </ul>
 <p>(수식 포함된 그림: 코사인 법칙과 반사 각도)</p>
+</section>
+<section class="print-section">
 <h2 id="face-normal" tabindex="-1"><a class="header-anchor" href="#face-normal"><span>Face Normal</span></a></h2>
 <ul>
 <li><strong>다각형 면의 surface normal을 얻는 방법</strong></li>
@@ -383,6 +430,8 @@ http://faculty.cs.tamu.edu/schaefer/CSCE441/notes.html</p>
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="flat-shading" tabindex="-1"><a class="header-anchor" href="#flat-shading"><span>Flat Shading</span></a></h2>
 <ul>
 <li>다각형당 하나의 법선(normal)을 사용</li>
@@ -393,6 +442,8 @@ http://faculty.cs.tamu.edu/schaefer/CSCE441/notes.html</p>
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="smooth-shading" tabindex="-1"><a class="header-anchor" href="#smooth-shading"><span>Smooth Shading</span></a></h2>
 <ul>
 <li>꼭짓점마다 평균 낸 법선 벡터 사용</li>
@@ -404,6 +455,8 @@ http://faculty.cs.tamu.edu/schaefer/CSCE441/notes.html</p>
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="gouraud-shading" tabindex="-1"><a class="header-anchor" href="#gouraud-shading"><span>Gouraud Shading</span></a></h2>
 <ul>
 <li>꼭짓점마다 하나의 vertex normal 사용</li>
@@ -426,6 +479,8 @@ http://faculty.cs.tamu.edu/schaefer/CSCE441/notes.html</p>
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="phong-shading" tabindex="-1"><a class="header-anchor" href="#phong-shading"><span>Phong Shading</span></a></h2>
 <ul>
 <li>꼭짓점마다 하나의 vertex normal 사용</li>
@@ -449,6 +504,8 @@ http://faculty.cs.tamu.edu/schaefer/CSCE441/notes.html</p>
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="demo-polygon-shading" tabindex="-1"><a class="header-anchor" href="#demo-polygon-shading"><span>[Demo] Polygon Shading</span></a></h2>
 <ul>
 <li>Flat &amp; Gouraud shading
@@ -462,6 +519,8 @@ http://faculty.cs.tamu.edu/schaefer/CSCE441/notes.html</p>
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="법선-벡터-변환-normal-vector-transformation" tabindex="-1"><a class="header-anchor" href="#법선-벡터-변환-normal-vector-transformation"><span>법선 벡터 변환 Normal Vector Transformation</span></a></h2>
 <ul>
 <li>어떤 표면 위 점들의 집합에 affine 변환 M이 적용되면,
@@ -499,7 +558,11 @@ http://faculty.cs.tamu.edu/schaefer/CSCE441/notes.html</p>
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h1 id="_8-lab-lighting" tabindex="-1"><a class="header-anchor" href="#_8-lab-lighting"><span>8 - Lab - Lighting</span></a></h1>
+</section>
+<section class="print-section">
 <h2 id="outline" tabindex="-1"><a class="header-anchor" href="#outline"><span>Outline</span></a></h2>
 <ul>
 <li>Flat / Smooth Shading을 위한 Vertex Normal 설정</li>
@@ -525,8 +588,12 @@ http://faculty.cs.tamu.edu/schaefer/CSCE441/notes.html</p>
 <li>Phong 조명과 Phong Shading을 이용한 큐브 렌더링</li>
 <li>Phong 조명과 Gouraud / Phong Shading을 사용한 “Smooth” 큐브 렌더링</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="setting-vertex-normal-for-flat-smooth-shading" tabindex="-1"><a class="header-anchor" href="#setting-vertex-normal-for-flat-smooth-shading"><span>Setting Vertex Normal for Flat / Smooth Shading</span></a></h2>
 <p>(본문 없음)</p>
+</section>
+<section class="print-section">
 <h2 id="example-a-cube-of-length-2-again" tabindex="-1"><a class="header-anchor" href="#example-a-cube-of-length-2-again"><span>Example: a cube of length 2 again</span></a></h2>
 <blockquote>
 <p>큐브의 한 변의 길이가 2인 예시</p>
@@ -541,7 +608,9 @@ http://faculty.cs.tamu.edu/schaefer/CSCE441/notes.html</p>
 <span class="line">6               ( 1, -1, -1)</span>
 <span class="line">7               (-1, -1, -1)</span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="flat-shading-in-opengl" tabindex="-1"><a class="header-anchor" href="#flat-shading-in-opengl"><span>Flat Shading in OpenGL</span></a></h2>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h2 id="flat-shading-in-opengl" tabindex="-1"><a class="header-anchor" href="#flat-shading-in-opengl"><span>Flat Shading in OpenGL</span></a></h2>
 <ul>
 <li>
 <p>다각형 쉐이딩 방식은 지정한 vertex normal 벡터에 따라 결정됨</p>
@@ -554,6 +623,8 @@ http://faculty.cs.tamu.edu/schaefer/CSCE441/notes.html</p>
 <p>The normal at a vertex is the same as the face normal. Therefore, each vertex has as many normals as the number of faces it belongs to.<br>
 (정점의 normal은 face normal과 동일하므로, 하나의 정점은 자신이 속한 면의 수만큼의 normal을 가짐)</p>
 </blockquote>
+</section>
+<section class="print-section">
 <h2 id="normals-of-the-cube-for-flat-shading" tabindex="-1"><a class="header-anchor" href="#normals-of-the-cube-for-flat-shading"><span>Normals of the Cube for Flat Shading</span></a></h2>
 <blockquote>
 <p>각 정점마다 face에 따라 normal이 다르게 설정되어 있음</p>
@@ -584,7 +655,9 @@ http://faculty.cs.tamu.edu/schaefer/CSCE441/notes.html</p>
 <span class="line">7               (-1, -1, -1)     (-1,0,0)</span>
 <span class="line">7               (-1, -1, -1)     (0,-1,0)</span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="vertex-data" tabindex="-1"><a class="header-anchor" href="#vertex-data"><span>Vertex Data</span></a></h2>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h2 id="vertex-data" tabindex="-1"><a class="header-anchor" href="#vertex-data"><span>Vertex Data</span></a></h2>
 <div class="language-python line-numbers-mode" data-highlighter="prismjs" data-ext="py"><pre v-pre><code class="language-python"><span class="line"><span class="token keyword">def</span> <span class="token function">prepare_vao_cube</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span></span>
 <span class="line">    <span class="token comment"># 36개의 정점: 총 12개의 삼각형</span></span>
 <span class="line">    vertices <span class="token operator">=</span> glm<span class="token punctuation">.</span>array<span class="token punctuation">(</span>glm<span class="token punctuation">.</span>float32<span class="token punctuation">,</span></span>
@@ -598,7 +671,9 @@ http://faculty.cs.tamu.edu/schaefer/CSCE441/notes.html</p>
 <span class="line">        <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span></span>
 <span class="line">    <span class="token punctuation">)</span></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="flat-shading-in-opengl-1" tabindex="-1"><a class="header-anchor" href="#flat-shading-in-opengl-1"><span>Flat Shading in OpenGL</span></a></h2>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h2 id="flat-shading-in-opengl-1" tabindex="-1"><a class="header-anchor" href="#flat-shading-in-opengl-1"><span>Flat Shading in OpenGL</span></a></h2>
 <ul>
 <li>
 <p>하지만, 현대 OpenGL에서는 &quot;진정한&quot; flat shading (정확히는 '다각형 단위 색상 계산')은 시각적으로 어색한 결과를 낳는 경우가 많음</p>
@@ -612,6 +687,8 @@ http://faculty.cs.tamu.edu/schaefer/CSCE441/notes.html</p>
 <p>이는 현대 OpenGL에서 모든 polygon이 삼각형으로 처리되기 때문임</p>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="flat-shading-in-opengl-2" tabindex="-1"><a class="header-anchor" href="#flat-shading-in-opengl-2"><span>Flat Shading in OpenGL</span></a></h2>
 <ul>
 <li>
@@ -629,6 +706,8 @@ http://faculty.cs.tamu.edu/schaefer/CSCE441/notes.html</p>
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="smooth-shading-in-opengl" tabindex="-1"><a class="header-anchor" href="#smooth-shading-in-opengl"><span>Smooth Shading in OpenGL</span></a></h2>
 <ul>
 <li>Smooth shading: 정점 normal을 해당 정점이 포함된 모든 face normal의 평균으로 설정함</li>
@@ -636,6 +715,8 @@ http://faculty.cs.tamu.edu/schaefer/CSCE441/notes.html</p>
 <blockquote>
 <p>Only one vertex normal per vertex; average of face normals of the faces the vertex is part of</p>
 </blockquote>
+</section>
+<section class="print-section">
 <h2 id="normals-of-the-cube-for-smooth-shading" tabindex="-1"><a class="header-anchor" href="#normals-of-the-cube-for-smooth-shading"><span>Normals of the Cube for Smooth Shading</span></a></h2>
 <div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code class="language-text"><span class="line">vertex index    position        normal</span>
 <span class="line">0               (-1,  1,  1)    (-0.57735026918963,  0.57735026918963,  0.57735026918963)</span>
@@ -647,7 +728,9 @@ http://faculty.cs.tamu.edu/schaefer/CSCE441/notes.html</p>
 <span class="line">6               ( 1, -1, -1)    ( 0.57735026918963, -0.57735026918963, -0.57735026918963)</span>
 <span class="line">7               (-1, -1, -1)    (-0.57735026918963, -0.57735026918963, -0.57735026918963)</span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="vertex-and-index-data" tabindex="-1"><a class="header-anchor" href="#vertex-and-index-data"><span>Vertex and Index Data</span></a></h2>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h2 id="vertex-and-index-data" tabindex="-1"><a class="header-anchor" href="#vertex-and-index-data"><span>Vertex and Index Data</span></a></h2>
 <div class="language-python line-numbers-mode" data-highlighter="prismjs" data-ext="py"><pre v-pre><code class="language-python"><span class="line"><span class="token comment"># 8개의 정점</span></span>
 <span class="line">vertices <span class="token operator">=</span> glm<span class="token punctuation">.</span>array<span class="token punctuation">(</span>glm<span class="token punctuation">.</span>float32<span class="token punctuation">,</span></span>
 <span class="line">    <span class="token comment"># position             normal</span></span>
@@ -677,7 +760,9 @@ http://faculty.cs.tamu.edu/schaefer/CSCE441/notes.html</p>
 <span class="line">    <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span></span>
 <span class="line"><span class="token punctuation">)</span></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="how-to-get-vertex-normals" tabindex="-1"><a class="header-anchor" href="#how-to-get-vertex-normals"><span>How to Get Vertex Normals</span></a></h2>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h2 id="how-to-get-vertex-normals" tabindex="-1"><a class="header-anchor" href="#how-to-get-vertex-normals"><span>How to Get Vertex Normals</span></a></h2>
 <ul>
 <li>
 <p>vertex data array에 vertex normal을 하드코딩</p>
@@ -695,10 +780,14 @@ http://faculty.cs.tamu.edu/schaefer/CSCE441/notes.html</p>
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="render-a-cube-using-phong-illumination-and-gouraud-shading" tabindex="-1"><a class="header-anchor" href="#render-a-cube-using-phong-illumination-and-gouraud-shading"><span>Render a Cube using Phong Illumination and Gouraud Shading</span></a></h2>
 <ul>
 <li>조명 성분들을 하나씩 추가하여 구현</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="light-material-phong-illumination-components" tabindex="-1"><a class="header-anchor" href="#light-material-phong-illumination-components"><span>Light &amp; Material Phong Illumination Components</span></a></h2>
 <ul>
 <li>
@@ -714,6 +803,8 @@ http://faculty.cs.tamu.edu/schaefer/CSCE441/notes.html</p>
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="good-settings-for-light-material-phong-illumination-components" tabindex="-1"><a class="header-anchor" href="#good-settings-for-light-material-phong-illumination-components"><span>Good Settings for Light &amp; Material Phong Illumination Components</span></a></h2>
 <ul>
 <li>
@@ -736,6 +827,8 @@ http://faculty.cs.tamu.edu/schaefer/CSCE441/notes.html</p>
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="recall-gouraud-shading" tabindex="-1"><a class="header-anchor" href="#recall-gouraud-shading"><span>Recall: Gouraud Shading</span></a></h2>
 <ul>
 <li>
@@ -752,6 +845,8 @@ http://faculty.cs.tamu.edu/schaefer/CSCE441/notes.html</p>
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="code-1-ambient-only-gouraud-facenorm" tabindex="-1"><a class="header-anchor" href="#code-1-ambient-only-gouraud-facenorm"><span>[Code] 1-ambient-only-gouraud-facenorm</span></a></h2>
 <p><strong>Vertex Shader</strong></p>
 <div class="language-glsl line-numbers-mode" data-highlighter="prismjs" data-ext="glsl"><pre v-pre><code class="language-glsl"><span class="line"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">version</span> <span class="token expression"><span class="token number">330</span> core</span></span></span>
@@ -784,7 +879,11 @@ http://faculty.cs.tamu.edu/schaefer/CSCE441/notes.html</p>
 <span class="line">    vout_color <span class="token operator">=</span> <span class="token keyword">vec4</span><span class="token punctuation">(</span>color<span class="token punctuation">,</span> <span class="token number">1.0</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
 <span class="line"><span class="token punctuation">}</span></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="code-1-ambient-only-gouraud-facenorm-1" tabindex="-1"><a class="header-anchor" href="#code-1-ambient-only-gouraud-facenorm-1"><span>[Code] 1-ambient-only-gouraud-facenorm</span></a></h2>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h2 id="code-1-ambient-only-gouraud-facenorm-1" tabindex="-1"><a class="header-anchor" href="#code-1-ambient-only-gouraud-facenorm-1"><span>[Code] 1-ambient-only-gouraud-facenorm</span></a></h2>
+</section>
+<section class="print-section">
 <h3 id="fragment-shader" tabindex="-1"><a class="header-anchor" href="#fragment-shader"><span>Fragment shader</span></a></h3>
 <div class="language-glsl line-numbers-mode" data-highlighter="prismjs" data-ext="glsl"><pre v-pre><code class="language-glsl"><span class="line"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">version</span> <span class="token expression"><span class="token number">330</span> core</span></span></span>
 <span class="line"></span>
@@ -797,7 +896,9 @@ http://faculty.cs.tamu.edu/schaefer/CSCE441/notes.html</p>
 <span class="line">    FragColor <span class="token operator">=</span> vout_color<span class="token punctuation">;</span></span>
 <span class="line"><span class="token punctuation">}</span></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="code-1-ambient-only-gouraud-facenorm-2" tabindex="-1"><a class="header-anchor" href="#code-1-ambient-only-gouraud-facenorm-2"><span>[Code] 1-ambient-only-gouraud-facenorm</span></a></h2>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h2 id="code-1-ambient-only-gouraud-facenorm-2" tabindex="-1"><a class="header-anchor" href="#code-1-ambient-only-gouraud-facenorm-2"><span>[Code] 1-ambient-only-gouraud-facenorm</span></a></h2>
 <div class="language-python line-numbers-mode" data-highlighter="prismjs" data-ext="py"><pre v-pre><code class="language-python"><span class="line"><span class="token keyword">def</span> <span class="token function">prepare_vao_cube</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span></span>
 <span class="line">    <span class="token comment"># 12개의 삼각형을 위한 36개의 정점</span></span>
 <span class="line">    vertices <span class="token operator">=</span> glm<span class="token punctuation">.</span>array<span class="token punctuation">(</span>glm<span class="token punctuation">.</span>float32<span class="token punctuation">,</span></span>
@@ -814,6 +915,8 @@ http://faculty.cs.tamu.edu/schaefer/CSCE441/notes.html</p>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><blockquote>
 <p>(page 5와 동일)</p>
 </blockquote>
+</section>
+<section class="print-section">
 <h2 id="code-1-ambient-only-gouraud-facenorm-3" tabindex="-1"><a class="header-anchor" href="#code-1-ambient-only-gouraud-facenorm-3"><span>[Code] 1-ambient-only-gouraud-facenorm</span></a></h2>
 <div class="language-python line-numbers-mode" data-highlighter="prismjs" data-ext="py"><pre v-pre><code class="language-python"><span class="line"><span class="token keyword">def</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span></span>
 <span class="line">    vao_cube <span class="token operator">=</span> prepare_vao_cube<span class="token punctuation">(</span><span class="token punctuation">)</span></span>
@@ -840,7 +943,11 @@ http://faculty.cs.tamu.edu/schaefer/CSCE441/notes.html</p>
 <span class="line"></span>
 <span class="line">        draw_cube_with_current_MVP<span class="token punctuation">(</span><span class="token punctuation">)</span></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="code-2-ambient-diffuse-gouraud-shading" tabindex="-1"><a class="header-anchor" href="#code-2-ambient-diffuse-gouraud-shading"><span>[Code] 2-ambient-diffuse-gouraud-shading</span></a></h2>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h2 id="code-2-ambient-diffuse-gouraud-shading" tabindex="-1"><a class="header-anchor" href="#code-2-ambient-diffuse-gouraud-shading"><span>[Code] 2-ambient-diffuse-gouraud-shading</span></a></h2>
+</section>
+<section class="print-section">
 <h3 id="vertex-shader" tabindex="-1"><a class="header-anchor" href="#vertex-shader"><span>Vertex shader</span></a></h3>
 <div class="language-glsl line-numbers-mode" data-highlighter="prismjs" data-ext="glsl"><pre v-pre><code class="language-glsl"><span class="line"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">version</span> <span class="token expression"><span class="token number">330</span> core</span></span></span>
 <span class="line"></span>
@@ -881,7 +988,9 @@ http://faculty.cs.tamu.edu/schaefer/CSCE441/notes.html</p>
 <span class="line">    vout_color <span class="token operator">=</span> <span class="token keyword">vec4</span><span class="token punctuation">(</span>color<span class="token punctuation">,</span> <span class="token number">1.0</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
 <span class="line"><span class="token punctuation">}</span></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="code-2-ambient-diffuse-gouraud-shading-1" tabindex="-1"><a class="header-anchor" href="#code-2-ambient-diffuse-gouraud-shading-1"><span>[Code] 2-ambient-diffuse-gouraud-shading</span></a></h2>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h2 id="code-2-ambient-diffuse-gouraud-shading-1" tabindex="-1"><a class="header-anchor" href="#code-2-ambient-diffuse-gouraud-shading-1"><span>[Code] 2-ambient-diffuse-gouraud-shading</span></a></h2>
 <div class="language-glsl line-numbers-mode" data-highlighter="prismjs" data-ext="glsl"><pre v-pre><code class="language-glsl"><span class="line"><span class="token comment">// 조명 성분</span></span>
 <span class="line"><span class="token keyword">vec3</span> light_ambient <span class="token operator">=</span> <span class="token number">0.1</span> <span class="token operator">*</span> light_color<span class="token punctuation">;</span></span>
 <span class="line"><span class="token keyword">vec3</span> light_diffuse <span class="token operator">=</span> light_color<span class="token punctuation">;</span></span>
@@ -905,7 +1014,9 @@ http://faculty.cs.tamu.edu/schaefer/CSCE441/notes.html</p>
 <span class="line"><span class="token keyword">vec3</span> color <span class="token operator">=</span> ambient <span class="token operator">+</span> diffuse<span class="token punctuation">;</span></span>
 <span class="line">vout_color <span class="token operator">=</span> <span class="token keyword">vec4</span><span class="token punctuation">(</span>color<span class="token punctuation">,</span> <span class="token number">1.0</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="code-2-ambient-diffuse-gouraud-shading-2" tabindex="-1"><a class="header-anchor" href="#code-2-ambient-diffuse-gouraud-shading-2"><span>[Code] 2-ambient-diffuse-gouraud-shading</span></a></h2>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h2 id="code-2-ambient-diffuse-gouraud-shading-2" tabindex="-1"><a class="header-anchor" href="#code-2-ambient-diffuse-gouraud-shading-2"><span>[Code] 2-ambient-diffuse-gouraud-shading</span></a></h2>
 <blockquote>
 <p>Normal 벡터 변환 방식:</p>
 </blockquote>
@@ -926,6 +1037,8 @@ http://faculty.cs.tamu.edu/schaefer/CSCE441/notes.html</p>
 <li>normal에 변환 행렬 X를 적용</li>
 <li>X는 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>b</mi><mi>e</mi><mi>g</mi><mi>i</mi><mi>n</mi><mo>:</mo><mi>m</mi><mi>a</mi><mi>t</mi><mi>h</mi><mo>:</mo><mi>t</mi><mi>e</mi><mi>x</mi><mi>t</mi></mrow><annotation encoding="application/x-tex">begin:math:text</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">b</span><span class="mord mathnormal">e</span><span class="mord mathnormal" style="margin-right:0.03588em;">g</span><span class="mord mathnormal">in</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">:</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal">ma</span><span class="mord mathnormal">t</span><span class="mord mathnormal">h</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">:</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6151em;"></span><span class="mord mathnormal">t</span><span class="mord mathnormal">e</span><span class="mord mathnormal">x</span><span class="mord mathnormal">t</span></span></span></span> M^T <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>e</mi><mi>n</mi><mi>d</mi><mo>:</mo><mi>m</mi><mi>a</mi><mi>t</mi><mi>h</mi><mo>:</mo><mi>t</mi><mi>e</mi><mi>x</mi><mi>t</mi></mrow><annotation encoding="application/x-tex">end:math:text</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal">e</span><span class="mord mathnormal">n</span><span class="mord mathnormal">d</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">:</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal">ma</span><span class="mord mathnormal">t</span><span class="mord mathnormal">h</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">:</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6151em;"></span><span class="mord mathnormal">t</span><span class="mord mathnormal">e</span><span class="mord mathnormal">x</span><span class="mord mathnormal">t</span></span></span></span> 의 역행렬: <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>b</mi><mi>e</mi><mi>g</mi><mi>i</mi><mi>n</mi><mo>:</mo><mi>m</mi><mi>a</mi><mi>t</mi><mi>h</mi><mo>:</mo><mi>t</mi><mi>e</mi><mi>x</mi><mi>t</mi></mrow><annotation encoding="application/x-tex">begin:math:text</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">b</span><span class="mord mathnormal">e</span><span class="mord mathnormal" style="margin-right:0.03588em;">g</span><span class="mord mathnormal">in</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">:</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal">ma</span><span class="mord mathnormal">t</span><span class="mord mathnormal">h</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">:</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6151em;"></span><span class="mord mathnormal">t</span><span class="mord mathnormal">e</span><span class="mord mathnormal">x</span><span class="mord mathnormal">t</span></span></span></span> X = (M^T)^{-1} <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>e</mi><mi>n</mi><mi>d</mi><mo>:</mo><mi>m</mi><mi>a</mi><mi>t</mi><mi>h</mi><mo>:</mo><mi>t</mi><mi>e</mi><mi>x</mi><mi>t</mi></mrow><annotation encoding="application/x-tex">end:math:text</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal">e</span><span class="mord mathnormal">n</span><span class="mord mathnormal">d</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">:</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal">ma</span><span class="mord mathnormal">t</span><span class="mord mathnormal">h</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">:</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6151em;"></span><span class="mord mathnormal">t</span><span class="mord mathnormal">e</span><span class="mord mathnormal">x</span><span class="mord mathnormal">t</span></span></span></span></li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="code-2-ambient-diffuse-gouraud-shading-3" tabindex="-1"><a class="header-anchor" href="#code-2-ambient-diffuse-gouraud-shading-3"><span>[Code] 2-ambient-diffuse-gouraud-shading</span></a></h2>
 <div class="language-cpp line-numbers-mode" data-highlighter="prismjs" data-ext="cpp"><pre v-pre><code class="language-cpp"><span class="line">vec3 surface_pos <span class="token operator">=</span> <span class="token function">vec3</span><span class="token punctuation">(</span>M <span class="token operator">*</span> <span class="token function">vec4</span><span class="token punctuation">(</span>vin_pos<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// world space에서의 표면 위치</span></span>
 <span class="line"></span></code></pre>
@@ -946,7 +1059,11 @@ http://faculty.cs.tamu.edu/schaefer/CSCE441/notes.html</p>
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="code-3-all-components-gouraud-facenorm" tabindex="-1"><a class="header-anchor" href="#code-3-all-components-gouraud-facenorm"><span>[Code] 3-all-components-gouraud-facenorm</span></a></h2>
+</section>
+<section class="print-section">
 <h3 id="vertex-shader-1" tabindex="-1"><a class="header-anchor" href="#vertex-shader-1"><span>Vertex shader</span></a></h3>
 <div class="language-glsl line-numbers-mode" data-highlighter="prismjs" data-ext="glsl"><pre v-pre><code class="language-glsl"><span class="line"><span class="token keyword">uniform</span> <span class="token keyword">mat4</span> MVP<span class="token punctuation">;</span></span>
 <span class="line"><span class="token keyword">uniform</span> <span class="token keyword">mat4</span> M<span class="token punctuation">;</span></span>
@@ -968,7 +1085,9 @@ http://faculty.cs.tamu.edu/schaefer/CSCE441/notes.html</p>
 <span class="line">    <span class="token keyword">vec3</span> light_diffuse <span class="token operator">=</span> light_color<span class="token punctuation">;</span></span>
 <span class="line">    <span class="token keyword">vec3</span> light_specular <span class="token operator">=</span> light_color<span class="token punctuation">;</span></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="code-3-all-components-gouraud-facenorm-1" tabindex="-1"><a class="header-anchor" href="#code-3-all-components-gouraud-facenorm-1"><span>[Code] 3-all-components-gouraud-facenorm</span></a></h2>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h2 id="code-3-all-components-gouraud-facenorm-1" tabindex="-1"><a class="header-anchor" href="#code-3-all-components-gouraud-facenorm-1"><span>[Code] 3-all-components-gouraud-facenorm</span></a></h2>
 <div class="language-glsl line-numbers-mode" data-highlighter="prismjs" data-ext="glsl"><pre v-pre><code class="language-glsl"><span class="line"><span class="token comment">// 재질 성분</span></span>
 <span class="line"><span class="token keyword">vec3</span> material_ambient <span class="token operator">=</span> material_color<span class="token punctuation">;</span></span>
 <span class="line"><span class="token keyword">vec3</span> material_diffuse <span class="token operator">=</span> material_color<span class="token punctuation">;</span>       <span class="token comment">// 비금속 재질</span></span>
@@ -995,7 +1114,9 @@ http://faculty.cs.tamu.edu/schaefer/CSCE441/notes.html</p>
 <span class="line"><span class="token keyword">vec3</span> color <span class="token operator">=</span> ambient <span class="token operator">+</span> diffuse <span class="token operator">+</span> specular<span class="token punctuation">;</span></span>
 <span class="line">vout_color <span class="token operator">=</span> <span class="token keyword">vec4</span><span class="token punctuation">(</span>color<span class="token punctuation">,</span> <span class="token number">1.</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="code-3-all-components-gouraud-facenorm-2" tabindex="-1"><a class="header-anchor" href="#code-3-all-components-gouraud-facenorm-2"><span>[Code] 3-all-components-gouraud-facenorm</span></a></h2>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h2 id="code-3-all-components-gouraud-facenorm-2" tabindex="-1"><a class="header-anchor" href="#code-3-all-components-gouraud-facenorm-2"><span>[Code] 3-all-components-gouraud-facenorm</span></a></h2>
 <div class="language-glsl line-numbers-mode" data-highlighter="prismjs" data-ext="glsl"><pre v-pre><code class="language-glsl"><span class="line"><span class="token keyword">vec3</span> reflect_dir <span class="token operator">=</span> <span class="token function">reflect</span><span class="token punctuation">(</span><span class="token operator">-</span>light_dir<span class="token punctuation">,</span> normal<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
 <span class="line"><span class="token keyword">float</span> spec <span class="token operator">=</span> <span class="token function">pow</span><span class="token punctuation">(</span><span class="token function">max</span><span class="token punctuation">(</span><span class="token function">dot</span><span class="token punctuation">(</span>view_dir<span class="token punctuation">,</span> reflect_dir<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">0.0</span><span class="token punctuation">)</span><span class="token punctuation">,</span> material_shininess<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
 <span class="line"></span></code></pre>
@@ -1006,7 +1127,11 @@ http://faculty.cs.tamu.edu/schaefer/CSCE441/notes.html</p>
 <ul>
 <li>여기서 <code v-pre>max()</code>는 음수 색상을 방지하기 위해 사용됨</li>
 </ul>
+</section>
+<section class="print-section">
 <h1 id="render-a-cube-using-phong-illumination-and-phong-shading" tabindex="-1"><a class="header-anchor" href="#render-a-cube-using-phong-illumination-and-phong-shading"><span>Render a Cube using Phong Illumination and Phong Shading</span></a></h1>
+</section>
+<section class="print-section">
 <h2 id="recall-phong-shading" tabindex="-1"><a class="header-anchor" href="#recall-phong-shading"><span>Recall: Phong Shading</span></a></h2>
 <ul>
 <li>각 정점마다 단일 vertex normal 사용</li>
@@ -1014,7 +1139,11 @@ http://faculty.cs.tamu.edu/schaefer/CSCE441/notes.html</p>
 <li>폴리곤 내 <strong>각 픽셀마다</strong> 보간된 normal을 이용해 조명 계산<br>
 → <strong>조명 계산은 fragment shader에서 수행</strong></li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="code-4-all-components-phong-facenorm" tabindex="-1"><a class="header-anchor" href="#code-4-all-components-phong-facenorm"><span>[Code] 4-all-components-phong-facenorm</span></a></h2>
+</section>
+<section class="print-section">
 <h3 id="vertex-shader-2" tabindex="-1"><a class="header-anchor" href="#vertex-shader-2"><span>Vertex shader</span></a></h3>
 <div class="language-glsl line-numbers-mode" data-highlighter="prismjs" data-ext="glsl"><pre v-pre><code class="language-glsl"><span class="line"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">version</span> <span class="token expression"><span class="token number">330</span> core</span></span></span>
 <span class="line"></span>
@@ -1036,7 +1165,11 @@ http://faculty.cs.tamu.edu/schaefer/CSCE441/notes.html</p>
 <span class="line">    vout_normal <span class="token operator">=</span> <span class="token function">normalize</span><span class="token punctuation">(</span><span class="token keyword">mat3</span><span class="token punctuation">(</span><span class="token function">inverse</span><span class="token punctuation">(</span><span class="token function">transpose</span><span class="token punctuation">(</span>M<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">*</span> vin_normal<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
 <span class="line"><span class="token punctuation">}</span></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="code-4-all-components-phong-facenorm-1" tabindex="-1"><a class="header-anchor" href="#code-4-all-components-phong-facenorm-1"><span>[Code] 4-all-components-phong-facenorm</span></a></h2>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h2 id="code-4-all-components-phong-facenorm-1" tabindex="-1"><a class="header-anchor" href="#code-4-all-components-phong-facenorm-1"><span>[Code] 4-all-components-phong-facenorm</span></a></h2>
+</section>
+<section class="print-section">
 <h3 id="fragment-shader-1" tabindex="-1"><a class="header-anchor" href="#fragment-shader-1"><span>Fragment shader</span></a></h3>
 <div class="language-glsl line-numbers-mode" data-highlighter="prismjs" data-ext="glsl"><pre v-pre><code class="language-glsl"><span class="line"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">version</span> <span class="token expression"><span class="token number">330</span> core</span></span></span>
 <span class="line"></span>
@@ -1087,7 +1220,11 @@ http://faculty.cs.tamu.edu/schaefer/CSCE441/notes.html</p>
 <span class="line">    FragColor <span class="token operator">=</span> <span class="token keyword">vec4</span><span class="token punctuation">(</span>color<span class="token punctuation">,</span> <span class="token number">1.</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
 <span class="line"><span class="token punctuation">}</span></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h1 id="render-a-smooth-cube-using-phong-illumination-and-gouraud-phong-shading" tabindex="-1"><a class="header-anchor" href="#render-a-smooth-cube-using-phong-illumination-and-gouraud-phong-shading"><span>Render a &quot;Smooth&quot; Cube using Phong Illumination and Gouraud / Phong Shading</span></a></h1>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h1 id="render-a-smooth-cube-using-phong-illumination-and-gouraud-phong-shading" tabindex="-1"><a class="header-anchor" href="#render-a-smooth-cube-using-phong-illumination-and-gouraud-phong-shading"><span>Render a &quot;Smooth&quot; Cube using Phong Illumination and Gouraud / Phong Shading</span></a></h1>
+</section>
+<section class="print-section">
 <h2 id="code" tabindex="-1"><a class="header-anchor" href="#code"><span>[Code]</span></a></h2>
 <ul>
 <li>
@@ -1105,6 +1242,7 @@ http://faculty.cs.tamu.edu/schaefer/CSCE441/notes.html</p>
 </ul>
 </li>
 </ul>
+</section>
 </div></template>
 
 

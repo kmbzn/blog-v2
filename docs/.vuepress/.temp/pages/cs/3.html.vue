@@ -1,5 +1,8 @@
-<template><div><h1 id="_03-cryptographic-tools" tabindex="-1"><a class="header-anchor" href="#_03-cryptographic-tools"><span>03. Cryptographic Tools</span></a></h1>
+<template><div><section class="print-section">
+<h1 id="_03-cryptographic-tools" tabindex="-1"><a class="header-anchor" href="#_03-cryptographic-tools"><span>03. Cryptographic Tools</span></a></h1>
 <DateMeta />
+</section>
+<section class="print-section">
 <h2 id="contents" tabindex="-1"><a class="header-anchor" href="#contents"><span>Contents</span></a></h2>
 <ul>
 <li>Symmetric Encryption</li>
@@ -7,6 +10,8 @@
 <li>Secure Hash Function</li>
 <li>Public Key Encryption</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="encryption-and-message-authentication" tabindex="-1"><a class="header-anchor" href="#encryption-and-message-authentication"><span>Encryption and Message authentication</span></a></h2>
 <ul>
 <li>Encryption (암호화): 데이터 보호를 위해 암호화 필요
@@ -21,6 +26,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="symmetric-encryption" tabindex="-1"><a class="header-anchor" href="#symmetric-encryption"><span>Symmetric Encryption</span></a></h2>
 <ul>
 <li>전송되거나 저장된 데이터에 confidentiality를 제공하기 위한 보편적인 기술</li>
@@ -43,6 +50,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="cryptography" tabindex="-1"><a class="header-anchor" href="#cryptography"><span>Cryptography</span></a></h2>
 <ul>
 <li>세 가지 독립적인 차원으로 분류됨:
@@ -68,6 +77,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="cryptanalytic-attacks" tabindex="-1"><a class="header-anchor" href="#cryptanalytic-attacks"><span>Cryptanalytic Attacks</span></a></h2>
 <ul>
 <li>Cryptanalytic Attack
@@ -90,6 +101,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="cryptanalysis" tabindex="-1"><a class="header-anchor" href="#cryptanalysis"><span>Cryptanalysis</span></a></h2>
 <ul>
 <li>공격 유형
@@ -98,6 +111,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="computationally-secure-encryption-schemes" tabindex="-1"><a class="header-anchor" href="#computationally-secure-encryption-schemes"><span>Computationally Secure Encryption Schemes</span></a></h2>
 <ul>
 <li>암호화는 다음과 같은 경우 computationally secure (계산적으로 안전)함:
@@ -109,6 +124,8 @@
 <li>일반적으로 해독에 필요한 노력의 양을 추정하기 매우 어려움</li>
 <li>Brute-force attack의 시간/비용은 추정 가능</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="attacking-symmetric-encryption" tabindex="-1"><a class="header-anchor" href="#attacking-symmetric-encryption"><span>Attacking Symmetric Encryption</span></a></h2>
 <ul>
 <li>Brute-Force Attack
@@ -119,16 +136,24 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="figure-2-2-time-to-break-a-code" tabindex="-1"><a class="header-anchor" href="#figure-2-2-time-to-break-a-code"><span>Figure 2.2 Time to Break a Code</span></a></h2>
 <ul>
 <li>(10^6 decryptions/ms 가정 시)</li>
 <li>그래프는 symmetric encryption 알고리즘이 모든 가능한 키를 시도하는 brute-force 방식으로 공격받는다고 가정함</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="table-2-2-comparison-of-three-popular-symmetric-encryption-algorithms" tabindex="-1"><a class="header-anchor" href="#table-2-2-comparison-of-three-popular-symmetric-encryption-algorithms"><span>Table 2.2 Comparison of Three Popular Symmetric Encryption Algorithms</span></a></h2>
 <ul>
 <li>세 가지 유명 대칭 암호화 알고리즘 비교</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="feistel-cipher-structure" tabindex="-1"><a class="header-anchor" href="#feistel-cipher-structure"><span>Feistel Cipher Structure</span></a></h2>
+</section>
+<section class="print-section">
 <h2 id="block-cipher-structure" tabindex="-1"><a class="header-anchor" href="#block-cipher-structure"><span>Block Cipher Structure</span></a></h2>
 <ul>
 <li>Symmetric block cipher는 다음으로 구성됨:
@@ -149,6 +174,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="data-encryption-standard-des" tabindex="-1"><a class="header-anchor" href="#data-encryption-standard-des"><span>Data Encryption Standard (DES)</span></a></h2>
 <ul>
 <li>가장 널리 사용되었던 암호화 방식
@@ -168,6 +195,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="triple-des-3des" tabindex="-1"><a class="header-anchor" href="#triple-des-3des"><span>Triple DES (3DES)</span></a></h2>
 <ul>
 <li>기본 DES 알고리즘을 두 개 또는 세 개의 고유한 키를 사용하여 세 번 반복</li>
@@ -195,6 +224,8 @@
 <li>유효 168-bit 키 길이, 느리지만 안전함</li>
 <li>AES가 결국 3DES를 대체할 것임</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="advanced-encryption-standard-aes" tabindex="-1"><a class="header-anchor" href="#advanced-encryption-standard-aes"><span>Advanced Encryption Standard (AES)</span></a></h2>
 <ul>
 <li>3DES를 대체할 필요성 발생
@@ -216,15 +247,25 @@
 <li>2001년 11월 Rijndael을 선정</li>
 <li>FIPS 197로 발표됨</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="aes-round-structure" tabindex="-1"><a class="header-anchor" href="#aes-round-structure"><span>AES Round Structure</span></a></h2>
+</section>
+<section class="print-section">
 <h2 id="table-20-2-a-s-box" tabindex="-1"><a class="header-anchor" href="#table-20-2-a-s-box"><span>Table 20.2 (a) S-box</span></a></h2>
+</section>
+<section class="print-section">
 <h2 id="table-20-2-b-inverse-s-box" tabindex="-1"><a class="header-anchor" href="#table-20-2-b-inverse-s-box"><span>Table 20.2(b) Inverse S-box</span></a></h2>
+</section>
+<section class="print-section">
 <h2 id="shift-rows" tabindex="-1"><a class="header-anchor" href="#shift-rows"><span>Shift Rows</span></a></h2>
 <ul>
 <li>암호화 시 State의 각 행을 각각 0, 1, 2, 3 바이트씩 왼쪽으로 회전</li>
 <li>복호화는 반대로 수행</li>
 <li>개별 바이트를 한 열에서 다른 열로 이동시키고 바이트를 열에 걸쳐 분산시키기 위함</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="mix-columns-and-add-key" tabindex="-1"><a class="header-anchor" href="#mix-columns-and-add-key"><span>Mix Columns and Add Key</span></a></h2>
 <ul>
 <li>Mix columns
@@ -242,6 +283,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="practical-security-issues" tabindex="-1"><a class="header-anchor" href="#practical-security-issues"><span>Practical Security Issues</span></a></h2>
 <ul>
 <li>일반적으로 symmetric encryption은 단일 64-bit 또는 128-bit 블록보다 큰 데이터 단위에 적용됨</li>
@@ -255,7 +298,11 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="modes-of-operation" tabindex="-1"><a class="header-anchor" href="#modes-of-operation"><span>Modes of Operation</span></a></h2>
+</section>
+<section class="print-section">
 <h2 id="electronic-codebook-ecb" tabindex="-1"><a class="header-anchor" href="#electronic-codebook-ecb"><span>Electronic Codebook (ECB)</span></a></h2>
 <ul>
 <li>가장 간단한 모드</li>
@@ -264,10 +311,20 @@
 <li>반복되는 plaintext가 반복되는 ciphertext에서 보이기 때문에 긴 메시지에 대해 안전하지 않음</li>
 <li>보안 결함을 극복하기 위해 동일한 plaintext 블록이 반복될 경우 다른 ciphertext 블록을 생성하는 기술이 필요</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="cipher-block-chaining-cbc" tabindex="-1"><a class="header-anchor" href="#cipher-block-chaining-cbc"><span>Cipher Block Chaining (CBC)</span></a></h2>
+</section>
+<section class="print-section">
 <h2 id="cipher-feedback-cfb" tabindex="-1"><a class="header-anchor" href="#cipher-feedback-cfb"><span>Cipher Feedback (CFB)</span></a></h2>
+</section>
+<section class="print-section">
 <h2 id="counter-ctr" tabindex="-1"><a class="header-anchor" href="#counter-ctr"><span>Counter (CTR)</span></a></h2>
+</section>
+<section class="print-section">
 <h2 id="block-cipher-encryption-stream-encryption" tabindex="-1"><a class="header-anchor" href="#block-cipher-encryption-stream-encryption"><span>Block Cipher Encryption Stream Encryption</span></a></h2>
+</section>
+<section class="print-section">
 <h2 id="block-stream-ciphers" tabindex="-1"><a class="header-anchor" href="#block-stream-ciphers"><span>Block &amp; Stream Ciphers</span></a></h2>
 <ul>
 <li>Block Cipher
@@ -295,10 +352,14 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="speed-comparisons-of-symmetric-ciphers-on-a-pentium-4" tabindex="-1"><a class="header-anchor" href="#speed-comparisons-of-symmetric-ciphers-on-a-pentium-4"><span>Speed Comparisons of Symmetric Ciphers on a Pentium 4</span></a></h2>
 <ul>
 <li>출처: <a href="http://www.cryptopp.com/benchmarks.html" target="_blank" rel="noopener noreferrer">http://www.cryptopp.com/benchmarks.html</a></li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="message-authentication" tabindex="-1"><a class="header-anchor" href="#message-authentication"><span>Message Authentication</span></a></h2>
 <ul>
 <li>Active attack (능동적 공격)으로부터 보호</li>
@@ -315,12 +376,20 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="message-authentication-codes" tabindex="-1"><a class="header-anchor" href="#message-authentication-codes"><span>Message Authentication Codes</span></a></h2>
+</section>
+<section class="print-section">
 <h2 id="secure-hash-functions" tabindex="-1"><a class="header-anchor" href="#secure-hash-functions"><span>Secure Hash Functions</span></a></h2>
+</section>
+<section class="print-section">
 <h2 id="figure-2-6-message-authentication-using-a-one-way-hash-function" tabindex="-1"><a class="header-anchor" href="#figure-2-6-message-authentication-using-a-one-way-hash-function"><span>Figure 2.6 Message Authentication Using a One-Way Hash Function</span></a></h2>
 <ul>
 <li>단방향 해시 함수를 이용한 메시지 인증</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="hash-function-requirements" tabindex="-1"><a class="header-anchor" href="#hash-function-requirements"><span>Hash Function Requirements</span></a></h2>
 <ul>
 <li>임의 크기의 데이터 블록에 적용 가능</li>
@@ -342,6 +411,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="security-of-hash-functions" tabindex="-1"><a class="header-anchor" href="#security-of-hash-functions"><span>Security of Hash Functions</span></a></h2>
 <ul>
 <li>Secure hash function을 공격하는 두 가지 접근 방식:
@@ -358,6 +429,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="secure-hash-algorithm-sha" tabindex="-1"><a class="header-anchor" href="#secure-hash-algorithm-sha"><span>Secure Hash Algorithm (SHA)</span></a></h2>
 <ul>
 <li>SHA는 본래 NIST에 의해 개발됨</li>
@@ -377,11 +450,17 @@
 </li>
 <li>2005년 NIST는 SHA-1 승인을 단계적으로 중단하고 2010년까지 다른 SHA 버전에 의존하는 것으로 전환할 의사를 발표</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="table-21-1-comparison-of-sha-parameters" tabindex="-1"><a class="header-anchor" href="#table-21-1-comparison-of-sha-parameters"><span>Table 21.1 Comparison of SHA Parameters</span></a></h2>
 <ul>
 <li>SHA 매개변수 비교</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="sha-512-structure" tabindex="-1"><a class="header-anchor" href="#sha-512-structure"><span>SHA-512 Structure</span></a></h2>
+</section>
+<section class="print-section">
 <h2 id="sha-3" tabindex="-1"><a class="header-anchor" href="#sha-3"><span>SHA-3</span></a></h2>
 <ul>
 <li>SHA-1은 안전하지 않은 것으로 간주되어 SHA-2로 단계적으로 대체됨</li>
@@ -394,6 +473,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="sha-3-evaluation-criteria" tabindex="-1"><a class="header-anchor" href="#sha-3-evaluation-criteria"><span>SHA-3 Evaluation Criteria</span></a></h2>
 <ul>
 <li>SHA-2가 지원하는 주요 응용 프로그램에 대한 요구 사항을 반영하도록 설계됨
@@ -419,6 +500,8 @@
 </li>
 <li>NIST는 2015년 SHA-3를 발표</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="hmac" tabindex="-1"><a class="header-anchor" href="#hmac"><span>HMAC</span></a></h2>
 <ul>
 <li>암호학적 해시 코드에서 파생된 MAC (메시지 인증 코드) 개발에 관심이 있었음
@@ -432,6 +515,8 @@
 <li>IP security (IP 보안)를 위한 의무 구현 MAC으로 선택됨</li>
 <li>Transport Layer Security (TLS) 및 Secure Electronic Transaction (SET)과 같은 다른 인터넷 프로토콜에서 사용됨</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="hmac-design-objectives" tabindex="-1"><a class="header-anchor" href="#hmac-design-objectives"><span>HMAC Design Objectives</span></a></h2>
 <ul>
 <li>사용 가능한 해시 함수를 수정 없이 사용하기 위함</li>
@@ -440,7 +525,11 @@
 <li>간단한 방식으로 키를 사용하고 처리</li>
 <li>내장된 해시 함수에 대한 합리적인 가정을 기반으로 한 인증 메커니즘의 강도에 대한 잘 이해된 암호학적 분석을 갖춤</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="hmac-structure" tabindex="-1"><a class="header-anchor" href="#hmac-structure"><span>HMAC Structure</span></a></h2>
+</section>
+<section class="print-section">
 <h2 id="security-of-hmac" tabindex="-1"><a class="header-anchor" href="#security-of-hmac"><span>Security of HMAC</span></a></h2>
 <ul>
 <li>보안은 기본 해시 함수의 암호학적 강도에 따라 달라짐</li>
@@ -460,6 +549,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="public-key-encryption-structure" tabindex="-1"><a class="header-anchor" href="#public-key-encryption-structure"><span>Public-Key Encryption Structure</span></a></h2>
 <ul>
 <li>1976년 Diffie와 Hellman에 의해 공개적으로 제안됨</li>
@@ -473,6 +564,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="public-key-encryption" tabindex="-1"><a class="header-anchor" href="#public-key-encryption"><span>Public-Key Encryption</span></a></h2>
 <ul>
 <li>Plaintext
@@ -501,10 +594,14 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="applications-for-public-key-cryptosystems" tabindex="-1"><a class="header-anchor" href="#applications-for-public-key-cryptosystems"><span>Applications for Public-Key Cryptosystems</span></a></h2>
 <ul>
 <li>공개키 암호 시스템의 응용</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="requirements-for-public-key-cryptosystems" tabindex="-1"><a class="header-anchor" href="#requirements-for-public-key-cryptosystems"><span>Requirements for Public-Key Cryptosystems</span></a></h2>
 <ul>
 <li>키 쌍을 생성하기 쉬움 (계산적으로)</li>
@@ -514,6 +611,8 @@
 <li>공격자가 다른 방법으로 원본 메시지를 복구하기 불가능함 (계산적으로)</li>
 <li>어느 키든 각 역할에 사용할 수 있다면 유용함</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="asymmetric-encryption-algorithms" tabindex="-1"><a class="header-anchor" href="#asymmetric-encryption-algorithms"><span>Asymmetric Encryption Algorithms</span></a></h2>
 <ul>
 <li>RSA (Rivest, Shamir, Adleman)
@@ -542,6 +641,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="rsa-public-key-encryption" tabindex="-1"><a class="header-anchor" href="#rsa-public-key-encryption"><span>RSA Public-Key Encryption</span></a></h2>
 <ul>
 <li>1977년 MIT의 Rivest, Shamir &amp; Adleman에 의해 개발</li>
@@ -553,8 +654,14 @@
 <li>수신자만 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>d</mi></mrow><annotation encoding="application/x-tex">d</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal">d</span></span></span></span>의 값을 앎</li>
 <li>Public key <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mi>U</mi><mo>=</mo><mo stretchy="false">{</mo><mi>e</mi><mo separator="true">,</mo><mi>n</mi><mo stretchy="false">}</mo></mrow><annotation encoding="application/x-tex">PU = \{e, n\}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="mord mathnormal" style="margin-right:0.10903em;">U</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">{</span><span class="mord mathnormal">e</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">n</span><span class="mclose">}</span></span></span></span>와 private key <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mi>R</mi><mo>=</mo><mo stretchy="false">{</mo><mi>d</mi><mo separator="true">,</mo><mi>n</mi><mo stretchy="false">}</mo></mrow><annotation encoding="application/x-tex">PR = \{d, n\}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.00773em;">PR</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">{</span><span class="mord mathnormal">d</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">n</span><span class="mclose">}</span></span></span></span>를 사용하는 public-key encryption 알고리즘</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="rsa-algorithm" tabindex="-1"><a class="header-anchor" href="#rsa-algorithm"><span>RSA Algorithm</span></a></h2>
+</section>
+<section class="print-section">
 <h2 id="rsa-example" tabindex="-1"><a class="header-anchor" href="#rsa-example"><span>RSA Example</span></a></h2>
+</section>
+<section class="print-section">
 <h2 id="security-of-rsa" tabindex="-1"><a class="header-anchor" href="#security-of-rsa"><span>Security of RSA</span></a></h2>
 <ul>
 <li>Brute force
@@ -581,10 +688,14 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="table-21-2-progress-in-factorization" tabindex="-1"><a class="header-anchor" href="#table-21-2-progress-in-factorization"><span>Table 21.2 Progress in Factorization</span></a></h2>
 <ul>
 <li>인수분해의 진전</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="diffie-hellman-key-exchange" tabindex="-1"><a class="header-anchor" href="#diffie-hellman-key-exchange"><span>Diffie-Hellman Key Exchange</span></a></h2>
 <ul>
 <li>최초로 발표된 public-key 알고리즘</li>
@@ -593,7 +704,11 @@
 <li>메시지의 후속 암호화를 위해 사용할 수 있는 secret key를 안전하게 교환하는 실용적인 방법</li>
 <li>보안은 이산 로그 계산의 어려움에 의존</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="diffie-hellman-key-exchange-algorithm" tabindex="-1"><a class="header-anchor" href="#diffie-hellman-key-exchange-algorithm"><span>Diffie-Hellman Key Exchange Algorithm</span></a></h2>
+</section>
+<section class="print-section">
 <h2 id="diffie-hellman-example" tabindex="-1"><a class="header-anchor" href="#diffie-hellman-example"><span>Diffie-Hellman Example</span></a></h2>
 <ul>
 <li>소수 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>q</mi><mo>=</mo><mn>353</mn></mrow><annotation encoding="application/x-tex">q = 353</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">q</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">353</span></span></span></span></li>
@@ -617,7 +732,11 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="key-exchange-protocols" tabindex="-1"><a class="header-anchor" href="#key-exchange-protocols"><span>Key Exchange Protocols</span></a></h2>
+</section>
+<section class="print-section">
 <h2 id="man-in-the-middle-attack" tabindex="-1"><a class="header-anchor" href="#man-in-the-middle-attack"><span>Man-in-the-Middle Attack</span></a></h2>
 <ul>
 <li>공격 과정:
@@ -633,6 +752,8 @@
 </li>
 <li>모든 후속 통신이 손상됨</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="other-public-key-algorithms" tabindex="-1"><a class="header-anchor" href="#other-public-key-algorithms"><span>Other Public-Key Algorithms</span></a></h2>
 <ul>
 <li>Digital Signature Standard (DSS)
@@ -653,6 +774,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="digital-signatures" tabindex="-1"><a class="header-anchor" href="#digital-signatures"><span>Digital Signatures</span></a></h2>
 <ul>
 <li>출처 및 데이터 무결성 인증에 사용</li>
@@ -664,7 +787,11 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="public-key-certificates" tabindex="-1"><a class="header-anchor" href="#public-key-certificates"><span>Public Key Certificates</span></a></h2>
+</section>
+<section class="print-section">
 <h2 id="key-distribution" tabindex="-1"><a class="header-anchor" href="#key-distribution"><span>Key Distribution</span></a></h2>
 <ul>
 <li>데이터를 교환하려는 두 당사자에게 다른 사람이 키를 볼 수 없도록 키를 전달하는 수단</li>
@@ -677,7 +804,11 @@
 </ol>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="key-distribution-1" tabindex="-1"><a class="header-anchor" href="#key-distribution-1"><span>Key Distribution</span></a></h2>
+</section>
+<section class="print-section">
 <h2 id="kerberos-overview" tabindex="-1"><a class="header-anchor" href="#kerberos-overview"><span>Kerberos Overview</span></a></h2>
 <ul>
 <li>본래 MIT에서 개발됨</li>
@@ -686,6 +817,8 @@
 <li>전체적인 방식은 신뢰할 수 있는 제3자 인증 서비스</li>
 <li>사용자가 호출하는 각 서비스에 대해 자신의 신원을 증명해야 하며, 서버는 클라이언트에게 자신의 신원을 증명해야 함</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="kerberos-protocol" tabindex="-1"><a class="header-anchor" href="#kerberos-protocol"><span>Kerberos Protocol</span></a></h2>
 <ul>
 <li>Client/server 대화의 보안에 대한 다양한 위협에 대응하도록 설계됨</li>
@@ -705,6 +838,8 @@
 </li>
 <li>이를 안전한 방식으로 수행할 방법을 찾아야 함</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="kerberos-realms" tabindex="-1"><a class="header-anchor" href="#kerberos-realms"><span>Kerberos Realms</span></a></h2>
 <ul>
 <li>Kerberos 환경은 다음으로 구성됨:
@@ -723,6 +858,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="kerberos-performance-issues" tabindex="-1"><a class="header-anchor" href="#kerberos-performance-issues"><span>Kerberos Performance Issues</span></a></h2>
 <ul>
 <li>대규모 client-server 설치에서 볼 수 있음</li>
@@ -735,6 +872,8 @@
 <li>대규모 Kerberos 보안은 Kerberos 서버를 별도의 격리된 머신에 배치함으로써 가장 잘 보장됨</li>
 <li>여러 realm의 동기는 성능 관련이 아닌 관리적인 것임</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="certificate-authority-ca" tabindex="-1"><a class="header-anchor" href="#certificate-authority-ca"><span>Certificate Authority (CA)</span></a></h2>
 <ul>
 <li>인증서는 다음으로 구성됨:
@@ -748,6 +887,8 @@
 <li>그 후 사용자는 인증서를 게시할 수 있음</li>
 <li>이 사용자의 공개키가 필요한 사람은 누구나 인증서를 얻고 첨부된 신뢰할 수 있는 서명을 통해 유효한지 확인할 수 있음</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="x-509-authentication-service" tabindex="-1"><a class="header-anchor" href="#x-509-authentication-service"><span>X.509 Authentication Service</span></a></h2>
 <ul>
 <li>Public-key certificates 서식에 대한 보편적으로 인정된 표준</li>
@@ -756,8 +897,14 @@
 <li>IPsec, SSL, SET, S/MIME 등 네트워크 보안 응용 프로그램에서 널리 사용됨</li>
 <li>알고리즘은 표준화되지 않았지만 RSA가 권장됨</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="x-509-certificates" tabindex="-1"><a class="header-anchor" href="#x-509-certificates"><span>X.509 Certificates</span></a></h2>
+</section>
+<section class="print-section">
 <h2 id="public-key-infrastructure-x-509-pkix" tabindex="-1"><a class="header-anchor" href="#public-key-infrastructure-x-509-pkix"><span>Public Key Infrastructure X.509 (PKIX)</span></a></h2>
+</section>
+<section class="print-section">
 <h2 id="pkix-management-functions" tabindex="-1"><a class="header-anchor" href="#pkix-management-functions"><span>PKIX Management Functions</span></a></h2>
 <ul>
 <li>Registration (등록)</li>
@@ -768,6 +915,8 @@
 <li>Revocation request (폐지 요청)</li>
 <li>Cross certification (교차 인증)</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="rotor-machines" tabindex="-1"><a class="header-anchor" href="#rotor-machines"><span>Rotor Machines</span></a></h2>
 <ul>
 <li>현대 암호 이전에 rotor machine (회전기)이 가장 일반적인 product cipher (곱 암호)였음</li>
@@ -810,6 +959,7 @@
 <li>중간 실린더가 한 바퀴 완전히 회전할 때마다 안쪽 실린더가 한 핀 위치 회전</li>
 <li><span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>26</mn><mo>×</mo><mn>26</mn><mo>×</mo><mn>26</mn><mo>=</mo><mn>17</mn><mo separator="true">,</mo><mn>576</mn></mrow><annotation encoding="application/x-tex">26 \times 26 \times 26 = 17,576</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">26</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">26</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">26</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8389em;vertical-align:-0.1944em;"></span><span class="mord">17</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">576</span></span></span></span></li>
 </ul>
+</section>
 </div></template>
 
 

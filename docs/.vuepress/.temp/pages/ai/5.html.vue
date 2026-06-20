@@ -1,10 +1,17 @@
-<template><div><h1 id="_5-knowledge-and-logic-2" tabindex="-1"><a class="header-anchor" href="#_5-knowledge-and-logic-2"><span>5. Knowledge and Logic (2)</span></a></h1>
+<template><div><section class="print-section">
+<h1 id="_5-knowledge-and-logic-2" tabindex="-1"><a class="header-anchor" href="#_5-knowledge-and-logic-2"><span>5. Knowledge and Logic (2)</span></a></h1>
 <DateMeta />
+</section>
+<section class="print-section">
 <h2 id="명제-기호-propositional-symbols" tabindex="-1"><a class="header-anchor" href="#명제-기호-propositional-symbols"><span>명제 기호 (Propositional Symbols)</span></a></h2>
 <ul>
 <li>명제 기호 (Propositional Symbols): <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mo separator="true">,</mo><mi>Q</mi><mo separator="true">,</mo><mi>R</mi></mrow><annotation encoding="application/x-tex">P, Q, R</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8778em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">Q</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.00773em;">R</span></span></span></span> 등, 문장의 참/거짓 (truth values)을 나타내는 변수</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="논리적-연결사-logical-connectives-및-진리표-truth-tables" tabindex="-1"><a class="header-anchor" href="#논리적-연결사-logical-connectives-및-진리표-truth-tables"><span>논리적 연결사 (Logical Connectives) 및 진리표 (Truth Tables)</span></a></h2>
+</section>
+<section class="print-section">
 <h3 id="부정-¬-not" tabindex="-1"><a class="header-anchor" href="#부정-¬-not"><span>부정 (¬, not):</span></a></h3>
 <table>
 <thead>
@@ -24,6 +31,8 @@
 </tr>
 </tbody>
 </table>
+</section>
+<section class="print-section">
 <h3 id="논리곱-and-conjunction" tabindex="-1"><a class="header-anchor" href="#논리곱-and-conjunction"><span>논리곱 (<span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∧</mo></mrow><annotation encoding="application/x-tex">\land</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5556em;"></span><span class="mord">∧</span></span></span></span>, and, Conjunction):</span></a></h3>
 <table>
 <thead>
@@ -56,6 +65,8 @@
 </tr>
 </tbody>
 </table>
+</section>
+<section class="print-section">
 <h3 id="논리합-or-disjunction" tabindex="-1"><a class="header-anchor" href="#논리합-or-disjunction"><span>논리합 (<span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∨</mo></mrow><annotation encoding="application/x-tex">\lor</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5556em;"></span><span class="mord">∨</span></span></span></span>, or, disjunction):</span></a></h3>
 <table>
 <thead>
@@ -88,6 +99,8 @@
 </tr>
 </tbody>
 </table>
+</section>
+<section class="print-section">
 <h3 id="함의-implication-가-참이고-가-거짓인-경우를-제외하고-참" tabindex="-1"><a class="header-anchor" href="#함의-implication-가-참이고-가-거짓인-경우를-제외하고-참"><span>함의 (<span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>⇒</mo></mrow><annotation encoding="application/x-tex">\Rightarrow</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.3669em;"></span><span class="mrel">⇒</span></span></span></span>, implication): <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi></mrow><annotation encoding="application/x-tex">P</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span></span></span></span>가 참이고 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Q</mi></mrow><annotation encoding="application/x-tex">Q</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8778em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">Q</span></span></span></span>가 거짓인 경우를 제외하고 참.</span></a></h3>
 <table>
 <thead>
@@ -120,6 +133,8 @@
 </tr>
 </tbody>
 </table>
+</section>
+<section class="print-section">
 <h3 id="쌍조건-biconditional-와-의-참값이-같을-때만-참" tabindex="-1"><a class="header-anchor" href="#쌍조건-biconditional-와-의-참값이-같을-때만-참"><span>쌍조건 (<span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>⇔</mo></mrow><annotation encoding="application/x-tex">\Leftrightarrow</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.3669em;"></span><span class="mrel">⇔</span></span></span></span>, biconditional): <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi></mrow><annotation encoding="application/x-tex">P</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span></span></span></span>와 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Q</mi></mrow><annotation encoding="application/x-tex">Q</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8778em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">Q</span></span></span></span>의 참값이 같을 때만 참.</span></a></h3>
 <table>
 <thead>
@@ -152,6 +167,8 @@
 </tr>
 </tbody>
 </table>
+</section>
+<section class="print-section">
 <h2 id="명제-정리-증명-propositional-theorem-proving" tabindex="-1"><a class="header-anchor" href="#명제-정리-증명-propositional-theorem-proving"><span>명제 정리 증명 (Propositional Theorem Proving)</span></a></h2>
 <ul>
 <li>엔테일먼트 (entailment)를 모델 검사 (model checking, 진리표 작성) 대신 정리 증명 (theorem proving)을 통해 수행 가능
@@ -160,6 +177,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="추가-개념-additional-concepts" tabindex="-1"><a class="header-anchor" href="#추가-개념-additional-concepts"><span>추가 개념 (Additional concepts)</span></a></h2>
 <ul>
 <li>논리적 동치 (Logical equivalence, <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>α</mi><mo>≡</mo><mi>β</mi></mrow><annotation encoding="application/x-tex">\alpha \equiv \beta</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4637em;"></span><span class="mord mathnormal" style="margin-right:0.0037em;">α</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≡</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.05278em;">β</span></span></span></span>): 두 문장 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>α</mi></mrow><annotation encoding="application/x-tex">\alpha</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal" style="margin-right:0.0037em;">α</span></span></span></span>와 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>β</mi></mrow><annotation encoding="application/x-tex">\beta</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.05278em;">β</span></span></span></span>가 동일한 모델 집합에서 참인 경우
@@ -180,6 +199,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="논리적-동치-logical-equivalences" tabindex="-1"><a class="header-anchor" href="#논리적-동치-logical-equivalences"><span>논리적 동치 (Logical Equivalences)</span></a></h2>
 <ul>
 <li>논리곱의 교환 법칙 (commutativity of <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∧</mo></mrow><annotation encoding="application/x-tex">\land</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5556em;"></span><span class="mord">∧</span></span></span></span>):</li>
@@ -236,11 +257,15 @@
 </ul>
 <p v-pre class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mtable rowspacing="0.16em" columnalign="left" columnspacing="1em"><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mo stretchy="false">(</mo><mi>α</mi><mo>∨</mo><mo stretchy="false">(</mo><mi>β</mi><mo>∧</mo><mi>γ</mi><mo stretchy="false">)</mo><mo stretchy="false">)</mo><mo>≡</mo><mo stretchy="false">(</mo><mo stretchy="false">(</mo><mi>α</mi><mo>∨</mo><mi>β</mi><mo stretchy="false">)</mo><mo>∧</mo><mo stretchy="false">(</mo><mi>α</mi><mo>∨</mo><mi>γ</mi><mo stretchy="false">)</mo><mo stretchy="false">)</mo></mrow></mstyle></mtd></mtr></mtable><annotation encoding="application/x-tex">\begin{array}{l} (\alpha \lor (\beta \land \gamma)) \equiv ((\alpha \lor \beta) \land (\alpha \lor \gamma)) \end{array}
 </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.2em;vertical-align:-0.35em;"></span><span class="mord"><span class="mtable"><span class="arraycolsep" style="width:0.5em;"></span><span class="col-align-l"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.85em;"><span style="top:-3.01em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.0037em;">α</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">∨</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.05278em;">β</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">∧</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord mathnormal" style="margin-right:0.05556em;">γ</span><span class="mclose">))</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≡</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mopen">((</span><span class="mord mathnormal" style="margin-right:0.0037em;">α</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">∨</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord mathnormal" style="margin-right:0.05278em;">β</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">∧</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.0037em;">α</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">∨</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord mathnormal" style="margin-right:0.05556em;">γ</span><span class="mclose">))</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.35em;"><span></span></span></span></span></span><span class="arraycolsep" style="width:0.5em;"></span></span></span></span></span></span></span></p>
+</section>
+<section class="print-section">
 <h2 id="추론과-증명-inference-and-proofs" tabindex="-1"><a class="header-anchor" href="#추론과-증명-inference-and-proofs"><span>추론과 증명 (Inference and Proofs)</span></a></h2>
 <ul>
 <li>추론 규칙 (inference rules): 원하는 목표로 이어지는 결론의 사슬 (chain of conclusions)인 증명 (proof)을 도출하는 데 적용 가능</li>
 <li>모든 논리적 동치는 추론 규칙으로 사용 가능</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="modus-ponens-긍정-논법" tabindex="-1"><a class="header-anchor" href="#modus-ponens-긍정-논법"><span>Modus Ponens (긍정 논법)</span></a></h2>
 <ul>
 <li>정의: <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>α</mi><mo>⇒</mo><mi>β</mi></mrow><annotation encoding="application/x-tex">\alpha \Rightarrow \beta</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal" style="margin-right:0.0037em;">α</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">⇒</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.05278em;">β</span></span></span></span> 형태의 문장과 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>α</mi></mrow><annotation encoding="application/x-tex">\alpha</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal" style="margin-right:0.0037em;">α</span></span></span></span>가 주어지면, <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>β</mi></mrow><annotation encoding="application/x-tex">\beta</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.05278em;">β</span></span></span></span>를 추론 가능</li>
@@ -250,6 +275,8 @@
 <ul>
 <li>예: <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>WumpusAhead</mtext><mo>∧</mo><mtext>WumpusAlive</mtext><mo>⇒</mo><mtext>Shoot</mtext></mrow><annotation encoding="application/x-tex">\text{WumpusAhead} \land \text{WumpusAlive} \Rightarrow \text{Shoot}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord text"><span class="mord">WumpusAhead</span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">∧</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord text"><span class="mord">WumpusAlive</span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">⇒</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord text"><span class="mord">Shoot</span></span></span></span></span>와 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>WumpusAhead</mtext><mo>∧</mo><mtext>WumpusAlive</mtext></mrow><annotation encoding="application/x-tex">\text{WumpusAhead} \land \text{WumpusAlive}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord text"><span class="mord">WumpusAhead</span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">∧</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord text"><span class="mord">WumpusAlive</span></span></span></span></span>가 주어지면, <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>Shoot</mtext></mrow><annotation encoding="application/x-tex">\text{Shoot}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord text"><span class="mord">Shoot</span></span></span></span></span>를 추론 가능</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="and-elimination-논리곱-제거-simplification" tabindex="-1"><a class="header-anchor" href="#and-elimination-논리곱-제거-simplification"><span>And-Elimination (논리곱 제거, Simplification)</span></a></h2>
 <ul>
 <li>정의: 논리곱 (conjunction)으로부터, 그 논리곱의 구성 요소 중 어느 하나를 추론 가능</li>
@@ -259,6 +286,8 @@
 <ul>
 <li>예: <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>WumpusAhead</mtext><mo>∧</mo><mtext>WumpusAlive</mtext></mrow><annotation encoding="application/x-tex">\text{WumpusAhead} \land \text{WumpusAlive}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord text"><span class="mord">WumpusAhead</span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">∧</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord text"><span class="mord">WumpusAlive</span></span></span></span></span>로부터, <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>WumpusAlive</mtext></mrow><annotation encoding="application/x-tex">\text{WumpusAlive}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord text"><span class="mord">WumpusAlive</span></span></span></span></span>를 추론 가능</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="왐퍼스-세계에-추론-규칙-적용" tabindex="-1"><a class="header-anchor" href="#왐퍼스-세계에-추론-규칙-적용"><span>왐퍼스 세계에 추론 규칙 적용</span></a></h2>
 <ul>
 <li>KB(<span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>R</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">R_1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.00773em;">R</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.0077em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>에서 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>R</mi><mn>5</mn></msub></mrow><annotation encoding="application/x-tex">R_5</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.00773em;">R</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.0077em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">5</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>)에서 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">¬</mi><msub><mi>P</mi><mrow><mn>1</mn><mo separator="true">,</mo><mn>2</mn></mrow></msub></mrow><annotation encoding="application/x-tex">\neg P_{1,2}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.9694em;vertical-align:-0.2861em;"></span><span class="mord">¬</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.1389em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span><span class="mpunct mtight">,</span><span class="mord mtight">2</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span></span></span></span>를 증명하는 과정.
@@ -281,6 +310,8 @@
 </li>
 <li>추론을 통한 증명은 관련 없는 명제 (irrelevant propositions)를 무시할 수 있으므로 (예: <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>B</mi><mrow><mn>2</mn><mo separator="true">,</mo><mn>1</mn></mrow></msub><mo separator="true">,</mo><msub><mi>P</mi><mrow><mn>1</mn><mo separator="true">,</mo><mn>1</mn></mrow></msub></mrow><annotation encoding="application/x-tex">B_{2,1}, P_{1,1}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.9694em;vertical-align:-0.2861em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.05017em;">B</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.0502em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span><span class="mpunct mtight">,</span><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.1389em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span><span class="mpunct mtight">,</span><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span></span></span></span> 등), 진리표 작성이나 모델 검사보다 더 효율적일 수 있음.</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="해상도를-통한-증명-proof-by-resolution" tabindex="-1"><a class="header-anchor" href="#해상도를-통한-증명-proof-by-resolution"><span>해상도를 통한 증명 (Proof by Resolution)</span></a></h2>
 <ul>
 <li>단위 해상도 추론 규칙 (Unit resolution inference rule):<p v-pre class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mfrac><mrow><msub><mi>l</mi><mn>1</mn></msub><mo>∨</mo><mo>⋯</mo><mo>∨</mo><msub><mi>l</mi><mi>k</mi></msub><mo separator="true">,</mo><mspace width="1em"/><mi>m</mi></mrow><mrow><msub><mi>l</mi><mn>1</mn></msub><mo>∨</mo><mo>⋯</mo><mo>∨</mo><msub><mi>l</mi><mrow><mi>j</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>∨</mo><msub><mi>l</mi><mrow><mi>j</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>∨</mo><mo>⋯</mo><mo>∨</mo><msub><mi>l</mi><mi>k</mi></msub></mrow></mfrac></mrow><annotation encoding="application/x-tex">\frac{l_1 \lor \dots \lor l_k, \quad m}{l_1 \lor \dots \lor l_{j-1} \lor l_{j+1} \lor \dots \lor l_k}
@@ -297,6 +328,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="연언-정규형-conjunctive-normal-form-cnf" tabindex="-1"><a class="header-anchor" href="#연언-정규형-conjunctive-normal-form-cnf"><span>연언 정규형 (Conjunctive Normal Form, CNF)</span></a></h2>
 <ul>
 <li>해상도 규칙은 절 (clauses)에만 적용.
@@ -318,6 +351,8 @@
 </ol>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="해상도-알고리즘-resolution-algorithm" tabindex="-1"><a class="header-anchor" href="#해상도-알고리즘-resolution-algorithm"><span>해상도 알고리즘 (Resolution Algorithm)</span></a></h2>
 <ul>
 <li>해상도 기반 추론 절차는 귀류법 (proof by contradiction) 원리를 사용.
@@ -343,7 +378,11 @@
 </ol>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h1 id="_1차-논리-first-order-logic-fol" tabindex="-1"><a class="header-anchor" href="#_1차-논리-first-order-logic-fol"><span>1차 논리 (First-Order Logic, FOL)</span></a></h1>
+</section>
+<section class="print-section">
 <h2 id="_1차-논리의-모델-models-for-the-first-order-logic" tabindex="-1"><a class="header-anchor" href="#_1차-논리의-모델-models-for-the-first-order-logic"><span>1차 논리의 모델 (Models for the First-Order Logic)</span></a></h2>
 <ul>
 <li>명제 논리의 모델: 명제 기호와 미리 정의된 참값을 연결.</li>
@@ -355,6 +394,8 @@
 <li>관계 (relation): 관련 있는 객체들의 튜플 (tuples) 집합.</li>
 <li>함수 (functions): 특정 종류의 관계. 단일 요소 튜플에서 객체로의 매핑.</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="_1차-논리의-구문-syntax-of-first-order-logic" tabindex="-1"><a class="header-anchor" href="#_1차-논리의-구문-syntax-of-first-order-logic"><span>1차 논리의 구문 (Syntax of First-Order Logic)</span></a></h2>
 <ul>
 <li>기본 구문 요소: 객체, 관계, 함수를 나타내는 기호.
@@ -366,6 +407,8 @@
 </li>
 <li>해석 (interpretation): 각 모델은 상수, 술어, 함수 기호가 정확히 어떤 객체, 관계, 함수를 참조하는지 지정.</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="원자-및-복합-문장-atomic-and-complex-sentences" tabindex="-1"><a class="header-anchor" href="#원자-및-복합-문장-atomic-and-complex-sentences"><span>원자 및 복합 문장 (Atomic and Complex Sentences)</span></a></h2>
 <ul>
 <li>원자 문장 (Atomic sentence): 술어 기호와 괄호로 묶인 항 (terms) 목록으로 구성.
@@ -377,6 +420,8 @@
 </li>
 <li>복합 문장 (Complex sentences): 명제 논리와 동일한 구문과 의미론으로 논리적 연결사 (<span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">¬</mi><mo separator="true">,</mo><mo>∧</mo><mo separator="true">,</mo><mo>∨</mo><mo separator="true">,</mo><mo>⇒</mo></mrow><annotation encoding="application/x-tex">\neg, \land, \lor, \Rightarrow</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.75em;vertical-align:-0.1944em;"></span><span class="mord">¬</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">∧</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">∨</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">⇒</span></span></span></span>)를 사용하여 구성.</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="전칭-한정-기호-universal-quantifiers" tabindex="-1"><a class="header-anchor" href="#전칭-한정-기호-universal-quantifiers"><span>전칭 한정 기호 (Universal Quantifiers, <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">∀</mi></mrow><annotation encoding="application/x-tex">\forall</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord">∀</span></span></span></span>)</span></a></h2>
 <ul>
 <li>전칭 한정 (Universal quantification, <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">∀</mi></mrow><annotation encoding="application/x-tex">\forall</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord">∀</span></span></span></span>): 모든 객체에 대한 일반 규칙 표현.
@@ -387,6 +432,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="존재-한정-기호-및-중첩-한정-기호-existential-and-nested-quantifiers" tabindex="-1"><a class="header-anchor" href="#존재-한정-기호-및-중첩-한정-기호-existential-and-nested-quantifiers"><span>존재 한정 기호 및 중첩 한정 기호 (Existential and Nested Quantifiers)</span></a></h2>
 <ul>
 <li>존재 한정 (Existential quantification, <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">∃</mi></mrow><annotation encoding="application/x-tex">\exists</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord">∃</span></span></span></span>): 객체를 명명하지 않고 일부 객체에 대한 진술.
@@ -404,6 +451,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="_1차-논리를-사용한-왐퍼스-세계-the-wumpus-world-with-first-order-logic" tabindex="-1"><a class="header-anchor" href="#_1차-논리를-사용한-왐퍼스-세계-the-wumpus-world-with-first-order-logic"><span>1차 논리를 사용한 왐퍼스 세계 (The Wumpus World with First-Order Logic)</span></a></h2>
 <ul>
 <li>지각의 표현: 지각 벡터와 발생 시점을 포함.
@@ -429,6 +478,7 @@
 </li>
 <li>1차 논리는 명제 논리로 표현하기 어려웠던 일반 규칙을 쉽게 표현 가능</li>
 </ul>
+</section>
 </div></template>
 
 

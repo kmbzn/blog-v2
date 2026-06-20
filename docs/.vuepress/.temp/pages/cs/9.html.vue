@@ -1,6 +1,11 @@
-<template><div><h1 id="_09-buffer-overflow" tabindex="-1"><a class="header-anchor" href="#_09-buffer-overflow"><span>09. Buffer Overflow</span></a></h1>
+<template><div><section class="print-section">
+<h1 id="_09-buffer-overflow" tabindex="-1"><a class="header-anchor" href="#_09-buffer-overflow"><span>09. Buffer Overflow</span></a></h1>
 <DateMeta />
+</section>
+<section class="print-section">
 <h1 id="os-overview" tabindex="-1"><a class="header-anchor" href="#os-overview"><span>OS Overview</span></a></h1>
+</section>
+<section class="print-section">
 <h2 id="operating-system" tabindex="-1"><a class="header-anchor" href="#operating-system"><span>Operating System</span></a></h2>
 <ul>
 <li><strong>Multiprogramming</strong>은 효율성을 위해 필요함.
@@ -23,6 +28,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="operating-system-operations" tabindex="-1"><a class="header-anchor" href="#operating-system-operations"><span>Operating System Operations</span></a></h2>
 <ul>
 <li><strong>Dual-mode operation</strong>은 OS가 자신과 다른 시스템 구성 요소를 보호할 수 있게 함.
@@ -38,6 +45,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="process-management" tabindex="-1"><a class="header-anchor" href="#process-management"><span>Process Management</span></a></h2>
 <ul>
 <li><strong>Process</strong>
@@ -57,6 +66,8 @@
 <li>Single-threaded process는 실행할 다음 명령어의 위치를 지정하는 하나의 program counter를 가짐.</li>
 <li>Multi-threaded process는 thread당 하나의 program counter를 가짐.</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="memory-management" tabindex="-1"><a class="header-anchor" href="#memory-management"><span>Memory Management</span></a></h2>
 <ul>
 <li>처리 전후의 모든 데이터는 메모리에 있음.</li>
@@ -74,6 +85,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="storage-management" tabindex="-1"><a class="header-anchor" href="#storage-management"><span>Storage Management</span></a></h2>
 <ul>
 <li>OS는 정보 저장소에 대한 균일하고 논리적인 뷰(view)를 제공함.
@@ -98,8 +111,12 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="a-view-of-operating-system-services" tabindex="-1"><a class="header-anchor" href="#a-view-of-operating-system-services"><span>A View of Operating System Services</span></a></h2>
 <p><img src="@source/cs/image-26.png" alt=""></p>
+</section>
+<section class="print-section">
 <h2 id="system-calls" tabindex="-1"><a class="header-anchor" href="#system-calls"><span>System Calls</span></a></h2>
 <ul>
 <li>OS가 제공하는 서비스에 대한 프로그래밍 인터페이스</li>
@@ -124,6 +141,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="system-call-implementation" tabindex="-1"><a class="header-anchor" href="#system-call-implementation"><span>System Call Implementation</span></a></h2>
 <ul>
 <li>일반적으로 각 system call에는 번호가 연관됨.
@@ -139,6 +158,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="api-–-system-call-–-os-relationship" tabindex="-1"><a class="header-anchor" href="#api-–-system-call-–-os-relationship"><span>API – System Call – OS Relationship</span></a></h2>
 <pre><code>                 │                      │               
               ┌──│   user application   │◄──┐           
@@ -163,6 +184,8 @@ mode     │                                    ▲
 <ul>
 <li>System call을 직접 사용함.</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="standard-c-library-example" tabindex="-1"><a class="header-anchor" href="#standard-c-library-example"><span>Standard C Library Example</span></a></h2>
 <pre><code>     │#include &lt;stdio.h&gt;      │      
      │int main()              │      
@@ -188,7 +211,11 @@ mode    │                     │
 <ul>
 <li><code v-pre>write()</code> system call을 호출하는 <code v-pre>printf()</code> 라이브러리 호출을 수행하는 C 프로그램</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="examples-of-windows-and-unix-system-calls" tabindex="-1"><a class="header-anchor" href="#examples-of-windows-and-unix-system-calls"><span>Examples of Windows and Unix System Calls</span></a></h2>
+</section>
+<section class="print-section">
 <h1 id="buffer-overflow" tabindex="-1"><a class="header-anchor" href="#buffer-overflow"><span>Buffer Overflow</span></a></h1>
 <ul>
 <li>매우 일반적인 공격 메커니즘
@@ -204,6 +231,8 @@ mode    │                     │
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="brief-history-of-buffer-overflow-attacks" tabindex="-1"><a class="header-anchor" href="#brief-history-of-buffer-overflow-attacks"><span>Brief History of Buffer Overflow Attacks</span></a></h2>
 <table>
 <thead>
@@ -239,6 +268,8 @@ mode    │                     │
 </tr>
 </tbody>
 </table>
+</section>
+<section class="print-section">
 <h2 id="buffer-overflow-buffer-overrun" tabindex="-1"><a class="header-anchor" href="#buffer-overflow-buffer-overrun"><span>Buffer Overflow/Buffer Overrun</span></a></h2>
 <ul>
 <li>Buffer overflow 또는 buffer overrun은 NIST의 주요 정보 보안 용어 사전에서 다음과 같이 정의됨
@@ -247,6 +278,8 @@ mode    │                     │
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="buffer-overflow-basics" tabindex="-1"><a class="header-anchor" href="#buffer-overflow-basics"><span>Buffer Overflow Basics</span></a></h2>
 <ul>
 <li>Process가 고정된 크기의 buffer 제한을 넘어 데이터를 저장하려고 시도할 때 발생하는 프로그래밍 오류</li>
@@ -265,11 +298,15 @@ mode    │                     │
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="basic-buffer-overflow-example" tabindex="-1"><a class="header-anchor" href="#basic-buffer-overflow-example"><span>Basic Buffer Overflow Example</span></a></h2>
 <blockquote>
 <p><strong>Figure 10.1</strong> Basic Buffer Overflow Example
 <img src="@source/cs/image-7.png" alt=""></p>
 </blockquote>
+</section>
+<section class="print-section">
 <h2 id="basic-buffer-overflow-stack-values" tabindex="-1"><a class="header-anchor" href="#basic-buffer-overflow-stack-values"><span>Basic Buffer Overflow Stack Values</span></a></h2>
 <pre><code> Memory        Before             After          Contains  
  Address     gets(str2)         gets(str2)       Value of  
@@ -312,6 +349,8 @@ bffffbd0 │    30561540    │ │    42414449    │    str2[0-3]
 <blockquote>
 <p><strong>Figure 10.2</strong> Basic Buffer Overflow Stack Values</p>
 </blockquote>
+</section>
+<section class="print-section">
 <h2 id="buffer-overflow-attacks" tabindex="-1"><a class="header-anchor" href="#buffer-overflow-attacks"><span>Buffer Overflow Attacks</span></a></h2>
 <ul>
 <li>Buffer overflow를 악용하기 위해 공격자가 필요한 것
@@ -328,6 +367,8 @@ bffffbd0 │    30561540    │ │    42414449    │    str2[0-3]
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="programming-language-history" tabindex="-1"><a class="header-anchor" href="#programming-language-history"><span>Programming Language History</span></a></h2>
 <p><img src="@source/cs/image-9.png" alt=""></p>
 <ul>
@@ -348,6 +389,8 @@ bffffbd0 │    30561540    │ │    42414449    │    str2[0-3]
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="stack-buffer-overflows" tabindex="-1"><a class="header-anchor" href="#stack-buffer-overflows"><span>Stack Buffer Overflows</span></a></h2>
 <ul>
 <li>Buffer가 stack에 위치할 때 발생함.
@@ -365,6 +408,8 @@ bffffbd0 │    30561540    │ │    42414449    │    str2[0-3]
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="stack-frame-with-functions-p-and-q" tabindex="-1"><a class="header-anchor" href="#stack-frame-with-functions-p-and-q"><span>Stack Frame with Functions P and Q</span></a></h2>
 <pre><code>  ┌──────────────────┐           
 P:│    Return Addr   │           
@@ -388,6 +433,8 @@ Q:│ Return Addr in P │   │
 <blockquote>
 <p><strong>Figure 10.3</strong> Example Stack Frame with Functions P and Q</p>
 </blockquote>
+</section>
+<section class="print-section">
 <h2 id="programs-and-processes" tabindex="-1"><a class="header-anchor" href="#programs-and-processes"><span>Programs and Processes</span></a></h2>
 <pre><code>                          Process image in                       
                              main memory                         
@@ -454,7 +501,11 @@ bffffbc0 │   34fcffbf   ││   41424344   │ inp[0-3]
 <blockquote>
 <p><strong>Figure 10.6</strong> Basic Stack Overflow Stack Values</p>
 </blockquote>
+</section>
+<section class="print-section">
 <h2 id="stack-overflow-example" tabindex="-1"><a class="header-anchor" href="#stack-overflow-example"><span>Stack Overflow Example</span></a></h2>
+</section>
+<section class="print-section">
 <h3 id="a-another-stack-overflow-c-code" tabindex="-1"><a class="header-anchor" href="#a-another-stack-overflow-c-code"><span>(a) Another stack overflow C code</span></a></h3>
 <div class="language-c line-numbers-mode" data-highlighter="prismjs" data-ext="c"><pre v-pre><code class="language-c"><span class="line"><span class="token keyword">void</span> <span class="token function">getinp</span><span class="token punctuation">(</span><span class="token keyword">char</span> <span class="token operator">*</span>inp<span class="token punctuation">,</span> <span class="token keyword">int</span> siz<span class="token punctuation">)</span></span>
 <span class="line"><span class="token punctuation">{</span></span>
@@ -478,7 +529,9 @@ bffffbc0 │   34fcffbf   ││   41424344   │ inp[0-3]
 <span class="line">    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"buffer3 done\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
 <span class="line"><span class="token punctuation">}</span></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="b-another-stack-overflow-example-runs" tabindex="-1"><a class="header-anchor" href="#b-another-stack-overflow-example-runs"><span>(b) Another stack overflow example runs</span></a></h3>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h3 id="b-another-stack-overflow-example-runs" tabindex="-1"><a class="header-anchor" href="#b-another-stack-overflow-example-runs"><span>(b) Another stack overflow example runs</span></a></h3>
 <div class="language-bash line-numbers-mode" data-highlighter="prismjs" data-ext="sh"><pre v-pre><code class="language-bash"><span class="line">$ cc <span class="token parameter variable">-o</span> buffer3 buffer3.c</span>
 <span class="line">$ ./buffer3</span>
 <span class="line">Input value</span>
@@ -498,6 +551,8 @@ bffffbc0 │   34fcffbf   ││   41424344   │ inp[0-3]
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><blockquote>
 <p><strong>Figure 10.7</strong> Another Stack Overflow Example</p>
 </blockquote>
+</section>
+<section class="print-section">
 <h2 id="common-unsafe-c-standard-library-routines" tabindex="-1"><a class="header-anchor" href="#common-unsafe-c-standard-library-routines"><span>Common Unsafe C Standard Library Routines</span></a></h2>
 <table>
 <thead>
@@ -532,6 +587,8 @@ bffffbc0 │   34fcffbf   ││   41424344   │ inp[0-3]
 <blockquote>
 <p><strong>Table 10.2</strong> Some Common Unsafe C Standard Library Routines</p>
 </blockquote>
+</section>
+<section class="print-section">
 <h2 id="shellcode" tabindex="-1"><a class="header-anchor" href="#shellcode"><span>Shellcode</span></a></h2>
 <ul>
 <li>공격자가 제공한 코드
@@ -553,7 +610,11 @@ bffffbc0 │   34fcffbf   ││   41424344   │ inp[0-3]
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="example-shellcode" tabindex="-1"><a class="header-anchor" href="#example-shellcode"><span>Example Shellcode</span></a></h2>
+</section>
+<section class="print-section">
 <h3 id="a-desired-shellcode-code-in-c" tabindex="-1"><a class="header-anchor" href="#a-desired-shellcode-code-in-c"><span>(a) Desired shellcode code in C</span></a></h3>
 <div class="language-c line-numbers-mode" data-highlighter="prismjs" data-ext="c"><pre v-pre><code class="language-c"><span class="line"><span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">int</span> argc<span class="token punctuation">,</span> <span class="token keyword">char</span> <span class="token operator">*</span>argv<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span></span>
 <span class="line"><span class="token punctuation">{</span></span>
@@ -566,7 +627,9 @@ bffffbc0 │   34fcffbf   ││   41424344   │ inp[0-3]
 <span class="line">    <span class="token function">execve</span><span class="token punctuation">(</span>sh<span class="token punctuation">,</span> args<span class="token punctuation">,</span> <span class="token constant">NULL</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
 <span class="line"><span class="token punctuation">}</span></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="b-equivalent-position-independent-x86-assembly-code" tabindex="-1"><a class="header-anchor" href="#b-equivalent-position-independent-x86-assembly-code"><span>(b) Equivalent position-independent x86 assembly code</span></a></h3>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h3 id="b-equivalent-position-independent-x86-assembly-code" tabindex="-1"><a class="header-anchor" href="#b-equivalent-position-independent-x86-assembly-code"><span>(b) Equivalent position-independent x86 assembly code</span></a></h3>
 <div class="language-as line-numbers-mode" data-highlighter="prismjs" data-ext="as"><pre v-pre><code class="language-as"><span class="line">nop                 // end of nop sled</span>
 <span class="line">nop</span>
 <span class="line">jmp     find        // jump to end of code</span>
@@ -588,7 +651,9 @@ bffffbc0 │   34fcffbf   ││   41424344   │ inp[0-3]
 <span class="line">    .long   0               // space used for args array</span>
 <span class="line">    .long   0               // args[1] and also NULL for env array</span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="c-hexadecimal-values-for-compiled-x86-machine-code" tabindex="-1"><a class="header-anchor" href="#c-hexadecimal-values-for-compiled-x86-machine-code"><span>(c) Hexadecimal values for compiled x86 machine code</span></a></h3>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h3 id="c-hexadecimal-values-for-compiled-x86-machine-code" tabindex="-1"><a class="header-anchor" href="#c-hexadecimal-values-for-compiled-x86-machine-code"><span>(c) Hexadecimal values for compiled x86 machine code</span></a></h3>
 <div class="language-hex line-numbers-mode" data-highlighter="prismjs" data-ext="hex"><pre v-pre><code class="language-hex"><span class="line">90 90 eb 1a 5e 31 c0 88 46 07 8d 1e 89</span>
 <span class="line">46 08 89 46 0c 8d 56 0c 8d 4e 08 b0 0b</span>
 <span class="line">ff d0 ff 2f 62 69 6e 2f 73 68 20 20 20</span>
@@ -596,6 +661,8 @@ bffffbc0 │   34fcffbf   ││   41424344   │ inp[0-3]
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><blockquote>
 <p><strong>Figure 10.8</strong> Example UNIX Shellcode</p>
 </blockquote>
+</section>
+<section class="print-section">
 <h2 id="table-10-3-common-x86-assembly-language-instructions" tabindex="-1"><a class="header-anchor" href="#table-10-3-common-x86-assembly-language-instructions"><span>Table 10.3 Common x86 Assembly Language Instructions</span></a></h2>
 <table>
 <thead>
@@ -659,6 +726,8 @@ bffffbc0 │   34fcffbf   ││   41424344   │ inp[0-3]
 </tr>
 </tbody>
 </table>
+</section>
+<section class="print-section">
 <h2 id="table-10-4-x86-registers" tabindex="-1"><a class="header-anchor" href="#table-10-4-x86-registers"><span>Table 10.4 x86 Registers</span></a></h2>
 <table>
 <thead>
@@ -760,6 +829,8 @@ bffffbc0 │   34fcffbf   ││   41424344   │ inp[0-3]
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><blockquote>
 <p><strong>Figure 10.9</strong> Example Stack Overflow Attack</p>
 </blockquote>
+</section>
+<section class="print-section">
 <h2 id="stack-overflow-variants" tabindex="-1"><a class="header-anchor" href="#stack-overflow-variants"><span>Stack Overflow Variants</span></a></h2>
 <pre><code>  ┌──────────────────────────┐     ┌───────────────────────────┐   
   │  target program can be:  │     │    shellcode functions    │   
@@ -788,6 +859,8 @@ bffffbc0 │   34fcffbf   ││   41424344   │ inp[0-3]
                                  │ └────────────────────────────┘ │
                                  └────────────────────────────────┘
 </code></pre>
+</section>
+<section class="print-section">
 <h2 id="buffer-overflow-defenses" tabindex="-1"><a class="header-anchor" href="#buffer-overflow-defenses"><span>Buffer Overflow Defenses</span></a></h2>
 <pre><code>        ┌────────────────────┐            
         │     two broad      │            
@@ -813,6 +886,8 @@ bffffbc0 │   34fcffbf   ││   41424344   │ inp[0-3]
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="compile-time-defenses-programming-language" tabindex="-1"><a class="header-anchor" href="#compile-time-defenses-programming-language"><span>Compile-Time Defenses: Programming Language</span></a></h2>
 <ul>
 <li>현대의 고수준 언어 사용
@@ -830,6 +905,8 @@ bffffbc0 │   34fcffbf   ││   41424344   │ inp[0-3]
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="compile-time-defenses-safe-coding-techniques" tabindex="-1"><a class="header-anchor" href="#compile-time-defenses-safe-coding-techniques"><span>Compile-Time Defenses: Safe Coding Techniques</span></a></h2>
 <ul>
 <li>C 설계자들은 타입 안전성(type safety)보다 공간 효율성과 성능 고려 사항에 훨씬 더 중점을 두었음.
@@ -848,6 +925,8 @@ bffffbc0 │   34fcffbf   ││   41424344   │ inp[0-3]
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="examples-of-unsafe-c-code" tabindex="-1"><a class="header-anchor" href="#examples-of-unsafe-c-code"><span>Examples of Unsafe C Code</span></a></h2>
 <div class="language-c line-numbers-mode" data-highlighter="prismjs" data-ext="c"><pre v-pre><code class="language-c"><span class="line"><span class="token keyword">int</span> <span class="token function">copy_buf</span><span class="token punctuation">(</span><span class="token keyword">char</span> <span class="token operator">*</span>to<span class="token punctuation">,</span> <span class="token keyword">int</span> pos<span class="token punctuation">,</span> <span class="token keyword">char</span> <span class="token operator">*</span>from<span class="token punctuation">,</span> <span class="token keyword">int</span> len<span class="token punctuation">)</span> <span class="token punctuation">{</span></span>
 <span class="line">  <span class="token keyword">int</span> i<span class="token punctuation">;</span></span>
@@ -871,6 +950,8 @@ bffffbc0 │   34fcffbf   ││   41424344   │ inp[0-3]
 <blockquote>
 <p><strong>Figure 10.10</strong> Examples of Unsafe C Code</p>
 </blockquote>
+</section>
+<section class="print-section">
 <h2 id="compile-time-defenses-language-extensions-safe-libraries" tabindex="-1"><a class="header-anchor" href="#compile-time-defenses-language-extensions-safe-libraries"><span>Compile-Time Defenses: Language Extensions / Safe Libraries</span></a></h2>
 <ul>
 <li>동적으로 할당된 메모리 처리는 컴파일 시간에 크기 정보를 사용할 수 없으므로 더 문제가 됨.
@@ -888,6 +969,8 @@ bffffbc0 │   34fcffbf   ││   41424344   │ inp[0-3]
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="compile-time-defenses-stack-protection" tabindex="-1"><a class="header-anchor" href="#compile-time-defenses-stack-protection"><span>Compile-Time Defenses: Stack Protection</span></a></h2>
 <ul>
 <li>손상 징후를 위해 stack을 확인하는 함수 진입(entry) 및 종료(exit) 코드를 추가함.</li>
@@ -906,6 +989,8 @@ bffffbc0 │   34fcffbf   ││   41424344   │ inp[0-3]
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="run-time-defenses-executable-address-space-protection" tabindex="-1"><a class="header-anchor" href="#run-time-defenses-executable-address-space-protection"><span>Run-Time Defenses: Executable Address Space Protection</span></a></h2>
 <ul>
 <li>Virtual memory 지원을 사용하여 메모리의 일부 영역을 실행 불가능(non-executable)하게 만듦
@@ -922,6 +1007,8 @@ bffffbc0 │   34fcffbf   ││   41424344   │ inp[0-3]
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="run-time-defenses-address-space-layout-randomization-aslr" tabindex="-1"><a class="header-anchor" href="#run-time-defenses-address-space-layout-randomization-aslr"><span>Run-Time Defenses: Address Space Layout Randomization (ASLR)</span></a></h2>
 <ul>
 <li>주요 데이터 구조의 위치를 조작함.
@@ -934,6 +1021,8 @@ bffffbc0 │   34fcffbf   ││   41424344   │ inp[0-3]
 <li>Heap buffer 위치의 무작위화</li>
 <li>표준 라이브러리 함수의 무작위 위치</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="run-time-defenses-guard-pages" tabindex="-1"><a class="header-anchor" href="#run-time-defenses-guard-pages"><span>Run-Time Defenses: Guard Pages</span></a></h2>
 <ul>
 <li>메모리의 임계(critical) 영역 사이에 guard pages를 배치함.
@@ -948,6 +1037,8 @@ bffffbc0 │   34fcffbf   ││   41424344   │ inp[0-3]
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="replacement-stack-frame" tabindex="-1"><a class="header-anchor" href="#replacement-stack-frame"><span>Replacement Stack Frame</span></a></h2>
 <ul>
 <li>Buffer와 저장된 frame pointer 주소를 덮어쓰는 변형
@@ -970,6 +1061,8 @@ bffffbc0 │   34fcffbf   ││   41424344   │ inp[0-3]
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="return-to-system-call" tabindex="-1"><a class="header-anchor" href="#return-to-system-call"><span>Return to System Call</span></a></h2>
 <ul>
 <li>Stack overflow 변형으로 반환 주소를 표준 라이브러리 함수로 대체함.
@@ -993,6 +1086,8 @@ bffffbc0 │   34fcffbf   ││   41424344   │ inp[0-3]
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="return-to-libc" tabindex="-1"><a class="header-anchor" href="#return-to-libc"><span>Return-to-libc</span></a></h2>
 <ul>
 <li>코드 주입 대신 기존 코드(예: <code v-pre>libc</code> 함수) 사용
@@ -1010,6 +1105,8 @@ bffffbc0 │   34fcffbf   ││   41424344   │ inp[0-3]
 <li><code v-pre>echo()</code>가 반환될 때, <code v-pre>system()</code>이 새로운 shell을 실행함.</li>
 <li><span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>W</mi><mo>⊕</mo><mi>X</mi></mrow><annotation encoding="application/x-tex">W \oplus X</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7667em;vertical-align:-0.0833em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">W</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">⊕</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.07847em;">X</span></span></span></span> 모델 우회</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="heap-overflow" tabindex="-1"><a class="header-anchor" href="#heap-overflow"><span>Heap Overflow</span></a></h2>
 <ul>
 <li>Heap에 위치한 buffer 공격
@@ -1032,6 +1129,8 @@ bffffbc0 │   34fcffbf   ││   41424344   │ inp[0-3]
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="heap-overflow-example" tabindex="-1"><a class="header-anchor" href="#heap-overflow-example"><span>Heap Overflow Example</span></a></h2>
 <div class="language-c line-numbers-mode" data-highlighter="prismjs" data-ext="c"><pre v-pre><code class="language-c"><span class="line"><span class="token comment">/* record type to allocate on heap */</span></span>
 <span class="line"><span class="token keyword">typedef</span> <span class="token keyword">struct</span> <span class="token class-name">chunk</span> <span class="token punctuation">{</span></span>
@@ -1081,7 +1180,9 @@ bffffbc0 │   34fcffbf   ││   41424344   │ inp[0-3]
 <span class="line">knoppix:<span class="token variable">$1</span><span class="token variable">$p2wziIMLs</span>/yVHPQuw5kvlUFJs3b9a/:13347:0:99999:7:::</span>
 <span class="line"><span class="token punctuation">..</span>.</span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="global-data-overflow" tabindex="-1"><a class="header-anchor" href="#global-data-overflow"><span>Global Data Overflow</span></a></h2>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h2 id="global-data-overflow" tabindex="-1"><a class="header-anchor" href="#global-data-overflow"><span>Global Data Overflow</span></a></h2>
 <ul>
 <li>전역 데이터에 위치한 buffer를 공격할 수 있음.
 <ul>
@@ -1099,6 +1200,8 @@ bffffbc0 │   34fcffbf   ││   41424344   │ inp[0-3]
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="global-data-overflow-example" tabindex="-1"><a class="header-anchor" href="#global-data-overflow-example"><span>Global Data Overflow Example</span></a></h2>
 <div class="language-c line-numbers-mode" data-highlighter="prismjs" data-ext="c"><pre v-pre><code class="language-c"><span class="line"><span class="token comment">/* global static data - will be targeted for attack */</span></span>
 <span class="line"><span class="token keyword">struct</span> <span class="token class-name">chunk</span> <span class="token punctuation">{</span></span>
@@ -1146,7 +1249,9 @@ bffffbc0 │   34fcffbf   ││   41424344   │ inp[0-3]
 <span class="line">knoppix:<span class="token variable">$1</span><span class="token variable">$p2wziIMLs</span>/yVHPQuw5kvlUFJs3b9a/:13347:0:99999:7:::</span>
 <span class="line"><span class="token punctuation">..</span>.</span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="return-oriented-programming" tabindex="-1"><a class="header-anchor" href="#return-oriented-programming"><span>Return-Oriented Programming</span></a></h2>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h2 id="return-oriented-programming" tabindex="-1"><a class="header-anchor" href="#return-oriented-programming"><span>Return-Oriented Programming</span></a></h2>
 <ul>
 <li>개념 (Concept)</li>
 <li>공격 방법 (Attack method)</li>
@@ -1158,6 +1263,8 @@ bffffbc0 │   34fcffbf   ││   41424344   │ inp[0-3]
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="rop-return-oriented-programming" tabindex="-1"><a class="header-anchor" href="#rop-return-oriented-programming"><span>ROP (Return-Oriented Programming)</span></a></h2>
 <ul>
 <li>악성 코드를 주입할 필요 없이 임의의(튜링 완전한) 계산 수행
@@ -1198,6 +1305,8 @@ bffffbc0 │   34fcffbf   ││   41424344   │ inp[0-3]
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="general-idea-of-rop" tabindex="-1"><a class="header-anchor" href="#general-idea-of-rop"><span>General Idea of ROP</span></a></h2>
 <pre><code>┌──────────────────────────────────────────┐
 │  Seq 1      Seq 2      Seq 3      Seq 4  │
@@ -1231,6 +1340,8 @@ bffffbc0 │   34fcffbf   ││   41424344   │ inp[0-3]
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="finding-unintended-instruction-sequences" tabindex="-1"><a class="header-anchor" href="#finding-unintended-instruction-sequences"><span>Finding unintended instruction sequences</span></a></h2>
 <ul>
 <li>libc에 다음과 같은 명령어가 있다고 가정
@@ -1285,6 +1396,8 @@ bffffbc0 │   34fcffbf   ││   41424344   │ inp[0-3]
 </table>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="gadget-example-memory-load-1-4" tabindex="-1"><a class="header-anchor" href="#gadget-example-memory-load-1-4"><span>Gadget Example : Memory Load (1/4)</span></a></h2>
 <pre><code>           Stack                                                           
     ┌──────────────────┐                                                   
@@ -1316,21 +1429,29 @@ SP--► Return Address 1 ├──┐
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="gadget-example-memory-load-2-4" tabindex="-1"><a class="header-anchor" href="#gadget-example-memory-load-2-4"><span>Gadget Example: Memory Load (2/4)</span></a></h2>
 <ul>
 <li><code v-pre>0x8010AB8D</code>를 <code v-pre>%eax</code> register에 pop</li>
 <li>목표: (<code v-pre>0x8010ABCD</code>가 가리키는) 단어 <code v-pre>0xDEADBEEF</code>를 <code v-pre>%eax</code> register에 로드하기</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="gadget-example-memory-load-3-4" tabindex="-1"><a class="header-anchor" href="#gadget-example-memory-load-3-4"><span>Gadget Example: Memory Load (3/4)</span></a></h2>
 <ul>
 <li>제어 흐름은 Sequence 1의 <code v-pre>ret</code> 명령어에 의해 Sequence 2로 이동함.</li>
 <li>목표: (<code v-pre>0x8010ABCD</code>가 가리키는) 단어 <code v-pre>0xDEADBEEF</code>를 <code v-pre>%eax</code> register에 로드하기</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="gadget-example-memory-load-4-4" tabindex="-1"><a class="header-anchor" href="#gadget-example-memory-load-4-4"><span>Gadget Example: Memory Load (4/4)</span></a></h2>
 <ul>
 <li><code v-pre>0xDEADBEEF</code>를 <code v-pre>%eax</code> register로 move</li>
 <li>목표: (<code v-pre>0x8010ABCD</code>가 가리키는) 단어 <code v-pre>0xDEADBEEF</code>를 <code v-pre>%eax</code> register에 로드하기</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="countermeasures" tabindex="-1"><a class="header-anchor" href="#countermeasures"><span>Countermeasures</span></a></h2>
 <ul>
 <li>반환 주소를 악의적인 수정으로부터 어떻게 보호할 것인가?
@@ -1365,6 +1486,8 @@ SP--► Return Address 1 ├──┐
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="rop-without-returns-9" tabindex="-1"><a class="header-anchor" href="#rop-without-returns-9"><span>ROP without Returns [9]</span></a></h2>
 <ul>
 <li>특징
@@ -1389,6 +1512,8 @@ SP--► Return Address 1 ├──┐
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="rop-without-returns" tabindex="-1"><a class="header-anchor" href="#rop-without-returns"><span>ROP without Returns</span></a></h2>
 <ul>
 <li>반환과 유사한 시퀀스(Return-like Sequences)
@@ -1424,6 +1549,7 @@ SP--► Return Address 1 ├──┐
 </ul>
 </li>
 </ul>
+</section>
 </div></template>
 
 

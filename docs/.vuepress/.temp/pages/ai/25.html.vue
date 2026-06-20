@@ -1,7 +1,12 @@
-<template><div><h1 id="_25-language-modeling-and-recurrent-neural-networks" tabindex="-1"><a class="header-anchor" href="#_25-language-modeling-and-recurrent-neural-networks"><span>25. Language Modeling and Recurrent Neural Networks</span></a></h1>
+<template><div><section class="print-section">
+<h1 id="_25-language-modeling-and-recurrent-neural-networks" tabindex="-1"><a class="header-anchor" href="#_25-language-modeling-and-recurrent-neural-networks"><span>25. Language Modeling and Recurrent Neural Networks</span></a></h1>
 <DateMeta />
+</section>
+<section class="print-section">
 <h1 id="language-modeling" tabindex="-1"><a class="header-anchor" href="#language-modeling"><span>Language Modeling</span></a></h1>
 <p>Classic <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">n</span></span></span></span>-gram 모델</p>
+</section>
+<section class="print-section">
 <h2 id="language-modeling-1" tabindex="-1"><a class="header-anchor" href="#language-modeling-1"><span>Language Modeling</span></a></h2>
 <p><img src="@source/ai/image-58.png" alt=""></p>
 <ul>
@@ -41,12 +46,16 @@
 <span class="line">    Calculate probability</span>
 <span class="line">    Sample a new word from the probability distribution</span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="you-use-language-models-every-day" tabindex="-1"><a class="header-anchor" href="#you-use-language-models-every-day"><span>You Use Language Models Every Day!</span></a></h2>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h2 id="you-use-language-models-every-day" tabindex="-1"><a class="header-anchor" href="#you-use-language-models-every-day"><span>You Use Language Models Every Day!</span></a></h2>
 <ul>
 <li>자동 완성</li>
 <li>검색 엔진</li>
 <li>ChatGPT</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="gram-language-models" tabindex="-1"><a class="header-anchor" href="#gram-language-models"><span><span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span></span></span></span>-Gram Language Models</span></a></h2>
 <ul>
 <li>Deep learning 이전의 근본적이고 고전적인 Language Model 구현 방식</li>
@@ -79,6 +88,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="gram-language-models-example" tabindex="-1"><a class="header-anchor" href="#gram-language-models-example"><span><span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span></span></span></span>-Gram Language Models: Example</span></a></h2>
 <ul>
 <li>4-gram Language Model 학습의 경우를 가정</li>
@@ -94,6 +105,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="generating-text-with-a-gram-language-model" tabindex="-1"><a class="header-anchor" href="#generating-text-with-a-gram-language-model"><span>Generating Text with a <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span></span></span></span>-Gram Language Model</span></a></h2>
 <ul>
 <li>간단한 trigram 언어 모델
@@ -114,8 +127,12 @@
 <li>언어를 잘 모델링하려면 한 번에 세 단어 이상은 고려해야 함.</li>
 <li>하지만 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">n</span></span></span></span>을 증가시키면 희소성 문제(sparsity problem)를 악화시키고, 모델 크기를 증가시키게 됨.</li>
 </ul>
+</section>
+<section class="print-section">
 <h1 id="neural-language-models" tabindex="-1"><a class="header-anchor" href="#neural-language-models"><span>Neural Language Models</span></a></h1>
 <p>Based on feed-forward NNs and RNNs</p>
+</section>
+<section class="print-section">
 <h2 id="a-fixed-window-neural-language-model" tabindex="-1"><a class="header-anchor" href="#a-fixed-window-neural-language-model"><span>A (Fixed-Window) Neural Language Model</span></a></h2>
 <ul>
 <li>Output distribution</li>
@@ -155,16 +172,22 @@
 </li>
 <li>임의의 길이의 input을 처리할 수 있는 neural architecture 필요성 대두</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="recurrent-neural-networks-rnn" tabindex="-1"><a class="header-anchor" href="#recurrent-neural-networks-rnn"><span>Recurrent Neural Networks (RNN)</span></a></h2>
 <p><img src="@source/ai/image-62.png" alt=""></p>
 <ul>
 <li>Core idea: 동일한 weights <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>W</mi></mrow><annotation encoding="application/x-tex">W</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">W</span></span></span></span>를 반복적으로 적용</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="a-simple-rnn-language-model" tabindex="-1"><a class="header-anchor" href="#a-simple-rnn-language-model"><span>A Simple RNN Language Model</span></a></h2>
 <p><img src="@source/ai/image-63.png" alt=""></p>
 <ul>
 <li>Recurrent 구조를 활용한 language Model 도식</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="rnn-language-models" tabindex="-1"><a class="header-anchor" href="#rnn-language-models"><span>RNN Language Models</span></a></h2>
 <ul>
 <li><strong>RNN의 장점</strong>
@@ -185,6 +208,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="training-an-rnn-language-model" tabindex="-1"><a class="header-anchor" href="#training-an-rnn-language-model"><span>Training an RNN Language Model</span></a></h2>
 <p><img src="@source/ai/image-64.png" alt=""></p>
 <ul>
@@ -220,31 +245,45 @@
 <li>실제로는 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>x</mi><mrow><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow></msup><mo separator="true">,</mo><mo>…</mo><mo separator="true">,</mo><msup><mi>x</mi><mrow><mo stretchy="false">(</mo><mi>T</mi><mo stretchy="false">)</mo></mrow></msup></mrow><annotation encoding="application/x-tex">x^{(1)}, \dots, x^{(T)}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.0824em;vertical-align:-0.1944em;"></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.888em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mopen mtight">(</span><span class="mord mtight">1</span><span class="mclose mtight">)</span></span></span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="minner">…</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.888em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mopen mtight">(</span><span class="mord mathnormal mtight" style="margin-right:0.13889em;">T</span><span class="mclose mtight">)</span></span></span></span></span></span></span></span></span></span></span></span>를 sentence (또는 document) 단위로 처리</li>
 <li>Stochastic Gradient Descent (SGD)를 활용하여 작은 chunk (Batch) 데이터에 대해 loss 및 gradient 계산 후 weights update 반복</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="generating-text-with-an-rnn-language-model" tabindex="-1"><a class="header-anchor" href="#generating-text-with-an-rnn-language-model"><span>Generating Text with an RNN Language Model</span></a></h2>
 <p><img src="@source/ai/image-71.png" alt=""></p>
 <ul>
 <li>특정 text style로 학습된 RNN-LM을 통해 해당 스타일의 text 생성 가능</li>
 <li>예: Obama speeches, Harry Potter 소설 스타일 등</li>
 </ul>
+</section>
+<section class="print-section">
 <h1 id="recurrent-neural-networks-for-other-applications" tabindex="-1"><a class="header-anchor" href="#recurrent-neural-networks-for-other-applications"><span>Recurrent Neural Networks for Other Applications</span></a></h1>
 <p>Tagging, classification, question answering, speech recognition</p>
+</section>
+<section class="print-section">
 <h2 id="rnns-can-be-used-for-tagging" tabindex="-1"><a class="header-anchor" href="#rnns-can-be-used-for-tagging"><span>RNNs Can Be Used for Tagging</span></a></h2>
 <p><img src="@source/ai/image-65.png" alt=""></p>
 <ul>
 <li>예: Part-of-speech tagging, Named Entity Recognition 등</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="rnns-can-be-used-for-sentence-classification" tabindex="-1"><a class="header-anchor" href="#rnns-can-be-used-for-sentence-classification"><span>RNNs Can Be Used for Sentence Classification</span></a></h2>
 <p><img src="@source/ai/image-66.png" alt=""></p>
 <ul>
 <li>예: Sentiment classification(감정 분석) 등</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="rnn-lms-can-be-used-to-generate-text" tabindex="-1"><a class="header-anchor" href="#rnn-lms-can-be-used-to-generate-text"><span>RNN-LMs Can Be Used to Generate Text</span></a></h2>
 <p><img src="@source/ai/image-67.png" alt=""></p>
 <ul>
 <li>Speech recognition, Machine translation, Summarization 등</li>
 </ul>
+</section>
+<section class="print-section">
 <h1 id="variants-of-rnns" tabindex="-1"><a class="header-anchor" href="#variants-of-rnns"><span>Variants of RNNs</span></a></h1>
 <p>RNN의 변형</p>
+</section>
+<section class="print-section">
 <h2 id="bidirectional-and-multi-layer-rnns-motivation" tabindex="-1"><a class="header-anchor" href="#bidirectional-and-multi-layer-rnns-motivation"><span>Bidirectional and Multi-Layer RNNs: Motivation</span></a></h2>
 <p><img src="@source/ai/image-72.png" alt=""></p>
 <ul>
@@ -256,16 +295,22 @@
 <li>이러한 문맥적 표현은 왼쪽 문맥(예: &quot;<em>the movie was</em>&quot;)에 대한 정보만을 포함</li>
 <li>이 예시에서, &quot;exciting&quot;은 오른쪽 문맥에 있으며 이것이 &quot;<em>terribly</em>&quot;의 의미를 수정하고 있음 (부정에서 긍정으로).</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="bidirectional-rnns" tabindex="-1"><a class="header-anchor" href="#bidirectional-rnns"><span>Bidirectional RNNs</span></a></h2>
 <p><img src="@source/ai/image-73.png" alt=""></p>
 <ul>
 <li>Forward 및 backward 정보를 결합하여 활용</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="multi-layer-rnns" tabindex="-1"><a class="header-anchor" href="#multi-layer-rnns"><span>Multi-Layer RNNs</span></a></h2>
 <p><img src="@source/ai/image-74.png" alt=""></p>
 <ul>
 <li>RNN을 여러 층으로 쌓아 구성</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="long-short-term-memory-rnns-lstms" tabindex="-1"><a class="header-anchor" href="#long-short-term-memory-rnns-lstms"><span>Long Short-Term Memory RNNs (LSTMs)</span></a></h2>
 <ul>
 <li>1997년 Hochreiter와 Schmidhuber가 vanishing gradients problem의 해결책으로 제안한 RNN의 일종</li>
@@ -314,6 +359,8 @@
 </ul>
 <p><img src="@source/ai/image-69.png" alt=""></p>
 <p><img src="@source/ai/image-68.png" alt=""></p>
+</section>
+<section class="print-section">
 <h3 id="diagram-legend" tabindex="-1"><a class="header-anchor" href="#diagram-legend"><span>Diagram Legend</span></a></h3>
 <ul>
 <li><code v-pre>(X)</code>: Pointwise Multiplication (Element-wise)</li>
@@ -322,6 +369,7 @@
 <li><code v-pre>-&gt;</code>: Vector Transfer</li>
 <li><code v-pre>Combine</code>: Concatenation</li>
 </ul>
+</section>
 </div></template>
 
 

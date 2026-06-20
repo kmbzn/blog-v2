@@ -1,6 +1,9 @@
-<template><div><h1 id="리눅스-우분투-grub-폰트-변경" tabindex="-1"><a class="header-anchor" href="#리눅스-우분투-grub-폰트-변경"><span>리눅스 우분투 GRUB 폰트 변경</span></a></h1>
+<template><div><section class="print-section">
+<h1 id="리눅스-우분투-grub-폰트-변경" tabindex="-1"><a class="header-anchor" href="#리눅스-우분투-grub-폰트-변경"><span>리눅스 우분투 GRUB 폰트 변경</span></a></h1>
 <DateMeta />
 <p>우분투에서 가독성 좋은 비트맵 폰트인 <strong>Terminus</strong> 폰트를 사용하여 GRUB 메뉴 폰트 크기를 <code v-pre>32pt</code>로 키우는 방법입니다.</p>
+</section>
+<section class="print-section">
 <h2 id="실행-스크립트" tabindex="-1"><a class="header-anchor" href="#실행-스크립트"><span>실행 스크립트</span></a></h2>
 <p>아래 명령어를 터미널에 순서대로 입력하거나, 스크립트 파일로 만들어 실행해볼 수 있습니다.</p>
 <div class="language-bash line-numbers-mode" data-highlighter="prismjs" data-ext="sh"><pre v-pre><code class="language-bash"><span class="line"><span class="token comment"># 1. 폰트 설치</span></span>
@@ -17,13 +20,16 @@
 <span class="line"><span class="token function">sudo</span> <span class="token function">update-grub</span></span>
 <span class="line"><span class="token function">sudo</span> <span class="token function">reboot</span></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="요약" tabindex="-1"><a class="header-anchor" href="#요약"><span>요약</span></a></h2>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h2 id="요약" tabindex="-1"><a class="header-anchor" href="#요약"><span>요약</span></a></h2>
 <ol>
 <li><code v-pre>fonts-terminus</code> 패키지 설치</li>
 <li><code v-pre>grub-mkfont</code>를 통해 32pt 크기의 <code v-pre>.pf2</code> 파일 생성</li>
 <li><code v-pre>/etc/default/grub</code> 파일에 폰트 경로 지정</li>
 <li><code v-pre>update-grub</code>으로 설정 적용</li>
 </ol>
+</section>
 </div></template>
 
 

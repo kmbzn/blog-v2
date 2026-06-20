@@ -1,6 +1,11 @@
-<template><div><h1 id="_17-other-classic-ml-models-2" tabindex="-1"><a class="header-anchor" href="#_17-other-classic-ml-models-2"><span>17. Other Classic ML Models (2)</span></a></h1>
+<template><div><section class="print-section">
+<h1 id="_17-other-classic-ml-models-2" tabindex="-1"><a class="header-anchor" href="#_17-other-classic-ml-models-2"><span>17. Other Classic ML Models (2)</span></a></h1>
 <DateMeta />
+</section>
+<section class="print-section">
 <h1 id="support-vector-machines" tabindex="-1"><a class="header-anchor" href="#support-vector-machines"><span>Support Vector Machines</span></a></h1>
+</section>
+<section class="print-section">
 <h2 id="support-vector-machines-svms" tabindex="-1"><a class="header-anchor" href="#support-vector-machines-svms"><span>Support Vector Machines (SVMs)</span></a></h2>
 <ul>
 <li>2000년대 초반, &quot;off-the-shelf&quot; supervised learning (도메인에 대한 사전 지식 없이 사용하는)에 가장 인기 있었던 model class</li>
@@ -12,6 +17,8 @@
 </ol>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="properties-of-svms" tabindex="-1"><a class="header-anchor" href="#properties-of-svms"><span>Properties of SVMs</span></a></h2>
 <ul>
 <li>SVM은 maximum margin separator를 구축</li>
@@ -24,17 +31,27 @@
 <li>SVM의 핵심 통찰은 일부 example (즉, support vector)이 다른 것보다 더 중요하며, 이에 집중하는 것이 더 나은 generalization으로 이어질 수 있다는 것
 <img src="@source/ai/image-25.png" alt="alt text"></li>
 </ul>
+</section>
+<section class="print-section">
 <h1 id="implementing-ml-models-in-python" tabindex="-1"><a class="header-anchor" href="#implementing-ml-models-in-python"><span>Implementing ML Models in Python</span></a></h1>
+</section>
+<section class="print-section">
 <h2 id="scikit-learn" tabindex="-1"><a class="header-anchor" href="#scikit-learn"><span>Scikit-learn</span></a></h2>
 <ul>
 <li><a href="https://scikit-learn.org/" target="_blank" rel="noopener noreferrer">https://scikit-learn.org/</a></li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="k-nns-in-scikit-learn" tabindex="-1"><a class="header-anchor" href="#k-nns-in-scikit-learn"><span>K-NNs in Scikit-learn</span></a></h2>
 <ul>
 <li><a href="https://scikit-learn.org/stable/auto_examples/neighbors/plot_classification.html#sphx-glr-autoexamples-neighbors-plot-classification-py" target="_blank" rel="noopener noreferrer">https://scikit-learn.org/stable/auto_examples/neighbors/plot_classification.html#sphx-glr-autoexamples-neighbors-plot-classification-py</a></li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="clustering-in-scikit-learn" tabindex="-1"><a class="header-anchor" href="#clustering-in-scikit-learn"><span>Clustering in Scikit-learn</span></a></h2>
 <p><img src="@source/ai/image-26.png" alt="alt text"></p>
+</section>
+<section class="print-section">
 <h2 id="gaussian-naive-bayes-in-scikit-learn" tabindex="-1"><a class="header-anchor" href="#gaussian-naive-bayes-in-scikit-learn"><span>(Gaussian) Naïve Bayes in Scikit-learn</span></a></h2>
 <ul>
 <li><a href="https://scikit-learn.org/stable/modules/naive_bayes.html" target="_blank" rel="noopener noreferrer">https://scikit-learn.org/stable/modules/naive_bayes.html</a></li>
@@ -63,17 +80,27 @@ M1001 80h400000v40h-400000z"/></svg></span></span></span><span class="vlist-s">�
 <span class="line"><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>       <span class="token operator">%</span> <span class="token punctuation">(</span>X_test<span class="token punctuation">.</span>shape<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>y_test <span class="token operator">!=</span> y_pred<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token builtin">sum</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span></span>
 <span class="line">Number of mislabeled points out of a total <span class="token number">75</span> points <span class="token punctuation">:</span> <span class="token number">4</span></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="decision-trees-in-scikit-learn" tabindex="-1"><a class="header-anchor" href="#decision-trees-in-scikit-learn"><span>Decision Trees in Scikit-learn</span></a></h2>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h2 id="decision-trees-in-scikit-learn" tabindex="-1"><a class="header-anchor" href="#decision-trees-in-scikit-learn"><span>Decision Trees in Scikit-learn</span></a></h2>
 <ul>
 <li><a href="https://scikit-learn.org/stable/auto_examples/tree/plot_iris_dtc.html" target="_blank" rel="noopener noreferrer">https://scikit-learn.org/stable/auto_examples/tree/plot_iris_dtc.html</a>
 <img src="@source/ai/image-27.png" alt="alt text"></li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="svms-in-scikit-learn" tabindex="-1"><a class="header-anchor" href="#svms-in-scikit-learn"><span>SVMs in Scikit-learn</span></a></h2>
 <ul>
 <li><a href="https://scikit-learn.org/stable/auto_examples/svm/plot_separating_hyperplane.html#sphx-glrauto-examples-svm-plot-separating-hyperplane-py" target="_blank" rel="noopener noreferrer">https://scikit-learn.org/stable/auto_examples/svm/plot_separating_hyperplane.html#sphx-glrauto-examples-svm-plot-separating-hyperplane-py</a></li>
 </ul>
+</section>
+<section class="print-section">
 <h1 id="neural-networks-and-deep-learning-1" tabindex="-1"><a class="header-anchor" href="#neural-networks-and-deep-learning-1"><span>Neural Networks and Deep Learning (1)</span></a></h1>
+</section>
+<section class="print-section">
 <h2 id="introduction-to-neural-networks-and-deep-learning" tabindex="-1"><a class="header-anchor" href="#introduction-to-neural-networks-and-deep-learning"><span>Introduction to Neural Networks and Deep Learning</span></a></h2>
+</section>
+<section class="print-section">
 <h2 id="ai-ml-and-dl-the-slide-from-the-first-lecture" tabindex="-1"><a class="header-anchor" href="#ai-ml-and-dl-the-slide-from-the-first-lecture"><span>AI, ML, and DL (The Slide From the First Lecture)</span></a></h2>
 <pre><code>  ┌─────────────────────┐
 ┌─┼──────────┐ Machine  │
@@ -95,6 +122,8 @@ M1001 80h400000v40h-400000z"/></svg></span></span></span><span class="vlist-s">�
 <li>ML은 보통 AI의 부분집합으로 간주되며, DL은 ML의 특정 부분</li>
 <li>그러나 ML이 전적으로 AI에 포함되는지에 대해서는 여전히 논란이 있음</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="deep-learning" tabindex="-1"><a class="header-anchor" href="#deep-learning"><span>Deep Learning</span></a></h2>
 <ul>
 <li>Deep learning은 machine learning을 위한 광범위한 technique family이며, hypothesis는 조정 가능한 연결 강도를 가진 복잡한 대수적 circuit 형태를 띰</li>
@@ -107,12 +136,16 @@ M1001 80h400000v40h-400000z"/></svg></span></span></span><span class="vlist-s">�
 <li>의료, 법률, ...</li>
 <li>Physical AI &amp; Robotics</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="neural-networks" tabindex="-1"><a class="header-anchor" href="#neural-networks"><span>Neural Networks</span></a></h2>
 <ul>
 <li>Deep learning은 뇌의 neuron network를 computational circuit으로 modeling 하려던 초기 연구에 기원을 둠</li>
 <li>이러한 이유로 deep learning method로 훈련된 network는 종종 neural network라고 불림 (실제 neural cell 및 구조와의 유사성은 피상적일지라도)
 <img src="@source/ai/image-29.png" alt="alt text"></li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="why-is-deep-learning-successful" tabindex="-1"><a class="header-anchor" href="#why-is-deep-learning-successful"><span>Why is Deep Learning Successful?</span></a></h2>
 <ul>
 <li>Deep learning 성공의 진정한 이유는 아직 완전히 밝혀지지 않았지만, 다른 method에 비해 명백한 이점을 가짐</li>
@@ -126,7 +159,11 @@ M1001 80h400000v40h-400000z"/></svg></span></span></span><span class="vlist-s">�
 <li>이러한 circuit model은 많은 중요한 learning problem 유형에 대해 real-world data의 복잡성을 포착할 만큼 충분히 expressive 한 것으로 밝혀짐
 <img src="@source/ai/image-30.png" alt="alt text"></li>
 </ul>
+</section>
+<section class="print-section">
 <h1 id="simple-feedforward-networks" tabindex="-1"><a class="header-anchor" href="#simple-feedforward-networks"><span>Simple Feedforward Networks</span></a></h1>
+</section>
+<section class="print-section">
 <h2 id="feedforward-networks" tabindex="-1"><a class="header-anchor" href="#feedforward-networks"><span>Feedforward Networks</span></a></h2>
 <ul>
 <li>(Deep) feedforward (neural) network (또는 multi-layer perceptrons (MLPs))는 한 방향으로만 connection을 가짐</li>
@@ -159,6 +196,8 @@ M1001 80h400000v40h-400000z"/></svg></span></span></span><span class="vlist-s">�
 <li>각 unit은 많은 다른 unit으로부터 input을 받고 자신의 activation value를 계산한다는 의미에서 neuron과 유사</li>
 <li>그러나 neural network의 목표는 뇌를 완벽하게 model 하는 것이 아님</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="computation-of-feedforward-networks" tabindex="-1"><a class="header-anchor" href="#computation-of-feedforward-networks"><span>Computation of Feedforward Networks</span></a></h2>
 <ul>
 <li>Network 내의 각 node를 unit (또는 perceptron)이라고 함
@@ -188,6 +227,8 @@ M1001 80h400000v40h-400000z"/></svg></span></span></span><span class="vlist-s">�
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="activation-funtions" tabindex="-1"><a class="header-anchor" href="#activation-funtions"><span>Activation Funtions</span></a></h2>
 <ul>
 <li>다양하고 서로 다른 activation function이 사용됨</li>
@@ -206,6 +247,7 @@ M1001 80h400000v40h-400000z"/></svg></span></span></span><span class="vlist-s">�
 </ul>
 <p v-pre class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>tanh</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo>=</mo><mfrac><mrow><msup><mi>e</mi><mrow><mn>2</mn><mi>x</mi></mrow></msup><mo>−</mo><mn>1</mn></mrow><mrow><msup><mi>e</mi><mrow><mn>2</mn><mi>x</mi></mrow></msup><mo>+</mo><mn>1</mn></mrow></mfrac></mrow><annotation encoding="application/x-tex">\tanh(x) = \frac{e^{2x} - 1}{e^{2x} + 1}
 </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mop">tanh</span><span class="mopen">(</span><span class="mord mathnormal">x</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:2.2604em;vertical-align:-0.7693em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.4911em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathnormal">e</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7401em;"><span style="top:-2.989em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span><span class="mord mathnormal mtight">x</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord">1</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathnormal">e</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span><span class="mord mathnormal mtight">x</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.7693em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span></p>
+</section>
 </div></template>
 
 

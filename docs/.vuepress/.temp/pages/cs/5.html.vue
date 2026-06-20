@@ -1,27 +1,38 @@
-<template><div><h1 id="_05-access-control" tabindex="-1"><a class="header-anchor" href="#_05-access-control"><span>05. Access Control</span></a></h1>
+<template><div><section class="print-section">
+<h1 id="_05-access-control" tabindex="-1"><a class="header-anchor" href="#_05-access-control"><span>05. Access Control</span></a></h1>
 <DateMeta />
+</section>
+<section class="print-section">
 <h2 id="access-control" tabindex="-1"><a class="header-anchor" href="#access-control"><span>Access Control</span></a></h2>
 <p><code v-pre>ITU-T Recommendation X.800</code>이 정의한 access control(접근 제어)</p>
 <blockquote>
 <p>resource의 무단 사용 방지를 포함하여, 승인되지 않은 방식으로 resource를 사용하는 것을 방지하는 것</p>
 </blockquote>
+</section>
+<section class="print-section">
 <h2 id="access-control-principles" tabindex="-1"><a class="header-anchor" href="#access-control-principles"><span>Access Control Principles</span></a></h2>
 <p><code v-pre>RFC 2828</code>이 정의한 computer security(컴퓨터 보안)</p>
 <blockquote>
 <p>컴퓨터 시스템에서 보안 서비스를 구현하고 보증하는 조치, 특히 접근 제어 서비스를 보증하는 조치</p>
 </blockquote>
+</section>
+<section class="print-section">
 <h2 id="relationship-among-access-control-and-other-security-functions" tabindex="-1"><a class="header-anchor" href="#relationship-among-access-control-and-other-security-functions"><span>Relationship Among Access Control and Other Security Functions</span></a></h2>
 <ul>
 <li>access control은 authentication(인증) 및 audit(감사)과 밀접하게 관련</li>
 <li>인증은 사용자의 신원을 확인하고, access control은 확인된 사용자가 특정 resource에 접근할 수 있는지 여부를 결정</li>
 <li>Auditing 기능은 접근 시도를 기록하여 보안 policy 준수 여부를 확인하고 침입을 탐지</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="access-control-policies" tabindex="-1"><a class="header-anchor" href="#access-control-policies"><span>Access Control Policies</span></a></h2>
 <ul>
 <li>Discretionary Access Control(임의 접근 제어, DAC): resource의 소유자가 다른 subject에 대한 접근 권한을 설정</li>
 <li>Mandatory Access Control(강제 접근 제어, MAC): 시스템 전반의 policy에 따라 접근 권한이 중앙에서 관리됨.</li>
 <li>Role-Based Access Control(role 기반 접근 제어, RBAC): 사용자의 조직 내 role에 따라 접근 권한을 부여</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="access-control-requirements" tabindex="-1"><a class="header-anchor" href="#access-control-requirements"><span>Access Control Requirements</span></a></h2>
 <ul>
 <li>Reliable input(신뢰 가능한 입력)</li>
@@ -40,6 +51,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="access-control-basic-elements" tabindex="-1"><a class="header-anchor" href="#access-control-basic-elements"><span>Access Control Basic Elements</span></a></h2>
 <ul>
 <li>Subject(주체): object에 접근할 수 있는 entity
@@ -61,6 +74,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="mandatory-access-control" tabindex="-1"><a class="header-anchor" href="#mandatory-access-control"><span>Mandatory Access Control</span></a></h2>
 <ul>
 <li>MAC(강제 접근 제어)는 더 제한적인 방식</li>
@@ -69,6 +84,8 @@
 <li>각 보안 규칙은 접근을 시도하는 당사자를 나타내는 subject, 접근 대상 resource를 가리키는 object, 그리고 해당 resource에 접근할 수 있는 범위를 정의하는 일련의 권한으로 구성됨.</li>
 <li>SELinux(Security-Enhanced Linux)는 MAC을 통합함.</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="selinux-and-mac" tabindex="-1"><a class="header-anchor" href="#selinux-and-mac"><span>SELinux and MAC</span></a></h2>
 <ul>
 <li>모든 process와 시스템 resource는 SELinux context(SELinux 컨텍스트, 또는 SELinux 레이블)라는 특별한 보안 레이블을 가짐.</li>
@@ -77,6 +94,8 @@
 <li>SELinux context는 user(사용자), role(role), type(유형), security level(보안 수준) 등 여러 field를 가짐.</li>
 <li>가장 일반적인 policy 규칙이 전체 SELinux context가 아닌 SELinux 유형을 사용하기 때문에 SELinux 유형 정보가 SELinux policy에서 가장 중요할 수 있음.</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="discretionary-access-control-dac" tabindex="-1"><a class="header-anchor" href="#discretionary-access-control-dac"><span>Discretionary Access Control (DAC)</span></a></h2>
 <ul>
 <li>한 entity가 다른 entity에게 일부 resource에 접근할 수 있도록 허용하는 방식</li>
@@ -88,28 +107,38 @@
 </li>
 <li>행렬의 각 항목은 특정 subject가 특정 object에 대해 갖는 접근 권한을 나타냄.</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="access-matrix" tabindex="-1"><a class="header-anchor" href="#access-matrix"><span>Access Matrix</span></a></h2>
 <ul>
 <li>행은 subject(사용자, process)를 나타내고 열은 object(파일, 장치)를 나타냄.</li>
 <li>행렬의 각 셀 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mi>i</mi><mo separator="true">,</mo><mtext> </mtext><mi>j</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(i,~j)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal">i</span><span class="mpunct">,</span><span class="mspace nobreak"> </span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.05724em;">j</span><span class="mclose">)</span></span></span></span>는 subject <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6595em;"></span><span class="mord mathnormal">i</span></span></span></span>가 object <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>j</mi></mrow><annotation encoding="application/x-tex">j</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.854em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.05724em;">j</span></span></span></span>에 대해 가질 수 있는 접근 권한(예: 읽기, 쓰기, 소유)을 명시함.</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="example-of-access-control-structures" tabindex="-1"><a class="header-anchor" href="#example-of-access-control-structures"><span>Example of Access Control Structures</span></a></h2>
 <ul>
 <li>Access matrix(접근 행렬): subject와 object 간의 모든 권한을 표로 나타냄.</li>
 <li>Access Control Lists(접근 제어 목록, ACLs): object 중심. 각 object에 대해 어떤 subject가 어떤 권한을 갖는지 목록으로 관리 (access matrix의 열에 해당)</li>
 <li>Capability Lists(능력 목록): subject 중심. 각 subject가 어떤 object에 대해 어떤 권한을 갖는지 목록으로 관리 (access matrix의 행에 해당)</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="extended-access-control-matrix" tabindex="-1"><a class="header-anchor" href="#extended-access-control-matrix"><span>Extended Access Control Matrix</span></a></h2>
 <ul>
 <li>기존 access matrix을 확장하여 조건부 access control을 포함할 수 있음.</li>
 <li>예를 들어, 특정 subject가 object에 대한 권한을 다른 subject에게 copy(복사)하거나 owner(소유권)를 이전하는 권한, 또는 접근을 Audit(감사)하는 권한 등을 추가로 명시.</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="access-control-function" tabindex="-1"><a class="header-anchor" href="#access-control-function"><span>Access Control Function</span></a></h2>
 <ul>
 <li>사용자가 object에 대한 접근을 요청하면, Access Control Function(접근 제어 함수)이 요청을 가로챔.</li>
 <li>이 function은 Access Control Policy을 참조하여 요청을 grant할지 deny할지 결정함.</li>
 <li>결정 결과는 Audit File에 기록될 수 있음.</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="table-4-2-access-control-system-commands" tabindex="-1"><a class="header-anchor" href="#table-4-2-access-control-system-commands"><span>Table 4.2 Access Control System Commands</span></a></h2>
 <table>
 <thead>
@@ -145,6 +174,8 @@
 </tr>
 </tbody>
 </table>
+</section>
+<section class="print-section">
 <h2 id="protection-domains" tabindex="-1"><a class="header-anchor" href="#protection-domains"><span>Protection Domains</span></a></h2>
 <ul>
 <li>object와 그 object에 대한 접근 권한의 집합</li>
@@ -155,6 +186,8 @@
 <li>user mode(사용자 모드)에서는 특정 메모리 영역이 사용으로부터 보호되며 특정 명령어는 실행될 수 없음.</li>
 <li>kernel mode(커널 모드)에서는 특권 명령어가 실행될 수 있으며 보호된 메모리 영역에 접근할 수 있음.</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="unix-file-access-control" tabindex="-1"><a class="header-anchor" href="#unix-file-access-control"><span>UNIX File Access Control</span></a></h2>
 <ul>
 <li>UNIX 파일은 i-nodes(아이노드, index nodes)를 사용하여 관리됨.
@@ -183,6 +216,8 @@
 </li>
 <li>소유자 ID, 그룹 ID, 보호 비트는 파일의 inode의 일부임.</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="traditional-unix-file-access-control" tabindex="-1"><a class="header-anchor" href="#traditional-unix-file-access-control"><span>Traditional UNIX File Access Control</span></a></h2>
 <ul>
 <li>&quot;set user ID&quot;(SetUID)</li>
@@ -205,6 +240,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="access-control-lists-acls-in-unix" tabindex="-1"><a class="header-anchor" href="#access-control-lists-acls-in-unix"><span>Access Control Lists (ACLs) in UNIX</span></a></h2>
 <ul>
 <li>Modern UNIX 시스템은 ACL도 support함.
@@ -229,12 +266,16 @@
 </li>
 <li><em>특정 파일의 삭제 권한은 상위 directory에 대한 write 권한임.</em></li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="role-based-access-control-rbac" tabindex="-1"><a class="header-anchor" href="#role-based-access-control-rbac"><span>Role-Based Access Control (RBAC)</span></a></h2>
 <ul>
 <li>사용자는 role(역할)을 할당받고, role은 resources을 할당받는 구조</li>
 <li>user-role, role-resources 관계를 통해 access control을 관리</li>
 <li>사용자는 session(세션) 내에서 특정 role을 활성화하여 해당 role에 부여된 권한을 행사</li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="role-based-access-control-models" tabindex="-1"><a class="header-anchor" href="#role-based-access-control-models"><span>Role-Based Access Control Models</span></a></h3>
 <ul>
 <li>RBAC는 여러 모델로 구성되며, 계층적 구조를 가질 수 있음.</li>
@@ -245,6 +286,8 @@
 <li>Static Separation of Duty RBAC(정적 직무 분리 RBAC): 상호 배타적인 role을 정의하여 이해 상충을 방지함.</li>
 <li>Dynamic Separation of Duty RBAC(동적 직무 분리 RBAC): 한 session 내에서 활성화될 수 있는 role들을 제한함.</li>
 </ol>
+</section>
+<section class="print-section">
 <h3 id="constraints" tabindex="-1"><a class="header-anchor" href="#constraints"><span>Constraints</span></a></h3>
 <ul>
 <li>조직의 행정 및 보안 policy의 특수성에 RBAC를 적용하는 수단을 제공</li>
@@ -270,11 +313,15 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="nist-rbac-model" tabindex="-1"><a class="header-anchor" href="#nist-rbac-model"><span>NIST RBAC Model</span></a></h3>
 <ul>
 <li>SSD: Static separation of duty</li>
 <li>DSD: Dynamic separation of duty</li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="basic-definitions" tabindex="-1"><a class="header-anchor" href="#basic-definitions"><span>Basic Definitions</span></a></h3>
 <ul>
 <li>Object
@@ -293,6 +340,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="core-rbac" tabindex="-1"><a class="header-anchor" href="#core-rbac"><span>Core RBAC</span></a></h2>
 <ul>
 <li>Administrative functions(관리 기능)
@@ -318,11 +367,15 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="hierarchical-rbac" tabindex="-1"><a class="header-anchor" href="#hierarchical-rbac"><span>Hierarchical RBAC</span></a></h2>
 <ul>
 <li>General role hierarchies: 임의의 partial ordering을 허용</li>
 <li>Limited role hierarchies: tree 구조를 채택하여 cycle이 발생하지 않도록 함</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="static-separation-of-duty-relations-ssd" tabindex="-1"><a class="header-anchor" href="#static-separation-of-duty-relations-ssd"><span>Static Separation of Duty Relations (SSD)</span></a></h2>
 <ul>
 <li>한 사용자가 집합 내의 한 role에 할당되면, 해당 집합의 다른 어떤 role에도 할당될 수 없도록 하는 상호 배타적인 role 집합의 정의를 가능하게 함.</li>
@@ -334,6 +387,8 @@
 <li>role 집합 생성 및 삭제, role 멤버 추가 및 삭제를 위한 관리 기능을 포함함.</li>
 <li>기존 SSD 집합의 속성을 보기 위한 검토 기능을 포함함.</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="dynamic-separation-of-duty-relations-dsd" tabindex="-1"><a class="header-anchor" href="#dynamic-separation-of-duty-relations-dsd"><span>Dynamic Separation of Duty Relations (DSD)</span></a></h2>
 <ul>
 <li>사용자에게 가용한 권한을 제한함.</li>
@@ -342,6 +397,8 @@
 <li>관리자가 사용자에 대해 서로 다른, 겹치지 않는 시간대에 특정 능력을 지정할 수 있게 함.</li>
 <li>DSD 관계를 정의하고 보기 위한 관리 및 검토 기능을 포함함.</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="example-of-access-control-administration" tabindex="-1"><a class="header-anchor" href="#example-of-access-control-administration"><span>Example of Access Control Administration</span></a></h2>
 <ul>
 <li>HR 부서: 사용자 직원 각 ID에 대하여 role을 정의하고, role에 대해서 각 사용자를 특정 role에 assign
@@ -354,6 +411,8 @@
 <li>RBAC 환경에서는 관리 role이 user-to-role 할당 및 permission-to-role 할당을 관리함.</li>
 <li>예를 들어, '사용자 관리자' role은 사용자에게 role을 할당하고, '권한 관리자' role은 role에 권한을 할당하는 작업을 수행함.</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="attribute-based-access-control-abac" tabindex="-1"><a class="header-anchor" href="#attribute-based-access-control-abac"><span>Attribute-based Access Control (ABAC)</span></a></h2>
 <ul>
 <li>속성을 함께 결합하는 policy에 기반
@@ -370,6 +429,7 @@
 </ul>
 </li>
 </ul>
+</section>
 </div></template>
 
 

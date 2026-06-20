@@ -1,5 +1,8 @@
-<template><div><h1 id="_15-query-processing" tabindex="-1"><a class="header-anchor" href="#_15-query-processing"><span>15. Query Processing</span></a></h1>
+<template><div><section class="print-section">
+<h1 id="_15-query-processing" tabindex="-1"><a class="header-anchor" href="#_15-query-processing"><span>15. Query Processing</span></a></h1>
 <DateMeta />
+</section>
+<section class="print-section">
 <h2 id="basic-steps-in-query-processing" tabindex="-1"><a class="header-anchor" href="#basic-steps-in-query-processing"><span>Basic Steps in Query Processing</span></a></h2>
 <ol>
 <li>Parsing and translation
@@ -16,6 +19,8 @@
 </ul>
 </li>
 </ol>
+</section>
+<section class="print-section">
 <h2 id="basic-steps-in-query-processing-optimization" tabindex="-1"><a class="header-anchor" href="#basic-steps-in-query-processing-optimization"><span>Basic Steps in Query Processing: Optimization</span></a></h2>
 <ul>
 <li>하나의 relational algebra 표현식은 여러 동등한 표현식을 가질 수 있음</li>
@@ -55,6 +60,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h1 id="measures-of-query-cost" tabindex="-1"><a class="header-anchor" href="#measures-of-query-cost"><span>Measures of Query Cost</span></a></h1>
 <ul>
 <li>시간 비용에 기여하는 많은 요인
@@ -103,6 +110,8 @@
 <li>최악의 경우(Worst case) 추정은 초기에 buffer에 데이터가 없고 연산에 필요한 최소 메모리만 사용 가능하다고 가정</li>
 <li>그러나 실제로는 더 낙관적인 추정이 사용됨.</li>
 </ul>
+</section>
+<section class="print-section">
 <h1 id="selection-operation" tabindex="-1"><a class="header-anchor" href="#selection-operation"><span>Selection Operation</span></a></h1>
 <ul>
 <li>File scan (또는 table scan)
@@ -166,6 +175,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="selection-involving-comparisons" tabindex="-1"><a class="header-anchor" href="#selection-involving-comparisons"><span>Selection Involving Comparisons</span></a></h2>
 <ul>
 <li><span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>σ</mi><mrow><mi>A</mi><mo>≤</mo><mi>V</mi></mrow></msub><mo stretchy="false">(</mo><mi>r</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\sigma_{A \le V} (r)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">σ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3283em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">A</span><span class="mrel mtight">≤</span><span class="mord mathnormal mtight" style="margin-right:0.22222em;">V</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2452em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mclose">)</span></span></span></span> 또는 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>σ</mi><mrow><mi>A</mi><mo>≥</mo><mi>V</mi></mrow></msub><mo stretchy="false">(</mo><mi>r</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\sigma_{A \ge V} (r)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">σ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3283em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">A</span><span class="mrel mtight">≥</span><span class="mord mathnormal mtight" style="margin-right:0.22222em;">V</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2452em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mclose">)</span></span></span></span> 형태의 selection 구현 방법
@@ -218,6 +229,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="implementation-of-complex-selections" tabindex="-1"><a class="header-anchor" href="#implementation-of-complex-selections"><span>Implementation of Complex Selections</span></a></h2>
 <ul>
 <li>Conjunction: <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>σ</mi><mrow><msub><mi>θ</mi><mn>1</mn></msub><mo>∧</mo><msub><mi>θ</mi><mn>2</mn></msub><mo>∧</mo><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mo>∧</mo><msub><mi>θ</mi><mi>n</mi></msub></mrow></msub><mo stretchy="false">(</mo><mi>r</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\sigma_{\theta_1 \land \theta_2 \land ... \land \theta_n} (r)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.0001em;vertical-align:-0.2501em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">σ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.02778em;">θ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3173em;"><span style="top:-2.357em;margin-left:-0.0278em;margin-right:0.0714em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.143em;"><span></span></span></span></span></span></span><span class="mbin mtight">∧</span><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.02778em;">θ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3173em;"><span style="top:-2.357em;margin-left:-0.0278em;margin-right:0.0714em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.143em;"><span></span></span></span></span></span></span><span class="mbin mtight">∧</span><span class="mord mtight">...</span><span class="mbin mtight">∧</span><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.02778em;">θ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1645em;"><span style="top:-2.357em;margin-left:-0.0278em;margin-right:0.0714em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mathnormal mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.143em;"><span></span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2501em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mclose">)</span></span></span></span></li>
@@ -263,6 +276,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h1 id="sorting" tabindex="-1"><a class="header-anchor" href="#sorting"><span>Sorting</span></a></h1>
 <ul>
 <li>Sorting(정렬)은 데이터베이스 시스템에서 중요한 역할 수행</li>
@@ -282,6 +297,8 @@
 <li>메모리에 맞지 않는 relation 정렬을 external sorting이라 함</li>
 <li>External sort-merge: 가장 일반적으로 사용되는 external 정렬 알고리즘</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="external-sort-merge" tabindex="-1"><a class="header-anchor" href="#external-sort-merge"><span>External Sort-Merge</span></a></h2>
 <ul>
 <li><span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi></mrow><annotation encoding="application/x-tex">M</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">M</span></span></span></span>을 메모리 크기 (block 단위)라 가정</li>
@@ -364,6 +381,8 @@ Until relation의 끝까지 총 run의 수를 <span v-pre class="katex"><span cl
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h1 id="join-operation" tabindex="-1"><a class="header-anchor" href="#join-operation"><span>Join Operation</span></a></h1>
 <ul>
 <li>Join을 구현하는 여러 다른 알고리즘
@@ -383,6 +402,8 @@ Until relation의 끝까지 총 run의 수를 <span v-pre class="katex"><span cl
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="nested-loop-join" tabindex="-1"><a class="header-anchor" href="#nested-loop-join"><span>Nested-Loop Join</span></a></h2>
 <p><img src="@source/db/image-9.png" alt=""></p>
 <ul>
@@ -429,6 +450,8 @@ Until relation의 끝까지 총 run의 수를 <span v-pre class="katex"><span cl
 <li>더 작은 relation (<code v-pre>Student</code>)이 메모리에 완전히 맞는다면, 비용 추정은 <code v-pre>500 block</code> 전송</li>
 <li>Block nested-loops 알고리즘이 선호됨.</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="block-nested-loop-join" tabindex="-1"><a class="header-anchor" href="#block-nested-loop-join"><span>Block Nested-Loop Join</span></a></h2>
 <ul>
 <li>Inner relation의 모든 block이 outer relation의 모든 block과 pair를 이루는 nested-loop join의 변형</li>
@@ -457,6 +480,8 @@ Until relation의 끝까지 총 run의 수를 <span v-pre class="katex"><span cl
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="indexed-nested-loop-join" tabindex="-1"><a class="header-anchor" href="#indexed-nested-loop-join"><span>Indexed Nested-Loop Join</span></a></h2>
 <ul>
 <li>Nested-loop join에서, 다음 조건 만족 시 index lookup이 file scan을 대체 가능
@@ -477,6 +502,8 @@ Until relation의 끝까지 총 run의 수를 <span v-pre class="katex"><span cl
 </li>
 <li><span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi></mrow><annotation encoding="application/x-tex">r</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span></span></span></span>과 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi></mrow><annotation encoding="application/x-tex">s</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">s</span></span></span></span> 모두의 join 속성에 인덱스가 있다면, tuple이 더 적은 relation을 outer relation으로 사용</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="example-of-nested-loop-join-costs" tabindex="-1"><a class="header-anchor" href="#example-of-nested-loop-join-costs"><span>Example of Nested-Loop Join Costs</span></a></h2>
 <ul>
 <li><code v-pre>Student</code> <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>⋈</mo></mrow><annotation encoding="application/x-tex">\Join</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.51em;vertical-align:-0.005em;"></span><span class="mrel">⋈</span></span></span></span> <code v-pre>takes</code> 계산, <code v-pre>Student</code>를 outer relation으로</li>
@@ -498,6 +525,8 @@ Until relation의 끝까지 총 run의 수를 <span v-pre class="katex"><span cl
 </li>
 <li>CPU 비용은 block nested loops join보다 적을 가능성 높음</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="merge-join" tabindex="-1"><a class="header-anchor" href="#merge-join"><span>Merge Join</span></a></h2>
 <ul>
 <li>Merge-join (sort-merge-join이라고도 함) 알고리즘은 natural join과 equi-join 계산에 사용 가능</li>
@@ -537,6 +566,8 @@ Until relation의 끝까지 총 run의 수를 <span v-pre class="katex"><span cl
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="hash-join" tabindex="-1"><a class="header-anchor" href="#hash-join"><span>Hash Join</span></a></h2>
 <ul>
 <li>Relation <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi></mrow><annotation encoding="application/x-tex">r</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span></span></span></span>과 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi></mrow><annotation encoding="application/x-tex">s</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">s</span></span></span></span> 간의 equi-join 및 natural join에 적용 가능</li>
@@ -561,6 +592,8 @@ Until relation의 끝까지 총 run의 수를 <span v-pre class="katex"><span cl
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="hash-join-algorithm" tabindex="-1"><a class="header-anchor" href="#hash-join-algorithm"><span>Hash Join Algorithm</span></a></h2>
 <ul>
 <li><span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi></mrow><annotation encoding="application/x-tex">r</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span></span></span></span>과 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi></mrow><annotation encoding="application/x-tex">s</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">s</span></span></span></span>의 hash-join은 다음과 같이 계산됨.</li>
@@ -581,6 +614,8 @@ Until relation의 끝까지 총 run의 수를 <span v-pre class="katex"><span cl
 <li><span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">n</span></span></span></span> 값은 각 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>s</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">s_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5806em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">s</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> (와 그 hash index)가 메모리에 맞도록 선택됨.</li>
 <li><span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">n</span></span></span></span>은 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">⌈</mo><msub><mi>b</mi><mi>s</mi></msub><mi mathvariant="normal">/</mi><mi>M</mi><mo stretchy="false">⌉</mo><mo>∗</mo><mi>f</mi></mrow><annotation encoding="application/x-tex">\lceil b_s / M \rceil * f</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">⌈</span><span class="mord"><span class="mord mathnormal">b</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">s</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord">/</span><span class="mord mathnormal" style="margin-right:0.10903em;">M</span><span class="mclose">⌉</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span></span></span></span>로 선택되며, <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi></mrow><annotation encoding="application/x-tex">f</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span></span></span></span>는 &quot;fudge factor&quot;, (일반적으로 약 1.2)</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="handling-of-overflows" tabindex="-1"><a class="header-anchor" href="#handling-of-overflows"><span>Handling of Overflows</span></a></h2>
 <ul>
 <li>Partitioning이 skewed 되었다는 것은 일부 partition이 다른 것보다 훨씬 많은 tuple을 갖는 경우</li>
@@ -605,6 +640,8 @@ Until relation의 끝까지 총 run의 수를 <span v-pre class="katex"><span cl
 <li>두 접근 방식 모두 join 속성에 중복이 많으면 실패</li>
 <li>Fallback option: overflow가 발생한 partition에 (indexed nested-loop join 대신) block nested-loop join 사용</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="complex-joins" tabindex="-1"><a class="header-anchor" href="#complex-joins"><span>Complex Joins</span></a></h2>
 <ul>
 <li>Conjunctive condition을 사용한 Join: <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi><msub><mo>⋈</mo><mrow><msub><mi>θ</mi><mn>1</mn></msub><mo>∧</mo><msub><mi>θ</mi><mn>2</mn></msub><mo>∧</mo><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mo>∧</mo><msub><mi>θ</mi><mi>n</mi></msub></mrow></msub><mi>s</mi></mrow><annotation encoding="application/x-tex">r \Join_{\theta_1 \land \theta_2 \land ... \land \theta_n} s</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7551em;vertical-align:-0.2501em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel"><span class="mrel">⋈</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.02778em;">θ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3173em;"><span style="top:-2.357em;margin-left:-0.0278em;margin-right:0.0714em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.143em;"><span></span></span></span></span></span></span><span class="mbin mtight">∧</span><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.02778em;">θ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3173em;"><span style="top:-2.357em;margin-left:-0.0278em;margin-right:0.0714em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.143em;"><span></span></span></span></span></span></span><span class="mbin mtight">∧</span><span class="mord mtight">...</span><span class="mbin mtight">∧</span><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.02778em;">θ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1645em;"><span style="top:-2.357em;margin-left:-0.0278em;margin-right:0.0714em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mathnormal mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.143em;"><span></span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2501em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">s</span></span></span></span>
@@ -623,6 +660,8 @@ Until relation의 끝까지 총 run의 수를 <span v-pre class="katex"><span cl
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h1 id="evaluation-of-expressions" tabindex="-1"><a class="header-anchor" href="#evaluation-of-expressions"><span>Evaluation of Expressions</span></a></h1>
 <ul>
 <li>지금까지 개별 연산을 위한 알고리즘 학습</li>
@@ -633,6 +672,8 @@ Until relation의 끝까지 총 run의 수를 <span v-pre class="katex"><span cl
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="materialization" tabindex="-1"><a class="header-anchor" href="#materialization"><span>Materialization</span></a></h2>
 <ul>
 <li>Materialized evaluation
@@ -659,6 +700,8 @@ Until relation의 끝까지 총 run의 수를 <span v-pre class="katex"><span cl
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="pipelining" tabindex="-1"><a class="header-anchor" href="#pipelining"><span>Pipelining</span></a></h2>
 <ul>
 <li>Pipelined evaluation
@@ -722,6 +765,8 @@ Until relation의 끝까지 총 run의 수를 <span v-pre class="katex"><span cl
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="pipelining-blocking-operations" tabindex="-1"><a class="header-anchor" href="#pipelining-blocking-operations"><span>Pipelining: Blocking Operations</span></a></h2>
 <ul>
 <li>Blocking 연산: 모든 입력이 소비될 때까지 출력을 생성할 수 없는 연산</li>
@@ -738,6 +783,7 @@ Until relation의 끝까지 총 run의 수를 <span v-pre class="katex"><span cl
 <li>한 stage의 모든 연산은 동시에 실행</li>
 <li>한 단계는 이전 stage가 실행을 완료한 후에만 시작 가능</li>
 </ul>
+</section>
 </div></template>
 
 

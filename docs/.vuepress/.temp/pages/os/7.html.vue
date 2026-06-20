@@ -1,5 +1,8 @@
-<template><div><h1 id="_7-deadlocks" tabindex="-1"><a class="header-anchor" href="#_7-deadlocks"><span>7. Deadlocks</span></a></h1>
+<template><div><section class="print-section">
+<h1 id="_7-deadlocks" tabindex="-1"><a class="header-anchor" href="#_7-deadlocks"><span>7. Deadlocks</span></a></h1>
 <DateMeta />
+</section>
+<section class="print-section">
 <h2 id="the-deadlock-problem" tabindex="-1"><a class="header-anchor" href="#the-deadlock-problem"><span>The Deadlock Problem</span></a></h2>
 <ul>
 <li>리소스를 보유한 상태로 다른 프로세스가 가진 리소스를 기다리는 프로세스 집합이 있을 때, 이들 사이에서 교착 상태(deadlock)가 발생함</li>
@@ -23,7 +26,9 @@
 <span class="line">  P(B);</span>
 <span class="line">  P(A);</span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="deadlock-characterization" tabindex="-1"><a class="header-anchor" href="#deadlock-characterization"><span>Deadlock Characterization</span></a></h2>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h2 id="deadlock-characterization" tabindex="-1"><a class="header-anchor" href="#deadlock-characterization"><span>Deadlock Characterization</span></a></h2>
 <p>Deadlock은 다음의 네 가지 조건이 <strong>동시에</strong> 만족될 때 발생할 수 있음 (필수 조건):</p>
 <ul>
 <li><strong>Mutual exclusion</strong>: 하나의 리소스는 오직 한 프로세스만 사용할 수 있음</li>
@@ -38,17 +43,23 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="traffic-deadlock" tabindex="-1"><a class="header-anchor" href="#traffic-deadlock"><span>Traffic Deadlock</span></a></h2>
 <blockquote>
 <p>차량이 사방에서 진입하면서 서로를 막고 있어 한 대도 앞으로 나아가지 못하는 상태<br>
 이는 deadlock의 실질적인 예시이며, circular wait과 유사한 형태임</p>
 </blockquote>
 <p>(해당 슬라이드에는 사거리 교차로에서 발생한 교착 상태를 보여주는 일러스트가 포함되어 있음)</p>
+</section>
+<section class="print-section">
 <h2 id="real-world-traffic-deadlock" tabindex="-1"><a class="header-anchor" href="#real-world-traffic-deadlock"><span>Real World Traffic Deadlock</span></a></h2>
 <blockquote>
 <p>실제 도로에서 발생한 교통 교착 상태의 사진<br>
 차량이 서로 교차지점에서 멈춰 다른 차량의 이동을 막고 있음</p>
 </blockquote>
+</section>
+<section class="print-section">
 <h2 id="resource-allocation-graph" tabindex="-1"><a class="header-anchor" href="#resource-allocation-graph"><span>Resource-Allocation Graph</span></a></h2>
 <ul>
 <li>정점 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>V</mi></mrow><annotation encoding="application/x-tex">V</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.22222em;">V</span></span></span></span>와 간선 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi></mrow><annotation encoding="application/x-tex">E</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.05764em;">E</span></span></span></span>로 구성된 그래프</li>
@@ -71,6 +82,8 @@
 <li><span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>P</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">P_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.1389em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>가 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>R</mi><mi>j</mi></msub></mrow><annotation encoding="application/x-tex">R_j</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.9694em;vertical-align:-0.2861em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.00773em;">R</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.0077em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.05724em;">j</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span></span></span></span>의 인스턴스를 보유:<br>
 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>R</mi><mi>j</mi></msub><mo>→</mo><msub><mi>P</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">R_j \rightarrow P_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.9694em;vertical-align:-0.2861em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.00773em;">R</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.0077em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.05724em;">j</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.1389em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="example-of-a-resource-allocation-graph" tabindex="-1"><a class="header-anchor" href="#example-of-a-resource-allocation-graph"><span>Example of a Resource Allocation Graph</span></a></h2>
 <blockquote>
 <p>그래프 예시:</p>
@@ -80,6 +93,8 @@
 <li><span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>R</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">R_1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.00773em;">R</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.0077em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>부터 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>R</mi><mn>4</mn></msub></mrow><annotation encoding="application/x-tex">R_4</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.00773em;">R</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.0077em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">4</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>까지 다양한 리소스가 있음</li>
 <li>각 리소스 유형은 여러 인스턴스를 가질 수 있으며, 점(dot)으로 표현됨</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="basic-facts" tabindex="-1"><a class="header-anchor" href="#basic-facts"><span>Basic Facts</span></a></h2>
 <ul>
 <li>그래프에 <strong>cycle(사이클)이 없으면</strong> → <strong>deadlock 발생 불가</strong></li>
@@ -90,6 +105,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="resource-allocation-graph-with-a-deadlock" tabindex="-1"><a class="header-anchor" href="#resource-allocation-graph-with-a-deadlock"><span>Resource Allocation Graph with a Deadlock</span></a></h2>
 <blockquote>
 <p>deadlock이 발생한 상태의 그래프 예시</p>
@@ -99,6 +116,8 @@
 <li>cycle이 형성되어 있음</li>
 <li>모든 리소스가 1개 인스턴스를 가짐</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="resource-allocation-graph-with-a-cycle-but-no-deadlock" tabindex="-1"><a class="header-anchor" href="#resource-allocation-graph-with-a-cycle-but-no-deadlock"><span>Resource Allocation Graph with a Cycle But No Deadlock</span></a></h2>
 <blockquote>
 <p>cycle은 존재하지만 deadlock이 아닌 경우의 예시</p>
@@ -112,6 +131,8 @@
 <p><span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>R</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">R_1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.00773em;">R</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.0077em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>, <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>R</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">R_2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.00773em;">R</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.0077em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> 모두 <strong>여러 인스턴스</strong>를 가지므로<br>
 실제로 deadlock은 발생하지 않음</p>
 </blockquote>
+</section>
+<section class="print-section">
 <h2 id="methods-for-handling-deadlocks" tabindex="-1"><a class="header-anchor" href="#methods-for-handling-deadlocks"><span>Methods for Handling Deadlocks</span></a></h2>
 <ul>
 <li>시스템이 <strong>절대 deadlock 상태에 진입하지 않도록 보장</strong> (예방 또는 회피)</li>
@@ -120,6 +141,8 @@
 <li>문제를 <strong>무시하고 deadlock이 존재하지 않는 것처럼 처리</strong><br>
 → 대부분의 운영체제(예: UNIX)는 이 방법을 사용</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="deadlock-prevention" tabindex="-1"><a class="header-anchor" href="#deadlock-prevention"><span>Deadlock Prevention</span></a></h2>
 <ul>
 <li>요청 방식에 제약을 두어 필수 조건 중 <strong>하나라도</strong> 만족하지 않도록 만듦</li>
@@ -156,6 +179,8 @@
 <blockquote>
 <p>단점: 낮은 리소스 활용률, 시스템 처리량 감소</p>
 </blockquote>
+</section>
+<section class="print-section">
 <h2 id="deadlock-avoidance" tabindex="-1"><a class="header-anchor" href="#deadlock-avoidance"><span>Deadlock Avoidance</span></a></h2>
 <ul>
 <li>시스템이 <strong>사전에 추가적인 정보</strong>(a priori information)를 가지고 있어야 함</li>
@@ -167,6 +192,8 @@
 <li>자원 할당 상태(resource-allocation state)는<br>
 사용 가능/할당된 자원 수와 프로세스의 최대 요구량에 의해 정의됨</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="safe-state" tabindex="-1"><a class="header-anchor" href="#safe-state"><span>Safe State</span></a></h2>
 <ul>
 <li>프로세스가 리소스를 요청하면, 시스템은 <strong>즉시 할당 시 safe 상태를 유지할 수 있는지</strong> 확인해야 함</li>
@@ -180,6 +207,8 @@
 </li>
 <li><strong>시스템이 safe 상태이면</strong>, 모든 프로세스가 종료 가능한 시퀀스가 존재함</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="basic-facts-1" tabindex="-1"><a class="header-anchor" href="#basic-facts-1"><span>Basic Facts</span></a></h2>
 <ul>
 <li>시스템이 <strong>safe 상태</strong> → <strong>deadlock 없음</strong></li>
@@ -194,6 +223,8 @@
 <p>&quot;요청이 safe 상태를 유지하는 경우에만 승인하라,<br>
 그렇지 않으면 거부하라&quot;</p>
 </blockquote>
+</section>
+<section class="print-section">
 <h2 id="safe-unsafe-deadlock-state-spaces" tabindex="-1"><a class="header-anchor" href="#safe-unsafe-deadlock-state-spaces"><span>Safe, Unsafe, Deadlock State Spaces</span></a></h2>
 <blockquote>
 <p>상태 공간은 다음과 같이 구분됨:</p>
@@ -204,6 +235,8 @@
 <li><strong>Deadlock</strong>: 실제 deadlock 발생</li>
 </ul>
 <p>(도표로 safe ⊂ unsafe ⊂ 전체 공간을 나타냄)</p>
+</section>
+<section class="print-section">
 <h2 id="avoidance-algorithms" tabindex="-1"><a class="header-anchor" href="#avoidance-algorithms"><span>Avoidance Algorithms</span></a></h2>
 <ul>
 <li><strong>하나의 인스턴스만 존재하는 리소스 유형</strong>
@@ -217,6 +250,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="case-a-one-instance-per-resource-type-resource-allocation-graph-algorithm" tabindex="-1"><a class="header-anchor" href="#case-a-one-instance-per-resource-type-resource-allocation-graph-algorithm"><span>Case A: One instance per resource type : Resource Allocation Graph Algorithm</span></a></h2>
 <ul>
 <li><strong>Claim edge</strong>
@@ -242,6 +277,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="resource-allocation-graph-for-deadlock-avoidance" tabindex="-1"><a class="header-anchor" href="#resource-allocation-graph-for-deadlock-avoidance"><span>Resource-Allocation Graph for Deadlock Avoidance</span></a></h2>
 <blockquote>
 <p>예시 상황:</p>
@@ -256,17 +293,23 @@
 <span class="line">A cycle is formed</span>
 <span class="line">→ unsafe</span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="unsafe-state-in-a-resource-allocation-graph" tabindex="-1"><a class="header-anchor" href="#unsafe-state-in-a-resource-allocation-graph"><span>Unsafe State in a Resource-Allocation Graph</span></a></h2>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h2 id="unsafe-state-in-a-resource-allocation-graph" tabindex="-1"><a class="header-anchor" href="#unsafe-state-in-a-resource-allocation-graph"><span>Unsafe State in a Resource-Allocation Graph</span></a></h2>
 <ul>
 <li>사이클이 없는 경우: <strong>safe</strong>, 요청을 <strong>grant</strong></li>
 <li>사이클이 생기는 경우: <strong>unsafe</strong>, 요청을 <strong>deny</strong></li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="case-b-multiple-instances-per-resource-types-banker-s-algorithm" tabindex="-1"><a class="header-anchor" href="#case-b-multiple-instances-per-resource-types-banker-s-algorithm"><span>Case B: Multiple Instances per Resource Types : Banker's Algorithm</span></a></h2>
 <ul>
 <li>각 프로세스는 <strong>최대 요구량을 사전에 명시</strong></li>
 <li>프로세스가 리소스를 요청하면, <strong>대기할 수도 있음</strong></li>
 <li>모든 리소스를 할당받은 프로세스는 <strong>일정 시간 내에 반환해야 함</strong></li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="data-structures-for-the-banker-s-algorithm" tabindex="-1"><a class="header-anchor" href="#data-structures-for-the-banker-s-algorithm"><span>Data Structures for the Banker's Algorithm</span></a></h2>
 <ul>
 <li><span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">n</span></span></span></span>: 프로세스 수</li>
@@ -285,6 +328,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="safety-algorithm" tabindex="-1"><a class="header-anchor" href="#safety-algorithm"><span>Safety Algorithm</span></a></h2>
 <ol>
 <li>길이 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi></mrow><annotation encoding="application/x-tex">m</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">m</span></span></span></span>, <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">n</span></span></span></span>인 벡터 <code v-pre>Work</code>, <code v-pre>Finish</code>를 초기화:</li>
@@ -315,6 +360,8 @@
 <ul>
 <li>모든 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6595em;"></span><span class="mord mathnormal">i</span></span></span></span>에 대해 <code v-pre>Finish[i] == true</code>이면, 시스템은 <strong>safe 상태</strong></li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="resource-request-algorithm-for-process" tabindex="-1"><a class="header-anchor" href="#resource-request-algorithm-for-process"><span>Resource-Request Algorithm for Process <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>P</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">P_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.1389em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span></a></h2>
 <ul>
 <li><code v-pre>Request_i</code>는 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>P</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">P_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.1389em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>의 요청 벡터로, 각 리소스 유형 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>R</mi><mi>j</mi></msub></mrow><annotation encoding="application/x-tex">R_j</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.9694em;vertical-align:-0.2861em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.00773em;">R</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.0077em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.05724em;">j</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span></span></span></span>에 대해 요청량을 나타냄</li>
@@ -344,6 +391,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="example-of-banker-s-algorithm" tabindex="-1"><a class="header-anchor" href="#example-of-banker-s-algorithm"><span>Example of Banker’s Algorithm</span></a></h2>
 <ul>
 <li>5개 프로세스: <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>P</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">P_0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.1389em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> ~ <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>P</mi><mn>4</mn></msub></mrow><annotation encoding="application/x-tex">P_4</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.1389em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">4</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></li>
@@ -404,6 +453,8 @@
 <li>시스템은 safe 상태:<br>
 시퀀스 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">⟨</mo><msub><mi>P</mi><mn>1</mn></msub><mo separator="true">,</mo><msub><mi>P</mi><mn>3</mn></msub><mo separator="true">,</mo><msub><mi>P</mi><mn>4</mn></msub><mo separator="true">,</mo><msub><mi>P</mi><mn>0</mn></msub><mo separator="true">,</mo><msub><mi>P</mi><mn>2</mn></msub><mo stretchy="false">⟩</mo></mrow><annotation encoding="application/x-tex">\langle P_1, P_3, P_4, P_0, P_2 \rangle</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">⟨</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.1389em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.1389em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">3</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.1389em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">4</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.1389em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.1389em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">⟩</span></span></span></span>가 safety 기준 만족</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="example-cont-request-1-0-2" tabindex="-1"><a class="header-anchor" href="#example-cont-request-1-0-2"><span>Example (Cont.): <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>P</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">P_1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.1389em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> request (1, 0, 2)</span></a></h2>
 <ul>
 <li><span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mi>e</mi><mi>q</mi><mi>u</mi><mi>e</mi><mi>s</mi><mi>t</mi><mo>≤</mo><mi>A</mi><mi>v</mi><mi>a</mi><mi>i</mi><mi>l</mi><mi>a</mi><mi>b</mi><mi>l</mi><mi>e</mi><mo>⇒</mo><mo stretchy="false">(</mo><mn>1</mn><mo separator="true">,</mo><mn>0</mn><mo separator="true">,</mo><mn>2</mn><mo stretchy="false">)</mo><mo>≤</mo><mo stretchy="false">(</mo><mn>3</mn><mo separator="true">,</mo><mn>3</mn><mo separator="true">,</mo><mn>2</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">Request \leq Available \Rightarrow (1, 0, 2) \leq (3, 3, 2)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8778em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.00773em;">R</span><span class="mord mathnormal">e</span><span class="mord mathnormal" style="margin-right:0.03588em;">q</span><span class="mord mathnormal">u</span><span class="mord mathnormal">es</span><span class="mord mathnormal">t</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal">A</span><span class="mord mathnormal" style="margin-right:0.03588em;">v</span><span class="mord mathnormal">ai</span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mord mathnormal">ab</span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mord mathnormal">e</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">⇒</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">2</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">3</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">3</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">2</span><span class="mclose">)</span></span></span></span> → <strong>True</strong></li>
@@ -457,6 +508,8 @@
 <li><span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>P</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">P_0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.1389em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>이 (3, 3, 0)을 요청할 수 있는가?</li>
 <li><span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>P</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">P_0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.1389em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>이 (0, 2, 0)을 요청할 수 있는가?</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="deadlock-detection" tabindex="-1"><a class="header-anchor" href="#deadlock-detection"><span>Deadlock Detection</span></a></h2>
 <ul>
 <li>시스템이 <strong>deadlock 상태에 진입하도록 허용</strong></li>
@@ -468,6 +521,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="single-instance-of-each-resource-type" tabindex="-1"><a class="header-anchor" href="#single-instance-of-each-resource-type"><span>Single Instance of Each Resource Type</span></a></h2>
 <ul>
 <li><strong>wait-for graph 유지</strong>
@@ -483,6 +538,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="resource-allocation-graph-and-wait-for-graph" tabindex="-1"><a class="header-anchor" href="#resource-allocation-graph-and-wait-for-graph"><span>Resource-Allocation Graph and Wait-for Graph</span></a></h2>
 <ul>
 <li>좌측: <strong>Resource-Allocation Graph</strong></li>
@@ -492,6 +549,8 @@
 <p>Wait-for Graph는 프로세스 간 대기 관계만 표시<br>
 (리소스 노드를 제거하고 간선으로 대기 관계만 유지)</p>
 </blockquote>
+</section>
+<section class="print-section">
 <h2 id="several-instances-of-a-resource-type" tabindex="-1"><a class="header-anchor" href="#several-instances-of-a-resource-type"><span>Several Instances of a Resource Type</span></a></h2>
 <ul>
 <li><strong>Deadlock Detection Algorithm</strong> 사용</li>
@@ -504,6 +563,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="detection-algorithm" tabindex="-1"><a class="header-anchor" href="#detection-algorithm"><span>Detection Algorithm</span></a></h2>
 <ol>
 <li>벡터 <code v-pre>Work</code>, <code v-pre>Finish</code> 초기화:</li>
@@ -540,6 +601,8 @@
 <li>어떤 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6595em;"></span><span class="mord mathnormal">i</span></span></span></span>에 대해 <code v-pre>Finish[i] == false</code>이면 시스템은 <strong>deadlock 상태</strong></li>
 <li>특히, <code v-pre>Finish[i] == false</code>인 프로세스 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>P</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">P_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.1389em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>는 <strong>deadlock 상태에 있음</strong></li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="example-of-detection-algorithm" tabindex="-1"><a class="header-anchor" href="#example-of-detection-algorithm"><span>Example of Detection Algorithm</span></a></h3>
 <ul>
 <li>프로세스 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>P</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">P_0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.1389em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> ~ <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>P</mi><mn>4</mn></msub></mrow><annotation encoding="application/x-tex">P_4</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.1389em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">4</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>, 리소스 A(7), B(2), C(6)</li>
@@ -610,6 +673,8 @@
 <li><strong>자원이 할당되지 않을 때마다?</strong></li>
 <li><strong>주기적으로?</strong> (deadlock 확률이 낮을 경우 적절)</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="recovery-from-deadlock-process-termination" tabindex="-1"><a class="header-anchor" href="#recovery-from-deadlock-process-termination"><span>Recovery from Deadlock: Process Termination</span></a></h2>
 <ul>
 <li><strong>모든 deadlock된 프로세스를 종료</strong>하거나,</li>
@@ -626,6 +691,8 @@
 <li>종료되어야 할 프로세스 수</li>
 <li>프로세스가 <strong>대화형</strong>(interactive)인지 <strong>배치형</strong>(batch)인지</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="recovery-from-deadlock-resource-preemption" tabindex="-1"><a class="header-anchor" href="#recovery-from-deadlock-resource-preemption"><span>Recovery from Deadlock: Resource Preemption</span></a></h2>
 <ul>
 <li><strong>희생자 선택 (victim selection)</strong>
@@ -646,7 +713,11 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="avoidance-vs-detection" tabindex="-1"><a class="header-anchor" href="#avoidance-vs-detection"><span>Avoidance vs. Detection</span></a></h2>
+</section>
+<section class="print-section">
 <h3 id="두-알고리즘의-차이점" tabindex="-1"><a class="header-anchor" href="#두-알고리즘의-차이점"><span>두 알고리즘의 차이점</span></a></h3>
 <ul>
 <li><strong>Avoidance</strong>
@@ -665,6 +736,7 @@
 </ul>
 </li>
 </ul>
+</section>
 </div></template>
 
 

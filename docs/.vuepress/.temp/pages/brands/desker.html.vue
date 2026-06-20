@@ -1,8 +1,13 @@
-<template><div><h1 id="데스커-desker" tabindex="-1"><a class="header-anchor" href="#데스커-desker"><span>데스커 (DESKER)</span></a></h1>
+<template><div><section class="print-section">
+<h1 id="데스커-desker" tabindex="-1"><a class="header-anchor" href="#데스커-desker"><span>데스커 (DESKER)</span></a></h1>
 <DateMeta />
 <p>데스커(DESKER)는 한국의 가구·인테리어 전문 기업 <strong>퍼시스그룹(Fursys Group)</strong> 산하의 홈 오피스·학습 가구 브랜드다. 2018년 론칭 이후 전동 스탠딩 데스크, 시스템 책상, 의자 등을 주력으로 하며, &quot;일하는 공간을 설계한다&quot;는 브랜드 철학 아래 국내 홈 오피스·재택근무 가구 시장을 주도하고 있다.</p>
 <p>퍼시스그룹은 국내 1위 사무용 가구 기업으로 오피스 가구 브랜드 <strong>퍼시스</strong>(FURSYS)와 학생·홈 오피스용 브랜드 <strong>일룸</strong>(ILOOM)도 같은 그룹 산하에 있다. 데스커는 그중 성인 홈 오피스·작업 공간에 집중하는 포지션이다.</p>
+</section>
+<section class="print-section">
 <h2 id="주요-제품-라인" tabindex="-1"><a class="header-anchor" href="#주요-제품-라인"><span>주요 제품 라인</span></a></h2>
+</section>
+<section class="print-section">
 <h3 id="전동-스탠딩-데스크" tabindex="-1"><a class="header-anchor" href="#전동-스탠딩-데스크"><span>전동 스탠딩 데스크</span></a></h3>
 <p>데스커의 대표 제품군. 전동 액추에이터를 이용해 버튼 하나로 앉기·서기 높이를 조절한다.</p>
 <p><strong>주요 모델</strong></p>
@@ -33,6 +38,8 @@
 </tbody>
 </table>
 <p>전동 스탠딩 데스크의 높이 범위는 일반적으로 620~1270mm 수준이며, 4단계 메모리 설정이 가능한 컨트롤러를 제공한다.</p>
+</section>
+<section class="print-section">
 <h3 id="시스템-책상-책상-상부장-책장-조합" tabindex="-1"><a class="header-anchor" href="#시스템-책상-책상-상부장-책장-조합"><span>시스템 책상 (책상 + 상부장 + 책장 조합)</span></a></h3>
 <p>학습·작업 공간을 효율적으로 구성하는 모듈형 시스템 가구. 책상 상판 위에 수납 선반·상부장을 결합해 책·서류·모니터를 정리한다.</p>
 <ul>
@@ -40,6 +47,8 @@
 <li>화이트, 그레이, 네이처 등 컬러 라인업</li>
 <li>각 모듈 단독 구매 후 조합 가능</li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="의자" tabindex="-1"><a class="header-anchor" href="#의자"><span>의자</span></a></h3>
 <p><strong>데스커 체어 라인</strong>은 인체공학 설계에 집중한다.</p>
 <table>
@@ -64,6 +73,8 @@
 </tr>
 </tbody>
 </table>
+</section>
+<section class="print-section">
 <h3 id="액세서리" tabindex="-1"><a class="header-anchor" href="#액세서리"><span>액세서리</span></a></h3>
 <ul>
 <li><strong>모니터 암 (Single/Dual)</strong>: C클램프·그로멧 방식</li>
@@ -72,6 +83,8 @@
 <li><strong>모니터 선반</strong>: 모니터 하단 공간 활용</li>
 </ul>
 <hr>
+</section>
+<section class="print-section">
 <h2 id="스탠딩-데스크를-선택해야-하는-이유" tabindex="-1"><a class="header-anchor" href="#스탠딩-데스크를-선택해야-하는-이유"><span>스탠딩 데스크를 선택해야 하는 이유</span></a></h2>
 <p>장시간 앉아서 작업하는 환경에서 스탠딩 데스크는 자세 교정과 허리 피로 감소에 도움을 준다.</p>
 <table>
@@ -102,6 +115,8 @@
 </table>
 <p>단, 하루 종일 서 있는 것도 좋지 않다. <strong>앉기·서기를 30~60분 간격으로 교대</strong>하는 것이 이상적이다.</p>
 <hr>
+</section>
+<section class="print-section">
 <h2 id="가격대" tabindex="-1"><a class="header-anchor" href="#가격대"><span>가격대</span></a></h2>
 <p>데스커 제품은 국내 홈 오피스 가구 중 <strong>중~프리미엄</strong> 구간에 위치한다.</p>
 <table>
@@ -139,6 +154,8 @@
 </tbody>
 </table>
 <hr>
+</section>
+<section class="print-section">
 <h2 id="경쟁-브랜드-비교" tabindex="-1"><a class="header-anchor" href="#경쟁-브랜드-비교"><span>경쟁 브랜드 비교</span></a></h2>
 <table>
 <thead>
@@ -178,6 +195,8 @@
 </table>
 <p>A/S 측면에서 국내 기업 데스커는 부품 조달과 출장 수리가 용이하다는 장점이 있다.</p>
 <hr>
+</section>
+<section class="print-section">
 <h2 id="구매처" tabindex="-1"><a class="header-anchor" href="#구매처"><span>구매처</span></a></h2>
 <ul>
 <li>공식 온라인몰: desker.co.kr</li>
@@ -185,6 +204,7 @@
 <li>오프라인 쇼룸: 서울 강남, 분당, 일산 등 전국 데스커 쇼룸</li>
 <li>이케아·현대백화점 입점 없음 (자체 채널 중심)</li>
 </ul>
+</section>
 </div></template>
 
 

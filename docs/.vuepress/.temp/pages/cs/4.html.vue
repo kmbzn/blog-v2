@@ -1,9 +1,14 @@
-<template><div><h1 id="_04-user-authentication" tabindex="-1"><a class="header-anchor" href="#_04-user-authentication"><span>04. User Authentication</span></a></h1>
+<template><div><section class="print-section">
+<h1 id="_04-user-authentication" tabindex="-1"><a class="header-anchor" href="#_04-user-authentication"><span>04. User Authentication</span></a></h1>
 <DateMeta />
+</section>
+<section class="print-section">
 <h3 id="rfc-2828-사용자-인증의-정의" tabindex="-1"><a class="header-anchor" href="#rfc-2828-사용자-인증의-정의"><span>RFC 2828. 사용자 인증의 정의</span></a></h3>
 <blockquote>
 <p>시스템 개체에 의해 또는 시스템 개체를 위해 주장된 신원을 검증하는 과정</p>
 </blockquote>
+</section>
+<section class="print-section">
 <h2 id="authentication-process" tabindex="-1"><a class="header-anchor" href="#authentication-process"><span>Authentication Process</span></a></h2>
 <ul>
 <li>Identification(식별) 단계
@@ -19,6 +24,8 @@
 <li>근본적인 구성 요소이자 주요 방어선</li>
 <li>접근 제어(access control) 및 user accountability의 기반</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="user-authentication" tabindex="-1"><a class="header-anchor" href="#user-authentication"><span>User Authentication</span></a></h2>
 <ul>
 <li>사용자 신원을 인증하는 네 가지 수단</li>
@@ -47,6 +54,8 @@
 <ul>
 <li>음성 패턴, 필체(handwriting), typing rhythm</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="password-authentication" tabindex="-1"><a class="header-anchor" href="#password-authentication"><span>Password Authentication</span></a></h2>
 <ul>
 <li>침입자에 대한 널리 사용되는 방식</li>
@@ -60,6 +69,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="password-vulnerabilities" tabindex="-1"><a class="header-anchor" href="#password-vulnerabilities"><span>Password Vulnerabilities</span></a></h2>
 <ul>
 <li>오프라인 딕셔너리 공격(Offline dictionary attack)</li>
@@ -71,6 +82,8 @@
 <li>다중 암호 사용 악용(Exploiting multiple password use): 하나의 PW를 여러 사이트에서 사용하는 경우, 취약한 사이트의 정보를 먼저 알아냄</li>
 <li>전자적 감시(Electronic monitoring): 암호화되지 않고 전송되는 경우</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="countermeasures" tabindex="-1"><a class="header-anchor" href="#countermeasures"><span>Countermeasures</span></a></h2>
 <ul>
 <li>Password file에 대한 무단 접근을 방지하기 위한 통제</li>
@@ -87,6 +100,8 @@
 <li>자동 워크스테이션 로그아웃: 화면 잠금장치 등 통해서</li>
 <li>네트워크 장치에서 유사한 암호 사용을 금지하는 policy</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="use-of-hashed-passwords-in-unix" tabindex="-1"><a class="header-anchor" href="#use-of-hashed-passwords-in-unix"><span>Use of Hashed Passwords (in UNIX)</span></a></h2>
 <p>사용자가 암호를 설정하면,</p>
 <ul>
@@ -95,6 +110,8 @@
 <li>이에 따라 ID마다 salt값이 다르게 됨</li>
 <li>사용자 암호 파일에 저장된 hash된 암호와 비교하여 인증을 수행 - 같으면 login 성공</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="how-password-salt-works" tabindex="-1"><a class="header-anchor" href="#how-password-salt-works"><span>How Password Salt Works</span></a></h2>
 <ul>
 <li>Salt 미사용 시:
@@ -118,12 +135,16 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="how-salt-increases-search-space-size" tabindex="-1"><a class="header-anchor" href="#how-salt-increases-search-space-size"><span>How Salt Increases Search Space Size</span></a></h2>
 <ul>
 <li>공격자가 공격하려는 사용자 ID와 연관된 salt를 찾을 수 없다고 가정하면, salt가 적용된 암호에 대한 딕셔너리 공격의 탐색 공간(search space) 크기는 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>2</mn><mi>B</mi></msup><mo>×</mo><mi>D</mi></mrow><annotation encoding="application/x-tex">2^B \times D</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.9247em;vertical-align:-0.0833em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8413em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.05017em;">B</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">D</span></span></span></span>임. 여기서 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>B</mi></mrow><annotation encoding="application/x-tex">B</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.05017em;">B</span></span></span></span>는 무작위 salt의 비트 수이고 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi></mrow><annotation encoding="application/x-tex">D</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">D</span></span></span></span>는 딕셔너리 공격을 위한 단어 목록의 크기.</li>
 <li>예를 들어, 시스템이 각 사용자 ID에 대해 32비트 salt를 사용하고 사용자가 <code v-pre>500,000</code>단어 dictionary에 있는 password를 선택하는 경우, salt가 적용된 password를 공격하기 위한 탐색 공간은 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>2</mn><mn>32</mn></msup><mo>×</mo><mn>500</mn><mo separator="true">,</mo><mn>000</mn><mo>=</mo><mn>2</mn><mo separator="true">,</mo><mn>147</mn><mo separator="true">,</mo><mn>483</mn><mo separator="true">,</mo><mn>648</mn><mo separator="true">,</mo><mn>000</mn><mo separator="true">,</mo><mn>000</mn></mrow><annotation encoding="application/x-tex">2^{32} \times 500,000 = 2,147,483,648,000,000</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8974em;vertical-align:-0.0833em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">32</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.8389em;vertical-align:-0.1944em;"></span><span class="mord">500</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">000</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8389em;vertical-align:-0.1944em;"></span><span class="mord">2</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">147</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">483</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">648</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">000</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">000</span></span></span></span>으로, 이는 약 2천조 이상.</li>
 <li>공격자가 사용자 ID에 대한 salt password를 찾아내더라도 오직 하나의 password만 알게 됨.</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="unix-implementation" tabindex="-1"><a class="header-anchor" href="#unix-implementation"><span>UNIX Implementation</span></a></h2>
 <ul>
 <li>기존 방식(Original scheme)
@@ -140,6 +161,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="improved-implementations" tabindex="-1"><a class="header-anchor" href="#improved-implementations"><span>Improved Implementations</span></a></h2>
 <ul>
 <li>Unix에서 사용 가능한 훨씬 강력한 hash/salt 방식</li>
@@ -158,6 +181,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="password-cracking" tabindex="-1"><a class="header-anchor" href="#password-cracking"><span>Password Cracking</span></a></h2>
 <ul>
 <li>딕셔너리 공격(Dictionary attacks)
@@ -174,8 +199,12 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="table-3-2-passwords-cracked-from-a-sample-set-of-13-797-accounts" tabindex="-1"><a class="header-anchor" href="#table-3-2-passwords-cracked-from-a-sample-set-of-13-797-accounts"><span>Table 3.2 Passwords Cracked from a Sample Set of 13,797 Accounts</span></a></h2>
 <p>62,727개 단어 규모의 간단한 dictionary를 가지고도 전체 사용자의 24.2%에 해당하는 password를 해킹할 수 있었음.</p>
+</section>
+<section class="print-section">
 <h2 id="password-file-access-control" tabindex="-1"><a class="header-anchor" href="#password-file-access-control"><span>Password File Access Control</span></a></h2>
 <ul>
 <li>암호화된 암호에 대한 접근을 거부함으로써 오프라인 추측 공격을 차단 가능</li>
@@ -195,6 +224,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="password-selection-techniques" tabindex="-1"><a class="header-anchor" href="#password-selection-techniques"><span>Password Selection Techniques</span></a></h2>
 <ol>
 <li>사용자 교육(User education)
@@ -219,6 +250,8 @@
 </ul>
 </li>
 </ol>
+</section>
+<section class="print-section">
 <h2 id="proactive-password-checking" tabindex="-1"><a class="header-anchor" href="#proactive-password-checking"><span>Proactive Password Checking</span></a></h2>
 <ul>
 <li>규칙 강제(Rule enforcement)
@@ -238,6 +271,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="bloom-filter" tabindex="-1"><a class="header-anchor" href="#bloom-filter"><span>Bloom Filter</span></a></h2>
 <ul>
 <li>Bloom filter는 어떤 항목이 특정 집합에 속하는지 여부를 확률적으로 검사하는 데이터 구조</li>
@@ -246,6 +281,8 @@
 <li>False Negative = 0</li>
 <li>False Positive &gt; 0 (약간 있음)</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="password-security-–-login-scoring" tabindex="-1"><a class="header-anchor" href="#password-security-–-login-scoring"><span>Password Security – Login Scoring</span></a></h2>
 <ul>
 <li>Login Scoring
@@ -276,6 +313,8 @@
 <blockquote>
 <p>일정 스코어 이상이면 바로 login 되지만, 그렇지 않은 경우에는 추가 인증을 요구하는, 기존의 패턴과 유사한 패턴인지를 score로 매기는 방식</p>
 </blockquote>
+</section>
+<section class="print-section">
 <h2 id="table-3-3-types-of-cards-used-as-tokens" tabindex="-1"><a class="header-anchor" href="#table-3-3-types-of-cards-used-as-tokens"><span>Table 3.3 Types of Cards Used as Tokens</span></a></h2>
 <table>
 <thead>
@@ -308,6 +347,8 @@
 </tr>
 </tbody>
 </table>
+</section>
+<section class="print-section">
 <h2 id="memory-cards-메모리-카드" tabindex="-1"><a class="header-anchor" href="#memory-cards-메모리-카드"><span>Memory Cards 메모리 카드</span></a></h2>
 <ul>
 <li>데이터를 저장할 수는 있지만 처리하지는 못함.</li>
@@ -328,6 +369,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="smartcard-스마트-카드" tabindex="-1"><a class="header-anchor" href="#smartcard-스마트-카드"><span>Smartcard 스마트 카드</span></a></h2>
 <ul>
 <li>물리적 특징
@@ -349,16 +392,22 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="figure-3-3-smart-card-dimensions" tabindex="-1"><a class="header-anchor" href="#figure-3-3-smart-card-dimensions"><span>Figure 3.3 Smart Card Dimensions</span></a></h2>
 <blockquote>
 <p>스마트 카드 칩은 내부적으로 CPU, crypto coprocessor, RAM, ROM, 전기 신호를 가지고 칩을 동작하게 하여 계산하도록 함.</p>
 </blockquote>
+</section>
+<section class="print-section">
 <h2 id="figure-3-4-communication-initialization-between-a-smart-card-and-a-reader" tabindex="-1"><a class="header-anchor" href="#figure-3-4-communication-initialization-between-a-smart-card-and-a-reader"><span>Figure 3.4 Communication Initialization between a Smart Card and a Reader</span></a></h2>
 <ul>
 <li>reader가 접점을 활성화하면, 스마트 카드는 ATR(Answer to Reset)을 전송함.</li>
 <li>그 후, reader는 명령을 보내고 스마트 카드는 명령을 실행한 뒤 응답을 보냄.</li>
 <li>출처: [TUNS06] 기반.</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="biometric-authentication" tabindex="-1"><a class="header-anchor" href="#biometric-authentication"><span>Biometric Authentication</span></a></h2>
 <ul>
 <li>고유한 신체적 특성에 기반하여 개인을 인증하려는 시도</li>
@@ -376,12 +425,16 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="figure-3-5-cost-versus-accuracy" tabindex="-1"><a class="header-anchor" href="#figure-3-5-cost-versus-accuracy"><span>Figure 3.5 Cost Versus Accuracy</span></a></h2>
 <ul>
 <li>이 graph는 다양한 인증 방법의 비용과 정확도 간의 관계를 보여줌.</li>
 <li>Iris는 정확도와 비용 모두 높음 - 군사적 목적으로 사용</li>
 <li>Finger, Retina도 정확성 측면에서 높음.</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="figure-3-6-operation-of-a-biometric-system" tabindex="-1"><a class="header-anchor" href="#figure-3-6-operation-of-a-biometric-system"><span>Figure 3.6 Operation of a Biometric System</span></a></h2>
 <ul>
 <li>일반적인 생체 인식 시스템의 작동 방식
@@ -392,6 +445,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="biometric-accuracy" tabindex="-1"><a class="header-anchor" href="#biometric-accuracy"><span>Biometric Accuracy</span></a></h2>
 <ul>
 <li>오거부율(FRR, False Reject Rate): 정상적인 사용자가 거부될 확률</li>
@@ -402,18 +457,24 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="biometric-measurement-operating-characteristic-curves" tabindex="-1"><a class="header-anchor" href="#biometric-measurement-operating-characteristic-curves"><span>Biometric Measurement Operating Characteristic Curves</span></a></h2>
 <ul>
 <li>ROC(Receiver Operating Characteristic) 곡선은 결정 임계값(decision threshold)이 변함에 따라 FAR과 FRR 간의 상충 관계를 보여줌.</li>
 <li>이상적인 시스템은 곡선이 왼쪽 하단 모서리에 가까움(FAR과 FRR이 모두 0에 가까움).</li>
 <li>EER은 곡선이 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi><mi>A</mi><mi>R</mi><mo>=</mo><mi>F</mi><mi>R</mi><mi>R</mi></mrow><annotation encoding="application/x-tex">FAR = FRR</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">F</span><span class="mord mathnormal">A</span><span class="mord mathnormal" style="margin-right:0.00773em;">R</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.00773em;">FRR</span></span></span></span>인 선과 교차하는 지점.</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="actual-biometric-measurement-operating-characteristic-curves" tabindex="-1"><a class="header-anchor" href="#actual-biometric-measurement-operating-characteristic-curves"><span>Actual Biometric Measurement Operating Characteristic Curves</span></a></h2>
 <ul>
 <li>이 그래프는 지문, 얼굴, 음성에 대한 실제 ROC 곡선을 보여줌.</li>
 <li>지문 인식의 경우 false match rate를 낮추더라도 false nonmatch rate가 크게 높아지지 않음</li>
 <li>Iris의 경우 높은 정확도로 군사적 목적으로 사용</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="remote-user-authentication" tabindex="-1"><a class="header-anchor" href="#remote-user-authentication"><span>Remote User Authentication</span></a></h2>
 <ul>
 <li>네트워크, 인터넷 또는 통신 링크를 통한 인증은 더 복잡함.</li>
@@ -424,6 +485,8 @@
 </li>
 <li>일반적으로 위협에 대응하기 위해 어떤 형태의 challenge-response 프로토콜에 의존함.</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="figure-3-10a-password-protocol" tabindex="-1"><a class="header-anchor" href="#figure-3-10a-password-protocol"><span>Figure 3.10a Password Protocol</span></a></h2>
 <p>챌린지-응답 프로토콜의 예시</p>
 <ul>
@@ -435,6 +498,8 @@
 <li>암호 hash가 인자 중 하나인 함수</li>
 <li>임의의 숫자를 사용하면 공격자가 사용자 전송을 캡처하는 것에 대해 방어하는 데 도움이 됨.</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="figure-3-10c-static-biometric-protocol" tabindex="-1"><a class="header-anchor" href="#figure-3-10c-static-biometric-protocol"><span>Figure 3.10c Static Biometric Protocol</span></a></h2>
 <ul>
 <li>정적 생체 인식 프로토콜의 예시</li>
@@ -445,6 +510,8 @@
 <li>호스트는 수신 메시지를 해독(decrypt)하고 로컬에 저장된 값과 비교</li>
 <li>호스트는 수신된 장치 ID를 호스트 데이터베이스에 등록된 장치 목록과 비교하여 인증을 제공</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="authentication-security-issues" tabindex="-1"><a class="header-anchor" href="#authentication-security-issues"><span>Authentication Security Issues</span></a></h2>
 <ul>
 <li>도청(Eavesdropping)
@@ -478,8 +545,12 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="practical-application-iris-biometric-system" tabindex="-1"><a class="header-anchor" href="#practical-application-iris-biometric-system"><span>Practical Application: Iris Biometric System</span></a></h2>
 <p>홍채 인식 기술을 활용한 login 시스템의 실제 적용 사례</p>
+</section>
+<section class="print-section">
 <h2 id="cloud-security-using-user-authentication" tabindex="-1"><a class="header-anchor" href="#cloud-security-using-user-authentication"><span>Cloud Security using User Authentication</span></a></h2>
 <ul>
 <li>에이전트 없는 사용자 인증(네트워크 기반)
@@ -493,6 +564,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="continuous-authentication" tabindex="-1"><a class="header-anchor" href="#continuous-authentication"><span>Continuous Authentication</span></a></h2>
 <ul>
 <li>프레임워크
@@ -513,6 +586,8 @@ Initial Login Authentication -&gt; Continuous Authentication &lt;-&gt; Enrollmen
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="continuous-authentication-examples" tabindex="-1"><a class="header-anchor" href="#continuous-authentication-examples"><span>Continuous Authentication - Examples</span></a></h2>
 <ul>
 <li>PC의 웹캠(Web-CAM) 사용
@@ -528,6 +603,8 @@ Initial Login Authentication -&gt; Continuous Authentication &lt;-&gt; Enrollmen
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="authentication-system" tabindex="-1"><a class="header-anchor" href="#authentication-system"><span>Authentication System</span></a></h2>
 <ul>
 <li>사용자 등록(학습/Modeling) 과정
@@ -547,6 +624,8 @@ Initial Login Authentication -&gt; Continuous Authentication &lt;-&gt; Enrollmen
 </ol>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="summary" tabindex="-1"><a class="header-anchor" href="#summary"><span>Summary</span></a></h2>
 <ul>
 <li>사용자 신원 인증의 네 가지 수단
@@ -589,6 +668,7 @@ Initial Login Authentication -&gt; Continuous Authentication &lt;-&gt; Enrollmen
 </ul>
 </li>
 </ul>
+</section>
 </div></template>
 
 

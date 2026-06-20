@@ -1,5 +1,8 @@
-<template><div><h1 id="assignment-2-2-web-application-development" tabindex="-1"><a class="header-anchor" href="#assignment-2-2-web-application-development"><span>Assignment 2-2. Web Application Development</span></a></h1>
+<template><div><section class="print-section">
+<h1 id="assignment-2-2-web-application-development" tabindex="-1"><a class="header-anchor" href="#assignment-2-2-web-application-development"><span>Assignment 2-2. Web Application Development</span></a></h1>
 <DateMeta />
+</section>
+<section class="print-section">
 <h3 id="목표" tabindex="-1"><a class="header-anchor" href="#목표"><span>목표</span></a></h3>
 <ul>
 <li><code v-pre>Assignment 2-1</code>에서 설계한 Relation schema를 바탕으로 Web Application 구현</li>
@@ -7,12 +10,16 @@
 <li>구현한 Web Application을 배포하여 타인이 접속할 수 있도록 할 것. (권장)</li>
 <li>배포가 불가능한 경우 모든 요구사항이 정상적으로 동작함을 보여주는 시연 영상 제작</li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="제출-방식" tabindex="-1"><a class="header-anchor" href="#제출-방식"><span>제출 방식</span></a></h3>
 <ul>
 <li>Web Application 구현 코드는 GitHub Repository(GitHub 리포지토리)를 이용하여 제출</li>
 <li>Wiki는 LMS(학습 관리 시스템) 과제 탭에 제출</li>
 <li>wiki 파일 이름은 <code v-pre>assignment2_2_2021024057_김병준.pdf</code>으로 할 것.</li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="제출-기한" tabindex="-1"><a class="header-anchor" href="#제출-기한"><span>제출 기한</span></a></h3>
 <ul>
 <li>정식 제출: 2025년 10월 23일 23시 59분</li>
@@ -20,6 +27,8 @@
 <li>제출 기한 이후 1분 ~ 3시간 사이에 제출: 채점 후 100점 득점 시 최종 점수 95점</li>
 <li>제출 기한 60시간 이후 제출 시 0점</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="implement" tabindex="-1"><a class="header-anchor" href="#implement"><span>Implement</span></a></h2>
 <ul>
 <li><code v-pre>Assignment 2-1</code>에서 정의한 모든 요구사항을 충족하는 Application(애플리케이션) 구현</li>
@@ -37,6 +46,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="deploy-recommend" tabindex="-1"><a class="header-anchor" href="#deploy-recommend"><span>Deploy (recommend)</span></a></h2>
 <ul>
 <li>AWS, GCP 등 Cloud Service(클라우드 서비스)를 이용하여 개발한 Web application를 배포하고 공개적으로 접근 가능하도록 할 것.</li>
@@ -46,12 +57,16 @@
 <li>배포된 Web application에서 요구사항의 모든 내용을 확인할 수 있도록 할 것.</li>
 <li>충분한 데이터를 준비</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="demo-video" tabindex="-1"><a class="header-anchor" href="#demo-video"><span>Demo Video</span></a></h2>
 <ul>
 <li>배포가 불가능한 경우 시연 영상으로 대체 가능</li>
 <li>시연 영상에는 모든 기능에 대한 자세한 시연 과정과 그에 대한 설명이 음성 혹은 자막으로 포함되어야 함</li>
 <li>유튜브에 일부 공개로 업로드 후 영상 URL을 Wiki에 기입</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="wiki" tabindex="-1"><a class="header-anchor" href="#wiki"><span>Wiki</span></a></h2>
 <ul>
 <li>Wiki에 포함되어야 하는 것들
@@ -65,6 +80,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="기타-주의사항" tabindex="-1"><a class="header-anchor" href="#기타-주의사항"><span>기타 주의사항</span></a></h2>
 <ul>
 <li>GitHub repository name을 반드시 <code v-pre>Assignment2_2021024057</code>과 같은 양식으로 설정</li>
@@ -76,6 +93,7 @@
 </ul>
 </li>
 </ul>
+</section>
 </div></template>
 
 

@@ -1,13 +1,20 @@
-<template><div><h1 id="assignment-3-implementing-augmented-b-tree-wiki" tabindex="-1"><a class="header-anchor" href="#assignment-3-implementing-augmented-b-tree-wiki"><span>Assignment 3. Implementing Augmented B+tree - wiki</span></a></h1>
+<template><div><section class="print-section">
+<h1 id="assignment-3-implementing-augmented-b-tree-wiki" tabindex="-1"><a class="header-anchor" href="#assignment-3-implementing-augmented-b-tree-wiki"><span>Assignment 3. Implementing Augmented B+tree - wiki</span></a></h1>
 <DateMeta />
 <p>2021024057 김병준</p>
+</section>
+<section class="print-section">
 <h2 id="_1-design" tabindex="-1"><a class="header-anchor" href="#_1-design"><span>1. Design</span></a></h2>
+</section>
+<section class="print-section">
 <h3 id="_1-1-overall-architecture" tabindex="-1"><a class="header-anchor" href="#_1-1-overall-architecture"><span>1.1. Overall Architecture</span></a></h3>
 <p>해당 과제에서는 Disk-based B+tree를 구현하였다. 모든 노드는 4KB 크기의 page 단위로 디스크에 저장되며, <code v-pre>Header Page</code>, <code v-pre>Free Page</code>, <code v-pre>Internal Page</code>, <code v-pre>Leaf Page</code>의 네 가지 타입을 가진다.</p>
 <ul>
 <li>In-Memory Logic vs On-Disk Structure:
 메모리 상의 포인터 대신 파일 내의 <code v-pre>offset</code>을 사용하여 페이지 간의 연결(Link)을 구현하였다. <code v-pre>open_table</code> 호출 시 <code v-pre>fd</code>(File Descriptor)를 전역으로 관리하며, <code v-pre>pread</code>/<code v-pre>pwrite</code> system call을 사용하여 페이지 단위의 I/O를 수행한다.</li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="_1-2-data-structures" tabindex="-1"><a class="header-anchor" href="#_1-2-data-structures"><span>1.2. Data Structures</span></a></h3>
 <ul>
 <li>Page Structure: <code v-pre>4096 Bytes</code> 고정 크기. Header(<code v-pre>128B</code>)와 Body(Record/Internal Entry)로 구성된다.</li>
@@ -16,7 +23,11 @@
 <li>Bitmap for Logical Deletion (<code v-pre>bptree2</code>):
 <code v-pre>bptree2</code>에서는 물리적 삭제 대신 논리적 삭제를 지원하기 위해, <code v-pre>page</code> 구조체의 <code v-pre>reserved[104]</code> 영역을 Bitmap으로 활용하였다. <code v-pre>reserved[i] == 1</code>인 경우 해당 인덱스의 레코드는 삭제된 것으로 간주한다.</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="_2-implement" tabindex="-1"><a class="header-anchor" href="#_2-implement"><span>2. Implement</span></a></h2>
+</section>
+<section class="print-section">
 <h3 id="_2-1-normal-b-tree-bptree1" tabindex="-1"><a class="header-anchor" href="#_2-1-normal-b-tree-bptree1"><span>2.1. Normal B+ tree (<code v-pre>bptree1</code>)</span></a></h3>
 <p>기본적인 B+ tree의 삽입, 삭제, 탐색 연산을 구현하였다.</p>
 <ul>
@@ -33,6 +44,8 @@ Leaf Page가 가득 찬 상태(<code v-pre>LEAF_MAX = 31</code>)에서 삽입 �
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="_2-2-logical-deletion-applied-b-tree-bptree2" tabindex="-1"><a class="header-anchor" href="#_2-2-logical-deletion-applied-b-tree-bptree2"><span>2.2. Logical Deletion Applied B+ tree (<code v-pre>bptree2</code>)</span></a></h3>
 <p><code v-pre>bptree1</code>의 code를 기반으로 하되, 삭제 정책과 구조를 변경하였다.</p>
 <ul>
@@ -57,13 +70,19 @@ Leaf Page가 가득 찬 상태(<code v-pre>LEAF_MAX = 31</code>)에서 삽입 �
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="_3-result" tabindex="-1"><a class="header-anchor" href="#_3-result"><span>3. Result</span></a></h2>
+</section>
+<section class="print-section">
 <h3 id="_3-1-test-environment" tabindex="-1"><a class="header-anchor" href="#_3-1-test-environment"><span>3.1. Test Environment</span></a></h3>
 <ul>
 <li>OS: Ubuntu 24.04 LTS</li>
 <li>Compiler: gcc</li>
 <li>Tools: Make</li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="_3-2-bptree1-execution" tabindex="-1"><a class="header-anchor" href="#_3-2-bptree1-execution"><span>3.2. <code v-pre>bptree1</code> Execution</span></a></h3>
 <ol>
 <li>Insert &amp; Find: Key <code v-pre>100</code>, <code v-pre>50</code>, <code v-pre>150</code>을 순서대로 삽입 후 조회 시 정렬되어 출력됨을 확인하였다.</li>
@@ -131,7 +150,9 @@ Leaf Page가 가득 찬 상태(<code v-pre>LEAF_MAX = 31</code>)에서 삽입 �
 <span class="line">Key: <span class="token number">18</span>, Value: R</span>
 <span class="line">q</span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_3-3-bptree2-execution-logical-deletion" tabindex="-1"><a class="header-anchor" href="#_3-3-bptree2-execution-logical-deletion"><span>3.3. <code v-pre>bptree2</code> Execution (Logical Deletion)</span></a></h3>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h3 id="_3-3-bptree2-execution-logical-deletion" tabindex="-1"><a class="header-anchor" href="#_3-3-bptree2-execution-logical-deletion"><span>3.3. <code v-pre>bptree2</code> Execution (Logical Deletion)</span></a></h3>
 <ol>
 <li>Logical Delete: <code v-pre>d 100</code> 수행 후 <code v-pre>f 100</code> 시 &quot;Not Exists&quot; 출력 확인하였다. 하지만 물리적 file 크기는 줄어들지 않는다.</li>
 <li>Revival: 삭제된 Key 100에 대해 <code v-pre>i 100 world</code> 수행 시, 새로운 공간을 할당하지 않고 기존 슬롯을 재활용하여 값이 갱신됨을 확인하였다.</li>
@@ -148,22 +169,34 @@ Leaf Page가 가득 찬 상태(<code v-pre>LEAF_MAX = 31</code>)에서 삽입 �
 <span class="line">Key: <span class="token number">100</span>, Value: world</span>
 <span class="line">q</span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="_4-troubleshooting" tabindex="-1"><a class="header-anchor" href="#_4-troubleshooting"><span>4. TroubleShooting</span></a></h2>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h2 id="_4-troubleshooting" tabindex="-1"><a class="header-anchor" href="#_4-troubleshooting"><span>4. TroubleShooting</span></a></h2>
+</section>
+<section class="print-section">
 <h3 id="_4-1-get-neighbor-index-segmentation-fault" tabindex="-1"><a class="header-anchor" href="#_4-1-get-neighbor-index-segmentation-fault"><span>4.1. <code v-pre>get_neighbor_index</code> Segmentation Fault</span></a></h3>
 <ul>
 <li>문제: <code v-pre>bptree1</code>의 삭제 연산 중, Internal Page가 병합되어 빈 페이지(<code v-pre>num_of_keys == 0</code>)가 된 상태에서 부모를 탐색할 때 <code v-pre>parent-&gt;b_f[0]</code>에 접근하여 Segmentation Fault가 발생하였다.</li>
 <li>원인: <code v-pre>num_of_keys</code>가 0인 경우 <code v-pre>b_f</code> 배열이 유효하지 않음에도 접근을 시도하였다.</li>
 <li>해결: <code v-pre>parent-&gt;num_of_keys &gt; 0</code> 조건을 추가하여, 키가 있을 때만 <code v-pre>b_f[0]</code>를 확인하도록 로직을 수정하여 해결하였다.</li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="_4-2-db-reorganize-trace-trap-error" tabindex="-1"><a class="header-anchor" href="#_4-2-db-reorganize-trace-trap-error"><span>4.2. <code v-pre>db_reorganize</code> Trace Trap Error</span></a></h3>
 <ul>
 <li>문제: <code v-pre>bptree2</code>에서 재구성(Reorganize) 실행 시 프로그램이 비정상 종료(<code v-pre>Trace Trap</code>)되었다.</li>
 <li>원인: <code v-pre>open_table</code> 함수 내부에서 전역 변수 <code v-pre>DB_PATH</code>를 <code v-pre>memset</code>으로 초기화하는데 <code v-pre>db_reorganize</code>에서 <code v-pre>open_table(DB_PATH)</code> 형태로 자기 자신을 argument로 넘기면서 포인터 참조 오류가 발생하였다.</li>
 <li>해결: <code v-pre>db_reorganize</code> 함수 초입에서 <code v-pre>DB_PATH</code>를 로컬 변수 <code v-pre>original_path</code>에 <code v-pre>strncpy</code>로 복사해둔 뒤 이 복사본을 사용하여 <code v-pre>open_table</code>을 호출하도록 수정하였다.</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="_5-consideration-on-db-reorganize" tabindex="-1"><a class="header-anchor" href="#_5-consideration-on-db-reorganize"><span>5. Consideration on <code v-pre>db_reorganize</code></span></a></h2>
+</section>
+<section class="print-section">
 <h3 id="_5-1-구현-목표" tabindex="-1"><a class="header-anchor" href="#_5-1-구현-목표"><span>5.1. 구현 목표</span></a></h3>
 <p><code v-pre>db_reorganize</code>는 논리적으로 삭제된 레코드(Fragmentation)를 제거하고, B+ tree를 물리적으로 재구성하여 검색 성능과 공간 효율성을 최적화하는 것을 목표로 한다.</p>
+</section>
+<section class="print-section">
 <h3 id="_5-2-채택한-알고리즘" tabindex="-1"><a class="header-anchor" href="#_5-2-채택한-알고리즘"><span>5.2. 채택한 알고리즘</span></a></h3>
 <p>기존 파일 내에서 빈 공간을 찾아 데이터를 이동시키는 방식(In-place compaction) 대신, 새로운 DB 파일을 생성하여 유효한 데이터만 migrate시키는 방식을 사용하기로 결정하였다.</p>
 <ol>
@@ -178,6 +211,8 @@ Leaf Page가 가득 찬 상태(<code v-pre>LEAF_MAX = 31</code>)에서 삽입 �
 </li>
 <li>Cleanup: 작업 완료 후 <code v-pre>backup.db</code>를 삭제(<code v-pre>unlink</code>)한다.</li>
 </ol>
+</section>
+<section class="print-section">
 <h3 id="_5-3-성능상의-이점" tabindex="-1"><a class="header-anchor" href="#_5-3-성능상의-이점"><span>5.3. 성능상의 이점</span></a></h3>
 <ul>
 <li>이 방식이 갖는 장점들
@@ -188,6 +223,7 @@ Leaf Page가 가득 찬 상태(<code v-pre>LEAF_MAX = 31</code>)에서 삽입 �
 </ul>
 </li>
 </ul>
+</section>
 </div></template>
 
 

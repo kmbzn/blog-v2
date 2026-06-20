@@ -1,8 +1,13 @@
-<template><div><h1 id="피젯-토이-fidget-toy" tabindex="-1"><a class="header-anchor" href="#피젯-토이-fidget-toy"><span>피젯 토이 (Fidget Toy)</span></a></h1>
+<template><div><section class="print-section">
+<h1 id="피젯-토이-fidget-toy" tabindex="-1"><a class="header-anchor" href="#피젯-토이-fidget-toy"><span>피젯 토이 (Fidget Toy)</span></a></h1>
 <DateMeta />
 <p>피젯 토이(Fidget Toy)는 손으로 만지고 조작하면서 불안이나 무료함을 해소하고 집중력을 유지하는 데 도움을 주는 소형 장난감이다. &quot;피젯(fidget)&quot;은 영어로 &quot;안절부절못하다&quot;, &quot;손발을 가만히 두지 못하다&quot;는 뜻이다. 특히 ADHD, 불안 장애, 자폐 스펙트럼을 가진 사람들의 감각 조절 도구로 주목받았으며, 일반인에게는 스트레스 해소와 습관적 손 놀림(펜 돌리기, 손가락 두드리기 등)을 대체하는 용도로 쓰인다.</p>
 <hr>
+</section>
+<section class="print-section">
 <h2 id="주요-종류" tabindex="-1"><a class="header-anchor" href="#주요-종류"><span>주요 종류</span></a></h2>
+</section>
+<section class="print-section">
 <h3 id="피젯-스피너-fidget-spinner" tabindex="-1"><a class="header-anchor" href="#피젯-스피너-fidget-spinner"><span>피젯 스피너 (Fidget Spinner)</span></a></h3>
 <p>2017년 전 세계적으로 폭발적인 유행을 일으킨 피젯 토이. 중앙 베어링을 엄지와 중지로 잡고 검지로 튕기면 날개가 수분간 돌아간다.</p>
 <ul>
@@ -43,6 +48,8 @@
 </tr>
 </tbody>
 </table>
+</section>
+<section class="print-section">
 <h3 id="피젯-큐브-fidget-cube" tabindex="-1"><a class="header-anchor" href="#피젯-큐브-fidget-cube"><span>피젯 큐브 (Fidget Cube)</span></a></h3>
 <p>2016년 Antsy Labs가 킥스타터를 통해 선보인 6면체 피젯 장난감. 각 면에 서로 다른 조작 방식이 있어 다양한 자극을 제공한다.</p>
 <p><strong>6개 면 구성</strong></p>
@@ -84,6 +91,8 @@
 <li>원본 Antsy Labs 제품 외 수많은 유사품이 유통됨</li>
 <li>키체인 크기의 미니 버전도 있음</li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="팝-잇-pop-it" tabindex="-1"><a class="header-anchor" href="#팝-잇-pop-it"><span>팝 잇 (Pop It)</span></a></h3>
 <p>2020~2021년 코로나 시기에 전 세계적으로 유행한 실리콘 버블 피젯 토이. 뽁뽁이(에어캡) 누르는 감촉을 무한히 재현할 수 있다.</p>
 <ul>
@@ -92,12 +101,16 @@
 <li>2인 게임 방식 있음 (번갈아 한 번에 원하는 수만큼 누름, 마지막 남은 칸을 누르는 사람이 짐)</li>
 <li>세척 가능, 반영구 사용</li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="인피니티-큐브-infinity-cube" tabindex="-1"><a class="header-anchor" href="#인피니티-큐브-infinity-cube"><span>인피니티 큐브 (Infinity Cube)</span></a></h3>
 <p>접히는 마디들이 무한히 변형되는 구조의 피젯 토이. 정육면체 형태에서 시작해 손목 스냅으로 접고 펴는 동작을 반복한다. 단순하지만 손에서 내려놓기 어려운 특성이 있어 회의 중이나 집중 작업 중 무의식적으로 손이 가는 형태다.</p>
 <ul>
 <li>소재: ABS 플라스틱 / 알루미늄</li>
 <li>크기: 2.5~4cm 수준으로 휴대성 좋음</li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="마그네틱-링-마그네틱-볼-magnetic-fidget" tabindex="-1"><a class="header-anchor" href="#마그네틱-링-마그네틱-볼-magnetic-fidget"><span>마그네틱 링 / 마그네틱 볼 (Magnetic Fidget)</span></a></h3>
 <p>강력한 네오디뮴 자석으로 만든 피젯 도구들.</p>
 <ul>
@@ -105,6 +118,8 @@
 <li><strong>마그네틱 볼 (M-Ball, Newton's cradle 계열)</strong>: 두 손에 하나씩 쥐고 서로 가까이 가져가면 자력으로 달라붙고 튕기는 촉감</li>
 <li><strong>주의</strong>: 강력 자석은 어린이가 삼키면 위험. 어른용 명시 제품 권장</li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="슬라임-킨에틱-샌드-kinetic-sand" tabindex="-1"><a class="header-anchor" href="#슬라임-킨에틱-샌드-kinetic-sand"><span>슬라임 / 킨에틱 샌드 (Kinetic Sand)</span></a></h3>
 <p>감각 자극 피젯의 일종.</p>
 <ul>
@@ -112,6 +127,8 @@
 <li><strong>킨에틱 샌드</strong>: 모래 97% + 실리콘 폴리머 3%. 젖은 모래처럼 뭉치지만 실제로는 건식. 형태 유지와 흘러내림이 공존하는 독특한 촉감</li>
 </ul>
 <hr>
+</section>
+<section class="print-section">
 <h2 id="효과에-대한-연구" tabindex="-1"><a class="header-anchor" href="#효과에-대한-연구"><span>효과에 대한 연구</span></a></h2>
 <p>피젯 토이의 집중력 향상 효과는 연구 결과가 엇갈린다.</p>
 <p><strong>긍정적 연구</strong></p>
@@ -128,6 +145,8 @@
 </ul>
 <p><strong>현재 컨센서스</strong>: ADHD 진단을 받은 사람, 또는 감각 처리에 어려움이 있는 사람에게는 도움이 될 수 있으나, 일반적인 집중력 향상 도구로서의 효과는 과학적으로 충분히 입증되지 않았다.</p>
 <hr>
+</section>
+<section class="print-section">
 <h2 id="구매-가이드" tabindex="-1"><a class="header-anchor" href="#구매-가이드"><span>구매 가이드</span></a></h2>
 <table>
 <thead>
@@ -166,6 +185,7 @@
 <li>쿠팡: 다양한 제품, 국내 빠른 배송</li>
 <li>전문 피젯 숍(Fidget HQ 등): 고급 금속 피젯 전문</li>
 </ul>
+</section>
 </div></template>
 
 

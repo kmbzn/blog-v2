@@ -1,6 +1,9 @@
-<template><div><h1 id="오디오-인터페이스-audio-interface" tabindex="-1"><a class="header-anchor" href="#오디오-인터페이스-audio-interface"><span>오디오 인터페이스 (Audio Interface)</span></a></h1>
+<template><div><section class="print-section">
+<h1 id="오디오-인터페이스-audio-interface" tabindex="-1"><a class="header-anchor" href="#오디오-인터페이스-audio-interface"><span>오디오 인터페이스 (Audio Interface)</span></a></h1>
 <DateMeta />
 <p>오디오 인터페이스는 마이크, 기타, 신디사이저 등의 아날로그 신호를 디지털로 변환해 컴퓨터에 전달하고, 반대로 컴퓨터의 디지털 오디오를 아날로그로 변환해 스피커·헤드폰으로 출력하는 장비다. 사운드카드의 전문 외장형 버전이라고 볼 수 있다.</p>
+</section>
+<section class="print-section">
 <h2 id="왜-오디오-인터페이스가-필요한가" tabindex="-1"><a class="header-anchor" href="#왜-오디오-인터페이스가-필요한가"><span>왜 오디오 인터페이스가 필요한가</span></a></h2>
 <p>컴퓨터 내장 사운드카드는 재생 품질은 충분하지만, 녹음 입력 품질이 낮고 레이턴시(지연)가 크다. 오디오 인터페이스는 다음 상황에서 필요하다.</p>
 <table>
@@ -34,13 +37,19 @@
 </tbody>
 </table>
 <hr>
+</section>
+<section class="print-section">
 <h2 id="핵심-스펙-이해" tabindex="-1"><a class="header-anchor" href="#핵심-스펙-이해"><span>핵심 스펙 이해</span></a></h2>
+</section>
+<section class="print-section">
 <h3 id="입력-채널-수" tabindex="-1"><a class="header-anchor" href="#입력-채널-수"><span>입력 채널 수</span></a></h3>
 <p>가장 먼저 결정해야 할 것. 동시에 몇 개의 소스를 녹음할지에 따라 선택이 달라진다.</p>
 <ul>
 <li><strong>2i2형 (2입력 2출력)</strong>: 1인 유튜버·팟캐스터, 기타+보컬 동시 녹음에 충분</li>
 <li><strong>4i4형 이상</strong>: 밴드 녹음, 드럼 마이킹, 다채널 녹음에 필요</li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="ad-da-변환기-품질" tabindex="-1"><a class="header-anchor" href="#ad-da-변환기-품질"><span>AD/DA 변환기 품질</span></a></h3>
 <p>아날로그↔디지털 변환기(ADC/DAC)의 품질이 음질을 결정한다. 주요 지표:</p>
 <ul>
@@ -48,12 +57,16 @@
 <li><strong>THD+N</strong>: 낮을수록 왜곡이 적음</li>
 <li><strong>샘플링 레이트</strong>: 44.1kHz/48kHz가 기본, 96kHz/192kHz 지원 여부</li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="마이크-프리앰프-mic-preamp" tabindex="-1"><a class="header-anchor" href="#마이크-프리앰프-mic-preamp"><span>마이크 프리앰프 (Mic Preamp)</span></a></h3>
 <p>마이크 신호는 매우 약하기 때문에 증폭이 필요하다. 프리앰프 품질이 마이크 녹음 음질에 직접적인 영향을 미친다.</p>
 <ul>
 <li><strong>게인 범위</strong>: 충분한 게인(60dB 이상)이 있어야 다양한 마이크 사용 가능</li>
 <li><strong>팬텀파워 (48V)</strong>: 콘덴서 마이크 사용 시 필수</li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="레이턴시와-asio-드라이버" tabindex="-1"><a class="header-anchor" href="#레이턴시와-asio-드라이버"><span>레이턴시와 ASIO 드라이버</span></a></h3>
 <p>레이턴시는 소리가 마이크에서 헤드폰으로 돌아오는 지연 시간이다.</p>
 <ul>
@@ -61,7 +74,11 @@
 <li>Mac: Core Audio 기반으로 기본적으로 저레이턴시</li>
 </ul>
 <hr>
+</section>
+<section class="print-section">
 <h2 id="주요-제품-비교" tabindex="-1"><a class="header-anchor" href="#주요-제품-비교"><span>주요 제품 비교</span></a></h2>
+</section>
+<section class="print-section">
 <h3 id="입문-중급-10-20만원대" tabindex="-1"><a class="header-anchor" href="#입문-중급-10-20만원대"><span>입문 ~ 중급 (10~20만원대)</span></a></h3>
 <table>
 <thead>
@@ -94,6 +111,8 @@
 </tr>
 </tbody>
 </table>
+</section>
+<section class="print-section">
 <h3 id="중급-20-40만원대" tabindex="-1"><a class="header-anchor" href="#중급-20-40만원대"><span>중급 (20~40만원대)</span></a></h3>
 <table>
 <thead>
@@ -126,6 +145,8 @@
 </tr>
 </tbody>
 </table>
+</section>
+<section class="print-section">
 <h3 id="측정치-최우수-30-50만원대" tabindex="-1"><a class="header-anchor" href="#측정치-최우수-30-50만원대"><span>측정치 최우수 (30~50만원대)</span></a></h3>
 <table>
 <thead>
@@ -150,6 +171,8 @@
 </tbody>
 </table>
 <hr>
+</section>
+<section class="print-section">
 <h2 id="focusrite-scarlett-2i2-vs-ssl-2" tabindex="-1"><a class="header-anchor" href="#focusrite-scarlett-2i2-vs-ssl-2"><span>Focusrite Scarlett 2i2 vs SSL 2</span></a></h2>
 <p>가장 많이 비교되는 두 제품.</p>
 <table>
@@ -200,6 +223,8 @@
 <li>정밀 모니터링 중요 → <strong>MOTU M2</strong>: 최상위 측정치</li>
 </ul>
 <hr>
+</section>
+<section class="print-section">
 <h2 id="dac와-오디오-인터페이스의-차이" tabindex="-1"><a class="header-anchor" href="#dac와-오디오-인터페이스의-차이"><span>DAC와 오디오 인터페이스의 차이</span></a></h2>
 <table>
 <thead>
@@ -239,6 +264,8 @@
 </table>
 <p>음악 감상만이 목적이라면 오디오 인터페이스 대신 순수 DAC(헤드폰 앰프 겸용)가 합리적이다. 녹음이 필요하다면 오디오 인터페이스가 맞는 선택이다.</p>
 <hr>
+</section>
+<section class="print-section">
 <h2 id="구매-체크리스트" tabindex="-1"><a class="header-anchor" href="#구매-체크리스트"><span>구매 체크리스트</span></a></h2>
 <ul>
 <li>[ ] 동시 녹음 채널 수는 몇 채널인가?</li>
@@ -251,6 +278,7 @@
 <p class="hint-container-title">입문자 추천</p>
 <p>예산 15만원 이하라면 Focusrite Scarlett 2i2 4세대가 가장 안전한 선택이다. 드라이버 안정성이 검증되어 있고, 문제 발생 시 커뮤니티 자료가 풍부하다.</p>
 </div>
+</section>
 </div></template>
 
 

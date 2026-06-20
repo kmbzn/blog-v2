@@ -1,10 +1,15 @@
-<template><div><h1 id="_18-concurrency-control" tabindex="-1"><a class="header-anchor" href="#_18-concurrency-control"><span>18. Concurrency Control</span></a></h1>
+<template><div><section class="print-section">
+<h1 id="_18-concurrency-control" tabindex="-1"><a class="header-anchor" href="#_18-concurrency-control"><span>18. Concurrency Control</span></a></h1>
 <DateMeta />
+</section>
+<section class="print-section">
 <h2 id="overview" tabindex="-1"><a class="header-anchor" href="#overview"><span>Overview</span></a></h2>
 <blockquote>
 <p>Concurrency Control(동시성 제어): 충돌하는 명령 간의 실행 순서를 변경하지 않으면서, 동시성 레벨을 가능한 한 높게 만드는 스케줄 생성
 <img src="@source/db/image-15.png" alt="alt text"></p>
 </blockquote>
+</section>
+<section class="print-section">
 <h1 id="lock-based-protocols" tabindex="-1"><a class="header-anchor" href="#lock-based-protocols"><span>Lock-based Protocols</span></a></h1>
 <ul>
 <li><strong>Lock</strong>: 데이터 아이템에 대한 동시 접근을 제어하는 메커니즘</li>
@@ -56,6 +61,8 @@
 <blockquote>
 <p>Lock compatibility Matrix</p>
 </blockquote>
+</section>
+<section class="print-section">
 <h2 id="schedule-with-lock-grants" tabindex="-1"><a class="header-anchor" href="#schedule-with-lock-grants"><span>Schedule with Lock Grants</span></a></h2>
 <ul>
 <li>나머지 장에서는 grant 생략</li>
@@ -127,6 +134,8 @@
 </tr>
 </tbody>
 </table>
+</section>
+<section class="print-section">
 <h2 id="locking-protocols" tabindex="-1"><a class="header-anchor" href="#locking-protocols"><span>Locking Protocols</span></a></h2>
 <ul>
 <li>Locking Protocol: 모든 transaction이 lock을 요청하고 해제할 때 따르는 규칙의 집합</li>
@@ -138,6 +147,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="deadlock-and-starvation" tabindex="-1"><a class="header-anchor" href="#deadlock-and-starvation"><span>Deadlock and Starvation</span></a></h2>
 <ul>
 <li>부분 스케줄(Partial Schedule)을 고려했을 때
@@ -179,6 +190,8 @@
 </tr>
 </tbody>
 </table>
+</section>
+<section class="print-section">
 <h2 id="two-phase-locking-2pl-protocol" tabindex="-1"><a class="header-anchor" href="#two-phase-locking-2pl-protocol"><span>Two-Phase Locking (2PL) Protocol</span></a></h2>
 <ul>
 <li>Conflict-Serializable 스케줄을 보장하는 protocol</li>
@@ -261,6 +274,8 @@
 <li>이 Protocol은 직렬성을 보장</li>
 <li>Strict Two-Phase locking 및 rigorous Two-Phase locking (Lock conversion 포함)은 상용 Database 시스템에서 광범위하게 사용되며, 단순히 Two-Phase locking으로 지칭되기도 함.</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="automatic-acquisition-of-locks" tabindex="-1"><a class="header-anchor" href="#automatic-acquisition-of-locks"><span>Automatic Acquisition of Locks</span></a></h2>
 <ul>
 <li>Transaction <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>T</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">T_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">T</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.1389em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>는 명시적인 locking 호출 없이 표준 read/write 명령을 실행</li>
@@ -288,6 +303,8 @@
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul>
 <li>모든 lock은 commit 또는 abort 후에 해제 (Rigorous 2PL 사용)</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="implementation-of-locking" tabindex="-1"><a class="header-anchor" href="#implementation-of-locking"><span>Implementation of Locking</span></a></h2>
 <ul>
 <li>Lock manager는 <strong>별도의 프로세스</strong>로 구현될 수 있음.</li>
@@ -304,6 +321,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="lock-table" tabindex="-1"><a class="header-anchor" href="#lock-table"><span>Lock Table</span></a></h2>
 <ul>
 <li>연결 리스트의 각 레코드에 포함되는 것들
@@ -332,6 +351,8 @@
 </li>
 </ul>
 <p><img src="@source/db/image-11.png" alt=""></p>
+</section>
+<section class="print-section">
 <h2 id="optional-graph-based-protocols" tabindex="-1"><a class="header-anchor" href="#optional-graph-based-protocols"><span>(Optional) Graph-based Protocols</span></a></h2>
 <p><img src="@source/db/image-16.png" alt="alt text"></p>
 <ul>
@@ -383,6 +404,8 @@
 </li>
 <li>2PL에서는 불가능한 스케줄이 tree protocol에서 가능하며, 그 반대도 가능</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="deadlock-prevention" tabindex="-1"><a class="header-anchor" href="#deadlock-prevention"><span>Deadlock Prevention</span></a></h2>
 <table>
 <thead>
@@ -448,6 +471,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="deadlock-detection" tabindex="-1"><a class="header-anchor" href="#deadlock-detection"><span>Deadlock Detection</span></a></h2>
 <ul>
 <li><strong>Wait-for Graph</strong>: Transaction을 정점으로 하는 directed graph
@@ -476,6 +501,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="multiple-granularity" tabindex="-1"><a class="header-anchor" href="#multiple-granularity"><span>Multiple Granularity</span></a></h2>
 <ul>
 <li>지금까지 개별 데이터 아이템을 locking unit으로 사용</li>
@@ -498,6 +525,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="example-of-granularity-hierarchy" tabindex="-1"><a class="header-anchor" href="#example-of-granularity-hierarchy"><span>Example of Granularity Hierarchy</span></a></h2>
 <ul>
 <li>가장 거친(상위) 수준부터 시작하는 수준
@@ -524,6 +553,8 @@
 </li>
 <li>해결책: Intention lock 모드</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="intention-lock-modes" tabindex="-1"><a class="header-anchor" href="#intention-lock-modes"><span>Intention Lock Modes</span></a></h2>
 <ul>
 <li>S 및 X lock 모드 외에, Multiple Granularity를 위한 세 가지 추가 lock 모드(Intention lock Modes)
@@ -594,6 +625,8 @@
 </tr>
 </tbody>
 </table>
+</section>
+<section class="print-section">
 <h2 id="multiple-granularity-locking-protocol" tabindex="-1"><a class="header-anchor" href="#multiple-granularity-locking-protocol"><span>Multiple Granularity Locking Protocol</span></a></h2>
 <ul>
 <li>Transaction <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>T</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">T_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">T</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.1389em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>는 다음 규칙을 사용하여 Node <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Q</mi></mrow><annotation encoding="application/x-tex">Q</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8778em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">Q</span></span></span></span>를 lock할 수 있음.
@@ -609,6 +642,8 @@
 <li>Lock은 root에서 leaf 순서로 획득되는 반면, leaf에서 root 순서로 해제됨을 관찰</li>
 <li>Lock Granularity Escalation: 특정 수준에 lock이 너무 많은 경우, 더 높은 Granularity S 또는 X lock으로 전환</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="insert-delete-operations" tabindex="-1"><a class="header-anchor" href="#insert-delete-operations"><span>Insert/Delete Operations</span></a></h2>
 <ul>
 <li>지금까지 read 및 write 연산에 국한하여 논의</li>
@@ -620,6 +655,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h1 id="timestamp-based-protocols" tabindex="-1"><a class="header-anchor" href="#timestamp-based-protocols"><span>Timestamp-Based Protocols</span></a></h1>
 <ul>
 <li>각 transaction <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>T</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">T_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">T</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.1389em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>는 시스템에 진입할 때 timestamp <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>TS</mtext><mo stretchy="false">(</mo><msub><mi>T</mi><mi>i</mi></msub><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\text{TS}(T_i)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord text"><span class="mord">TS</span></span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">T</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.1389em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span>가 부여됨.</li>
@@ -640,6 +677,8 @@
 </li>
 <li>Timestamp를 기반으로 하는 몇 가지 대안적인 protocol 존재</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="timestamp-ordering-protocol" tabindex="-1"><a class="header-anchor" href="#timestamp-ordering-protocol"><span>Timestamp-Ordering Protocol</span></a></h2>
 <ul>
 <li><strong>Timestamp-Ordering (TSO) Protocol</strong></li>
@@ -675,6 +714,8 @@
 </ol>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="example-of-schedule-under-tso" tabindex="-1"><a class="header-anchor" href="#example-of-schedule-under-tso"><span>Example of Schedule under TSO</span></a></h2>
 <ul>
 <li>이 스케줄이 TSO 하에서 유효한가?
@@ -756,6 +797,8 @@
 <ul>
 <li><span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>T</mi><mn>27</mn></msub></mrow><annotation encoding="application/x-tex">T_{27}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">T</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.1389em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">27</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>의 두 번째 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>write</mtext><mo stretchy="false">(</mo><mi>Q</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\text{write}(Q)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord text"><span class="mord">write</span></span><span class="mopen">(</span><span class="mord mathnormal">Q</span><span class="mclose">)</span></span></span></span> 시도에서 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>TS</mtext><mo stretchy="false">(</mo><msub><mi>T</mi><mn>27</mn></msub><mo stretchy="false">)</mo><mo>=</mo><mn>27</mn><mo>&lt;</mo><mtext>R-TS</mtext><mo stretchy="false">(</mo><mi>Q</mi><mo stretchy="false">)</mo><mo>=</mo><mn>28</mn></mrow><annotation encoding="application/x-tex">\text{TS}(T_{27}) = 27 &lt; \text{R-TS}(Q) = 28</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord text"><span class="mord">TS</span></span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">T</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.1389em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">27</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6835em;vertical-align:-0.0391em;"></span><span class="mord">27</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord text"><span class="mord">R-TS</span></span><span class="mopen">(</span><span class="mord mathnormal">Q</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">28</span></span></span></span>이므로, write 연산은 거부되고 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>T</mi><mn>27</mn></msub></mrow><annotation encoding="application/x-tex">T_{27}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">T</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.1389em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">27</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>은 rollback됨.</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="thomas-write-rule" tabindex="-1"><a class="header-anchor" href="#thomas-write-rule"><span>Thomas’ Write Rule</span></a></h2>
 <ul>
 <li>Timestamp-Ordering Protocol의 수정된 버전으로, obsolete write 연산은 특정 상황에서 무시될 수 있음.</li>
@@ -783,6 +826,8 @@
 <li>Thomas’ write rule은 더 큰 잠재적 동시성을 허용</li>
 <li>Conflict-Serializable하지 않은 일부 View-Serializable 스케줄을 허용</li>
 </ul>
+</section>
+<section class="print-section">
 <h1 id="validation-based-protocols-optimistic-concurrency-control" tabindex="-1"><a class="header-anchor" href="#validation-based-protocols-optimistic-concurrency-control"><span>Validation-based Protocols (Optimistic Concurrency Control)</span></a></h1>
 <ul>
 <li><strong>Concurrency-Control Scheme</strong>
@@ -840,6 +885,8 @@
 </li>
 <li>Validation-based protocol은 충돌 확률이 낮은 경우 locking/TSO보다 더 높은 동시성을 제공하는 것으로 밝혀짐.</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="validation-test" tabindex="-1"><a class="header-anchor" href="#validation-test"><span>Validation Test</span></a></h2>
 <ul>
 <li>Transaction <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>T</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">T_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">T</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.1389em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>에 대한 validation test는 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>TS</mtext><mo stretchy="false">(</mo><msub><mi>T</mi><mi>k</mi></msub><mo stretchy="false">)</mo><mo>&lt;</mo><mtext>TS</mtext><mo stretchy="false">(</mo><msub><mi>T</mi><mi>i</mi></msub><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\text{TS}(T_k) &lt; \text{TS}(T_i)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord text"><span class="mord">TS</span></span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">T</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361em;"><span style="top:-2.55em;margin-left:-0.1389em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.03148em;">k</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord text"><span class="mord">TS</span></span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">T</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.1389em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span>인 모든 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>T</mi><mi>k</mi></msub></mrow><annotation encoding="application/x-tex">T_k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">T</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361em;"><span style="top:-2.55em;margin-left:-0.1389em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.03148em;">k</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>에 대해 다음 조건 중 하나가 hold해야 함을 요구
@@ -872,6 +919,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="schedule-produced-by-validation" tabindex="-1"><a class="header-anchor" href="#schedule-produced-by-validation"><span>Schedule Produced by Validation</span></a></h2>
 <ul>
 <li>Validation을 사용하여 생성된 스케줄의 예</li>
@@ -910,6 +959,7 @@
 <ul>
 <li>위 스케줄은 직렬 스케줄 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>&lt;</mo><msub><mi>T</mi><mn>25</mn></msub><mo separator="true">,</mo><mtext> </mtext><msub><mi>T</mi><mn>26</mn></msub><mo>&gt;</mo></mrow><annotation encoding="application/x-tex">&lt;T_{25},~T_{26}&gt;</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5782em;vertical-align:-0.0391em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8778em;vertical-align:-0.1944em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">T</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.1389em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">25</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace nobreak"> </span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">T</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.1389em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">26</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">&gt;</span></span></span></span> (Validation timestamp order)과 동등</li>
 </ul>
+</section>
 </div></template>
 
 

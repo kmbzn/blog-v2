@@ -1,5 +1,8 @@
-<template><div><h1 id="_14-exception-handling-and-event-handling" tabindex="-1"><a class="header-anchor" href="#_14-exception-handling-and-event-handling"><span>14. Exception Handling and Event Handling</span></a></h1>
+<template><div><section class="print-section">
+<h1 id="_14-exception-handling-and-event-handling" tabindex="-1"><a class="header-anchor" href="#_14-exception-handling-and-event-handling"><span>14. Exception Handling and Event Handling</span></a></h1>
 <DateMeta />
+</section>
+<section class="print-section">
 <h2 id="exception-handling-and-event-handling" tabindex="-1"><a class="header-anchor" href="#exception-handling-and-event-handling"><span>Exception Handling and Event Handling</span></a></h2>
 <ul>
 <li>What do we study in this chapter?</li>
@@ -24,6 +27,8 @@
 <li>Basic concept</li>
 <li>Java and C# examples</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="introduction-to-exception-handling" tabindex="-1"><a class="header-anchor" href="#introduction-to-exception-handling"><span>Introduction to Exception Handling</span></a></h2>
 <ul>
 <li>In a language without exception handling</li>
@@ -31,6 +36,8 @@
 <li>In a language with exception handling</li>
 <li>Programs are allowed to trap some exceptions, thereby providing the possibility of fixing the problem and continuing</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="basic-concepts" tabindex="-1"><a class="header-anchor" href="#basic-concepts"><span>Basic Concepts</span></a></h2>
 <ul>
 <li>Many languages allow programs to trap input/output errors (including EOF)</li>
@@ -38,6 +45,8 @@
 <li>The special processing that may be required after detection of an exception is called exception handling</li>
 <li>The exception handling code unit is called an exception handler</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="exception-handling-alternatives" tabindex="-1"><a class="header-anchor" href="#exception-handling-alternatives"><span>Exception Handling Alternatives</span></a></h2>
 <ul>
 <li>An exception is raised when its associated event occurs</li>
@@ -51,6 +60,8 @@
 <li>[3] Pass an exception handling subprogram to all subprograms</li>
 <li>Send a handler subprogram with every call to every subprogram</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="advantages-of-built-in-exception-handling" tabindex="-1"><a class="header-anchor" href="#advantages-of-built-in-exception-handling"><span>Advantages of Built-in Exception Handling</span></a></h2>
 <ul>
 <li>Error detection code is tedious to write and it clutters the program</li>
@@ -58,6 +69,8 @@
 <li>Exception propagation allows a high level of reuse of exception handling code</li>
 <li>Dealing with nonerroneous but unusual situations can be simplified with exception handling</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="design-issues" tabindex="-1"><a class="header-anchor" href="#design-issues"><span>Design Issues</span></a></h2>
 <ul>
 <li>How and where are exception handlers specified and what is their scope?</li>
@@ -74,7 +87,11 @@
 <li>Are there any predefined exceptions?</li>
 <li>How can exceptions be disabled, if at all?</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="exception-handling-control-flow" tabindex="-1"><a class="header-anchor" href="#exception-handling-control-flow"><span>Exception Handling Control Flow</span></a></h2>
+</section>
+<section class="print-section">
 <h2 id="exception-handling-in-ada" tabindex="-1"><a class="header-anchor" href="#exception-handling-in-ada"><span>Exception Handling in Ada</span></a></h2>
 <ul>
 <li>Handlers can be included in blocks or bodies of subprograms, packages, or tasks</li>
@@ -93,7 +110,9 @@
 <span class="line"><span class="token keyword">end</span><span class="token punctuation">;</span></span>
 <span class="line"></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="binding-exceptions-to-handlers" tabindex="-1"><a class="header-anchor" href="#binding-exceptions-to-handlers"><span>Binding Exceptions to Handlers</span></a></h2>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h2 id="binding-exceptions-to-handlers" tabindex="-1"><a class="header-anchor" href="#binding-exceptions-to-handlers"><span>Binding Exceptions to Handlers</span></a></h2>
 <ul>
 <li>When block or unit that raises an exception includes a handler</li>
 <li>Exception is statically bound to that handler</li>
@@ -106,6 +125,8 @@
 <li>When exception is raised at the outermost level in a task body</li>
 <li>If no, not propagated (too complex) (<code v-pre>Tasking_Error</code> is raised)</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="continuation" tabindex="-1"><a class="header-anchor" href="#continuation"><span>Continuation</span></a></h2>
 <ul>
 <li>If exception is not handled -&gt; terminated</li>
@@ -141,7 +162,9 @@
 <span class="line"><span class="token punctuation">..</span><span class="token punctuation">.</span></span>
 <span class="line"></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="other-design-choices" tabindex="-1"><a class="header-anchor" href="#other-design-choices"><span>Other design choices</span></a></h2>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h2 id="other-design-choices" tabindex="-1"><a class="header-anchor" href="#other-design-choices"><span>Other design choices</span></a></h2>
 <ul>
 <li>Default package, Standard</li>
 <li><code v-pre>Constraint_Error</code></li>
@@ -155,6 +178,8 @@
 <li>Suspending a specified check in associated block</li>
 <li><code v-pre>pragma Suppress(check_name)</code></li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="example" tabindex="-1"><a class="header-anchor" href="#example"><span>Example</span></a></h2>
 <ul>
 <li>[Problem] Program computes and prints a distribution of input grades by using an array of counters</li>
@@ -163,6 +188,8 @@
 <li>Subscript range</li>
 <li>Code to handle invalid input grades is in its own local block → This allows the program to continue after such exceptions are handled</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="evaluation" tabindex="-1"><a class="header-anchor" href="#evaluation"><span>Evaluation</span></a></h2>
 <ul>
 <li>Several problems</li>
@@ -171,6 +198,8 @@
 <li>Inadequacy of exception handling for tasks</li>
 <li>Exception handling was not extended to deal with the new constructs (OOP in Ada 95)</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="exception-handling-in-c" tabindex="-1"><a class="header-anchor" href="#exception-handling-in-c"><span>Exception Handling in C++</span></a></h2>
 <ul>
 <li>Added to C++ in 1990</li>
@@ -178,6 +207,8 @@
 <li>No predefined exceptions in C++ (other than in its standard libraries)</li>
 <li>Exceptions are user or library defined and explicitly raised</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="exception-handlers-form" tabindex="-1"><a class="header-anchor" href="#exception-handlers-form"><span>Exception Handlers Form:</span></a></h2>
 <div class="language-cpp line-numbers-mode" data-highlighter="prismjs" data-ext="cpp"><pre v-pre><code class="language-cpp"><span class="line"><span class="token keyword">try</span> <span class="token punctuation">{</span></span>
 <span class="line"><span class="token comment">//code that is expected to raise an exception</span></span>
@@ -191,7 +222,9 @@
 <span class="line"><span class="token punctuation">}</span></span>
 <span class="line"></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="the-catch-function" tabindex="-1"><a class="header-anchor" href="#the-catch-function"><span>The catch Function</span></a></h2>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h2 id="the-catch-function" tabindex="-1"><a class="header-anchor" href="#the-catch-function"><span>The catch Function</span></a></h2>
 <ul>
 <li><code v-pre>catch</code> is the name of all handlers--it is an overloaded name, so the formal parameter of each must be unique</li>
 <li>The formal parameter need not have a variable</li>
@@ -199,6 +232,8 @@
 <li>The formal parameter can be used to transfer information to the handler</li>
 <li>The formal parameter can be an ellipsis, in which case it handles all exceptions not yet handled</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="throwing-exceptions" tabindex="-1"><a class="header-anchor" href="#throwing-exceptions"><span>Throwing Exceptions</span></a></h2>
 <ul>
 <li>Exceptions are all raised explicitly by the statement:</li>
@@ -209,16 +244,22 @@
 <li>Matching handler is done sequentially</li>
 <li>If any other match precedes, exact matched handler is not used</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="unhandled-exceptions" tabindex="-1"><a class="header-anchor" href="#unhandled-exceptions"><span>Unhandled Exceptions</span></a></h2>
 <ul>
 <li>An unhandled exception is propagated to the caller of the function in which it is raised</li>
 <li>This propagation continues to the main function</li>
 <li>If no handler is found, the default handler is called</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="continuation-1" tabindex="-1"><a class="header-anchor" href="#continuation-1"><span>Continuation</span></a></h2>
 <ul>
 <li>After a handler completes its execution, control flows to the first statement after the last handler in the sequence of handlers of which it is an element</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="other-design-choices-1" tabindex="-1"><a class="header-anchor" href="#other-design-choices-1"><span>Other design choices</span></a></h2>
 <ul>
 <li>All exceptions are user-defined</li>
@@ -228,6 +269,8 @@
 <li>No predefined exception</li>
 <li>But, standard libraries (<code v-pre>out_of_range</code>, <code v-pre>overflow_error</code>) can be used</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="evaluation-1" tabindex="-1"><a class="header-anchor" href="#evaluation-1"><span>Evaluation</span></a></h2>
 <ul>
 <li>There are no predefined exceptions</li>
@@ -235,12 +278,16 @@
 <li>Binding exceptions to handlers through the type of the parameter certainly does not promote readability</li>
 <li>Better to define classes for exceptions with meaningful names in a meaningful hierarchy</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="exception-handling-in-java" tabindex="-1"><a class="header-anchor" href="#exception-handling-in-java"><span>Exception Handling in Java</span></a></h2>
 <ul>
 <li>Based on that of C++, but more in line with OOP philosophy</li>
 <li>There is a collection of predefined exceptions (implicitly raised by JVM)</li>
 <li>All exceptions are objects of classes that are descendants of the <code v-pre>Throwable</code> class</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="classes-of-exceptions" tabindex="-1"><a class="header-anchor" href="#classes-of-exceptions"><span>Classes of Exceptions</span></a></h2>
 <ul>
 <li>The Java library includes two predefined subclasses of <code v-pre>Throwable</code> :</li>
@@ -252,6 +299,8 @@
 <li>Has two predefined subclasses, <code v-pre>IOException</code> and <code v-pre>RuntimeException</code></li>
 <li>(e.g., <code v-pre>ArrayIndexOutOfBoundsException</code> and <code v-pre>NullPointerException</code>)</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="java-exception-handlers" tabindex="-1"><a class="header-anchor" href="#java-exception-handlers"><span>Java Exception Handlers</span></a></h2>
 <ul>
 <li>Like those of C++, except every <code v-pre>catch</code> requires a named parameter and all parameters must be descendants of <code v-pre>Throwable</code></li>
@@ -270,12 +319,16 @@
 <span class="line"><span class="token keyword">throw</span> myExceptionObject<span class="token punctuation">;</span></span>
 <span class="line"></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="binding-exceptions-to-handlers-1" tabindex="-1"><a class="header-anchor" href="#binding-exceptions-to-handlers-1"><span>Binding Exceptions to Handlers</span></a></h2>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h2 id="binding-exceptions-to-handlers-1" tabindex="-1"><a class="header-anchor" href="#binding-exceptions-to-handlers-1"><span>Binding Exceptions to Handlers</span></a></h2>
 <ul>
 <li>Binding an exception to a handler is simpler in Java than it is in C++</li>
 <li>An exception is bound to the first handler with a parameter is the same class as the thrown object or an ancestor of it</li>
 <li>An exception can be handled and rethrown by including a <code v-pre>throw</code> in the handler (a handler could also throw a different exception)</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="continuation-2" tabindex="-1"><a class="header-anchor" href="#continuation-2"><span>Continuation</span></a></h2>
 <ul>
 <li>If no handler is found in the <code v-pre>try</code> construct, the search is continued in the nearest enclosing <code v-pre>try</code> construct, etc.</li>
@@ -290,7 +343,9 @@
 <span class="line"><span class="token punctuation">}</span></span>
 <span class="line"></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="checked-and-unchecked-exceptions" tabindex="-1"><a class="header-anchor" href="#checked-and-unchecked-exceptions"><span>Checked and Unchecked Exceptions</span></a></h2>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h2 id="checked-and-unchecked-exceptions" tabindex="-1"><a class="header-anchor" href="#checked-and-unchecked-exceptions"><span>Checked and Unchecked Exceptions</span></a></h2>
 <ul>
 <li>The Java <code v-pre>throws</code> clause is quite different from the <code v-pre>throw</code> clause of C++</li>
 <li>Exceptions of class <code v-pre>Error</code> and <code v-pre>RuntimeException</code> and all of their descendants are called unchecked exceptions; all other exceptions are called checked exceptions</li>
@@ -300,6 +355,8 @@
 <li>Handled in the method</li>
 <li>Checking this at compile time differs from C++, in which it is done at run time</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="other-design-choices-2" tabindex="-1"><a class="header-anchor" href="#other-design-choices-2"><span>Other Design Choices</span></a></h2>
 <ul>
 <li>A method cannot declare more exceptions in its <code v-pre>throws</code> clause than the method it overrides</li>
@@ -320,6 +377,8 @@
 <li>[2] Catch the exception and throw an exception that is listed in its own <code v-pre>throws</code> clause</li>
 <li>[3] Declare it in its <code v-pre>throws</code> clause and do not handle it</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="the-finally-clause" tabindex="-1"><a class="header-anchor" href="#the-finally-clause"><span>The finally Clause</span></a></h2>
 <ul>
 <li>Can appear at the end of a <code v-pre>try</code> construct</li>
@@ -356,7 +415,9 @@
 <span class="line"><span class="token punctuation">}</span> <span class="token comment">//** end of try construct</span></span>
 <span class="line"></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="assertions" tabindex="-1"><a class="header-anchor" href="#assertions"><span>Assertions</span></a></h2>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h2 id="assertions" tabindex="-1"><a class="header-anchor" href="#assertions"><span>Assertions</span></a></h2>
 <ul>
 <li>Statements in the program declaring a boolean expression regarding the current state of the computation</li>
 <li>Used for defensive programming</li>
@@ -368,6 +429,8 @@
 <li><code v-pre>assert condition: expression;</code></li>
 <li>Expression is passed to the <code v-pre>AssertionError</code> constructor as a string and becomes debugging output</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="evaluation-2" tabindex="-1"><a class="header-anchor" href="#evaluation-2"><span>Evaluation</span></a></h2>
 <ul>
 <li>The types of exceptions makes more sense than in the case of C++</li>
@@ -378,6 +441,8 @@
 <li>The Java interpreter throws a variety of exceptions that can be handled by user programs</li>
 <li>Implicitly throws predefined exceptions</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="exception-handling-in-python" tabindex="-1"><a class="header-anchor" href="#exception-handling-in-python"><span>Exception Handling in Python</span></a></h2>
 <ul>
 <li>Exceptions are objects; the base class is <code v-pre>BaseException</code></li>
@@ -406,6 +471,8 @@
 <li>The <code v-pre>assert</code> statement tests its Boolean expression (first parameter) and sends its second parameter to the constructor for the exception object to be raised</li>
 <li><code v-pre>assert test, data</code></li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="exception-handling-in-ruby" tabindex="-1"><a class="header-anchor" href="#exception-handling-in-ruby"><span>Exception Handling in Ruby</span></a></h2>
 <ul>
 <li>Exceptions are objects</li>
@@ -427,6 +494,8 @@
 <li>The block could include <code v-pre>else</code> and/or <code v-pre>ensure</code> clauses, which are like <code v-pre>else</code> and <code v-pre>finally</code> in Java</li>
 <li>Unlike the other languages we have discussed, in Ruby the code that raised an exception can be rerun by placing a <code v-pre>retry</code> statement at the end of the handler</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="introduction-to-event-handling" tabindex="-1"><a class="header-anchor" href="#introduction-to-event-handling"><span>Introduction to Event Handling</span></a></h2>
 <ul>
 <li>Similar to exception handling</li>
@@ -436,6 +505,8 @@
 <li>Event-driven programming was being used before GUIs</li>
 <li>There are other uses such as Web server</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="java-swing-gui-components" tabindex="-1"><a class="header-anchor" href="#java-swing-gui-components"><span>Java Swing GUI Components</span></a></h2>
 <ul>
 <li><code v-pre>javax.swing</code></li>
@@ -453,6 +524,8 @@
 <li><code v-pre>myPanel.add(button1);</code></li>
 <li>Layout manager objects are used to control the placement of components</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="the-java-event-model" tabindex="-1"><a class="header-anchor" href="#the-java-event-model"><span>The Java Event Model</span></a></h2>
 <ul>
 <li>User interactions with GUI components create events</li>
@@ -471,6 +544,8 @@
 <li>Each event handler can receives parameters</li>
 <li>[EX] <code v-pre>isSelected</code></li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="the-java-ex" tabindex="-1"><a class="header-anchor" href="#the-java-ex"><span>The Java EX</span></a></h2>
 <div class="language-java line-numbers-mode" data-highlighter="prismjs" data-ext="java"><pre v-pre><code class="language-java"><span class="line"><span class="token keyword">package</span> <span class="token namespace">radiob</span><span class="token punctuation">;</span></span>
 <span class="line"><span class="token keyword">import</span> <span class="token import"><span class="token namespace">java<span class="token punctuation">.</span>awt<span class="token punctuation">.</span></span><span class="token operator">*</span></span><span class="token punctuation">;</span></span>
@@ -536,7 +611,9 @@
 <span class="line"><span class="token punctuation">}</span> <span class="token comment">// End of RadioB</span></span>
 <span class="line"></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="event-handling-in-c" tabindex="-1"><a class="header-anchor" href="#event-handling-in-c"><span>Event Handling in C#</span></a></h2>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h2 id="event-handling-in-c" tabindex="-1"><a class="header-anchor" href="#event-handling-in-c"><span>Event Handling in C#</span></a></h2>
 <ul>
 <li>Similar to Java</li>
 <li>.NET has two approaches: Windows Forms, Windows Presentation Foundation</li>
@@ -569,6 +646,8 @@
 <li>When a radio button changes from unchecked to checked, <code v-pre>CheckedChanged</code> event is raised</li>
 <li>The associated delegate is referenced by the name of the event</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="the-c-ex" tabindex="-1"><a class="header-anchor" href="#the-c-ex"><span>The C# EX</span></a></h2>
 <div class="language-csharp line-numbers-mode" data-highlighter="prismjs" data-ext="cs"><pre v-pre><code class="language-csharp"><span class="line"><span class="token keyword">namespace</span> <span class="token namespace">RadioB</span> <span class="token punctuation">{</span></span>
 <span class="line"><span class="token keyword">using</span> <span class="token namespace">System</span><span class="token punctuation">;</span></span>
@@ -616,7 +695,9 @@
 <span class="line">…</span>
 <span class="line"></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="event-handling-in-python" tabindex="-1"><a class="header-anchor" href="#event-handling-in-python"><span>Event Handling in Python</span></a></h2>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h2 id="event-handling-in-python" tabindex="-1"><a class="header-anchor" href="#event-handling-in-python"><span>Event Handling in Python</span></a></h2>
 <ul>
 <li><code v-pre>tkinter</code> is a module required when developing a graphical user interface (GUI) in Python.</li>
 </ul>
@@ -716,6 +797,8 @@
 <li><code v-pre>&lt;Shift-Up&gt;</code></li>
 <li><code v-pre>&lt;Configure&gt;</code></li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="summary" tabindex="-1"><a class="header-anchor" href="#summary"><span>Summary</span></a></h2>
 <ul>
 <li>Ada provides extensive exception-handling facilities with a comprehensive set of built-in exceptions</li>
@@ -726,6 +809,7 @@
 <li>Java event handling is defined on the Swing components</li>
 <li>C# event handling is the .NET model, which is similar to the Java model</li>
 </ul>
+</section>
 </div></template>
 
 

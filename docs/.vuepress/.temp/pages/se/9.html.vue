@@ -1,11 +1,16 @@
-<template><div><h1 id="_9-uml" tabindex="-1"><a class="header-anchor" href="#_9-uml"><span>9. UML</span></a></h1>
+<template><div><section class="print-section">
+<h1 id="_9-uml" tabindex="-1"><a class="header-anchor" href="#_9-uml"><span>9. UML</span></a></h1>
 <DateMeta />
+</section>
+<section class="print-section">
 <h2 id="학습-목표" tabindex="-1"><a class="header-anchor" href="#학습-목표"><span>학습 목표</span></a></h2>
 <ul>
 <li>UML (Unified Modeling Language)이 무엇인지, 왜 필요한지 이해</li>
 <li>기본 UML 표기법을 사용하여 설계를 전달</li>
 <li>다양한 유형의 UML diagram의 표기법과 목적 이해</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="what-could-the-arrow-mean-revisited" tabindex="-1"><a class="header-anchor" href="#what-could-the-arrow-mean-revisited"><span>What Could the Arrow Mean? (Revisited)</span></a></h2>
 <div class="language-diagram line-numbers-mode" data-highlighter="prismjs" data-ext="diagram"><pre v-pre><code class="language-diagram"><span class="line">┌───┐   ┌───┐</span>
 <span class="line">│ A ├──►│ B │</span>
@@ -25,6 +30,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="what-is-uml" tabindex="-1"><a class="header-anchor" href="#what-is-uml"><span>What is UML?</span></a></h2>
 <ul>
 <li>Unified Modeling Language (통합 모델링 언어)</li>
@@ -35,21 +42,29 @@
 <li>Model(모델) / view(뷰) 패러다임</li>
 <li>Target language(대상 언어) 독립적</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="model-view-paradigm" tabindex="-1"><a class="header-anchor" href="#model-view-paradigm"><span>Model/View Paradigm</span></a></h2>
 <ul>
 <li>각 diagram은 system(시스템) 일부에 대한 view에 불과</li>
 <li>모든 diagram이 함께 모여 완전한 그림을 제공</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="underlying-system-model" tabindex="-1"><a class="header-anchor" href="#underlying-system-model"><span>Underlying System Model</span></a></h2>
 <ul>
 <li>UML diagram 유형의 Classification(분류)</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="favorite-uml-diagram-types" tabindex="-1"><a class="header-anchor" href="#favorite-uml-diagram-types"><span>Favorite UML diagram types</span></a></h2>
 <ul>
 <li>Widely used(널리 사용됨): 출처의 60% 이상</li>
 <li>Scarcely used(거의 사용되지 않음): 출처의 40% 이하</li>
 <li>(참고: Riggo et al., What are the used UML diagrams? A Preliminary Survey, EESSMod, 2013)</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="uml" tabindex="-1"><a class="header-anchor" href="#uml"><span>UML</span></a></h2>
 <ul>
 <li>UML을 적용(사용)하는 3가지 방법</li>
@@ -74,6 +89,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="what-the-uml-is-not" tabindex="-1"><a class="header-anchor" href="#what-the-uml-is-not"><span>What the UML is Not?</span></a></h2>
 <ul>
 <li>UML은 Object-Oriented 분석 및 design process(프로세스)가 아님.
@@ -88,11 +105,17 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h1 id="use-case-diagrams" tabindex="-1"><a class="header-anchor" href="#use-case-diagrams"><span>Use Case Diagrams</span></a></h1>
+</section>
+<section class="print-section">
 <h2 id="what-is-a-use-case" tabindex="-1"><a class="header-anchor" href="#what-is-a-use-case"><span>What is a Use Case?</span></a></h2>
 <ul>
 <li>Use Case(유스케이스): 사람 사용자, 다른 system, 하드웨어 구성요소 또는 내부 시계에 의해 system으로 전송된 event(이벤트)에 의해 촉발되는 behavior 또는 일관된 behavior 집합</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="use-case-diagrams-1" tabindex="-1"><a class="header-anchor" href="#use-case-diagrams-1"><span>Use Case Diagrams</span></a></h2>
 <ul>
 <li>System이 high-level(높은 수준)에서 무엇(WHAT)을 할 것인지 기술</li>
@@ -106,17 +129,23 @@
 <li>Dependency(의존)</li>
 <li>Actor(행위자)</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="actor" tabindex="-1"><a class="header-anchor" href="#actor"><span>Actor</span></a></h2>
 <ul>
 <li>System과 상호작용해야 하는 누군가 또는 무언가</li>
 <li>사용자, 외부 system, 장치</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="an-actor-is-a-role" tabindex="-1"><a class="header-anchor" href="#an-actor-is-a-role"><span>An Actor is a Role</span></a></h2>
 <ul>
 <li>Actor는 사용자가 system과 상호작용할 때 수행하는 단일 role(역할)을 정의</li>
 <li>여러 사용자가 단일 role 수행 가능</li>
 <li>단일 사용자가 여러 role 수행 가능</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="identifying-actors" tabindex="-1"><a class="header-anchor" href="#identifying-actors"><span>Identifying Actors</span></a></h2>
 <ul>
 <li>유용한 질문들
@@ -130,6 +159,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="use-case" tabindex="-1"><a class="header-anchor" href="#use-case"><span>Use Case</span></a></h2>
 <ul>
 <li>Actor와 Subject 간의 transaction(트랜잭션)으로 표현되는 기능 단위</li>
@@ -143,6 +174,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="an-example-of-use-case-text" tabindex="-1"><a class="header-anchor" href="#an-example-of-use-case-text"><span>An Example of Use Case Text</span></a></h2>
 <ul>
 <li>Buy a Product (제품 구매)</li>
@@ -174,29 +207,39 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="subject-symbol" tabindex="-1"><a class="header-anchor" href="#subject-symbol"><span>Subject Symbol</span></a></h2>
 <ul>
 <li>System Boundary 표시</li>
 <li>Use Case에 의해 정의된 behavior를 realize(실현)하는 Classifier(분류자)</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="association" tabindex="-1"><a class="header-anchor" href="#association"><span>Association</span></a></h2>
 <ul>
 <li>Actor와 system 간의 bi-directional 통신 표현</li>
 <li>Actor와 Use Case 사이에 그려짐</li>
 <li>화살표 없이, 선으로 표현</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="dependency–include" tabindex="-1"><a class="header-anchor" href="#dependency–include"><span>Dependency–Include</span></a></h2>
 <ul>
 <li>Base Use Case에서 inclusion Use Case로의 관계 표현</li>
 <li>Use Case가 다른 Use Case를 call(호출)함을 암시</li>
 <li>주로 여러 Use Case에 공통적인 behavior를 reuse하기 위해 사용됨.</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="dependency–extend" tabindex="-1"><a class="header-anchor" href="#dependency–extend"><span>Dependency–Extend</span></a></h2>
 <ul>
 <li>일부 추가적인 behavior가 더해져야 할 때 사용</li>
 <li>Optional(선택적) 또는 conditional(조건부) behavior를 모델링</li>
 <li>Infrequent events(드문 이벤트) 표시</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="tips-for-use-case-modeling" tabindex="-1"><a class="header-anchor" href="#tips-for-use-case-modeling"><span>Tips for Use Case Modeling</span></a></h2>
 <ul>
 <li>각 Use Case가 domain experts(도메인 전문가)와 프로그래머 모두 이해할 수 있는 system 사용의 중요한 chunk(부분)을 설명하도록 보장</li>
@@ -215,7 +258,11 @@
 </li>
 <li>많은 수의 Use Case는 packages(패키지)로 구성해야 함</li>
 </ul>
+</section>
+<section class="print-section">
 <h1 id="class-diagrams" tabindex="-1"><a class="header-anchor" href="#class-diagrams"><span>Class Diagrams</span></a></h1>
+</section>
+<section class="print-section">
 <h2 id="class-diagrams-1" tabindex="-1"><a class="header-anchor" href="#class-diagrams-1"><span>Class Diagrams</span></a></h2>
 <ul>
 <li>Description of static structure
@@ -237,6 +284,8 @@
 <li>System 내 object의 type(유형)과 그들 간의 relationship(관계) 표시</li>
 </ul>
 <p><img src="@source/se/image.png" alt="alt text"></p>
+</section>
+<section class="print-section">
 <h2 id="classes" tabindex="-1"><a class="header-anchor" href="#classes"><span>Classes</span></a></h2>
 <ul>
 <li>사각형 세 개를 쌓아놓은 형태로 표현</li>
@@ -246,6 +295,8 @@
 <li>problem/solution 도메인에 존재함</li>
 </ul>
 <p><img src="@source/se/image-1.png" alt="alt text"></p>
+</section>
+<section class="print-section">
 <h2 id="attributes-and-operations" tabindex="-1"><a class="header-anchor" href="#attributes-and-operations"><span>Attributes and Operations</span></a></h2>
 <ul>
 <li>Attributes(속성)
@@ -261,6 +312,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="association-and-multiplicity" tabindex="-1"><a class="header-anchor" href="#association-and-multiplicity"><span>Association and Multiplicity</span></a></h2>
 <ul>
 <li>Association
@@ -276,6 +329,8 @@
 </li>
 <li>예: &quot;팀(Team)은 0명 이상의 농구 선수(Basketball Player)를 고용(employ)한다.&quot;</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="aggregations-and-compositions" tabindex="-1"><a class="header-anchor" href="#aggregations-and-compositions"><span>Aggregations and Compositions</span></a></h2>
 <ul>
 <li>Aggregation(집합)
@@ -292,12 +347,16 @@
 </li>
 </ul>
 <p><img src="@source/se/image-2.png" alt="alt text"></p>
+</section>
+<section class="print-section">
 <h2 id="inheritance-상속" tabindex="-1"><a class="header-anchor" href="#inheritance-상속"><span>Inheritance 상속</span></a></h2>
 <ul>
 <li>Superclass와 subclasses 간의 relationship</li>
 <li>Superclass의 모든 Attributes와 Operations는 subclasses의 일부가 됨.</li>
 </ul>
 <p><img src="@source/se/image-3.png" alt="alt text"></p>
+</section>
+<section class="print-section">
 <h2 id="tips-for-class-modeling" tabindex="-1"><a class="header-anchor" href="#tips-for-class-modeling"><span>Tips for Class Modeling</span></a></h2>
 <ul>
 <li>Class(클래스) 찾기
@@ -316,7 +375,11 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h1 id="sequence-diagrams" tabindex="-1"><a class="header-anchor" href="#sequence-diagrams"><span>Sequence Diagrams</span></a></h1>
+</section>
+<section class="print-section">
 <h2 id="sequence-diagrams-1" tabindex="-1"><a class="header-anchor" href="#sequence-diagrams-1"><span>Sequence Diagrams</span></a></h2>
 <ul>
 <li>System 내 instance 간의 message(&quot;interaction&quot;) sequence 표시</li>
@@ -329,6 +392,8 @@
 <li>Sequence DiagramName(시퀀스 다이어그램 이름)</li>
 </ul>
 <p><img src="@source/se/image-4.png" alt="alt text"></p>
+</section>
+<section class="print-section">
 <h2 id="lifelines" tabindex="-1"><a class="header-anchor" href="#lifelines"><span>Lifelines</span></a></h2>
 <ul>
 <li>일정 기간 동안 interaction에 참여하는 개별 participant(참여자)</li>
@@ -336,6 +401,8 @@
 <li>Actor</li>
 <li>표기: <code v-pre>Instance name (object) : Type name (class)</code></li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="messages" tabindex="-1"><a class="header-anchor" href="#messages"><span>Messages</span></a></h2>
 <ul>
 <li>두 object 간의 One-way communication</li>
@@ -343,6 +410,8 @@
 <li>(Asynchronous message(비동기 메시지), Synchronous message(동기 메시지))</li>
 </ul>
 <p><img src="@source/se/image-5.png" alt="alt text"></p>
+</section>
+<section class="print-section">
 <h2 id="combined-fragment-frame" tabindex="-1"><a class="header-anchor" href="#combined-fragment-frame"><span>Combined Fragment Frame</span></a></h2>
 <ul>
 <li>Interaction fragments(프래그먼트)의 표현식 정의</li>
@@ -352,12 +421,16 @@
 <li>Loop: <strong>반복</strong>되는 behavior sequence 명시. 예: <code v-pre>loop [1,5]</code>, <code v-pre>loop [6]</code>
 <img src="@source/se/image-6.png" alt="alt text"></li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="referencing" tabindex="-1"><a class="header-anchor" href="#referencing"><span>Referencing</span></a></h2>
 <ul>
 <li>이미 존재하는 sequence diagram 재사용</li>
 <li>불필요한 duplication(중복) 방지</li>
 </ul>
 <p><img src="@source/se/image-7.png" alt="alt text"></p>
+</section>
+<section class="print-section">
 <h2 id="tips-for-sequence-diagram" tabindex="-1"><a class="header-anchor" href="#tips-for-sequence-diagram"><span>Tips for Sequence Diagram</span></a></h2>
 <ul>
 <li>Interaction의 context(컨텍스트) 설정
@@ -369,19 +442,29 @@
 <li>Active(활성) instance는 왼쪽/위에, passive(수동) instance는 오른쪽/아래에 배치</li>
 <li>여러 object의 behavior를 보고 싶다면 각 Use Case에 대한 sequence diagram 작성</li>
 </ul>
+</section>
+<section class="print-section">
 <h1 id="activity-and-swimlane-diagrams" tabindex="-1"><a class="header-anchor" href="#activity-and-swimlane-diagrams"><span>Activity and Swimlane Diagrams</span></a></h1>
+</section>
+<section class="print-section">
 <h2 id="activity-diagram" tabindex="-1"><a class="header-anchor" href="#activity-diagram"><span>Activity Diagram</span></a></h2>
 <ul>
 <li>특정 scenario(시나리오) 내 interaction의 flow를 graphical representation(그래픽 표현)으로 제공하여 Use Case 보충</li>
 <li>Activity diagram(활동 다이어그램)은 flow-chart(순서도)와 유사
 <img src="@source/se/image-8.png" alt="alt text"> <img src="@source/se/image-10.png" alt="alt text"></li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="swimlane-diagrams" tabindex="-1"><a class="header-anchor" href="#swimlane-diagrams"><span>Swimlane Diagrams</span></a></h2>
 <ul>
 <li>modeler(모델러)가 어떤 Actor가 action에 대한 responsibility(책임)이 있는지 표시하도록 허용
 <img src="@source/se/image-9.png" alt="alt text"></li>
 </ul>
+</section>
+<section class="print-section">
 <h1 id="state-machine-diagrams-10-30-목" tabindex="-1"><a class="header-anchor" href="#state-machine-diagrams-10-30-목"><span>State Machine Diagrams [10.30.(목)]</span></a></h1>
+</section>
+<section class="print-section">
 <h2 id="state-machine-diagrams" tabindex="-1"><a class="header-anchor" href="#state-machine-diagrams"><span>State Machine Diagrams</span></a></h2>
 <ul>
 <li>각 Class의 object lifecycle을 모델링하여 시간에 따른 object의 동적인 동작 기술</li>
@@ -393,6 +476,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="states-상태" tabindex="-1"><a class="header-anchor" href="#states-상태"><span>States 상태</span></a></h2>
 <div class="language-diagram line-numbers-mode" data-highlighter="prismjs" data-ext="diagram"><pre v-pre><code class="language-diagram"><span class="line">                     ┌───────────────── State ────────────────┐             </span>
 <span class="line">                     │                    │                   │             </span>
@@ -412,6 +497,8 @@
 <li>State: object의 수명 동안의 condition(조건) 또는 situation(상황)</li>
 <li>어떤 condition을 만족하거나, 어떤 activity를 수행하거나, 어떤 event를 기다림</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="event-and-action" tabindex="-1"><a class="header-anchor" href="#event-and-action"><span>Event and Action</span></a></h2>
 <div class="language-diagram line-numbers-mode" data-highlighter="prismjs" data-ext="diagram"><pre v-pre><code class="language-diagram"><span class="line">                                                    Event                  </span>
 <span class="line">                                                     │                     </span>
@@ -432,6 +519,8 @@
 <li>Action: Signal 또는 operation call의 Output
 <img src="@source/se/image-13.png" alt="alt text"></li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="transition" tabindex="-1"><a class="header-anchor" href="#transition"><span>Transition</span></a></h2>
 <ul>
 <li>Event에 의해 촉발되어 한 state에서 다른 state로의 변경</li>
@@ -439,6 +528,8 @@
 <li>Syntax: <code v-pre>event(arguments)[condition]/action</code>
 <img src="@source/se/image-12.png" alt="alt text"></li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="internal-activities" tabindex="-1"><a class="header-anchor" href="#internal-activities"><span>Internal Activities</span></a></h2>
 <ul>
 <li>State는 transition 없이 event에 반응 가능</li>
@@ -463,6 +554,8 @@
 </tr>
 </tbody>
 </table>
+</section>
+<section class="print-section">
 <h2 id="activity-states" tabindex="-1"><a class="header-anchor" href="#activity-states"><span>Activity States</span></a></h2>
 <ul>
 <li>Regular activities
@@ -481,6 +574,8 @@
 <li>Activity state(활동 상태)는 on-going work(진행 중인 작업)을 수행 중</li>
 </ul>
 <p><img src="@source/se/image-15.png" alt="alt text"></p>
+</section>
+<section class="print-section">
 <h2 id="superstates" tabindex="-1"><a class="header-anchor" href="#superstates"><span>Superstates</span></a></h2>
 <ul>
 <li>여러 State가 공통의 transition 및 Internal activity를 공유</li>
@@ -488,7 +583,11 @@
 <li>Behavior가 modular(모듈식)/hierarchical(계층적) 방식으로 표현될 수 있음.</li>
 </ul>
 <p><img src="@source/se/image-14.png" alt="alt text"></p>
+</section>
+<section class="print-section">
 <h1 id="deployment-diagrams" tabindex="-1"><a class="header-anchor" href="#deployment-diagrams"><span>Deployment Diagrams</span></a></h1>
+</section>
+<section class="print-section">
 <h2 id="deployment-diagrams-1" tabindex="-1"><a class="header-anchor" href="#deployment-diagrams-1"><span>Deployment Diagrams</span></a></h2>
 <ul>
 <li>Architecture 내 device, execution environment(실행 환경), artifact의 runtime architecture 표시</li>
@@ -515,6 +614,7 @@
 </ul>
 </li>
 </ul>
+</section>
 </div></template>
 
 

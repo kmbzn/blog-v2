@@ -1,6 +1,9 @@
-<template><div><h1 id="cx31993-dac-동글" tabindex="-1"><a class="header-anchor" href="#cx31993-dac-동글"><span>CX31993 DAC 동글</span></a></h1>
+<template><div><section class="print-section">
+<h1 id="cx31993-dac-동글" tabindex="-1"><a class="header-anchor" href="#cx31993-dac-동글"><span>CX31993 DAC 동글</span></a></h1>
 <DateMeta />
 <p>CX31993은 Cirrus Logic 계열의 고성능 DAC 칩셋으로, 소형 USB-C 동글(dongle) 형태의 DAC/AMP 제품에 널리 탑재되어 있다. 소위 &quot;꽂는 DAC&quot;라 불리는 이 카테고리에서 중저가대 최고 성능군을 형성하며, 측정치 기반 오디오 커뮤니티(ASR, Head-Fi 등)에서 가성비 최우수 제품으로 반복적으로 언급된다.</p>
+</section>
+<section class="print-section">
 <h2 id="칩셋-개요" tabindex="-1"><a class="header-anchor" href="#칩셋-개요"><span>칩셋 개요</span></a></h2>
 <table>
 <thead>
@@ -41,7 +44,11 @@
 </tbody>
 </table>
 <p>CX31993 칩은 CS43198 플래그십 칩에서 파생된 더 작고 집적도 높은 버전으로, 한 칩에 DAC+AMP 기능이 통합되어 있다. 동일 칩을 사용한 제품 간에도 아날로그 출력단 설계에 따라 실측치 차이가 발생한다.</p>
+</section>
+<section class="print-section">
 <h2 id="주요-탑재-제품" tabindex="-1"><a class="header-anchor" href="#주요-탑재-제품"><span>주요 탑재 제품</span></a></h2>
+</section>
+<section class="print-section">
 <h3 id="jcally-jm20" tabindex="-1"><a class="header-anchor" href="#jcally-jm20"><span>JCALLY JM20</span></a></h3>
 <p>가장 대표적인 CX31993 동글. AliExpress에서 $10~15 수준에 구입 가능하며, 이 가격대에서 측정치가 매우 우수해 커뮤니티 추천 1순위로 자주 등장한다.</p>
 <ul>
@@ -50,12 +57,20 @@
 <li>크기: 매우 작음 (손가락 한 마디)</li>
 <li>무게: 약 5g</li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="kz-az10-동글형" tabindex="-1"><a class="header-anchor" href="#kz-az10-동글형"><span>KZ AZ10 (동글형)</span></a></h3>
 <p>KZ 브랜드에서 출시한 CX31993 탑재 동글. KZ 자체 이어폰과 번들로 쓰기 좋으며, 기본 선 품질이 양호하다.</p>
+</section>
+<section class="print-section">
 <h3 id="hidizs-s9-pro-s9" tabindex="-1"><a class="header-anchor" href="#hidizs-s9-pro-s9"><span>HIDIZS S9 PRO / S9</span></a></h3>
 <p>Hidizs의 포터블 DAC 동글 라인. CS43131(CX31993 상위 호환) 탑재 모델도 있으며, 디스플레이나 볼륨 노브가 없는 심플한 구성이지만 출력이 더 강하다.</p>
+</section>
+<section class="print-section">
 <h3 id="truthear-shio" tabindex="-1"><a class="header-anchor" href="#truthear-shio"><span>Truthear SHIO</span></a></h3>
 <p>Truthear(이어폰 브랜드)에서 출시한 CX31993 동글. 알루미늄 하우징으로 마감이 좋고, 저임피던스·고임피던스 헤드폰 모두 무난하게 구동한다.</p>
+</section>
+<section class="print-section">
 <h2 id="측정치-성능" tabindex="-1"><a class="header-anchor" href="#측정치-성능"><span>측정치 성능</span></a></h2>
 <p>ASR(Audio Science Review)에서 측정한 JCALLY JM20 기준:</p>
 <table>
@@ -85,20 +100,30 @@
 </tbody>
 </table>
 <p>SINAD 115dB는 인간의 청력 한계(120dB SNR)에 근접한 수준으로, 음질 차이를 측정치로 판별할 수 있는 임계점을 훨씬 초과한다. 즉, 이 칩셋이 달린 제품은 음질적으로 <strong>충분히 투명</strong>(transparent)하다.</p>
+</section>
+<section class="print-section">
 <h2 id="스마트폰-연결-방법" tabindex="-1"><a class="header-anchor" href="#스마트폰-연결-방법"><span>스마트폰 연결 방법</span></a></h2>
+</section>
+<section class="print-section">
 <h3 id="android-usb-c-포트" tabindex="-1"><a class="header-anchor" href="#android-usb-c-포트"><span>Android (USB-C 포트)</span></a></h3>
 <p>USB-C ↔ 3.5mm 동글을 직결하면 USB Audio Class 2.0(UAC2)으로 자동 인식된다. 별도 드라이버 불필요.</p>
 <ul>
 <li>음량 조절: 폰 볼륨 키 사용 가능 (기기에 따라 다름)</li>
 <li>고해상도 오디오: Android 8.0 이상에서 USB 오디오 고해상도 지원</li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="iphone-lightning-usb-c" tabindex="-1"><a class="header-anchor" href="#iphone-lightning-usb-c"><span>iPhone (Lightning / USB-C)</span></a></h3>
 <ul>
 <li>Lightning 포트 iPhone: Apple Camera Connection Kit (USB-A → Lightning) + USB-C 젠더 필요</li>
 <li>USB-C iPhone (iPhone 15+): 직결 가능</li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="pc-mac" tabindex="-1"><a class="header-anchor" href="#pc-mac"><span>PC / Mac</span></a></h3>
 <p>USB-C 또는 USB-A 젠더 경유 연결. OS 내장 USB 오디오 드라이버로 자동 인식. Windows에서는 WASAPI Exclusive 모드로 커널 믹서 우회 시 최상의 품질.</p>
+</section>
+<section class="print-section">
 <h2 id="어떤-헤드폰·이어폰과-어울리나" tabindex="-1"><a class="header-anchor" href="#어떤-헤드폰·이어폰과-어울리나"><span>어떤 헤드폰·이어폰과 어울리나</span></a></h2>
 <p>CX31993 동글은 대부분 80~130mW @32Ω 수준의 출력을 가진다.</p>
 <table>
@@ -128,6 +153,8 @@
 </tbody>
 </table>
 <p>Sennheiser HD650 (300Ω), AKG K702 같은 고임피던스 헤드폰을 최대 볼륨으로 쓰고 싶다면 별도 데스크탑 앰프가 필요하다.</p>
+</section>
+<section class="print-section">
 <h2 id="비교-스마트폰-내장-dac-vs-cx31993-동글" tabindex="-1"><a class="header-anchor" href="#비교-스마트폰-내장-dac-vs-cx31993-동글"><span>비교: 스마트폰 내장 DAC vs CX31993 동글</span></a></h2>
 <table>
 <thead>
@@ -166,6 +193,8 @@
 </tbody>
 </table>
 <p>고급 IEM이나 헤드폰을 쓰면서 내장 DAC의 한계(배경 히스, 임피던스 불일치로 인한 주파수 응답 변화)를 느끼고 있다면 CX31993 동글로 충분히 해결된다.</p>
+</section>
+<section class="print-section">
 <h2 id="구매-추천" tabindex="-1"><a class="header-anchor" href="#구매-추천"><span>구매 추천</span></a></h2>
 <table>
 <thead>
@@ -197,6 +226,7 @@
 <p class="hint-container-title">구매 전 체크</p>
 <p>USB-C ↔ 3.5mm 동글은 USB 케이블이 아닌 신호 경로가 통합된 &quot;능동 소자&quot;가 있는 제품이다. 단순 어댑터(수동형)와 다르므로 &quot;CX31993&quot; 등 칩셋 표기가 있는 능동형 제품인지 확인하고 구매할 것.</p>
 </div>
+</section>
 </div></template>
 
 

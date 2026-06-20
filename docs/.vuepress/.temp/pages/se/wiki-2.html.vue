@@ -1,10 +1,13 @@
-<template><div><h1 id="" tabindex="-1"><a class="header-anchor" href="#"><span><span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>Homework #1-2</mtext></mrow><annotation encoding="application/x-tex">\text{Homework \#1-2}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord text"><span class="mord">Homework #1-2</span></span></span></span></span></span></a></h1>
+<template><div><section class="print-section">
+<h1 id="" tabindex="-1"><a class="header-anchor" href="#"><span><span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>Homework #1-2</mtext></mrow><annotation encoding="application/x-tex">\text{Homework \#1-2}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord text"><span class="mord">Homework #1-2</span></span></span></span></span></span></a></h1>
 <DateMeta />
 <ul>
 <li>Software Engineering (10780)</li>
 <li>학번: 2021024057</li>
 <li>이름: 김병준</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="_1-과제-분석-및-사용-design-pattern" tabindex="-1"><a class="header-anchor" href="#_1-과제-분석-및-사용-design-pattern"><span>1. 과제 분석 및 사용 Design Pattern</span></a></h2>
 <p><strong>Homework #1-2</strong>의 주요한 목표는 소프트웨어의 유연성, 확장성, 유지보수성을 높이는 세 가지 design pattern을 적용하는 것입니다.</p>
 <table>
@@ -37,7 +40,11 @@
 </tr>
 </tbody>
 </table>
+</section>
+<section class="print-section">
 <h2 id="_2-design-pattern-implementation-and-argument" tabindex="-1"><a class="header-anchor" href="#_2-design-pattern-implementation-and-argument"><span>2. Design Pattern Implementation and Argument</span></a></h2>
+</section>
+<section class="print-section">
 <h3 id="_2-1-p1-decorator-pattern-기반-encryptwriter-및-decryptreader-구현" tabindex="-1"><a class="header-anchor" href="#_2-1-p1-decorator-pattern-기반-encryptwriter-및-decryptreader-구현"><span>2.1. <strong>P1</strong>: Decorator Pattern 기반 <code v-pre>EncryptWriter</code> 및 <code v-pre>DecryptReader</code> 구현</span></a></h3>
 <blockquote>
 <p><strong>Decorator UML class diagram</strong>[1]<br>
@@ -55,6 +62,8 @@
 </li>
 <li>이 구현은 OCP (Open-Closed Principle)를 만족시키게 됩니다. 기존의 <code v-pre>java.io</code> 스트림 class는 수정에 대해 closed되면서도, Decorator라는 새로운 wrapping class를 통해 암호화라는 새로운 기능을 확장에 대해 open되었습니다.</li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="_2-2-p2-strategy-pattern을-활용한-알고리즘-확장" tabindex="-1"><a class="header-anchor" href="#_2-2-p2-strategy-pattern을-활용한-알고리즘-확장"><span>2.2. <strong>P2</strong>: Strategy Pattern을 활용한 알고리즘 확장</span></a></h3>
 <blockquote>
 <p><strong>Strategy Pattern UML diagram</strong>[2]<br>
@@ -79,6 +88,8 @@
 </ol>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="_2-3-p3-visitor-pattern-기반-findvisitor-구현" tabindex="-1"><a class="header-anchor" href="#_2-3-p3-visitor-pattern-기반-findvisitor-구현"><span>2.3. <strong>P3</strong>: Visitor Pattern 기반 <code v-pre>FindVisitor</code> 구현</span></a></h3>
 <blockquote>
 <p><strong>Visitor Pattern UML diagram</strong>[3]<br>
@@ -109,6 +120,8 @@
 </ol>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="_3-conclusion" tabindex="-1"><a class="header-anchor" href="#_3-conclusion"><span>3. Conclusion</span></a></h2>
 <ul>
 <li><strong>Homework #1-2</strong>에서는 Design Pattern의 적절한 사용을 통해 소프트웨어 품질을 향상시키는 방법을 다루고 있습니다.</li>
@@ -140,6 +153,8 @@
 <li>시스템을 구축하는 데 기여할 수 있었습니다.</li>
 <li>이러한 이유로, 구현한 코드들은 design goal를 달성하였으며, design principle들을 준수한 객체 지향 solution이라고 할 수 있습니다.</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="_4-works-cited" tabindex="-1"><a class="header-anchor" href="#_4-works-cited"><span>4. Works Cited</span></a></h2>
 <ul>
 <li>
@@ -155,6 +170,7 @@
 <a href="https://en.wikipedia.org/wiki/Visitor_pattern" target="_blank" rel="noopener noreferrer">https://en.wikipedia.org/wiki/Visitor_pattern</a></p>
 </li>
 </ul>
+</section>
 </div></template>
 
 

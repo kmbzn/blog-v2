@@ -1,5 +1,8 @@
-<template><div><h1 id="_12-file-system" tabindex="-1"><a class="header-anchor" href="#_12-file-system"><span>12. File System</span></a></h1>
+<template><div><section class="print-section">
+<h1 id="_12-file-system" tabindex="-1"><a class="header-anchor" href="#_12-file-system"><span>12. File System</span></a></h1>
 <DateMeta />
+</section>
+<section class="print-section">
 <h2 id="file-concept" tabindex="-1"><a class="header-anchor" href="#file-concept"><span>File Concept</span></a></h2>
 <ul>
 <li>데이터와 프로그램을 위한 &quot;컨테이너&quot;</li>
@@ -17,6 +20,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="file-structure" tabindex="-1"><a class="header-anchor" href="#file-structure"><span>File Structure</span></a></h2>
 <ul>
 <li>구조 없음: 단어 또는 바이트의 단순 시퀀스</li>
@@ -40,6 +45,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="file-attributes-file-metadata" tabindex="-1"><a class="header-anchor" href="#file-attributes-file-metadata"><span>File Attributes (File Metadata)</span></a></h2>
 <ul>
 <li>Name – 사람이 읽을 수 있는 유일한 정보</li>
@@ -50,6 +57,8 @@
 <li>Time, date, and user identification – 보호, 보안, 사용 모니터링을 위한 정보</li>
 <li>파일 관련 정보는 디렉토리(폴더) 구조에 저장되며, 이는 디스크 상에 유지됨</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="file-operations" tabindex="-1"><a class="header-anchor" href="#file-operations"><span>File Operations</span></a></h2>
 <ul>
 <li>create</li>
@@ -62,6 +71,8 @@
 (디렉토리 구조를 검색하여 수행됨)</li>
 <li><code v-pre>close(F_i)</code></li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="directories" tabindex="-1"><a class="header-anchor" href="#directories"><span>Directories</span></a></h2>
 <ul>
 <li>디렉토리는 두 가지 목적을 가짐
@@ -77,6 +88,8 @@
 → 이름은 현재 디렉토리를 기준으로 상대적으로 지정 가능하며,<br>
 루트부터 절대 경로로 지정하는 방식과 구분됨</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="a-directory-entry" tabindex="-1"><a class="header-anchor" href="#a-directory-entry"><span>A Directory Entry</span></a></h2>
 <ul>
 <li>디렉토리는 파일에 대한 논리적 정보를 설명함
@@ -96,11 +109,15 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="directory-structure" tabindex="-1"><a class="header-anchor" href="#directory-structure"><span>Directory Structure</span></a></h2>
 <ul>
 <li>디렉토리는 파일에 대한 정보를 담고 있는 노드들의 모음</li>
 <li>디렉토리와 파일은 모두 디스크에 저장됨</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="directory-structure-unix" tabindex="-1"><a class="header-anchor" href="#directory-structure-unix"><span>Directory Structure (UNIX)</span></a></h2>
 <ul>
 <li>디렉토리 항목(directory entry)은 파일 이름과 inode 포인터를 가짐<br>
@@ -108,6 +125,8 @@
 <li>inode는 파일 메타데이터를 포함하고,<br>
 데이터 블록에 대한 포인터도 포함함</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="directory-implementation" tabindex="-1"><a class="header-anchor" href="#directory-implementation"><span>Directory Implementation</span></a></h2>
 <ul>
 <li>선형 리스트 방식 (Linear list)
@@ -126,6 +145,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="operations-performed-on-directory" tabindex="-1"><a class="header-anchor" href="#operations-performed-on-directory"><span>Operations Performed on Directory</span></a></h2>
 <ul>
 <li>파일 검색 (Search for a file)</li>
@@ -135,6 +156,8 @@
 <li>파일 이름 변경 (Rename a file)</li>
 <li>파일 시스템 탐색 (Traverse the file system)</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="single-level-directory" tabindex="-1"><a class="header-anchor" href="#single-level-directory"><span>Single-Level Directory</span></a></h2>
 <ul>
 <li>모든 사용자에게 하나의 디렉토리만 존재</li>
@@ -150,6 +173,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="two-level-directory" tabindex="-1"><a class="header-anchor" href="#two-level-directory"><span>Two-Level Directory</span></a></h2>
 <ul>
 <li>사용자마다 별도의 디렉토리를 가짐</li>
@@ -157,6 +182,8 @@
 <li>사용자 간 이름 충돌 없음</li>
 <li>그룹화 기능 없음</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="tree-structured-directories" tabindex="-1"><a class="header-anchor" href="#tree-structured-directories"><span>Tree-Structured Directories</span></a></h2>
 <ul>
 <li>하위 디렉토리(subdirectory) 허용</li>
@@ -174,6 +201,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="acyclic-graph-directories" tabindex="-1"><a class="header-anchor" href="#acyclic-graph-directories"><span>Acyclic-Graph Directories</span></a></h2>
 <ul>
 <li>같은 파일 또는 디렉토리가 두 디렉토리에 존재할 수 있음</li>
@@ -214,6 +243,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="general-graph-directory" tabindex="-1"><a class="header-anchor" href="#general-graph-directory"><span>General Graph Directory</span></a></h2>
 <ul>
 <li>순환 허용됨 (cycles permitted)</li>
@@ -242,6 +273,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="protection" tabindex="-1"><a class="header-anchor" href="#protection"><span>Protection</span></a></h2>
 <ul>
 <li>파일 소유자/생성자는 다음을 제어할 수 있어야 함
@@ -271,6 +304,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="groups" tabindex="-1"><a class="header-anchor" href="#groups"><span>Groups</span></a></h2>
 <ul>
 <li>
@@ -294,6 +329,8 @@
 <span class="line"></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div></div></div></li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="file-system-structure" tabindex="-1"><a class="header-anchor" href="#file-system-structure"><span>File-System Structure</span></a></h2>
 <ul>
 <li>파일 시스템은 일반적으로 보조 저장 장치(디스크)에 위치</li>
@@ -320,6 +357,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="mounting-file-system" tabindex="-1"><a class="header-anchor" href="#mounting-file-system"><span>Mounting File System</span></a></h2>
 <ul>
 <li>&quot;root file system&quot; 아래에 있는 모든 파일은 접근 가능</li>
@@ -335,7 +374,11 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="allocation-of-file-data-in-disk" tabindex="-1"><a class="header-anchor" href="#allocation-of-file-data-in-disk"><span>Allocation of File Data in Disk</span></a></h2>
+</section>
+<section class="print-section">
 <h2 id="contiguous-allocation" tabindex="-1"><a class="header-anchor" href="#contiguous-allocation"><span>Contiguous Allocation</span></a></h2>
 <ul>
 <li>각 파일은 디스크 상의 연속된 블록 집합을 점유</li>
@@ -366,11 +409,15 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="contiguous-allocation-of-disk-space" tabindex="-1"><a class="header-anchor" href="#contiguous-allocation-of-disk-space"><span>Contiguous Allocation of Disk Space</span></a></h2>
 <ul>
 <li>디스크에서 연속 공간을 할당받은 파일들의 예시</li>
 <li>디렉토리에는 <code v-pre>시작 블록</code>과 <code v-pre>길이</code> 정보가 기록됨</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="linked-allocation" tabindex="-1"><a class="header-anchor" href="#linked-allocation"><span>Linked Allocation</span></a></h2>
 <ul>
 <li>각 파일은 디스크 블록의 연결 리스트로 구성됨</li>
@@ -382,11 +429,15 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="linked-allocation-cont" tabindex="-1"><a class="header-anchor" href="#linked-allocation-cont"><span>Linked Allocation (Cont.)</span></a></h2>
 <ul>
 <li>필요할 때마다 블록을 할당하고 연결</li>
 <li>예: <code v-pre>jeop</code> 파일이 block 9에서 시작 → 중간 블록을 따라 연결</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="linked-allocation-cont-1" tabindex="-1"><a class="header-anchor" href="#linked-allocation-cont-1"><span>Linked Allocation (Cont.)</span></a></h2>
 <ul>
 <li>장점
@@ -417,6 +468,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="file-allocation-table" tabindex="-1"><a class="header-anchor" href="#file-allocation-table"><span>File-Allocation Table</span></a></h2>
 <ul>
 <li>디스크의 각 블록을 포인터로 연결하는 테이블 구조</li>
@@ -424,6 +477,8 @@
 <li>FAT 테이블에서 다음 블록을 따라가며 파일 내용 구성</li>
 <li><code v-pre>-1</code>은 파일의 끝을 나타냄</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="indexed-allocation" tabindex="-1"><a class="header-anchor" href="#indexed-allocation"><span>Indexed Allocation</span></a></h2>
 <ul>
 <li>각 파일은 자신의 인덱스 블록을 가짐</li>
@@ -431,12 +486,16 @@
 <li>직접 접근 속도가 향상됨</li>
 <li>논리적 구조: 인덱스 테이블 → 데이터 블록</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="example-of-indexed-allocation" tabindex="-1"><a class="header-anchor" href="#example-of-indexed-allocation"><span>Example of Indexed Allocation</span></a></h2>
 <ul>
 <li>디렉토리에서 <code v-pre>joep</code> 파일의 인덱스 블록은 19번</li>
 <li>인덱스 블록 내 포인터들을 따라 디스크 블록들에 접근</li>
 <li><code v-pre>-1</code>은 파일 끝을 의미</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="indexed-allocation-–-mapping-cont" tabindex="-1"><a class="header-anchor" href="#indexed-allocation-–-mapping-cont"><span>Indexed Allocation – Mapping (Cont.)</span></a></h2>
 <ul>
 <li>파일이 너무 클 경우, 하나의 디스크 블록에 인덱스 테이블이 다 들어가지 않음</li>
@@ -459,6 +518,8 @@
 <p>Combined 방식 (예: UNIX)</p>
 </li>
 </ol>
+</section>
+<section class="print-section">
 <h2 id="combined-scheme-unix-4k-bytes-per-block" tabindex="-1"><a class="header-anchor" href="#combined-scheme-unix-4k-bytes-per-block"><span>Combined Scheme: UNIX (4K bytes per block)</span></a></h2>
 <ul>
 <li><code v-pre>inode</code> 구조
@@ -471,6 +532,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="free-space-management" tabindex="-1"><a class="header-anchor" href="#free-space-management"><span>Free-Space Management</span></a></h2>
 <ul>
 <li>비트맵 또는 비트 벡터 사용
@@ -495,6 +558,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="free-space-management-cont" tabindex="-1"><a class="header-anchor" href="#free-space-management-cont"><span>Free-Space Management (Cont.)</span></a></h2>
 <ul>
 <li>
@@ -524,6 +589,8 @@
 <li><code v-pre>(시작 블록 번호, 연속 블록 수)</code> 형식으로 관리</li>
 <li>연속된 블록들이 자주 함께 할당/해제되는 경우 유리</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="performance" tabindex="-1"><a class="header-anchor" href="#performance"><span>Performance</span></a></h2>
 </li>
 <li>
@@ -553,6 +620,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="recovery" tabindex="-1"><a class="header-anchor" href="#recovery"><span>Recovery</span></a></h2>
 <ul>
 <li>일관성 검사기 (Consistency checker)
@@ -574,6 +643,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="final-remarks" tabindex="-1"><a class="header-anchor" href="#final-remarks"><span>Final Remarks</span></a></h2>
 <ul>
 <li>요약
@@ -584,6 +655,7 @@
 </ul>
 </li>
 </ul>
+</section>
 </div></template>
 
 

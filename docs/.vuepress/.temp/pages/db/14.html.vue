@@ -1,4 +1,5 @@
-<template><div><h1 id="_14-indexing" tabindex="-1"><a class="header-anchor" href="#_14-indexing"><span>14. Indexing</span></a></h1>
+<template><div><section class="print-section">
+<h1 id="_14-indexing" tabindex="-1"><a class="header-anchor" href="#_14-indexing"><span>14. Indexing</span></a></h1>
 <DateMeta />
 <ul>
 <li>
@@ -42,6 +43,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h1 id="ordered-indices" tabindex="-1"><a class="header-anchor" href="#ordered-indices"><span>Ordered Indices</span></a></h1>
 <ul>
 <li>Ordered index: 인덱스 엔트리에 search key값에 따라 정렬되어 저장</li>
@@ -64,11 +67,15 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="dense-index" tabindex="-1"><a class="header-anchor" href="#dense-index"><span>Dense Index</span></a></h2>
 <ul>
 <li><strong>Dense index</strong>: 데이터 파일의 모든 search-key값에 대해 index entry가 나타남
 <img src="@source/db/image-21.png" alt=""></li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="sparse-index" tabindex="-1"><a class="header-anchor" href="#sparse-index"><span>Sparse Index</span></a></h2>
 <p><img src="@source/db/image-22.png" alt=""></p>
 <ul>
@@ -103,6 +110,8 @@
 </li>
 </ul>
 <p><img src="@source/db/image-23.png" alt=""></p>
+</section>
+<section class="print-section">
 <h2 id="multilevel-index" tabindex="-1"><a class="header-anchor" href="#multilevel-index"><span>Multilevel Index</span></a></h2>
 <ul>
 <li>인덱스가 메모리에 맞지 않으면, access가 expensive</li>
@@ -117,6 +126,8 @@
 <li>모든 level의 인덱스는 파일에서의 삽입 또는 삭제 시에 업데이트되어야 함.</li>
 </ul>
 <p><img src="@source/db/image-24.png" alt=""></p>
+</section>
+<section class="print-section">
 <h2 id="index-update-insertion" tabindex="-1"><a class="header-anchor" href="#index-update-insertion"><span>Index Update: Insertion</span></a></h2>
 <p><img src="@source/db/image-25.png" alt=""></p>
 <ul>
@@ -152,6 +163,8 @@
 </li>
 </ul>
 <p><img src="@source/db/image-26.png" alt=""></p>
+</section>
+<section class="print-section">
 <h2 id="index-update-deletion" tabindex="-1"><a class="header-anchor" href="#index-update-deletion"><span>Index Update: Deletion</span></a></h2>
 <p><img src="@source/db/image-27.png" alt=""></p>
 <ul>
@@ -187,6 +200,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="_2차-인덱스-an-example" tabindex="-1"><a class="header-anchor" href="#_2차-인덱스-an-example"><span>2차 인덱스: An example</span></a></h2>
 <ul>
 <li><code v-pre>instructor</code> 파일의 <code v-pre>salary</code> 필드에 대한 2차 인덱스
@@ -203,6 +218,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="indices-on-multiple-keys" tabindex="-1"><a class="header-anchor" href="#indices-on-multiple-keys"><span>Indices on Multiple Keys</span></a></h2>
 <ul>
 <li>Composite search key
@@ -218,7 +235,11 @@
 </li>
 <li><code v-pre>name</code>만으로 query하거나, <code v-pre>(name, ID)</code>로 query 가능</li>
 </ul>
+</section>
+<section class="print-section">
 <h1 id="b-tree-and-b-tree-index-files" tabindex="-1"><a class="header-anchor" href="#b-tree-and-b-tree-index-files"><span>B <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mrow></mrow><mo>+</mo></msup></mrow><annotation encoding="application/x-tex">^+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7713em;"></span><span class="mord"><span></span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7713em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mbin mtight">+</span></span></span></span></span></span></span></span></span></span></span>-Tree(and B-Tree) Index Files</span></a></h1>
+</section>
+<section class="print-section">
 <h2 id="b-tree-index-files" tabindex="-1"><a class="header-anchor" href="#b-tree-index-files"><span>B <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mrow></mrow><mo>+</mo></msup></mrow><annotation encoding="application/x-tex">^+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7713em;"></span><span class="mord"><span></span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7713em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mbin mtight">+</span></span></span></span></span></span></span></span></span></span></span>-Tree Index Files</span></a></h2>
 <ul>
 <li>Index-sequential file organization의 단점
@@ -262,6 +283,8 @@
 </li>
 <li>B <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mrow></mrow><mo>+</mo></msup></mrow><annotation encoding="application/x-tex">^+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7713em;"></span><span class="mord"><span></span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7713em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mbin mtight">+</span></span></span></span></span></span></span></span></span></span></span>-tree는 multilevel 인덱스이지만, multilevel index-sequential 파일과는 다른 구조를 가짐.</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="b-tree-node-structure" tabindex="-1"><a class="header-anchor" href="#b-tree-node-structure"><span>B <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mrow></mrow><mo>+</mo></msup></mrow><annotation encoding="application/x-tex">^+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7713em;"></span><span class="mord"><span></span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7713em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mbin mtight">+</span></span></span></span></span></span></span></span></span></span></span>-Tree Node Structure</span></a></h2>
 <ul>
 <li>Typical node
@@ -291,6 +314,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="leaf-nodes-in-b-trees" tabindex="-1"><a class="header-anchor" href="#leaf-nodes-in-b-trees"><span>Leaf Nodes in B <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mrow></mrow><mo>+</mo></msup></mrow><annotation encoding="application/x-tex">^+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7713em;"></span><span class="mord"><span></span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7713em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mbin mtight">+</span></span></span></span></span></span></span></span></span></span></span>-Trees</span></a></h2>
 <ul>
 <li>Leaf node의 속성
@@ -303,6 +328,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="non-leaf-nodes-in-b-trees" tabindex="-1"><a class="header-anchor" href="#non-leaf-nodes-in-b-trees"><span>Non-Leaf Nodes in B <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mrow></mrow><mo>+</mo></msup></mrow><annotation encoding="application/x-tex">^+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7713em;"></span><span class="mord"><span></span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7713em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mbin mtight">+</span></span></span></span></span></span></span></span></span></span></span>-Trees</span></a></h2>
 <ul>
 <li>Non-leaf nodes는 leaf nodes에 대한 multi-level sparse 인덱스를 형성</li>
@@ -317,8 +344,12 @@
 <li>일반적인 구조
 <img src="@source/db/image-29.png" alt=""></li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="example-of-b-tree-index-for-instructor-search-key-name" tabindex="-1"><a class="header-anchor" href="#example-of-b-tree-index-for-instructor-search-key-name"><span>Example of B <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mrow></mrow><mo>+</mo></msup></mrow><annotation encoding="application/x-tex">^+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7713em;"></span><span class="mord"><span></span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7713em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mbin mtight">+</span></span></span></span></span></span></span></span></span></span></span>-Tree index for <code v-pre>instructor</code> (<span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>=</mo><mn>4</mn></mrow><annotation encoding="application/x-tex">n=4</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">4</span></span></span></span>, search key: <code v-pre>name</code>)</span></a></h2>
 <p><img src="@source/db/image-30.png" alt=""></p>
+</section>
+<section class="print-section">
 <h2 id="example-of-b-tree-index-for-instructor" tabindex="-1"><a class="header-anchor" href="#example-of-b-tree-index-for-instructor"><span>Example of B <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mrow></mrow><mo>+</mo></msup></mrow><annotation encoding="application/x-tex">^+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7713em;"></span><span class="mord"><span></span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7713em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mbin mtight">+</span></span></span></span></span></span></span></span></span></span></span>-Tree index for <code v-pre>instructor</code> (<span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>=</mo><mn>6</mn></mrow><annotation encoding="application/x-tex">n=6</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">6</span></span></span></span>)</span></a></h2>
 <p><img src="@source/db/image-31.png" alt=""></p>
 <ul>
@@ -327,6 +358,8 @@
 <li>Leaf nodes는 3과 5 사이의 값을 가져야 함. (<span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">⌈</mo><mo stretchy="false">(</mo><mi>n</mi><mo>−</mo><mn>1</mn><mo stretchy="false">)</mo><mi mathvariant="normal">/</mi><mn>2</mn><mo stretchy="false">⌉</mo></mrow><annotation encoding="application/x-tex">\lceil (n-1) / 2 \rceil</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">⌈(</span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mclose">)</span><span class="mord">/2</span><span class="mclose">⌉</span></span></span></span>과 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">n-1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6667em;vertical-align:-0.0833em;"></span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span> 사이)</li>
 <li>트리의 높이가 이전(<span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>=</mo><mn>4</mn></mrow><annotation encoding="application/x-tex">n=4</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">4</span></span></span></span>)에 비해 <strong>낮아졌음에 주목</strong>할 것</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="observations-about-b-trees" tabindex="-1"><a class="header-anchor" href="#observations-about-b-trees"><span>Observations about B <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mrow></mrow><mo>+</mo></msup></mrow><annotation encoding="application/x-tex">^+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7713em;"></span><span class="mord"><span></span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7713em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mbin mtight">+</span></span></span></span></span></span></span></span></span></span></span>-trees</span></a></h2>
 <ul>
 <li>Node 간의 연결이 포인터로 이루어지기 때문에, &quot;논리적으로&quot; 가까운 blocks이 &quot;물리적으로&quot; 가까울 필요는 없음.</li>
@@ -341,6 +374,8 @@
 <li>따라서 search가 효율적으로 수행될 수 있음.</li>
 <li>인덱스가 logarithmic time으로 재구성될 수 있으므로, main file에 대한 삽입/삭제 또한 효율적으로 처리될 수 있음.</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="queries-on-b-trees-point-query" tabindex="-1"><a class="header-anchor" href="#queries-on-b-trees-point-query"><span>Queries on B <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mrow></mrow><mo>+</mo></msup></mrow><annotation encoding="application/x-tex">^+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7713em;"></span><span class="mord"><span></span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7713em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mbin mtight">+</span></span></span></span></span></span></span></span></span></span></span>-Trees: Point Query</span></a></h2>
 <p><img src="@source/db/image-32.png" alt=""></p>
 <div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code class="language-text"><span class="line">function find(v)</span>
@@ -358,6 +393,8 @@
 <span class="line">4. else return null /* no record with search-key값 v exists */</span>
 <span class="line"></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><img src="@source/db/image-33.png" alt=""></p>
+</section>
+<section class="print-section">
 <h2 id="queries-on-b-trees-range-query" tabindex="-1"><a class="header-anchor" href="#queries-on-b-trees-range-query"><span>Queries on B <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mrow></mrow><mo>+</mo></msup></mrow><annotation encoding="application/x-tex">^+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7713em;"></span><span class="mord"><span></span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7713em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mbin mtight">+</span></span></span></span></span></span></span></span></span></span></span>-Trees: Range Query</span></a></h2>
 <ul>
 <li>Range queries: 주어진 범위 내의 search key값을 가진 모든 레코드를 찾음.</li>
@@ -374,6 +411,8 @@
 </li>
 <li>실제 구현은 일반적으로 <code v-pre>next()</code> 함수를 사용하여 일치하는 레코드를 한 번에 가져오는 iterator 인터페이스를 제공</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="queries-on-b-trees-cost-analysis" tabindex="-1"><a class="header-anchor" href="#queries-on-b-trees-cost-analysis"><span>Queries on B <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mrow></mrow><mo>+</mo></msup></mrow><annotation encoding="application/x-tex">^+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7713em;"></span><span class="mord"><span></span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7713em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mbin mtight">+</span></span></span></span></span></span></span></span></span></span></span>-Trees: Cost Analysis</span></a></h2>
 <ul>
 <li>파일에 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>K</mi></mrow><annotation encoding="application/x-tex">K</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.07153em;">K</span></span></span></span>개의 search-key값이 있는 경우, 트리의 높이는 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">⌈</mo><msub><mrow><mi>log</mi><mo>⁡</mo></mrow><mrow><mo stretchy="false">⌈</mo><mi>n</mi><mi mathvariant="normal">/</mi><mn>2</mn><mo stretchy="false">⌉</mo></mrow></msub><mo stretchy="false">(</mo><mi>K</mi><mo stretchy="false">)</mo><mo stretchy="false">⌉</mo></mrow><annotation encoding="application/x-tex">\lceil \log_{\lceil n/2 \rceil}(K) \rceil</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.1691em;vertical-align:-0.4191em;"></span><span class="mopen">⌈</span><span class="mop"><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2809em;"><span style="top:-2.4559em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mopen mtight">⌈</span><span class="mord mathnormal mtight">n</span><span class="mord mtight">/2</span><span class="mclose mtight">⌉</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.4191em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.07153em;">K</span><span class="mclose">)⌉</span></span></span></span>를 초과하지 않음.</li>
@@ -392,6 +431,8 @@
 </li>
 <li>인덱스를 traverse한 후, 일치하는 레코드를 fetch하기 위해 한 번의 random I/O가 더 필요</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="non-unique-keys" tabindex="-1"><a class="header-anchor" href="#non-unique-keys"><span>Non-Unique Keys</span></a></h2>
 <ul>
 <li>Search key <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">a_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5806em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>가 not unique, 대신 unique한 composite key <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><msub><mi>a</mi><mi>i</mi></msub><mo separator="true">,</mo><msub><mi>A</mi><mi>p</mi></msub><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(a_i, A_p)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.0361em;vertical-align:-0.2861em;"></span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord mathnormal">A</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">p</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span>에 대한 인덱스를 생성
@@ -411,6 +452,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="updates-on-b-trees-insertion" tabindex="-1"><a class="header-anchor" href="#updates-on-b-trees-insertion"><span>Updates on B <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mrow></mrow><mo>+</mo></msup></mrow><annotation encoding="application/x-tex">^+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7713em;"></span><span class="mord"><span></span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7713em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mbin mtight">+</span></span></span></span></span></span></span></span></span></span></span>-Trees: Insertion</span></a></h2>
 <ul>
 <li>레코드가 데이터 파일에 이미 추가되었다고 가정
@@ -447,6 +490,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="updates-on-b-trees-deletion" tabindex="-1"><a class="header-anchor" href="#updates-on-b-trees-deletion"><span>Updates on B <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mrow></mrow><mo>+</mo></msup></mrow><annotation encoding="application/x-tex">^+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7713em;"></span><span class="mord"><span></span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7713em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mbin mtight">+</span></span></span></span></span></span></span></span></span></span></span>-Trees: Deletion</span></a></h2>
 <ul>
 <li>레코드가 file에서 이미 삭제되었다고 가정. <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>v</mi></mrow><annotation encoding="application/x-tex">v</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">v</span></span></span></span>는 record의 search key값이고, <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>P</mi><mi>r</mi></msub></mrow><annotation encoding="application/x-tex">P_r</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:-0.1389em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.02778em;">r</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>은 record에 대한 포인터</li>
@@ -466,6 +511,8 @@
 <li>Node 삭제는 삭제 후 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">⌈</mo><mi>n</mi><mi mathvariant="normal">/</mi><mn>2</mn><mo stretchy="false">⌉</mo></mrow><annotation encoding="application/x-tex">\lceil n/2 \rceil</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">⌈</span><span class="mord mathnormal">n</span><span class="mord">/2</span><span class="mclose">⌉</span></span></span></span>개 이상의 포인터를 가진 node를 찾을 때까지 cascade upwards될 수 있음.</li>
 <li>Root node가 삭제 후 단 하나의 포인터만 가지는 경우, 삭제되고 유일한 child가 root가 됨.</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="complexity-of-b-tree-updates" tabindex="-1"><a class="header-anchor" href="#complexity-of-b-tree-updates"><span>Complexity of B <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mrow></mrow><mo>+</mo></msup></mrow><annotation encoding="application/x-tex">^+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7713em;"></span><span class="mord"><span></span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7713em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mbin mtight">+</span></span></span></span></span></span></span></span></span></span></span>-Tree Updates</span></a></h2>
 <ul>
 <li>단일 엔트리의 삽입/삭제 비용은 트리의 높이에 비례</li>
@@ -483,6 +530,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="b-tree-file-organization" tabindex="-1"><a class="header-anchor" href="#b-tree-file-organization"><span>B <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mrow></mrow><mo>+</mo></msup></mrow><annotation encoding="application/x-tex">^+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7713em;"></span><span class="mord"><span></span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7713em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mbin mtight">+</span></span></span></span></span></span></span></span></span></span></span>-Tree File Organization</span></a></h2>
 <ul>
 <li>B <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mrow></mrow><mo>+</mo></msup></mrow><annotation encoding="application/x-tex">^+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7713em;"></span><span class="mord"><span></span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7713em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mbin mtight">+</span></span></span></span></span></span></span></span></span></span></span>-Tree 'File' Organization
@@ -501,6 +550,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="b-tree-index-files-1" tabindex="-1"><a class="header-anchor" href="#b-tree-index-files-1"><span>B-Tree Index Files</span></a></h2>
 <ul>
 <li>B <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mrow></mrow><mo>+</mo></msup></mrow><annotation encoding="application/x-tex">^+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7713em;"></span><span class="mord"><span></span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7713em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mbin mtight">+</span></span></span></span></span></span></span></span></span></span></span>-tree와 유사하지만, B-tree는 search-key값이 단 한 번만 나타나도록 허용.
@@ -532,6 +583,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="other-issues-in-indexing" tabindex="-1"><a class="header-anchor" href="#other-issues-in-indexing"><span>Other Issues in Indexing</span></a></h2>
 <ul>
 <li>Record relocation and 2차 인덱스
@@ -567,6 +620,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="other-issues-in-indexing-bulk-loading-bottom-up-build" tabindex="-1"><a class="header-anchor" href="#other-issues-in-indexing-bulk-loading-bottom-up-build"><span>Other Issues in Indexing: Bulk Loading &amp; Bottom-Up Build</span></a></h2>
 <ul>
 <li>엔트리를 한 번에 B <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mrow></mrow><mo>+</mo></msup></mrow><annotation encoding="application/x-tex">^+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7713em;"></span><span class="mord"><span></span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7713em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mbin mtight">+</span></span></span></span></span></span></span></span></span></span></span>-tree에 삽입하면 엔트리 당 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>≥</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\ge 1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7719em;vertical-align:-0.136em;"></span><span class="mrel">≥</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span>의 I/O가 필요할 수 있음.
@@ -600,7 +655,11 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h1 id="hash-indices" tabindex="-1"><a class="header-anchor" href="#hash-indices"><span>Hash Indices</span></a></h1>
+</section>
+<section class="print-section">
 <h2 id="static-hashing" tabindex="-1"><a class="header-anchor" href="#static-hashing"><span>Static Hashing</span></a></h2>
 <ul>
 <li><strong>Bucket</strong>: <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>≥</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\ge 1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7719em;vertical-align:-0.136em;"></span><span class="mrel">≥</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span> 인덱스 엔트리를 포함하는 저장 단위</li>
@@ -609,6 +668,8 @@
 <li>해시 함수는 access, insertion, deletion을 위한 엔트리를 locate하는 데 사용</li>
 <li>다른 search-key값을 가진 엔트리가 같은 bucket에 매핑될 수 있음. 따라서 entry를 찾기 위해 전체 bucket을 순차적으로 탐색해야 함.</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="static-hashing-1" tabindex="-1"><a class="header-anchor" href="#static-hashing-1"><span>Static Hashing</span></a></h2>
 <ul>
 <li>해시 인덱스에서, buckets은 레코드에 대한 포인터를 가진 엔트리를 저장(즉, buckets이 index entries를 저장)</li>
@@ -630,6 +691,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="hash-functions" tabindex="-1"><a class="header-anchor" href="#hash-functions"><span>Hash Functions</span></a></h2>
 <ul>
 <li>해시 함수는 uniform + random이 요구됨.</li>
@@ -641,6 +704,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="handling-of-bucket-overflows" tabindex="-1"><a class="header-anchor" href="#handling-of-bucket-overflows"><span>Handling of Bucket Overflows</span></a></h2>
 <ul>
 <li><strong>Overflow chaining</strong>: 주어진 bucket의 overflow buckets은 linked list로 chained together</li>
@@ -650,6 +715,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="deficiencies-of-static-hashing" tabindex="-1"><a class="header-anchor" href="#deficiencies-of-static-hashing"><span>Deficiencies of Static Hashing</span></a></h2>
 <ul>
 <li>Static hashing에서, 함수 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi></mrow><annotation encoding="application/x-tex">h</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal">h</span></span></span></span>는 search-key값을 fixed set(<span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>B</mi></mrow><annotation encoding="application/x-tex">B</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.05017em;">B</span></span></span></span>)의 bucket 주소로 매핑. 데이터베이스는 시간이 지남에 따라 grow or shrink
@@ -674,6 +741,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="comparison-of-ordered-indexing-and-hashing" tabindex="-1"><a class="header-anchor" href="#comparison-of-ordered-indexing-and-hashing"><span>Comparison of Ordered Indexing and Hashing</span></a></h2>
 <ul>
 <li>주기적 re-organization의 비용</li>
@@ -694,6 +763,7 @@
 </ul>
 </li>
 </ul>
+</section>
 </div></template>
 
 

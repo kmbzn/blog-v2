@@ -1,5 +1,8 @@
-<template><div><h1 id="_8-memory-management-1" tabindex="-1"><a class="header-anchor" href="#_8-memory-management-1"><span>8. Memory Management (1)</span></a></h1>
+<template><div><section class="print-section">
+<h1 id="_8-memory-management-1" tabindex="-1"><a class="header-anchor" href="#_8-memory-management-1"><span>8. Memory Management (1)</span></a></h1>
 <DateMeta />
+</section>
+<section class="print-section">
 <h2 id="background" tabindex="-1"><a class="header-anchor" href="#background"><span>Background</span></a></h2>
 <ul>
 <li>프로그램은 디스크에서 메모리로 불러온 후, 프로세스 내에 위치해야 실행될 수 있음</li>
@@ -9,6 +12,8 @@
 <li><strong>cache</strong>는 main memory와 CPU register 사이에 위치</li>
 <li>올바른 동작을 보장하기 위해 메모리 보호가 필요함</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="multistep-processing-of-a-user-program" tabindex="-1"><a class="header-anchor" href="#multistep-processing-of-a-user-program"><span>Multistep Processing of a User Program</span></a></h2>
 <p>사용자 프로그램은 메모리에서 실행되기 전까지 여러 단계를 거침</p>
 <blockquote>
@@ -22,6 +27,8 @@ memory image<br>
 ↓<br>
 실행</p>
 </blockquote>
+</section>
+<section class="print-section">
 <h2 id="process-in-memory-address-space" tabindex="-1"><a class="header-anchor" href="#process-in-memory-address-space"><span>Process in Memory: Address Space</span></a></h2>
 <div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code class="language-text"><span class="line">   max</span>
 <span class="line">+--------+</span>
@@ -35,24 +42,34 @@ memory image<br>
 <span class="line">+--------+</span>
 <span class="line">    0</span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="binding-of-instructions-and-data-to-memory" tabindex="-1"><a class="header-anchor" href="#binding-of-instructions-and-data-to-memory"><span>Binding of Instructions and Data to Memory</span></a></h2>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h2 id="binding-of-instructions-and-data-to-memory" tabindex="-1"><a class="header-anchor" href="#binding-of-instructions-and-data-to-memory"><span>Binding of Instructions and Data to Memory</span></a></h2>
+</section>
+<section class="print-section">
 <h3 id="compile-time-binding" tabindex="-1"><a class="header-anchor" href="#compile-time-binding"><span>Compile time binding</span></a></h3>
 <ul>
 <li>이 시점에 각 symbol의 <strong>절대 주소</strong>가 결정되어야 함</li>
 <li><strong>절대 주소를 포함한 absolute code가 생성됨</strong></li>
 <li>시작 위치가 바뀌면 <strong>코드를 다시 컴파일해야 함</strong></li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="load-time-binding" tabindex="-1"><a class="header-anchor" href="#load-time-binding"><span>Load time binding</span></a></h3>
 <ul>
 <li>loader가 각 symbol에 대한 절대 주소를 할당</li>
 <li>compiler는 <strong>상대 주소를 포함한 relocatable code</strong>를 생성함</li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="execution-time-binding" tabindex="-1"><a class="header-anchor" href="#execution-time-binding"><span>Execution time binding</span></a></h3>
 <ul>
 <li>실행 중일 때, 프로세스가 메모리 내 위치를 변경할 경우 사용됨</li>
 <li>CPU가 주소를 생성할 때마다 주소 변환(address mapping)이 필요</li>
 <li><strong>하드웨어 지원 필요</strong> (예: base and limit register, MMU)</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="address-mapping-table" tabindex="-1"><a class="header-anchor" href="#address-mapping-table"><span>Address Mapping Table</span></a></h2>
 <div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code class="language-text"><span class="line">      CPU</span>
 <span class="line">논리적 주소 (logical)    →    물리적 주소 (physical)</span>
@@ -63,6 +80,8 @@ memory image<br>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>CPU가 제시한 주소 = 논리 메모리 내 주소<br>
 실제 메모리에서의 위치 = 물리 메모리 내 주소<br>
 예: 논리 주소 <code v-pre>500</code> → 물리 주소 <code v-pre>20500</code></p>
+</section>
+<section class="print-section">
 <h1 id="base-and-limit-registers" tabindex="-1"><a class="header-anchor" href="#base-and-limit-registers"><span>Base and Limit Registers</span></a></h1>
 <ul>
 <li>물리 주소 공간은 base register와 limit register의 쌍으로 정의됨</li>
@@ -75,7 +94,9 @@ memory image<br>
 <span class="line">  880000      │  process</span>
 <span class="line"> 1024000      ┘                     ← limit</span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="logical-vs-physical-address-space" tabindex="-1"><a class="header-anchor" href="#logical-vs-physical-address-space"><span>Logical vs. Physical Address Space</span></a></h2>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h2 id="logical-vs-physical-address-space" tabindex="-1"><a class="header-anchor" href="#logical-vs-physical-address-space"><span>Logical vs. Physical Address Space</span></a></h2>
 <ul>
 <li>논리 주소 공간(logical address space) 개념은 물리 주소 공간(physical address space)과 분리되어 있으며, 이는 적절한 메모리 관리의 핵심임</li>
 <li>Logical address
@@ -92,6 +113,8 @@ memory image<br>
 <li>논리 주소와 물리 주소는 컴파일 시간과 적재 시간 바인딩에서는 동일함</li>
 <li>실행 시간 바인딩에서는 서로 다름</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="memory-management-unit-mmu" tabindex="-1"><a class="header-anchor" href="#memory-management-unit-mmu"><span>Memory-Management Unit (MMU)</span></a></h2>
 <ul>
 <li>MMU (Memory-Management Unit)
@@ -127,6 +150,8 @@ memory image<br>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul>
 <li>사용자 프로그램은 논리 주소만 다루며, 물리 주소는 직접 접근하지 않음</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="swapping-necessitates-dynamic-relocation" tabindex="-1"><a class="header-anchor" href="#swapping-necessitates-dynamic-relocation"><span>Swapping necessitates dynamic relocation</span></a></h2>
 <ul>
 <li><strong>Swapping</strong>
@@ -147,6 +172,8 @@ memory image<br>
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="contiguous-allocation" tabindex="-1"><a class="header-anchor" href="#contiguous-allocation"><span>Contiguous Allocation</span></a></h2>
 <ul>
 <li>주기억장치는 일반적으로 두 파티션으로 나뉨:
@@ -173,7 +200,9 @@ memory image<br>
 <span class="line">  │ user proc. │ ← high memory</span>
 <span class="line">  └────────────┘</span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="hardware-support-for-relocation-and-limit-registers" tabindex="-1"><a class="header-anchor" href="#hardware-support-for-relocation-and-limit-registers"><span>Hardware Support for Relocation and Limit Registers</span></a></h2>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h2 id="hardware-support-for-relocation-and-limit-registers" tabindex="-1"><a class="header-anchor" href="#hardware-support-for-relocation-and-limit-registers"><span>Hardware Support for Relocation and Limit Registers</span></a></h2>
 <ul>
 <li>하드웨어는 relocation과 limit register를 사용하여 주소를 변환함</li>
 </ul>
@@ -225,6 +254,8 @@ memory image<br>
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="dynamic-storage-allocation-problem" tabindex="-1"><a class="header-anchor" href="#dynamic-storage-allocation-problem"><span>Dynamic Storage-Allocation Problem</span></a></h2>
 <ul>
 <li>요청 크기 <code v-pre>n</code>을 충족시키기 위해 hole 리스트에서 어떻게 할당할 것인가</li>
@@ -251,6 +282,8 @@ memory image<br>
 <blockquote>
 <p>저장 공간 활용 측면에서 First-fit 및 Best-fit이 Worst-fit보다 더 효율적임</p>
 </blockquote>
+</section>
+<section class="print-section">
 <h2 id="fragmentation" tabindex="-1"><a class="header-anchor" href="#fragmentation"><span>Fragmentation</span></a></h2>
 <ul>
 <li><strong>External fragmentation</strong>
@@ -270,6 +303,8 @@ memory image<br>
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="paging" tabindex="-1"><a class="header-anchor" href="#paging"><span>Paging</span></a></h2>
 <ul>
 <li><strong>Paging</strong>
@@ -289,6 +324,8 @@ memory image<br>
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="paging-1" tabindex="-1"><a class="header-anchor" href="#paging-1"><span>Paging</span></a></h2>
 <div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code class="language-text"><span class="line">  max</span>
 <span class="line">   │</span>
@@ -313,7 +350,9 @@ memory image<br>
 <span class="line">└──┴──┴──┴──┴──┴──┴──┘</span>
 <span class="line">   Physical Memory</span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="address-translation-scheme-in-paging" tabindex="-1"><a class="header-anchor" href="#address-translation-scheme-in-paging"><span>Address Translation Scheme in Paging</span></a></h2>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h2 id="address-translation-scheme-in-paging" tabindex="-1"><a class="header-anchor" href="#address-translation-scheme-in-paging"><span>Address Translation Scheme in Paging</span></a></h2>
 <ul>
 <li>
 <p>CPU가 생성하는 주소는 다음 두 부분으로 나뉨:</p>
@@ -338,7 +377,9 @@ memory image<br>
 <span class="line">     (m-n)비트       n비트</span>
 <span class="line">- 논리 주소 공간이 $2^m$일 때, 페이지 크기가 $2^n$이면</span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="address-translation-architecture" tabindex="-1"><a class="header-anchor" href="#address-translation-architecture"><span>Address Translation Architecture</span></a></h2>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h2 id="address-translation-architecture" tabindex="-1"><a class="header-anchor" href="#address-translation-architecture"><span>Address Translation Architecture</span></a></h2>
 <div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code class="language-text"><span class="line">CPU</span>
 <span class="line"> ↓</span>
 <span class="line">┌──────────────┐</span>
@@ -355,7 +396,9 @@ memory image<br>
 <span class="line">              ↓</span>
 <span class="line">     Physical Memory</span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="paging-example" tabindex="-1"><a class="header-anchor" href="#paging-example"><span>Paging Example</span></a></h2>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h2 id="paging-example" tabindex="-1"><a class="header-anchor" href="#paging-example"><span>Paging Example</span></a></h2>
 <ul>
 <li>Page Number = 2 / 4 = 0</li>
 <li>Offset = 2 % 4 = 2</li>
@@ -364,6 +407,8 @@ memory image<br>
 <li>Offset (n): 2비트</li>
 <li><strong>4바이트 페이지 → n = 2비트</strong></li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="free-frames" tabindex="-1"><a class="header-anchor" href="#free-frames"><span>Free Frames</span></a></h2>
 <ul>
 <li>(a) 할당 전</li>
@@ -379,7 +424,9 @@ memory image<br>
 <span class="line">  page 0 → frame 14</span>
 <span class="line">  page 1 → frame 9</span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="implementation-of-page-table" tabindex="-1"><a class="header-anchor" href="#implementation-of-page-table"><span>Implementation of Page Table</span></a></h2>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h2 id="implementation-of-page-table" tabindex="-1"><a class="header-anchor" href="#implementation-of-page-table"><span>Implementation of Page Table</span></a></h2>
 <ul>
 <li>페이지 테이블은 <strong>주기억장치에 저장됨</strong>
 <ul>
@@ -400,6 +447,8 @@ memory image<br>
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="associative-memory-tlb" tabindex="-1"><a class="header-anchor" href="#associative-memory-tlb"><span>Associative Memory (TLB)</span></a></h2>
 <ul>
 <li>두 가지 종류의 메모리:
@@ -430,6 +479,8 @@ memory image<br>
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="paging-hardware-with-tlb" tabindex="-1"><a class="header-anchor" href="#paging-hardware-with-tlb"><span>Paging Hardware with TLB</span></a></h2>
 <div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code class="language-text"><span class="line">logical address</span>
 <span class="line">    ↓</span>
@@ -450,7 +501,9 @@ memory image<br>
 <span class="line">                    ↓</span>
 <span class="line">              Physical Memory</span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="effective-access-time" tabindex="-1"><a class="header-anchor" href="#effective-access-time"><span>Effective Access Time</span></a></h2>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h2 id="effective-access-time" tabindex="-1"><a class="header-anchor" href="#effective-access-time"><span>Effective Access Time</span></a></h2>
 <ul>
 <li>연관 메모리(associative memory) 탐색 시간 = α time unit</li>
 <li>메모리 접근 시간 = β</li>
@@ -461,7 +514,9 @@ memory image<br>
 <span class="line">EAT = (α + β) * ε + (α + 2β) * (1 − ε)</span>
 <span class="line">    = α + (2 − ε)β</span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="memory-protection" tabindex="-1"><a class="header-anchor" href="#memory-protection"><span>Memory Protection</span></a></h2>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h2 id="memory-protection" tabindex="-1"><a class="header-anchor" href="#memory-protection"><span>Memory Protection</span></a></h2>
 <ul>
 <li>메모리 보호는 각 frame에 보호 비트(protection bit)를 연결하여 구현</li>
 <li><strong>Valid-invalid 비트</strong>: 페이지 테이블의 각 항목에 포함
@@ -475,6 +530,8 @@ memory image<br>
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="valid-v-or-invalid-i-bit-in-a-page-table" tabindex="-1"><a class="header-anchor" href="#valid-v-or-invalid-i-bit-in-a-page-table"><span>Valid (v) or Invalid (i) Bit in a Page Table</span></a></h2>
 <ul>
 <li>페이지 크기 = 2KB</li>
@@ -495,7 +552,9 @@ memory image<br>
 <span class="line">page 5 → valid</span>
 <span class="line">page 6 이상 → invalid</span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="shared-pages" tabindex="-1"><a class="header-anchor" href="#shared-pages"><span>Shared Pages</span></a></h2>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h2 id="shared-pages" tabindex="-1"><a class="header-anchor" href="#shared-pages"><span>Shared Pages</span></a></h2>
 <ul>
 <li><strong>Shared code</strong>
 <ul>
@@ -515,6 +574,8 @@ memory image<br>
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="shared-pages-example" tabindex="-1"><a class="header-anchor" href="#shared-pages-example"><span>Shared Pages Example</span></a></h2>
 <ul>
 <li>에디터는 3개의 페이지로 구성 (ed1, ed2, ed3)</li>
@@ -541,13 +602,19 @@ memory image<br>
 <span class="line">              ...</span>
 <span class="line"></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><hr>
+</section>
+<section class="print-section">
 <h1 id="memorymanagement-1-교수님-강의-내용-요약" tabindex="-1"><a class="header-anchor" href="#memorymanagement-1-교수님-강의-내용-요약"><span>MemoryManagement-1 교수님 강의 내용 요약</span></a></h1>
+</section>
+<section class="print-section">
 <h2 id="address-binding" tabindex="-1"><a class="header-anchor" href="#address-binding"><span>Address Binding</span></a></h2>
 <ul>
 <li>모든 instruction과 함수 이름은 주소를 가짐</li>
 <li>CPU는 instruction을 fetch 및 실행하며 주소 정보를 필요로 함</li>
 <li>주소를 결정하는 주체는 <strong>compiler</strong></li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="binding-종류" tabindex="-1"><a class="header-anchor" href="#binding-종류"><span>Binding 종류</span></a></h2>
 <table>
 <thead>
@@ -575,30 +642,42 @@ memory image<br>
 <li>Execution Time Binding에서는 주소를 <strong>실시간으로 변환</strong></li>
 <li>이 작업을 빠르게 하기 위해 MMU (Memory Management Unit) 사용</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="mmu의-역할" tabindex="-1"><a class="header-anchor" href="#mmu의-역할"><span>MMU의 역할</span></a></h2>
 <ul>
 <li>Logical Address + Base Address = Physical Address</li>
 <li>덧셈 연산만으로 처리됨 (오버헤드 낮음)</li>
 <li>Protection: limit register를 사용하여 접근 범위 제한</li>
 </ul>
+</section>
+<section class="print-section">
 <h1 id="메모리-단편화-문제와-paging-도입" tabindex="-1"><a class="header-anchor" href="#메모리-단편화-문제와-paging-도입"><span>메모리 단편화 문제와 Paging 도입</span></a></h1>
+</section>
+<section class="print-section">
 <h2 id="문제-external-fragmentation" tabindex="-1"><a class="header-anchor" href="#문제-external-fragmentation"><span>문제: External Fragmentation</span></a></h2>
 <ul>
 <li>연속 할당 방식에서는 빈 공간이 파편화되어 사용 불가</li>
 <li>compaction은 성능 비용 큼 → 비현실적</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="해결-paging" tabindex="-1"><a class="header-anchor" href="#해결-paging"><span>해결: Paging</span></a></h2>
 <ul>
 <li>Address space와 memory를 동일한 크기(page, frame)로 분할</li>
 <li>page를 빈 frame 아무 곳에나 할당</li>
 <li><strong>Internal Fragmentation</strong>: 마지막 page에서만 낭비 발생 → 무시할 수 있는 수준</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="주소-변환-방식" tabindex="-1"><a class="header-anchor" href="#주소-변환-방식"><span>주소 변환 방식</span></a></h2>
 <ul>
 <li>Logical Address = Page Number + Offset</li>
 <li>변환: page number → frame number (via page table), offset 그대로 유지</li>
 <li>주소 변환시 <strong>paging table</strong> 사용 (process마다 하나씩 존재)</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="비트-분할을-통한-효율적-주소-변환" tabindex="-1"><a class="header-anchor" href="#비트-분할을-통한-효율적-주소-변환"><span>비트 분할을 통한 효율적 주소 변환</span></a></h2>
 <ul>
 <li>Page size = 2^n 일 때
@@ -609,7 +688,11 @@ memory image<br>
 </li>
 <li>나눗셈 불필요, bit 분할로 연산 가능</li>
 </ul>
+</section>
+<section class="print-section">
 <h1 id="tlb-translation-lookaside-buffer" tabindex="-1"><a class="header-anchor" href="#tlb-translation-lookaside-buffer"><span>TLB (Translation Lookaside Buffer)</span></a></h1>
+</section>
+<section class="print-section">
 <h2 id="tlb란" tabindex="-1"><a class="header-anchor" href="#tlb란"><span>TLB란?</span></a></h2>
 <ul>
 <li>페이지 테이블 중 일부를 cache에 저장</li>
@@ -617,11 +700,15 @@ memory image<br>
 <li>TLB hit 시: 빠른 주소 변환 가능 (1 memory access)</li>
 <li>TLB miss 시: page table 접근 필요 (2 memory access)</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="context-switch와-tlb" tabindex="-1"><a class="header-anchor" href="#context-switch와-tlb"><span>Context-Switch와 TLB</span></a></h2>
 <ul>
 <li>프로세스 전환 시 TLB는 invalidate되어야 함</li>
 <li>초기에는 miss 발생하지만 locality 덕분에 금방 hit 증가</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="effective-access-time-계산" tabindex="-1"><a class="header-anchor" href="#effective-access-time-계산"><span>Effective Access Time 계산</span></a></h2>
 <ul>
 <li>hit ratio: ( \epsilon \ )</li>
@@ -629,34 +716,47 @@ memory image<br>
 <li>Memory access: ( \beta \ )</li>
 <li>EAT = ( \epsilon (\alpha + \beta) + (1 - \epsilon)(\alpha + 2\beta) )</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="tlb의-장점" tabindex="-1"><a class="header-anchor" href="#tlb의-장점"><span>TLB의 장점</span></a></h2>
 <ul>
 <li>Locality 덕분에 hit ratio 매우 높음 (ex: 1023/1024)</li>
 <li>성능 향상에 매우 효과적</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="protection" tabindex="-1"><a class="header-anchor" href="#protection"><span>Protection</span></a></h2>
 <ul>
 <li>Valid / Invalid bit 사용</li>
 <li>접근 가능한 범위만 valid로 설정</li>
 </ul>
+</section>
+<section class="print-section">
 <h1 id="shared-paging" tabindex="-1"><a class="header-anchor" href="#shared-paging"><span>Shared Paging</span></a></h1>
+</section>
+<section class="print-section">
 <h2 id="공유의-필요성" tabindex="-1"><a class="header-anchor" href="#공유의-필요성"><span>공유의 필요성</span></a></h2>
 <ul>
 <li>text section 등은 read-only이므로 공유 가능</li>
 <li>서로 다른 process라도 같은 frame을 가리키게 설정 가능</li>
 <li>메모리 절약 효과 큼</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="paging의-공유-구조" tabindex="-1"><a class="header-anchor" href="#paging의-공유-구조"><span>Paging의 공유 구조</span></a></h2>
 <ul>
 <li>process별로 독립된 page table 유지</li>
 <li>text section의 entry만 동일 frame 번호를 가리킴</li>
 </ul>
+</section>
+<section class="print-section">
 <h1 id="결론" tabindex="-1"><a class="header-anchor" href="#결론"><span>결론</span></a></h1>
 <ul>
 <li>Paging은 효율적인 메모리 관리를 가능케 하는 핵심 기법</li>
 <li>Overhead((\alpha))는 존재하지만, 메모리 효율과 공유 구조로 인해 이를 상쇄함</li>
 <li>TLB, 비트 분할, shared paging 등으로 성능 최적화 가능</li>
 </ul>
+</section>
 </div></template>
 
 

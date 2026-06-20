@@ -1,9 +1,14 @@
-<template><div><h2 id="botnet-개요" tabindex="-1"><a class="header-anchor" href="#botnet-개요"><span>Botnet 개요</span></a></h2>
+<template><div><section class="print-section">
+<h2 id="botnet-개요" tabindex="-1"><a class="header-anchor" href="#botnet-개요"><span>Botnet 개요</span></a></h2>
 <ul>
 <li>Botmaster(봇 마스터)는 C&amp;C(Command &amp; Control) 서버를 통해 봇넷을 제어</li>
 <li>봇넷에 속한 좀비 PC들은 C&amp;C 서버로부터 명령을 받아 피해자(Victims)를 공격</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="botnet-–-infection-path" tabindex="-1"><a class="header-anchor" href="#botnet-–-infection-path"><span>BotNet – Infection Path</span></a></h2>
+</section>
+<section class="print-section">
 <h2 id="countermeasures-against-botnets" tabindex="-1"><a class="header-anchor" href="#countermeasures-against-botnets"><span>Countermeasures against botnets</span></a></h2>
 <ul>
 <li>봇넷 방어가 어려운 이유
@@ -18,6 +23,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="botnet-composition-and-operations" tabindex="-1"><a class="header-anchor" href="#botnet-composition-and-operations"><span>Botnet composition and operations</span></a></h2>
 <ol>
 <li>취약점, 이메일 등을 통해 악성 소프트웨어 확산</li>
@@ -26,6 +33,8 @@
 <li>C&amp;C 서버가 봇넷에 명령 전달</li>
 <li>봇넷이 DDoS, 스팸 메일 발송 등 악의적인 활동 수행</li>
 </ol>
+</section>
+<section class="print-section">
 <h2 id="botnet-composition" tabindex="-1"><a class="header-anchor" href="#botnet-composition"><span>BotNet composition</span></a></h2>
 <ul>
 <li>네트워크 protocol
@@ -42,6 +51,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="rally-mechanism" tabindex="-1"><a class="header-anchor" href="#rally-mechanism"><span>Rally Mechanism</span></a></h2>
 <ul>
 <li>봇이 C&amp;C 서버를 찾는 방법</li>
@@ -53,6 +64,8 @@
 </li>
 <li>DDNS(동적 DNS): 봇이 DDNS 서비스에 등록된 도메인 이름(<code v-pre>a.net</code>)을 조회하여 C&amp;C 서버의 현재 IP 주소를 알아냄. IP 주소가 바뀌어도 도메인만 알면 접속 가능</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="cctv-bots" tabindex="-1"><a class="header-anchor" href="#cctv-bots"><span>CCTV bots</span></a></h2>
 <ul>
 <li>봇넷은 PC뿐만 아니라 CCTV와 같은 IoT 장비도 감염시켜 대규모 공격에 악용할 수 있음.</li>
@@ -62,6 +75,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="remote-control-facility" tabindex="-1"><a class="header-anchor" href="#remote-control-facility"><span>Remote Control Facility</span></a></h2>
 <ul>
 <li>봇을 worm과 구별하는 특징
@@ -74,8 +89,12 @@
 <li>최근 봇넷은 HTTP와 같은 protocol을 통해 은밀한 통신 채널을 사용</li>
 <li>분산 제어 메커니즘은 단일 장애점(single point of failure)을 피하기 위해 P2P protocol을 사용</li>
 </ul>
+</section>
+<section class="print-section">
 <h1 id="payload-–-information" tabindex="-1"><a class="header-anchor" href="#payload-–-information"><span>Payload – Information</span></a></h1>
 <DateMeta />
+</section>
+<section class="print-section">
 <h2 id="theft-keyloggers-and-spyware" tabindex="-1"><a class="header-anchor" href="#theft-keyloggers-and-spyware"><span>Theft Keyloggers and Spyware</span></a></h2>
 <ul>
 <li>키로거(Keylogger)
@@ -93,6 +112,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="theft-phishing" tabindex="-1"><a class="header-anchor" href="#theft-phishing"><span>Theft Phishing</span></a></h2>
 <ul>
 <li>신뢰할 수 있는 출처로부터의 통신으로 위장하여 사용자의 신뢰를 이용하는 사회 공학 기법을 악용</li>
@@ -106,7 +127,11 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h1 id="payload-–-stealthing" tabindex="-1"><a class="header-anchor" href="#payload-–-stealthing"><span>Payload – Stealthing</span></a></h1>
+</section>
+<section class="print-section">
 <h2 id="backdoor" tabindex="-1"><a class="header-anchor" href="#backdoor"><span>Backdoor</span></a></h2>
 <ul>
 <li>Trapdoor(트랩도어)라고도 함.</li>
@@ -114,6 +139,8 @@
 <li>Maintenance hook(유지보수 후크)는 프로그래머가 프로그램을 디버깅하고 테스트하는 데 사용하는 백도어임.</li>
 <li>애플리케이션의 백도어에 대한 운영 체제 제어를 구현하기 어려움.</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="rootkit" tabindex="-1"><a class="header-anchor" href="#rootkit"><span>Rootkit</span></a></h2>
 <ul>
 <li>시스템에 대한 은밀한 접근을 유지하기 위해 시스템에 설치된 숨겨진 프로그램 집합</li>
@@ -121,6 +148,8 @@
 <li>공격자에게 관리자(또는 root) 권한을 부여</li>
 <li>프로그램과 파일을 추가 또는 변경하고, 프로세스를 모니터링하고, 네트워크 트래픽을 송수신하며, 필요할 때 백도어 접근을 할 수 있음.</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="rootkit-classification-characteristics" tabindex="-1"><a class="header-anchor" href="#rootkit-classification-characteristics"><span>Rootkit Classification Characteristics</span></a></h2>
 <ul>
 <li>Persistent (지속성)</li>
@@ -130,12 +159,16 @@
 <li>Virtual machine based (가상 머신 기반)</li>
 <li>External mode (외부 모드)</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="system-call-table-modification" tabindex="-1"><a class="header-anchor" href="#system-call-table-modification"><span>System Call Table Modification</span></a></h2>
 <ul>
 <li>Rootkit은 운영체제 커널의 system call table을 변조</li>
 <li>예: 파일 목록을 보여주는 시스템 콜의 주소를 rootkit이 제어하는 악성 함수 주소로 변경</li>
 <li>사용자가 파일 목록을 요청하면, original 함수 대신 <strong>악성 함수가 호출</strong>되어 rootkit과 관련된 파일이나 프로세스를 목록에서 숨긴 후 결과를 반환</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="hw-based-rootkit-detection" tabindex="-1"><a class="header-anchor" href="#hw-based-rootkit-detection"><span>HW based Rootkit detection</span></a></h2>
 <ul>
 <li>하드웨어 기반 rootkit 탐지</li>
@@ -147,6 +180,8 @@
 <li>시스템 버스를 모니터링해야 함.</li>
 <li>시스템 버스: CPU하고 RAM하고 왔다갔다하는 bus</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="phishing-privacy-fishing" tabindex="-1"><a class="header-anchor" href="#phishing-privacy-fishing"><span>Phishing (Privacy + Fishing)</span></a></h2>
 <ul>
 <li>Voice Phishing(보이스 피싱)</li>
@@ -158,6 +193,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="cold-boot-attacks" tabindex="-1"><a class="header-anchor" href="#cold-boot-attacks"><span>Cold Boot Attacks</span></a></h2>
 <ul>
 <li>DRAM에 있는 암호화 키에 대한 공격</li>
@@ -165,6 +202,8 @@
 <li>DRAM은 전원이 꺼져도 짧은 시간 동안 데이터를 유지하는 특성(데이터 잔존성)이 있음.</li>
 <li>공격자는 시스템 전원을 껐다가 즉시 재부팅하거나, DRAM 모듈을 냉각시켜 데이터 보존 시간을 늘린 뒤 다른 시스템에 장착하여 메모리에 남아있는 암호화 키와 같은 민감한 정보를 추출함.</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="dll-injection" tabindex="-1"><a class="header-anchor" href="#dll-injection"><span><code v-pre>dll</code> injection</span></a></h2>
 <ul>
 <li><code v-pre>dll</code>: dynamic link library(동적 연결 라이브러리)
@@ -179,12 +218,16 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="process-injection-attack" tabindex="-1"><a class="header-anchor" href="#process-injection-attack"><span>Process Injection Attack</span></a></h2>
 <ul>
 <li>in-memory(인-메모리) 악성 코드 또는 fileless(파일리스) 악성 코드에서 사용되는 공격 방법</li>
 <li>정상적인 프로세스의 가상 메모리 내 실행 코드 부분을 공격자의 코드로 바꾸어 실행하게 하는 방법</li>
 <li>예: <code v-pre>svchost.exe</code>, <code v-pre>dllhost.exe</code> 등과 같은 정상 프로세스의 실행 코드 부분을 공격자의 코드로 변경</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="web-attacks-–-cybercrime-2-0" tabindex="-1"><a class="header-anchor" href="#web-attacks-–-cybercrime-2-0"><span>Web Attacks – Cybercrime 2.0</span></a></h2>
 <ul>
 <li>브라우저 관련 공격
@@ -202,6 +245,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="web-attacks-cross-site-scripting-xss" tabindex="-1"><a class="header-anchor" href="#web-attacks-cross-site-scripting-xss"><span>Web Attacks - Cross Site Scripting (XSS)</span></a></h2>
 <ul>
 <li>웹 애플리케이션 보안의 일반적인 문제</li>
@@ -214,6 +259,8 @@
 </li>
 <li>예: 사용자가 입력한 내용을 필터링하지 않고 그대로 페이지에 표시할 때, 공격자는 악성 스크립트를 포함한 <code v-pre>img</code> 태그 등을 삽입하여 사용자의 쿠키 정보를 탈취하거나 다른 사이트로 리디렉션 시킬 수 있음.</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="owasp-top-10-2021" tabindex="-1"><a class="header-anchor" href="#owasp-top-10-2021"><span>OWASP TOP 10 (2021)</span></a></h2>
 <ol>
 <li>접근 제어 취약점 (Broken Access Control)</li>
@@ -227,6 +274,8 @@
 <li>보안 로깅 및 모니터링 실패 (Security Logging and Monitoring Failures)</li>
 <li>서버 측 요청 위조 (Server-Side Request Forgery, SSRF)</li>
 </ol>
+</section>
+<section class="print-section">
 <h2 id="sns" tabindex="-1"><a class="header-anchor" href="#sns"><span>SNS</span></a></h2>
 <ul>
 <li>트위터 스팸
@@ -248,6 +297,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="malware-countermeasure-approaches" tabindex="-1"><a class="header-anchor" href="#malware-countermeasure-approaches"><span>Malware Countermeasure Approaches</span></a></h2>
 <ul>
 <li>악성 소프트웨어 위협에 대한 이상적인 해결책은 예방임.</li>
@@ -267,6 +318,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="generations-of-anti-virus-software" tabindex="-1"><a class="header-anchor" href="#generations-of-anti-virus-software"><span>Generations of Anti-Virus Software</span></a></h2>
 <ul>
 <li>1세대: 단순 스캐너
@@ -293,6 +346,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="generic-decryption-gd" tabindex="-1"><a class="header-anchor" href="#generic-decryption-gd"><span>Generic Decryption (GD)</span></a></h2>
 <ul>
 <li>anti-virus 프로그램이 복잡한 다형성 바이러스 및 기타 악성 소프트웨어를 쉽게 탐지하면서 빠른 스캔 속도를 유지할 수 있게 함.</li>
@@ -305,6 +360,8 @@
 </li>
 <li>GD 스캐너의 가장 어려운 설계 문제는 각 해석을 얼마나 오래 실행할지 결정하는 것임.</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="host-based-behavior-blocking-software" tabindex="-1"><a class="header-anchor" href="#host-based-behavior-blocking-software"><span>Host-Based Behavior-Blocking Software</span></a></h2>
 <ul>
 <li>호스트 컴퓨터의 운영 체제와 통합되어 악의적인 행동에 대해 프로그램 행동을 실시간으로 모니터링함.</li>
@@ -316,6 +373,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="perimeter-scanning-approaches" tabindex="-1"><a class="header-anchor" href="#perimeter-scanning-approaches"><span>Perimeter Scanning Approaches</span></a></h2>
 <ul>
 <li>일반적으로 조직의 방화벽 및 IDS에서 실행되는 이메일 및 웹 프록시 서비스에 포함된 anti-virus 소프트웨어</li>
@@ -329,6 +388,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="worm-countermeasures" tabindex="-1"><a class="header-anchor" href="#worm-countermeasures"><span>Worm Countermeasures</span></a></h2>
 <ul>
 <li>바이러스와 worm을 다루는 기술에는 상당한 중복이 있음.</li>
@@ -345,6 +406,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="digital-immune-system" tabindex="-1"><a class="header-anchor" href="#digital-immune-system"><span>Digital Immune System</span></a></h2>
 <ul>
 <li>디지털 면역 시스템은 인간의 면역 체계와 유사하게 작동하는 포괄적인 anti-virus 방식을 제공</li>
@@ -357,6 +420,8 @@
 </ol>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="android-malware-detection" tabindex="-1"><a class="header-anchor" href="#android-malware-detection"><span>Android Malware Detection</span></a></h2>
 <ul>
 <li><code v-pre>DroidAPIMiner</code>
@@ -381,6 +446,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="malware-analysis" tabindex="-1"><a class="header-anchor" href="#malware-analysis"><span>Malware Analysis</span></a></h2>
 <ul>
 <li>악성코드 분석의 쟁점
@@ -408,6 +475,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="frequency-analysis-빈도-분석" tabindex="-1"><a class="header-anchor" href="#frequency-analysis-빈도-분석"><span>Frequency Analysis 빈도 분석</span></a></h2>
 <ul>
 <li>악성 소프트웨어는 정상 소프트웨어와 다른 명령어(opcode) 빈도 분포를 보임.</li>
@@ -583,11 +652,15 @@
 </tr>
 </tbody>
 </table>
+</section>
+<section class="print-section">
 <h2 id="dynamic-analysis-동적-분석" tabindex="-1"><a class="header-anchor" href="#dynamic-analysis-동적-분석"><span>Dynamic Analysis 동적 분석</span></a></h2>
 <ul>
 <li>Basic blocks와 명령어에서 반복, 중복 찾아내기
 <img src="@source/cs/image-3.png" alt="alt text"></li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="redundancy-filtering" tabindex="-1"><a class="header-anchor" href="#redundancy-filtering"><span>Redundancy Filtering</span></a></h2>
 <ul>
 <li>Block의 개수를 비교했을 때
@@ -674,14 +747,20 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="anti-forensic-techniques" tabindex="-1"><a class="header-anchor" href="#anti-forensic-techniques"><span>Anti-Forensic techniques</span></a></h2>
 <p><img src="@source/cs/image-2.png" alt="alt text"></p>
+</section>
+<section class="print-section">
 <h2 id="packing-example" tabindex="-1"><a class="header-anchor" href="#packing-example"><span>Packing Example</span></a></h2>
 <ul>
 <li>악성코드 분석을 방해하기 위해 실행 파일을 압축하거나 암호화하는 기술</li>
 <li>패킹 도구의 사용은 매우 흔하며, 그 복잡성도 시간이 지남에 따라 증가하고 있음.</li>
 </ul>
 <p><img src="@source/cs/image-1.png" alt="alt text"></p>
+</section>
+<section class="print-section">
 <h2 id="packing-trends" tabindex="-1"><a class="header-anchor" href="#packing-trends"><span>Packing Trends</span></a></h2>
 <ul>
 <li>Virus Total 파일 분석
@@ -691,6 +770,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="packing-complexity" tabindex="-1"><a class="header-anchor" href="#packing-complexity"><span>Packing Complexity</span></a></h2>
 <table>
 <thead>
@@ -734,11 +815,15 @@
 </tr>
 </tbody>
 </table>
+</section>
+<section class="print-section">
 <h2 id="malware-entropy" tabindex="-1"><a class="header-anchor" href="#malware-entropy"><span>Malware Entropy</span></a></h2>
 <ul>
 <li>파일의 무작위성(randomness)을 측정하는 척도</li>
 <li>패킹되거나 암호화된 파일은 일반적으로 엔트로피가 높게 나타나므로, 악성코드 탐지의 한 지표로 사용될 수 있음.</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="malware-analysis-tools" tabindex="-1"><a class="header-anchor" href="#malware-analysis-tools"><span>Malware Analysis Tools</span></a></h2>
 <ul>
 <li>Virus Total: 웹 기반 서비스로, 여러 anti-virus 엔진을 사용하여 파일을 스캔하고 분석 결과를 제공</li>
@@ -746,6 +831,7 @@
 <li>Detect It Easy (DIE): 파일의 종류, 사용된 패커, 엔트로피, 문자열 등 다양한 정보를 분석하는 도구</li>
 <li>IDA Pro: Hex-rays사에서 개발한 강력한 disassembler 도구로, 리버스 엔지니어링 및 악성코드 분석에 널리 사용됨.</li>
 </ul>
+</section>
 </div></template>
 
 

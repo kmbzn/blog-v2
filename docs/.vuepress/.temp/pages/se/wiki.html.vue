@@ -1,10 +1,13 @@
-<template><div><h1 id="" tabindex="-1"><a class="header-anchor" href="#"><span><span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>Homework #1-1</mtext></mrow><annotation encoding="application/x-tex">\text{Homework \#1-1}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord text"><span class="mord">Homework #1-1</span></span></span></span></span></span></a></h1>
+<template><div><section class="print-section">
+<h1 id="" tabindex="-1"><a class="header-anchor" href="#"><span><span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>Homework #1-1</mtext></mrow><annotation encoding="application/x-tex">\text{Homework \#1-1}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord text"><span class="mord">Homework #1-1</span></span></span></span></span></span></a></h1>
 <DateMeta />
 <ul>
 <li>Software Engineering (10780)</li>
 <li>학번: 2021024057</li>
 <li>이름: 김병준</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="_1-디자인-분석" tabindex="-1"><a class="header-anchor" href="#_1-디자인-분석"><span>1. 디자인 분석</span></a></h2>
 <blockquote>
 <p><strong>Design A</strong>
@@ -49,7 +52,11 @@
 </tr>
 </tbody>
 </table>
+</section>
+<section class="print-section">
 <h2 id="_2-design-principle-and-pattern-based-argue" tabindex="-1"><a class="header-anchor" href="#_2-design-principle-and-pattern-based-argue"><span>2. Design principle and pattern-based argue</span></a></h2>
+</section>
+<section class="print-section">
 <h3 id="_2-1-design-pattern-observer-pattern" tabindex="-1"><a class="header-anchor" href="#_2-1-design-pattern-observer-pattern"><span>2.1. (Design Pattern) Observer Pattern</span></a></h3>
 <blockquote>
 <p>Observer Pattern (a.k.a. &quot;Publish-Subscribe&quot;)<br>
@@ -70,6 +77,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="_2-2-design-principle-single-responsibility-principle-srp" tabindex="-1"><a class="header-anchor" href="#_2-2-design-principle-single-responsibility-principle-srp"><span>2.2. (Design Principle) Single Responsibility Principle(SRP)</span></a></h3>
 <blockquote>
 <p>&quot;<em>객체 지향 프로그래밍에서 <strong>단일 책임 원칙</strong>(single responsibility principle)이란 모든 클래스는 하나의 책임만 가지며, 클래스는 그 책임을 완전히 캡슐화해야 함을 일컫는다. 클래스가 제공하는 모든 기능은 이 책임과 주의 깊게 부합해야 한다.</em>&quot; [2]</p>
@@ -95,6 +104,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="_2-3-design-pattern-open-closed-principle-ocp" tabindex="-1"><a class="header-anchor" href="#_2-3-design-pattern-open-closed-principle-ocp"><span>2.3. (Design Pattern) Open-Closed Principle (OCP)</span></a></h3>
 <blockquote>
 <p>&quot;<em>개방-폐쇄 원칙(OCP, Open-Closed Principle)은 '소프트웨어 개체(클래스, 모듈, 함수 등등)는 확장에 대해 열려 있어야 하고, 수정에 대해서는 닫혀 있어야 한다'는 프로그래밍 원칙이다.</em>&quot; [3]</p>
@@ -113,6 +124,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="_2-4-design-principle-dependency-inversion-principle-dip" tabindex="-1"><a class="header-anchor" href="#_2-4-design-principle-dependency-inversion-principle-dip"><span>2.4. (Design Principle) Dependency Inversion Principle (DIP)</span></a></h3>
 <blockquote>
 <p>&quot;<em>의존관계 역전 원칙은 소프트웨어 모듈들을 분리하는 특정 형식을 지칭한다. 이 원칙을 따르면, 상위 계층(정책 결정)이 하위 계층(세부 사항)에 의존하는 전통적인 의존관계를 반전(역전)시킴으로써 상위 계층이 하위 계층의 구현으로부터 독립되게 할 수 있다. 이 원칙은 다음과 같은 내용을 담고 있다.</em>&quot; [4]</p>
@@ -136,6 +149,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="_3-conclusion" tabindex="-1"><a class="header-anchor" href="#_3-conclusion"><span>3. Conclusion</span></a></h2>
 <ul>
 <li><strong>Design B</strong>는 observer pattern을 사용하여 SRP, OCP, DIP와 같은 핵심 디자인 원칙을 준수하고 있습니다.</li>
@@ -151,6 +166,8 @@
 <blockquote>
 <p>이러한 이유로, <strong>Design B</strong>가 더 우수한 소프트웨어 디자인이라고 평가할 수 있습니다.</p>
 </blockquote>
+</section>
+<section class="print-section">
 <h2 id="_4-works-cited" tabindex="-1"><a class="header-anchor" href="#_4-works-cited"><span>4. Works Cited</span></a></h2>
 <p>[1] 수업 강의자료, Design Patterns
 (https://learning.hanyang.ac.kr/courses/181214/modules/items/8362823?return_url=/courses/181214/external_tools/140)</p>
@@ -160,6 +177,7 @@
 (https://en.wikipedia.org/wiki/Open%E2%80%93closed_principle)</p>
 <p>[4] Wikipedia, &quot;Dependency Inversion Principle&quot;
 (https://en.wikipedia.org/wiki/Dependency_inversion_principle)</p>
+</section>
 </div></template>
 
 

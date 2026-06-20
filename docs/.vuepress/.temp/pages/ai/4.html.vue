@@ -1,5 +1,8 @@
-<template><div><h1 id="_4-knowledge-and-logic-1" tabindex="-1"><a class="header-anchor" href="#_4-knowledge-and-logic-1"><span>4. Knowledge and Logic (1)</span></a></h1>
+<template><div><section class="print-section">
+<h1 id="_4-knowledge-and-logic-1" tabindex="-1"><a class="header-anchor" href="#_4-knowledge-and-logic-1"><span>4. Knowledge and Logic (1)</span></a></h1>
 <DateMeta />
+</section>
+<section class="print-section">
 <h2 id="지식-기반-에이전트-knowledge-based-agents" tabindex="-1"><a class="header-anchor" href="#지식-기반-에이전트-knowledge-based-agents"><span>지식 기반 에이전트(Knowledge-Based Agents)</span></a></h2>
 <ul>
 <li>지식 기반 에이전트(Knowledge-based agents): 지식의 내부 표현(internal representation of knowledge)에 대한 추론(reasoning) 과정을 통해 취할 행동을 결정</li>
@@ -13,6 +16,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="지식-베이스-knowledge-base" tabindex="-1"><a class="header-anchor" href="#지식-베이스-knowledge-base"><span>지식 베이스(Knowledge Base)</span></a></h2>
 <ul>
 <li>지식 베이스(KB): 문장(sentences)들의 집합
@@ -28,6 +33,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="지식-기반-에이전트의-개요-outline-of-a-knowledge-based-agent" tabindex="-1"><a class="header-anchor" href="#지식-기반-에이전트의-개요-outline-of-a-knowledge-based-agent"><span>지식 기반 에이전트의 개요(Outline of a Knowledge-Based Agent)</span></a></h2>
 <div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code class="language-text"><span class="line">function KB-AGENT(percept) returns an action</span>
 <span class="line">  persistent: KB, a knowledge base</span>
@@ -43,7 +50,11 @@
 <p>A generic knowledge-based agent (지식 기반 에이전트)<br>
 Given a percept (지각), the agent adds the percept to its knowledge base, asks the knowledge base for the best action, and tells the knowledge base that it has in fact taken that action.</p>
 </blockquote>
+</section>
+<section class="print-section">
 <h1 id="a-wumpus-world" tabindex="-1"><a class="header-anchor" href="#a-wumpus-world"><span>A Wumpus World</span></a></h1>
+</section>
+<section class="print-section">
 <h2 id="구성-요소-components" tabindex="-1"><a class="header-anchor" href="#구성-요소-components"><span>구성 요소(Components)</span></a></h2>
 <ul>
 <li>Wumpus(The wumpus): 방에 들어오는 사람은 누구든 잡아먹는 짐승</li>
@@ -51,6 +62,8 @@ Given a percept (지각), the agent adds the percept to its knowledge base, asks
 <li>바닥 없는 구덩이(Bottomless pits): 이 방에 들어오는 사람을 가둠(Wumpus는 제외)</li>
 <li>금(A heap of gold)</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="과제-정의-the-precise-definition-of-the-task" tabindex="-1"><a class="header-anchor" href="#과제-정의-the-precise-definition-of-the-task"><span>과제 정의(The precise definition of the task)</span></a></h2>
 <ul>
 <li>성과 측정(Performance measure)
@@ -93,6 +106,8 @@ Given a percept (지각), the agent adds the percept to its knowledge base, asks
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="wumpus-세계에서의-지식-기반-에이전트" tabindex="-1"><a class="header-anchor" href="#wumpus-세계에서의-지식-기반-에이전트"><span>Wumpus 세계에서의 지식 기반 에이전트</span></a></h2>
 <ul>
 <li>비공식적 지식 표현 언어(informal knowledge representation language) 사용: 격자에 기호 기록.</li>
@@ -109,6 +124,8 @@ Given a percept (지각), the agent adds the percept to its knowledge base, asks
 <li>에이전트는 <code v-pre>[2, 3]</code>으로 이동 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>⇒</mo></mrow><annotation encoding="application/x-tex">\Rightarrow</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.3669em;"></span><span class="mrel">⇒</span></span></span></span> <code v-pre>Glitter</code> 감지 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>⇒</mo></mrow><annotation encoding="application/x-tex">\Rightarrow</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.3669em;"></span><span class="mrel">⇒</span></span></span></span> 금을 잡고 집으로 돌아가야 함.</li>
 <li>에이전트가 사용 가능한 정보로부터 결론을 도출하는 모든 경우: 가용한 정보가 정확하다면, 그 결론은 반드시(guaranteed) 정확. <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>⇒</mo></mrow><annotation encoding="application/x-tex">\Rightarrow</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.3669em;"></span><span class="mrel">⇒</span></span></span></span> 논리적 추론의 근본적인 속성(fundamental property)</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="논리의-개념-concepts-of-logical-representations" tabindex="-1"><a class="header-anchor" href="#논리의-개념-concepts-of-logical-representations"><span>논리의 개념(Concepts of Logical Representations)</span></a></h2>
 <ul>
 <li>구문(syntax): 표현 언어(representation language)의 문법. 잘 구성된(well formed) 모든 문장을 지정
@@ -129,6 +146,8 @@ Given a percept (지각), the agent adds the percept to its knowledge base, asks
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="논리적-수반-logical-entailment" tabindex="-1"><a class="header-anchor" href="#논리적-수반-logical-entailment"><span>논리적 수반(Logical Entailment)</span></a></h2>
 <ul>
 <li>논리적 수반(<span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>α</mi><mo>⊨</mo><mi>β</mi></mrow><annotation encoding="application/x-tex">\alpha \vDash \beta</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6922em;"></span><span class="mord mathnormal" style="margin-right:0.0037em;">α</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel amsrm">⊨</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.05278em;">β</span></span></span></span>): 문장이 다른 문장으로부터 논리적으로 도출됨(follows logically)
@@ -143,6 +162,8 @@ Given a percept (지각), the agent adds the percept to its knowledge base, asks
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="wumpus-세계에-논리적-사고-적용" tabindex="-1"><a class="header-anchor" href="#wumpus-세계에-논리적-사고-적용"><span>Wumpus 세계에 논리적 사고 적용</span></a></h2>
 <ul>
 <li><code v-pre>[1, 1]</code>에서 아무것도 감지 못하고 <code v-pre>[2, 1]</code>에서 산들바람(Breeze)을 감지한 상황 고려
@@ -172,6 +193,8 @@ Given a percept (지각), the agent adds the percept to its knowledge base, asks
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="추론의-공식-정의-formal-definition-of-inference" tabindex="-1"><a class="header-anchor" href="#추론의-공식-정의-formal-definition-of-inference"><span>추론의 공식 정의(Formal Definition of Inference)</span></a></h2>
 <ul>
 <li>추론 알고리즘 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6595em;"></span><span class="mord mathnormal">i</span></span></span></span>가 KB로부터 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>α</mi></mrow><annotation encoding="application/x-tex">\alpha</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal" style="margin-right:0.0037em;">α</span></span></span></span>를 도출(derive)할 수 있다면, <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>K</mi><mi>B</mi><msub><mo>⊢</mo><mi>i</mi></msub><mi>α</mi></mrow><annotation encoding="application/x-tex">KB \vdash_i \alpha</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8444em;vertical-align:-0.15em;"></span><span class="mord mathnormal" style="margin-right:0.07153em;">K</span><span class="mord mathnormal" style="margin-right:0.05017em;">B</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel"><span class="mrel">⊢</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal" style="margin-right:0.0037em;">α</span></span></span></span>로 표기</li>
@@ -188,11 +211,15 @@ Given a percept (지각), the agent adds the percept to its knowledge base, asks
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="명제-논리-propositional-logic" tabindex="-1"><a class="header-anchor" href="#명제-논리-propositional-logic"><span>명제 논리(Propositional logic)</span></a></h2>
 <ul>
 <li>문장의 구조(syntax)와 문장의 참이 결정되는 방식(semantics) 정의</li>
 <li>의미론적 수반(semantic notion of entailment)을 구현하는 단순한 논리적 추론 알고리즘 도출</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="명제-논리의-구문-syntax-of-propositional-logic" tabindex="-1"><a class="header-anchor" href="#명제-논리의-구문-syntax-of-propositional-logic"><span>명제 논리의 구문(Syntax of Propositional Logic)</span></a></h2>
 <ul>
 <li>명제 기호(Propositional symbol, variable)</li>
@@ -206,6 +233,8 @@ Given a percept (지각), the agent adds the percept to its knowledge base, asks
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="명제-논리의-의미론-semantics-of-propositional-logic" tabindex="-1"><a class="header-anchor" href="#명제-논리의-의미론-semantics-of-propositional-logic"><span>명제 논리의 의미론(Semantics of Propositional Logic)</span></a></h2>
 <ul>
 <li>의미론: 특정 모델에 대한 문장의 참을 결정하는 규칙 정의</li>
@@ -226,6 +255,8 @@ Given a percept (지각), the agent adds the percept to its knowledge base, asks
 </li>
 <li>진리표(truth tables): 규칙을 표현 구성 요소의 모든 가능한 참값 할당에 대한 복합 문장의 참값을 지정</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="단순한-지식-베이스-a-simple-knowledge-base" tabindex="-1"><a class="header-anchor" href="#단순한-지식-베이스-a-simple-knowledge-base"><span>단순한 지식 베이스(A Simple Knowledge Base)</span></a></h2>
 <ul>
 <li>Wumpus 세계를 위한 KB(명제 기호 정의):
@@ -251,6 +282,8 @@ Given a percept (지각), the agent adds the percept to its knowledge base, asks
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="단순한-추론-절차-a-simple-inference-procedure" tabindex="-1"><a class="header-anchor" href="#단순한-추론-절차-a-simple-inference-procedure"><span>단순한 추론 절차(A Simple Inference Procedure)</span></a></h2>
 <ul>
 <li>목표: <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>K</mi><mi>B</mi><mo>⊨</mo><mi mathvariant="normal">¬</mi><msub><mi>P</mi><mrow><mn>1</mn><mo separator="true">,</mo><mn>2</mn></mrow></msub></mrow><annotation encoding="application/x-tex">KB \vDash \neg P_{1,2}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6922em;"></span><span class="mord mathnormal" style="margin-right:0.07153em;">K</span><span class="mord mathnormal" style="margin-right:0.05017em;">B</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel amsrm">⊨</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.9694em;vertical-align:-0.2861em;"></span><span class="mord">¬</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.1389em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span><span class="mpunct mtight">,</span><span class="mord mtight">2</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span></span></span></span> 인지 결정(KB가 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">¬</mi><msub><mi>P</mi><mrow><mn>1</mn><mo separator="true">,</mo><mn>2</mn></mrow></msub></mrow><annotation encoding="application/x-tex">\neg P_{1,2}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.9694em;vertical-align:-0.2861em;"></span><span class="mord">¬</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.1389em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span><span class="mpunct mtight">,</span><span class="mord mtight">2</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span></span></span></span>를 수반하는가?)</li>
@@ -292,6 +325,7 @@ Given a percept (지각), the agent adds the percept to its knowledge base, asks
 <li>변수 model은 심볼(symbol)들의 일부에 대한 할당(assignment)인 부분 모델(partial model)을 나타냄.</li>
 <li>키워드 <code v-pre>and</code>는 의사 코드(pseudocode) 프로그래밍 언어의 중위 함수 심볼(infix function symbol)이며 명제 논리(propositional logic)의 연산자(operator)가 아님. 두 개의 인수를 취하고 <code v-pre>true</code> 또는 <code v-pre>false</code>를 반환</li>
 </ul>
+</section>
 </div></template>
 
 

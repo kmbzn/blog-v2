@@ -1,5 +1,8 @@
-<template><div><h1 id="_8-0-statement-level-control-structures" tabindex="-1"><a class="header-anchor" href="#_8-0-statement-level-control-structures"><span>8.0. Statement Level Control Structures</span></a></h1>
+<template><div><section class="print-section">
+<h1 id="_8-0-statement-level-control-structures" tabindex="-1"><a class="header-anchor" href="#_8-0-statement-level-control-structures"><span>8.0. Statement Level Control Structures</span></a></h1>
 <DateMeta />
+</section>
+<section class="print-section">
 <h2 id="today-s-contents" tabindex="-1"><a class="header-anchor" href="#today-s-contents"><span>Today’s Contents</span></a></h2>
 <ul>
 <li>Statement-Level Control Structures</li>
@@ -8,6 +11,8 @@
 <li>Unconditional Branching</li>
 <li>Guarded Commands</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="statement-level-control-structures" tabindex="-1"><a class="header-anchor" href="#statement-level-control-structures"><span>Statement-Level Control Structures</span></a></h2>
 <ul>
 <li>Imperative: expressions + assignments</li>
@@ -22,12 +27,16 @@
 <li>Multiple entries increase flexibility but decrease readability</li>
 <li>Inclusion of <code v-pre>goto</code> → cause multiple exits</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="selection-statements" tabindex="-1"><a class="header-anchor" href="#selection-statements"><span>Selection Statements</span></a></h2>
 <ul>
 <li>Means of choosing between two or more paths</li>
 <li>Two-way selection statements</li>
 <li>Multiple-selection statements</li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="two-way-selection-statements" tabindex="-1"><a class="header-anchor" href="#two-way-selection-statements"><span>Two-way selection statements</span></a></h3>
 <ul>
 <li>General form</li>
@@ -201,6 +210,8 @@
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul>
 <li><code v-pre>if</code>가 expression 즉: 값을 반드시 반환해야 함</li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="multiple-selection-statements" tabindex="-1"><a class="header-anchor" href="#multiple-selection-statements"><span>Multiple-selection statements</span></a></h3>
 <ul>
 <li>Allows the selection of one of any number of statements (generalized)</li>
@@ -428,6 +439,8 @@
 <li>More than one predicate to be true (첫 번째 true만 실행)</li>
 <li>Value is returned as the value of <code v-pre>COND</code>, so should have <code v-pre>ELSE</code></li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="iterative-statements" tabindex="-1"><a class="header-anchor" href="#iterative-statements"><span>Iterative Statements</span></a></h2>
 <ul>
 <li>Loop, essence of programming</li>
@@ -440,6 +453,8 @@
 <li>User-located loop control mechanisms</li>
 <li>Iteration based on data structures</li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="counter-controlled-loops" tabindex="-1"><a class="header-anchor" href="#counter-controlled-loops"><span>Counter-controlled loops</span></a></h3>
 <ul>
 <li>Controlled by counter values (Loop parameters: initial and terminal values and stepsize)</li>
@@ -549,6 +564,8 @@
 <li>Python은 iterable 기반 반복을 사용한다.</li>
 <li>함수형 언어는 recursion으로 반복을 구현한다.</li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="logically-controlled-loops" tabindex="-1"><a class="header-anchor" href="#logically-controlled-loops"><span>Logically controlled loops</span></a></h3>
 <ul>
 <li>Repetition control is based on Boolean expression</li>
@@ -571,6 +588,8 @@
 <li>일부 언어에서는 logically controlled loop를 counting loop의 특수 형태로 보기도 한다.</li>
 <li>함수형 언어에서는 recursion을 통해 이를 구현한다.</li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="user-located-loop-control-mechanism" tabindex="-1"><a class="header-anchor" href="#user-located-loop-control-mechanism"><span>User-located loop control mechanism</span></a></h3>
 <ul>
 <li>Programmer to choose a location for loop control other than the top or bottom of the loop body</li>
@@ -628,6 +647,8 @@
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul>
 <li>Fulfill a common need for <code v-pre>goto</code> statements through a highly restricted branch statement (<code v-pre>goto</code>는 위험, 대신 제한된 형태 제공)</li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="iteration-based-on-data-structures" tabindex="-1"><a class="header-anchor" href="#iteration-based-on-data-structures"><span>Iteration based on data structures</span></a></h3>
 <ul>
 <li>진화 과정: 카운터(<code v-pre>for</code>) 중심 → 데이터 중심(<code v-pre>iteration</code>)으로 진화 (값을 직접 세는 게 아니라, 데이터 자체를 순회)</li>
@@ -730,6 +751,8 @@
 <li>Java/C#은 <code v-pre>foreach</code>를 통해 iterator를 추상화</li>
 <li>Ruby는 <code v-pre>block</code> 기반 iteration을 제공</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="unconditional-branching" tabindex="-1"><a class="header-anchor" href="#unconditional-branching"><span>Unconditional Branching</span></a></h2>
 <ul>
 <li>Transfers execution control to a specified location in the program</li>
@@ -738,6 +761,8 @@
 <li>[C, C#] (ex) in switch statement (<code v-pre>goto case 1;</code>)</li>
 <li>Camouflaged <code v-pre>goto</code> statements are used (<code v-pre>break</code>, <code v-pre>continue</code>)</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="guarded-commands" tabindex="-1"><a class="header-anchor" href="#guarded-commands"><span>Guarded Commands</span></a></h2>
 <ul>
 <li>To provide control statements supporting a program design during development</li>
@@ -829,6 +854,8 @@
 <li>순서 없음: 조건 집합만 고려 → reasoning 단순</li>
 <li>거의 논리식 → 결과</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="summary" tabindex="-1"><a class="header-anchor" href="#summary"><span>Summary</span></a></h2>
 <ul>
 <li>Statement-Level Control Structures</li>
@@ -837,6 +864,7 @@
 <li>Unconditional Branching</li>
 <li>Guarded Commands</li>
 </ul>
+</section>
 </div></template>
 
 

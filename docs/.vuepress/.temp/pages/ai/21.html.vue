@@ -1,8 +1,15 @@
-<template><div><h1 id="_21-neural-networks-and-deep-learning-3" tabindex="-1"><a class="header-anchor" href="#_21-neural-networks-and-deep-learning-3"><span>21. Neural Networks and Deep Learning (3)</span></a></h1>
+<template><div><section class="print-section">
+<h1 id="_21-neural-networks-and-deep-learning-3" tabindex="-1"><a class="header-anchor" href="#_21-neural-networks-and-deep-learning-3"><span>21. Neural Networks and Deep Learning (3)</span></a></h1>
 <DateMeta />
+</section>
+<section class="print-section">
 <h2 id="training-of-feedforward-nets" tabindex="-1"><a class="header-anchor" href="#training-of-feedforward-nets"><span>Training of Feedforward Nets</span></a></h2>
+</section>
+<section class="print-section">
 <h2 id="a-graphical-illustration-on-softmax" tabindex="-1"><a class="header-anchor" href="#a-graphical-illustration-on-softmax"><span>A Graphical Illustration on Softmax</span></a></h2>
 <p><img src="@source/ai/image-38.png" alt="alt text"></p>
+</section>
+<section class="print-section">
 <h2 id="cross-entropy-and-maximum-likelihood-estimation" tabindex="-1"><a class="header-anchor" href="#cross-entropy-and-maximum-likelihood-estimation"><span>Cross-Entropy and Maximum Likelihood Estimation</span></a></h2>
 <ul>
 <li>Maximum Likelihood Estimation (MLE)
@@ -44,6 +51,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="parameter-optimization" tabindex="-1"><a class="header-anchor" href="#parameter-optimization"><span>Parameter Optimization</span></a></h2>
 <ul>
 <li>Task: 선택된 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi><mo stretchy="false">(</mo><mi mathvariant="bold">w</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">E(\mathbf{w})</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.05764em;">E</span><span class="mopen">(</span><span class="mord mathbf" style="margin-right:0.01597em;">w</span><span class="mclose">)</span></span></span></span>를 최소화하는 weight vector <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="bold">w</mi></mrow><annotation encoding="application/x-tex">\mathbf{w}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4444em;"></span><span class="mord mathbf" style="margin-right:0.01597em;">w</span></span></span></span> 탐색</li>
@@ -52,6 +61,8 @@
 <li>Note: Neural network의 성공적 적용을 위해 global minimum 탐색이 필수적이 아닐 수 있음, 충분히 좋은 solution을 위해 여러 local minima 비교 필요</li>
 </ul>
 <p><img src="@source/ai/image-37.png" alt="alt text"></p>
+</section>
+<section class="print-section">
 <h2 id="forward-propagation-backpropagation" tabindex="-1"><a class="header-anchor" href="#forward-propagation-backpropagation"><span>Forward Propagation &amp; Backpropagation</span></a></h2>
 <ul>
 <li><strong>Error backpropagation</strong> (or simply backprop)
@@ -80,6 +91,8 @@
 </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7167em;vertical-align:-0.2861em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.04398em;">z</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.044em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.05724em;">j</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1.0361em;vertical-align:-0.2861em;"></span><span class="mord mathnormal">h</span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.05724em;">j</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span></span></p>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="forward-propagation" tabindex="-1"><a class="header-anchor" href="#forward-propagation"><span>Forward Propagation</span></a></h2>
 <ul>
 <li>For each pattern in the training set
@@ -91,6 +104,8 @@
 </li>
 </ul>
 <p><img src="@source/ai/image-36.png" alt="alt text"></p>
+</section>
+<section class="print-section">
 <h2 id="chain-rule-of-calculus" tabindex="-1"><a class="header-anchor" href="#chain-rule-of-calculus"><span>Chain Rule of Calculus</span></a></h2>
 <ul>
 <li>Chain rule for scalars
@@ -112,6 +127,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="backpropagation" tabindex="-1"><a class="header-anchor" href="#backpropagation"><span>Backpropagation</span></a></h2>
 <ul>
 <li><span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>E</mi><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">E_n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.05764em;">E</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:-0.0576em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>의 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>w</mi><mrow><mi>j</mi><mi>i</mi></mrow></msub></mrow><annotation encoding="application/x-tex">w_{ji}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7167em;vertical-align:-0.2861em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.02691em;">w</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.0269em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">ji</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span></span></span></span>에 대한 derivative 평가
@@ -148,11 +165,15 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="automatic-differentiation" tabindex="-1"><a class="header-anchor" href="#automatic-differentiation"><span>Automatic Differentiation</span></a></h2>
 <ul>
 <li>Gradient computation: Forward propagation의 symbolic expression에서 자동 추론 가능</li>
 <li>Modern DL frameworks (Tensorflow, PyTorch, etc.): Backpropagation 자동 수행</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="a-simple-example-of-backprop" tabindex="-1"><a class="header-anchor" href="#a-simple-example-of-backprop"><span>A Simple Example of Backprop</span></a></h2>
 <ul>
 <li>Function: <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false">(</mo><mi>x</mi><mo separator="true">,</mo><mtext> </mtext><mi>y</mi><mo separator="true">,</mo><mtext> </mtext><mi>z</mi><mo stretchy="false">)</mo><mo>=</mo><mo stretchy="false">(</mo><mi>x</mi><mo>+</mo><mi>y</mi><mo stretchy="false">)</mo><mi>z</mi></mrow><annotation encoding="application/x-tex">f(x,~y,~z) = (x+y)z</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathnormal">x</span><span class="mpunct">,</span><span class="mspace nobreak"> </span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="mpunct">,</span><span class="mspace nobreak"> </span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.04398em;">z</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal">x</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="mclose">)</span><span class="mord mathnormal" style="margin-right:0.04398em;">z</span></span></span></span></li>
@@ -185,6 +206,7 @@
 </li>
 <li>Pattern: Gate (연산)는 local gradient를 계산하고, 이를 upstream gradient와 곱하여 downstream gradient 계산</li>
 </ul>
+</section>
 </div></template>
 
 

@@ -1,7 +1,12 @@
-<template><div><h1 id="s-p-500-etf-투자-가이드" tabindex="-1"><a class="header-anchor" href="#s-p-500-etf-투자-가이드"><span>S&amp;P 500 ETF 투자 가이드</span></a></h1>
+<template><div><section class="print-section">
+<h1 id="s-p-500-etf-투자-가이드" tabindex="-1"><a class="header-anchor" href="#s-p-500-etf-투자-가이드"><span>S&amp;P 500 ETF 투자 가이드</span></a></h1>
 <DateMeta />
 <p>S&amp;P 500은 미국 뉴욕증권거래소(NYSE)와 나스닥(NASDAQ)에 상장된 대형주 500개로 구성된 지수다. 애플, 마이크로소프트, 엔비디아, 아마존, 알파벳 등 미국을 대표하는 기업들을 포함하며, 장기적으로 연평균 약 10% 수익률(배당 포함)을 기록해왔다. 이 지수를 추종하는 ETF에 투자하는 것은 전 세계 개인투자자들이 가장 많이 선택하는 장기 투자 방법 중 하나다.</p>
+</section>
+<section class="print-section">
 <h2 id="s-p-500-etf의-종류" tabindex="-1"><a class="header-anchor" href="#s-p-500-etf의-종류"><span>S&amp;P 500 ETF의 종류</span></a></h2>
+</section>
+<section class="print-section">
 <h3 id="미국-상장-etf-미장-직접-투자" tabindex="-1"><a class="header-anchor" href="#미국-상장-etf-미장-직접-투자"><span>미국 상장 ETF (미장 직접 투자)</span></a></h3>
 <table>
 <thead>
@@ -34,6 +39,8 @@
 </tbody>
 </table>
 <p><strong>VOO와 IVV</strong>가 운용보수 0.03%로 가장 저렴하다. 장기 투자에서는 운용보수가 수익률에 직접 영향을 주므로, 비용이 낮은 ETF가 유리하다.</p>
+</section>
+<section class="print-section">
 <h3 id="국내-상장-etf-국장-투자" tabindex="-1"><a class="header-anchor" href="#국내-상장-etf-국장-투자"><span>국내 상장 ETF (국장 투자)</span></a></h3>
 <p>국내 ETF는 원화로 매수 가능하고, 환전 수수료 없이 투자할 수 있다.</p>
 <table>
@@ -72,8 +79,12 @@
 </table>
 <p>국내 상장 ETF의 장점은 <strong>ISA 계좌, 연금저축 계좌, IRP에서 매수 가능</strong>하다는 것이다. 이를 통해 세금 혜택을 받을 수 있다.</p>
 <hr>
+</section>
+<section class="print-section">
 <h2 id="환헷지-vs-환노출" tabindex="-1"><a class="header-anchor" href="#환헷지-vs-환노출"><span>환헷지 vs 환노출</span></a></h2>
 <p>S&amp;P 500 ETF 투자 시 가장 먼저 결정해야 할 것이 환율 리스크를 어떻게 처리할지다.</p>
+</section>
+<section class="print-section">
 <h3 id="환노출-unhedged" tabindex="-1"><a class="header-anchor" href="#환노출-unhedged"><span>환노출 (Unhedged)</span></a></h3>
 <p>원/달러 환율 변동이 투자 수익에 그대로 반영된다.</p>
 <ul>
@@ -86,6 +97,8 @@
 <li>원화 강세 국면이 지속되지 않으며, 장기적으로 환율은 중립적이다</li>
 <li>미국 자산 자체가 달러 기반이므로, 달러 노출은 자연스러운 분산 효과가 있다</li>
 </ol>
+</section>
+<section class="print-section">
 <h3 id="환헷지-hedged" tabindex="-1"><a class="header-anchor" href="#환헷지-hedged"><span>환헷지 (Hedged)</span></a></h3>
 <p>선물 계약으로 환율 변동 리스크를 차단한다.</p>
 <ul>
@@ -96,7 +109,11 @@
 <p><strong>단기 투자(3년 이내)</strong> 또는 환율 변동이 특히 걱정되는 경우에 고려할 수 있다.</p>
 <p><strong>결론</strong>: 장기(10년+) 적립식 투자라면 <strong>환노출</strong>이 합리적이다.</p>
 <hr>
+</section>
+<section class="print-section">
 <h2 id="투자-방법-국장-vs-미장" tabindex="-1"><a class="header-anchor" href="#투자-방법-국장-vs-미장"><span>투자 방법: 국장 vs 미장</span></a></h2>
+</section>
+<section class="print-section">
 <h3 id="국내-증권사에서-국내-etf-매수-국장" tabindex="-1"><a class="header-anchor" href="#국내-증권사에서-국내-etf-매수-국장"><span>국내 증권사에서 국내 ETF 매수 (국장)</span></a></h3>
 <p><strong>적합한 경우</strong>: 세제 혜택 계좌를 활용하고 싶은 경우, 환전이 번거로운 경우</p>
 <p><strong>절차</strong></p>
@@ -107,6 +124,8 @@
 <li>지정가 또는 시장가로 매수</li>
 </ol>
 <p><strong>세금</strong>: 국내 ETF 매매차익은 15.4% 배당소득세 (단, ISA·연금 계좌에서는 세금 이연 또는 면제)</p>
+</section>
+<section class="print-section">
 <h3 id="해외-etf-직접-매수-미장" tabindex="-1"><a class="header-anchor" href="#해외-etf-직접-매수-미장"><span>해외 ETF 직접 매수 (미장)</span></a></h3>
 <p><strong>적합한 경우</strong>: 가장 낮은 운용보수로 직접 미국 시장 ETF를 보유하고 싶은 경우</p>
 <p><strong>절차</strong></p>
@@ -119,8 +138,12 @@
 </ol>
 <p><strong>세금</strong>: 해외주식 매매차익 250만원 초과분은 22% 양도소득세 (분리과세), 연 1회 신고 필요</p>
 <hr>
+</section>
+<section class="print-section">
 <h2 id="세금-혜택-계좌-활용" tabindex="-1"><a class="header-anchor" href="#세금-혜택-계좌-활용"><span>세금 혜택 계좌 활용</span></a></h2>
 <p>S&amp;P 500 ETF에 투자할 때 계좌 선택은 수익률만큼 중요하다.</p>
+</section>
+<section class="print-section">
 <h3 id="isa-개인종합자산관리계좌" tabindex="-1"><a class="header-anchor" href="#isa-개인종합자산관리계좌"><span>ISA (개인종합자산관리계좌)</span></a></h3>
 <table>
 <thead>
@@ -154,6 +177,8 @@
 </tbody>
 </table>
 <p>ISA 계좌에서 국내 S&amp;P 500 ETF(TIGER, KODEX 등)를 매수하면, 매매차익 및 배당에 대해 최대 400만원까지 비과세, 초과분은 9.9% 분리과세 적용. 일반 계좌의 15.4% 대비 세율이 낮다.</p>
+</section>
+<section class="print-section">
 <h3 id="연금저축펀드" tabindex="-1"><a class="header-anchor" href="#연금저축펀드"><span>연금저축펀드</span></a></h3>
 <ul>
 <li>연간 600만원까지 납입 가능</li>
@@ -162,6 +187,8 @@
 <li>국내 상장 ETF 매수 가능</li>
 </ul>
 <p><strong>예시</strong>: 연봉 4,000만원 직장인이 연금저축에 600만원 납입 시 → 세액공제 약 99만원</p>
+</section>
+<section class="print-section">
 <h3 id="irp-개인형-퇴직연금" tabindex="-1"><a class="header-anchor" href="#irp-개인형-퇴직연금"><span>IRP (개인형 퇴직연금)</span></a></h3>
 <ul>
 <li>연금저축과 합산 연 900만원까지 세액공제</li>
@@ -169,8 +196,12 @@
 <li>주식형 ETF 투자 비중 70% 이하 제한 (안전자산 30% 이상 유지 필요)</li>
 </ul>
 <hr>
+</section>
+<section class="print-section">
 <h2 id="적립식-매수-전략" tabindex="-1"><a class="header-anchor" href="#적립식-매수-전략"><span>적립식 매수 전략</span></a></h2>
 <p>적립식 투자는 <strong>분할 매수</strong>를 통해 매수 단가를 평준화(달러코스트 평균법, DCA)하는 방식이다.</p>
+</section>
+<section class="print-section">
 <h3 id="달러코스트-평균법-dca" tabindex="-1"><a class="header-anchor" href="#달러코스트-평균법-dca"><span>달러코스트 평균법 (DCA)</span></a></h3>
 <p>매월 일정 금액을 기계적으로 매수. 가격이 높을 때는 적게, 낮을 때는 많이 사게 되어 평균 매수 단가가 안정된다.</p>
 <p><strong>예시</strong>: 매월 50만원씩 TIGER 미국S&amp;P500 매수</p>
@@ -206,6 +237,8 @@
 </tbody>
 </table>
 <p>단순 평균 주가(15,000원)보다 낮은 단가로 매수하는 효과가 발생한다.</p>
+</section>
+<section class="print-section">
 <h3 id="실행-방법" tabindex="-1"><a class="header-anchor" href="#실행-방법"><span>실행 방법</span></a></h3>
 <ul>
 <li><strong>자동투자 설정</strong>: 증권사 앱에서 매월 특정일에 자동 매수 설정 가능 (미래에셋, 삼성증권 등 지원)</li>
@@ -213,6 +246,8 @@
 <li><strong>금액 기준 매수</strong>: 수량이 아닌 금액 기준으로 매수해야 DCA 효과가 발생한다</li>
 </ul>
 <hr>
+</section>
+<section class="print-section">
 <h2 id="투자-전-체크리스트" tabindex="-1"><a class="header-anchor" href="#투자-전-체크리스트"><span>투자 전 체크리스트</span></a></h2>
 <ul>
 <li>[ ] 투자 기간은 최소 5년 이상인가?</li>
@@ -225,6 +260,7 @@
 <p class="hint-container-title">주의사항</p>
 <p>S&amp;P 500은 단기적으로 30~50% 급락이 발생할 수 있다(2000년 닷컴버블, 2008년 금융위기, 2020년 코로나). 장기 보유로 회복·성장을 기대하는 투자이므로, 단기 자금은 투자하지 않는 것이 원칙이다.</p>
 </div>
+</section>
 </div></template>
 
 

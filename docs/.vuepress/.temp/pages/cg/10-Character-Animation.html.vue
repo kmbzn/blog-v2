@@ -1,5 +1,8 @@
-<template><div><h1 id="_10-character-animation" tabindex="-1"><a class="header-anchor" href="#_10-character-animation"><span>10 - Character Animation</span></a></h1>
+<template><div><section class="print-section">
+<h1 id="_10-character-animation" tabindex="-1"><a class="header-anchor" href="#_10-character-animation"><span>10 - Character Animation</span></a></h1>
 <DateMeta />
+</section>
+<section class="print-section">
 <h2 id="outline" tabindex="-1"><a class="header-anchor" href="#outline"><span>Outline</span></a></h2>
 <ul>
 <li>Computer-Generated Character Animation</li>
@@ -8,6 +11,8 @@
 <li>Creating Character Animation</li>
 <li>BVH File Format</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="computer-generated-animation" tabindex="-1"><a class="header-anchor" href="#computer-generated-animation"><span>Computer-Generated Animation</span></a></h2>
 <ul>
 <li>
@@ -24,6 +29,8 @@
 <blockquote>
 <p><em>Encanto, 2021</em></p>
 </blockquote>
+</section>
+<section class="print-section">
 <h2 id="computer-generated-character-animation" tabindex="-1"><a class="header-anchor" href="#computer-generated-character-animation"><span>Computer-Generated Character Animation</span></a></h2>
 <ul>
 <li>
@@ -38,6 +45,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="visualizing-character-in-skeletal-animation" tabindex="-1"><a class="header-anchor" href="#visualizing-character-in-skeletal-animation"><span>Visualizing Character in Skeletal Animation</span></a></h2>
 <ul>
 <li>
@@ -68,6 +77,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="skeletal-animation" tabindex="-1"><a class="header-anchor" href="#skeletal-animation"><span>Skeletal Animation</span></a></h2>
 <ul>
 <li>
@@ -79,6 +90,8 @@
 </li>
 </ul>
 <p><a href="https://youtu.be/PBydW8L6B9Y" target="_blank" rel="noopener noreferrer">https://youtu.be/PBydW8L6B9Y</a></p>
+</section>
+<section class="print-section">
 <h2 id="skeleton-part" tabindex="-1"><a class="header-anchor" href="#skeleton-part"><span>&quot;Skeleton&quot; Part</span></a></h2>
 <ul>
 <li><strong>&quot;Skeleton&quot;</strong>: 정적 데이터
@@ -101,7 +114,9 @@
 <span class="line"> ├── RightUpLeg ─ RightLeg ─ RightFoot</span>
 <span class="line"> └── LeftUpLeg ─ LeftLeg ─ LeftFoot</span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="recall-hierarchical-model-human-figure" tabindex="-1"><a class="header-anchor" href="#recall-hierarchical-model-human-figure"><span>Recall: Hierarchical Model - Human Figure</span></a></h2>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h2 id="recall-hierarchical-model-human-figure" tabindex="-1"><a class="header-anchor" href="#recall-hierarchical-model-human-figure"><span>Recall: Hierarchical Model - Human Figure</span></a></h2>
 <ul>
 <li>
 <p>각 body part의 움직임은 <strong>자기 부모의 좌표계</strong> 기준으로 정의됨<br>
@@ -117,6 +132,8 @@
 </ul>
 <p><a href="https://youtu.be/Ol7rMbK5C5g" target="_blank" rel="noopener noreferrer">https://youtu.be/Ol7rMbK5C5g</a><br>
 <a href="https://youtu.be/0SR86WUngbU" target="_blank" rel="noopener noreferrer">https://youtu.be/0SR86WUngbU</a></p>
+</section>
+<section class="print-section">
 <h2 id="motion-part" tabindex="-1"><a class="header-anchor" href="#motion-part"><span>&quot;Motion&quot; Part</span></a></h2>
 <ul>
 <li>
@@ -140,6 +157,8 @@
 </li>
 </ul>
 <p><a href="https://youtu.be/PBydW8L6B9Y" target="_blank" rel="noopener noreferrer">https://youtu.be/PBydW8L6B9Y</a></p>
+</section>
+<section class="print-section">
 <h2 id="terminologies" tabindex="-1"><a class="header-anchor" href="#terminologies"><span>Terminologies</span></a></h2>
 <ul>
 <li><strong>Posture (pose)</strong>: 특정 프레임에서의 &quot;motion&quot; 상태</li>
@@ -148,6 +167,8 @@
 <li><strong>Link</strong>: joint 사이의 강체</li>
 <li><strong>End effector</strong>: 운동 사슬 끝의 자유 단말 지점</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="kinematics" tabindex="-1"><a class="header-anchor" href="#kinematics"><span>Kinematics</span></a></h2>
 <ul>
 <li>
@@ -167,6 +188,8 @@
 <p>Forward kinematics 이해는 skeletal animation 이해에 도움이 됨</p>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="forward-kinematics-fk" tabindex="-1"><a class="header-anchor" href="#forward-kinematics-fk"><span>Forward Kinematics (FK)</span></a></h2>
 <ul>
 <li>
@@ -185,12 +208,16 @@
 어떤 link에 &quot;붙어 있는&quot; 임의의 지점에도 적용 가능함</p>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="demo-forward-inverse-kinematics" tabindex="-1"><a class="header-anchor" href="#demo-forward-inverse-kinematics"><span>[Demo] Forward / Inverse Kinematics</span></a></h2>
 <p><a href="http://robot.glumbot.de/" target="_blank" rel="noopener noreferrer">http://robot.glumbot.de/</a></p>
 <ul>
 <li>Forward kinematics: &quot;angles&quot; 메뉴에서 각도 조절</li>
 <li>Inverse kinematics: 마우스로 end-effector 위치 드래그로 제어</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="forward-kinematics-map" tabindex="-1"><a class="header-anchor" href="#forward-kinematics-map"><span>Forward Kinematics Map</span></a></h2>
 <ul>
 <li>
@@ -300,6 +327,8 @@
 계층적 joint와 link 변환을 모두 누적해<br>
 원하는 link 또는 point의 위치를 world 기준으로 변환함</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="recall-rendering-hierarchical-models" tabindex="-1"><a class="header-anchor" href="#recall-rendering-hierarchical-models"><span>Recall: Rendering Hierarchical Models</span></a></h2>
 <ul>
 <li>
@@ -322,7 +351,9 @@
 <span class="line"> ├── RightUpLeg ─ RightLeg ─ RightFoot</span>
 <span class="line"> └── LeftUpLeg ─ LeftLeg ─ LeftFoot</span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="forward-kinematics-map-1" tabindex="-1"><a class="header-anchor" href="#forward-kinematics-map-1"><span>Forward Kinematics Map</span></a></h2>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h2 id="forward-kinematics-map-1" tabindex="-1"><a class="header-anchor" href="#forward-kinematics-map-1"><span>Forward Kinematics Map</span></a></h2>
 <ul>
 <li>
 <p>Skeletal animation은 아래로 정의됨:</p>
@@ -341,7 +372,11 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h1 id="creating-character-animation" tabindex="-1"><a class="header-anchor" href="#creating-character-animation"><span>Creating Character Animation</span></a></h1>
+</section>
+<section class="print-section">
 <h2 id="methods-for-creating-character-animation" tabindex="-1"><a class="header-anchor" href="#methods-for-creating-character-animation"><span>Methods for Creating Character Animation</span></a></h2>
 <ul>
 <li>
@@ -357,6 +392,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="keyframe-animation" tabindex="-1"><a class="header-anchor" href="#keyframe-animation"><span>Keyframe Animation</span></a></h2>
 <ul>
 <li>
@@ -394,6 +431,8 @@
 <p>현재도 많이 사용되는 기법</p>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="motion-capture" tabindex="-1"><a class="header-anchor" href="#motion-capture"><span>Motion Capture</span></a></h2>
 <ul>
 <li>
@@ -416,6 +455,8 @@
 <ul>
 <li>실시간 캡처 현장 사진</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="bvh-motion-capture-data-example" tabindex="-1"><a class="header-anchor" href="#bvh-motion-capture-data-example"><span>Bvh Motion Capture Data Example</span></a></h2>
 <div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code class="language-text"><span class="line">HIERARCHY</span>
 <span class="line">  "Skeleton" {</span>
@@ -448,6 +489,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="motion-capture-1" tabindex="-1"><a class="header-anchor" href="#motion-capture-1"><span>Motion Capture</span></a></h2>
 <ul>
 <li>
@@ -462,6 +505,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="data-driven-animation" tabindex="-1"><a class="header-anchor" href="#data-driven-animation"><span>Data-Driven Animation</span></a></h2>
 <ul>
 <li>
@@ -489,6 +534,8 @@
 <p>Motion Warping 예시: <a href="https://youtu.be/H9dQ42m6rfg" target="_blank" rel="noopener noreferrer">https://youtu.be/H9dQ42m6rfg</a><br>
 Deep Learning 기반 synthesis (PFNN 2017): <a href="https://youtu.be/k0KfGiwgGkw" target="_blank" rel="noopener noreferrer">https://youtu.be/k0KfGiwgGkw</a></p>
 </blockquote>
+</section>
+<section class="print-section">
 <h2 id="physics-based-animation-simulation-based" tabindex="-1"><a class="header-anchor" href="#physics-based-animation-simulation-based"><span>Physics-Based Animation (Simulation-Based)</span></a></h2>
 <ul>
 <li>
@@ -521,6 +568,8 @@ Deep Learning 기반 synthesis (PFNN 2017): <a href="https://youtu.be/k0KfGiwgGk
 <p>DeepMimic (Peng et al. 2018): <a href="https://youtu.be/pXp5v2gcz90" target="_blank" rel="noopener noreferrer">https://youtu.be/pXp5v2gcz90</a><br>
 PhysicsFC (Kim et al. 2025): <a href="https://youtu.be/sdWRBWESC4A" target="_blank" rel="noopener noreferrer">https://youtu.be/sdWRBWESC4A</a></p>
 </blockquote>
+</section>
+<section class="print-section">
 <h2 id="bvh-file-format" tabindex="-1"><a class="header-anchor" href="#bvh-file-format"><span>BVH File Format</span></a></h2>
 <ul>
 <li>
@@ -538,6 +587,8 @@ PhysicsFC (Kim et al. 2025): <a href="https://youtu.be/sdWRBWESC4A" target="_bla
 </ol>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="biovision-bvh-hierarchy-section" tabindex="-1"><a class="header-anchor" href="#biovision-bvh-hierarchy-section"><span>Biovision BVH - Hierarchy Section</span></a></h2>
 <ul>
 <li>
@@ -566,6 +617,8 @@ PhysicsFC (Kim et al. 2025): <a href="https://youtu.be/sdWRBWESC4A" target="_bla
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="예시-구조만-발췌" tabindex="-1"><a class="header-anchor" href="#예시-구조만-발췌"><span>예시 (구조만 발췌)</span></a></h2>
 <div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code class="language-text"><span class="line">HIERARCHY</span>
 <span class="line">ROOT Hips</span>
@@ -600,6 +653,8 @@ PhysicsFC (Kim et al. 2025): <a href="https://youtu.be/sdWRBWESC4A" target="_bla
 <li><code v-pre>L3</code>: head까지의 offset</li>
 <li><code v-pre>J3</code>: head</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="biovision-bvh-motion-section" tabindex="-1"><a class="header-anchor" href="#biovision-bvh-motion-section"><span>Biovision BVH - Motion Section</span></a></h2>
 <ul>
 <li>
@@ -621,6 +676,8 @@ PhysicsFC (Kim et al. 2025): <a href="https://youtu.be/sdWRBWESC4A" target="_bla
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="예시-motion-section" tabindex="-1"><a class="header-anchor" href="#예시-motion-section"><span>예시 (Motion Section)</span></a></h2>
 <div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code class="language-text"><span class="line">MOTION</span>
 <span class="line">Frames: 179</span>
@@ -645,6 +702,8 @@ channel 개수만큼 나열됨 (6, 3, 3, 3 = 총 15개 열)
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="biovision-bvh" tabindex="-1"><a class="header-anchor" href="#biovision-bvh"><span>Biovision BVH</span></a></h2>
 <p>■ <strong>데이터 해석 방법</strong></p>
 <ul>
@@ -692,6 +751,8 @@ channel 개수만큼 나열됨 (6, 3, 3, 3 = 총 15개 열)
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="demo-bvh-viewer" tabindex="-1"><a class="header-anchor" href="#demo-bvh-viewer"><span>[Demo] BVH Viewer</span></a></h2>
 <p>![demo image]</p>
 <p><a href="http://motion.hahasoha.net/" target="_blank" rel="noopener noreferrer">http://motion.hahasoha.net/</a></p>
@@ -699,13 +760,21 @@ channel 개수만큼 나열됨 (6, 3, 3, 3 = 총 15개 열)
 <li>목록에서 다른 motion 선택 가능</li>
 <li>해당 BVH 파일을 다운로드하여 텍스트 에디터에서 열어볼 수 있음</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="_10-lab-character-animation" tabindex="-1"><a class="header-anchor" href="#_10-lab-character-animation"><span>10 - Lab - Character Animation</span></a></h2>
+</section>
+<section class="print-section">
 <h2 id="개요" tabindex="-1"><a class="header-anchor" href="#개요"><span>개요</span></a></h2>
 <ul>
 <li>예제: Joint &amp; Link 변환</li>
 <li>CGR 연구실의 최신 연구 간략한 소개</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="예제-joint-link-변환" tabindex="-1"><a class="header-anchor" href="#예제-joint-link-변환"><span>예제: Joint &amp; Link 변환</span></a></h2>
+</section>
+<section class="print-section">
 <h3 id="상기-순방향-운동학-맵-forward-kinematics-map" tabindex="-1"><a class="header-anchor" href="#상기-순방향-운동학-맵-forward-kinematics-map"><span>상기: 순방향 운동학 맵 (Forward Kinematics Map)</span></a></h3>
 <p>순방향 운동학 맵 T는 다음과 같은 변환들의 교차 곱으로 표현됩니다.</p>
 <ul>
@@ -722,6 +791,8 @@ channel 개수만큼 나열됨 (6, 3, 3, 3 = 총 15개 열)
 </ul>
 <p><span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>T</mi><mo>=</mo><mo>…</mo><msub><mi>T</mi><mi>i</mi></msub><msub><mi>L</mi><mi>i</mi></msub><msub><mi>R</mi><mi>i</mi></msub><mo>…</mo><msub><mi>T</mi><mn>1</mn></msub><msub><mi>L</mi><mn>1</mn></msub><msub><mi>R</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">T = \dots T_i L_i R_i \dots T_1 L_1 R_1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">T</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="minner">…</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">T</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.1389em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord"><span class="mord mathnormal">L</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.00773em;">R</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.0077em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="minner">…</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">T</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.1389em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord"><span class="mord mathnormal">L</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.00773em;">R</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.0077em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></p>
 <p>(여기서 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>T</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">T_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">T</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.1389em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>는 i번째 관절로의 이동(translation), <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>R</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">R_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.00773em;">R</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.0077em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>는 i번째 관절에서의 회전(rotation)을 의미합니다.)</p>
+</section>
+<section class="print-section">
 <h3 id="코드-1-joint-link-transform" tabindex="-1"><a class="header-anchor" href="#코드-1-joint-link-transform"><span>[코드] 1-joint-link-transform</span></a></h3>
 <p><code v-pre>7-Lab-Hierarchical-Mesh/1-hierarchical.py</code> 코드를 수정하여, 동일한 기능은 유지하되 지역(local) 변환 대신 관절(joint) &amp; 링크(link) 변환을 사용하도록 만들어 봅시다.</p>
 <div class="language-python line-numbers-mode" data-highlighter="prismjs" data-ext="py"><pre v-pre><code class="language-python"><span class="line"><span class="token comment"># 기존 hierarchical.py의 Node 클래스 (일부)</span></span>
@@ -783,7 +854,11 @@ channel 개수만큼 나열됨 (6, 3, 3, 3 = 총 15개 열)
 <span class="line">        </span>
 <span class="line">        <span class="token comment"># ... 렌더링 코드 ...</span></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="cgr-연구실의-최신-연구-간략한-소개" tabindex="-1"><a class="header-anchor" href="#cgr-연구실의-최신-연구-간략한-소개"><span>CGR 연구실의 최신 연구 간략한 소개</span></a></h2>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h2 id="cgr-연구실의-최신-연구-간략한-소개" tabindex="-1"><a class="header-anchor" href="#cgr-연구실의-최신-연구-간략한-소개"><span>CGR 연구실의 최신 연구 간략한 소개</span></a></h2>
+</section>
+<section class="print-section">
 <h3 id="cgr-연구실-소개" tabindex="-1"><a class="header-anchor" href="#cgr-연구실-소개"><span>CGR 연구실 소개</span></a></h3>
 <p>컴퓨터 그래픽스 &amp; 로보틱스 연구실 (Computer Graphics &amp; Robotics Lab.)</p>
 <p>저희 연구 그룹은 다음과 같은 목표를 가집니다.</p>
@@ -791,6 +866,8 @@ channel 개수만큼 나열됨 (6, 3, 3, 3 = 총 15개 열)
 <li>인간, 동물, 로봇 등 자연적이거나 인공적인 생명체의 다양한 측면(움직임, 근본적인 메커니즘 등)을 이해하고</li>
 <li>가상 환경에서 실제 세계로 그것들을 구현합니다.</li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="주요-연구-방향" tabindex="-1"><a class="header-anchor" href="#주요-연구-방향"><span>주요 연구 방향</span></a></h3>
 <p>'어떻게 움직일 것인가?'</p>
 <ul>
@@ -798,23 +875,32 @@ channel 개수만큼 나열됨 (6, 3, 3, 3 = 총 15개 열)
 <li>로봇</li>
 </ul>
 <p>'움직이는 법을 배우기 (Learning How to Move)'</p>
+</section>
+<section class="print-section">
 <h2 id="physicsfc-물리-기반-축구-선수-컨트롤러를-위한-사용자-제어-스킬-학습" tabindex="-1"><a class="header-anchor" href="#physicsfc-물리-기반-축구-선수-컨트롤러를-위한-사용자-제어-스킬-학습"><span>PhysicsFC: 물리 기반 축구 선수 컨트롤러를 위한 사용자 제어 스킬 학습</span></a></h2>
 <p>(PhysicsFC: Learning User-Controlled Skills for a Physics-Based Football Player Controller)</p>
 <p>학회: SIGGRAPH 2025, 밴쿠버, 8월 10-14일</p>
 <p>인용: Minsu Kim, Eunho Jung, Yoonsang Lee. &quot;PhysicsFC: Learning User-Controlled Skills for a Physics-Based Football Player Controller.&quot; ACM Transactions on Graphics (SIGGRAPH 2025) 게재 승인.</p>
+</section>
+<section class="print-section">
 <h2 id="타겟-위치-도달-과업을-위한-딥-강화학습-기반-모션-매칭-활용" tabindex="-1"><a class="header-anchor" href="#타겟-위치-도달-과업을-위한-딥-강화학습-기반-모션-매칭-활용"><span>타겟 위치 도달 과업을 위한 딥 강화학습 기반 모션 매칭 활용</span></a></h2>
 <p>(Utilizing Motion Matching with Deep Reinforcement Learning for Target Location Tasks)</p>
 <p>움직이는 장애물이 있는 타겟 위치 도달 과업을 위해, 우리는 '히트 보상(hit reward)'과 '장애물 커리큘럼(obstacle curriculum)'이라는 두 가지 새로운 구성 요소를 제안합니다.
 (이 과업에서, 정책은 보조 센서 입력을 받습니다.)</p>
 <p>인용: Jeongun Lee, Taesoo Kwon, Hyunjin Shin, Yoonsang Lee. “Utilizing Motion Matching with Deep Reinforcement Learning for Target Location Tasks.” Eurographics 2024 Short Papers, 2024년 4월.</p>
+</section>
+<section class="print-section">
 <h2 id="다양한-환경에서의-단일-강체-캐릭터의-적응형-추적" tabindex="-1"><a class="header-anchor" href="#다양한-환경에서의-단일-강체-캐릭터의-적응형-추적"><span>다양한 환경에서의 단일 강체 캐릭터의 적응형 추적</span></a></h2>
 <p>(Adaptive Tracking of a Single-Rigid-Body Character in Various Environments)</p>
 <p>움직이는 장애물이 있는 타겟 위치 도달 과업을 위해, 우리는 '히트 보상(hit reward)'과 '장애물 커리큘럼(obstacle curriculum)'이라는 두 가지 새로운 구성 요소를 제안합니다.
 (이 과업에서, 정책은 보조 센서 입력을 받습니다.)</p>
 <p>인용: Taesoo Kwon, Taehong Gu, Jaewon Ahn, Yoonsang Lee. &quot;Adaptive Tracking of a Single-Rigid-Body Character in Various Environments.&quot; SA '23: SIGGRAPH Asia 2023 Conference Papers, 논문 번호: 118, 2023년 12월.</p>
+</section>
+<section class="print-section">
 <h2 id="모션-매칭-motion-matching" tabindex="-1"><a class="header-anchor" href="#모션-매칭-motion-matching"><span>모션 매칭 (Motion Matching)</span></a></h2>
 <p>우리는 모션 매칭에 기반한 상호작용적 캐릭터 제어 방법을 제안합니다.</p>
 <p>인용: Jeongun Lee, Taesoo Kwon, Yoonsang Lee. “Interactive Character Path-Following Using Long-Horizon Motion Matching With Revised Future Queries.” IEEE Access, 2023년 1월.</p>
+</section>
 </div></template>
 
 

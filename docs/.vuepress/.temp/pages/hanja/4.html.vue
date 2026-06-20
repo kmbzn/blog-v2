@@ -1,4 +1,5 @@
-<template><div><h1 id="상공회의소-한자-4급" tabindex="-1"><a class="header-anchor" href="#상공회의소-한자-4급"><span>상공회의소 한자 4급</span></a></h1>
+<template><div><section class="print-section">
+<h1 id="상공회의소-한자-4급" tabindex="-1"><a class="header-anchor" href="#상공회의소-한자-4급"><span>상공회의소 한자 4급</span></a></h1>
 <DateMeta />
 <table>
 <thead>
@@ -754,6 +755,7 @@
 </tr>
 </tbody>
 </table>
+</section>
 </div></template>
 
 

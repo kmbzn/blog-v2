@@ -1,7 +1,12 @@
-<template><div><h1 id="현대카드-zero" tabindex="-1"><a class="header-anchor" href="#현대카드-zero"><span>현대카드 ZERO</span></a></h1>
+<template><div><section class="print-section">
+<h1 id="현대카드-zero" tabindex="-1"><a class="header-anchor" href="#현대카드-zero"><span>현대카드 ZERO</span></a></h1>
 <DateMeta />
 <p>현대카드 ZERO 시리즈는 &quot;복잡한 조건 없이 모든 가맹점에서 혜택&quot;을 내세운 카드다. 포인트형과 할인형 두 가지 선택지가 있으며, 2024년 2월 Edition3가 출시되며 Edition2를 단종시켰다. 두 버전의 차이를 명확히 이해하고 어떤 유형이 본인에게 유리한지 판단하는 것이 중요하다.</p>
+</section>
+<section class="print-section">
 <h2 id="edition2-단종-참고용" tabindex="-1"><a class="header-anchor" href="#edition2-단종-참고용"><span>Edition2 (단종, 참고용)</span></a></h2>
+</section>
+<section class="print-section">
 <h3 id="포인트형" tabindex="-1"><a class="header-anchor" href="#포인트형"><span>포인트형</span></a></h3>
 <table>
 <thead>
@@ -33,6 +38,8 @@
 </tr>
 </tbody>
 </table>
+</section>
+<section class="print-section">
 <h3 id="할인형" tabindex="-1"><a class="header-anchor" href="#할인형"><span>할인형</span></a></h3>
 <table>
 <thead>
@@ -66,8 +73,12 @@
 </table>
 <p><strong>생활필수영역</strong>: 이마트·홈플러스·롯데마트 등 대형 할인점, CU·GS25·세븐일레븐 등 편의점, 일반음식점, 커피전문점, 지하철·버스 등 대중교통</p>
 <hr>
+</section>
+<section class="print-section">
 <h2 id="edition3-현행" tabindex="-1"><a class="header-anchor" href="#edition3-현행"><span>Edition3 (현행)</span></a></h2>
 <p>2024년 2월 출시. <strong>생활필수영역 추가 혜택을 폐지</strong>하는 대신, 기본 적립/할인율을 소폭 올렸다.</p>
+</section>
+<section class="print-section">
 <h3 id="포인트형-1" tabindex="-1"><a class="header-anchor" href="#포인트형-1"><span>포인트형</span></a></h3>
 <table>
 <thead>
@@ -103,6 +114,8 @@
 </tr>
 </tbody>
 </table>
+</section>
+<section class="print-section">
 <h3 id="할인형-1" tabindex="-1"><a class="header-anchor" href="#할인형-1"><span>할인형</span></a></h3>
 <table>
 <thead>
@@ -139,6 +152,8 @@
 </tbody>
 </table>
 <hr>
+</section>
+<section class="print-section">
 <h2 id="edition2-vs-edition3-핵심-비교" tabindex="-1"><a class="header-anchor" href="#edition2-vs-edition3-핵심-비교"><span>Edition2 vs Edition3 핵심 비교</span></a></h2>
 <table>
 <thead>
@@ -182,7 +197,11 @@
 </tbody>
 </table>
 <hr>
+</section>
+<section class="print-section">
 <h2 id="포인트형-vs-할인형-어느-쪽이-유리한가" tabindex="-1"><a class="header-anchor" href="#포인트형-vs-할인형-어느-쪽이-유리한가"><span>포인트형 vs 할인형, 어느 쪽이 유리한가?</span></a></h2>
+</section>
+<section class="print-section">
 <h3 id="포인트형이-유리한-경우" tabindex="-1"><a class="header-anchor" href="#포인트형이-유리한-경우"><span>포인트형이 유리한 경우</span></a></h3>
 <p>M포인트는 현금처럼 쓸 수 있는 경우가 많지만, <strong>사용처에 따라 가치가 달라진다.</strong></p>
 <ul>
@@ -196,6 +215,8 @@
 <li>할인형: 8,000원 즉시 할인</li>
 </ul>
 <p><strong>마일리지 전환 시</strong> 1M포인트 = 1마일 이상의 가치를 낼 수 있어, 항공권을 자주 구입하는 사람이라면 포인트형이 유리하다.</p>
+</section>
+<section class="print-section">
 <h3 id="할인형이-유리한-경우" tabindex="-1"><a class="header-anchor" href="#할인형이-유리한-경우"><span>할인형이 유리한 경우</span></a></h3>
 <ul>
 <li>포인트 관리가 번거로운 사람</li>
@@ -204,6 +225,8 @@
 </ul>
 <p>단순 수익률만 비교하면 포인트형이 높지만(1.2% vs 0.8%), 포인트를 결국 현금 동등가로만 쓴다면 관리 편의성 면에서는 할인형이 낫다.</p>
 <hr>
+</section>
+<section class="print-section">
 <h2 id="edition3에-대한-시장-평가" tabindex="-1"><a class="header-anchor" href="#edition3에-대한-시장-평가"><span>Edition3에 대한 시장 평가</span></a></h2>
 <p>Edition3는 Edition2 대비 냉정하게 평가하면 <strong>후퇴</strong>다.</p>
 <p>생활필수영역 추가 혜택이 사라지면서, 마트·편의점·음식점 중심으로 소비하는 사람의 실효 혜택이 크게 줄었다. Edition2 포인트형이 생활필수영역에서 최대 2.5% 적립이었던 반면, Edition3는 1.2%가 전부다.</p>
@@ -214,6 +237,7 @@
 <p class="hint-container-title">M포인트 활용 팁</p>
 <p>M포인트는 현대카드 홈페이지·앱에서 결제 대금 차감, M포인트몰 쇼핑, 항공 마일리지 전환, 제휴 파트너(이마트, 스타벅스, CGV 등) 사용이 가능하다. 소멸 기한은 적립일로부터 5년이다.</p>
 </div>
+</section>
 </div></template>
 
 

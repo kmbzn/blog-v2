@@ -1,4 +1,5 @@
-<template><div><h2 id="_1-text-missing" tabindex="-1"><a class="header-anchor" href="#_1-text-missing"><span>1. Text Missing</span></a></h2>
+<template><div><section class="print-section">
+<h2 id="_1-text-missing" tabindex="-1"><a class="header-anchor" href="#_1-text-missing"><span>1. Text Missing</span></a></h2>
 <table>
 <thead>
 <tr>
@@ -198,6 +199,8 @@
 </tbody>
 </table>
 <hr>
+</section>
+<section class="print-section">
 <h2 id="_2-image-missing" tabindex="-1"><a class="header-anchor" href="#_2-image-missing"><span>2. Image Missing</span></a></h2>
 <table>
 <thead>
@@ -397,6 +400,7 @@
 </tr>
 </tbody>
 </table>
+</section>
 </div></template>
 
 

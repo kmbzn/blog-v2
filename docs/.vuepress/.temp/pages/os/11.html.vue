@@ -1,5 +1,8 @@
-<template><div><h1 id="_11-virtual-memory-2" tabindex="-1"><a class="header-anchor" href="#_11-virtual-memory-2"><span>11. Virtual Memory (2)</span></a></h1>
+<template><div><section class="print-section">
+<h1 id="_11-virtual-memory-2" tabindex="-1"><a class="header-anchor" href="#_11-virtual-memory-2"><span>11. Virtual Memory (2)</span></a></h1>
 <DateMeta />
+</section>
+<section class="print-section">
 <h2 id="allocation-of-frames" tabindex="-1"><a class="header-anchor" href="#allocation-of-frames"><span>Allocation of Frames</span></a></h2>
 <ul>
 <li>여러 프로세스에 page frame을 어떻게 분배할 것인가?</li>
@@ -26,6 +29,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="fixed-allocation" tabindex="-1"><a class="header-anchor" href="#fixed-allocation"><span>Fixed Allocation</span></a></h2>
 <ul>
 <li>Equal allocation (균등 분배)
@@ -52,6 +57,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="priority-allocation" tabindex="-1"><a class="header-anchor" href="#priority-allocation"><span>Priority Allocation</span></a></h2>
 <ul>
 <li>프로세스 우선순위(priority)에 따라 비례적으로 frame을 할당</li>
@@ -64,6 +71,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="global-vs-local-replacement" tabindex="-1"><a class="header-anchor" href="#global-vs-local-replacement"><span>Global vs. Local Replacement</span></a></h3>
 <ul>
 <li>Global replacement
@@ -78,6 +87,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="thrashing" tabindex="-1"><a class="header-anchor" href="#thrashing"><span>Thrashing</span></a></h2>
 <ul>
 <li>프로세스에 충분한 페이지가 없는 경우 page fault rate 급증</li>
@@ -99,7 +110,9 @@
 <span class="line">  }</span>
 <span class="line">}</span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="thrashing-diagram" tabindex="-1"><a class="header-anchor" href="#thrashing-diagram"><span>Thrashing Diagram</span></a></h2>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h2 id="thrashing-diagram" tabindex="-1"><a class="header-anchor" href="#thrashing-diagram"><span>Thrashing Diagram</span></a></h2>
 <ul>
 <li>그래프: CPU Utilization vs. Degree of Multiprogramming</li>
 <li>처음에는 증가 → 일정 지점 이후 급격히 감소 (thrashing 발생)</li>
@@ -120,6 +133,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="locality" tabindex="-1"><a class="header-anchor" href="#locality"><span>Locality</span></a></h2>
 <ul>
 <li>프로그램의 메모리 참조는 고도의 지역성(locality)을 가짐</li>
@@ -137,11 +152,15 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="locality-in-a-memory-reference-pattern" tabindex="-1"><a class="header-anchor" href="#locality-in-a-memory-reference-pattern"><span>Locality In a Memory-Reference Pattern</span></a></h2>
 <ul>
 <li>여러 프로세스의 메모리 참조를 시간 축으로 나타낸 그래프</li>
 <li>특정 지역이 집중적으로 참조됨 → locality 시각화</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="working-set-model" tabindex="-1"><a class="header-anchor" href="#working-set-model"><span>Working-Set Model</span></a></h2>
 <ul>
 <li>Δ: working-set window
@@ -171,6 +190,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="working-set-model-예시" tabindex="-1"><a class="header-anchor" href="#working-set-model-예시"><span>Working-Set model (예시)</span></a></h2>
 <ul>
 <li>page reference table</li>
@@ -183,7 +204,9 @@
 <div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code class="language-text"><span class="line">WS(t₁) = {1, 2, 5, 6, 7}</span>
 <span class="line">WS(t₂) = {3, 4}</span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="working-set-model-설명" tabindex="-1"><a class="header-anchor" href="#working-set-model-설명"><span>Working-Set Model (설명)</span></a></h2>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h2 id="working-set-model-설명" tabindex="-1"><a class="header-anchor" href="#working-set-model-설명"><span>Working-Set Model (설명)</span></a></h2>
 <ul>
 <li><code v-pre>WS(t, Δ)</code>: <code v-pre>Δ</code> 시간 동안 참조된 페이지 집합</li>
 <li>만약 페이지 P가 <code v-pre>Δ</code> 기간 동안 참조되었다면, 메모리에 유지
@@ -199,6 +222,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="keeping-track-of-the-working-set" tabindex="-1"><a class="header-anchor" href="#keeping-track-of-the-working-set"><span>Keeping Track of the Working Set</span></a></h2>
 <ul>
 <li>실제 구현은 복잡:
@@ -232,6 +257,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="page-fault-frequency-scheme" tabindex="-1"><a class="header-anchor" href="#page-fault-frequency-scheme"><span>Page-Fault Frequency Scheme</span></a></h2>
 <ul>
 <li>페이지 폴트율에 따라 프레임 수를 조절</li>
@@ -253,6 +280,8 @@
 <li>Working set 방식: 일정 시간 동안 참조된 페이지 기반 조절</li>
 <li>PFF 방식: page fault 발생 시점 기준으로 조절</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="other-benefits-of-vm-process-creation" tabindex="-1"><a class="header-anchor" href="#other-benefits-of-vm-process-creation"><span>Other Benefits of VM: Process Creation</span></a></h2>
 <ul>
 <li>가상 메모리는 프로세스 생성 시 다음과 같은 이점을 제공
@@ -262,6 +291,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="copy-on-write" tabindex="-1"><a class="header-anchor" href="#copy-on-write"><span>Copy-on-Write</span></a></h2>
 <ul>
 <li>Copy-on-Write (COW)
@@ -276,6 +307,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="before-process-1-modifies-page-c" tabindex="-1"><a class="header-anchor" href="#before-process-1-modifies-page-c"><span>Before Process 1 Modifies Page C</span></a></h2>
 <div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code class="language-text"><span class="line">process₁             physical memory           process₂</span>
 <span class="line">   │                    ┌────────┐               │</span>
@@ -283,7 +316,9 @@
 <span class="line">   ├──────▶  page B ◀──┤ page B ├──▶────────────┤</span>
 <span class="line">   └──────▶  page C ◀──┤ page C ├──▶────────────┘</span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="after-process-1-modifies-page-c" tabindex="-1"><a class="header-anchor" href="#after-process-1-modifies-page-c"><span>After Process 1 Modifies Page C</span></a></h2>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h2 id="after-process-1-modifies-page-c" tabindex="-1"><a class="header-anchor" href="#after-process-1-modifies-page-c"><span>After Process 1 Modifies Page C</span></a></h2>
 <div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre v-pre><code class="language-text"><span class="line">process₁           physical memory           process₂</span>
 <span class="line">   │                   ┌────────┐                │</span>
 <span class="line">   ├──────▶  page A ◀──┤ page A ├──▶────────────┤</span>
@@ -291,7 +326,9 @@
 <span class="line">   ├──────▶  page C     page C ◀──▶────────────┤</span>
 <span class="line">   └──────▶  copy of page C</span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="memory-mapped-files" tabindex="-1"><a class="header-anchor" href="#memory-mapped-files"><span>Memory-Mapped Files</span></a></h2>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
+<section class="print-section">
+<h2 id="memory-mapped-files" tabindex="-1"><a class="header-anchor" href="#memory-mapped-files"><span>Memory-Mapped Files</span></a></h2>
 <ul>
 <li>메모리 매핑 파일 I/O
 <ul>
@@ -312,12 +349,16 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="memory-mapped-files-1" tabindex="-1"><a class="header-anchor" href="#memory-mapped-files-1"><span>Memory Mapped Files</span></a></h2>
 <ul>
 <li>프로세스 A와 B가 동일한 파일을 물리 메모리 상에서 공유</li>
 <li>디스크 파일을 메모리 페이지에 매핑하여, 접근 시 메모리를 통해 처리</li>
 <li>메모리 매핑 기법은 여러 프로세스 간 페이지 공유를 가능하게 함</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="other-issues-–-prepaging" tabindex="-1"><a class="header-anchor" href="#other-issues-–-prepaging"><span>Other Issues – Prepaging</span></a></h2>
 <ul>
 <li>Prepaging: 프로세스 시작 시 다량의 page fault를 줄이기 위해,
@@ -340,6 +381,8 @@
 </li>
 <li>d가 1에 가까우면 prepaging이 유리함</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="other-issues-–-page-size" tabindex="-1"><a class="header-anchor" href="#other-issues-–-page-size"><span>Other Issues – Page Size</span></a></h2>
 <ul>
 <li>페이지 크기 선택 시 고려사항
@@ -359,6 +402,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="other-issues-–-tlb-reach" tabindex="-1"><a class="header-anchor" href="#other-issues-–-tlb-reach"><span>Other Issues – TLB Reach</span></a></h2>
 <ul>
 <li>TLB Reach
@@ -391,6 +436,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="other-issues-–-program-structure" tabindex="-1"><a class="header-anchor" href="#other-issues-–-program-structure"><span>Other Issues – Program Structure</span></a></h2>
 <ul>
 <li>프로그램 구조가 page fault 수에 미치는 영향</li>
@@ -415,6 +462,8 @@
 <span class="line"></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>→ 128 page faults<br>
 → 데이터 접근 순서만 달라져도 성능 차이가 큼</p>
+</section>
+<section class="print-section">
 <h2 id="other-issues-–-i-o-interlock" tabindex="-1"><a class="header-anchor" href="#other-issues-–-i-o-interlock"><span>Other Issues – I/O Interlock</span></a></h2>
 <ul>
 <li>I/O Interlock: 페이지가 메모리에 잠금(lock)되어야 할 경우</li>
@@ -430,7 +479,11 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h1 id="교수님-강의-요약" tabindex="-1"><a class="header-anchor" href="#교수님-강의-요약"><span>교수님 강의 요약</span></a></h1>
+</section>
+<section class="print-section">
 <h2 id="address-space의-초기-구조" tabindex="-1"><a class="header-anchor" href="#address-space의-초기-구조"><span>Address Space의 초기 구조</span></a></h2>
 <ul>
 <li>프로세스 시작 시 address space 대부분이 비어 있음</li>
@@ -438,38 +491,56 @@
 <li>function call로 stack이 생성되고 heap도 점점 확장됨</li>
 <li>Contiguous Allocation에서는 가운데 빈 공간도 메모리를 차지해야 했음</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="paging의-필요성" tabindex="-1"><a class="header-anchor" href="#paging의-필요성"><span>Paging의 필요성</span></a></h2>
 <ul>
 <li>빈 공간을 실제 메모리에 올리지 않아도 됨</li>
 <li>비어있는 주소 공간에 대해 메모리 낭비 방지</li>
 <li>Virtual Memory와 Demand Paging 개념이 여기서 시작</li>
 </ul>
+</section>
+<section class="print-section">
 <h1 id="logical-address-vs-physical-address" tabindex="-1"><a class="header-anchor" href="#logical-address-vs-physical-address"><span>Logical Address vs Physical Address</span></a></h1>
+</section>
+<section class="print-section">
 <h2 id="address-분리-개념" tabindex="-1"><a class="header-anchor" href="#address-분리-개념"><span>Address 분리 개념</span></a></h2>
 <ul>
 <li>Logical: 컴파일러가 생성한 가상의 주소</li>
 <li>Physical: 실제 메모리에서의 주소</li>
 <li>주소 공간의 분리는 운영의 유연성 확보를 위해 사용됨</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="운영체제의-유연성-예시" tabindex="-1"><a class="header-anchor" href="#운영체제의-유연성-예시"><span>운영체제의 유연성 예시</span></a></h2>
 <ul>
 <li>집주인: 사용자 프로세스</li>
 <li>집 관리인: 운영체제</li>
 <li>페이지를 올리지 않고도 올라온 것처럼 처리 가능 (가짜 땅)</li>
 </ul>
+</section>
+<section class="print-section">
 <h1 id="demand-paging" tabindex="-1"><a class="header-anchor" href="#demand-paging"><span>Demand Paging</span></a></h1>
+</section>
+<section class="print-section">
 <h2 id="개념" tabindex="-1"><a class="header-anchor" href="#개념"><span>개념</span></a></h2>
 <ul>
 <li>실제로 CPU가 접근할 때 메모리에 올림</li>
 <li>초기 로딩 속도 빠름</li>
 <li>물리 메모리보다 더 큰 주소 공간도 운영 가능</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="fork-및-공유" tabindex="-1"><a class="header-anchor" href="#fork-및-공유"><span>Fork 및 공유</span></a></h2>
 <ul>
 <li>page table을 공유함으로써 fork 속도 향상</li>
 <li>Copy-On-Write 기반으로 페이지 수정 시 분화</li>
 </ul>
+</section>
+<section class="print-section">
 <h1 id="page-fault-handler" tabindex="-1"><a class="header-anchor" href="#page-fault-handler"><span>Page Fault Handler</span></a></h1>
+</section>
+<section class="print-section">
 <h2 id="처리-흐름" tabindex="-1"><a class="header-anchor" href="#처리-흐름"><span>처리 흐름</span></a></h2>
 <ol>
 <li>CPU가 접근 → 페이지 없음 → page fault 발생</li>
@@ -478,35 +549,51 @@
 <li>page table 갱신 및 valid 비트 설정</li>
 <li>fault 발생한 instruction 재시작</li>
 </ol>
+</section>
+<section class="print-section">
 <h1 id="page-replacement-algorithm" tabindex="-1"><a class="header-anchor" href="#page-replacement-algorithm"><span>Page Replacement Algorithm</span></a></h1>
+</section>
+<section class="print-section">
 <h2 id="optimal-이론적" tabindex="-1"><a class="header-anchor" href="#optimal-이론적"><span>Optimal (이론적)</span></a></h2>
 <ul>
 <li>앞으로 사용되지 않을 페이지를 제거</li>
 <li>실제 구현은 불가 (미래 예측 불가능)</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="locality-기반-접근" tabindex="-1"><a class="header-anchor" href="#locality-기반-접근"><span>Locality 기반 접근</span></a></h2>
 <ul>
 <li>최근에 접근된 페이지는 앞으로도 접근될 확률 높음</li>
 <li>LRU: 최근 가장 오래전에 사용된 페이지 제거</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="lru의-구현-문제" tabindex="-1"><a class="header-anchor" href="#lru의-구현-문제"><span>LRU의 구현 문제</span></a></h2>
 <ul>
 <li>Timestamp 기반 구현은 overhead 큼</li>
 <li>Memory reference 마다 시간 기록 필요</li>
 <li>logical counter로도 여전히 순서 판별 어려움</li>
 </ul>
+</section>
+<section class="print-section">
 <h1 id="lru-approximation" tabindex="-1"><a class="header-anchor" href="#lru-approximation"><span>LRU Approximation</span></a></h1>
+</section>
+<section class="print-section">
 <h2 id="reference-bit-기반-기법" tabindex="-1"><a class="header-anchor" href="#reference-bit-기반-기법"><span>Reference Bit 기반 기법</span></a></h2>
 <ul>
 <li>각 페이지마다 1비트 사용 (0 또는 1)</li>
 <li>주기적으로 0으로 초기화, 참조 시 1로 변경</li>
 <li>Page 교체 시 0인 페이지들 중 하나를 선택</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="enhanced-approximation" tabindex="-1"><a class="header-anchor" href="#enhanced-approximation"><span>Enhanced Approximation</span></a></h2>
 <ul>
 <li>Reference bit 기록을 다비트로 확장 (8비트 등)</li>
 <li>과거 주기 참조 이력을 기반으로 순서 유추 가능</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="second-chance-clock-algorithm" tabindex="-1"><a class="header-anchor" href="#second-chance-clock-algorithm"><span>Second-Chance (Clock Algorithm)</span></a></h2>
 <ul>
 <li>페이지를 원형 리스트로 구성</li>
@@ -514,12 +601,15 @@
 <li>1인 경우 bit만 0으로 바꾸고 다음 페이지 탐색</li>
 <li>overhead 적고 locality도 잘 반영함</li>
 </ul>
+</section>
+<section class="print-section">
 <h1 id="lfu-least-frequently-used" tabindex="-1"><a class="header-anchor" href="#lfu-least-frequently-used"><span>LFU (Least Frequently Used)</span></a></h1>
 <ul>
 <li>접근 빈도가 가장 낮은 페이지 제거</li>
 <li>LRU + LFU 결합 기법도 존재</li>
 <li>Prepaging을 통한 초기 page fault 완화</li>
 </ul>
+</section>
 </div></template>
 
 

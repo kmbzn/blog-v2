@@ -1,12 +1,19 @@
-<template><div><h1 id="_16-other-classic-ml-models-1" tabindex="-1"><a class="header-anchor" href="#_16-other-classic-ml-models-1"><span>16. Other Classic ML Models (1)</span></a></h1>
+<template><div><section class="print-section">
+<h1 id="_16-other-classic-ml-models-1" tabindex="-1"><a class="header-anchor" href="#_16-other-classic-ml-models-1"><span>16. Other Classic ML Models (1)</span></a></h1>
 <DateMeta />
+</section>
+<section class="print-section">
 <h1 id="naive-bayes" tabindex="-1"><a class="header-anchor" href="#naive-bayes"><span>Naïve Bayes</span></a></h1>
+</section>
+<section class="print-section">
 <h2 id="naive-bayes-models" tabindex="-1"><a class="header-anchor" href="#naive-bayes-models"><span>Naïve Bayes Models</span></a></h2>
 <ul>
 <li>머신러닝에서 아마도 가장 일반적이고 단순한 Bayesian network 모델</li>
 <li>Naïve Bayes(나이브 베이즈) 모델은 클래스 변수(class variable)가 주어졌을 때, 특정 특성의 값이 다른 특성의 값과 (조건부적으로) independent하다고 가정함.</li>
 <li>실제로는 조건부 독립 가정이 엄격하게 사실이 아니더라도 잘 작동하는 경우가 많음.</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="text-classification-with-naive-bayes" tabindex="-1"><a class="header-anchor" href="#text-classification-with-naive-bayes"><span>Text Classification with Naïve Bayes</span></a></h2>
 <ul>
 <li>텍스트 분류 작업에 Naïve Bayes 모델을 사용하는 방법</li>
@@ -65,6 +72,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h1 id="decision-trees" tabindex="-1"><a class="header-anchor" href="#decision-trees"><span>Decision Trees</span></a></h1>
 <ul>
 <li>Attribute values의 벡터를 단일 출력 값(&quot;decision&quot;)에 매핑하는 함수의 표현
@@ -89,6 +98,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="example-problem-restaurant-waiting" tabindex="-1"><a class="header-anchor" href="#example-problem-restaurant-waiting"><span>Example Problem: Restaurant Waiting</span></a></h2>
 <ul>
 <li>문제: 식당에서 테이블을 기다릴지 결정하는 문제</li>
@@ -115,8 +126,12 @@
 </li>
 </ul>
 <p><img src="@source/ai/image-35.png" alt="alt text"></p>
+</section>
+<section class="print-section">
 <h2 id="a-decision-tree-for-restaurant-waiting" tabindex="-1"><a class="header-anchor" href="#a-decision-tree-for-restaurant-waiting"><span>A Decision Tree for Restaurant Waiting</span></a></h2>
 <p><img src="@source/ai/image-7.png" alt="alt text"></p>
+</section>
+<section class="print-section">
 <h2 id="learning-decision-trees-from-examples" tabindex="-1"><a class="header-anchor" href="#learning-decision-trees-from-examples"><span>Learning Decision Trees from Examples</span></a></h2>
 <ul>
 <li>목표: 학습 데이터(training data)와 일치(consistent)하면서 가능한 가장 작은 Decision tree를 찾는 것
@@ -146,6 +161,8 @@
 </ol>
 </li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="learn-decision-tree-algorithm" tabindex="-1"><a class="header-anchor" href="#learn-decision-tree-algorithm"><span><code v-pre>LEARN-DECISION-TREE</code> Algorithm</span></a></h2>
 <p><img src="@source/ai/image-8.png" alt="alt text"></p>
 <ul>
@@ -153,11 +170,15 @@
 <li>트리는 내부 노드의 테스트, 가지의 속성 값, 리프 노드의 출력 값으로 구성</li>
 <li>학습 알고리즘은 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mi>a</mi><mi>i</mi><mi>n</mi><mi>i</mi><mi>n</mi><mi>g</mi></mrow><annotation encoding="application/x-tex">Raining</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8778em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.00773em;">R</span><span class="mord mathnormal">ainin</span><span class="mord mathnormal" style="margin-right:0.03588em;">g</span></span></span></span>과 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mi>e</mi><mi>s</mi><mi>e</mi><mi>r</mi><mi>v</mi><mi>a</mi><mi>t</mi><mi>i</mi><mi>o</mi><mi>n</mi></mrow><annotation encoding="application/x-tex">Reservation</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.00773em;">R</span><span class="mord mathnormal" style="margin-right:0.02778em;">eser</span><span class="mord mathnormal" style="margin-right:0.03588em;">v</span><span class="mord mathnormal">a</span><span class="mord mathnormal">t</span><span class="mord mathnormal">i</span><span class="mord mathnormal">o</span><span class="mord mathnormal">n</span></span></span></span>에 대한 테스트를 포함하지 않음 (모든 예제를 분류하는 데 필요하지 않기 때문)</li>
 </ul>
+</section>
+<section class="print-section">
 <h2 id="choosing-attribute-tests" tabindex="-1"><a class="header-anchor" href="#choosing-attribute-tests"><span>Choosing Attribute Tests</span></a></h2>
 <ul>
 <li>Decision tree learning algorithm은 가장 높은 <code v-pre>IMPORTANCE</code>를 가진 속성을 선택</li>
 <li>Entropy 개념을 사용하여 정의되는 information gain을 사용하여 <code v-pre>IMPORTANCE</code>를 측정</li>
 </ul>
+</section>
+<section class="print-section">
 <h3 id="entropy-복습" tabindex="-1"><a class="header-anchor" href="#entropy-복습"><span>Entropy 복습</span></a></h3>
 <ul>
 <li>Random variable의 불확실성 척도</li>
@@ -189,6 +210,8 @@
 </ul>
 <p v-pre class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>R</mi><mi>e</mi><mi>m</mi><mi>a</mi><mi>i</mi><mi>n</mi><mi>d</mi><mi>e</mi><mi>r</mi><mo stretchy="false">(</mo><mi>A</mi><mo stretchy="false">)</mo><mo>=</mo><munderover><mo>∑</mo><mrow><mi>k</mi><mo>=</mo><mn>1</mn></mrow><mi>d</mi></munderover><mfrac><mrow><msub><mi>p</mi><mi>k</mi></msub><mo>+</mo><msub><mi>n</mi><mi>k</mi></msub></mrow><mrow><mi>p</mi><mo>+</mo><mi>n</mi></mrow></mfrac><mi>B</mi><mo stretchy="false">(</mo><mfrac><msub><mi>p</mi><mi>k</mi></msub><mrow><msub><mi>p</mi><mi>k</mi></msub><mo>+</mo><msub><mi>n</mi><mi>k</mi></msub></mrow></mfrac><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">Remainder(A) = \sum_{k=1}^{d} \frac{p_k + n_k}{p + n} B(\frac{p_k}{p_k+n_k})
 </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.00773em;">R</span><span class="mord mathnormal">e</span><span class="mord mathnormal">main</span><span class="mord mathnormal">d</span><span class="mord mathnormal" style="margin-right:0.02778em;">er</span><span class="mopen">(</span><span class="mord mathnormal">A</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:3.1382em;vertical-align:-1.3021em;"></span><span class="mop op-limits"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.8361em;"><span style="top:-1.8479em;margin-left:0em;"><span class="pstrut" style="height:3.05em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.03148em;">k</span><span class="mrel mtight">=</span><span class="mord mtight">1</span></span></span></span><span style="top:-3.05em;"><span class="pstrut" style="height:3.05em;"></span><span><span class="mop op-symbol large-op">∑</span></span></span><span style="top:-4.3em;margin-left:0em;"><span class="pstrut" style="height:3.05em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">d</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.3021em;"><span></span></span></span></span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.2603em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal">p</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord mathnormal">n</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathnormal">p</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.03148em;">k</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord"><span class="mord mathnormal">n</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.03148em;">k</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.8804em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mord mathnormal" style="margin-right:0.05017em;">B</span><span class="mopen">(</span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.1076em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathnormal">p</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.03148em;">k</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord"><span class="mord mathnormal">n</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.03148em;">k</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathnormal">p</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.03148em;">k</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.8804em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mclose">)</span></span></span></span></span></p>
+</section>
+<section class="print-section">
 <h3 id="속성-테스트로-인한-information-gain" tabindex="-1"><a class="header-anchor" href="#속성-테스트로-인한-information-gain"><span>속성 <span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi></mrow><annotation encoding="application/x-tex">A</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal">A</span></span></span></span> 테스트로 인한 information gain</span></a></h3>
 <p v-pre class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>G</mi><mi>a</mi><mi>i</mi><mi>n</mi><mo stretchy="false">(</mo><mi>A</mi><mo stretchy="false">)</mo><mo>=</mo><mi>B</mi><mo stretchy="false">(</mo><mfrac><mi>p</mi><mrow><mi>p</mi><mo>+</mo><mi>n</mi></mrow></mfrac><mo stretchy="false">)</mo><mo>−</mo><mi>R</mi><mi>e</mi><mi>m</mi><mi>a</mi><mi>i</mi><mi>n</mi><mi>d</mi><mi>e</mi><mi>r</mi><mo stretchy="false">(</mo><mi>A</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">Gain(A) = B(\frac{p}{p+n}) - Remainder(A)
 </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">G</span><span class="mord mathnormal">ain</span><span class="mopen">(</span><span class="mord mathnormal">A</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1.988em;vertical-align:-0.8804em;"></span><span class="mord mathnormal" style="margin-right:0.05017em;">B</span><span class="mopen">(</span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.1076em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal">p</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord mathnormal">n</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal">p</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.8804em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.00773em;">R</span><span class="mord mathnormal">e</span><span class="mord mathnormal">main</span><span class="mord mathnormal">d</span><span class="mord mathnormal" style="margin-right:0.02778em;">er</span><span class="mopen">(</span><span class="mord mathnormal">A</span><span class="mclose">)</span></span></span></span></span></p>
@@ -203,6 +226,7 @@
 <li><span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mi>a</mi><mi>t</mi><mi>r</mi><mi>o</mi><mi>n</mi><mi>s</mi></mrow><annotation encoding="application/x-tex">Patrons</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="mord mathnormal">a</span><span class="mord mathnormal">t</span><span class="mord mathnormal">ro</span><span class="mord mathnormal">n</span><span class="mord mathnormal">s</span></span></span></span>가 <strong>분할하기 더 좋은 속성</strong>이라는 <strong>직관을 확인</strong>시켜 줌</li>
 <li><span v-pre class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mi>a</mi><mi>t</mi><mi>r</mi><mi>o</mi><mi>n</mi><mi>s</mi></mrow><annotation encoding="application/x-tex">Patrons</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="mord mathnormal">a</span><span class="mord mathnormal">t</span><span class="mord mathnormal">ro</span><span class="mord mathnormal">n</span><span class="mord mathnormal">s</span></span></span></span>는 모든 속성 중 최대 information gain을 가지므로 decision tree learning 알고리즘에 의해 <strong>root로 선택</strong>됨.</li>
 </ul>
+</section>
 </div></template>
 
 
