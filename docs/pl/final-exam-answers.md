@@ -52,20 +52,20 @@ Semaphore s1 = 0;
 Semaphore s2 = 0;
 
 Thread 1:
-    print("Hello");
-    ①  s1.release();       -- signal Thread 2 that "Hello" is done
+  print("Hello");
+  ① s1.release();    -- signal Thread 2 that "Hello" is done
 
 Thread 2:
-    ②  s1.acquire();       -- block until Thread 1 has finished
-    print("World");
-    ③  s2.release();       -- signal Thread 3 that "World" is done
+  ② s1.acquire();    -- block until Thread 1 has finished
+  print("World");
+  ③ s2.release();    -- signal Thread 3 that "World" is done
 
 Thread 3:
-    ④  s2.acquire();       -- block until Thread 2 has finished
-    print("!");
+  ④ s2.acquire();    -- block until Thread 2 has finished
+  print("!");
 ```
 
-**Explanation:**  
+**Explanation:** 
 - Both `s1` and `s2` start at 0, so any `acquire()` call on them immediately blocks the calling thread.
 - Thread 2 blocks on `s1.acquire()` until Thread 1 calls `s1.release()` after printing "Hello".
 - Thread 3 blocks on `s2.acquire()` until Thread 2 calls `s2.release()` after printing "World".
@@ -89,62 +89,62 @@ Full syntax examples per language:
 ```ada
 -- Ada
 begin
-    -- code
+  -- code
 exception
-    when Constraint_Error =>
-        Put_Line("range error");
-    when others =>
-        Put_Line("other error");
+  when Constraint_Error =>
+    Put_Line("range error");
+  when others =>
+    Put_Line("other error");
 end;
 ```
 
 ```cpp
 // C++
 try {
-    throw MyException("message");
+  throw MyException("message");
 }
 catch (MyException& e) { /* handle */ }
 catch (...) { /* catch-all */ }
-// throw;  -- re-raise current exception
+// throw; -- re-raise current exception
 ```
 
 ```java
 // Java
 try {
-    throw new MyException("message");
+  throw new MyException("message");
 }
 catch (MyException e) { /* handle */ }
-catch (Exception e)   { /* catch-all */ }
+catch (Exception e)  { /* catch-all */ }
 finally {
-    // always runs
+  // always runs
 }
 ```
 
 ```python
 # Python
 try:
-    raise ValueError("bad value")
+  raise ValueError("bad value")
 except ValueError as e:
-    print(e)
+  print(e)
 except Exception:
-    pass
+  pass
 else:
-    pass   # runs only if no exception was raised
+  pass  # runs only if no exception was raised
 finally:
-    pass   # always runs
+  pass  # always runs
 ```
 
 ```ruby
 # Ruby
 begin
-  raise "error"
+ raise "error"
 rescue RuntimeError => e
-  puts e.message
+ puts e.message
 rescue => e
-  # catches all StandardError subclasses
+ # catches all StandardError subclasses
 ensure
-  # always runs (like Java's finally)
-  # retry  -- re-executes begin block (use inside rescue only)
+ # always runs (like Java's finally)
+ # retry -- re-executes begin block (use inside rescue only)
 end
 ```
 
@@ -157,10 +157,10 @@ end
 Java exception hierarchy:
 ```
 Throwable
-├── Error              (unchecked — JVM-level; e.g., OutOfMemoryError)
+├── Error       (unchecked — JVM-level; e.g., OutOfMemoryError)
 └── Exception
-    ├── RuntimeException   (unchecked — e.g., NullPointerException)
-    └── (other subclasses) (checked — e.g., IOException)
+  ├── RuntimeException  (unchecked — e.g., NullPointerException)
+  └── (other subclasses) (checked — e.g., IOException)
 ```
 
 ---
@@ -171,10 +171,10 @@ The tuple `(chain_offset, local_offset)` means: follow the static link `chain_of
 
 **Program structure:**
 ```
-Bigsub  (depth 0): A=offset 3, B=offset 4, C=offset 5
-  Sub1  (depth 1): A=offset 3
-  Sub2  (depth 1): B=offset 4
-    Sub3 (depth 2): E=offset 4
+Bigsub (depth 0): A=offset 3, B=offset 4, C=offset 5
+ Sub1 (depth 1): A=offset 3
+ Sub2 (depth 1): B=offset 4
+  Sub3 (depth 2): E=offset 4
 ```
 
 ### (a) Position 1 — Sub1 is currently executing
@@ -199,8 +199,8 @@ Bigsub  (depth 0): A=offset 3, B=offset 4, C=offset 5
 
 ```csharp
 static void DoIt(out int x, out int y) {
-    x = 17;
-    y = 35;
+  x = 17;
+  y = 35;
 }
 int sub = 3;
 int[] list = {1, 3, 5, 7, 9};
@@ -225,7 +225,7 @@ Execution inside `DoIt`:
 With return-time evaluation, the formal parameter values (`x = 17`, `y = 35`) are computed inside the function, but the destination addresses are only determined **at return time**.
 
 Consider what happens if `y` is copied back first:
-1. Copy `y = 35` → `sub = 35`  (sub is now 35)
+1. Copy `y = 35` → `sub = 35` (sub is now 35)
 2. Re-evaluate address of first argument: `list[sub]` → `list[35]`
 3. `list[35]` does not exist (list has indices 0–4) → **runtime error / index out of bounds**
 
@@ -240,16 +240,16 @@ The behavior is **undefined / implementation-defined** because it depends on the
 ```cpp
 class Shape {
 public:
-    virtual void draw() { /* base */ }
-    virtual ~Shape() {}
+  virtual void draw() { /* base */ }
+  virtual ~Shape() {}
 };
 class Circle : public Shape {
 public:
-    void draw() override { /* circle-specific */ }
+  void draw() override { /* circle-specific */ }
 };
 
-Shape* ptr = new Circle();  // polymorphic variable: pointer to base class
-ptr->draw();                // dynamic binding via vtable → Circle::draw() is called
+Shape* ptr = new Circle(); // polymorphic variable: pointer to base class
+ptr->draw();        // dynamic binding via vtable → Circle::draw() is called
 ```
 
 Note: if `draw()` were not `virtual`, `Shape::draw()` would be called (static binding).
@@ -258,15 +258,15 @@ Note: if `draw()` were not `virtual`, `Shape::draw()` would be called (static bi
 
 ```java
 class Shape {
-    void draw() { /* base */ }
+  void draw() { /* base */ }
 }
 class Circle extends Shape {
-    @Override
-    void draw() { /* circle-specific */ }
+  @Override
+  void draw() { /* circle-specific */ }
 }
 
-Shape a = new Circle();  // polymorphic variable: parent-type reference to child object
-a.draw();               // dynamic binding (default) → Circle.draw() is called
+Shape a = new Circle(); // polymorphic variable: parent-type reference to child object
+a.draw();        // dynamic binding (default) → Circle.draw() is called
 ```
 
 In Java, all non-`final`, non-`static`, non-`private` instance methods are dynamically bound.
@@ -275,14 +275,14 @@ In Java, all non-`final`, non-`static`, non-`private` instance methods are dynam
 
 ```csharp
 class Shape {
-    public virtual void Draw() { /* base */ }
+  public virtual void Draw() { /* base */ }
 }
 class Circle : Shape {
-    public override void Draw() { /* circle-specific */ }
+  public override void Draw() { /* circle-specific */ }
 }
 
-Shape s = new Circle();  // polymorphic variable
-s.Draw();               // dynamic binding → Circle.Draw() is called
+Shape s = new Circle(); // polymorphic variable
+s.Draw();        // dynamic binding → Circle.Draw() is called
 ```
 
 Without `virtual`/`override`, a `new` keyword would hide the parent method and use static binding.
@@ -291,27 +291,27 @@ Without `virtual`/`override`, a `new` keyword would hide the parent method and u
 
 ```python
 class Shape:
-    def draw(self): pass
+  def draw(self): pass
 
 class Circle(Shape):
-    def draw(self): print("circle")
+  def draw(self): print("circle")
 
-x = Circle()   # variable x holds a Circle object; no type annotation needed
-x.draw()       # always dynamically bound → Circle.draw() is called
+x = Circle()  # variable x holds a Circle object; no type annotation needed
+x.draw()    # always dynamically bound → Circle.draw() is called
 ```
 
 ### (e) Ruby — all variables are typeless; all method calls are dynamic
 
 ```ruby
 class Shape
-  def draw; end
+ def draw; end
 end
 class Circle < Shape
-  def draw; puts "circle"; end
+ def draw; puts "circle"; end
 end
 
 x = Circle.new
-x.draw   # dynamic binding → Circle#draw is called
+x.draw  # dynamic binding → Circle#draw is called
 ```
 
 ---
@@ -320,19 +320,19 @@ x.draw   # dynamic binding → Circle#draw is called
 
 Binary tree representation: `(value left right)` where `'()` = empty tree.
 
-- `(CAR t)` → root value  
-- `(CADR t)` → left subtree  
+- `(CAR t)` → root value 
+- `(CADR t)` → left subtree 
 - `(CADDR t)` → right subtree
 
 ### (a) count-nodes — total number of nodes
 
 ```scheme
 (DEFINE (count-nodes t)
-  (IF (NULL? t)
-      0
-      (+ 1
-         (count-nodes (CADR t))
-         (count-nodes (CADDR t)))))
+ (IF (NULL? t)
+   0
+   (+ 1
+     (count-nodes (CADR t))
+     (count-nodes (CADDR t)))))
 ```
 
 **Logic:** Base case: empty tree has 0 nodes. Recursive case: 1 (current node) + nodes in left subtree + nodes in right subtree.
@@ -341,10 +341,10 @@ Binary tree representation: `(value left right)` where `'()` = empty tree.
 
 ```scheme
 (DEFINE (tree-height t)
-  (IF (NULL? t)
-      0
-      (+ 1 (MAX (tree-height (CADR t))
-                (tree-height (CADDR t))))))
+ (IF (NULL? t)
+   0
+   (+ 1 (MAX (tree-height (CADR t))
+        (tree-height (CADDR t))))))
 ```
 
 **Logic:** Base case: empty tree has height 0. Recursive case: 1 + the maximum of the heights of the left and right subtrees.
@@ -353,11 +353,11 @@ Binary tree representation: `(value left right)` where `'()` = empty tree.
 
 ```scheme
 (DEFINE (tree-max t)
-  (IF (NULL? t)
-      -999999
-      (MAX (CAR t)
-           (tree-max (CADR t))
-           (tree-max (CADDR t)))))
+ (IF (NULL? t)
+   -999999
+   (MAX (CAR t)
+      (tree-max (CADR t))
+      (tree-max (CADDR t)))))
 ```
 
 **Logic:** Base case: empty tree returns -999999 (sentinel — smaller than any real value). Recursive case: the maximum of the root value, the max of the left subtree, and the max of the right subtree.
@@ -367,15 +367,15 @@ Binary tree representation: `(value left right)` where `'()` = empty tree.
 ```scheme
 (DEFINE example-tree '(5 (3 (1 () ()) (4 () ())) (8 (7 () ()) ())))
 ;;
-;;       5
-;;      / \
-;;     3   8
-;;    / \ /
-;;   1  4 7
+;;    5
+;;   / \
+;;   3  8
+;;  / \ /
+;;  1 4 7
 
-(count-nodes example-tree)  ; → 6
-(tree-height example-tree)  ; → 3
-(tree-max example-tree)     ; → 8
+(count-nodes example-tree) ; → 6
+(tree-height example-tree) ; → 3
+(tree-max example-tree)   ; → 8
 ```
 
 ---
@@ -421,21 +421,21 @@ length = foldr (\_ n -> 1 + n) 0
 
 ```sml
 fun length(lst) =
-    if lst = [] then 0
-    else 1 + length(tl lst);
+  if lst = [] then 0
+  else 1 + length(tl lst);
 ```
 
 **Rewritten with pattern matching:**
 
 ```sml
 fun length([]) = 0
-  | length(h :: t) = 1 + length(t);
+ | length(h :: t) = 1 + length(t);
 ```
 
-**Explanation:**  
-- The first clause `length([])` matches the empty list and returns 0.  
-- The second clause `length(h :: t)` uses the `::` (cons) pattern to decompose the list into its head `h` and tail `t`. The body returns `1 + length(t)`, recursively counting the tail.  
-- The head variable `h` is not used in the body (it could be replaced with `_`).  
+**Explanation:** 
+- The first clause `length([])` matches the empty list and returns 0. 
+- The second clause `length(h :: t)` uses the `::` (cons) pattern to decompose the list into its head `h` and tail `t`. The body returns `1 + length(t)`, recursively counting the tail. 
+- The head variable `h` is not used in the body (it could be replaced with `_`). 
 - Pattern matching makes the base case and recursive case structurally explicit and is the idiomatic ML style.
 
 ---

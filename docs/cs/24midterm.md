@@ -1,29 +1,29 @@
 # 2024 Midterm Exam
-총 15 문항, 100점 만점  
+총 15 문항, 100점 만점 
 2024.10.16.
 
-1.  [8점] Define the following terms.
-      - contingency planning: 예기치 않은 사고, 재난, 보안 침해 사고가 발생했을 때, 조직이 신속하게 대응하고 비즈니스 연속성을 유지하며 피해를 최소화하기 위해 사전에 수립하는 절차와 전략의 집합
-      - computationally secure: 어떤 암호 시스템을 깨는 데 필요한 계산 자원이 현재와 예측 가능한 미래의 기술 수준으로도 현실적으로 불가능할 정도로 막대한 경우
-      - false positive: 정상적 행위나 파일임에도 불구하고, 보안 시스템이 이를 악의적 위협이나 공격으로 잘못 탐지하는 오류
-      - risk: 특정 위협이 자산의 취약점을 이용하여 해당 자산에 손실이나 손해를 입힐 가능성
+1. [8점] Define the following terms.
+   - contingency planning: 예기치 않은 사고, 재난, 보안 침해 사고가 발생했을 때, 조직이 신속하게 대응하고 비즈니스 연속성을 유지하며 피해를 최소화하기 위해 사전에 수립하는 절차와 전략의 집합
+   - computationally secure: 어떤 암호 시스템을 깨는 데 필요한 계산 자원이 현재와 예측 가능한 미래의 기술 수준으로도 현실적으로 불가능할 정도로 막대한 경우
+   - false positive: 정상적 행위나 파일임에도 불구하고, 보안 시스템이 이를 악의적 위협이나 공격으로 잘못 탐지하는 오류
+   - risk: 특정 위협이 자산의 취약점을 이용하여 해당 자산에 손실이나 손해를 입힐 가능성
 
-2.  [6점] 컴퓨터 보안의 목표(Security Goals)는 Confidentiality(기밀성), Integrity(무결성), Availablity(가용성)을 보존하는 것입니다. 각 용어를 정의하고, 각 목표에 대한 공격의 예를 제시하시오. The security goals of computer security are to preserve confidentiality, integrity and availability. Define each term and give some examples of attacks on these terms.
-    (a) Confidentiality: 인가된(authorized) 사용자만이 정보에 접근하고 그 내용을 알 수 있도록 보장하는 것. - 공격 예: 데이터 도청(Eavesdropping), 스니핑(Sniffing), 데이터 유출(Data breach), 어깨너머로 훔쳐보기(Shoulder surfing).
-    (b) Integrity: 정보가 인가되지 않은 사용자에 의해 임의로 생성, 수정, 삭제되지 않았음을 보장하는 것. 데이터의 정확성과 완전성을 유지함. - 공격 예: 데이터 변조(Data modification), 바이러스(Virus) 감염을 통한 파일 수정, Man-in-the-Middle (MITM) 공격 중 데이터 조작.
-    (c) Availability: 인가된 사용자가 정보나 시스템 자원을 필요로 할 때 시간적으로 사용할 수 있도록 보장하는 것. - 공격 예: 서비스 거부(DoS, Denial of Service) 공격, 분산 서비스 거부(DDoS, Distributed DoS) 공격, 랜섬웨어(Ransomware)를 통한 파일 접근 차단.
+2. [6점] 컴퓨터 보안의 목표(Security Goals)는 Confidentiality(기밀성), Integrity(무결성), Availablity(가용성)을 보존하는 것입니다. 각 용어를 정의하고, 각 목표에 대한 공격의 예를 제시하시오. The security goals of computer security are to preserve confidentiality, integrity and availability. Define each term and give some examples of attacks on these terms.
+  (a) Confidentiality: 인가된(authorized) 사용자만이 정보에 접근하고 그 내용을 알 수 있도록 보장하는 것. - 공격 예: 데이터 도청(Eavesdropping), 스니핑(Sniffing), 데이터 유출(Data breach), 어깨너머로 훔쳐보기(Shoulder surfing).
+  (b) Integrity: 정보가 인가되지 않은 사용자에 의해 임의로 생성, 수정, 삭제되지 않았음을 보장하는 것. 데이터의 정확성과 완전성을 유지함. - 공격 예: 데이터 변조(Data modification), 바이러스(Virus) 감염을 통한 파일 수정, Man-in-the-Middle (MITM) 공격 중 데이터 조작.
+  (c) Availability: 인가된 사용자가 정보나 시스템 자원을 필요로 할 때 시간적으로 사용할 수 있도록 보장하는 것. - 공격 예: 서비스 거부(DoS, Denial of Service) 공격, 분산 서비스 거부(DDoS, Distributed DoS) 공격, 랜섬웨어(Ransomware)를 통한 파일 접근 차단.
 
-3.  [5점] SBOM에 대하여 설명하고, SBOM이 SW 보안 취약점이 발생하였을 때, 어떻게 효과적으로 사용될 수 있는지 설명하시오. Explain about SBOM, and explain how SBOM can be used when SW security vulnerabilities are found.
+3. [5점] SBOM에 대하여 설명하고, SBOM이 SW 보안 취약점이 발생하였을 때, 어떻게 효과적으로 사용될 수 있는지 설명하시오. Explain about SBOM, and explain how SBOM can be used when SW security vulnerabilities are found.
 - 소프트웨어 제품을 구성하는 모든 구성 요소(components), 라이브러리(libraries), 모듈, 그리고 이들의 종속성(dependencies)에 대한 상세한 목록.
 - 본래 제조업에서 사용하는 자재 명세서(BOM) 개념을 소프트웨어 공급망(Supply Chain)에 적용한 것으로, 각 구성 요소의 버전 정보, 라이선스, 제공자 등을 포함함.
 - SW 보안 취약점 발생 시 활용 방안:
-  - 신속한 취약점 식별: 특정 오픈소스 라이브러리(e.g., Log4j, OpenSSL)에서 심각한 보안 취약점이 발견되었을 때, 조직은 유지보수 중인 모든 소프트웨어의 소스 코드를 일일이 검토할 필요 없이, 보유한 SBOM 목록을 즉시 조회함.
-  - 영향도 분석: SBOM 조회를 통해 해당 취약점을 가진 구성 요소가 자사의 어떤 소프트웨어 제품의 어느 버전에 사용되었는지 정확하고 빠르게 파악할 수 있음.
-  - 효율적인 대응: 영향받는 시스템을 신속하게 식별하여 우선적으로 보안 패치(patch)를 적용하거나 완화 조치(mitigation)를 수행할 수 있어, 전체적인 대응 시간(MTTR, Mean Time To Respond)을 획기적으로 단축시킴.
+ - 신속한 취약점 식별: 특정 오픈소스 라이브러리(e.g., Log4j, OpenSSL)에서 심각한 보안 취약점이 발견되었을 때, 조직은 유지보수 중인 모든 소프트웨어의 소스 코드를 일일이 검토할 필요 없이, 보유한 SBOM 목록을 즉시 조회함.
+ - 영향도 분석: SBOM 조회를 통해 해당 취약점을 가진 구성 요소가 자사의 어떤 소프트웨어 제품의 어느 버전에 사용되었는지 정확하고 빠르게 파악할 수 있음.
+ - 효율적인 대응: 영향받는 시스템을 신속하게 식별하여 우선적으로 보안 패치(patch)를 적용하거나 완화 조치(mitigation)를 수행할 수 있어, 전체적인 대응 시간(MTTR, Mean Time To Respond)을 획기적으로 단축시킴.
 
-4.  [7점] Feistel cipher structure를 그리고, 이 구조의 구성 요소 및 장점을 설명하시오. Draw the Feistel cipher structure, and explain the elements of the structure and the advantage of the structure.
+4. [7점] Feistel cipher structure를 그리고, 이 구조의 구성 요소 및 장점을 설명하시오. Draw the Feistel cipher structure, and explain the elements of the structure and the advantage of the structure.
 
-5.  [8점] Symmetric Encryption 방법과 Asymmetric Encryption 방법을 비교하여 설명하고, 각 방법의 장단점을 설명하고, 알고리즘 예를 나열하시오. Explain both symmetric encryption and asymmetric encryption, and explain pros and cons of each method, and give examples of algorithms.
+5. [8점] Symmetric Encryption 방법과 Asymmetric Encryption 방법을 비교하여 설명하고, 각 방법의 장단점을 설명하고, 알고리즘 예를 나열하시오. Explain both symmetric encryption and asymmetric encryption, and explain pros and cons of each method, and give examples of algorithms.
 
 | | Symmetric | Asymmetric |
 | :--- | :--- | :--- |
@@ -32,22 +32,22 @@
 | disadvantages | | |
 | Algorithm<br>Examples | | |
 
-6.  [8점] Block cipher를 이용한 mode-of-operation에 대하여 다음 물음에 답하시오.
-    (a) Explain the Output feedback(OFB) mode and the Cipher feedback(CFB) mode with drawings. (explain both encryption and decryption processes.)  
+6. [8점] Block cipher를 이용한 mode-of-operation에 대하여 다음 물음에 답하시오.
+  (a) Explain the Output feedback(OFB) mode and the Cipher feedback(CFB) mode with drawings. (explain both encryption and decryption processes.) 
 
-    (b) Explain pros and cons of the OFB mode. OFB 모드의 장단점을 설명하시오.  
+  (b) Explain pros and cons of the OFB mode. OFB 모드의 장단점을 설명하시오. 
 
-7.  [8점] RSA cryptosystem에 대하여 다음 물음에 답하시오.
-    (a) Explain how to generate public key and private key.  
+7. [8점] RSA cryptosystem에 대하여 다음 물음에 답하시오.
+  (a) Explain how to generate public key and private key. 
 
-    (b) Encrypt a message M with the public key.  
+  (b) Encrypt a message M with the public key. 
 
-8.  [4점] User authentication methods can be categorized into four approaches. Explain four categories and give examples for each category.
+8. [4점] User authentication methods can be categorized into four approaches. Explain four categories and give examples for each category.
 
-9.  [8점] Password salt에 대하여 다음 물음에 답하시오.
-    (a) Explain how to apply the password salt.  
+9. [8점] Password salt에 대하여 다음 물음에 답하시오.
+  (a) Explain how to apply the password salt. 
 
-    (b) Explain why password salt can make the password file more secure.  
+  (b) Explain why password salt can make the password file more secure. 
 
 10.	[6점] Proactive password checking에 대하여 설명하고, proactive password checking에서 사용하는 방법들을 설명하시오.
 

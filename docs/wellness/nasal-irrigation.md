@@ -1,7 +1,7 @@
 # 자가비강세척 (Nasal Irrigation)
 
 <p align="center">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/4/42/Nasal_irrigation.jpg" width="256px"/>
+ <img src="https://upload.wikimedia.org/wikipedia/commons/4/42/Nasal_irrigation.jpg" width="256px"/>
 </p>
 
 ## 개요

@@ -271,7 +271,7 @@ d) `False`, `False`
 
 ```py
 class Truth:
-    pass
+  pass
 x = Truth()
 bool(x)
 ```
@@ -288,11 +288,11 @@ d) Error
 
 ```py
 if (9 < 0) and (0 < -9):
-    print("hello")
+  print("hello")
 elif (9 > 0) or False:
-    print("good")
+  print("good")
 else:
-    print("bad")
+  print("bad")
 ```
 
 a) Error
@@ -331,7 +331,7 @@ d) No output
 ```py
 x = ['ab', 'cd']
 for i in x:
-    i.upper()
+  i.upper()
 print(x)
 ```
 
@@ -348,10 +348,10 @@ d) None of the mentioned
 ```py
 i = 1
 while True:
-    if i % 3 == 0:
-        break
-    print(i)
-    i = i + 1
+  if i % 3 == 0:
+    break
+  print(i)
+  i = i + 1
 ```
 
 a) `1 2`
@@ -367,10 +367,10 @@ d) None of the mentioned
 ```py
 i = 1
 while True:
-    if i % 2 == 0:
-        break
-    print(i)
-    i += 2
+  if i % 2 == 0:
+    break
+  print(i)
+  i += 2
 ```
 
 a) `1`
@@ -386,10 +386,10 @@ d) `1 3 5 7 9 11 ...`
 ```py
 i = 1
 while False:
-    if i % 2 == 0:
-        break
-    print(i)
-    i += 2
+  if i % 2 == 0:
+    break
+  print(i)
+  i += 2
 ```
 
 a) `1`
@@ -405,12 +405,12 @@ d) None of the mentioned (No output)
 ```py
 i = 0
 while i < 5:
-    print(i)
-    i += 1
-    if i == 3:
-        break
+  print(i)
+  i += 1
+  if i == 3:
+    break
 else:
-    print(0)
+  print(0)
 ```
 
 a) `0 1 2 0`
@@ -426,7 +426,7 @@ d) None of the mentioned
 ```py
 x = "abcdef"
 while i in x:
-    print(i, end=" ")
+  print(i, end=" ")
 ```
 
 a) `a b c d e f`
@@ -443,7 +443,7 @@ d) Error (`NameError: name 'i' is not defined`)
 x = "abcdef"
 i = "i"
 while i in x:
-    print(i, end=" ")
+  print(i, end=" ")
 ```
 
 a) No output
@@ -460,8 +460,8 @@ d) `abcdef`
 x = "abcdef"
 i = "a"
 while i in x:
-    x = x[:-1]
-    print(i, end = " ")
+  x = x[:-1]
+  print(i, end = " ")
 ```
 
 a) `i i i i i i`
@@ -478,7 +478,7 @@ d) None of the mentioned
 x = "abcdef"
 i = "a"
 while i in x[1:]:
-    print(i, end = " ")
+  print(i, end = " ")
 ```
 
 a) `a a a a a a`
@@ -494,8 +494,8 @@ d) Error
 ```py
 x = 'abcd'
 for i in x:
-    print(i)
-    x.upper()
+  print(i)
+  x.upper()
 ```
 
 a) `a B C D`
@@ -511,7 +511,7 @@ d) Error
 ```py
 x = 'abcd'
 for i in x:
-    print(i.upper())
+  print(i.upper())
 ```
 
 a) `a b c d`
@@ -527,7 +527,7 @@ d) Error
 ```py
 x = 'abcd'
 for i in range(x):
-    print(i)
+  print(i)
 ```
 
 a) `a b c d`
@@ -543,7 +543,7 @@ d) None of the mentioned
 ```py
 x = 'abcd'
 for i in range(len(x)):
-    print(i)
+  print(i)
 ```
 
 a) `a b c d`
@@ -559,7 +559,7 @@ d) `1 2 3 4`
 ```py
 x = 'abcd'
 for i in range(len(x)):
-    x[i].upper()
+  x[i].upper()
 print(x)
 ```
 
@@ -576,8 +576,8 @@ d) None of the mentioned
 ```py
 x = 'abcd'
 for i in range(len(x)):
-    x = 'a'
-    print(x)
+  x = 'a'
+  print(x)
 ```
 
 a) `a`
@@ -593,7 +593,7 @@ d) None of the mentioned
 ```py
 x = 123
 for i in x:
-    print(i)
+  print(i)
 ```
 
 a) `1 2 3`
@@ -609,7 +609,7 @@ d) None of the mentioned
 ```py
 d = {0: 'a', 1: 'b', 2: 'c'}
 for i in d:
-    print(i)
+  print(i)
 ```
 
 a) `0 1 2`
@@ -625,7 +625,7 @@ d) None of the mentioned
 ```py
 d = {0: 'a', 1: 'b', 2: 'c'}
 for x, y in d.items():
-    print(x, y)
+  print(x, y)
 ```
 
 a) `0 1 2`
@@ -641,7 +641,7 @@ d) None of the mentioned
 ```py
 d = {0: 'a', 1: 'b', 2: 'c'}
 for x in d.values():
-    print(x)
+  print(x)
 ```
 
 a) `0 1 2`
@@ -657,7 +657,7 @@ d) None of the mentioned
 ```py
 d = {0, 1, 2}
 for x in d:
-    print(x)
+  print(x)
 ```
 
 a) `0 1 2`
@@ -673,8 +673,8 @@ d) None of the mentioned
 ```py
 x = 2
 for i in range(x):
-    x += 1
-    print(x)
+  x += 1
+  print(x)
 ```
 
 a) `0 1 2 3 4 ...`
@@ -689,12 +689,12 @@ d) `0 1 2 3`
 
 ```py
 for i in range(10):
-    if i == 5:
-        break
-    else:
-        print(i)
+  if i == 5:
+    break
+  else:
+    print(i)
 else:
-    print("Here")
+  print("Here")
 ```
 
 a) `0 1 2 3 4 Here`
@@ -710,12 +710,12 @@ d) `1 2 3 4 5`
 ```py
 string = "my name is x"
 for i in string:
-    print(i, end=", ")
+  print(i, end=", ")
 ```
 
-a) `m, y,  , n, a, m, e,  , i, s,  , x, `
+a) `m, y, , n, a, m, e, , i, s, , x, `
 
-b) `m, y,  , n, a, m, e,  , i, s,  , x`
+b) `m, y, , n, a, m, e, , i, s, , x`
 
 c) `my, name, is, x, `
 
@@ -726,12 +726,12 @@ d) Error
 ```py
 string = "my name is x"
 for i in string.split():
-    print(i, end=", ")
+  print(i, end=", ")
 ```
 
-a) `m, y,  , n, a, m, e,  , i, s,  , x, `
+a) `m, y, , n, a, m, e, , i, s, , x, `
 
-b) `m, y,  , n, a, m, e,  , i, s,  , x`
+b) `m, y, , n, a, m, e, , i, s, , x`
 
 c) `my, name, is, x, `
 
@@ -796,8 +796,8 @@ d) All of the mentioned
 
 ```py
 class tester:
-    def __init__(self, id):
-        self.id = str(id)
+  def __init__(self, id):
+    self.id = str(id)
 id = "224"
 >>> temp = tester(12)
 >>> print(temp.id)
@@ -991,9 +991,9 @@ myList = [1, 5, 5, 5, 5, 1]
 max = myList[0]
 indexOfMax = 0
 for i in range(1, len(myList)):
-    if myList[i] > max:
-        max = myList[i]
-        indexOfMax = i
+  if myList[i] > max:
+    max = myList[i]
+    indexOfMax = i
 print(indexOfMax)
 ```
 
@@ -1010,9 +1010,9 @@ d) `4`
 ```py
 myList = [1, 2, 3, 4, 5, 6]
 for i in range(1, 6):
-    myList[i - 1] = myList[i]
+  myList[i - 1] = myList[i]
 for i in range(0, 6):
-    print(myList[i], end = " ")
+  print(myList[i], end = " ")
 ```
 
 a) `2 3 4 5 6 1`
@@ -1044,7 +1044,7 @@ d) `[1, 3, 4]`
 
 ```py
 def f(values):
-    values[0] = 44
+  values[0] = 44
 v = [1, 2, 3]
 f(v)
 print(v)
@@ -1062,8 +1062,8 @@ d) `[1, 2, 3]`
 
 ```py
 def f(i, values = []):
-    values.append(i)
-    return values
+  values.append(i)
+  return values
 f(1)
 f(2)
 v = f(3)
@@ -1139,7 +1139,7 @@ d) `8`
 
 ```py
 def addItem(listParam):
-    listParam += [1]
+  listParam += [1]
 mylist = [1, 2, 3, 4]
 addItem(mylist)
 print(len(mylist))
@@ -1157,10 +1157,10 @@ d) `8`
 
 ```py
 def increment_items(L, increment):
-    i = 0
-    while i < len(L):
-        L[i] = L[i] + increment
-        i = i + 1
+  i = 0
+  while i < len(L):
+    L[i] = L[i] + increment
+    i = i + 1
 values = [1, 2, 3]
 print(increment_items(values, 2))
 print(values)
@@ -1194,9 +1194,9 @@ d) `[0, 1, 2, 1, 2, 3, 2, 3, 4]`
 values = [[3, 4, 5, 1], [33, 6, 1, 2]]
 v = values[0][0]
 for lst in values:
-    for element in lst:
-        if v > element:
-            v = element
+  for element in lst:
+    if v > element:
+      v = element
 print(v)
 ```
 
@@ -1213,10 +1213,10 @@ d) `6`
 ```py
 values = [[3, 4, 5, 1], [33, 6, 1, 2]]
 for row in values:
-    row.sort()
-    for element in row:
-        print(element, end = " ")
-    print()
+  row.sort()
+  for element in row:
+    print(element, end = " ")
+  print()
 ```
 
 a) The program prints two rows `3 4 5 1` followed by `33 6 1 2`
@@ -1231,12 +1231,12 @@ d) The program prints two rows `1 3 4 5` followed by `1 2 6 33`
 
 ```py
 matrix = [[1, 2, 3, 4],
-          [4, 5, 6, 7],
-          [8, 9, 10, 11],
-          [12, 13, 14, 15]]
-          
+     [4, 5, 6, 7],
+     [8, 9, 10, 11],
+     [12, 13, 14, 15]]
+     
 for i in range(0, 4):
-    print(matrix[i][1], end = " ")
+  print(matrix[i][1], end = " ")
 ```
 
 a) `1 2 3 4`
@@ -1251,13 +1251,13 @@ d) `2 5 9 13`
 
 ```py
 def m(list):
-    v = list[0]
-    for e in list:
-        if v < e: v = e
-    return v
+  v = list[0]
+  for e in list:
+    if v < e: v = e
+  return v
 values = [[3, 4, 5, 1], [33, 6, 1, 2]]
 for row in values:
-    print(m(row), end = " ")
+  print(m(row), end = " ")
 ```
 
 a) `3 33`
@@ -1350,8 +1350,8 @@ d) `[13, 56, 17, [87], [45, 67]]`
 
 ```py
 def change(var, lst):
-    var = 1
-    lst[0] = 44
+  var = 1
+  lst[0] = 44
 k = 3
 a = [1, 2, 3]
 change(k, a)
@@ -1425,8 +1425,8 @@ d) `[x for x in l if x < 0]`
 
 ```py
 A = [[1, 2, 3],
-     [4, 5, 6],
-     [7, 8, 9]]
+   [4, 5, 6],
+   [7, 8, 9]]
 A[1]
 ```
 
@@ -1442,8 +1442,8 @@ d) `[1, 2, 3]`
 
 ```py
 A = [[1, 2, 3],
-     [4, 5, 6],
-     [7, 8, 9]]
+   [4, 5, 6],
+   [7, 8, 9]]
 ```
 
 a) `A[2][3]`
@@ -1753,7 +1753,7 @@ d) `{ }`
 ```py
 a = {1:"A", 2:"B", 3:"C"}
 for i, j in a.items():
-    print(i, j, end=" ")
+  print(i, j, end=" ")
 ```
 
 a) `1 A 2 B 3 C `
@@ -1846,7 +1846,7 @@ count[(1,2)] = 6
 count[(4,2,1)] = 2
 tot = 0
 for i in count:
-    tot = tot + count[i]
+  tot = tot + count[i]
 print(len(count) + tot)
 ```
 
@@ -1872,7 +1872,7 @@ d) `Function`
 
 ```py
 def sayHello():
-    print('Hello World!')
+  print('Hello World!')
 sayHello()
 sayHello()
 ```
@@ -1889,12 +1889,12 @@ d) None of the mentioned
 
 ```py
 def printMax(a, b):
-    if a > b:
-        print(a, 'is maximum')
-    elif a == b:
-        print(a, 'is equal to', b)
-    else:
-        print(b, 'is maximum')
+  if a > b:
+    print(a, 'is maximum')
+  elif a == b:
+    print(a, 'is equal to', b)
+  else:
+    print(b, 'is maximum')
 printMax(3, 4)
 ```
 
@@ -1911,9 +1911,9 @@ d) None of the mentioned
 ```py
 x = 50
 def func(x):
-    print('x is', x)
-    x = 2
-    print('Changed local x to', x)
+  print('x is', x)
+  x = 2
+  print('Changed local x to', x)
 func(x)
 print('x is now', x)
 ```
@@ -1931,10 +1931,10 @@ d) None of the mentioned
 ```py
 x = 50
 def func():
-    global x
-    print('x is', x)
-    x = 2
-    print('Changed global x to', x)
+  global x
+  print('x is', x)
+  x = 2
+  print('Changed global x to', x)
 func()
 print('Value of x is', x)
 ```
@@ -1951,7 +1951,7 @@ d) None of the mentioned
 
 ```py
 def say(message, times = 1):
-    print(message * times)
+  print(message * times)
 say('Hello')
 say('World', 5)
 ```
@@ -1968,7 +1968,7 @@ d) `Hello` 및 `HelloHelloHelloHelloHello`
 
 ```py
 def func(a, b=5, c=10):
-    print('a is', a, 'and b is', b, 'and c is', c)
+  print('a is', a, 'and b is', b, 'and c is', c)
 func(3, 7)
 func(25, c = 24)
 func(c = 50, a = 100)
@@ -1986,12 +1986,12 @@ d) None of the mentioned
 
 ```py
 def maximum(x, y):
-    if x > y:
-        return x
-    elif x == y:
-        return 'The numbers are equal'
-    else:
-        return y
+  if x > y:
+    return x
+  elif x == y:
+    return 'The numbers are equal'
+  else:
+    return y
 print(maximum(2, 3))
 ```
 
@@ -2007,7 +2007,7 @@ d) None of the mentioned
 
 ```py
 def cube(x):
-    return x * x * x
+  return x * x * x
 x = cube(3)
 print(x)
 ```
@@ -2024,7 +2024,7 @@ d) `30`
 
 ```py
 def C2F(c):
-    return c * 9 / 5 + 32
+  return c * 9 / 5 + 32
 print(C2F(100))
 print(C2F(0))
 ```
@@ -2041,10 +2041,10 @@ d) None of the mentioned
 
 ```py
 def power(x, y=2):
-    r = 1
-    for i in range(y):
-        r = r * x
-    return r
+  r = 1
+  for i in range(y):
+    r = r * x
+  return r
 print(power(3))
 print(power(3, 3))
 ```
@@ -2061,11 +2061,11 @@ d) None of the mentioned
 
 ```py
 def sum(*args):
-    '''Function returns the sum of all values'''
-    r = 0
-    for i in args:
-        r += i
-    return r
+  '''Function returns the sum of all values'''
+  r = 0
+  for i in args:
+    r += i
+  return r
 print(sum(1, 2, 3))
 print(sum(1, 2, 3, 4, 5))
 ```
@@ -2082,9 +2082,9 @@ d) None of the mentioned
 
 ```py
 def writer():
-    title = 'Sir'
-    name = (lambda x: title + ' ' + x)
-    return name
+  title = 'Sir'
+  name = (lambda x: title + ' ' + x)
+  return name
 who = writer()
 who('Arthur')
 ```
@@ -2102,8 +2102,8 @@ d) None of the mentioned
 ```py
 i = 0
 def change(i):
-    i = i + 1
-    return i
+  i = i + 1
+  return i
 change(1)
 print(i)
 ```
@@ -2120,7 +2120,7 @@ d) An exception is thrown
 
 ```py
 def a(b):
-    b = b + [5]
+  b = b + [5]
 c = [1, 2, 3, 4]
 a(c)
 print(len(c))
@@ -2140,9 +2140,9 @@ d) An exception is thrown
 a = 10
 b = 20
 def change():
-    global b
-    a = 45
-    b = 56
+  global b
+  a = 45
+  b = 56
 change()
 print(a)
 print(b)
@@ -2160,9 +2160,9 @@ d) Syntax Error
 
 ```py
 def change(i = 1, j = 2):
-    i = i + j
-    j = j + 1
-    print(i, j)
+  i = i + j
+  j = j + 1
+  print(i, j)
 change(j = 1, i = 2)
 ```
 
@@ -2189,7 +2189,7 @@ d) An exception is thrown without the return statement
 
 ```py
 def foo(k):
-    k[0] = 1
+  k[0] = 1
 q = [0]
 foo(q)
 print(q)
@@ -2207,7 +2207,7 @@ d) `[0, 1]`
 
 ```py
 def foo(fname, val):
-    print(fname(val))
+  print(fname(val))
 foo(max, [1, 2, 3])
 foo(min, [1, 2, 3])
 ```
@@ -2224,7 +2224,7 @@ d) None of the mentioned
 
 ```py
 def foo():
-    return total + 1
+  return total + 1
 total = 0
 print(foo())
 ```
@@ -2241,10 +2241,10 @@ d) None of the mentioned
 
 ```py
 def foo(i, x=[]):
-    x.append(i)
-    return x
+  x.append(i)
+  return x
 for i in range(3):
-    print(foo(i))
+  print(foo(i))
 ```
 
 a) `[0]`, `[1]`, `[2]`
@@ -2259,8 +2259,8 @@ d) `[1]`, `[1, 2]`, `[1, 2, 3]`
 
 ```py
 def f1():
-    x = 15
-    print(x)
+  x = 15
+  print(x)
 x = 12
 f1()
 ```
@@ -2277,8 +2277,8 @@ d) `1512`
 
 ```py
 def f1():
-    x = 100
-    print(x)
+  x = 100
+  print(x)
 x = +1
 f1()
 ```
@@ -2295,7 +2295,7 @@ d) `99`
 
 ```py
 def san(x):
-    print(x + 1)
+  print(x + 1)
 x = -2
 x = 4
 san(12)
@@ -2313,9 +2313,9 @@ d) `5`
 
 ```py
 def f1():
-    global x
-    x += 1
-    print(x)
+  global x
+  x += 1
+  print(x)
 x = 12
 print("x")
 ```
@@ -2332,8 +2332,8 @@ d) `x`
 
 ```py
 def f1(a, b=[]):
-    b.append(a)
-    return b
+  b.append(a)
+  return b
 print(f1(2, [3, 4]))
 ```
 
@@ -2349,12 +2349,12 @@ d) `[3, 4, 2]`
 
 ```py
 def f(p, q, r):
-    global s
-    p = 10
-    q = 20
-    r = 30
-    s = 40
-    print(p, q, r, s)
+  global s
+  p = 10
+  q = 20
+  r = 30
+  s = 40
+  print(p, q, r, s)
 p, q, r, s = 1, 2, 3, 4
 f(5, 10, 15)
 ```
@@ -2372,11 +2372,11 @@ d) `5 10 15 40`
 ```py
 x = 5
 def f1():
-    global x
-    x = 4
+  global x
+  x = 4
 def f2(a, b):
-    global x
-    return a + b + x
+  global x
+  return a + b + x
 f1()
 total = f2(1, 2)
 print(total)
@@ -2395,8 +2395,8 @@ d) `15`
 ```py
 y, z = 1, 2
 def f():
-    global x
-    x = y + z
+  global x
+  x = y + z
 ```
 
 a) `x`
@@ -2633,10 +2633,10 @@ d) `infile.readlines()`
 
 ```py
 class test:
-    def __init__(self, a="Hello World"):
-        self.a = a
-    def display(self):
-        print(self.a)
+  def __init__(self, a="Hello World"):
+    self.a = a
+  def display(self):
+    print(self.a)
 obj = test()
 obj.display()
 ```
@@ -2653,10 +2653,10 @@ d) 매개변수가 없다는 오류가 출력된다.
 
 ```py
 class test:
-    def __init__(self, a):
-        self.a = a
-    def display(self):
-        print(self.a)
+  def __init__(self, a):
+    self.a = a
+  def display(self):
+    print(self.a)
 obj = test()
 obj.display()
 ```
@@ -2875,9 +2875,9 @@ d) `4 5`
 
 a)
 ```sh
-     [,1] [,2] [,3]
-[1,]    1    3    5
-[2,]    2    4    6
+   [,1] [,2] [,3]
+[1,]  1  3  5
+[2,]  2  4  6
 ```
 
 b) `[,0] [,1] [,2] ...`
@@ -2995,9 +2995,9 @@ d) `sbind`
 
 a)
 ```sh
-  [,1] [,2] [,3]
-x    1    2    3
-y   10   11   12
+ [,1] [,2] [,3]
+x  1  2  3
+y  10  11  12
 ```
 
 b) `[,1] [,2] [,3] \n x 1 2 3 \n y 10 11`
@@ -3036,11 +3036,11 @@ d) `[[1]] \n [1] 77 ...`
 ### 204. What will be the Correct R code for the following output?
 
 ```sh
-  foo   bar
-1   1  TRUE
-2   2  TRUE
-3   3 FALSE
-4   4 FALSE
+ foo  bar
+1  1 TRUE
+2  2 TRUE
+3  3 FALSE
+4  4 FALSE
 ```
 
 a) `> x <- data.frame(foo = 1:4, bar = c(F, T, F, F))`
@@ -3084,7 +3084,7 @@ d) `9`
 
 a)
 ```sh
-  c d
+ c d
 a 1 3
 b 2 4
 ```
@@ -3331,9 +3331,9 @@ d) Error
 
 a)
 ```sh
-     [,1] [,2]
-[1,]   10   30
-[2,]   20   40
+   [,1] [,2]
+[1,]  10  30
+[2,]  20  40
 ```
 
 b)
@@ -3386,9 +3386,9 @@ a)
 
 ```R
 if(<condition>) {
-    # do something
+  # do something
 } else {
-    # do something else
+  # do something else
 }
 ```
 
@@ -3396,10 +3396,10 @@ b)
 
 ```R
 if(<condition>) {
-    # do something
+  # do something
 }
 elseif {
-    # do something else
+  # do something else
 }
 ```
 
@@ -3407,10 +3407,10 @@ c)
 
 ```R
 if(<condition>) {
-    # do something
+  # do something
 }
 else if {
-    # do something else
+  # do something else
 }
 ```
 
@@ -3418,10 +3418,10 @@ d)
 
 ```R
 if(<condition>) {
-    # do something
+  # do something
 }
 else {
-    ##@ do something else
+  ##@ do something else
 }
 ```
 
@@ -3431,7 +3431,7 @@ a)
 
 ```R
 > for(i in 1:9) {
-+   print(i)
++  print(i)
 + }
 ```
 
@@ -3439,7 +3439,7 @@ b)
 
 ```R
 > for(i in 0:9) {
-+   print(i)
++  print(i)
 + }
 ```
 
@@ -3447,7 +3447,7 @@ c)
 
 ```R
 > for(i in 1:10) {
-+   print(i)
++  print(i)
 + }
 ```
 
@@ -3455,7 +3455,7 @@ d)
 
 ```R
 > for(i in 2:50) {
-+   print("i")
++  print("i")
 + }
 ```
 
@@ -3464,8 +3464,8 @@ d)
 ```R
 > x <- c("a", "b", "c", "d")
 > for(i in 1:4) {
-+   # Print out each element of 'x'
-+   print(x[i])
++  # Print out each element of 'x'
++  print(x[i])
 + }
 ```
 
@@ -3504,9 +3504,9 @@ a)
 
 ```R
 for(i in 1:100) {
-    if(i <= 20) {
-        next
-    }
+  if(i <= 20) {
+    next
+  }
 }
 ```
 
@@ -3514,9 +3514,9 @@ b)
 
 ```R
 for(i in 1:100) {
-    if(i <= 19) {
-        next
-    }
+  if(i <= 19) {
+    next
+  }
 }
 ```
 
@@ -3524,9 +3524,9 @@ c)
 
 ```R
 for(i in 1:100) {
-    if(i <= 21) {
-        next
-    }
+  if(i <= 21) {
+    next
+  }
 }
 ```
 
@@ -3534,9 +3534,9 @@ d)
 
 ```R
 for(i in 1:10) {
-    if(i <= 24) {
-        next
-    }
+  if(i <= 24) {
+    next
+  }
 }
 ```
 
@@ -3546,10 +3546,10 @@ a)
 
 ```R
 for(i in 1:100) {
-    print(i)
-    if(i > 20) {
-        break
-    }
+  print(i)
+  if(i > 20) {
+    break
+  }
 }
 ```
 
@@ -3557,10 +3557,10 @@ b)
 
 ```R
 for(i in 1:100) {
-    print(i)
-    if(i > 19) {
-        break
-    }
+  print(i)
+  if(i > 19) {
+    break
+  }
 }
 ```
 
@@ -3568,10 +3568,10 @@ c)
 
 ```R
 for(i in 1:100) {
-    print(i)
-    if(i < 20) {
-        break
-    }
+  print(i)
+  if(i < 20) {
+    break
+  }
 }
 ```
 
@@ -3579,10 +3579,10 @@ d)
 
 ```R
 for(i in 2:100) {
-    print("i")
-    if(i > 150) {
-        break
-    }
+  print("i")
+  if(i > 150) {
+    break
+  }
 }
 ```
 
@@ -3592,56 +3592,56 @@ a)
 
 ```R
 if ( statement1 ) {
-    statement2
+  statement2
 } else if ( statement3 ) {
-    statement4
+  statement4
 } else if ( statement5 ) {
-    statement6
+  statement6
 } else
-    statement8
+  statement8
 ```
 
 b)
 
 ```R
 if ( statement1 ) {
-    statement2
+  statement2
 } elseif ( statement3 ) {
-    statement4
+  statement4
 } elseif ( statement5 ) {
-    statement6
+  statement6
 } else
-    statement8
+  statement8
 ```
 
 c)
 
 ```R
 if ( statement1 ) {
-    statement2
+  statement2
 } elseif ( statement3 ) {
-    statement4
+  statement4
 } else if ( statement5 ) {
-    statement6
+  statement6
 } else
-    statement8
+  statement8
 ```
 
 d)
 ```R
 if ( statement1 ) {
-    statement2
+  statement2
 } else if ( statement5 ) {
-    statement6
+  statement6
 } else
-    statement8
+  statement8
 ```
 
 ### 233. What will be the output of the following R code?
 
 ```R
 > f <- function() {
-+         ## This is an empty function
++     ## This is an empty function
 + }
 > f()
 ```
@@ -3660,7 +3660,7 @@ a)
 
 ```R
 > f <- function() {
-+       cat("Hello, world!\n")
++    cat("Hello, world!\n")
 + }
 > f()
 ```
@@ -3669,7 +3669,7 @@ b)
 
 ```R
 > f <- function() {
-+       cat("Hello, World!\n")
++    cat("Hello, World!\n")
 + }
 < f()
 ```
@@ -3678,7 +3678,7 @@ c)
 
 ```R
 > f <- function() {
-+       cat("Hello world!\n")
++    cat("Hello world!\n")
 + }
 >>= f()
 ```
@@ -3687,7 +3687,7 @@ d)
 
 ```R
 > f <- function() {
--       cat("Hello world!\n")
+-    cat("Hello world!\n")
 + }
 <= f()
 ```
@@ -3696,9 +3696,9 @@ d)
 
 ```R
 > f <- function(num) {
-+   for(i in seq_len(num)) {
-+       cat("Hello, world!\n")
-+   }
++  for(i in seq_len(num)) {
++    cat("Hello, world!\n")
++  }
 + }
 > f(3)
 ```
@@ -3739,10 +3739,10 @@ Hello, world!
 > f <- function(num) {
 + hello <- "Hello, world!\n"
 + for(i in seq_len(num)) {
-+                      cat(hello)
++           cat(hello)
 + }
-+                      chars <- nchar(hello) * num
-+                      chars
++           chars <- nchar(hello) * num
++           chars
 + }
 > meaningoflife <- f(3)
 > print(meaningoflife)
@@ -3760,12 +3760,12 @@ d) Error
 
 ```R
 > f <- function(num = 1) {
-+       hello <- "Hello, world!\n"
-+       for(i in seq_len(num)) {
-+           cat(hello)
-+       }
-+       chars <- nchar(hello) * num
-+       chars
++    hello <- "Hello, world!\n"
++    for(i in seq_len(num)) {
++      cat(hello)
++    }
++    chars <- nchar(hello) * num
++    chars
 + }
 > f()
 ```
@@ -3794,7 +3794,7 @@ d) Error
 
 ```R
 f <- function(a, b) {
-    a^2
+  a^2
 }
 f(2)
 ```
@@ -3881,9 +3881,9 @@ d) `lnorm`
 
 ```R
 > g <- function(x) {
-+              a <- 3
-+              x+a+y
-+          ## 'y' is a free variable
++       a <- 3
++       x+a+y
++     ## 'y' is a free variable
 + }
 > g(2)
 ```
@@ -3951,22 +3951,22 @@ d) Error
 a)
 
 ```sh
-       a        b        c        d 
+    a    b    c    d 
 2.500000 -0.251483 1.481246 4.968715 
 ```
 
 b)
 
 ```sh
-       a        b        c        d 
+    a    b    c    d 
 2.500000 -3.251483 2.481246 5.968715 
 ```
 
 c)
 
 ```sh
-       a        b        c        d 
-3.500000  0.251483 1.481246 4.968715 
+    a    b    c    d 
+3.500000 0.251483 1.481246 4.968715 
 ```
 
 d) Error
@@ -3990,8 +3990,8 @@ d) `rpois`
 
 a)
 ```sh
-[1]  0.01874617 -0.18425254 -1.37133055 -0.59916772  0.29454513
-[6]  0.38979430 -1.20807618 -0.36367602 -1.62667268 -0.25647839
+[1] 0.01874617 -0.18425254 -1.37133055 -0.59916772 0.29454513
+[6] 0.38979430 -1.20807618 -0.36367602 -1.62667268 -0.25647839
 ```
 
 b)
@@ -4003,7 +4003,7 @@ b)
 c)
 ```sh
 Min. 1st Qu. Median Mean 3rd Qu. Max.
-18.09  19.75  21.22  20.74  21.77  22.20
+18.09 19.75 21.22 20.74 21.77 22.20
 ```
 
 d) Error
@@ -4017,8 +4017,8 @@ d) Error
 
 a)
 ```sh
-[1]  0.01874617 -0.18425254 -1.37133055 -0.59916772  0.29454513
-[6]  0.38979430 -1.20807618 -0.36367602 -1.62667268 -0.25647839
+[1] 0.01874617 -0.18425254 -1.37133055 -0.59916772 0.29454513
+[6] 0.38979430 -1.20807618 -0.36367602 -1.62667268 -0.25647839
 ```
 
 b)
@@ -4030,7 +4030,7 @@ b)
 c)
 ```sh
 Min. 1st Qu. Median Mean 3rd Qu. Max.
-18.09  19.75  21.22  20.74  21.77  22.20
+18.09 19.75 21.22 20.74 21.77 22.20
 ```
 
 d) Error
@@ -4054,8 +4054,8 @@ d) `set.value()`
 
 a)
 ```sh
-[1]  0.01874617 -0.18425254 -1.37133055 -0.59916772  0.29454513
-[6]  0.38979430 -1.20807618 -0.36367602 -1.62667268 -0.25647839
+[1] 0.01874617 -0.18425254 -1.37133055 -0.59916772 0.29454513
+[6] 0.38979430 -1.20807618 -0.36367602 -1.62667268 -0.25647839
 ```
 
 b)
@@ -4067,7 +4067,7 @@ b)
 c)
 ```sh
 Min. 1st Qu. Median Mean 3rd Qu. Max.
-18.09  19.75  21.22  20.74  21.77  22.20
+18.09 19.75 21.22 20.74 21.77 22.20
 ```
 
 d) Error
@@ -4250,4 +4250,4 @@ d) Linker
 | 251 | a | 252 | c | 253 | a | 254 | c | 255 | b |
 | 256 | a | 257 | c | 258 | a | 259 | c | 260 | b |
 | 261 | a | 262 | b | 263 | c | 264 | a | 265 | a |
-| 266 | a | 267 | c | 268 | a |  |  |  |  |
+| 266 | a | 267 | c | 268 | a | | | | |

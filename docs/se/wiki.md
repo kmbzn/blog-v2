@@ -25,41 +25,41 @@
 
 ### 2.1. (Design Pattern) Observer Pattern
 
-> Observer Pattern (a.k.a. "Publish-Subscribe")  
+> Observer Pattern (a.k.a. "Publish-Subscribe") 
 > *"객체 간 일대다 종속성을 정의하여, 객체의 상태가 변경될 때 모든 종속 객체가 자동으로 통지받고 업데이트되도록 한다."* [1]
 ![alt text](image-47.png)
 - **Design B**는 observer pattern을 명확하게 반영하고 있습니다.
-    - Subject: `CustomerList` (이벤트 발생 시 observer들에게 알림)
-    - Observer: `CustomerEventHandler` interface를 구현하는 `MarketingLetters`와 `CustomerListListener` (이벤트 수신 및 처리)
-    - `CustomerList`는 어떤 class가 자신의 이벤트를 수신하게 되는지 알 필요가 없습니다.
-    - Event를 `handler`에게 전파하기만 하면 됩니다.
-        - 이는 Loose Coupling 조건을 충족합니다.
+  - Subject: `CustomerList` (이벤트 발생 시 observer들에게 알림)
+  - Observer: `CustomerEventHandler` interface를 구현하는 `MarketingLetters`와 `CustomerListListener` (이벤트 수신 및 처리)
+  - `CustomerList`는 어떤 class가 자신의 이벤트를 수신하게 되는지 알 필요가 없습니다.
+  - Event를 `handler`에게 전파하기만 하면 됩니다.
+    - 이는 Loose Coupling 조건을 충족합니다.
 
 ### 2.2. (Design Principle) Single Responsibility Principle(SRP)
 
 > "*객체 지향 프로그래밍에서 **단일 책임 원칙**(single responsibility principle)이란 모든 클래스는 하나의 책임만 가지며, 클래스는 그 책임을 완전히 캡슐화해야 함을 일컫는다. 클래스가 제공하는 모든 기능은 이 책임과 주의 깊게 부합해야 한다.*" [2]
 
 - **Design A**
-    - `CustomerList`가 가지고 있는 responsibility들
-        1. 고객 리스트 관리 (`customers.add(customer)`)
-        2. 마케팅 편지 발송 처리 (`marketing.customerAdded(customer)`)
-        3. UI 리스트 업데이트 처리 (`gui.list.add(customer.name)`)
-    - 이는 SRP 위반에 해당합니다.
+  - `CustomerList`가 가지고 있는 responsibility들
+    1. 고객 리스트 관리 (`customers.add(customer)`)
+    2. 마케팅 편지 발송 처리 (`marketing.customerAdded(customer)`)
+    3. UI 리스트 업데이트 처리 (`gui.list.add(customer.name)`)
+  - 이는 SRP 위반에 해당합니다.
 - **Design B**
-    - `CustomerList`는 고객 리스트 관리 및 이벤트 발생 알림이라는 single responsibility만 가집니다.
-    - 마케팅 관련 책임은 `MarketingLetters`에, UI 업데이트 관련 책임은 `CustomerListListener`를 구현하는 class에 분리되어 있습니다.
-    - 이는 SRP를 만족시킨다고 할 수 있습니다.
+  - `CustomerList`는 고객 리스트 관리 및 이벤트 발생 알림이라는 single responsibility만 가집니다.
+  - 마케팅 관련 책임은 `MarketingLetters`에, UI 업데이트 관련 책임은 `CustomerListListener`를 구현하는 class에 분리되어 있습니다.
+  - 이는 SRP를 만족시킨다고 할 수 있습니다.
 
 ### 2.3. (Design Pattern) Open-Closed Principle (OCP)
 
 > "*개방-폐쇄 원칙(OCP, Open-Closed Principle)은 '소프트웨어 개체(클래스, 모듈, 함수 등등)는 확장에 대해 열려 있어야 하고, 수정에 대해서는 닫혀 있어야 한다'는 프로그래밍 원칙이다.*" [3]
 
 - **Design A**
-    - 고객 추가 시 다른 작업을 추가하려면 (`Accounting` 모듈에 알림 보내기 등), `CustomerList` class의 `addCustomer()` method를 수정해야 합니다. (기능 추가에 대해 closed되지 않음)
+  - 고객 추가 시 다른 작업을 추가하려면 (`Accounting` 모듈에 알림 보내기 등), `CustomerList` class의 `addCustomer()` method를 수정해야 합니다. (기능 추가에 대해 closed되지 않음)
 - **Design B**
-    - 새로운 listener(예: `AccountingListener`)를 추가하고 `CustomerList`에 등록하기만 하면 됩니다.
-    - `CustomerList` 자체의 코드는 수정할 필요가 없습니다. (확장에 대해 open, 수정에 대해 closed)
-    - 이는 OCP를 만족시킨다고 할 수 있습니다.
+  - 새로운 listener(예: `AccountingListener`)를 추가하고 `CustomerList`에 등록하기만 하면 됩니다.
+  - `CustomerList` 자체의 코드는 수정할 필요가 없습니다. (확장에 대해 open, 수정에 대해 closed)
+  - 이는 OCP를 만족시킨다고 할 수 있습니다.
 
 ### 2.4. (Design Principle) Dependency Inversion Principle (DIP)
 
@@ -69,18 +69,18 @@
 
 ![alt text](image-60.png)
 - **Design A**
-    - High-level module인 `CustomerList`가 low-level moudule인 detail한 `MarketingLetters`와 `CustomerManagementDialog`에 직접 의존하고 있습니다. (detail한 것에 의존)
+  - High-level module인 `CustomerList`가 low-level moudule인 detail한 `MarketingLetters`와 `CustomerManagementDialog`에 직접 의존하고 있습니다. (detail한 것에 의존)
 - **Design B**
-    - `CustomerList`는 추상화된 `CustomerEventHandler` interface에만 의존합니다.
-    - detail한 구현체(Listener)에 대한 의존성을 역전시킵니다. (추상적인 것에 의존)
-    - 이는 DIP를 만족시킨다고 할 수 있습니다.
+  - `CustomerList`는 추상화된 `CustomerEventHandler` interface에만 의존합니다.
+  - detail한 구현체(Listener)에 대한 의존성을 역전시킵니다. (추상적인 것에 의존)
+  - 이는 DIP를 만족시킨다고 할 수 있습니다.
 
 ## 3. Conclusion
-- **Design B**는 observer pattern을 사용하여 SRP, OCP, DIP와 같은 핵심 디자인 원칙을 준수하고 있습니다.
+- **Design B**는 observer pattern을 사용하여 SRP, OCP, DIP와 같은 디자인 원칙을 준수하고 있습니다.
 - 이를 통해
-    1. 결합도는 낮추고 (느슨한 결합, low coupling)
-    2. 응집도는 높이며
-    3. 확장성과 유연성을 극대화하여
+  1. 결합도는 낮추고 (느슨한 결합, low coupling)
+  2. 응집도는 높이며
+  3. 확장성과 유연성을 극대화하여
 - 시스템의 유지보수성을 향상시킬 수 있습니다.
 
 > 이러한 이유로, **Design B**가 더 우수한 소프트웨어 디자인이라고 평가할 수 있습니다.

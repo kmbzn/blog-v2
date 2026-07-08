@@ -76,10 +76,10 @@ fun(total, total); // first와 second가 같은 변수 — alias
 
 ```python
 def func(x):
-    x = x + 1  # int: 원본 변화 없음
+  x = x + 1 # int: 원본 변화 없음
 
 def func(x):
-    x.append(5)  # list: 원본 변경됨
+  x.append(5) # list: 원본 변경됨
 ```
 
 ### 언어별 요약
@@ -96,7 +96,7 @@ def func(x):
 
 ```c
 void swap(int a, int b) {
-    int temp; temp = a; a = b; b = temp;
+  int temp; temp = a; a = b; b = temp;
 }
 int value = 2, list[5] = {1, 3, 5, 7, 9};
 swap(value, list[value]); // (3)
@@ -127,15 +127,15 @@ subprogram 호출 시 runtime stack에 쌓이는 프레임 구조.
 ### Prologue / Epilogue
 
 - **Prologue** (Callee, 실행 시작):
-  1. old EP를 dynamic link로 저장
-  2. 지역 변수 공간 할당
+ 1. old EP를 dynamic link로 저장
+ 2. 지역 변수 공간 할당
 
 - **Epilogue** (Callee, 실행 종료):
-  1. out-mode 파라미터 값 반환
-  2. 함수 반환값을 caller 접근 가능한 위치로 이동
-  3. stack top을 EP-1로 복원, EP를 dynamic link로 복원
-  4. caller 실행 상태 복원
-  5. caller에게 제어 이전
+ 1. out-mode 파라미터 값 반환
+ 2. 함수 반환값을 caller 접근 가능한 위치로 이동
+ 3. stack top을 EP-1로 복원, EP를 dynamic link로 복원
+ 4. caller 실행 상태 복원
+ 5. caller에게 제어 이전
 
 ### Local Offset / Chain Offset
 
@@ -147,10 +147,10 @@ subprogram 호출 시 runtime stack에 쌓이는 프레임 구조.
 static link는 ARI에 추가된 포인터로, 자신을 감싸는 lexical parent의 ARI를 가리킴.
 
 ```
-Bigsub:   A(offset=3), B(offset=4), C(offset=5)   [depth=0]
-  Sub1:   A(offset=3)                              [depth=1]
-  Sub2:   B(offset=4)                              [depth=1]
-    Sub3: E(offset=4)                              [depth=2]
+Bigsub:  A(offset=3), B(offset=4), C(offset=5)  [depth=0]
+ Sub1:  A(offset=3)               [depth=1]
+ Sub2:  B(offset=4)               [depth=1]
+  Sub3: E(offset=4)               [depth=2]
 ```
 
 Sub3에서:
@@ -170,16 +170,16 @@ Sub2에서:
 ### Dynamic Scoping
 
 - **Deep access**: dynamic chain(동적 링크) 따라 가장 최근 ARI부터 변수 탐색
-  - 속도: O(depth)
-  - 단점: 컴파일 타임에 chain 길이 알 수 없음
+ - 속도: O(depth)
+ - 단점: 컴파일 타임에 chain 길이 알 수 없음
 
 - **Shallow access**: 변수 이름마다 별도 stack 유지, top이 현재 값
-  - 속도: O(1)
-  - 단점: subprogram 진입/종료 시 모든 변수 stack push/pop 비용
+ - 속도: O(1)
+ - 단점: subprogram 진입/종료 시 모든 변수 stack push/pop 비용
 
 ## 3. Concurrency
 
-### 핵심 용어
+### 용어
 
 - **Task/Process/Thread**: 다른 프로그램 단위와 동시에 실행될 수 있는 단위
 - **Physical concurrency**: 실제 여러 프로세서에서 동시 실행
@@ -204,16 +204,16 @@ Dijkstra(1965). counter(정수) + 대기 queue로 구성.
 
 ```
 wait(s):
-  if s.counter > 0 then
-    s.counter--
-  else
-    task를 s.queue에 넣고 block
+ if s.counter > 0 then
+  s.counter--
+ else
+  task를 s.queue에 넣고 block
 
 release(s):
-  if s.queue is empty then
-    s.counter++
-  else
-    queue에서 task 하나를 ready 상태로 이동
+ if s.queue is empty then
+  s.counter++
+ else
+  queue에서 task 하나를 ready 상태로 이동
 ```
 
 `wait`와 `release`는 반드시 atomic하게 실행되어야 함.
@@ -226,18 +226,18 @@ fullspots.count = 0;
 emptyspots.count = BUFLEN;
 
 task producer:
-  loop
-    wait(emptyspots)
-    DEPOSIT(VALUE)
-    release(fullspots)
-  end loop
+ loop
+  wait(emptyspots)
+  DEPOSIT(VALUE)
+  release(fullspots)
+ end loop
 
 task consumer:
-  loop
-    wait(fullspots)
-    FETCH(VALUE)
-    release(emptyspots)
-  end loop
+ loop
+  wait(fullspots)
+  FETCH(VALUE)
+  release(emptyspots)
+ end loop
 ```
 
 **Competition synchronization 추가 (binary semaphore = mutex)**
@@ -247,22 +247,22 @@ semaphore access, fullspots, emptyspots;
 access.count = 1;
 
 task producer:
-  loop
-    wait(emptyspots)
-    wait(access)
-    DEPOSIT(VALUE)
-    release(access)
-    release(fullspots)
-  end loop
+ loop
+  wait(emptyspots)
+  wait(access)
+  DEPOSIT(VALUE)
+  release(access)
+  release(fullspots)
+ end loop
 
 task consumer:
-  loop
-    wait(fullspots)
-    wait(access)
-    FETCH(VALUE)
-    release(access)
-    release(emptyspots)
-  end loop
+ loop
+  wait(fullspots)
+  wait(access)
+  FETCH(VALUE)
+  release(access)
+  release(emptyspots)
+ end loop
 ```
 
 주의: `wait(emptyspots)` → `wait(access)` 순서여야 함. 반대로 하면 deadlock.
@@ -299,21 +299,21 @@ Ada의 rendezvous 모델: sender와 receiver 모두 준비되면 동기적으로
 ```ada
 task body Buf_Task is
 begin
-  loop
-    select
-      when Filled < Bufsize =>
-        accept Deposit(Item : in Integer) do
-          Buf(Next_In) := Item;
-        end Deposit;
-        Filled := Filled + 1;
-      or
-      when Filled > 0 =>
-        accept Fetch(Item : out Integer) do
-          Item := Buf(Next_Out);
-        end Fetch;
-        Filled := Filled - 1;
-    end select;
-  end loop;
+ loop
+  select
+   when Filled < Bufsize =>
+    accept Deposit(Item : in Integer) do
+     Buf(Next_In) := Item;
+    end Deposit;
+    Filled := Filled + 1;
+   or
+   when Filled > 0 =>
+    accept Fetch(Item : out Integer) do
+     Item := Buf(Next_Out);
+    end Fetch;
+    Filled := Filled - 1;
+  end select;
+ end loop;
 end Buf_Task;
 ```
 
@@ -325,7 +325,7 @@ end Buf_Task;
 
 ```java
 class MyThread extends Thread {
-    public void run() { ... }
+  public void run() { ... }
 }
 Thread t = new MyThread();
 t.start();
@@ -344,7 +344,7 @@ Java Semaphore:
 Semaphore emptyspots = new Semaphore(BUFLEN);
 Semaphore fullspots = new Semaphore(0);
 emptyspots.acquire(); // wait
-fullspots.release();  // release
+fullspots.release(); // release
 ```
 
 ### C# Threads
@@ -365,10 +365,10 @@ rendezvous보다 가벼운 공유 데이터 보호 메커니즘.
 
 ```ada
 protected Buffer is
-  entry Deposit(Item : in Integer);
-  entry Fetch(Item : out Integer);
+ entry Deposit(Item : in Integer);
+ entry Fetch(Item : out Integer);
 private
-  ...
+ ...
 end Buffer;
 ```
 
@@ -381,7 +381,7 @@ end Buffer;
 - static scope, first-class function
 - REPL: Read → Eval → Print → Loop
 
-### 핵심 함수
+### 함수
 
 | 함수 | 설명 | 예시 |
 |---|---|---|
@@ -396,10 +396,10 @@ end Buffer;
 CAR/CDR 합성 축약형:
 
 ```scheme
-(CADR x)   ; (CAR (CDR x))       -- 두 번째 원소
-(CADDR x)  ; (CAR (CDR (CDR x))) -- 세 번째 원소
-(CAAR x)   ; (CAR (CAR x))
-(CDAR x)   ; (CDR (CAR x))
+(CADR x)  ; (CAR (CDR x))    -- 두 번째 원소
+(CADDR x) ; (CAR (CDR (CDR x))) -- 세 번째 원소
+(CAAR x)  ; (CAR (CAR x))
+(CDAR x)  ; (CDR (CAR x))
 ```
 
 ### DEFINE
@@ -419,18 +419,18 @@ DEFINE으로 바인딩된 이름은 Java의 `final`처럼 재바인딩 불가.
 (IF predicate then_expr else_expr)
 
 (COND
-  (predicate1 expr1)
-  (predicate2 expr2)
-  (ELSE default_expr))
+ (predicate1 expr1)
+ (predicate2 expr2)
+ (ELSE default_expr))
 ```
 
 예시 -- 입장료:
 ```scheme
 (DEFINE (admissionfee age)
-  (COND
-    ((<= age 6) 0)
-    ((< age 60) 5000)
-    (ELSE 2500)))
+ (COND
+  ((<= age 6) 0)
+  ((< age 60) 5000)
+  (ELSE 2500)))
 
 (admissionfee 65) ; → 2500
 ```
@@ -438,10 +438,10 @@ DEFINE으로 바인딩된 이름은 Java의 `final`처럼 재바인딩 불가.
 예시 -- 윤년 판별:
 ```scheme
 (DEFINE (leap? year)
-  (COND
-    ((ZERO? (MODULO year 400)) #T)
-    ((ZERO? (MODULO year 100)) #F)
-    (ELSE (ZERO? (MODULO year 4)))))
+ (COND
+  ((ZERO? (MODULO year 400)) #T)
+  ((ZERO? (MODULO year 100)) #F)
+  (ELSE (ZERO? (MODULO year 4)))))
 
 (leap? 2024) ; → #T
 ```
@@ -451,27 +451,27 @@ DEFINE으로 바인딩된 이름은 Java의 `final`처럼 재바인딩 불가.
 ```scheme
 ; 리스트 길이
 (DEFINE (length lst)
-  (COND
-    ((NULL? lst) 0)
-    (ELSE (+ 1 (length (CDR lst))))))
+ (COND
+  ((NULL? lst) 0)
+  (ELSE (+ 1 (length (CDR lst))))))
 
 ; 리스트 합산
 (DEFINE (adder lst)
-  (COND
-    ((NULL? lst) 0)
-    (ELSE (+ (CAR lst) (adder (CDR lst))))))
+ (COND
+  ((NULL? lst) 0)
+  (ELSE (+ (CAR lst) (adder (CDR lst))))))
 
 ; 리스트 이어붙이기
 (DEFINE (append list1 list2)
-  (COND
-    ((NULL? list1) list2)
-    (ELSE (CONS (CAR list1) (append (CDR list1) list2)))))
+ (COND
+  ((NULL? list1) list2)
+  (ELSE (CONS (CAR list1) (append (CDR list1) list2)))))
 
 ; 리스트 뒤집기
 (DEFINE (my-reverse lst)
-  (COND
-    ((NULL? lst) '())
-    (ELSE (append (my-reverse (CDR lst)) (LIST (CAR lst))))))
+ (COND
+  ((NULL? lst) '())
+  (ELSE (append (my-reverse (CDR lst)) (LIST (CAR lst))))))
 ```
 
 ### 리스트 탐색
@@ -479,10 +479,10 @@ DEFINE으로 바인딩된 이름은 Java의 `final`처럼 재바인딩 불가.
 ```scheme
 ; 리스트에 원소가 있는지 확인
 (DEFINE (member atm lst)
-  (COND
-    ((NULL? lst) #F)
-    ((EQ? atm (CAR lst)) #T)
-    (ELSE (member atm (CDR lst)))))
+ (COND
+  ((NULL? lst) #F)
+  ((EQ? atm (CAR lst)) #T)
+  (ELSE (member atm (CDR lst)))))
 
 (member 'B '(A B C)) ; → #T
 (member 'B '(A C D)) ; → #F
@@ -493,23 +493,23 @@ DEFINE으로 바인딩된 이름은 Java의 `final`처럼 재바인딩 불가.
 ```scheme
 ; 단순 리스트(atom만 포함) 비교
 (DEFINE (equalsimp list1 list2)
-  (COND
-    ((NULL? list1) (NULL? list2))
-    ((NULL? list2) #F)
-    ((EQ? (CAR list1) (CAR list2))
-     (equalsimp (CDR list1) (CDR list2)))
-    (ELSE #F)))
+ (COND
+  ((NULL? list1) (NULL? list2))
+  ((NULL? list2) #F)
+  ((EQ? (CAR list1) (CAR list2))
+   (equalsimp (CDR list1) (CDR list2)))
+  (ELSE #F)))
 
 ; 중첩 리스트도 비교 (일반)
 (DEFINE (equal list1 list2)
-  (COND
-    ((NOT (LIST? list1)) (EQ? list1 list2))
-    ((NOT (LIST? list2)) #F)
-    ((NULL? list1) (NULL? list2))
-    ((NULL? list2) #F)
-    ((equal (CAR list1) (CAR list2))
-     (equal (CDR list1) (CDR list2)))
-    (ELSE #F)))
+ (COND
+  ((NOT (LIST? list1)) (EQ? list1 list2))
+  ((NOT (LIST? list2)) #F)
+  ((NULL? list1) (NULL? list2))
+  ((NULL? list2) #F)
+  ((equal (CAR list1) (CAR list2))
+   (equal (CDR list1) (CDR list2)))
+  (ELSE #F)))
 ```
 
 ### 집합 연산
@@ -517,11 +517,11 @@ DEFINE으로 바인딩된 이름은 Java의 `final`처럼 재바인딩 불가.
 ```scheme
 ; 교집합 (두 리스트의 공통 원소)
 (DEFINE (guess list1 list2)
-  (COND
-    ((NULL? list1) '())
-    ((member (CAR list1) list2)
-     (CONS (CAR list1) (guess (CDR list1) list2)))
-    (ELSE (guess (CDR list1) list2))))
+ (COND
+  ((NULL? list1) '())
+  ((member (CAR list1) list2)
+   (CONS (CAR list1) (guess (CDR list1) list2)))
+  (ELSE (guess (CDR list1) list2))))
 
 (guess '(A B C D) '(B D F)) ; → (B D)
 ```
@@ -531,16 +531,16 @@ DEFINE으로 바인딩된 이름은 Java의 `final`처럼 재바인딩 불가.
 ```scheme
 ; 삽입 정렬 -- insert: 정렬된 리스트에 원소 삽입
 (DEFINE (insert atm lst)
-  (COND
-    ((NULL? lst) (CONS atm '()))
-    ((< atm (CAR lst)) (CONS atm lst))
-    (ELSE (CONS (CAR lst) (insert atm (CDR lst))))))
+ (COND
+  ((NULL? lst) (CONS atm '()))
+  ((< atm (CAR lst)) (CONS atm lst))
+  (ELSE (CONS (CAR lst) (insert atm (CDR lst))))))
 
 ; sort: insert를 이용한 정렬
 (DEFINE (sort lst)
-  (IF (NULL? lst)
-      '()
-      (insert (CAR lst) (sort (CDR lst)))))
+ (IF (NULL? lst)
+   '()
+   (insert (CAR lst) (sort (CDR lst)))))
 
 (sort '(3 7 5 1 9)) ; → (1 3 5 7 9)
 ```
@@ -555,26 +555,26 @@ DEFINE으로 바인딩된 이름은 Java의 `final`처럼 재바인딩 불가.
 ```scheme
 ; 노드 수 계산
 (DEFINE (count-nodes t)
-  (IF (NULL? t)
-      0
-      (+ 1
-         (count-nodes (CADR t))
-         (count-nodes (CADDR t)))))
+ (IF (NULL? t)
+   0
+   (+ 1
+     (count-nodes (CADR t))
+     (count-nodes (CADDR t)))))
 
 ; 트리 높이
 (DEFINE (tree-height t)
-  (IF (NULL? t)
-      0
-      (+ 1 (MAX (tree-height (CADR t))
-                (tree-height (CADDR t))))))
+ (IF (NULL? t)
+   0
+   (+ 1 (MAX (tree-height (CADR t))
+        (tree-height (CADDR t))))))
 
 ; 최댓값 (일반 트리)
 (DEFINE (tree-max t)
-  (IF (NULL? t)
-      -999999
-      (MAX (CAR t)
-           (tree-max (CADR t))
-           (tree-max (CADDR t)))))
+ (IF (NULL? t)
+   -999999
+   (MAX (CAR t)
+      (tree-max (CADR t))
+      (tree-max (CADDR t)))))
 ```
 
 트리 예시: `'(5 (3 (1 () ()) (4 () ())) (8 (7 () ()) ()))`
@@ -583,16 +583,16 @@ DEFINE으로 바인딩된 이름은 Java의 `final`처럼 재바인딩 불가.
 
 ```scheme
 (LET ((alpha 7) (beta 3))
-  (* alpha beta))
+ (* alpha beta))
 ; → 21
 ; 실제로는: ((LAMBDA (alpha beta) (* alpha beta)) 7 3)
 
 ; 근의 공식 예시
 (DEFINE (quadratic_roots a b c)
-  (LET ((root_part (/ (SQRT (- (* b b) (* 4 a c))) (* 2 a)))
-        (minus_b   (/ (- 0 b) (* 2 a))))
-    (LIST (+ minus_b root_part)
-          (- minus_b root_part))))
+ (LET ((root_part (/ (SQRT (- (* b b) (* 4 a c))) (* 2 a)))
+    (minus_b  (/ (- 0 b) (* 2 a))))
+  (LIST (+ minus_b root_part)
+     (- minus_b root_part))))
 ```
 
 ### map / fold / filter
@@ -600,45 +600,45 @@ DEFINE으로 바인딩된 이름은 Java의 `final`처럼 재바인딩 불가.
 ```scheme
 ; map: 리스트 각 원소에 함수 적용
 (DEFINE (map fun lst)
-  (COND
-    ((NULL? lst) '())
-    (ELSE (CONS (fun (CAR lst)) (map fun (CDR lst))))))
+ (COND
+  ((NULL? lst) '())
+  (ELSE (CONS (fun (CAR lst)) (map fun (CDR lst))))))
 
-(map (LAMBDA (x) (* x x)) '(1 2 3))     ; → (1 4 9)
+(map (LAMBDA (x) (* x x)) '(1 2 3))   ; → (1 4 9)
 (map (LAMBDA (x) (* x x x)) '(3 4 2 6)) ; → (27 64 8 216)
 
 ; fold: 오른쪽에서 왼쪽으로 누적
 (DEFINE (FOLD f base lst)
-  (COND
-    ((NULL? lst) base)
-    (ELSE (f (CAR lst) (FOLD f base (CDR lst))))))
+ (COND
+  ((NULL? lst) base)
+  (ELSE (f (CAR lst) (FOLD f base (CDR lst))))))
 
 (FOLD + 0 '(1 2 3 4)) ; → 10
-(FOLD * 1 '(2 3 4))   ; → 24
+(FOLD * 1 '(2 3 4))  ; → 24
 
 ; filter: 조건 만족 원소만 추출
 (DEFINE (FILTER pred lst)
-  (COND
-    ((NULL? lst) '())
-    ((pred (CAR lst)) (CONS (CAR lst) (FILTER pred (CDR lst))))
-    (ELSE (FILTER pred (CDR lst)))))
+ (COND
+  ((NULL? lst) '())
+  ((pred (CAR lst)) (CONS (CAR lst) (FILTER pred (CDR lst))))
+  (ELSE (FILTER pred (CDR lst)))))
 
 (FILTER EVEN? '(1 2 3 4)) ; → (2 4)
-(FILTER ODD?  '(1 2 3 4)) ; → (1 3)
+(FILTER ODD? '(1 2 3 4)) ; → (1 3)
 ```
 
 ### 함수 합성
 
 ```scheme
 (DEFINE (compose f g)
-  (LAMBDA (x) (f (g x))))
+ (LAMBDA (x) (f (g x))))
 
-((compose CAR CDR) '((a b) c d))   ; → c  (CADR)
-((compose CDR CAR) '((a b) c d))   ; → (b) (CDAR)
+((compose CAR CDR) '((a b) c d))  ; → c (CADR)
+((compose CDR CAR) '((a b) c d))  ; → (b) (CDAR)
 
 ; third = CADDR
 (DEFINE (third lst)
-  ((compose CAR (compose CDR CDR)) lst))
+ ((compose CAR (compose CDR CDR)) lst))
 (third '(1 2 3 4)) ; → 3
 ```
 
@@ -650,22 +650,22 @@ Scheme은 tail call optimization을 언어 명세에서 요구함.
 ```scheme
 ; 일반 재귀 (tail recursive 아님: * n이 재귀 이후에 실행됨)
 (DEFINE (factorial n)
-  (IF (<= n 1) 1 (* n (factorial (- n 1)))))
+ (IF (<= n 1) 1 (* n (factorial (- n 1)))))
 
 ; tail recursive 버전 (accumulator 패턴)
 (DEFINE (factorial n)
-  (DEFINE (facthelper n acc)
-    (IF (<= n 0)
-        acc
-        (facthelper (- n 1) (* n acc))))
-  (facthelper n 1))
+ (DEFINE (facthelper n acc)
+  (IF (<= n 0)
+    acc
+    (facthelper (- n 1) (* n acc))))
+ (facthelper n 1))
 
 ; member는 tail recursive: 재귀 호출이 마지막 연산
 (DEFINE (member atm lst)
-  (COND
-    ((NULL? lst) #F)
-    ((EQ? atm (CAR lst)) #T)
-    (ELSE (member atm (CDR lst)))))
+ (COND
+  ((NULL? lst) #F)
+  ((EQ? atm (CAR lst)) #T)
+  (ELSE (member atm (CDR lst)))))
 ```
 
 ### 중첩 리스트 합산
@@ -673,11 +673,11 @@ Scheme은 tail call optimization을 언어 명세에서 요구함.
 ```scheme
 ; 중첩 리스트도 처리하는 adder
 (DEFINE (adder lst)
-  (COND
-    ((NULL? lst) 0)
-    ((LIST? (CAR lst))
-     (+ (adder (CAR lst)) (adder (CDR lst))))
-    (ELSE (+ (CAR lst) (adder (CDR lst))))))
+ (COND
+  ((NULL? lst) 0)
+  ((LIST? (CAR lst))
+   (+ (adder (CAR lst)) (adder (CDR lst))))
+  (ELSE (+ (CAR lst) (adder (CDR lst))))))
 
 (adder '(1 (2 3) (4 (5)))) ; → 15
 ```
@@ -686,9 +686,9 @@ Scheme은 tail call optimization을 언어 명세에서 요구함.
 
 ```scheme
 (QUOTE (A B C)) ; → (A B C)
-'(A B C)        ; 위와 동일 (축약형)
-(+ 1 2)         ; → 3 (평가됨)
-'(+ 1 2)        ; → (+ 1 2) (평가 안 됨)
+'(A B C)    ; 위와 동일 (축약형)
+(+ 1 2)     ; → 3 (평가됨)
+'(+ 1 2)    ; → (+ 1 2) (평가 안 됨)
 ```
 
 ## 5. ML
@@ -705,8 +705,8 @@ Scheme은 tail call optimization을 언어 명세에서 요구함.
 ```sml
 fun cube(x : int) = x * x * x;
 fun fact(n : int) : int =
-  if n <= 1 then 1
-  else n * fact(n - 1);
+ if n <= 1 then 1
+ else n * fact(n - 1);
 ```
 
 반환값: 마지막 표현식의 값.
@@ -715,23 +715,23 @@ fun fact(n : int) : int =
 
 ```sml
 fun fact(0) = 1
-  | fact(1) = 1
-  | fact(n : int) : int = n * fact(n - 1);
+ | fact(1) = 1
+ | fact(n : int) : int = n * fact(n - 1);
 
 fun length([]) = 0
-  | length(h :: t) = 1 + length(t);
+ | length(h :: t) = 1 + length(t);
 
 fun append([], lis2) = lis2
-  | append(h :: t, lis2) = h :: append(t, lis2);
+ | append(h :: t, lis2) = h :: append(t, lis2);
 
 fun reverse([]) = []
-  | reverse(h :: t) = append(reverse(t), [h]);
+ | reverse(h :: t) = append(reverse(t), [h]);
 
 (* member: 리스트에 원소가 있는지 *)
 fun member(atm, []) = false
-  | member(atm, h :: t) =
-    if atm = h then true
-    else member(atm, t);
+ | member(atm, h :: t) =
+  if atm = h then true
+  else member(atm, t);
 ```
 
 ### 리스트 연산
@@ -765,10 +765,10 @@ fun square(x : real) = x * x;
 val distance = time * speed;
 
 let
-  val pi = 3.14159
-  val r = 2.0
+ val pi = 3.14159
+ val r = 2.0
 in
-  pi * r * r
+ pi * r * r
 end;
 ```
 
@@ -810,11 +810,11 @@ val add5 = add 5;
 val result = add5 10; (* 15 *)
 
 (* 커링 vs 튜플 *)
-fun add_tuple(a, b) = a + b;   (* int * int → int *)
-fun add_curried a b = a + b;   (* int → int → int *)
+fun add_tuple(a, b) = a + b;  (* int * int → int *)
+fun add_curried a b = a + b;  (* int → int → int *)
 
-val add3 = add_curried 3;  (* 부분 적용 → int → int *)
-add3 10;                   (* 13 *)
+val add3 = add_curried 3; (* 부분 적용 → int → int *)
+add3 10;          (* 13 *)
 ```
 
 ### 함수 합성
@@ -842,21 +842,21 @@ val result = doubleThenSquare 3; (* square(double(3)) = 36 *)
 ### 기본 리스트 함수
 
 ```haskell
-head [1,2,3]       -- 1
-tail [1,2,3]       -- [2,3]
-init [1,2,3]       -- [1,2]
-last [1,2,3]       -- 3
-take 2 [1,2,3]     -- [1,2]
-drop 2 [1,2,3]     -- [3]
-length [1,2,3]     -- 3
-reverse [1,2,3]    -- [3,2,1]
-sum [1,2,3]        -- 6
-product [1,2,3]    -- 6
-[1,2] ++ [3,4]     -- [1,2,3,4]
-1 : [2,3]          -- [1,2,3]
-[1..5]             -- [1,2,3,4,5]
-[2,4..10]          -- [2,4,6,8,10]
-[1,2,3,4] !! 2     -- 3 (인덱스 접근, 0부터)
+head [1,2,3]    -- 1
+tail [1,2,3]    -- [2,3]
+init [1,2,3]    -- [1,2]
+last [1,2,3]    -- 3
+take 2 [1,2,3]   -- [1,2]
+drop 2 [1,2,3]   -- [3]
+length [1,2,3]   -- 3
+reverse [1,2,3]  -- [3,2,1]
+sum [1,2,3]    -- 6
+product [1,2,3]  -- 6
+[1,2] ++ [3,4]   -- [1,2,3,4]
+1 : [2,3]     -- [1,2,3]
+[1..5]       -- [1,2,3,4,5]
+[2,4..10]     -- [2,4,6,8,10]
+[1,2,3,4] !! 2   -- 3 (인덱스 접근, 0부터)
 ```
 
 ### 패턴 매칭
@@ -889,14 +889,14 @@ drop n (a:x) = drop (n-1) x
 
 ```haskell
 fact n
-  | n == 0    = 1
-  | n == 1    = 1
-  | otherwise = n * fact (n - 1)
+ | n == 0  = 1
+ | n == 1  = 1
+ | otherwise = n * fact (n - 1)
 
 sub n
-  | n < 10    = 0
-  | n > 100   = 2
-  | otherwise = 1
+ | n < 10  = 0
+ | n > 100  = 2
+ | otherwise = 1
 ```
 
 ### foldr
@@ -906,37 +906,37 @@ sub n
 `foldr f v [x1, x2, x3]` = `x1 \`f\` (x2 \`f\` (x3 \`f\` v))`
 
 ```haskell
-sum     = foldr (+) 0
+sum   = foldr (+) 0
 product = foldr (*) 1
-and     = foldr (&&) True
-length  = foldr (\_ n -> 1 + n) 0
+and   = foldr (&&) True
+length = foldr (\_ n -> 1 + n) 0
 reverse = foldr (\x xs -> xs ++ [x]) []
 
 -- 계산 과정 추적
 foldr (+) 0 [1,2,3,4]
-  = 1 + (2 + (3 + (4 + 0)))
-  = 10
+ = 1 + (2 + (3 + (4 + 0)))
+ = 10
 
 foldr (*) 1 [1,2,3,4]
-  = 1 * (2 * (3 * (4 * 1)))
-  = 24
+ = 1 * (2 * (3 * (4 * 1)))
+ = 24
 
 foldr (\_ n -> 1+n) 0 [10,20,30]
-  = 1 + (1 + (1 + 0))
-  = 3
+ = 1 + (1 + (1 + 0))
+ = 3
 
 foldr (\x xs -> xs ++ [x]) [] [1,2,3]
-  = (foldr ... [] [2,3]) ++ [1]
-  = ([3,2] ++ [1])
-  = [3,2,1]
+ = (foldr ... [] [2,3]) ++ [1]
+ = ([3,2] ++ [1])
+ = [3,2,1]
 ```
 
 ### map
 
 ```haskell
-map (+1) [1,2,3]    -- [2,3,4]
-map (*2) [1,2,3]    -- [2,4,6]
-map negate [1,2,3]  -- [-1,-2,-3]
+map (+1) [1,2,3]  -- [2,3,4]
+map (*2) [1,2,3]  -- [2,4,6]
+map negate [1,2,3] -- [-1,-2,-3]
 
 -- 재귀 정의
 map f [] = []
@@ -975,7 +975,7 @@ concat [[1,2],[3],[4,5]] -- [1,2,3,4,5]
 ### 함수 합성
 
 ```haskell
-(f . g) x = f (g x)   -- 오른쪽부터 왼쪽으로 적용
+(f . g) x = f (g x)  -- 오른쪽부터 왼쪽으로 적용
 odd = not . even
 ```
 
@@ -983,51 +983,51 @@ odd = not . even
 
 ```haskell
 -- zip: 두 리스트 원소를 쌍으로 묶음 (짧은 쪽 기준)
-zip [1,2,3] ['a','b','c','d']  -- [(1,'a'),(2,'b'),(3,'c')]
-zip "abc" [1,2,3]               -- [('a',1),('b',2),('c',3)]
+zip [1,2,3] ['a','b','c','d'] -- [(1,'a'),(2,'b'),(3,'c')]
+zip "abc" [1,2,3]        -- [('a',1),('b',2),('c',3)]
 
 -- pairs: 인접 원소 쌍
 pairs xs = zip xs (tail xs)
-pairs [1,2,3,4]  -- [(1,2),(2,3),(3,4)]
+pairs [1,2,3,4] -- [(1,2),(2,3),(3,4)]
 
 -- sorted: 정렬 여부 확인
 sorted xs = and [x <= y | (x,y) <- pairs xs]
-sorted [1,2,3,4]    -- True
-sorted [1,2,5,3,4]  -- False
+sorted [1,2,3,4]  -- True
+sorted [1,2,5,3,4] -- False
 
 -- positions: 특정 값의 인덱스 목록
 positions x xs = [i | (x',i) <- zip xs [0..n], x == x']
-  where n = length xs - 1
-positions 0 [0,1,0,1,1,0]  -- [0,2,5]
+ where n = length xs - 1
+positions 0 [0,1,0,1,1,0] -- [0,2,5]
 ```
 
 ### all / any
 
 ```haskell
 all p xs = and [p x | x <- xs]
-all even [2,4,6]  -- True
-all even [2,3,6]  -- False
+all even [2,4,6] -- True
+all even [2,3,6] -- False
 
 any p xs = or [p x | x <- xs]
-any odd [2,4,6]   -- False
-any odd [2,3,6]   -- True
+any odd [2,4,6]  -- False
+any odd [2,3,6]  -- True
 ```
 
 ### Lazy Evaluation
 
 ```haskell
 positives = [0..]
-take 5 [1,3..]   -- [1,3,5,7,9]
+take 5 [1,3..]  -- [1,3,5,7,9]
 squares = [n*n | n <- [0..]]
 
 -- 무한 리스트에서 안전한 탐색 (정렬된 리스트 가정)
 member2 n (m:x)
-  | m < n     = member2 n x
-  | m == n    = True
-  | otherwise = False
+ | m < n   = member2 n x
+ | m == n  = True
+ | otherwise = False
 
 member2 16 squares -- True
-member2 5 squares  -- False (빠르게 종료)
+member2 5 squares -- False (빠르게 종료)
 ```
 
 ### Quicksort
@@ -1035,9 +1035,9 @@ member2 5 squares  -- False (빠르게 종료)
 ```haskell
 sort [] = []
 sort (h:t) =
-  sort [b | b <- t, b <= h]
-  ++ [h] ++
-  sort [b | b <- t, b > h]
+ sort [b | b <- t, b <= h]
+ ++ [h] ++
+ sort [b | b <- t, b > h]
 ```
 
 ### Insertion Sort
@@ -1045,8 +1045,8 @@ sort (h:t) =
 ```haskell
 insert x [] = [x]
 insert x (y:ys)
-  | x <= y    = x : y : ys
-  | otherwise = y : insert x ys
+ | x <= y  = x : y : ys
+ | otherwise = y : insert x ys
 
 isort [] = []
 isort (x:xs) = insert x (isort xs)
@@ -1058,15 +1058,15 @@ isort (x:xs) = insert x (isort xs)
 merge [] ys = ys
 merge xs [] = xs
 merge (x:xs) (y:ys) =
-  if x <= y then x : merge xs (y:ys)
-  else y : merge (x:xs) ys
+ if x <= y then x : merge xs (y:ys)
+ else y : merge (x:xs) ys
 
 halve xs = splitAt (length xs `div` 2) xs
 
 msort [] = []
 msort [x] = [x]
 msort xs = merge (msort ys) (msort zs)
-  where (ys, zs) = halve xs
+ where (ys, zs) = halve xs
 ```
 
 ### let / where
@@ -1074,16 +1074,16 @@ msort xs = merge (msort ys) (msort zs)
 ```haskell
 -- let ... in
 quadratic a b c =
-  let minus_b = -b / (2.0 * a)
-      disc    = sqrt(b^2 - 4.0*a*c) / (2.0*a)
-  in [minus_b - disc, minus_b + disc]
+ let minus_b = -b / (2.0 * a)
+   disc  = sqrt(b^2 - 4.0*a*c) / (2.0*a)
+ in [minus_b - disc, minus_b + disc]
 
 -- where
 quadratic a b c =
-  [minus_b - disc, minus_b + disc]
-  where
-    minus_b = -b / (2.0 * a)
-    disc    = sqrt(b^2 - 4.0*a*c) / (2.0*a)
+ [minus_b - disc, minus_b + disc]
+ where
+  minus_b = -b / (2.0 * a)
+  disc  = sqrt(b^2 - 4.0*a*c) / (2.0*a)
 ```
 
 ## 7. Common Lisp / F#
@@ -1103,17 +1103,17 @@ quadratic a b c =
 Backquote: `` ` `` + `,`로 일부만 평가 가능
 
 ```lisp
-`(a (* 3 4) c)   ; → (a (* 3 4) c)  -- 평가 안 됨
-`(a ,(* 3 4) c)  ; → (a 12 c)       -- , 뒤만 평가됨
+`(a (* 3 4) c)  ; → (a (* 3 4) c) -- 평가 안 됨
+`(a ,(* 3 4) c) ; → (a 12 c)    -- , 뒤만 평가됨
 ```
 
 member 함수:
 ```lisp
 (DEFUN recursive_member (atm lst)
-  (COND
-    ((NULL lst) NIL)
-    ((EQUAL atm (CAR lst)) T)
-    (T (recursive_member atm (CDR lst)))))
+ (COND
+  ((NULL lst) NIL)
+  ((EQUAL atm (CAR lst)) T)
+  (T (recursive_member atm (CDR lst)))))
 ```
 
 ### F#
@@ -1127,10 +1127,10 @@ member 함수:
 
 ```fsharp
 let rec factorial n =
-  match n with
-  | 0 -> 1
-  | 1 -> 1
-  | _ -> n * factorial (n - 1)
+ match n with
+ | 0 -> 1
+ | 1 -> 1
+ | _ -> n * factorial (n - 1)
 ```
 
 **Pipeline `|>`**
@@ -1138,9 +1138,9 @@ let rec factorial n =
 ```fsharp
 let myNums = [1; 2; 3; 4; 5]
 let result =
-  myNums
-  |> List.filter (fun n -> n % 2 = 0)
-  |> List.map (fun n -> n * 5)
+ myNums
+ |> List.filter (fun n -> n % 2 = 0)
+ |> List.map (fun n -> n * 5)
 // result = [10; 20]
 ```
 
@@ -1150,52 +1150,52 @@ let result =
 let negate x = -1 * x
 let square x = x * x
 
-let negateSquare = square >> negate  // (f >> g) x = g(f(x))
-negateSquare 3  // square(3)=9, negate(9)=-9
+let negateSquare = square >> negate // (f >> g) x = g(f(x))
+negateSquare 3 // square(3)=9, negate(9)=-9
 ```
 
 **Quicksort**
 
 ```fsharp
 let rec quicksort list =
-  match list with
-  | [] -> []
-  | firstElem :: otherElements ->
-    let smaller =
-      otherElements
-      |> List.filter (fun e -> e < firstElem)
-      |> quicksort
-    let larger =
-      otherElements
-      |> List.filter (fun e -> e >= firstElem)
-      |> quicksort
-    smaller @ [firstElem] @ larger
+ match list with
+ | [] -> []
+ | firstElem :: otherElements ->
+  let smaller =
+   otherElements
+   |> List.filter (fun e -> e < firstElem)
+   |> quicksort
+  let larger =
+   otherElements
+   |> List.filter (fun e -> e >= firstElem)
+   |> quicksort
+  smaller @ [firstElem] @ larger
 ```
 
 **Insertion Sort**
 
 ```fsharp
 let rec insert n ls =
-  match ls with
-  | [] -> [n]
-  | x :: xs ->
-    if n > x then x :: insert n xs
-    else n :: ls
+ match ls with
+ | [] -> [n]
+ | x :: xs ->
+  if n > x then x :: insert n xs
+  else n :: ls
 
 let rec insertSort ls =
-  match ls with
-  | [] -> []
-  | x :: xs -> insert x (insertSort xs)
+ match ls with
+ | [] -> []
+ | x :: xs -> insert x (insertSort xs)
 
-// insertSort [3; 1; 4; 2]  -->  [1; 2; 3; 4]
+// insertSort [3; 1; 4; 2] --> [1; 2; 3; 4]
 ```
 
 **List 고차 함수**
 
 ```fsharp
 let l = [1; 2; 3; 4; 5]
-List.map (fun x -> x * x) l         // [1;4;9;16;25]
-List.filter (fun x -> x % 2 = 0) l  // [2;4]
+List.map (fun x -> x * x) l     // [1;4;9;16;25]
+List.filter (fun x -> x % 2 = 0) l // [2;4]
 List.fold (fun acc x -> acc + x) 0 l // 15
 ```
 
@@ -1322,12 +1322,12 @@ List.fold (fun acc x -> acc + x) 0 l // 15
 |---|---|
 | Scheme | 작고 순수한 Lisp. 람다 계산법에 가장 가까운 미니멀한 설계. |
 | Common Lisp | 기능이 풍부한 실용 Lisp. 명령형과 함수형이 혼재. |
-| ML | 함수형 기반의 정적 타입 언어. 타입 추론과 패턴 매칭이 핵심. |
+| ML | 함수형 기반의 정적 타입 언어. 타입 추론과 패턴 매칭이 . |
 | Haskell | 유일한 순수 함수형. lazy evaluation, 무한 리스트, type class. |
 
 
 
-### 핵심 특성 비교
+### 특성 비교
 
 | 항목 | Scheme | Common Lisp | ML | Haskell | F# |
 |---|---|---|---|---|---|
@@ -1355,13 +1355,13 @@ List.fold (fun acc x -> acc + x) 0 l // 15
 ```
 LISP (1958)
 ├── Common Lisp (1984) — 여러 LISP 방언 통합, 대형 언어
-└── Scheme (1975)      — 작고 순수한 static scope LISP
+└── Scheme (1975)   — 작고 순수한 static scope LISP
 
 ML (1973)
 ├── SML (Standard ML)
 ├── OCaml
-│   └── F# (2005)    — .NET 기반, 함수형+명령형+OOP
-└── Haskell (1990)   — 순수 함수형, lazy evaluation
+│  └── F# (2005)  — .NET 기반, 함수형+명령형+OOP
+└── Haskell (1990)  — 순수 함수형, lazy evaluation
 ```
 
 ### 조건문 비교
@@ -1412,7 +1412,7 @@ ML (1973)
 - referential transparency 지향: 같은 입력 → 항상 같은 출력
 - higher-order function 지원: map, filter, fold 등
 
-### ML vs Haskell 핵심 차이
+### ML vs Haskell 차이
 
 | 항목 | ML | Haskell |
 |---|---|---|
@@ -1422,7 +1422,7 @@ ML (1973)
 | 무한 리스트 | 불가 | 가능 |
 | 함수 이름 반복 | `\|` 구분 | 줄마다 함수 이름 반복 |
 
-### Scheme vs Common Lisp 핵심 차이
+### Scheme vs Common Lisp 차이
 
 | 항목 | Scheme | Common Lisp |
 |---|---|---|
@@ -1435,7 +1435,7 @@ ML (1973)
 
 ## 8. Exception Handling
 
-### 핵심 개념
+### 개념
 
 - **exception**: 하드웨어나 소프트웨어가 감지하는 비정상적/특별한 사건
 - **exception handler**: exception 발생 시 실행되는 처리 코드
@@ -1458,14 +1458,14 @@ ML (1973)
 
 ```ada
 begin
-  -- 코드
+ -- 코드
 exception
-  when Constraint_Error =>
-    Put_Line("범위 초과");
-  when Data_Error =>
-    Put_Line("데이터 오류");
-  when others =>
-    Put_Line("기타 오류");
+ when Constraint_Error =>
+  Put_Line("범위 초과");
+ when Data_Error =>
+  Put_Line("데이터 오류");
+ when others =>
+  Put_Line("기타 오류");
 end;
 ```
 
@@ -1475,7 +1475,7 @@ end;
 ```ada
 My_Error : exception;
 raise My_Error;
-raise;  -- handler 내에서: 같은 exception 재발생
+raise; -- handler 내에서: 같은 exception 재발생
 ```
 
 exception 비활성화: `pragma Suppress(check_name);`
@@ -1484,17 +1484,17 @@ exception 비활성화: `pragma Suppress(check_name);`
 
 ```cpp
 try {
-    throw 42;
-    throw MyException("message");
+  throw 42;
+  throw MyException("message");
 }
 catch (int e) {
-    // int 타입 exception 처리
+  // int 타입 exception 처리
 }
 catch (MyException& e) {
-    // MyException 처리
+  // MyException 처리
 }
 catch (...) {
-    // 모든 나머지 처리
+  // 모든 나머지 처리
 }
 ```
 
@@ -1506,16 +1506,16 @@ catch (...) {
 
 ```java
 try {
-    throw new MyException("message");
+  throw new MyException("message");
 }
 catch (MyException e) {
-    // 처리
+  // 처리
 }
 catch (Exception e) {
-    // 모든 Exception 하위 클래스 처리 (마지막에)
+  // 모든 Exception 하위 클래스 처리 (마지막에)
 }
 finally {
-    // 항상 실행 (예외 여부 무관)
+  // 항상 실행 (예외 여부 무관)
 }
 ```
 
@@ -1528,7 +1528,7 @@ finally {
 
 ```java
 void buildDist() throws IOException {
-    in.readLine(); // IOException 발생 가능
+  in.readLine(); // IOException 발생 가능
 }
 ```
 
@@ -1538,15 +1538,15 @@ void buildDist() throws IOException {
 
 ```python
 try:
-    raise ValueError("잘못된 값")
+  raise ValueError("잘못된 값")
 except ValueError as e:
-    print(e)
+  print(e)
 except Exception:
-    pass  # 모든 Exception 처리
+  pass # 모든 Exception 처리
 else:
-    pass  # 예외 없을 때 실행
+  pass # 예외 없을 때 실행
 finally:
-    pass  # 항상 실행
+  pass # 항상 실행
 ```
 
 계층: `BaseException` → `Exception` → `ArithmeticError`, `LookupError` 등
@@ -1555,14 +1555,14 @@ finally:
 
 ```ruby
 begin
-  raise "에러 발생"
+ raise "에러 발생"
 rescue RuntimeError => e
-  puts e.message
+ puts e.message
 rescue => e
-  # 모든 StandardError 처리
+ # 모든 StandardError 처리
 ensure
-  # 항상 실행 (Java의 finally)
-retry  # rescue 블록 내에서만: raising 지점부터 재실행
+ # 항상 실행 (Java의 finally)
+retry # rescue 블록 내에서만: raising 지점부터 재실행
 end
 ```
 
@@ -1579,19 +1579,19 @@ end
 **C++ (pointer 기반, virtual 필요)**
 ```cpp
 Shape* ptr = new Circle();
-ptr->draw();  // virtual일 때 dynamic binding
+ptr->draw(); // virtual일 때 dynamic binding
 ```
 
 **Java (reference 기반, 기본 dynamic)**
 ```java
 Animal a = new Dog();
-a.speak();  // 항상 dynamic (final/static/private 제외)
+a.speak(); // 항상 dynamic (final/static/private 제외)
 ```
 
 **C# (virtual + override 필요)**
 ```csharp
 Shape s = new Circle();
-s.Draw();   // virtual + override일 때 dynamic
+s.Draw();  // virtual + override일 때 dynamic
 ```
 
 **Python (타입 없는 변수)**
@@ -1609,7 +1609,7 @@ x.speak
 **Smalltalk**
 ```smalltalk
 x := Dog new.
-x speak.   "모든 메시지가 dynamic binding"
+x speak.  "모든 메시지가 dynamic binding"
 ```
 
 ### Dynamic Binding
@@ -1621,22 +1621,22 @@ x speak.   "모든 메시지가 dynamic binding"
 ```cpp
 class Shape {
 public:
-    virtual void draw() = 0;  // pure virtual → abstract class
+  virtual void draw() = 0; // pure virtual → abstract class
 };
 class Circle : public Shape {
 public:
-    void draw() override { ... }
+  void draw() override { ... }
 };
 Shape* s = new Circle();
-s->draw();  // vtable을 통해 Circle::draw() 호출
+s->draw(); // vtable을 통해 Circle::draw() 호출
 ```
 
 stack 할당 시:
 ```cpp
 Square sq;
 Rectangle rect;
-rect = sq;     // object slicing: Square의 추가 변수 날아감
-rect.draw();   // Rectangle::draw() 정적 바인딩
+rect = sq;   // object slicing: Square의 추가 변수 날아감
+rect.draw();  // Rectangle::draw() 정적 바인딩
 ```
 
 **Java**: `final`, `static`, `private` 메서드는 static binding, 나머지는 모두 dynamic binding
@@ -1651,7 +1651,7 @@ rect.draw();   // Rectangle::draw() 정적 바인딩
 ```java
 interface Animal { void bark(); }
 class Dog implements Animal {
-    public void bark() { System.out.println("Woof"); }
+  public void bark() { System.out.println("Woof"); }
 }
 ```
 
@@ -1664,13 +1664,13 @@ class Dog implements Animal {
 
 ```ruby
 module Flyable
-  def fly
-    puts "flying"
-  end
+ def fly
+  puts "flying"
+ end
 end
 
 class Bird
-  include Flyable  # 인스턴스 메서드로 추가
+ include Flyable # 인스턴스 메서드로 추가
 end
 ```
 
@@ -1678,7 +1678,7 @@ end
 - `prepend`: 인스턴스 메서드로 주입, 클래스 자신의 메서드보다 우선
 - `extend`: 클래스 메서드로 주입
 
-### ADT 핵심 개념
+### ADT 개념
 
 - 데이터와 operation을 하나의 단위로 묶음
 - 내부 표현 숨김 (information hiding)
@@ -1702,10 +1702,10 @@ C# 추가: `internal` (같은 assembly), `protected internal`
 ```cpp
 template <class Type>
 Type max(Type first, Type second) {
-    return first > second ? first : second;
+  return first > second ? first : second;
 }
-max(1, 2);       // 2 (int)
-max(1.0, 2.0);   // 2.0 (double)
+max(1, 2);    // 2 (int)
+max(1.0, 2.0);  // 2.0 (double)
 ```
 
 - 특화된 함수가 template보다 우선
@@ -1715,8 +1715,8 @@ max(1.0, 2.0);   // 2.0 (double)
 
 ```java
 public class Stack<T> {
-    private ArrayList<T> stackRef;
-    ...
+  private ArrayList<T> stackRef;
+  ...
 }
 Stack<Integer> s = new Stack<Integer>();
 ```
@@ -1728,10 +1728,10 @@ Stack<Integer> s = new Stack<Integer>();
 
 ```ada
 generic
-  Max_Size : Positive;
-  type Elem_Type is private;
+ Max_Size : Positive;
+ type Elem_Type is private;
 package Generic_Stack is
-  ...
+ ...
 end Generic_Stack;
 
 -- 인스턴스화
@@ -1748,20 +1748,20 @@ package Integer_Stack is new Generic_Stack(100, Integer);
 - chain_offset = 1: 직접 상위(부모) 서브프로그램의 변수
 - local_offset: ARI 내 오프셋 (컴파일 타임 결정)
 
-### Scheme 이진 트리 핵심 코드
+### Scheme 이진 트리 코드
 
 ```scheme
 (DEFINE (tree-height t)
-  (IF (NULL? t)
-      0
-      (+ 1 (MAX (tree-height (CADR t))
-                (tree-height (CADDR t))))))
+ (IF (NULL? t)
+   0
+   (+ 1 (MAX (tree-height (CADR t))
+        (tree-height (CADDR t))))))
 
 (DEFINE (count-nodes t)
-  (IF (NULL? t)
-      0
-      (+ 1 (count-nodes (CADR t))
-           (count-nodes (CADDR t)))))
+ (IF (NULL? t)
+   0
+   (+ 1 (count-nodes (CADR t))
+      (count-nodes (CADDR t)))))
 ```
 
 ### Haskell foldr 계산 과정
@@ -1775,7 +1775,7 @@ foldr (+) 0 [1,2,3,4]
 
 foldr (\_ n -> 1+n) 0 [10,20,30]
 = 1 + (1 + (1 + 0))
-= 3  -- length와 동일
+= 3 -- length와 동일
 ```
 
 ### Exception Keywords 한눈에

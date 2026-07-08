@@ -6,7 +6,7 @@
 
 ### fuzzing technique
 - 소프트웨어의 잠재적 보안 취약점을 발견하기 위해 무작위의 유효하지 않거나 기형적 데이터를 입력값으로 주입하여 충돌/오작동을 모니터링하는 테스팅 기법
-### ASLR(Address Space Layout Randomization)  
+### ASLR(Address Space Layout Randomization) 
 - 공격자가 메모리 주소를 예측하는 것을 방지하기 위해 stack, heap 등 주요 데이터 구조의 메모리 위치를 무작위로 재배치하는 기법
 ### $W \oplus X$ policy
 - 메모리 페이지가 write 권한과 execute 권한을 동시에 가질 수 없도록 강제하는 보안 정책
@@ -26,20 +26,20 @@
 
 ## 4. What are the execution results of the following code statements? [10점]
 1. `free(NULL)`
-    - 아무런 동작도 수행하지 않음. (safe)
+  - 아무런 동작도 수행하지 않음. (safe)
 2. `malloc(0)`
-    - 구현에 따라 `NULL` 또는 `free` 가능한 고유 pointer 반환
+  - 구현에 따라 `NULL` 또는 `free` 가능한 고유 pointer 반환
 3. `realloc(p, 0)` (Suppose `p` is not a null pointer.)
-    - `p`가 가리키는 메모리를 해제 (`free(p)`와 동일한 효과)
+  - `p`가 가리키는 메모리를 해제 (`free(p)`와 동일한 효과)
 4. 
-    ```c
-    int *pn = new int;
-    if (pn) { ... }
-    else { ... }
-    ```
-    - 표준 C++에서 `new`는 실패 시 `NULL` 반환 대신 exception을 발생시키므로, `if` 검사는 무의미하거나 항상 `true`
+  ```c
+  int *pn = new int;
+  if (pn) { ... }
+  else { ... }
+  ```
+  - 표준 C++에서 `new`는 실패 시 `NULL` 반환 대신 exception을 발생시키므로, `if` 검사는 무의미하거나 항상 `true`
 5. `printf("%08x %08x");`
-    - 인자가 부족하므로 stack 상위의 임의 데이터를 읽어 16진수로 출력 (Information leak)
+  - 인자가 부족하므로 stack 상위의 임의 데이터를 읽어 16진수로 출력 (Information leak)
 
 ## 5. Explain the dll injection attack and the process injection attack. [6점]
 - **DLL Injection**: 타겟 process가 악성 dll 파일을 강제로 load하게 하여, 해당 process의 memory space와 권한 내에서 코드를 실행하는 기법
@@ -71,21 +71,21 @@
 ## 10. Explain about `rootkit` malware. How a `rootkit` can hide attacker's activities. [5점]
 - 정의: 관리자 권한(root)을 획득/유지하고, 시스템 내에서 자신의 존재를 숨기기 위해 설계된 악성 소프트웨어 모듈
 - Hiding Activity
-    - Kernal Object Manipulation (DKOM): 프로세스 리스트 등 커널 구조체를 직접 조작하여 자신을 리스트에서 제거
-    - API Hooking: 파일 탐색이나 프로세스 조회 시스템 콜을 가로채어 자신의 파일이나 프로세스 정보를 결과에서 누락시킴.
+  - Kernal Object Manipulation (DKOM): 프로세스 리스트 등 커널 구조체를 직접 조작하여 자신을 리스트에서 제거
+  - API Hooking: 파일 탐색이나 프로세스 조회 시스템 콜을 가로채어 자신의 파일이나 프로세스 정보를 결과에서 누락시킴.
 
 ## 11. Among defense methods against stack buffer overflow attack, Stack-Smashing Protector(SSP) uses 'stack guard'. Explain with a picture how SSP organized the stack frame for a function. [5점]
-      High Address                           
-    ┌──────────────┐                         
-    │Return Address│                         
-    ├──────────────┤                         
-    │     SFP      │                         
-    ├──────────────┤                         
-    │   Canary   ◄─┼─Stack Guard             
-    ├──────────────┤ (Check for modification)
-    │ Local Buffer │                         
-    └──────────────┘                         
-      Low Address                            
+   High Address              
+  ┌──────────────┐             
+  │Return Address│             
+  ├──────────────┤             
+  │   SFP   │             
+  ├──────────────┤             
+  │  Canary  ◄─┼─Stack Guard       
+  ├──────────────┤ (Check for modification)
+  │ Local Buffer │             
+  └──────────────┘             
+   Low Address              
 - Structure: Local variable(buffer)와 SFP(Saved Frame Pointer) 사이에 Canary(Random variable)를 삽입
 - Mechanism: 함수 종료(return) 직전에 canary값이 변조되었는지 검사
 - Buffer overflow로 인해 값이 바뀌었다면 공격으로 간주하고 프로그램 실행 중단
@@ -108,7 +108,7 @@
 wchar_twide_str1[] = L"0123456789";
 wchar_t*wide_str2 = (wchar_t*) malloc(strlen(wide_str1) + 1);
 if (wide_str2 == NULL) {
-    /* handle error */
+  /* handle error */
 }
 strcpy(wide_str2, wide_str1);
 /* ...... */
@@ -116,13 +116,13 @@ free(wide_str2); wide_str2 = NULL;
 ```
 - `wchar_t` (Wide Character) 사용과 관련된 문법 및 메모리 할당 오류입니다.
 - Line 1 (Syntax Error):
-    - `wchar_twide_str1` → `wchar_t wide_str1` (자료형과 변수명 사이 공백 누락)
+  - `wchar_twide_str1` → `wchar_t wide_str1` (자료형과 변수명 사이 공백 누락)
 - Line 2 (Semantic Error):
-    - `strlen`은 `char` 단위 길이만 반환하며, `malloc`은 바이트 단위 크기를 요구합니다. `wchar_t` 문자열 길이 함수(`wcslen`)를 사용하고 `sizeof(wchar_t)`를 곱해야 합니다.
-    - 수정: `(wchar_t*) malloc((wcslen(wide_str1) + 1) - sizeof(wchar_t));`
+  - `strlen`은 `char` 단위 길이만 반환하며, `malloc`은 바이트 단위 크기를 요구합니다. `wchar_t` 문자열 길이 함수(`wcslen`)를 사용하고 `sizeof(wchar_t)`를 곱해야 합니다.
+  - 수정: `(wchar_t*) malloc((wcslen(wide_str1) + 1) - sizeof(wchar_t));`
 - Line 6 (Semantic Error):
-    - `strcpy`는 `char*` 전용 함수입니다. `wchar_t*` 전용 복사 함수를 사용해야 합니다.
-    - 수정: `wcscpy(wide_str2, wide_str1);`
+  - `strcpy`는 `char*` 전용 함수입니다. `wchar_t*` 전용 복사 함수를 사용해야 합니다.
+  - 수정: `wcscpy(wide_str2, wide_str1);`
 
 ## 15. What can be wrong in the following two example code? [6점]
 ### 예제 1
@@ -132,7 +132,7 @@ char src[] = "0123456789";
 strncpy(dst, src, sizeof(dst));
 ```
 - Safe. but inefficient
-    - `src`의 길이(10)가 `dst`의 크기(16)보다 작습니다. `strncpy`는 남은 공간을 모두 `NULL`로 채우므로(Zero-padding), 안전하게 Null-terminated되지만 불필요한 연산이 발생합니다.
+  - `src`의 길이(10)가 `dst`의 크기(16)보다 작습니다. `strncpy`는 남은 공간을 모두 `NULL`로 채우므로(Zero-padding), 안전하게 Null-terminated되지만 불필요한 연산이 발생합니다.
 
 ### 예제 2
 ```
@@ -142,8 +142,8 @@ strncpy(dst, src, sizeof(dst));
 ```
 
 - Dangerous - No Null Termination
-    - `src`의 길이(10)가 `dst`의 크기(6)보다 큽니다. `strncpy`는 정확히 6바이트만 복사하고 멈추기 때문에, `dst` 마지막에 NULL 문자(\0)가 삽입되지 않습니다.
-    - 이후 `dst`를 문자열로 사용하려 할 때(예: `printf`, `strcpy` 등) 메모리 경계를 넘어 읽는 Buffer Over-read가 발생합니다.
+  - `src`의 길이(10)가 `dst`의 크기(6)보다 큽니다. `strncpy`는 정확히 6바이트만 복사하고 멈추기 때문에, `dst` 마지막에 NULL 문자(\0)가 삽입되지 않습니다.
+  - 이후 `dst`를 문자열로 사용하려 할 때(예: `printf`, `strcpy` 등) 메모리 경계를 넘어 읽는 Buffer Over-read가 발생합니다.
 
 ## 16. 다음 코드에 대하여 물음에 답하시오. [8점]
 ```c
@@ -160,5 +160,5 @@ sprintf(outbuf, buffer);
 - 가능합니다.
 - Line 4의 `sprintf(outbuf, buffer);`에서 `buffer` 자체가 Format String으로 사용되고 있습니다 (Format String Vulnerability).
 - 예시
-    - 공격자가 `user` 입력값으로 `"%520d"`와 같은 문자열을 넣으면, `buffer`에는 `"ERR ... %520d"`가 저장됩니다.
-    Line 4 실행 시 `sprintf`는 이를 해석하여 stack의 값을 읽어 520자리 숫자로 변환해 `outbuf`에 쓰려고 시도합니다. 이때 `outbuf` 크기(512 bytes)를 초과하여 buffer overflow가 발생합니다.
+  - 공격자가 `user` 입력값으로 `"%520d"`와 같은 문자열을 넣으면, `buffer`에는 `"ERR ... %520d"`가 저장됩니다.
+  Line 4 실행 시 `sprintf`는 이를 해석하여 stack의 값을 읽어 520자리 숫자로 변환해 `outbuf`에 쓰려고 시도합니다. 이때 `outbuf` 크기(512 bytes)를 초과하여 buffer overflow가 발생합니다.

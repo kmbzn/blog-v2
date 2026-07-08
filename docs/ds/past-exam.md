@@ -52,27 +52,27 @@
 
 ### 문제 예시
 1. 표에 빈칸 채우기 (Binary Features Measure)
-    - 표 내용 보고 Asymmetric으로 distance 즉 dissimilarity 구하기
+  - 표 내용 보고 Asymmetric으로 distance 즉 dissimilarity 구하기
 2. Minkowski Distance 공식쓰기
 3. Boxplot 그림에서 각각 의미하는거 쓰기
 4. Min-Max, Z-score, Normalization 을 데이터를 바탕으로 구하기
 5. Mean, Median 장단점 및 Median Interpolation 방법 설명
-    - 5번까지가 Data Analysis
+  - 5번까지가 Data Analysis
 6. K-Mean Cluster
-    - Single link, Complete link로 각각 거리 구하기
-    - Mean 구하기
-    - 주어진 상태에서 한 단계 더 나아가면 어떤 변화가 생기는지 작성하기
-    - 장점/단점
+  - Single link, Complete link로 각각 거리 구하기
+  - Mean 구하기
+  - 주어진 상태에서 한 단계 더 나아가면 어떤 변화가 생기는지 작성하기
+  - 장점/단점
 7. K-Medoids
-    - Swapping Cost 여러 상황에 대한 식 구하기
-    - 장단점
+  - Swapping Cost 여러 상황에 대한 식 구하기
+  - 장단점
 8. BIRCH
-    - 주어진 데이터 상태에서 추가적으로 cluster 합칠 때 CF Tree 어떻게 그려야하는지 (걱정 말거나 예시랑 똑같다)
-    - CF = (n, LS, SS) 공식에 대입해서 n, LS, SS구하기 (나와서 보니 예시랑 똑같은 듯 하다)
+  - 주어진 데이터 상태에서 추가적으로 cluster 합칠 때 CF Tree 어떻게 그려야하는지 (걱정 말거나 예시랑 똑같다)
+  - CF = (n, LS, SS) 공식에 대입해서 n, LS, SS구하기 (나와서 보니 예시랑 똑같은 듯 하다)
 9. DBSCAN
-    - 그림 보고 p와 q가 각각 서로로부터 directly density reachable 한지 or density reachable 한지?
-    - pseudocode에서 빈칸 채우기
-    - 장단점
+  - 그림 보고 p와 q가 각각 서로로부터 directly density reachable 한지 or density reachable 한지?
+  - pseudocode에서 빈칸 채우기
+  - 장단점
 10. KNN recommendation system에서 예측하는 공식 쓰기
-    - 기억에 의존해서 쓰는거니 틀릴 수도 있음
-    - 이상 이 과목을 끝으로 곧 졸업할 사람이.
+  - 기억에 의존해서 쓰는거니 틀릴 수도 있음
+  - 이상 이 과목을 끝으로 곧 졸업할 사람이.

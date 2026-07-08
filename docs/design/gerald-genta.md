@@ -2,7 +2,7 @@
 
 ![Patek Philippe Nautilus Ref. 3700 (1976)](https://upload.wikimedia.org/wikipedia/commons/6/6e/Patek-Philippe-Nautilus-3700-1A.jpg)
 
-> *Patek Philippe Nautilus, 1976*  
+> *Patek Philippe Nautilus, 1976* 
 
 제럴드 젠타(Gérald Charles Genta, 1931–2011)는 20세기 시계 디자인의 가장 결정적인 인물 중 한 명이다. Royal Oak, Nautilus, IWC Ingenieur 등 오늘날 시계 시장에서 가장 높은 가격을 형성하는 스포츠 워치 카테고리가 모두 그의 손에서 탄생했다. 그는 단순히 시계를 디자인한 것이 아니라, **럭셔리 스포츠 워치**라는 장르 자체를 발명했다.
 
@@ -50,13 +50,13 @@ Nautilus는 Royal Oak과 비교해 보다 수평적이고 유선형인 케이스
 
 ### IWC Ingenieur SL (1976)
 
-Royal Oak, Nautilus와 같은 해에 발표된 또 하나의 젠타 작품. IWC Ingenieur SL(Ref. 1832)은 기술적 콘셉트에 기반한 스포츠 워치로, 내부에 순철 케이스를 삽입해 자기장을 차폐하는 방자성(antimagnetic) 구조가 핵심이었다.
+Royal Oak, Nautilus와 같은 해에 발표된 또 하나의 젠타 작품. IWC Ingenieur SL(Ref. 1832)은 기술적 콘셉트에 기반한 스포츠 워치로, 내부에 순철 케이스를 삽입해 자기장을 차폐하는 방자성(antimagnetic) 구조가 었다.
 
 "Jumbo"라는 별명으로 불렸으며, 당시로서는 큰 40mm 케이스, 5개의 오목 홈이 있는 베젤, H-링크 브레이슬릿이 특징이다. 상업적으로는 1,000여 점만 생산되어 지금은 희귀한 컬렉터 아이템이 되었다.
 
 ## 디자인 철학
 
-젠타가 구사한 핵심 언어는 일관되다.
+젠타가 구사한 언어는 일관되다.
 
 **팔각형 또는 변형된 기하형태의 케이스**: 원형도 직사각형도 아닌 독자적인 형태로 즉각적인 식별성을 만들었다.
 

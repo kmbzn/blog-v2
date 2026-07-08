@@ -1,12 +1,12 @@
 # 엑스트라 버진 올리브유 (Extra Virgin Olive Oil)
 
 <p align="center">
-  <img src="https://health.ucdavis.edu/media-resources/contenthub/post/internet/good-food/2024/04/images-body/olive-oil-health-benefits.jpg" width="100%"/>
+ <img src="https://health.ucdavis.edu/media-resources/contenthub/post/internet/good-food/2024/04/images-body/olive-oil-health-benefits.jpg" width="100%"/>
 </p>
 
 ## 정의
 - **엑스트라 버진 올리브유**는 올리브 열매를 **화학 처리 없이 물리적으로 압착**하여 추출한 **최상 등급**의 올리브유입니다. 
-- 정제 과정을 거치지 않아서 **풍미, 영양소, 향미**가 그대로 보존됩니다.  
+- 정제 과정을 거치지 않아서 **풍미, 영양소, 향미**가 그대로 보존됩니다. 
 - **산도**가 0.8% 이하이며, 맛이나 향에 **결함이 없어야지만** 이 등급을 받을 수 있습니다.
 
 ## 특징
@@ -44,8 +44,8 @@
 ## 고온 가열이 안 좋은 이유
 - 엑스트라 버진 올리브유는 **가열에 약한 영양소**(예: 폴리페놀, 비타민 E)를 많이 포함하고 있음
 - **180℃ 이상**으로 가열하면
-  - 좋은 성분이 **파괴되거나 감소**
-  - **발연점**을 넘으면 연기와 함께 **유해 물질**이 나올 수 있음
+ - 좋은 성분이 **파괴되거나 감소**
+ - **발연점**을 넘으면 연기와 함께 **유해 물질**이 나올 수 있음
 - 그래서 튀김이나 볶음보다는 **생으로 섭취하는 것이 가장 좋음**
 
 ## 섭취 방법

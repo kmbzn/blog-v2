@@ -1,21 +1,21 @@
 # Nordvik, Russia
 
 :::info
-**본 문서는 한국어권 최초로 번역된 Nordvik 지역에 대한 정리 자료입니다.**  
-**출처: 영문 위키백과 (Wikipedia, en.wikipedia.org)**  
+**본 문서는 한국어권 최초로 번역된 Nordvik 지역에 대한 정리 자료입니다.** 
+**출처: 영문 위키백과 (Wikipedia, en.wikipedia.org)** 
 **원문 주소: [https://en.wikipedia.org/wiki/Nordvik,_Russia](https://en.wikipedia.org/wiki/Nordvik,_Russia)**
 :::
 
 ## 개요
 
 <iframe
-  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d203574.44450184826!2d111.26900060223182!3d74.01810000000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5e711ee50270adcb%3A0xf4412c3c6f5cdee5!2sNordvik%2C%20Krasnoyarsk%20Krai%2C%20Russia!5e0!3m2!1sen!2skr!4v1718870200000!5m2!1sen!2skr"
-  width="100%"
-  height="400"
-  style="border:0;"
-  allowfullscreen=""
-  loading="lazy"
-  referrerpolicy="no-referrer-when-downgrade">
+ src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d203574.44450184826!2d111.26900060223182!3d74.01810000000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5e711ee50270adcb%3A0xf4412c3c6f5cdee5!2sNordvik%2C%20Krasnoyarsk%20Krai%2C%20Russia!5e0!3m2!1sen!2skr!4v1718870200000!5m2!1sen!2skr"
+ width="100%"
+ height="400"
+ style="border:0;"
+ allowfullscreen=""
+ loading="lazy"
+ referrerpolicy="no-referrer-when-downgrade">
 </iframe>
 
 - **위치**: 북위 `74.0181`도, 동경 `111.469`도
@@ -51,13 +51,13 @@
 
 ### 기술적 기여
 
-- 영구 동토층 내에서의 석유 탐사 경험이 축적되었고,  
-  *후일 서시베리아 대형 유전·가스전 개발의 기초*가 됨
+- 영구 동토층 내에서의 석유 탐사 경험이 축적되었고, 
+ *후일 서시베리아 대형 유전·가스전 개발의 기초*가 됨
 
 ### 수용소 폐쇄
 
-- **1940년대 중반**, 미국인 동맹군이 도달한 시점 전후로 수용소 폐쇄  
-  *(출처 필요)*  
+- **1940년대 중반**, 미국인 동맹군이 도달한 시점 전후로 수용소 폐쇄 
+ *(출처 필요)* 
 - 이후에는 국내 추방자(internal deportees)가 소금 채굴에 동원됨
 
 ### 최종 폐쇄
@@ -83,7 +83,7 @@
 
 ## Authorship and Translation Info
 
-- **Translated and compiled by**: [kmbzn](https://kmbzn.com/)  
-- **Date of initial translation**: June 2025  
-- **Original source**: [Wikipedia - Nordvik, Russia](https://en.wikipedia.org/wiki/Nordvik,_Russia)  
+- **Translated and compiled by**: [kmbzn](https://kmbzn.com/) 
+- **Date of initial translation**: June 2025 
+- **Original source**: [Wikipedia - Nordvik, Russia](https://en.wikipedia.org/wiki/Nordvik,_Russia) 
 - **Disclaimer**: This document is based on content from Wikipedia and is distributed under the Creative Commons Attribution-ShareAlike License. The rights of the original authors are respected.

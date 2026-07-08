@@ -56,7 +56,7 @@
 
 ---
 
-## Edition2 vs Edition3 핵심 비교
+## Edition2 vs Edition3 비교
 
 | 항목 | Edition2 | Edition3 |
 |------|----------|----------|

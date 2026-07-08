@@ -23,7 +23,7 @@ $$\text{median} = L_1 + \left(\frac{n/2 - \text{freq}_l}{\text{freq}_\text{media
 
 ### 1.3. Binary Features Measure
 
-|  | $j = 1$ | $j = 0$
+| | $j = 1$ | $j = 0$
 | - | - | -
 | $i = 1$ | q | r
 | $i = 0$ | s | t
@@ -33,11 +33,11 @@ $$\text{median} = L_1 + \left(\frac{n/2 - \text{freq}_l}{\text{freq}_\text{media
 - Asymmetric: $d(i,j) = \dfrac{r+s}{q+r+s}$
 
 - Example
-  | | Fever | Cough | Test-1 | Test-2 | Test-3 | Test-4 
-  | - | - | - | - | - | - | - 
-  | Jack | $1$ | $0$ | $1$ | $0$ | $0$ | $0$ 
-  | Mary | $1$ | $0$ | $1$ | $0$ | $1$ | $0$ 
-  | Jim | $1$ | $1$ | $0$ | $0$ | $0$ | $0$ 
+ | | Fever | Cough | Test-1 | Test-2 | Test-3 | Test-4 
+ | - | - | - | - | - | - | - 
+ | Jack | $1$ | $0$ | $1$ | $0$ | $0$ | $0$ 
+ | Mary | $1$ | $0$ | $1$ | $0$ | $1$ | $0$ 
+ | Jim | $1$ | $1$ | $0$ | $0$ | $0$ | $0$ 
 
 - Y, P → 1 / N → 0
 
@@ -50,24 +50,24 @@ $$d(\text{Jim},~ \text{Mary}):~ q=1,~ r=1,~ s=2,~ t=2 \Rightarrow d = \dfrac{1+2
 ### 1.4. Minkowski Distance
 
 - 기본 공식
-  $$d(i,j) = \left(\sum_{f=1}^{p}|x_{if}-x_{jf}|^h\right)^{1/h}$$
+ $$d(i,j) = \left(\sum_{f=1}^{p}|x_{if}-x_{jf}|^h\right)^{1/h}$$
 - $h = 1$: Manhattan (L1)
-  $$\sum|x_{if}-x_{jf}|$$
+ $$\sum|x_{if}-x_{jf}|$$
 - $h = 2$: Euclidean (L2)
-  $$\sqrt{\sum|x_{if}-x_{jf}|^2}$$
+ $$\sqrt{\sum|x_{if}-x_{jf}|^2}$$
 - $h \to \infty$: Supremum (L∞)
-  - maximum difference between any component
-  $$d(i,j) = \lim_{h \to \infty} \left(\sum_{f=1}^{p} |x_{if} - x_{jf}|^h\right)^{\frac{1}{h}} = \max_{f}^{p} |x_{if} - x_{jf}|$$
+ - maximum difference between any component
+ $$d(i,j) = \lim_{h \to \infty} \left(\sum_{f=1}^{p} |x_{if} - x_{jf}|^h\right)^{\frac{1}{h}} = \max_{f}^{p} |x_{if} - x_{jf}|$$
 
 ### 1.5. Normalization
 
 - Min-Max
-  $$v' = \dfrac{v - \min_A}{\max_A - \min_A}(\text{new\_max}_A - \text{new\_min}_A) + \text{new\_min}_A$$
-  - Ex. $\dfrac{73600 - 12000}{98000 - 12000}(1.0 - 0) + 0 = 0.716$
+ $$v' = \dfrac{v - \min_A}{\max_A - \min_A}(\text{new\_max}_A - \text{new\_min}_A) + \text{new\_min}_A$$
+ - Ex. $\dfrac{73600 - 12000}{98000 - 12000}(1.0 - 0) + 0 = 0.716$
 
 - Z-score
-  $$v' = \dfrac{v - \bar{A}}{\sigma_A}$$
-  - Ex. $\dfrac{73600 - 54000}{16000} = 1.225$
+ $$v' = \dfrac{v - \bar{A}}{\sigma_A}$$
+ - Ex. $\dfrac{73600 - 54000}{16000} = 1.225$
 
 - Decimal scaling: $v' = \dfrac{v}{10^j}$ where j is the smallest integer such that $\max(|v'|) < 1$
 
@@ -83,28 +83,28 @@ $$R_k = \sqrt{\frac{\sum_{i=1}^{N}(t_{ik}-c_k)^2}{N}}$$
 $$D_k = \sqrt{\frac{\sum_{i=1}^{N}\sum_{j=i+1}^{N}(t_{ik}-t_{jk})^2}{N(N-1)/2}}$$
 
 - Distance between Clusters (Linkage)
-  | Method | Formula 
-  | - | -
-  | Single link | $dis(K_i, K_j) = \min(t_{ip}, t_{jq})$ 
-  | Complete link | $dis(K_i, K_j) = \max(t_{ip}, t_{jq})$ 
-  | Average | $dis(K_i, K_j) = \text{avg}(t_{ip}, t_{jq})$ 
-  | Centroid | $dis(K_i, K_j) = dis(c_i, c_j)$ 
-  | Medoid | $dis(K_i, K_j) = dis(M_i, M_j)$ 
+ | Method | Formula 
+ | - | -
+ | Single link | $dis(K_i, K_j) = \min(t_{ip}, t_{jq})$ 
+ | Complete link | $dis(K_i, K_j) = \max(t_{ip}, t_{jq})$ 
+ | Average | $dis(K_i, K_j) = \text{avg}(t_{ip}, t_{jq})$ 
+ | Centroid | $dis(K_i, K_j) = dis(c_i, c_j)$ 
+ | Medoid | $dis(K_i, K_j) = dis(M_i, M_j)$ 
 
 - 장점: relatively efficient
-  - $O(n \cdot k \cdot t)$
+ - $O(n \cdot k \cdot t)$
 - 단점
-  - Need to specify $k$
-  - Unable to handle noises and outliers
-  - Not suitable to discover clusters with non-convex shapes
+ - Need to specify $k$
+ - Unable to handle noises and outliers
+ - Not suitable to discover clusters with non-convex shapes
 
 ### 2.2. K-Medoids / PAM
 
 - Medoid: the most centrally-located real object in a cluster
-  - less influenced by outliers than centroid.
+ - less influenced by outliers than centroid.
 
 - Swapping Cost $C_{jih}$
-  - i: original seed / h: new seed / t: other seed / j: non-seed
+ - i: original seed / h: new seed / t: other seed / j: non-seed
 
 | Case | Scenario | $C_{jih}$ 
 | - | - | - 
@@ -117,9 +117,9 @@ $$TC_{ih} = \sum_j C_{jih}$$
 $$\text{Swap accepted if } TC_{ih} < 0$$
 
 - **PAM 장단점**
-  - 장점: More robust than k-means in the presence of noise and outliers
-  - 단점: Does not scale well for large data sets (Not Scalable)
-    - $O(i \cdot k \cdot (n-k)^2)$
+ - 장점: More robust than k-means in the presence of noise and outliers
+ - 단점: Does not scale well for large data sets (Not Scalable)
+  - $O(i \cdot k \cdot (n-k)^2)$
 
 ### 2.3. BIRCH
 
@@ -138,55 +138,55 @@ $$n = 5,\quad LS = (16,\ 30),\quad SS = (54,\ 190) \quad\Rightarrow\quad \mathbf
 ### 2.4. DBSCAN
 
 - **Point Types**
-  - Core: $|N_\varepsilon(p)| \ge \text{MinPts}$
-  - Border: $|N_\varepsilon(p)| < \text{MinPts}$ within $\varepsilon$, but is in the neighborhood of a core point
-  - Noise: neither core nor border
+ - Core: $|N_\varepsilon(p)| \ge \text{MinPts}$
+ - Border: $|N_\varepsilon(p)| < \text{MinPts}$ within $\varepsilon$, but is in the neighborhood of a core point
+ - Noise: neither core nor border
 
 - **Density Reachability**
-  - **Directly density-reachable**: $q \in N_\varepsilon(p)$ AND $p$ is a core point (asymmetric)
-  - **Density-reachable**: chain $p_1 \to p_2 \to \cdots \to p_n$ where each step is directly density-reachable
+ - **Directly density-reachable**: $q \in N_\varepsilon(p)$ AND $p$ is a core point (asymmetric)
+ - **Density-reachable**: chain $p_1 \to p_2 \to \cdots \to p_n$ where each step is directly density-reachable
 
 - Pseudocode
-  - DB: Database
-  - $ε$: Radius
-  - minPts: Density threshold
-  - dist: Distance function
-  - Data: label (Point Labels, initially undefined)
+ - DB: Database
+ - $ε$: Radius
+ - minPts: Density threshold
+ - dist: Distance function
+ - Data: label (Point Labels, initially undefined)
 
 ```pseudocode
-foreach point p in database DB do             // Iterate over every point
-    if label(p) ≠ undefined then continue     // Skip processed points
-    Neighbors N ← RANGEQUERY(DB, dist, p, ε)  // Find initial neighbors
-    if |N| < minPts then                      // Non-core points are noise
-        label(p) ← Noise
-        continue
-    c ← next cluster label                    // Start a new cluster
-    label(p) ← c
-    Seed set S ← N \ {p}                      // Expand neighborhood
-    foreach q in S do
-        if label(q) = Noise then label(q) ← c
-        if label(q) ≠ undefined then continue
-        Neighbors N ← RANGEQUERY(DB, dist, q, ε)
-        label(q) ← c
-        if |N| < minPts then continue         // Core-point check
-        S ← S ∪ N
+foreach point p in database DB do       // Iterate over every point
+  if label(p) ≠ undefined then continue   // Skip processed points
+  Neighbors N ← RANGEQUERY(DB, dist, p, ε) // Find initial neighbors
+  if |N| < minPts then           // Non-core points are noise
+    label(p) ← Noise
+    continue
+  c ← next cluster label          // Start a new cluster
+  label(p) ← c
+  Seed set S ← N \ {p}           // Expand neighborhood
+  foreach q in S do
+    if label(q) = Noise then label(q) ← c
+    if label(q) ≠ undefined then continue
+    Neighbors N ← RANGEQUERY(DB, dist, q, ε)
+    label(q) ← c
+    if |N| < minPts then continue     // Core-point check
+    S ← S ∪ N
 ```
 
 - 장점
-  - clusters can have arbitrary shape
-  - number of clusters determined automatically
-  - can separate noise
+ - clusters can have arbitrary shape
+ - number of clusters determined automatically
+ - can separate noise
 - 단점
-  - input parameters may be difficult to determine
-  - sensitive to parameter settings
+ - input parameters may be difficult to determine
+ - sensitive to parameter settings
 
 ## 3. Recommender Systems
 
 ### 3.1. KNN — Rating Prediction
 
 - Simple average
-  $$r_{u,i} = \frac{1}{|N|}\sum_{u'\in N}r_{u',i}$$
+ $$r_{u,i} = \frac{1}{|N|}\sum_{u'\in N}r_{u',i}$$
 - Weighted average
-  $$r_{u,i} = \frac{1}{k}\sum_{u'\in N}sim(u,u')\times r_{u',i}$$
+ $$r_{u,i} = \frac{1}{k}\sum_{u'\in N}sim(u,u')\times r_{u',i}$$
 - Bias-corrected
-  $$r_{u,i} = \bar{r}_u + \frac{1}{k}\sum_{u'\in N}sim(u,u')\times(r_{u',i}-\bar{r}_{u'})$$
+ $$r_{u,i} = \bar{r}_u + \frac{1}{k}\sum_{u'\in N}sim(u,u')\times(r_{u',i}-\bar{r}_{u'})$$

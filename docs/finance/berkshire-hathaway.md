@@ -58,7 +58,7 @@
 |------|------|-----------|
 | **Apple (AAPL)** | 최대 단일 포지션 | "소비자 충성도 최고 브랜드" |
 | **American Express (AXP)** | 상위권 | 수십 년 보유 |
-| **Bank of America (BAC)** | 상위권 | 금융 섹터 핵심 |
+| **Bank of America (BAC)** | 상위권 | 금융 섹터 |
 | **Coca-Cola (KO)** | 상위권 | 1988년부터 보유, 영구 보유 선언 |
 | **Chevron (CVX)** | 중간 | 에너지 섹터 |
 | **Occidental Petroleum (OXY)** | 35%+ 지분 보유 | 최근 대량 매입 |

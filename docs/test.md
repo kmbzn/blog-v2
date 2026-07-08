@@ -21,14 +21,14 @@
 
 ## 목록 테스트 - List Test
 - 한국어 항목
-  - English Subitem
-    - 中文子项目
+ - English Subitem
+  - 中文子项目
 - 日本語の項目
 
 1. First item
 2. 第二项
-   1. 하위 항목
-   2. Sub-sub item
+  1. 하위 항목
+  2. Sub-sub item
 
 ## 표 테스트 - Table Test
 
@@ -52,20 +52,20 @@ print("こんにちは, 世界!")
 @tab Python
 ```python
 def add(x, y):
-    return x + y
+  return x + y
 ```
 @tab JavaScript
 ```javascript
 function greet(name) {
-  console.log("Hello, " + name);
+ console.log("Hello, " + name);
 }
 ```
 @tab C
 ```c
 #include <stdio.h>
 int main() {
-    printf("你好，世界！\n");
-    return 0;
+  printf("你好，世界！\n");
+  return 0;
 }
 ```
 :::
@@ -104,7 +104,7 @@ $$
 :::
 
 ::: tip
-핵심 팁 (Tip): 유용한 팁을 놓치지 마세요! ここに役立つヒントがあります。请不要错过有用的提示。Don't miss out on this helpful tip!
+팁 (Tip): 유용한 팁을 놓치지 마세요! ここに役立つヒントがあります。请不要错过有用的提示。Don't miss out on this helpful tip!
 :::
 
 ::: warning

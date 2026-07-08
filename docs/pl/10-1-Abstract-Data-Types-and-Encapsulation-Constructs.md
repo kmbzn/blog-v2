@@ -17,46 +17,46 @@ sitemap: false
 - Specific feature: black for crow, striped types for sparrows ..
 - Fundamental in the computer science
 - Process abstraction
-  - Subprograms
-  - Nearly all language support
-  - `sortInt(list, listLen)`
-  - When sorting list, we don't need details of implementations: Merge, quick, select, insertion sorts, whatever...
-  - Only attributes that we should take cares: Name of list, types of elements, list's length
+ - Subprograms
+ - Nearly all language support
+ - `sortInt(list, listLen)`
+ - When sorting list, we don't need details of implementations: Merge, quick, select, insertion sorts, whatever...
+ - Only attributes that we should take cares: Name of list, types of elements, list's length
 - Data abstraction
-  - Began in 1960 with COBOL
-  - Record type (struct in C-based)
-  - Includes subprograms that manipulate its data
-  - Enclosure with access controls (details can be hidden)
-  - Instance of abstract data type: object
+ - Began in 1960 with COBOL
+ - Record type (struct in C-based)
+ - Includes subprograms that manipulate its data
+ - Enclosure with access controls (details can be hidden)
+ - Instance of abstract data type: object
 
 ## Abstract data type (ADT)
 - Language-defined types as ADT
-  - Floating-point type
-  - Provide means of storing, arithmetic operations
-  - We don't need actual format of floating-point data
-  - We can not directly manipulate actual representation (only possible by built-in operations)
+ - Floating-point type
+ - Provide means of storing, arithmetic operations
+ - We don't need actual format of floating-point data
+ - We can not directly manipulate actual representation (only possible by built-in operations)
 - User-defined ADT
-  - Satisfies the following conditions
-  - Representation of object is hidden from program unit
-  - Only operations possible are those provided in the type's definition
-  - Single syntactic unit contains the declarations of the type and of any operations on it
+ - Satisfies the following conditions
+ - Representation of object is hidden from program unit
+ - Only operations possible are those provided in the type's definition
+ - Single syntactic unit contains the declarations of the type and of any operations on it
 - Advantages of hiding data:
-  - Reliability: user code can't access internals, thus compromising other users' use of object
-  - Reduces the range of code and variables of which the programmer must be aware
-  - Reduced name conflicts
-  - [EX] Array-based stack → Linked list-based stack: Client codes need not be changed
-  - To access data members: Indirectly access by getter and setters
-  - Read-only version is possible by only providing getters
-  - Constraints can be included by setters (enforce range of data)
-  - The actual implementation of the data member can be changed without affecting the clients if getters and setters are the only access
+ - Reliability: user code can't access internals, thus compromising other users' use of object
+ - Reduces the range of code and variables of which the programmer must be aware
+ - Reduced name conflicts
+ - [EX] Array-based stack → Linked list-based stack: Client codes need not be changed
+ - To access data members: Indirectly access by getter and setters
+ - Read-only version is possible by only providing getters
+ - Constraints can be included by setters (enforce range of data)
+ - The actual implementation of the data member can be changed without affecting the clients if getters and setters are the only access
 - Advantages having single syntactic unit for type:
-  - Provides way to organize program
-  - Enhances modifiability: everything needed for data structure is together in one place
-  - Separate compilation
+ - Provides way to organize program
+ - Enhances modifiability: everything needed for data structure is together in one place
+ - Separate compilation
 - Language requirement for ADT
-  - Syntactic unit for encapsulating type definition (i.e class in C++)
-  - Way to make type names, method/subprogram headers available to clients while hiding actual definitions (i.e. private, protected in C++)
-  - Primitive operations on types must be part of the compiler/interpreter
+ - Syntactic unit for encapsulating type definition (i.e class in C++)
+ - Way to make type names, method/subprogram headers available to clients while hiding actual definitions (i.e. private, protected in C++)
+ - Primitive operations on types must be part of the compiler/interpreter
 - [EX] Stack: Only allows access to the data element at one of its ends, the top. `pop()` is used as getter for element at top
 
 ## Design issue
@@ -233,17 +233,17 @@ return A + B;
 end SumInt;
 ```
 - Encapsulation construct: package
-  - Interface: specification package
-  - Implementation: body package
+ - Interface: specification package
+ - Implementation: body package
 - Information hiding — public and private parts of specification package
-  - Public part: name, maybe representation of any unhidden types
-  - Private part:
-    - Representation of the abstract type
-    - Private types have built-in operations for assignment, comparison
-    - Limited private types have no built-in operations
+ - Public part: name, maybe representation of any unhidden types
+ - Private part:
+  - Representation of the abstract type
+  - Private types have built-in operations for assignment, comparison
+  - Limited private types have no built-in operations
 - Reasons for the public/private spec package:
-  - The compiler must be able to see the representation after seeing only the spec package
-  - Clients must see the type name, but not the representation (they also cannot see the private part)
+ - The compiler must be able to see the representation after seeing only the spec package
+ - Clients must see the type name, but not the representation (they also cannot see the private part)
 
 Specification:
 
@@ -317,19 +317,19 @@ end Use_Stacks;
 - Instances can be static, stack dynamic, or heap dynamic
 - The complete definition can appear in the class, or only in its header
 - Information hiding:
-  - Private clause for hidden entities
-  - Public clause for interface entities
-  - Protected clause for inheritance (later)
+ - Private clause for hidden entities
+ - Public clause for interface entities
+ - Protected clause for inheritance (later)
 - Constructors:
-  - Functions to initialize the data members — they don't create objects
-  - May also allocate storage if part of the object is heap-dynamic
-  - Can include parameters to provide parameterization of the objects
-  - Implicitly called when an instance is created — but can be called explicitly, too
-  - Name is the same as the class name
+ - Functions to initialize the data members — they don't create objects
+ - May also allocate storage if part of the object is heap-dynamic
+ - Can include parameters to provide parameterization of the objects
+ - Implicitly called when an instance is created — but can be called explicitly, too
+ - Name is the same as the class name
 - Destructors:
-  - Clean up after an instance is destroyed — usually just to reclaim heap storage
-  - Implicitly called when the object's lifetime ends, or explicitly called
-  - Name is the class name, preceded by a tilde (`~`)
+ - Clean up after an instance is destroyed — usually just to reclaim heap storage
+ - Implicitly called when the object's lifetime ends, or explicitly called
+ - Name is the class name, preceded by a tilde (`~`)
 
 Header file:
 
@@ -338,7 +338,7 @@ Header file:
 #include <iostream.h>
 class Stack {
 private: //** These members are visible only to other
-         //** members and "friends" (see textbook)
+     //** members and "friends" (see textbook)
 int *stackPtr; // reference the heap-dynamic data
 int maxLen;
 int topPtr;
@@ -382,17 +382,17 @@ stk.pop();
 }
 ```
 - Friends
-  - Friend functions or classes
-  - Allow access to private members from unrelated units
-  - Must be declared inside a class
-  - Necessary in C++
+ - Friend functions or classes
+ - Allow access to private members from unrelated units
+ - Must be declared inside a class
+ - Necessary in C++
 
 ```cpp
 // Stack.h - the header file for the Stack class
 #include <iostream.h>
 class Stack {
 private: //** These members are visible only to other
-         //** members and "friends" (see textbook)
+     //** members and "friends" (see textbook)
 int *stackPtr; // reference the heap-dynamic data
 friend class SubStack; //Allow for sub stack class to access stack class
 public: //** These members are visible to clients
@@ -449,15 +449,15 @@ NSLog (@"Hello");
 @end
 ```
 - Method prototypes
-  - `(+ | -) (return-type) method-name [: (formal-parameters)];`
-  - `+`/`-` for class/instance methods (resp.)
-  - Colon, parentheses — not included when no parameters
-  - Odd nomenclature:
-    - One parameter (name is `meth1:`): `(void) meth1: (int) x;`
-    - Two parameters (name is `meth2:second:`): `(int) meth2: (int) x second: (float) y;`
-    - Two parameters (name is `meth2::`): `(int) meth2: (int) x: (float) y;`
-  - One parameter: Ex: `(int) foo: (int) x;` — Name of method is `foo:` — Message: (call): `[objectName foo: 3]` → `x = 3`
-  - Two parameters: Ex: `(int) foo: (int) x bar: (float) y;` — Name of method is `foo:bar:` — Message: `[objectName foo: 3 bar: 4.5]` → `x = 3, y = 4.5`
+ - `(+ | -) (return-type) method-name [: (formal-parameters)];`
+ - `+`/`-` for class/instance methods (resp.)
+ - Colon, parentheses — not included when no parameters
+ - Odd nomenclature:
+  - One parameter (name is `meth1:`): `(void) meth1: (int) x;`
+  - Two parameters (name is `meth2:second:`): `(int) meth2: (int) x second: (float) y;`
+  - Two parameters (name is `meth2::`): `(int) meth2: (int) x: (float) y;`
+ - One parameter: Ex: `(int) foo: (int) x;` — Name of method is `foo:` — Message: (call): `[objectName foo: 3]` → `x = 3`
+ - Two parameters: Ex: `(int) foo: (int) x bar: (float) y;` — Name of method is `foo:bar:` — Message: `[objectName foo: 3 bar: 4.5]` → `x = 3, y = 4.5`
 
 Method definitions:
 
@@ -469,15 +469,15 @@ return sum;
 }
 ```
 - Method call syntax
-  - `[object-name method-name];`
-  - [EX] `[myAdder add1: 7];`
-  - [EX] `[myAdder add1: 7: 5: 3];`
-  - For the method: `(int) meth2: (int) x second: (float) y;`
-  - The call would be like the following: `[myObject meth2: 7 second: 3.2];`
+ - `[object-name method-name];`
+ - [EX] `[myAdder add1: 7];`
+ - [EX] `[myAdder add1: 7: 5: 3];`
+ - For the method: `(int) meth2: (int) x second: (float) y;`
+ - The call would be like the following: `[myObject meth2: 7 second: 3.2];`
 - Initializers: constructors
-  - Only initialize variables
-  - Can have any name, and are only explicitly called
-  - Initializers return the instance itself
+ - Only initialize variables
+ - Can have any name, and are only explicitly called
+ - Initializers return the instance itself
 - Create object → call alloc + initializer: `Adder *myAdder = [[Adder alloc] init];`
 - All class instances are heap dynamic
 - To import standard prototypes (e.g., i/o): `#import <Foundation/Foundation.h>`
@@ -495,15 +495,15 @@ return 0;
 }
 ```
 - Information hiding
-  - `@public`, `@private`, `@protected` — specify instance variable access
-    - `@public`: accessible anywhere
-    - `@private`: accessible only in class where defined
-    - `@protected`: accessible in that class and any subclasses
-  - Default access is `@protected`
-  - However: no really good way to restrict access to methods (헤더에 선언하지 않고 구현 파일(`.m`)에만 정의하는 방법을 씀)
-  - Getter and setter methods for instance variables
-    - Name of getter is always name of instance variable
-    - Name of setter is always the word set with the capitalized variable name attached (e.g., `setFoo`)
+ - `@public`, `@private`, `@protected` — specify instance variable access
+  - `@public`: accessible anywhere
+  - `@private`: accessible only in class where defined
+  - `@protected`: accessible in that class and any subclasses
+ - Default access is `@protected`
+ - However: no really good way to restrict access to methods (헤더에 선언하지 않고 구현 파일(`.m`)에만 정의하는 방법을 씀)
+ - Getter and setter methods for instance variables
+  - Name of getter is always name of instance variable
+  - Name of setter is always the word set with the capitalized variable name attached (e.g., `setFoo`)
 
 ```objc
 // The getter for sum
@@ -516,16 +516,16 @@ return sum;
 sum = s;
 }
 
-[myObject setSum: 100];   // used as method calls
-myObject.sum = 100;       // used as dot notation
+[myObject setSum: 100];  // used as method calls
+myObject.sum = 100;    // used as dot notation
 
-newSum = [myObject sum];  // used as method calls
-newSum = myObject.sum;    // used as dot notation
+newSum = [myObject sum]; // used as method calls
+newSum = myObject.sum;  // used as dot notation
 ```
 
-  - Can be implicitly generated if no additional constraints to be defined — called "properties" in this case
-  - `@property`: directive that automatically creates getters and setters (자동으로 getter와 setter를 생성하도록 지시하는 지시어)
-  - `@synthesize`: paired with `@property` in implementation (@property로 선언된 변수에 대해 실제 getter/setter 메서드를 생성)
+ - Can be implicitly generated if no additional constraints to be defined — called "properties" in this case
+ - `@property`: directive that automatically creates getters and setters (자동으로 getter와 setter를 생성하도록 지시하는 지시어)
+ - `@synthesize`: paired with `@property` in implementation (@property로 선언된 변수에 대해 실제 getter/setter 메서드를 생성)
 
 ```objc
 @interface Person: NSObject {
@@ -605,10 +605,10 @@ return 0;
 
 ## Language example (Java)
 - Similar to C++, except:
-  - All user-defined types are classes
-  - All objects are heap-dynamic
-  - All objects accessed via reference variables
-  - Methods in Java must be defined completely in a class
+ - All user-defined types are classes
+ - All objects are heap-dynamic
+ - All objects accessed via reference variables
+ - Methods in Java must be defined completely in a class
 - Access control modifiers for class entities: `public`, `protected`, `package-private`, `private`
 - Package scope: All entities in all classes in package that are not restricted by access control modifiers → visible throughout package
 - Eliminates need for C++'s friend functions & classes
@@ -657,15 +657,15 @@ myStack.pop(); // Produces an error message
 - Default constructors — available for all classes
 - Garbage collection is used for most heap objects, so destructors are rarely used
 - `struct`s are lightweight classes that do not support inheritance
-  - Can have constructor, methods and data fields
-  - Value types (opposed to reference type), allocated on the run-time stack
-  - Pass-by-value
+ - Can have constructor, methods and data fields
+ - Value types (opposed to reference type), allocated on the run-time stack
+ - Pass-by-value
 - Getter and setter methods to access data members (instance variables)
 - Properties:
-  - Allows implementation of getters/setters without explicit method calls
-  - ex: Assume `foo` is reference to the instance, `bar` is an instance variable
-    - `a = foo.bar;` // getter
-    - `foo.bar = 3.5;` // setter
+ - Allows implementation of getters/setters without explicit method calls
+ - ex: Assume `foo` is reference to the instance, `bar` is an instance variable
+  - `a = foo.bar;` // getter
+  - `foo.bar = 3.5;` // setter
 
 ```csharp
 public class Weather {
@@ -695,18 +695,18 @@ oldDegreeDays = w.DegreeDays;
 ## Language example (Ruby)
 - Encapsulation construct: `class … end`
 - Variable names:
-  - Local: regular identifiers
-  - Instance variables: begin with `@`
-  - Class variables: begin with `@@`
+ - Local: regular identifiers
+ - Instance variables: begin with `@`
+ - Class variables: begin with `@@`
 - Instance
-  - Variables and methods that can be used only when an object is created (`new`)
-  - Instance variables have independent values between objects
+ - Variables and methods that can be used only when an object is created (`new`)
+ - Instance variables have independent values between objects
 - Class
-  - Variables and methods that can be created by the class itself without creating an object
-  - Class variables are shared by multiple objects created with the same class
+ - Variables and methods that can be created by the class itself without creating an object
+ - Class variables are shared by multiple objects created with the same class
 - Methods: defined with function definition syntax (`def … end`)
-  - instance method (`def … end`) ([ex] `Sample.new.print`)
-  - class method (`def self.name … end`) ([ex] `Sample.print`)
+ - instance method (`def … end`) ([ex] `Sample.new.print`)
+ - class method (`def self.name … end`) ([ex] `Sample.print`)
 
 ```ruby
 class Sample
@@ -729,48 +729,48 @@ end
 Sample.print
 ```
 - Constructors:
-  - Named `initialize` (initialize라는 이름으로 정의)
-  - Only one per class (cannot be overloaded)
-  - Implicitly called when `new` is called
-  - `new`는 클래스 메서드이며, 내부적으로 `allocate` + `initialize` 호출 순서를 따름
-  - If additional constructors needed: different names, and they must call `new`
-  - Ruby에서는 생성자 오버로딩이 안 되기 때문에, 추가 생성자는 일반 클래스 메서드로 만들어야
+ - Named `initialize` (initialize라는 이름으로 정의)
+ - Only one per class (cannot be overloaded)
+ - Implicitly called when `new` is called
+ - `new`는 클래스 메서드이며, 내부적으로 `allocate` + `initialize` 호출 순서를 따름
+ - If additional constructors needed: different names, and they must call `new`
+ - Ruby에서는 생성자 오버로딩이 안 되기 때문에, 추가 생성자는 일반 클래스 메서드로 만들어야
 - Class members can be marked `private` or `public` (default)
 - Classes are heap dynamic
 - Class extension
-  - class inheritance:
-    ```ruby
-    class ChildClass < SuperClass
-    ...
-    end
-    ```
-  - Additional class definitions (predefined `String` class can be extended):
-    ```ruby
-    class String
-    def count_word
-    return self.split(/\s+/).size
-    end
-    end
-    ```
-  - define a method in object (only usable in that object):
-    ```ruby
-    class Dog
-    ...
-    end
+ - class inheritance:
+  ```ruby
+  class ChildClass < SuperClass
+  ...
+  end
+  ```
+ - Additional class definitions (predefined `String` class can be extended):
+  ```ruby
+  class String
+  def count_word
+  return self.split(/\s+/).size
+  end
+  end
+  ```
+ - define a method in object (only usable in that object):
+  ```ruby
+  class Dog
+  ...
+  end
 
-    dog1 = Dog.new
-    dog2 = Dog.new
+  dog1 = Dog.new
+  dog2 = Dog.new
 
-    def dog1.speak
-    puts "dog1 speak"
-    end
+  def dog1.speak
+  puts "dog1 speak"
+  end
 
-    dog1.speak
-    dog2.speak # error
-    ```
+  dog1.speak
+  dog2.speak # error
+  ```
 - Mixin (Ruby가 다중 상속 없이도 코드 재사용과 기능 확장을 가능하게 함)
-  - Reference module in class
-  - Use it as if they are instance/class methods (`include`, `prepend`, `extend`)
+ - Reference module in class
+ - Use it as if they are instance/class methods (`include`, `prepend`, `extend`)
 
 ```ruby
 module extraModule
@@ -798,8 +798,8 @@ myclass.func
 | `prepend` | 인스턴스 | 모듈 메서드가 클래스 메서드를 오버라이드 | `obj.method` |
 | `extend` | 클래스 | 모듈 메서드를 클래스 메서드로 주입 | `Class.method` |
 - Information hiding
-  - Access control for methods in Ruby is dynamic
-  - 접근 제어 키워드를 어디에 쓰느냐에 따라 메서드들의 접근성이 달라짐
+ - Access control for methods in Ruby is dynamic
+ - 접근 제어 키워드를 어디에 쓰느냐에 따라 메서드들의 접근성이 달라짐
 
 ```ruby
 class MyClass
@@ -831,20 +831,20 @@ end # of class MyClass
 # Call the access control functions with the names of the specific methods as parameters
 ```
 - Attributes
-  - Instance data that are accessible through accessor methods are called attributes
+ - Instance data that are accessible through accessor methods are called attributes
 
 ```ruby
-def sum      # getter
+def sum   # getter
 @sum
 end
 
-def sum=(new_sum)  # setter
+def sum=(new_sum) # setter
 @sum = new_sum
 end
 ```
 
-  - `attr_reader :sum, :total` — `attr_reader` method only allows the value to be read from the outside and cannot be changed
-  - `attr_writer :sum` — `attr_writer` only allows assignment of values
+ - `attr_reader :sum, :total` — `attr_reader` method only allows the value to be read from the outside and cannot be changed
+ - `attr_writer :sum` — `attr_writer` only allows assignment of values
 
 ```ruby
 class Person
@@ -890,7 +890,7 @@ myStack.pop
 ```
 - Everything is an object, flexible
 - Ruby has a slight readability advantage
-  - Because the names of class and instance variables have different forms (클래스 변수와 인스턴스 변수의 이름이 서로 다른 형식)
+ - Because the names of class and instance variables have different forms (클래스 변수와 인스턴스 변수의 이름이 서로 다른 형식)
 
 ## Parameterized ADTs
 - Can design an ADT to store any element type (e.g. stack ADT)
@@ -952,9 +952,9 @@ Parameterized ADTs in Java 5.0:
 - The most common generic types: collection types (`LinkedList` and `ArrayList`)
 - The original collection types stored object class instances, so they could store any objects
 - Three issues (Java 5.0 이전 버전 문제점):
-  - [1] Every time an object was removed from the collection, it had to be cast to the appropriate type (형 변환 필요)
-  - [2] There was no error checking when elements were added to the collection (타입 검사 없음)
-  - [3] Collection types could not store primitive types (기본형 저장 불가)
+ - [1] Every time an object was removed from the collection, it had to be cast to the appropriate type (형 변환 필요)
+ - [2] There was no error checking when elements were added to the collection (타입 검사 없음)
+ - [3] Collection types could not store primitive types (기본형 저장 불가)
 
 ```java
 //* Create an ArrayList object
@@ -986,8 +986,8 @@ public class MyClass<T> {
 MyClass<String> myString;
 ```
 - Drawbacks
-  - Cannot store primitives (wrapper class 사용)
-  - Elements cannot be indexed
+ - Cannot store primitives (wrapper class 사용)
+ - Elements cannot be indexed
 
 ```java
 import java.util.*;
@@ -1022,33 +1022,33 @@ Parameterized ADTs in C# 2005:
 ## Encapsulation constructs
 - Multiple-type encapsulations are needed for larger programs
 - Large programs — two special needs:
-  - Some means of organization, other than simply division into subprograms
-  - Imposing everything into single unit makes difficult to manage
-  - Some means of partial compilation — i.e., compilation units smaller than whole program
-  - Recompiling whole program is too costly
+ - Some means of organization, other than simply division into subprograms
+ - Imposing everything into single unit makes difficult to manage
+ - Some means of partial compilation — i.e., compilation units smaller than whole program
+ - Recompiling whole program is too costly
 - → Group logically-related subprograms into units
 - Allow units to be separately compiled (i.e., compilation units)
 - Such units are encapsulation constructs
 - Encapsulation Constructs는 논리적으로 관련 있는 코드(서브프로그램, 데이터 등)를 하나의 모듈 단위로 묶고, 이를 독립적으로 관리 및 컴파일할 수 있도록 하는 구조
 - Nested subprograms as encapsulation
-  - One way to organize subprograms: nest them
-  - Inner subprograms are encapsulated within outer, but can share variables
-  - Supported in Ada, Fortran 95+, Python, JavaScript, Ruby, Lisp, …
+ - One way to organize subprograms: nest them
+ - Inner subprograms are encapsulated within outer, but can share variables
+ - Supported in Ada, Fortran 95+, Python, JavaScript, Ruby, Lisp, …
 - Encapsulation in C
-  - C does not provide complete support for abstract data types
-  - Encapsulation in C — basically a compilation unit
-  - Interface is placed (by convention) in header (`.h`) file
-  - Implementation in `.c` file
-  - `#include` — used to include header files
-  - Problem: linker doesn't check types between header and implementation
-  - User's responsibility: ensure that both the header and implementation files are up-to-date
+ - C does not provide complete support for abstract data types
+ - Encapsulation in C — basically a compilation unit
+ - Interface is placed (by convention) in header (`.h`) file
+ - Implementation in `.c` file
+ - `#include` — used to include header files
+ - Problem: linker doesn't check types between header and implementation
+ - User's responsibility: ensure that both the header and implementation files are up-to-date
 - Encapsulation in C++
-  - Header & code files, like C
-  - Also has classes
-  - Class definition used as the interface
-  - Member (instance variables, methods) defined in separate file
-  - Friend functions/classes — provide a way to grant access to private members of a class
-  - [EX] multiplication for vector and matrix classes:
+ - Header & code files, like C
+ - Also has classes
+ - Class definition used as the interface
+ - Member (instance variables, methods) defined in separate file
+ - Friend functions/classes — provide a way to grant access to private members of a class
+ - [EX] multiplication for vector and matrix classes:
 
 ```cpp
 class Matrix; //** A class declaration
@@ -1066,11 +1066,11 @@ Vector multiply(const Matrix& m1, const Vector& v1) {
 }
 ```
 - Encapsulation in Ada
-  - Packages — encapsulation unit in Ada
-  - Specification packages — any number of data, subprogram definitions
-  - Specification, body parts of package can be compiled separately
-  - Multiple-type encapsulation
-  - [EX] Both the matrix and the vector types could be defined in a single Ada package:
+ - Packages — encapsulation unit in Ada
+ - Specification packages — any number of data, subprogram definitions
+ - Specification, body parts of package can be compiled separately
+ - Multiple-type encapsulation
+ - [EX] Both the matrix and the vector types could be defined in a single Ada package:
 
 ```ada
 package Tensor is
@@ -1083,27 +1083,27 @@ type Matrix is (
 end Tensor;
 ```
 - Encapsulation in C#
-  - Assembly: collection of files that appears as a single (C# 프로그램의 최상위 캡슐화 단위) (하나 이상의 파일로 구성된 논리적 단위)
-    - executable or…
-    - …dynamic link library (DLL)
-    - Microsoft's version of shared libraries
-    - collection of classes, methods (in C#) that are individually linked to an executing program
-  - Each file contains module that can be separately compiled (Assembly를 구성하는 파일 단위 구성 요소) (각 모듈은 독립적으로 컴파일 가능, 여러 모듈을 묶어서 하나의 Assembly로 링크)
-  - `internal` access modifier: member is visible to all classes in the assembly
+ - Assembly: collection of files that appears as a single (C# 프로그램의 최상위 캡슐화 단위) (하나 이상의 파일로 구성된 논리적 단위)
+  - executable or…
+  - …dynamic link library (DLL)
+  - Microsoft's version of shared libraries
+  - collection of classes, methods (in C#) that are individually linked to an executing program
+ - Each file contains module that can be separately compiled (Assembly를 구성하는 파일 단위 구성 요소) (각 모듈은 독립적으로 컴파일 가능, 여러 모듈을 묶어서 하나의 Assembly로 링크)
+ - `internal` access modifier: member is visible to all classes in the assembly
 
 ## Naming encapsulations
 - Large programs:
-  - Softwares are written by many developer independently
-  - Cannot know what names are defined in others
-  - Define many global names
-  - Need way to divide into logical groups
+ - Softwares are written by many developer independently
+ - Cannot know what names are defined in others
+ - Define many global names
+ - Need way to divide into logical groups
 - Naming encapsulation: used to create a new scope for names
-  - Avoid name conflict
-  - Several different collections of code can be placed in the same namespace
+ - Avoid name conflict
+ - Several different collections of code can be placed in the same namespace
 - C++ namespaces
-  - Can place each library in its own namespace
-  - Qualify names used outside with their namespace, e.g., `foo::bar`, `foo::baz`
-  - C# also includes namespaces
+ - Can place each library in its own namespace
+ - Qualify names used outside with their namespace, e.g., `foo::bar`, `foo::baz`
+ - C# also includes namespaces
 
 ```cpp
 namespace myStackSpace {
@@ -1115,12 +1115,12 @@ using myStackSpace::topSub;
 using namespace myStackSpace;
 ```
 - Java — packages (Java에서 관련 클래스들을 묶는 단위)
-  - 하나의 패키지 = 하나의 캡슐화 단위, 패키지는 논리적 그룹일 뿐만 아니라, 접근 범위를 제한하는 역할도 함
-  - Package contains one or more class definitions
-  - Classes within package are partial friends
-  - Less need for explicit friend
-  - Package scope: Entities without access modifiers — Visible throughout the package
-  - Clients of a package — use fully qualified name or use the import declaration
+ - 하나의 패키지 = 하나의 캡슐화 단위, 패키지는 논리적 그룹일 뿐만 아니라, 접근 범위를 제한하는 역할도 함
+ - Package contains one or more class definitions
+ - Classes within package are partial friends
+ - Less need for explicit friend
+ - Package scope: Entities without access modifiers — Visible throughout the package
+ - Clients of a package — use fully qualified name or use the import declaration
 
 ```java
 package stkpkg; // package declaration must appear as the first line of the file
@@ -1130,14 +1130,14 @@ import stkpkg.myStack; //import myStack in stkpkg
 import stkpkg.*; //import all of the types in stkpkg
 ```
 - Ada — packages
-  - Packages are defined in hierarchies which correspond to file hierarchies
-  - Visibility from a program unit is gained with the `with` clause
+ - Packages are defined in hierarchies which correspond to file hierarchies
+ - Visibility from a program unit is gained with the `with` clause
 - Ruby: Classes, but also modules
-  - Typically encapsulate collections of constants and methods
-  - Have separate namespace
-  - Modules cannot be instantiated or subclassed, and they cannot define variables
-  - Methods defined in a module must include the module's name
-  - Access to the contents of a module is requested with the `require` method
+ - Typically encapsulate collections of constants and methods
+ - Have separate namespace
+ - Modules cannot be instantiated or subclassed, and they cannot define variables
+ - Methods defined in a module must include the module's name
+ - Access to the contents of a module is requested with the `require` method
 
 ```ruby
 module MyStuff

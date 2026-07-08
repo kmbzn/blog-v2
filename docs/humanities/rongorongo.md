@@ -11,8 +11,8 @@
 ## 특징
 
 - 목재판에 사람, 동물, 식물, 기하 도형 등의 기호가 새겨져 있음
-- 다체로 역부스트로폰(boustrophedon) 방식으로 작성됨  
-  (한 줄은 좌→우로, 다음 줄은 기기를 뒤집어 우→좌로 읽는 방식)
+- 다체로 역부스트로폰(boustrophedon) 방식으로 작성됨 
+ (한 줄은 좌→우로, 다음 줄은 기기를 뒤집어 우→좌로 읽는 방식)
 - 조각은 홈(fluted) 구조를 따라 새겨진 경우가 많음
 
 ## 제작 방식
@@ -45,18 +45,18 @@
 
 ## 관련 위치 (Google Maps)
 
-<iframe  
-  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d53305.16754006754!2d-109.3831485!3d-27.1127238!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9947d2214645eb8f%3A0x617a72132a07b16f!2sEaster%20Island!5e0!3m2!1sen!2sus!4v1718900000000!5m2!1sen!2sus"  
-  width="100%"  
-  height="400"  
-  style="border:0;"  
-  loading="lazy"  
-  referrerpolicy="no-referrer-when-downgrade">
+<iframe 
+ src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d53305.16754006754!2d-109.3831485!3d-27.1127238!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9947d2214645eb8f%3A0x617a72132a07b16f!2sEaster%20Island!5e0!3m2!1sen!2sus!4v1718900000000!5m2!1sen!2sus" 
+ width="100%" 
+ height="400" 
+ style="border:0;" 
+ loading="lazy" 
+ referrerpolicy="no-referrer-when-downgrade">
 </iframe>
 
 ## Authorship and Translation Info
 
-- **Translated and compiled by**: [kmbzn](https://kmbzn.com/)  
-- **Date of initial translation**: June 2025  
-- **Original source**: [Wikipedia - Rongorongo](https://en.wikipedia.org/wiki/Rongorongo)  
+- **Translated and compiled by**: [kmbzn](https://kmbzn.com/) 
+- **Date of initial translation**: June 2025 
+- **Original source**: [Wikipedia - Rongorongo](https://en.wikipedia.org/wiki/Rongorongo) 
 - **Disclaimer**: This document is based on content from Wikipedia and is distributed under the Creative Commons Attribution-ShareAlike License. The rights of the original authors are respected.

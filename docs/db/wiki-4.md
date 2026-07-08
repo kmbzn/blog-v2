@@ -7,13 +7,13 @@
 
 ### 1.1. Naive Approach: Nested loop join
 - 가장 직관적인(naive한) 방법으로는 이중 반복문을 사용하는 것을 떠올려볼 수 있을 것입니다.
-  - 동작: Table 1(Outer relation)의 모든 tuple을 순차적으로 스캔하면서, 각 tuple의 key값을 기준으로 Table 2(Inner relation)의 모든 tuple을 처음부터 끝까지 스캔하여 매칭되는지 확인합니다.
-  - 분석: 이 방식은 두 테이블의 레코드 수가 각각 $N, M$일 때, $O(N \times M)$의 시간복잡도를 갖습니다. 이에 따라 데이터의 크기가 커질수록 성능이 기하급수적으로 저하될 것이므로, 해당 과제와 같이 대용량 처리를 가정할 수 있는 시스템에서는 **적합하지 않은** 알고리즘이라고 판단하였습니다.
+ - 동작: Table 1(Outer relation)의 모든 tuple을 순차적으로 스캔하면서, 각 tuple의 key값을 기준으로 Table 2(Inner relation)의 모든 tuple을 처음부터 끝까지 스캔하여 매칭되는지 확인합니다.
+ - 분석: 이 방식은 두 테이블의 레코드 수가 각각 $N, M$일 때, $O(N \times M)$의 시간복잡도를 갖습니다. 이에 따라 데이터의 크기가 커질수록 성능이 기하급수적으로 저하될 것이므로, 해당 과제와 같이 대용량 처리를 가정할 수 있는 시스템에서는 **적합하지 않은** 알고리즘이라고 판단하였습니다.
 
 ### 1.2. Sort-Merge Join?
 - Join의 성능을 개선하기 위한 또 다른 idea는 두 테이블을 key값을 기준으로 sort한 후 merge하는 것입니다.
-  - 동작: Quick sort와 같이 (기존에 효율적이라고) 알려져 있는 알고리즘들을 사용하여 메모리 내에 불러온 두 테이블들을 정렬합니다. 정렬된 두 테이블에 각각 포인터를 두고, key값을 비교하며 포인터를 이동시키는 방식으로 한 번의 스캔만으로 join을 완료할 수 있는 idea입니다.
-  - 분석: 정렬 과정에 $O(N \log N + M \log M)$이 소요되며, 이후 병합 과정은 $O(N + M)$이 소요됩니다. 하지만 본 과제에서는 메모리 사용량이 `4 MiB`로 제한되어 있습니다. 전체 데이터를 메모리에 적재하여 정렬하는 것은 불가능하며, External merge sort 등을 고려해야 하므로 구현 복잡도와 디스크 I/O의 비용이 증가할 우려가 있습니다.
+ - 동작: Quick sort와 같이 (기존에 효율적이라고) 알려져 있는 알고리즘들을 사용하여 메모리 내에 불러온 두 테이블들을 정렬합니다. 정렬된 두 테이블에 각각 포인터를 두고, key값을 비교하며 포인터를 이동시키는 방식으로 한 번의 스캔만으로 join을 완료할 수 있는 idea입니다.
+ - 분석: 정렬 과정에 $O(N \log N + M \log M)$이 소요되며, 이후 병합 과정은 $O(N + M)$이 소요됩니다. 하지만 본 과제에서는 메모리 사용량이 `4 MiB`로 제한되어 있습니다. 전체 데이터를 메모리에 적재하여 정렬하는 것은 불가능하며, External merge sort 등을 고려해야 하므로 구현 복잡도와 디스크 I/O의 비용이 증가할 우려가 있습니다.
 
 ### 1.3. Final Design: $B^+$-Tree Based Merge Join
 - 본 과제의 데이터 파일은 이미 $B^+$-tree 구조로 관리되고 있다는 점을 고려하였습니다.
@@ -22,9 +22,9 @@
 
 1. 각 $B^+$-tree의 가장 leftmost에 해당하는 leaf page부터 접근을 시작합니다.
 2. 두 테이블의 현재 레코드를 가리키는 커서(Cursor)를 도입하여 유지하면서, 두 key값의 크기를 서로 비교합니다.
-    - `Key1 == Key2`인 경우: 두 Key가 일치하므로 join 결과를 출력하고, 두 커서를 모두 다음 레코드로 이동합니다.
-    - `Key1 < Key2`인 경우: Table 1의 Key가 작으므로, Table 1의 커서를 다음으로 이동하여 더 큰 Key를 탐색합니다.
-    - `Key1 > Key2`인 경우: Table 2의 Key가 작으므로, Table 2의 커서를 다음으로 이동합니다.
+  - `Key1 == Key2`인 경우: 두 Key가 일치하므로 join 결과를 출력하고, 두 커서를 모두 다음 레코드로 이동합니다.
+  - `Key1 < Key2`인 경우: Table 1의 Key가 작으므로, Table 1의 커서를 다음으로 이동하여 더 큰 Key를 탐색합니다.
+  - `Key1 > Key2`인 경우: Table 2의 Key가 작으므로, Table 2의 커서를 다음으로 이동합니다.
 3. Page Traversal: 현재 leaf page의 모든 레코드를 탐색하면, `Right Sibling Page Number`를 참조하여 다음 leaf page를 디스크에서 load합니다.
 
 #### 1.3.1. 결론
@@ -39,80 +39,80 @@
 
 ```c
 // Global variables for handling two tables
-H_P *hp, *hp2;          // Header pages
+H_P *hp, *hp2;     // Header pages
 page *rt = NULL, *rt2 = NULL; // Root pages
-int fd = -1, fd2 = -1;  // File descriptors
+int fd = -1, fd2 = -1; // File descriptors
 ```
 
 ### 2.2. Modification of `open_table`
 - 기존의 `open_table` 함수는 하나의 경로만 입력받았으나, join 연산을 위해서는 두 개의 파일 경로가 필요할 것입니다.. 이를 위해 기존 logic을 `open_single_table`이라는 내부 함수로 분리하고, 새로운 `open_table` 함수는 이를 두 번 호출하는 wrapper와 같은 형태로 재구현하였습니다.
-  - `open_single_table`: 단일 DB 파일을 열고 fd, header, root 정보를 설정합니다.
-  - `open_table`: 두 개의 경로(`pathname1`, `pathname2`)를 입력받아 각각 `open_single_table`을 호출하고, 두 호출의 결과값을 합산하여 반환함으로써 예외 상황을 전파합니다.
+ - `open_single_table`: 단일 DB 파일을 열고 fd, header, root 정보를 설정합니다.
+ - `open_table`: 두 개의 경로(`pathname1`, `pathname2`)를 입력받아 각각 `open_single_table`을 호출하고, 두 호출의 결과값을 합산하여 반환함으로써 예외 상황을 전파합니다.
 
 ```c
 int open_table(char * pathname1, char * pathname2) {
-    int ret1 = open_single_table(pathname1, &fd, &hp, &rt);
-    int ret2 = open_single_table(pathname2, &fd2, &hp2, &rt2);
+  int ret1 = open_single_table(pathname1, &fd, &hp, &rt);
+  int ret2 = open_single_table(pathname2, &fd2, &hp2, &rt2);
 
-    return ret1 + ret2;
+  return ret1 + ret2;
 }
 ```
 
 ### 2.3. Analysis of Existing API Modification
 - 이제, 기존에 구현되어 있는 `db_find`, `db_insert`, `db_delete` 함수들을 수정해야 할 필요성에 대해 검토해보도록 하겠습니다.
-  - 현재 구조에서 `open_table`을 통해 두 개의 테이블을 열더라도, 기존의 `insert`, `delete`, `find` 함수들은 전역 변수로 선언된 첫 번째 테이블(`fd`, `rt` 등)을 대상으로만 동작하도록 구현되어 있습니다.
-    - 이에 따라서 table 2에 대한 조작이 불가능하다는 한계점이 존재합니다.
-  - 하지만 본 과제의 명세는 두 테이블 간의 join 연산 구현에 있으며, 다중 테이블에 대한 동시 트랜잭션 처리나 관리는 과제의 범위와 무관한 내용일 것입니다.
-  - Join 알고리즘은 read-only 방식으로만 index 구조를 순회하는 방식이므로 기존 함수들의 수정 없이도 구현이 가능합니다.
+ - 현재 구조에서 `open_table`을 통해 두 개의 테이블을 열더라도, 기존의 `insert`, `delete`, `find` 함수들은 전역 변수로 선언된 첫 번째 테이블(`fd`, `rt` 등)을 대상으로만 동작하도록 구현되어 있습니다.
+  - 이에 따라서 table 2에 대한 조작이 불가능하다는 한계점이 존재합니다.
+ - 하지만 본 과제의 명세는 두 테이블 간의 join 연산 구현에 있으며, 다중 테이블에 대한 동시 트랜잭션 처리나 관리는 과제의 범위와 무관한 내용일 것입니다.
+ - Join 알고리즘은 read-only 방식으로만 index 구조를 순회하는 방식이므로 기존 함수들의 수정 없이도 구현이 가능합니다.
 
 ### 2.4. Implementation of `db_join`
-- 핵심 logic에 해당하는 `db_join` 함수는 다음과 같은 순서로 동작하게 됩니다.
+- Logic에 해당하는 `db_join` 함수는 다음과 같은 순서로 동작하게 됩니다.
 
 1. 두 테이블 중 하나라도 비어있는 경우(`rpo == 0`), join 결과는 공집합일 것이므로 즉시 함수를 종료하여 불필요한 추가적인 연산을 방지합니다. (성능 향상을 위한 조치)
-    ```c
-    void db_join() {
-        // 각 테이블이 비어있는지 확인
-        if (hp->rpo == 0 || hp2->rpo == 0) {
-            return; // 바로 종료
-        }
-    ```
+  ```c
+  void db_join() {
+    // 각 테이블이 비어있는지 확인
+    if (hp->rpo == 0 || hp2->rpo == 0) {
+      return; // 바로 종료
+    }
+  ```
 2. Initialization: `find_leaf` logic을 활용하여 각 $B^+$-tree의 가장 왼쪽 leaf page를 찾아 메모리에 load합니다.
 3. Merge loop: 두 leaf page의 레코드를 순회하는 `while` 루프를 실행합니다.
-    - 현재 가리키고 있는 두 레코드의 Key(`key1`, `key2`)를 비교합니다.
-    - Match (`key1 == key2`): `printf`를 통해 `key, value1, value2` 형식으로 결과를 출력합니다. Key는 Unique 하므로 두 인덱스(`idx1`, `idx2`)를 모두 증가시킵니다.
-    - Compare (`key1 < key2`): Table 1의 현재 Key가 작으므로, `idx1`을 증가시켜 Table 1에서 더 큰 Key를 찾습니다.
-    - Compare (`key1 > key2`): Table 2의 현재 Key가 작으므로, `idx2`를 증가시킵니다.
-    ```c
-        // 현재 가리키고 있는 key값 각각 불러오기
-        int64_t key1 = p1->records[idx1].key;
-        int64_t key2 = p2->records[idx2].key;
+  - 현재 가리키고 있는 두 레코드의 Key(`key1`, `key2`)를 비교합니다.
+  - Match (`key1 == key2`): `printf`를 통해 `key, value1, value2` 형식으로 결과를 출력합니다. Key는 Unique 하므로 두 인덱스(`idx1`, `idx2`)를 모두 증가시킵니다.
+  - Compare (`key1 < key2`): Table 1의 현재 Key가 작으므로, `idx1`을 증가시켜 Table 1에서 더 큰 Key를 찾습니다.
+  - Compare (`key1 > key2`): Table 2의 현재 Key가 작으므로, `idx2`를 증가시킵니다.
+  ```c
+    // 현재 가리키고 있는 key값 각각 불러오기
+    int64_t key1 = p1->records[idx1].key;
+    int64_t key2 = p2->records[idx2].key;
 
-        // Key 비교 및 join
-        if (key1 == key2) {
-            // 출력 형식에 따라서  출력
-            printf("%lld,%s,%s\n", key1, p1->records[idx1].value, p2->records[idx2].value);
-            
-            // Unique Key이기 때문에, 둘 다 다음으로 이동
-            idx1++;
-            idx2++;
-        }
-        else if (key1 < key2) {
-            // Table 1의 키가 작으면 Table 1의 포인터를 증가
-            idx1++;
-        }
-        else {
-            // Table 2의 키가 작으면 Table 2 포인터 증가
-            idx2++;
-        }
-    ```
+    // Key 비교 및 join
+    if (key1 == key2) {
+      // 출력 형식에 따라서 출력
+      printf("%lld,%s,%s\n", key1, p1->records[idx1].value, p2->records[idx2].value);
+      
+      // Unique Key이기 때문에, 둘 다 다음으로 이동
+      idx1++;
+      idx2++;
+    }
+    else if (key1 < key2) {
+      // Table 1의 키가 작으면 Table 1의 포인터를 증가
+      idx1++;
+    }
+    else {
+      // Table 2의 키가 작으면 Table 2 포인터 증가
+      idx2++;
+    }
+  ```
 4. Page Transition: 인덱스가 현재 Page의 레코드 수를 초과하면, 해당 Page의 `right_sibling`의 offset을 확인합니다.
-    - `right_sibling`이 0이 아니면 해당 페이지를 `load_page` 함수로 읽어오고 인덱스를 0으로 초기화합니다.
-    - `right_sibling`이 0이면(마지막 Page), 탐색을 종료합니다.
+  - `right_sibling`이 0이 아니면 해당 페이지를 `load_page` 함수로 읽어오고 인덱스를 0으로 초기화합니다.
+  - `right_sibling`이 0이면(마지막 Page), 탐색을 종료합니다.
 5. Memory Release: 사용이 끝난 Page 메모리를 `free`하여 자원 누수를 방지합니다.
-    ```c
-        if (p1 != NULL) free(p1);
-        if (p2 != NULL) free(p2);
-    ```
+  ```c
+    if (p1 != NULL) free(p1);
+    if (p2 != NULL) free(p2);
+  ```
 - 이 구현은 디스크 I/O를 최소화하고 필요한 시점에만 page를 로딩하는 on-demand 방식을 따르고 있습니다.
 
 ## 3. Result
@@ -120,17 +120,17 @@ int open_table(char * pathname1, char * pathname2) {
 
 ### 3.1. Test Environment Setup
 - 대량의 데이터를 통한 검증을 위해 python 스크립트를 작성하여 테스트 케이스를 생성하였습니다.
-  - Data Generation: `-10000`부터 `10000`까지의 범위를 갖는 Key와 랜덤한 String Value를 포함하는 두 개의 입력 파일(`input1.txt`, `input2.txt`)을 생성했습니다. 두 파일은 일부 Key가 겹치도록 설정하여 join 결과가 명확히 나타나도록 했습니다.
+ - Data Generation: `-10000`부터 `10000`까지의 범위를 갖는 Key와 랜덤한 String Value를 포함하는 두 개의 입력 파일(`input1.txt`, `input2.txt`)을 생성했습니다. 두 파일은 일부 Key가 겹치도록 설정하여 join 결과가 명확히 나타나도록 했습니다.
 
 ![](image-37.png)
 
 ### 3.2. Execution Procedure
 - 현재 `db_insert` 기능은 단일 파일에 대해서만 삽입이 가능한 상태이므로(추가적으로 변경하지 않았으므로), 다음과 같이 다소 우회적인 방식으로 두 개의 DB 파일을 구축하도록 하였습니다.
 
-  1. `input1.txt`를 이용하여 `test1.db`에 데이터를 insert한다.
-  2. 생성된 `test1.db`의 파일명을 `test2.db`로 변경한다.
-  3. 프로그램을 재실행하여 빈 `test1.db`를 생성하고, `input2.txt`를 이용하여 데이터를 삽입한다.
-  4. 결과적으로 `test1.db`와 `test2.db` 두 개의 완성된 $B^+$-tree 파일을 확보하였다.
+ 1. `input1.txt`를 이용하여 `test1.db`에 데이터를 insert한다.
+ 2. 생성된 `test1.db`의 파일명을 `test2.db`로 변경한다.
+ 3. 프로그램을 재실행하여 빈 `test1.db`를 생성하고, `input2.txt`를 이용하여 데이터를 삽입한다.
+ 4. 결과적으로 `test1.db`와 `test2.db` 두 개의 완성된 $B^+$-tree 파일을 확보하였다.
 
 ### 3.3. Verification
 - 구축된 두 DB에 대해 `j` (Join) 명령어를 수행하도록 합니다.
@@ -155,7 +155,7 @@ Join execution time: 0.000866 sec
 Memory usage: 1277952 KB
 Warning: Memory Limit Exceeded! (Limit: 4096 KB)
 ```
-- 과제의 핵심 제약사항인 메모리 사용량 `4 MiB` 이하를 준수하는지 확인하기 위해 로컬 환경(macOS)에서 메모리 사용량을 모니터링하였습니다. 테스트 도중 프로세스의 메모리 사용량이 예상했던 것보다 훨씬 큰 수치로 확인되어, 메모리 leak이 발생했거나 page 관리에 문제가 있는 것이라고 판단(오해)하여 약간의 혼란을 겪었습니다.
+- 과제의 제약사항인 메모리 사용량 `4 MiB` 이하를 준수하는지 확인하기 위해 로컬 환경(macOS)에서 메모리 사용량을 모니터링하였습니다. 테스트 도중 프로세스의 메모리 사용량이 예상했던 것보다 훨씬 큰 수치로 확인되어, 메모리 leak이 발생했거나 page 관리에 문제가 있는 것이라고 판단(오해)하여 약간의 혼란을 겪었습니다.
 
 #### 4.1.2. 해결 과정
 

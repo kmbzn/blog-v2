@@ -10,8 +10,8 @@
 
 본 보고서에서는 국내 중소기업(SyncView)에서 판매된 IP 카메라 모델(`SVR-700A`)의 공식 업데이트 파일인
 `74.2.64.31-libPPPP_API_20160721.bin`을 분석 대상으로 선정하였다.
-해당 파일은 제작사 자료실/다운로드/프로그램 페이지에서 다운로드할 수 있었으며,  
-[http://syncview.co.kr/atboard.php?lm=64&grp1=support&grp2=download&sch_tab_option=2&page_uid=67](http://syncview.co.kr/atboard.php?lm=64&grp1=support&grp2=download&sch_tab_option=2&page_uid=67)  
+해당 파일은 제작사 자료실/다운로드/프로그램 페이지에서 다운로드할 수 있었으며, 
+[http://syncview.co.kr/atboard.php?lm=64&grp1=support&grp2=download&sch_tab_option=2&page_uid=67](http://syncview.co.kr/atboard.php?lm=64&grp1=support&grp2=download&sch_tab_option=2&page_uid=67) 
 확장자는 `.bin`이지만 실제로는 `ZIP` 기반의 압축 파일임을 확인할 수 있었다.
 
 ## 2. 분석 절차 (Procedure)
@@ -30,19 +30,19 @@
 
 ```
 /init
-    └─ ipcam.sh
+  └─ ipcam.sh
 
 /system
-    ├─ bin
-    │    ├─ encoder
-    │    ├─ gmail_thread
-    │    ├─ jpeg
-    │    └─ daemon.v5.14
-    ├─ drivers (비어 있음)
-    └─ lib (비어 있음)
+  ├─ bin
+  │  ├─ encoder
+  │  ├─ gmail_thread
+  │  ├─ jpeg
+  │  └─ daemon.v5.14
+  ├─ drivers (비어 있음)
+  └─ lib (비어 있음)
 
-/www        (비어 있음)
-/Wireless   (비어 있음)
+/www    (비어 있음)
+/Wireless  (비어 있음)
 ```
 
 이는 linux 기반 IP 카메라 펌웨어에서 흔히 발견되는 구조이며,
@@ -61,14 +61,14 @@
 
 ### 3.2 `/system/bin/`
 
-실질적으로 장치의 기능을 담당하는 핵심 실행파일들이 이 디렉토리에 집중되어 있다고 할 수 있다.
+실질적으로 장치의 기능을 담당하는 실행파일들이 이 디렉토리에 집중되어 있다고 할 수 있다.
 
 - `encoder`: 영상 인코딩 + 웹 서버 + 계정 인증 루틴까지 통합된 메인 바이너리
 - `daemon.v5.14`: 백그라운드 서비스 관리
 - `jpeg`: `JPEG` 코덱 기능
 - `gmail_thread`: 이메일 알림 기능
 
-이 디렉토리 내부의 encoder가 분석의 핵심이며, 실제로 문자열 분석 결과 하드코딩된 `root` 계정 정보가 존재하였다.
+이 디렉토리 내부의 encoder가 분석의 며, 실제로 문자열 분석 결과 하드코딩된 `root` 계정 정보가 존재하였다.
 
 ### 3.3 `/system/drivers`, `/system/lib`
 
@@ -86,7 +86,7 @@
 
 ## 4. 하드코딩된 정보 분석 (Hardcoded Credentials Analysis)
 
-본 분석의 핵심은 펌웨어 내부에 하드코딩된 계정·패스워드·그 해시값이 존재하는지 확인하는 것이다.
+본 분석의 펌웨어 내부에 하드코딩된 계정·패스워드·그 해시값이 존재하는지 확인하는 것이다.
 
 이를 위해 `strings` 명령으로 실행 바이너리 내부 문자열을 추출하였다.
 
@@ -101,13 +101,13 @@
 root:vRNT.4lCplkng:0:0:Adminstrator:/:/bin/sh
 ```
 
-- 이는 장치의 root 계정이 고정된 값으로 펌웨어에 포함되어 있음을 의미하며,  
-패스워드 해시(`vRNT.4lCplkng`)는 특정 해시 알고리즘(주로 DES 기반 `crypt()` 함수)으로 암호화된 값이다.  
-- 여기서 앞의 두 글자(`vR`)은 salt값에 해당한다.  
+- 이는 장치의 root 계정이 고정된 값으로 펌웨어에 포함되어 있음을 의미하며, 
+패스워드 해시(`vRNT.4lCplkng`)는 특정 해시 알고리즘(주로 DES 기반 `crypt()` 함수)으로 암호화된 값이다. 
+- 여기서 앞의 두 글자(`vR`)은 salt값에 해당한다. 
 - 단방향 알고리즘에 의해 hash된 값이기 때문에 복호화하여 원래 password를 직접 얻어내기에는 어려움이 있었다.
-    - 4자리 숫자(`0000` ~ `9999`)를 Brute-force 방식으로 시도해봤으나 실패하였다.
-    - 6자리 숫자(`000000` ~ `999999`)를 Brute-force 방식으로 시도해봤으나 실패하였다.
-    - 다만, 해당 암호화 알고리즘이 현재는 더 이상 사용되지 않는 오래된 방식의 취약한 알고리즘으로 알려져 있기 때문에, 유출된 password 기반의 dictionary attack을 시도한다면 원래 password를 알아낼 가능성도 있다.
+  - 4자리 숫자(`0000` ~ `9999`)를 Brute-force 방식으로 시도해봤으나 실패하였다.
+  - 6자리 숫자(`000000` ~ `999999`)를 Brute-force 방식으로 시도해봤으나 실패하였다.
+  - 다만, 해당 암호화 알고리즘이 현재는 더 이상 사용되지 않는 오래된 방식의 취약한 알고리즘으로 알려져 있기 때문에, 유출된 password 기반의 dictionary attack을 시도한다면 원래 password를 알아낼 가능성도 있다.
 
 ### 4.2 외부 서버로 `username/password`를 평문 전송하는 코드 발견
 

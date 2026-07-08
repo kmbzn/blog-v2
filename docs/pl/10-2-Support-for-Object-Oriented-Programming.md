@@ -197,28 +197,28 @@ sitemap: false
 ```smalltalk
 "Smalltalk Example Program"
 "The following is a class definition, instantiations of which can draw equilateral polygons of any number of sides"
-class name                  polygon
-superclass                  Object
-instance variable names     numSides
-                            sideLength
+class name         polygon
+superclass         Object
+instance variable names   numSides
+              sideLength
 "Class methods"
 "Create an instance"
 new
-    ^ super new getPen
+  ^ super new getPen
 "Get a pen for drawing polygons"
 getPen
-    ourPen <- Pen new defaultNib: 2
+  ourPen <- Pen new defaultNib: 2
 "Instance methods"
 "Draw a polygon"
 draw
-    numSides timesRepeat: [ourPen go: sideLength;
-                                  turn: 360 // numSides]
+  numSides timesRepeat: [ourPen go: sideLength;
+                 turn: 360 // numSides]
 "Set length of sides"
 length: len
-    sideLength <- len
+  sideLength <- len
 "Set number of sides"
 sides: num
-    numSides <- num
+  numSides <- num
 
 ```
 
@@ -254,14 +254,14 @@ class derived_class_name : derivation_mode base_class_name
 ```cpp
 class base_class {
 private:
-    int a;
-    float x;
+  int a;
+  float x;
 protected:
-    int b;
-    float y;
+  int b;
+  float y;
 public:
-    int c;
-    float z;
+  int c;
+  float z;
 };
 
 ```
@@ -284,8 +284,8 @@ class subclass_2 : private base_class { … };
 
 ```cpp
 class subclass_3 : private base_class {
-    base_class :: c;
-    …
+  base_class :: c;
+  …
 }
 
 ```
@@ -299,30 +299,30 @@ class subclass_3 : private base_class {
 ```cpp
 class single_linked_list {
 private:
-    class node {
-    public:
-        node *link;
-        int contents;
-    };
-    node *head;
+  class node {
+  public:
+    node *link;
+    int contents;
+  };
+  node *head;
 public:
-    single_linked_list() {head = 0};
-    void insert_at_head(int);
-    void insert_at_tail(int);
-    int remove_at_head();
-    int empty();
+  single_linked_list() {head = 0};
+  void insert_at_head(int);
+  void insert_at_tail(int);
+  int remove_at_head();
+  int empty();
 };
 
 class stack_2 : private single_linked_list {
 public:
-    stack_2() {}
-    void push(int value) {
-        single_linked_list :: insert_at_head(value);
-    }
-    int pop() {
-        return single_linked_list :: remove_at_head();
-    }
-    single_linked_list:: empty();
+  stack_2() {}
+  void push(int value) {
+    single_linked_list :: insert_at_head(value);
+  }
+  int pop() {
+    return single_linked_list :: remove_at_head();
+  }
+  single_linked_list:: empty();
 };
 
 ```
@@ -351,23 +351,23 @@ class DrawThread : public Thread, public Drawing { … }
 ```cpp
 class Shape {
 public:
-    virtual void draw() = 0;
-    ...
+  virtual void draw() = 0;
+  ...
 };
 class Circle : public Shape {
 public:
-    void draw() { ... }
-    ...
+  void draw() { ... }
+  ...
 };
 class Rectangle : public Shape {
 public:
-    void draw() { ... }
-    ...
+  void draw() { ... }
+  ...
 };
 class Square : public Rectangle {
 public:
-    void draw() { ... }
-    ...
+  void draw() { ... }
+  ...
 };
 
 ```
@@ -520,12 +520,12 @@ id shapeRef;
 
 ```java
 class Animal {
-    String name;
-    int numberOfLegs;
-    public final void birth(){...}
+  String name;
+  int numberOfLegs;
+  public final void birth(){...}
 }
 class Dog extends Animal {
-    String type;
+  String type;
 }
 
 ```
@@ -550,19 +550,19 @@ class Dog extends Animal {
 
 ```java
 public interface Animal {
-    public abstract void bark();
+  public abstract void bark();
 }
 public class Dog implements Animal{
-    @Override
-    public void bark() {
-        System.out.println("Woof woof!");
-    }
+  @Override
+  public void bark() {
+    System.out.println("Woof woof!");
+  }
 }
 public class Cat implements Animal{
-    @Override
-    public void bark() {
-        System.out.println("Meow Meow!");
-    }
+  @Override
+  public void bark() {
+    System.out.println("Meow Meow!");
+  }
 }
 
 ```
@@ -603,18 +603,18 @@ public class Cat implements Animal{
 
 ```csharp
 class Parent {
-    public void Greet() {
-        Console.WriteLine("Hello from Parent");
-    }
+  public void Greet() {
+    Console.WriteLine("Hello from Parent");
+  }
 }
 Parent p = new Child();
 p.Greet(); // 출력: Hello from Parent
 Child c = new Child();
 c.Greet(); // 출력: Hello from Child
 class Child : Parent {
-    public new void Greet() { // new로 부모 메서드 숨김
-        Console.WriteLine("Hello from Child");
-    }
+  public new void Greet() { // new로 부모 메서드 숨김
+    Console.WriteLine("Hello from Child");
+  }
 }
 
 ```
@@ -628,20 +628,20 @@ class Child : Parent {
 
 ```csharp
 public class Shape {
-    public virtual void Draw() { ... }
-    ...
+  public virtual void Draw() { ... }
+  ...
 }
 public class Rectangle : Shape {
-    public override void Draw() { ... }
-    ...
+  public override void Draw() { ... }
+  ...
 }
 public class Circle : Shape {
-    public override void Draw() { ... }
-    ...
+  public override void Draw() { ... }
+  ...
 }
 public class Square : Rectangle {
-    public override void Draw() { ... }
-    ...
+  public override void Draw() { ... }
+  ...
 }
 
 ```

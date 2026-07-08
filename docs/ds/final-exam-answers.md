@@ -378,12 +378,12 @@ No — q is **not** a core point, so nothing can be directly density-reachable f
 
 ```
 for each o in D do
-    if o is not yet [  (1) marked  ] then
-        if o is a [  (2) core-object  ] then
-            collect all objects [  (3) density-reachable  ] from o
-            and assign them to a new cluster.
-        else
-            assign o to [  (4) NOISE  ]
+  if o is not yet [ (1) marked ] then
+    if o is a [ (2) core-object ] then
+      collect all objects [ (3) density-reachable ] from o
+      and assign them to a new cluster.
+    else
+      assign o to [ (4) NOISE ]
 ```
 
 ### (f) DBSCAN Advantages and Disadvantages

@@ -1,6 +1,6 @@
 # Data Science — Final Exam
 
-**All answers must be written in English.**  
+**All answers must be written in English.** 
 Show all work for calculation problems.
 
 ---
@@ -56,7 +56,7 @@ Apply each of the following normalization methods to the value **v = \$73,600**:
 
 Two objects i and j are compared across p binary features. The comparison results are summarized in the following contingency table:
 
-|  | **j = 1** | **j = 0** | Sum |
+| | **j = 1** | **j = 0** | Sum |
 |---|---|---|---|
 | **i = 1** | q | r | q+r |
 | **i = 0** | s | t | s+t |
@@ -76,13 +76,13 @@ Two objects i and j are compared across p binary features. The comparison result
 |------|--------|-------|-------|--------|--------|--------|--------|
 | Jack | M | Y | N | P | N | N | N |
 | Mary | F | Y | N | P | N | P | N |
-| Jim  | M | Y | P | N | N | N | N |
+| Jim | M | Y | P | N | N | N | N |
 
 For each pair below, first fill in the contingency table (q, r, s, t), then calculate the **asymmetric dissimilarity** d(i, j).
 
 **d(Jack, Mary)**
 
-|  | Mary = 1 | Mary = 0 |
+| | Mary = 1 | Mary = 0 |
 |--|----------|----------|
 | **Jack = 1** | q = | r = |
 | **Jack = 0** | s = | t = |
@@ -91,7 +91,7 @@ For each pair below, first fill in the contingency table (q, r, s, t), then calc
 
 **d(Jack, Jim)**
 
-|  | Jim = 1 | Jim = 0 |
+| | Jim = 1 | Jim = 0 |
 |--|---------|---------|
 | **Jack = 1** | q = | r = |
 | **Jack = 0** | s = | t = |
@@ -300,12 +300,12 @@ Point p has 4 points within its ε-neighborhood (including q). Point q has 2 poi
 
 ```
 for each o in D do
-    if o is not yet [  (1)  ] then
-        if o is a [  (2)  ] then
-            collect all objects [  (3)  ] from o
-            and assign them to a new cluster.
-        else
-            assign o to [  (4)  ]
+  if o is not yet [ (1) ] then
+    if o is a [ (2) ] then
+      collect all objects [ (3) ] from o
+      and assign them to a new cluster.
+    else
+      assign o to [ (4) ]
 ```
 
 <br><br><br><br>

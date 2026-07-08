@@ -1,7 +1,7 @@
 # Wine 환경에서 카카오톡 실행 시 `explorer.exe` 뜨지 않게 하는 법
 
 :::info 버전 정보
-Ubuntu 22.04 LTS  
+Ubuntu 22.04 LTS 
 wine 11.0
 :::
 
@@ -33,24 +33,24 @@ nohup wine "/home/(사용자 이름)/.wine/drive_c/Program Files/Kakao/KakaoTalk
 
 # 창 감지 및 제거 루프
 while true; do
-    # explorer.exe의 PID 찾기
-    EXP_PID=$(pgrep explorer.exe)
+  # explorer.exe의 PID 찾기
+  EXP_PID=$(pgrep explorer.exe)
 
-    if [ ! -z "$EXP_PID" ]; then
-        # wmctrl로 해당 PID를 가진 윈도우 ID(WID)가 있는지 확인
-        # grep -w로 정확히 해당 PID만 매칭
-        WID=$(wmctrl -lp | grep -w "$EXP_PID" | awk '{print $1}')
+  if [ ! -z "$EXP_PID" ]; then
+    # wmctrl로 해당 PID를 가진 윈도우 ID(WID)가 있는지 확인
+    # grep -w로 정확히 해당 PID만 매칭
+    WID=$(wmctrl -lp | grep -w "$EXP_PID" | awk '{print $1}')
 
-        if [ ! -z "$WID" ]; then
-            # 창이 발견되면 닫기 명령 전달
-            wmctrl -i -c "$WID"
-            # 목적을 달성했으므로 루프 종료
-            break
-        fi
+    if [ ! -z "$WID" ]; then
+      # 창이 발견되면 닫기 명령 전달
+      wmctrl -i -c "$WID"
+      # 목적을 달성했으므로 루프 종료
+      break
     fi
+  fi
 
-    # 대기 후 다시 확인
-    sleep 1
+  # 대기 후 다시 확인
+  sleep 1
 done
 
 exit 0
@@ -76,6 +76,6 @@ Exec=/home/(사용자 이름)/.local/share/applications/wine/Programs/start.sh
 
 ## 마치며
 
-이 방법을 사용하면 리눅스 환경에서도 윈도우와 다름없는 쾌적한 카카오톡 환경을 누릴 수 있습니다. 핵심은 프로세스(PID)를 찾아 창(Window ID)만 타격하는 것입니다.
+이 방법을 사용하면 리눅스 환경에서도 윈도우와 다름없는 쾌적한 카카오톡 환경을 누릴 수 있습니다. 프로세스(PID)를 찾아 창(Window ID)만 타격하는 것입니다.
 
 이제 더 이상 거슬리는 창을 일일히 직접 닫지 마세요!

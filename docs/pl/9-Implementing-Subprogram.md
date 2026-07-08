@@ -8,8 +8,8 @@ sitemap: false
 - Parameters
 ```python
 def compute_pay(income, exemptions = 1, tax_rate):
-    ...
-    return
+  ...
+  return
 
 ```
 
@@ -67,9 +67,9 @@ pay = compute_pay(20000.0, tax_rate = 0.15)
 
 ```python
 def addNumber(fixedNum):
-    def add(number):
-        return fixedNum + number
-    return add
+  def add(number):
+    return fixedNum + number
+  return add
 # ===============================
 func = addNumber(10)
 func(20) # 30
@@ -108,14 +108,14 @@ func(30) # 40
 
 ```cpp
 int counter() {
-    static int cnt = 0; // static local variable
-    cnt++;
-    return cnt;
+  static int cnt = 0; // static local variable
+  cnt++;
+  return cnt;
 }
 int main() {
-    int a = counter(); // a == 1
-    int b = counter(); // b == 2
-    return 0;
+  int a = counter(); // a == 1
+  int b = counter(); // b == 2
+  return 0;
 }
 
 ```
@@ -165,15 +165,15 @@ int main() {
 // [C++]
 int g = 0;
 int func(int first, int second) {
-    int sum = 0;
-    sum = first + second;
-    return sum;
+  int sum = 0;
+  sum = first + second;
+  return sum;
 }
 void main() {
-    int x = 1;
-    int y = 2;
-    func(x,y);
-    return;
+  int x = 1;
+  int y = 2;
+  func(x,y);
+  return;
 }
 
 ```
@@ -217,16 +217,16 @@ void main() {
 ```cpp
 // [C++]
 int func(int first, int second) {
-    static int sum = 0;
-    sum = first + second;
-    return sum; // ②
+  static int sum = 0;
+  sum = first + second;
+  return sum; // ②
 }
 void main() {
-    static int x = 1;
-    static int y = 2;
-    // ①
-    func(x,y);
-    return;
+  static int x = 1;
+  static int y = 2;
+  // ①
+  func(x,y);
+  return;
 }
 
 ```
@@ -300,11 +300,11 @@ void main() {
 - Code Example for Code and Non-Code mapping:
 ```cpp
 int add(int a, int b) {
-    int sum = a + b;
-    return sum;
+  int sum = a + b;
+  return sum;
 }
 int main() {
-    int result = add(3, 5);
+  int result = add(3, 5);
 }
 
 ```
@@ -402,9 +402,9 @@ int main() {
 
 ```cpp
 void sub(float total, int part) {
-    int list[5];
-    float sum;
-    ...
+  int list[5];
+  float sum;
+  ...
 }
 
 ```
@@ -424,17 +424,17 @@ void sub(float total, int part) {
 ```cpp
 // [C++]
 int func(int first, int second) {
-    // ②
-    int sum = 0;
-    sum = first + second;
-    return sum; // ③
+  // ②
+  int sum = 0;
+  sum = first + second;
+  return sum; // ③
 }
 void main() {
-    int x = 1;
-    int y = 2;
-    // ①
-    func(x,y);
-    return;
+  int x = 1;
+  int y = 2;
+  // ①
+  func(x,y);
+  return;
 }
 
 ```
@@ -488,29 +488,29 @@ void main() {
 using namespace std;
 int g = 0;
 int func1(int first, int second) {
-    int sum = 0;
-    cout << "Address of first: " << &first << endl;
-    cout << "Address of second: " << &second << endl;
-    cout << "Address of sum: " << &sum << endl;
-    g = g + 1;
-    sum = first + second;
-    return sum;
+  int sum = 0;
+  cout << "Address of first: " << &first << endl;
+  cout << "Address of second: " << &second << endl;
+  cout << "Address of sum: " << &sum << endl;
+  g = g + 1;
+  sum = first + second;
+  return sum;
 }
 void func2(int first, int second) {
-    func1(first,second);
-    return;
+  func1(first,second);
+  return;
 }
 int main() {
-    int x = 1;
-    int y = 2;
-    cout << "Address of g: " << &g << endl;
-    func1(x,y);
-    cout << "Address of g: " << &g << endl;
-    func1(x,y);
-    cout << "Address of g: " << &g << endl;
-    func2(x,y);
-    cout << "Address of g: " << &g << endl;
-    return 0;
+  int x = 1;
+  int y = 2;
+  cout << "Address of g: " << &g << endl;
+  func1(x,y);
+  cout << "Address of g: " << &g << endl;
+  func1(x,y);
+  cout << "Address of g: " << &g << endl;
+  func2(x,y);
+  cout << "Address of g: " << &g << endl;
+  return 0;
 }
 
 ```
@@ -573,14 +573,14 @@ int main() {
 # Global scope ...
 # Static depth of the global, f1, f2 and f3 are 0,1, 2 and 3, respectively
 def f1():
-    def f2():
-        # f3 refer f1 → chain offset is 2
-        def f3():
-            # f3 refer f2 → chain offset is 1
-            ...
-        # end of f3 …
-    # end of f2
-    ...
+  def f2():
+    # f3 refer f1 → chain offset is 2
+    def f3():
+      # f3 refer f2 → chain offset is 1
+      ...
+    # end of f3 …
+  # end of f2
+  ...
 # end of f1
 
 ```
@@ -649,10 +649,10 @@ def f1():
 - Every block has an activation record
 ```cpp
 { 
-    int temp;
-    temp = list[upper];
-    list[upper] = list[lower];
-    list[lower] = temp;
+  int temp;
+  temp = list[upper];
+  list[upper] = list[lower];
+  list[lower] = temp;
 }
 
 ```
@@ -687,15 +687,15 @@ def f1():
 
 ```cpp
 void main() {
-    int x, y, z; // main locals
+  int x, y, z; // main locals
+  while (...) {
+    int a, b, c; // block1 locals
     while (...) {
-        int a, b, c; // block1 locals
-        while (...) {
-            int d, e; // block2 locals
-            ...
-            a = d + 1; // block2에서 block1의 a에 접근
-        }
+      int d, e; // block2 locals
+      ...
+      a = d + 1; // block2에서 block1의 a에 접근
     }
+  }
 }
 
 ```

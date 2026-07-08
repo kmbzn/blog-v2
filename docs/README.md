@@ -1,8 +1,8 @@
 # KeyBaseZone
 
 <p align="left">
-  <img src="https://kmbzn.com/images/profile.jpg" width="360" alt="Profile" />
-</p>  
+ <img src="https://kmbzn.com/images/profile.jpg" width="360" alt="Profile" />
+</p> 
 
 *Welcome to my personal page...*
 
@@ -10,12 +10,12 @@
 
 | Field | Info
 | - | -
-| Region | Seoul, South Korea                          
+| Region | Seoul, South Korea             
 | GitHub | [github.com/kmbzn](https://github.com/kmbzn)
-| IG     | [@kmbzn](https://instagram.com/kmbzn)       
-| Univ.  | *Hanyang Univ.* (Class of '21)              
-| Major  | *Dept. of* Computer Science                 
-| HS     | *Joongdong High,* 112th                     
+| IG   | [@kmbzn](https://instagram.com/kmbzn)    
+| Univ. | *Hanyang Univ.* (Class of '21)       
+| Major | *Dept. of* Computer Science         
+| HS   | *Joongdong High,* 112th           
 
 <img src="https://ghchart.rshah.org/kmbzn" alt="GitHub chart">
 
@@ -32,7 +32,7 @@
 - 로고 디자인 및 visual identity 구성
 - Typography, layout 설계, UI styling
 - 산업디자인 및 제품 디자인 전반에 대한 관심
-  - 형태, 기능, 사용성, 사용자 경험 중심의 디자인 분석 및 평가
+ - 형태, 기능, 사용성, 사용자 경험 중심의 디자인 분석 및 평가
 
 ### IT 기기 활용 및 디지털 repair
 - 다양한 플랫폼 기반 기기 간의 workflow 연동
@@ -87,7 +87,7 @@ cd blog-v2
 
 6. Deploy it via GitHub Pages or your preferred static hosting.
 
-> This blog is powered by **[VuePress v2](https://v2.vuepress.vuejs.org/)** for static site generation.  
+> This blog is powered by **[VuePress v2](https://v2.vuepress.vuejs.org/)** for static site generation. 
 > Make sure you have **Node.js** installed before building the site.
 
 ## 📬 Contact
@@ -97,11 +97,11 @@ For inquiries or feedback, feel free to reach out via GitHub Issues or email at 
 ## 📝 License
 
 - You may freely **use, copy, modify, and distribute** the blog framework (excluding posts and images), for **both personal and commercial purposes**.
-- **However, all blog posts and resources are NOT licensed for commercial use.**  
-  - Do not reproduce, redistribute, or use them for profit without explicit permission.
+- **However, all blog posts and resources are NOT licensed for commercial use.** 
+ - Do not reproduce, redistribute, or use them for profit without explicit permission.
 
-> 이 블로그의 프레임워크(코드 및 레이아웃)는 **개인 및 상업적 용도로 자유롭게 사용, 복사, 수정, 배포할 수 있습니다.**  
-> 단, **게시물 및 첨부된 이미지 등의 콘텐츠는 상업적 사용이 금지**되며, 별도의 허가 없이 복제, 재배포하거나 수익을 목적으로 사용하는 것을 금합니다.  
+> 이 블로그의 프레임워크(코드 및 레이아웃)는 **개인 및 상업적 용도로 자유롭게 사용, 복사, 수정, 배포할 수 있습니다.** 
+> 단, **게시물 및 첨부된 이미지 등의 콘텐츠는 상업적 사용이 금지**되며, 별도의 허가 없이 복제, 재배포하거나 수익을 목적으로 사용하는 것을 금합니다. 
 > 콘텐츠의 상업적 활용이 필요하다면 이메일로 사전 문의해 주세요.
 
 If you wish to use any part of the content commercially, please contact me via email.

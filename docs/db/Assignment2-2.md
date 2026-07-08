@@ -21,11 +21,11 @@
 - `Assignment 2-1`에서 정의한 모든 요구사항을 충족하는 Application(애플리케이션) 구현
 - 백엔드 및 프론트엔드 구현에 사용하는 기술 stack에는 제약이 없으나 데이터베이스는 반드시 MySQL 사용
 - 아래 링크의 repository를 이용하여 과제 수행 후 github에 push(푸시)
-    - [https://classroom.github.com/a/B_yC7dWd](https://classroom.github.com/a/B_yC7dWd)
+  - [https://classroom.github.com/a/B_yC7dWd](https://classroom.github.com/a/B_yC7dWd)
 - 기본적으로 제공되는 스켈레톤 코드를 이용하거나, 이용하지 않는 경우에도 위의 링크의 repository에 과제 수행물 제출
 - UI(사용자 인터페이스)의 심미성은 평가 대상에서 제외, 기능 구현에 집중할 것.
 - UX(사용자 경험)에 악영향을 미치는 요소가 존재할 경우 **감점 발생**
-    - 예: 이전 페이지로 이동해야 할 상황에 뒤로 가기 버튼이 없는 경우
+  - 예: 이전 페이지로 이동해야 할 상황에 뒤로 가기 버튼이 없는 경우
 
 ## Deploy (recommend)
 - AWS, GCP 등 Cloud Service(클라우드 서비스)를 이용하여 개발한 Web application를 배포하고 공개적으로 접근 가능하도록 할 것.
@@ -42,16 +42,16 @@
 
 ## Wiki
 - Wiki에 포함되어야 하는 것들
-    - Web application 접속 주소/시연 영상 URL
-    - 구현한 application을 local(로컬)에서 실행하는 방법
-    - 구현한 추가 기능에 대한 설명
-    - application 구현 계획에 대한 설명 및 수행 내용
-    - 과제를 수행하며 겪었던 주요 문제 및 해결 과정
-    - 그 이외에 과제를 수행하며 알게 된 사실
+  - Web application 접속 주소/시연 영상 URL
+  - 구현한 application을 local(로컬)에서 실행하는 방법
+  - 구현한 추가 기능에 대한 설명
+  - application 구현 계획에 대한 설명 및 수행 내용
+  - 과제를 수행하며 겪었던 주요 문제 및 해결 과정
+  - 그 이외에 과제를 수행하며 알게 된 사실
 
 ## 기타 주의사항
 - GitHub repository name을 반드시 `Assignment2_2021024057`과 같은 양식으로 설정
 - `setting` 강의자료 참고
 - `README.md`에 본인 이름과 학번을 반드시 입력
 - 웹 호스팅과 관련된 정보들이 노출되지 않도록 유의
-    - API Key(API 키), AWS 계정 정보 등
+  - API Key(API 키), AWS 계정 정보 등

@@ -50,10 +50,10 @@ else clause
 - [Perl] use block `{}`
 ```perl
 if ($x > $y) {
-    $x = $y;
-    print "case 1";
+  $x = $y;
+  print "case 1";
 } else {
-    print "case 2";
+  print "case 2";
 }
 
 ```
@@ -63,23 +63,23 @@ if ($x > $y) {
 - [C] use braces
 ```c
 if (x > y){
-    x = y;
-    printf("case 1");
+  x = y;
+  printf("case 1");
 }
 
 ```
 - [Python] use indentation
 ```python
 if x > y :
-    x = y
-    print "case 1"
+  x = y
+  print "case 1"
 
 ```
 - [Ada] use `end if`
 ```ada
 if x > y then
-    x := y;
-    Put("case 1");
+  x := y;
+  Put("case 1");
 end if;
 
 ```
@@ -93,10 +93,10 @@ end if;
 - [Java] ambiguous “`if-then-else`”
 ```java
 if (sum == 0)
-    if (count == 0)
-        result = 0;
+  if (count == 0)
+    result = 0;
 else
-    result = 1;
+  result = 1;
 
 ```
 - Indentation is matter of Python and F#
@@ -104,11 +104,11 @@ else
 - [Java] unambiguous “`if-then-else`”
 ```java
 if (sum == 0) {
-    if (count == 0)
-        result = 0;
+  if (count == 0)
+    result = 0;
 }
 else
-    result = 1;
+  result = 1;
 
 ```
 - Force to match with the first
@@ -116,23 +116,23 @@ else
 - matched with the first:
 ```perl
 if (sum == 0) {
-    if (count == 0) {
-        result = 0;
-    }
+  if (count == 0) {
+    result = 0;
+  }
 } else {
-    result = 1;
+  result = 1;
 }
 
 ```
 - matched with the second:
 ```perl
 if (sum == 0) {
-    if (count == 0) {
-        result = 0;
-    }
-    else {
-        result = 1;
-    }
+  if (count == 0) {
+    result = 0;
+  }
+  else {
+    result = 1;
+  }
 }
 
 ```
@@ -141,33 +141,33 @@ if (sum == 0) {
 - [Ruby] use `end`
 ```ruby
 if a > b then
-    sum = sum + a
-    acount = acount + 1
+  sum = sum + a
+  acount = acount + 1
 else
-    sum = sum + b
-    bcount = bcount + 1
+  sum = sum + b
+  bcount = bcount + 1
 end
 
 ```
 - matched with the first:
 ```ruby
 if sum == 0 then
-    if count == 0 then
-        result = 0
-    end
+  if count == 0 then
+    result = 0
+  end
 else
-    result = 1
+  result = 1
 end
 
 ```
 - matched with the second:
 ```ruby
 if sum == 0 then
-    if count == 0 then
-        result = 0
-    else
-        result = 1
-    end
+  if count == 0 then
+    result = 0
+  else
+    result = 1
+  end
 end
 
 ```
@@ -186,8 +186,8 @@ end
 - [F#]
 ```fsharp
 let y =
-    if x > 0 then x
-    else 2 * x;;
+  if x > 0 then x
+  else 2 * x;;
 
 ```
 - `if`가 expression 즉: 값을 반드시 반환해야 함
@@ -213,10 +213,10 @@ else if (x == 3) ...
 - General form
 ```c
 switch (expression) {
-    case constant_expression1: statement1;
-    ...
-    case constantn: statement_n;
-    [default: statementn + 1]
+  case constant_expression1: statement1;
+  ...
+  case constantn: statement_n;
+  [default: statementn + 1]
 }
 
 ```
@@ -236,13 +236,13 @@ switch (expression) {
 - [C-based]
 ```c
 switch (index) {
-    case 1:
-    case 3: odd += 1;
-            sumodd += index;
-    case 2:
-    case 4: even += 1;
-            sumeven += index;
-    default: printf("Error in switch, index = %d\n", index);
+  case 1:
+  case 3: odd += 1;
+      sumodd += index;
+  case 2:
+  case 4: even += 1;
+      sumeven += index;
+  default: printf("Error in switch, index = %d\n", index);
 }
 
 ```
@@ -254,28 +254,28 @@ switch (index) {
 
 ```c
 switch (index) {
-    case 1:
-    case 3: odd += 1;
-            sumodd += index;
-            break;
-    case 2:
-    case 4: even += 1;
-            sumeven += index;
-            break;
-    default: printf("Error in switch, index = %d\n", index);
+  case 1:
+  case 3: odd += 1;
+      sumodd += index;
+      break;
+  case 2:
+  case 4: even += 1;
+      sumeven += index;
+      break;
+  default: printf("Error in switch, index = %d\n", index);
 }
 
 ```
 - No restrictions on the placement of the case expressions
 ```c
 switch (x)
-    default:
-        if (prime(x))
-            case 2: case 3: case 5: case 7:
-                process_prime(x);
-        else
-            case 4: case 6: case 8: case 9: case 10:
-                process_composite(x);
+  default:
+    if (prime(x))
+      case 2: case 3: case 5: case 7:
+        process_prime(x);
+    else
+      case 4: case 6: case 8: case 9: case 10:
+        process_composite(x);
 
 ```
 - → 코드 읽기 어려움 → 구조 깨짐 → powerful but dangerous
@@ -287,18 +287,18 @@ switch (x)
 
 ```csharp
 switch (value) {
-    case -1:
-        Negatives++;
-        break;
-    case 0:
-        Zeros++;
-        goto case 1;
-    case 1:
-        Positives++;
-        break;
-    default:
-        Console.WriteLine("Error in switch \n");
-        break;
+  case -1:
+    Negatives++;
+    break;
+  case 0:
+    Zeros++;
+    goto case 1;
+  case 1:
+    Positives++;
+    break;
+  default:
+    Console.WriteLine("Error in switch \n");
+    break;
 }
 
 ```
@@ -310,8 +310,8 @@ switch (value) {
 
 ```php
 switch ("10") {
-    case 10:
-        echo "match";
+  case 10:
+    echo "match";
 }
 
 ```
@@ -353,25 +353,25 @@ end
 - Nested two-way selectors or use special word (`else-if` clause)
 ```python
 if count < 10 :w
-    bag1 = True
+  bag1 = True
 elif count < 100 :
-    bag2 = True
+  bag2 = True
 elif count < 1000 :
-    bag3 = True
+  bag3 = True
 
 ```
 
 ```python
 if count < 10 :
-    bag1 = True
+  bag1 = True
 else :
-    if count < 100 :
-        bag2 = True
+  if count < 100 :
+    bag2 = True
+  else :
+    if count < 1000 :
+      bag3 = True
     else :
-        if count < 1000 :
-            bag3 = True
-        else :
-            bag4 = True
+      bag4 = True
 
 ```
 - It is not easy to represent above using switch statement -> So, `else-if` statement is not redundant
@@ -407,7 +407,7 @@ else :
 
 ```ada
 for variable in [reverse] discrete_range loop
-    ...
+  ...
 end loop;
 
 ```
@@ -416,7 +416,7 @@ end loop;
 ```ada
 Count : Float := 1.35;
 for Count in 1..10 loop
-    Sum := Sum + Count;
+  Sum := Sum + Count;
 end loop;
 
 ```
@@ -441,7 +441,7 @@ end loop;
 
 ```python
 for loop_variable in object:
-    ...
+  ...
 
 ```
 - 특징: 카운터 없음, iterable 기반, 값을 생성해서 순회
@@ -453,11 +453,11 @@ for loop_variable in object:
 
 ```fsharp
 let rec forLoop loopBody reps =
-    if reps <= 0 then
-        ()
-    else
-        loopBody()
-        forLoop loopBody, (reps - 1);;
+  if reps <= 0 then
+    ()
+  else
+    loopBody()
+    forLoop loopBody, (reps - 1);;
 
 ```
 - Counter-controlled loops 요약
@@ -497,14 +497,14 @@ while (x > 0) // O
 - Integral part of the exit (조건 자체가 exit을 결정, 구조적으로 깔끔, exit 위치 = 항상 루프 조건)
 ```c
 while (x > 0) {
-    ...
+  ...
 }
 
 ```
 - Separate condition and exit (조건과 exit이 분리됨, exit 위치가 중간으로 이동 가능)
 ```c
 while (true) {
-    if (x <= 0) break;
+  if (x <= 0) break;
 }
 
 ```
@@ -518,9 +518,9 @@ while (true) {
 
 ```c
 while (sum < 1000) {
-    getnext(value);
-    if (value < 0) continue;
-    sum += value;
+  getnext(value);
+  if (value < 0) continue;
+  sum += value;
 }
 
 ```
@@ -528,9 +528,9 @@ while (sum < 1000) {
 
 ```c
 while (sum < 1000) {
-    getnext(value);
-    if (value < 0) break;
-    sum += value;
+  getnext(value);
+  if (value < 0) break;
+  sum += value;
 }
 
 ```
@@ -538,9 +538,9 @@ while (sum < 1000) {
 
 ```c
 while (...) {
-    if (a) break;
-    ...
-    if (b) break;
+  if (a) break;
+  ...
+  if (b) break;
 }
 
 ```
@@ -556,7 +556,7 @@ while (...) {
 subtype MyRange is Integer range 0..99;
 MyArray: array (MyRange) of Integer;
 for Index in MyRange loop
-    ...
+  ...
 end loop;
 
 ```
@@ -574,21 +574,21 @@ end loop;
 
 ```python
 class MyCounter(object):
-    def __init__(self, low, high):
-        self.current = low
-        self.high = high
-    def __iter__(self):
-        return self
-    def __next__(self):
-        if self.current > self.high:
-            raise StopIteration
-        else:
-            self.current += 1
-            return self.current - 1
+  def __init__(self, low, high):
+    self.current = low
+    self.high = high
+  def __iter__(self):
+    return self
+  def __next__(self):
+    if self.current > self.high:
+      raise StopIteration
+    else:
+      self.current += 1
+      return self.current - 1
 
 c = MyCounter(1, 10)
 for i in c:
-    print(i, end=' ')
+  print(i, end=' ')
 # 실행 결과: 1 2 3 4 5 6 7 8 9 10
 
 ```
@@ -602,7 +602,7 @@ names.Add("Carol");
 names.Add("Alice");
 ...
 foreach (String name in names)
-    Console.WriteLine(name);
+  Console.WriteLine(name);
 
 ```
 - 특징: 내부 iterator 사용, 개발자는 몰라도 됨 → iterator 패턴 내장
@@ -687,7 +687,7 @@ fi
 - If `i = 0` and `j > i`, nondeterministically chooses between the first and third
 - If `i` is equal to `j` and is not zero, a run-time error occurs
 - Allow programmer to know that order of execution is irrelevant
-- 핵심 의미: 이건 “실행 방식”이 아니라 프로그램 명세(specification)에 가까움
+- 의미: 이건 “실행 방식”이 아니라 프로그램 명세(specification)에 가까움
 - 왜? “어떤 결과가 나오면 된다”, “어떤 경로로 가는지는 중요하지 않다”
 - 장점: reasoning 쉬움, concurrency 모델에 적합, 모든 경우를 명시하게 만듦
 - 단점: 실제 구현 어려움, 디버깅 어려움, 예측 불가
@@ -704,9 +704,9 @@ fi
 
 ```c
 if (x >= y)
-    max = x;
+  max = x;
 else
-    max = y;
+  max = y;
 
 ```
 

@@ -17,68 +17,68 @@
 
 ```java
 public interface I1 {
-    public I2 method1();
+  public I2 method1();
 }
 
 public interface I2 {
-    public void method2(I3 i3);
+  public void method2(I3 i3);
 }
 
 public interface I3 {
-    public void method3();
+  public void method3();
 }
 
 public final class C1 implements I1 {
-    private static C1 c1 = new C1();
-    private C1() {}
+  private static C1 c1 = new C1();
+  private C1() {}
 
-    public static C1 method4() { return c1; }
+  public static C1 method4() { return c1; }
 
-    public I2 method1() { return new C2(); }
+  public I2 method1() { return new C2(); }
 
-    private static class C2 implements I2 {
-        C2() {}
+  private static class C2 implements I2 {
+    C2() {}
 
-        public void method2(I3 i3) {
-            i3.method3();
-        }
+    public void method2(I3 i3) {
+      i3.method3();
     }
+  }
 }
 
 public class C3 implements I3 {
-    private final String s;
+  private final String s;
 
-    public C3(String s) {
-        this.s = s;
-    }
+  public C3(String s) {
+    this.s = s;
+  }
 
-    public void method3() {
-        System.out.print(s);
-    }
+  public void method3() {
+    System.out.print(s);
+  }
 }
 
 public class C4 implements I3 {
-    private final I3 i3;
+  private final I3 i3;
 
-    public C4(I3 i3) {
-        this.i3 = i3;
-    }
+  public C4(I3 i3) {
+    this.i3 = i3;
+  }
 
-    public void method3() {
-        System.out.print("*");
-        i3.method3();
-    }
+  public void method3() {
+    System.out.print("*");
+    i3.method3();
+  }
 }
 
 public class Main {
-    public static final void main(String[] args) {
-        final I3 x1 = new C4(new C3("*"));
-        final I2 x2 = C1.method4().method1();
-        for(int i = 0; i < 100; i++) {
-            x2.method2(x1);
-        }
-        x2.method2(new C4(new C3("")));
+  public static final void main(String[] args) {
+    final I3 x1 = new C4(new C3("*"));
+    final I2 x2 = C1.method4().method1();
+    for(int i = 0; i < 100; i++) {
+      x2.method2(x1);
     }
+    x2.method2(new C4(new C3("")));
+  }
 }
 ```
 
@@ -89,11 +89,11 @@ public class Main {
 
 ### 3. 소프트웨어 품질보증 활동에 관한 질문에 답하시오. (10점)
 
-1. 소프트웨어 테스트 자동화가 왜 중요한가 서술하시오. (5점)  
-    - 소프트웨어 테스트 자동화가 중요한 이유는 회귀 테스트(Regression Testing)의 효율성을 극대화할 수 있기 때문이다. 소프트웨어가 수정되거나 기능이 추가될 때마다 기존 기능이 정상적으로 동작하는지 반복적으로 검증해야 하는데, 자동화는 이를 빠르고 정확하게 수행하여 개발 속도를 높여준다. 또한 장기적인 관점에서 테스트 수행에 드는 인력과 시간을 절감하여 전체적인 개발 비용을 낮추는 효과가 있다. 마지막으로 사람이 테스트를 수행할 때 발생할 수 있는 피로도나 실수에 의한 부정확성을 배제할 수 있어 테스트 결과의 신뢰성을 보장한다.
+1. 소프트웨어 테스트 자동화가 왜 중요한가 서술하시오. (5점) 
+  - 소프트웨어 테스트 자동화가 중요한 이유는 회귀 테스트(Regression Testing)의 효율성을 극대화할 수 있기 때문이다. 소프트웨어가 수정되거나 기능이 추가될 때마다 기존 기능이 정상적으로 동작하는지 반복적으로 검증해야 하는데, 자동화는 이를 빠르고 정확하게 수행하여 개발 속도를 높여준다. 또한 장기적인 관점에서 테스트 수행에 드는 인력과 시간을 절감하여 전체적인 개발 비용을 낮추는 효과가 있다. 마지막으로 사람이 테스트를 수행할 때 발생할 수 있는 피로도나 실수에 의한 부정확성을 배제할 수 있어 테스트 결과의 신뢰성을 보장한다.
 
 2. 소프트웨어 테스트만 잘 하면 다른 소프트웨어 품질보증 활동을 하지 않아도 되는가? 맞다면 그 이유를, 아니라면 어떤 상황에서 어떤 다른 소프트웨어 품질보증 활동이 필요한지 서술하시오. (5점)
-    - 소프트웨어 테스트만 잘한다고 해서 다른 품질보증 활동이 필요 없는 것은 아니다. 테스팅은 이미 작성된 코드에서 결함을 발견하는 활동일 뿐, 결함이 유입되는 것 자체를 예방하거나 코드의 구조적 품질을 보증하지는 못하기 때문이다. 따라서 요구사항 정의나 설계 단계에서 논리적 오류를 사전에 발견하기 위한 정형 기술 검토(Formal Inspection)가 필요하다. 또한 코드를 실행하지 않고도 코딩 표준 준수 여부나 잠재적인 메모리 누수, 스택 오버플로우 등을 분석할 수 있는 정적 분석(Static Analysis) 활동이 병행되어야 소프트웨어의 품질을 온전하게 보증할 수 있다.
+  - 소프트웨어 테스트만 잘한다고 해서 다른 품질보증 활동이 필요 없는 것은 아니다. 테스팅은 이미 작성된 코드에서 결함을 발견하는 활동일 뿐, 결함이 유입되는 것 자체를 예방하거나 코드의 구조적 품질을 보증하지는 못하기 때문이다. 따라서 요구사항 정의나 설계 단계에서 논리적 오류를 사전에 발견하기 위한 정형 기술 검토(Formal Inspection)가 필요하다. 또한 코드를 실행하지 않고도 코딩 표준 준수 여부나 잠재적인 메모리 누수, 스택 오버플로우 등을 분석할 수 있는 정적 분석(Static Analysis) 활동이 병행되어야 소프트웨어의 품질을 온전하게 보증할 수 있다.
 
 ### 4. 다음 주어진 코드에 데이터 흐름 (Data-flow) 정적 분석을 적용하여 $0$으로 나누는 연산이 발생하는지 분석하고자 한다. 이 때 다음 질문에 답하시오. (단, x, y, z는 정수 타입이 아닌 일반적인 숫자 타입이라 가정하고, `input()` 함수는 사용자로부터 입력받은 임의의 숫자값을 리턴하는 함수이다.) (20점)
 
@@ -102,16 +102,16 @@ x = input();
 y = x;
 z = x;
 while (y > 0) {
-    x = x/z;
-    y = y-1;
-    z -= 2;
+  x = x/z;
+  y = y-1;
+  z -= 2;
 }
 ```
 
 1. 데이터 흐름 정적 분석을 구현하기 위한 Abstract domain, Transfer function, Join function을 정의하시오. (10점)
-    - 데이터 흐름 정적 분석을 위해 변수가 가질 수 있는 값의 범위를 나타내는 구간(Interval) 도메인을 추상 도메인(Abstract Domain)으로 정의한다. 이때 도메인 $D$는 정수 집합과 무한대를 포함하는 구간 $[l, u]$들의 집합으로 표현된다. 전이 함수(Transfer Function)는 프로그램의 각 문장이 실행될 때 구간의 변화를 계산하는 함수로, 대입문에서는 해당 값의 구간을 갱신하고 산술 연산에서는 구간 산술(Interval Arithmetic)을 적용하여 결과 범위를 계산하도록 정의한다. 합류 함수(Join Function)는 제어 흐름이 갈라졌다가 다시 합쳐지는 지점에서 두 경로의 구간을 모두 포함하는 최소한의 구간을 구하는 합집합(Interval Union) 연산으로 정의한다.
+  - 데이터 흐름 정적 분석을 위해 변수가 가질 수 있는 값의 범위를 나타내는 구간(Interval) 도메인을 추상 도메인(Abstract Domain)으로 정의한다. 이때 도메인 $D$는 정수 집합과 무한대를 포함하는 구간 $[l, u]$들의 집합으로 표현된다. 전이 함수(Transfer Function)는 프로그램의 각 문장이 실행될 때 구간의 변화를 계산하는 함수로, 대입문에서는 해당 값의 구간을 갱신하고 산술 연산에서는 구간 산술(Interval Arithmetic)을 적용하여 결과 범위를 계산하도록 정의한다. 합류 함수(Join Function)는 제어 흐름이 갈라졌다가 다시 합쳐지는 지점에서 두 경로의 구간을 모두 포함하는 최소한의 구간을 구하는 합집합(Interval Union) 연산으로 정의한다.
 2. 데이터 흐름 정적 분석을 적용하여 $0$으로 나누는 연산이 발생하는지 분석하시오. 흐름 그래프의 각 노드마다 정적 분석 결과를 표시해야 한다. (15점)
-    - 정적 분석을 수행하면 $0$으로 나누는 연산이 발생할 가능성이 있음을 탐지할 수 있다. 분석 과정은 다음과 같다. 먼저 초기 상태에서 입력값 `x`는 모든 정수 범위를 가질 수 있으므로 `x`, `y`, `z` 모두 $[-\infty, +\infty]$로 초기화된다. `while` 루프의 진입 조건인 `y > 0`을 만족하기 위해 루프 내부에서 `y`와 `z`는 $[1, +\infty]$의 범위를 갖는다. 첫 번째 반복에서는 `z`가 1 이상의 양수이므로 `x/z` 연산이 안전하다. 그러나 루프 내에서 `z -= 2` 연산이 수행되면 `z`의 범위는 $[-1, +\infty]$로 확장된다. 이후 루프가 반복될 때 합류 함수에 의해 `z`의 범위는 $[-1, +\infty]$ 상태로 유지되며, 이 구간에는 0이 포함된다. 따라서 `x = x / z` 구문에서 제수가 0이 될 수 있는 가능성이 발견되므로, 해당 노드에 '$0$으로 나누기 오류(Division by Zero)' 경고를 표시해야 한다.
+  - 정적 분석을 수행하면 $0$으로 나누는 연산이 발생할 가능성이 있음을 탐지할 수 있다. 분석 과정은 다음과 같다. 먼저 초기 상태에서 입력값 `x`는 모든 정수 범위를 가질 수 있으므로 `x`, `y`, `z` 모두 $[-\infty, +\infty]$로 초기화된다. `while` 루프의 진입 조건인 `y > 0`을 만족하기 위해 루프 내부에서 `y`와 `z`는 $[1, +\infty]$의 범위를 갖는다. 첫 번째 반복에서는 `z`가 1 이상의 양수이므로 `x/z` 연산이 안전하다. 그러나 루프 내에서 `z -= 2` 연산이 수행되면 `z`의 범위는 $[-1, +\infty]$로 확장된다. 이후 루프가 반복될 때 합류 함수에 의해 `z`의 범위는 $[-1, +\infty]$ 상태로 유지되며, 이 구간에는 0이 포함된다. 따라서 `x = x / z` 구문에서 제수가 0이 될 수 있는 가능성이 발견되므로, 해당 노드에 '$0$으로 나누기 오류(Division by Zero)' 경고를 표시해야 한다.
 
 ### 5. 다음 삼각형 판별 C 프로그램에 대해 질문에 답하시오. (20점)
 
@@ -119,52 +119,52 @@ while (y > 0) {
 #include <stdio.h>
 
 int main() {
-    int a, b, c, temp;
-    printf("Enter the lengths of the three sides: ");
-    scanf("%d %d %d", &a, &b, &c);
-    
-    if (a <= 0 || b <= 0 || c <= 0) {
-        printf("Side lengths must be positive integers.\n");
-        return 1;
-    }
-    
-    if (a > b) {
-        temp = a; a = b; b = temp;
-    }
-    if (b > c) {
-        temp = b; b = c; c = temp;
-    }
-    if (a > b) {
-        temp = a; a = b; b = temp;
-    }
-    
-    if (a + b > c) {
-        if (a == b && b == c) {
-            printf("Equilateral triangle.\n");
-        } else if (a == b || b == c || c == a) {
-            printf("Isosceles triangle.\n");
-        } else {
-            printf("Scalene triangle.\n");
-        }
-        
-        if (a * a + b * b == c * c) {
-            printf("Also right triangle.\n");
-        }
+  int a, b, c, temp;
+  printf("Enter the lengths of the three sides: ");
+  scanf("%d %d %d", &a, &b, &c);
+  
+  if (a <= 0 || b <= 0 || c <= 0) {
+    printf("Side lengths must be positive integers.\n");
+    return 1;
+  }
+  
+  if (a > b) {
+    temp = a; a = b; b = temp;
+  }
+  if (b > c) {
+    temp = b; b = c; c = temp;
+  }
+  if (a > b) {
+    temp = a; a = b; b = temp;
+  }
+  
+  if (a + b > c) {
+    if (a == b && b == c) {
+      printf("Equilateral triangle.\n");
+    } else if (a == b || b == c || c == a) {
+      printf("Isosceles triangle.\n");
     } else {
-        printf("Do not form a triangle.\n");
+      printf("Scalene triangle.\n");
     }
     
-    return 0;
+    if (a * a + b * b == c * c) {
+      printf("Also right triangle.\n");
+    }
+  } else {
+    printf("Do not form a triangle.\n");
+  }
+  
+  return 0;
 }
 ```
 
 1. 라인 커버리지 100%를 달성하기 위해 Test Case를 작성하시오. (10점)
-    - 라인 커버리지 100%를 달성하기 위해서는 프로그램 내의 모든 실행 경로를 최소한 한 번씩은 통과해야 한다. 이를 위해 다음과 같은 테스트 케이스들이 필요하다.
-        1. 입력값이 $0$ 이하인 경우를 검증하기 위해 `0, 5, 5`를 입력한다.
-        2. 내부 정렬 로직과 직각 삼각형 조건을 모두 수행하기 위해 `5, 4, 3`을 입력한다(내부에서 `3, 4, 5`로 정렬됨).
-        3. 정삼각형 분기를 수행하기 위해 `2, 2, 2`를 입력한다.
-        4. 이등변 삼각형 분기를 수행하기 위해 `2, 2, 3`을 입력한다.
-        5. 삼각형이 성립되지 않는 조건을 수행하기 위해 `1, 2, 5`를 입력한다.
-    - 이 케이스들을 모두 실행하면 프로그램의 모든 문장이 적어도 한 번씩 실행된다.
+  - 라인 커버리지 100%를 달성하기 위해서는 프로그램 내의 모든 실행 경로를 최소한 한 번씩은 통과해야 한다. 이를 위해 다음과 같은 테스트 케이스들이 필요하다.
+    1. 입력값이 $0$ 이하인 경우를 검증하기 위해 `0, 5, 5`를 입력한다.
+    2. 내부 정렬 로직과 직각 삼각형 조건을 모두 수행하기 위해 `5, 4, 3`을 입력한다(내부에서 `3, 4, 5`로 정렬됨).
+    3. 정삼각형 분기를 수행하기 위해 `2, 2, 2`를 입력한다.
+    4. 이등변 삼각형 분기를 수행하기 위해 `2, 2, 3`을 입력한다.
+    5. 삼각형이 성립되지 않는 조건을 수행하기 위해 `1, 2, 5`를 입력한다.
+  - 이 케이스들을 모두 실행하면 프로그램의 모든 문장이 적어도 한 번씩 실행된다.
 2. 테스트를 통해 100% 라인 커버리지를 달성했을 때 주어진 프로그램에 버그가 없다고 보장할 수 있는가? 보장할 수 있다면 그 이유를 설명하고, 보장할 수 없다면 왜 보장할 수 없는지 구체적인 사례를 들어 설명하시오. (10점)
-    - 테스트를 통해 100% 라인 커버리지를 달성했더라도 프로그램에 버그가 없다고 보장할 수는 없다. 라인 커버리지는 구문이 실행되었는지만 확인할 뿐, 논리적인 오류나 데이터 값에 따른 런타임 에러까지 검증하지 못하기 때문이다. 구체적인 사례로 이 프로그램의 직각 삼각형 판별 로직인 `a * a + b * b == c * c` 부분을 들 수 있다. 만약 입력값 `a`, `b`, `c`에 매우 큰 정수(예: 46341 이상)가 입력될 경우, 제곱 연산 과정에서 정수형 변수의 표현 범위를 초과하는 정수 오버플로우(Integer Overflow)가 발생하여 잘못된 결과를 출력할 수 있다. 라인 커버리지 테스트는 해당 식을 실행만 하면 통과되므로 이러한 잠재적 결함을 찾아낼 수 없다.
+  - 테스트를 통해 100% 라인 커버리지를 달성했더라도 프로그램에 버그가 없다고 보장할 수는 없다. 라인 커버리지는 구문이 실행되었는지만 확인할 뿐, 논리적인 오류나 데이터 값에 따른 런타임 에러까지 검증하지 못하기 때문이다. 구체적인 사례로 이 프로그램의 직각 삼각형 판별 로직인 `a * a + b * b == c * c` 부분을 들 수 있다. 만약 입력값 `a`, `b`, `c`에 매우 큰 정수(예: 46341 이상)가 입력될 경우, 제곱 연산 과정에서 정수형 변수의 표현 범위를 초과하는 정수 오버플로우(Integer Overflow)가 발생하여 잘못된 결과를 출력할 수 있다. 라인 커버리지 테스트는 해당 식을 실행만 하면 통과되므로 이러한 잠재적 결함을 찾아낼 수 없다.
