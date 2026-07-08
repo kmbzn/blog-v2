@@ -1,16 +1,3 @@
 import comp from "/home/kmbzn/blog-v2/docs/.vuepress/.temp/pages/se/15.html.vue"
 const data = JSON.parse("{\"path\":\"/se/15.html\",\"title\":\"15. Inspections / Code Reviews\",\"lang\":\"ko-KR\",\"frontmatter\":{\"description\":\"15. Inspections / Code Reviews Learning Goals 다양한 Formality level을 가진 Peer review의 형태 이해 Commit review system을 사용한 건설적인 Modern code review 참여 Code review에서 좋은 Checklists의 이점과 속성...\",\"sitemap\":false,\"head\":[[\"script\",{\"type\":\"application/ld+json\"},\"{\\\"@context\\\":\\\"https://schema.org\\\",\\\"@type\\\":\\\"Article\\\",\\\"headline\\\":\\\"15. Inspections / Code Reviews\\\",\\\"image\\\":[\\\"https://kmbzn.com/images/og.png\\\"],\\\"dateModified\\\":\\\"2025-11-29T06:46:25.000Z\\\",\\\"author\\\":[]}\"],[\"meta\",{\"property\":\"og:url\",\"content\":\"https://kmbzn.com/se/15.html\"}],[\"meta\",{\"property\":\"og:title\",\"content\":\"15. Inspections / Code Reviews\"}],[\"meta\",{\"property\":\"og:description\",\"content\":\"15. Inspections / Code Reviews Learning Goals 다양한 Formality level을 가진 Peer review의 형태 이해 Commit review system을 사용한 건설적인 Modern code review 참여 Code review에서 좋은 Checklists의 이점과 속성...\"}],[\"meta\",{\"property\":\"og:type\",\"content\":\"article\"}],[\"meta\",{\"property\":\"og:image\",\"content\":\"https://kmbzn.com/images/og.png\"}],[\"meta\",{\"property\":\"og:locale\",\"content\":\"ko-KR\"}],[\"meta\",{\"property\":\"og:updated_time\",\"content\":\"2025-11-29T06:46:25.000Z\"}],[\"meta\",{\"property\":\"article:modified_time\",\"content\":\"2025-11-29T06:46:25.000Z\"}]]},\"git\":{\"createdTime\":1764309303000,\"updatedTime\":1764398785000,\"contributors\":[{\"name\":\"kmbzn\",\"username\":\"kmbzn\",\"email\":\"kmbzn24@gmail.com\",\"commits\":2,\"url\":\"https://github.com/kmbzn\"}],\"changelog\":[{\"hash\":\"c537749f4d3bc5506382a740638d907397ada1ac\",\"time\":1764398785000,\"email\":\"kmbzn24@gmail.com\",\"author\":\"kmbzn\",\"message\":\"new build\"},{\"hash\":\"4062b1472d26318057ccbc92972d0c6e452aba97\",\"time\":1764309303000,\"email\":\"kmbzn24@gmail.com\",\"author\":\"kmbzn\",\"message\":\"Refactor code structure for improved readability and maintainability\"}]},\"filePathRelative\":\"se/15.md\",\"autoDesc\":true}")
 export { comp, data }
-
-if (import.meta.webpackHot) {
-  import.meta.webpackHot.accept()
-  if (__VUE_HMR_RUNTIME__.updatePageData) {
-    __VUE_HMR_RUNTIME__.updatePageData(data)
-  }
-}
-
-if (import.meta.hot) {
-  import.meta.hot.accept(({ data }) => {
-    __VUE_HMR_RUNTIME__.updatePageData(data)
-  })
-}

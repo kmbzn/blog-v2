@@ -1,16 +1,3 @@
 import comp from "/home/kmbzn/blog-v2/docs/.vuepress/.temp/pages/ai/2.html.vue"
 const data = JSON.parse("{\"path\":\"/ai/2.html\",\"title\":\"2. Basics; Linear Algebra (2), Search (1)\",\"lang\":\"ko-KR\",\"frontmatter\":{\"description\":\"2. Basics; Linear Algebra (2), Search (1) 고유값과 고유벡터 (Eigenvalues and Eigenvectors) 정의 정방 행렬 A∈Rn×n이 주어졌을 때, λ∈C는 A의 고유값(eigenvalue), x∈Cn는 해당하는 고유벡터(eigenvector) Ax=λx,x=0 A를 벡...\",\"sitemap\":false,\"head\":[[\"script\",{\"type\":\"application/ld+json\"},\"{\\\"@context\\\":\\\"https://schema.org\\\",\\\"@type\\\":\\\"Article\\\",\\\"headline\\\":\\\"2. Basics; Linear Algebra (2), Search (1)\\\",\\\"image\\\":[\\\"https://kmbzn.com/images/og.png\\\"],\\\"dateModified\\\":\\\"2025-11-28T04:49:36.000Z\\\",\\\"author\\\":[]}\"],[\"meta\",{\"property\":\"og:url\",\"content\":\"https://kmbzn.com/ai/2.html\"}],[\"meta\",{\"property\":\"og:title\",\"content\":\"2. Basics; Linear Algebra (2), Search (1)\"}],[\"meta\",{\"property\":\"og:description\",\"content\":\"2. Basics; Linear Algebra (2), Search (1) 고유값과 고유벡터 (Eigenvalues and Eigenvectors) 정의 정방 행렬 A∈Rn×n이 주어졌을 때, λ∈C는 A의 고유값(eigenvalue), x∈Cn는 해당하는 고유벡터(eigenvector) Ax=λx,x=0 A를 벡...\"}],[\"meta\",{\"property\":\"og:type\",\"content\":\"article\"}],[\"meta\",{\"property\":\"og:image\",\"content\":\"https://kmbzn.com/images/og.png\"}],[\"meta\",{\"property\":\"og:locale\",\"content\":\"ko-KR\"}],[\"meta\",{\"property\":\"og:updated_time\",\"content\":\"2025-11-28T04:49:36.000Z\"}],[\"meta\",{\"property\":\"article:modified_time\",\"content\":\"2025-11-28T04:49:36.000Z\"}]]},\"git\":{\"createdTime\":1761133008000,\"updatedTime\":1764305376000,\"contributors\":[{\"name\":\"kmbzn\",\"username\":\"kmbzn\",\"email\":\"kmbzn24@gmail.com\",\"commits\":5,\"url\":\"https://github.com/kmbzn\"}],\"changelog\":[{\"hash\":\"f81f9042e7888855a506f92261c74aaa2d86aa2a\",\"time\":1764305376000,\"email\":\"kmbzn24@gmail.com\",\"author\":\"kmbzn\",\"message\":\"update npm\"},{\"hash\":\"2b6ce4c02350fff4e93418f95fdbe181de0cbbb0\",\"time\":1761176477000,\"email\":\"kmbzn24@gmail.com\",\"author\":\"kmbzn\",\"message\":\"Add comprehensive documentation on Information Theory, Probabilistic Reasoning (2), and (3) with detailed explanations, examples, and algorithms for Bayesian networks and sampling methods.\"},{\"hash\":\"0c0cc25ba6d2b981301159f68a2bcdccc5171cfc\",\"time\":1761166954000,\"email\":\"kmbzn24@gmail.com\",\"author\":\"kmbzn\",\"message\":\"문서 개선: 수학식의 형식 일관성 유지 및 설명 추가\"},{\"hash\":\"ea27172d6f4f9d0cc900711ffa16559abc0967bb\",\"time\":1761161960000,\"email\":\"kmbzn24@gmail.com\",\"author\":\"kmbzn\",\"message\":\"문서 개선: 검색 알고리즘 섹션 추가 및 관련 내용 정리\"},{\"hash\":\"b7921c2fd9c619e902438f2d0369785e4d1e314c\",\"time\":1761133008000,\"email\":\"kmbzn24@gmail.com\",\"author\":\"kmbzn\",\"message\":\"문서 개선: 선형 대수 검색 섹션 추가\"}]},\"filePathRelative\":\"ai/2.md\",\"autoDesc\":true}")
 export { comp, data }
-
-if (import.meta.webpackHot) {
-  import.meta.webpackHot.accept()
-  if (__VUE_HMR_RUNTIME__.updatePageData) {
-    __VUE_HMR_RUNTIME__.updatePageData(data)
-  }
-}
-
-if (import.meta.hot) {
-  import.meta.hot.accept(({ data }) => {
-    __VUE_HMR_RUNTIME__.updatePageData(data)
-  })
-}

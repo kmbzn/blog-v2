@@ -12,7 +12,7 @@ GitHub 링크: [https://github.com/kmbzn/project-winemoji](https://github.com/km
 
 **Winemoji** is a specialized font designed to resolve the issue of broken emoji fonts (tofu) when using Windows-based applications like KakaoTalk within the Wine environment on Linux systems. It was created with the goal of providing an optimal user experience for those who have previously encountered inconvenience due to this problem.
 
-![tofu](tofu.webp)
+![tofu](./tofu.webp)
 
 ## 설치 방법
 
@@ -34,18 +34,18 @@ wine 10.0
 
 ### 💬 카카오톡 적용 방법
 
-![settings](settings.webp)
+![settings](./settings.webp)
 
 1. ⚙️ → **설정** → **화면** → **기본** → **글씨체** 메뉴로 이동합니다.
 2. 글씨체 선택에서 **Winemoji NBG** (or **와인모지 NBG**)를 선택합니다.
 3. 카카오톡을 재시작하면 한글과 이모지가 정상적으로 출력되는 것을 확인할 수 있습니다.
 
-![](restart.webp)
+![](./restart.webp)
 
 :::warning
 해당 구현 방식의 한계로 low surrogate 영역에 해당하는 1,024개 이하의 이모지만 사용 가능합니다. Apple의 자체 조합형 이모지나 일부 최신 이모지들의 경우 **여전히 표시되지 않을 수** 있습니다.
 :::
-![chat](chat.webp)
+![chat](./chat.webp)
 
 ## Why not color emojis?
 

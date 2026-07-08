@@ -1,16 +1,3 @@
 import comp from "/home/kmbzn/blog-v2/docs/.vuepress/.temp/pages/db/7-1.html.vue"
 const data = JSON.parse("{\"path\":\"/db/7-1.html\",\"title\":\"7. Relational Database Design (1)\",\"lang\":\"ko-KR\",\"frontmatter\":{\"description\":\"7. Relational Database Design (1) Introduction Relational Database Design(관계형 데이터베이스 설계) 정보 요구사항에 맞는 \\\"좋은\\\" relation schema(relation schema)의 집합을 찾는 과정 설계 목표 회피 가능한 redundancy 없이 ...\",\"sitemap\":false,\"head\":[[\"script\",{\"type\":\"application/ld+json\"},\"{\\\"@context\\\":\\\"https://schema.org\\\",\\\"@type\\\":\\\"Article\\\",\\\"headline\\\":\\\"7. Relational Database Design (1)\\\",\\\"image\\\":[\\\"https://kmbzn.com/images/og.png\\\"],\\\"dateModified\\\":\\\"2025-12-11T22:02:37.000Z\\\",\\\"author\\\":[]}\"],[\"meta\",{\"property\":\"og:url\",\"content\":\"https://kmbzn.com/db/7-1.html\"}],[\"meta\",{\"property\":\"og:title\",\"content\":\"7. Relational Database Design (1)\"}],[\"meta\",{\"property\":\"og:description\",\"content\":\"7. Relational Database Design (1) Introduction Relational Database Design(관계형 데이터베이스 설계) 정보 요구사항에 맞는 \\\"좋은\\\" relation schema(relation schema)의 집합을 찾는 과정 설계 목표 회피 가능한 redundancy 없이 ...\"}],[\"meta\",{\"property\":\"og:type\",\"content\":\"article\"}],[\"meta\",{\"property\":\"og:image\",\"content\":\"https://kmbzn.com/images/og.png\"}],[\"meta\",{\"property\":\"og:locale\",\"content\":\"ko-KR\"}],[\"meta\",{\"property\":\"og:updated_time\",\"content\":\"2025-12-11T22:02:37.000Z\"}],[\"meta\",{\"property\":\"article:modified_time\",\"content\":\"2025-12-11T22:02:37.000Z\"}]]},\"git\":{\"createdTime\":1760649704000,\"updatedTime\":1765490557000,\"contributors\":[{\"name\":\"kmbzn\",\"username\":\"kmbzn\",\"email\":\"kmbzn24@gmail.com\",\"commits\":3,\"url\":\"https://github.com/kmbzn\"},{\"name\":\"Byungjun Kim\",\"username\":\"\",\"email\":\"kmbzn24@gmail.com\",\"commits\":1}],\"changelog\":[{\"hash\":\"4803658c3d1a310eb04dd4cddd8242ad9591eff8\",\"time\":1765490557000,\"email\":\"kmbzn24@gmail.com\",\"author\":\"Byungjun Kim\",\"message\":\"update db final\"},{\"hash\":\"f81f9042e7888855a506f92261c74aaa2d86aa2a\",\"time\":1764305376000,\"email\":\"kmbzn24@gmail.com\",\"author\":\"kmbzn\",\"message\":\"update npm\"},{\"hash\":\"7cfc2e1c2f82ab989dc9cc877d22e495ad1c0801\",\"time\":1762176662000,\"email\":\"kmbzn24@gmail.com\",\"author\":\"kmbzn\",\"message\":\"Update documentation for clarity and consistency\"},{\"hash\":\"9ad86bdf5294b4a8d497bfdc0647917dfd3d3bfa\",\"time\":1760649704000,\"email\":\"kmbzn24@gmail.com\",\"author\":\"kmbzn\",\"message\":\"Add comprehensive documentation on relational database design, covering functional dependency theory, closure of functional dependencies, canonical cover, and normalization processes including BCNF and 3NF decomposition algorithms.\"}]},\"filePathRelative\":\"db/7-1.md\",\"autoDesc\":true}")
 export { comp, data }
-
-if (import.meta.webpackHot) {
-  import.meta.webpackHot.accept()
-  if (__VUE_HMR_RUNTIME__.updatePageData) {
-    __VUE_HMR_RUNTIME__.updatePageData(data)
-  }
-}
-
-if (import.meta.hot) {
-  import.meta.hot.accept(({ data }) => {
-    __VUE_HMR_RUNTIME__.updatePageData(data)
-  })
-}

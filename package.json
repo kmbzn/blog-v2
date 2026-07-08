@@ -9,18 +9,18 @@
     "build": "vuepress build docs"
   },
   "devDependencies": {
-    "@vuepress/bundler-vite": "^2.0.0-rc.23",
-    "@vuepress/client": "^2.0.0-rc.26",
-    "@vuepress/plugin-markdown-math": "^2.0.0-rc.118",
-    "@vuepress/plugin-seo": "^2.0.0-rc.118",
-    "@vuepress/plugin-sitemap": "^2.0.0-rc.118",
-    "@vuepress/theme-default": "^2.0.0-rc.23",
-    "baseline-browser-mapping": "^2.10.27",
-    "katex": "^0.16.22",
+    "@vuepress/bundler-vite": "^2.0.0-rc.30",
+    "@vuepress/client": "^2.0.0-rc.30",
+    "@vuepress/plugin-markdown-math": "^2.0.0-rc.131",
+    "@vuepress/plugin-seo": "^2.0.0-rc.131",
+    "@vuepress/plugin-sitemap": "^2.0.0-rc.131",
+    "@vuepress/theme-default": "^2.0.0-rc.131",
+    "baseline-browser-mapping": "^2.10.42",
+    "katex": "^0.16.47",
     "mathjax-full": "^3.2.2",
-    "sass-embedded": "^1.86.0",
-    "typescript": "^5.8.3",
-    "vue": "^3.5.13",
-    "vuepress": "^2.0.0-rc.26"
+    "sass-embedded": "^1.100.0",
+    "typescript": "^5.9.3",
+    "vue": "^3.5.39",
+    "vuepress": "^2.0.0-rc.30"
   }
 }

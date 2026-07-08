@@ -1,16 +1,3 @@
 import comp from "/home/kmbzn/blog-v2/docs/.vuepress/.temp/pages/se/3.html.vue"
 const data = JSON.parse("{\"path\":\"/se/3.html\",\"title\":\"3. Process\",\"lang\":\"ko-KR\",\"frontmatter\":{\"description\":\"3. Process Learning Goals Process(프로세스)의 중요성 인식 Progress(진행 상황) 측정의 어려움 이해 Risks(위험) 식별 및 관리 Planning(계획) 및 progress(진행 상황) 측정을 위한 milestones(마일스톤) 사용 Backlogs(백로그) 및 user stori...\",\"sitemap\":false,\"head\":[[\"script\",{\"type\":\"application/ld+json\"},\"{\\\"@context\\\":\\\"https://schema.org\\\",\\\"@type\\\":\\\"Article\\\",\\\"headline\\\":\\\"3. Process\\\",\\\"image\\\":[\\\"https://kmbzn.com/images/og.png\\\"],\\\"dateModified\\\":\\\"2025-11-28T04:49:36.000Z\\\",\\\"author\\\":[]}\"],[\"meta\",{\"property\":\"og:url\",\"content\":\"https://kmbzn.com/se/3.html\"}],[\"meta\",{\"property\":\"og:title\",\"content\":\"3. Process\"}],[\"meta\",{\"property\":\"og:description\",\"content\":\"3. Process Learning Goals Process(프로세스)의 중요성 인식 Progress(진행 상황) 측정의 어려움 이해 Risks(위험) 식별 및 관리 Planning(계획) 및 progress(진행 상황) 측정을 위한 milestones(마일스톤) 사용 Backlogs(백로그) 및 user stori...\"}],[\"meta\",{\"property\":\"og:type\",\"content\":\"article\"}],[\"meta\",{\"property\":\"og:image\",\"content\":\"https://kmbzn.com/images/og.png\"}],[\"meta\",{\"property\":\"og:locale\",\"content\":\"ko-KR\"}],[\"meta\",{\"property\":\"og:updated_time\",\"content\":\"2025-11-28T04:49:36.000Z\"}],[\"meta\",{\"property\":\"article:modified_time\",\"content\":\"2025-11-28T04:49:36.000Z\"}]]},\"git\":{\"createdTime\":1760995141000,\"updatedTime\":1764305376000,\"contributors\":[{\"name\":\"kmbzn\",\"username\":\"kmbzn\",\"email\":\"kmbzn24@gmail.com\",\"commits\":4,\"url\":\"https://github.com/kmbzn\"}],\"changelog\":[{\"hash\":\"f81f9042e7888855a506f92261c74aaa2d86aa2a\",\"time\":1764305376000,\"email\":\"kmbzn24@gmail.com\",\"author\":\"kmbzn\",\"message\":\"update npm\"},{\"hash\":\"c0c895ae32b38e9fc744dff4b09db95c431c152e\",\"time\":1761083566000,\"email\":\"kmbzn24@gmail.com\",\"author\":\"kmbzn\",\"message\":\"문서 개선: 프로세스 및 애자일 섹션의 대문자 사용 일관성 유지\"},{\"hash\":\"39d8d6e315e0225cba1d999d5e5257db00de555c\",\"time\":1761031452000,\"email\":\"kmbzn24@gmail.com\",\"author\":\"kmbzn\",\"message\":\"문서 개선: 프로세스 섹션의 제목 및 문장 형식 수정, 일관성 있는 대문자 사용\"},{\"hash\":\"eb48cfa19b19a2f50f39f47a7af1731ebae06859\",\"time\":1760995141000,\"email\":\"kmbzn24@gmail.com\",\"author\":\"kmbzn\",\"message\":\"Add requirements elicitation and architecture documentation\"}]},\"filePathRelative\":\"se/3.md\",\"autoDesc\":true}")
 export { comp, data }
-
-if (import.meta.webpackHot) {
-  import.meta.webpackHot.accept()
-  if (__VUE_HMR_RUNTIME__.updatePageData) {
-    __VUE_HMR_RUNTIME__.updatePageData(data)
-  }
-}
-
-if (import.meta.hot) {
-  import.meta.hot.accept(({ data }) => {
-    __VUE_HMR_RUNTIME__.updatePageData(data)
-  })
-}

@@ -4,16 +4,10 @@
 
 @font-face {
   font-family: 'Tmoney RoundWind';
-  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/TmoneyRoundWindRegular.woff') format('woff');
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/TmoneyRoundWindRegular.woff') format('woff');
   font-weight: normal;
   font-style: normal;
-}
-
-@font-face {
-    font-family: 'Tmoney RoundWind';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Bold.woff2') format('woff2');
-    font-weight: bold;
-    font-display: swap;
+  font-display: swap;
 }
 
 @import url('//cdn.jsdelivr.net/gh/wan2land/d2coding/d2coding-ligature-full.css');
@@ -27,7 +21,7 @@ body, .built-with, .vp-footer .copyright, .vp-sidebar, .vp-sidebar-item {
 }
 
 p, li {
-  font-family: 'Tmoney RoundWind';
+  font-family: 'Tmoney RoundWind', 'Pretendard Variable', 'Pretendard', sans-serif;
 }
 
 p {

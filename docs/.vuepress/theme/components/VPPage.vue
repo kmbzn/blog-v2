@@ -48,7 +48,7 @@
 </template>
 
 <script setup>
-import ParentPage from '@vuepress/theme-default/lib/client/components/VPPage.vue'
+import ParentPage from '@vuepress/theme-default/components/VPPage.vue'
 import { useRoute } from 'vue-router'
 import { computed } from 'vue'
 

@@ -66,6 +66,6 @@ sh -c 'd=~/Pictures/Screenshots; f="$d/screenshot_$(date +%Y%m%d_%H%M%S).png"; m
 
 현재 클립보드 상태를 확인하고 싶다면 터미널에 `wl-paste -l`을 입력했을 때 `image/png`가 목록에 보이면 **성공**입니다.
 
-![](paste.webp)
+![](./paste.webp)
 > *이제 캡처 후 바로 카카오톡 대화창에서 `Ctrl+V`를 눌러보세요.*  
 > *깔끔하게 전송되는 것을 확인하실 수 있습니다.*

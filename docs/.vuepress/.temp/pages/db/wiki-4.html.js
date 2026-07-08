@@ -1,16 +1,3 @@
 import comp from "/home/kmbzn/blog-v2/docs/.vuepress/.temp/pages/db/wiki-4.html.vue"
 const data = JSON.parse("{\"path\":\"/db/wiki-4.html\",\"title\":\"Assignment 4: Implementation of Natural Join on -Tree\",\"lang\":\"ko-KR\",\"frontmatter\":{\"description\":\"Assignment 4: Implementation of Natural Join on B+-Tree 2021024057 김병준 1. Design 본 과제의 목표는 B+-tree index 구조로 저장된 두 개의 데이터 테이블(Table 1, Table 2)에 대하여 Natural join 연산을 수행하는 알고리즘을 ...\",\"sitemap\":false,\"head\":[[\"script\",{\"type\":\"application/ld+json\"},\"{\\\"@context\\\":\\\"https://schema.org\\\",\\\"@type\\\":\\\"Article\\\",\\\"headline\\\":\\\"Assignment 4: Implementation of Natural Join on -Tree\\\",\\\"image\\\":[\\\"https://kmbzn.com/images/og.png\\\"],\\\"dateModified\\\":\\\"2025-12-09T17:29:21.000Z\\\",\\\"author\\\":[]}\"],[\"meta\",{\"property\":\"og:url\",\"content\":\"https://kmbzn.com/db/wiki-4.html\"}],[\"meta\",{\"property\":\"og:title\",\"content\":\"Assignment 4: Implementation of Natural Join on -Tree\"}],[\"meta\",{\"property\":\"og:description\",\"content\":\"Assignment 4: Implementation of Natural Join on B+-Tree 2021024057 김병준 1. Design 본 과제의 목표는 B+-tree index 구조로 저장된 두 개의 데이터 테이블(Table 1, Table 2)에 대하여 Natural join 연산을 수행하는 알고리즘을 ...\"}],[\"meta\",{\"property\":\"og:type\",\"content\":\"article\"}],[\"meta\",{\"property\":\"og:image\",\"content\":\"https://kmbzn.com/images/og.png\"}],[\"meta\",{\"property\":\"og:locale\",\"content\":\"ko-KR\"}],[\"meta\",{\"property\":\"og:updated_time\",\"content\":\"2025-12-09T17:29:21.000Z\"}],[\"meta\",{\"property\":\"article:modified_time\",\"content\":\"2025-12-09T17:29:21.000Z\"}]]},\"git\":{\"createdTime\":1765203537000,\"updatedTime\":1765301361000,\"contributors\":[{\"name\":\"kmbzn\",\"username\":\"kmbzn\",\"email\":\"kmbzn24@gmail.com\",\"commits\":2,\"url\":\"https://github.com/kmbzn\"}],\"changelog\":[{\"hash\":\"d2a1df10c006deef6a8423cd371a7833a83fe027\",\"time\":1765301361000,\"email\":\"kmbzn24@gmail.com\",\"author\":\"kmbzn\",\"message\":\"update to thinkpad\"},{\"hash\":\"5f43b14e6f4ac97ce78384a77f3488bb7203dee9\",\"time\":1765203537000,\"email\":\"kmbzn24@gmail.com\",\"author\":\"kmbzn\",\"message\":\"add wiki\"}]},\"filePathRelative\":\"db/wiki-4.md\",\"autoDesc\":true}")
 export { comp, data }
-
-if (import.meta.webpackHot) {
-  import.meta.webpackHot.accept()
-  if (__VUE_HMR_RUNTIME__.updatePageData) {
-    __VUE_HMR_RUNTIME__.updatePageData(data)
-  }
-}
-
-if (import.meta.hot) {
-  import.meta.hot.accept(({ data }) => {
-    __VUE_HMR_RUNTIME__.updatePageData(data)
-  })
-}

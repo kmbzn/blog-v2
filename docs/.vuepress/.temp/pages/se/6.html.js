@@ -1,16 +1,3 @@
 import comp from "/home/kmbzn/blog-v2/docs/.vuepress/.temp/pages/se/6.html.vue"
 const data = JSON.parse("{\"path\":\"/se/6.html\",\"title\":\"6. Requirements\",\"lang\":\"ko-KR\",\"frontmatter\":{\"description\":\"6. Requirements Learning Goals Software engineering(소프트웨어 공학)에서 requirements(요구사항)의 중요성과 어려움 설명 요구사항이 어떻게 그리고 왜 원하는 시스템과 그 환경 간의 관계를 명확히 하는지 설명. Assumptions(가정) 식별. Functional r...\",\"sitemap\":false,\"head\":[[\"script\",{\"type\":\"application/ld+json\"},\"{\\\"@context\\\":\\\"https://schema.org\\\",\\\"@type\\\":\\\"Article\\\",\\\"headline\\\":\\\"6. Requirements\\\",\\\"image\\\":[\\\"https://kmbzn.com/images/og.png\\\"],\\\"dateModified\\\":\\\"2025-12-09T17:29:21.000Z\\\",\\\"author\\\":[]}\"],[\"meta\",{\"property\":\"og:url\",\"content\":\"https://kmbzn.com/se/6.html\"}],[\"meta\",{\"property\":\"og:title\",\"content\":\"6. Requirements\"}],[\"meta\",{\"property\":\"og:description\",\"content\":\"6. Requirements Learning Goals Software engineering(소프트웨어 공학)에서 requirements(요구사항)의 중요성과 어려움 설명 요구사항이 어떻게 그리고 왜 원하는 시스템과 그 환경 간의 관계를 명확히 하는지 설명. Assumptions(가정) 식별. Functional r...\"}],[\"meta\",{\"property\":\"og:type\",\"content\":\"article\"}],[\"meta\",{\"property\":\"og:image\",\"content\":\"https://kmbzn.com/images/og.png\"}],[\"meta\",{\"property\":\"og:locale\",\"content\":\"ko-KR\"}],[\"meta\",{\"property\":\"og:updated_time\",\"content\":\"2025-12-09T17:29:21.000Z\"}],[\"meta\",{\"property\":\"article:modified_time\",\"content\":\"2025-12-09T17:29:21.000Z\"}]]},\"git\":{\"createdTime\":1760995141000,\"updatedTime\":1765301361000,\"contributors\":[{\"name\":\"kmbzn\",\"username\":\"kmbzn\",\"email\":\"kmbzn24@gmail.com\",\"commits\":5,\"url\":\"https://github.com/kmbzn\"}],\"changelog\":[{\"hash\":\"d2a1df10c006deef6a8423cd371a7833a83fe027\",\"time\":1765301361000,\"email\":\"kmbzn24@gmail.com\",\"author\":\"kmbzn\",\"message\":\"update to thinkpad\"},{\"hash\":\"f81f9042e7888855a506f92261c74aaa2d86aa2a\",\"time\":1764305376000,\"email\":\"kmbzn24@gmail.com\",\"author\":\"kmbzn\",\"message\":\"update npm\"},{\"hash\":\"8600b20ab0a31871d0a8ab1f33077cca06e672d9\",\"time\":1761260557000,\"email\":\"kmbzn24@gmail.com\",\"author\":\"kmbzn\",\"message\":\"위키 문서 추가: 도서 관리 시스템 구현 및 인증 기능에 대한 상세 설명 포함\"},{\"hash\":\"f76b50c5f9e87c142040bb7f8afcc8e3c2466556\",\"time\":1760995467000,\"email\":\"kmbzn24@gmail.com\",\"author\":\"kmbzn\",\"message\":\"Refactor documentation structure: rename and reorganize requirements sections for clarity; remove obsolete file and update references.\"},{\"hash\":\"eb48cfa19b19a2f50f39f47a7af1731ebae06859\",\"time\":1760995141000,\"email\":\"kmbzn24@gmail.com\",\"author\":\"kmbzn\",\"message\":\"Add requirements elicitation and architecture documentation\"}]},\"filePathRelative\":\"se/6.md\",\"autoDesc\":true}")
 export { comp, data }
-
-if (import.meta.webpackHot) {
-  import.meta.webpackHot.accept()
-  if (__VUE_HMR_RUNTIME__.updatePageData) {
-    __VUE_HMR_RUNTIME__.updatePageData(data)
-  }
-}
-
-if (import.meta.hot) {
-  import.meta.hot.accept(({ data }) => {
-    __VUE_HMR_RUNTIME__.updatePageData(data)
-  })
-}

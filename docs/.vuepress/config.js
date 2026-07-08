@@ -13,7 +13,7 @@ const sidebar = [
   },
   {
     text: 'Algorithm',
-    collapsible: false,
+    collapsible: true,
     children: [
       '/a/1018', '/a/1966', '/a/pytimeout', '/a/stdvector', '/a/vim',
     ]
@@ -113,7 +113,24 @@ const sidebarPaths = new Set(
   )
 )
 
+const pagePatterns = [
+  'README.md',
+  'index.md',
+  '404.md',
+  ...Array.from(sidebarPaths).flatMap(path => {
+    const cleanPath = path.replace(/^\//, '')
+    return [
+      `${cleanPath}.md`,
+      `${cleanPath}/README.md`,
+      `${cleanPath}/index.md`
+    ]
+  }),
+  '!.vuepress',
+  '!node_modules'
+]
+
 export default defineUserConfig({
+  pagePatterns,
   extendsPage: (page) => {
     const normalized = page.path.replace(/\.html$/, '').replace(/\/$/, '') || '/'
     if (normalized !== '/' && !sidebarPaths.has(normalized)) {

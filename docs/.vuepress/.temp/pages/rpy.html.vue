@@ -53,9 +53,9 @@
 <section class="print-section">
 <h3 id="_8-what-will-be-the-output-of-the-following-python-code" tabindex="-1"><a class="header-anchor" href="#_8-what-will-be-the-output-of-the-following-python-code"><span>8. What will be the output of the following Python code?</span></a></h3>
 <div class="language-python line-numbers-mode" data-highlighter="prismjs" data-ext="py"><pre v-pre><code class="language-python"><span class="line"><span class="token keyword">def</span> <span class="token function">example</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">:</span></span>
-<span class="line">    a <span class="token operator">=</span> a <span class="token operator">+</span> <span class="token string">'2'</span></span>
-<span class="line">    a <span class="token operator">=</span> a <span class="token operator">*</span> <span class="token number">2</span></span>
-<span class="line">    <span class="token keyword">return</span> a</span>
+<span class="line">a <span class="token operator">=</span> a <span class="token operator">+</span> <span class="token string">'2'</span></span>
+<span class="line">a <span class="token operator">=</span> a <span class="token operator">*</span> <span class="token number">2</span></span>
+<span class="line"><span class="token keyword">return</span> a</span>
 <span class="line"><span class="token operator">>></span><span class="token operator">></span> example<span class="token punctuation">(</span><span class="token string">"hello"</span><span class="token punctuation">)</span></span>
 <span class="line"></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>a) indentation Error (들여쓰기 오류)</p>
@@ -210,8 +210,8 @@
 <h3 id="_24-which-of-the-following-boolean-expressions-is-not-logically-equivalent-to-the-other-three" tabindex="-1"><a class="header-anchor" href="#_24-which-of-the-following-boolean-expressions-is-not-logically-equivalent-to-the-other-three"><span>24. Which of the following Boolean expressions is not logically equivalent to the other three?</span></a></h3>
 <p>a) <code v-pre>not(-6 &lt; 0 or -6 &gt; 10)</code></p>
 <p>b) <code v-pre>-6 &gt;= 0 and -6 &lt;= 10</code></p>
-<p>c) <code v-pre>not(-6 &lt; 10 or -6 &gt; 10)</code></p>
-<p>d) <code v-pre>not(-6 &gt; 10 or -6 &lt; 10)</code></p>
+<p>c) <code v-pre>not(-6 &lt; 10 or -6 == 10)</code></p>
+<p>d) <code v-pre>not(-6 &gt; 10 or -6 == 10)</code></p>
 </section>
 <section class="print-section">
 <h3 id="_25-what-will-be-the-output-of-the-following-python-code" tabindex="-1"><a class="header-anchor" href="#_25-what-will-be-the-output-of-the-following-python-code"><span>25. What will be the output of the following Python code?</span></a></h3>
@@ -259,8 +259,8 @@
 <span class="line"></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>a) <code v-pre>1</code></p>
 <p>b) <code v-pre>1 2</code></p>
-<p>c) <code v-pre>1 3 5 7 9 11 ...</code></p>
-<p>d) None of the mentioned</p>
+<p>c) <code v-pre>1 2 3 4 5 6 ...</code></p>
+<p>d) <code v-pre>1 3 5 7 9 11 ...</code></p>
 </section>
 <section class="print-section">
 <h3 id="_29-what-will-be-the-output-of-the-following-python-code" tabindex="-1"><a class="header-anchor" href="#_29-what-will-be-the-output-of-the-following-python-code"><span>29. What will be the output of the following Python code?</span></a></h3>
@@ -301,7 +301,7 @@
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>a) <code v-pre>a b c d e f</code></p>
 <p>b) <code v-pre>abcdef</code></p>
 <p>c) <code v-pre>i i i i i i ...</code></p>
-<p>d) Error (NameError: name 'i' is not defined)</p>
+<p>d) Error (<code v-pre>NameError: name 'i' is not defined</code>)</p>
 </section>
 <section class="print-section">
 <h3 id="_32-what-will-be-the-output-of-the-following-python-code" tabindex="-1"><a class="header-anchor" href="#_32-what-will-be-the-output-of-the-following-python-code"><span>32. What will be the output of the following Python code?</span></a></h3>
@@ -402,7 +402,7 @@
 <div class="language-python line-numbers-mode" data-highlighter="prismjs" data-ext="py"><pre v-pre><code class="language-python"><span class="line">x <span class="token operator">=</span> <span class="token string">'abcd'</span></span>
 <span class="line"><span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span></span>
 <span class="line">    x <span class="token operator">=</span> <span class="token string">'a'</span></span>
-<span class="line"><span class="token keyword">print</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span></span>
+<span class="line">    <span class="token keyword">print</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span></span>
 <span class="line"></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>a) <code v-pre>a</code></p>
 <p>b) <code v-pre>abcd abcd abcd</code></p>
@@ -469,11 +469,11 @@
 <div class="language-python line-numbers-mode" data-highlighter="prismjs" data-ext="py"><pre v-pre><code class="language-python"><span class="line">x <span class="token operator">=</span> <span class="token number">2</span></span>
 <span class="line"><span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">:</span></span>
 <span class="line">    x <span class="token operator">+=</span> <span class="token number">1</span></span>
-<span class="line"><span class="token keyword">print</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span></span>
+<span class="line">    <span class="token keyword">print</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span></span>
 <span class="line"></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>a) <code v-pre>0 1 2 3 4 ...</code></p>
 <p>b) <code v-pre>0 1</code></p>
-<p>c) <code v-pre>4</code></p>
+<p>c) <code v-pre>3 4</code></p>
 <p>d) <code v-pre>0 1 2 3</code></p>
 </section>
 <section class="print-section">
@@ -613,35 +613,35 @@
 <p>d) <code v-pre>['olleh']</code></p>
 </section>
 <section class="print-section">
-<h3 id="_61-suppose-listexample-is-h-e-l-l-o-what-is-len-listexample" tabindex="-1"><a class="header-anchor" href="#_61-suppose-listexample-is-h-e-l-l-o-what-is-len-listexample"><span>61. Suppose listExample is <code v-pre>['h','e','l','l','o']</code>, what is <code v-pre>len(listExample)</code>?</span></a></h3>
+<h3 id="_61-suppose-listexample-is-h-e-l-l-o-what-is-len-listexample" tabindex="-1"><a class="header-anchor" href="#_61-suppose-listexample-is-h-e-l-l-o-what-is-len-listexample"><span>61. Suppose <code v-pre>listExample</code> is <code v-pre>['h','e','l','l','o']</code>, what is <code v-pre>len(listExample)</code>?</span></a></h3>
 <p>a) <code v-pre>5</code></p>
 <p>b) <code v-pre>4</code></p>
 <p>c) <code v-pre>None</code></p>
 <p>d) Error</p>
 </section>
 <section class="print-section">
-<h3 id="_62-suppose-list1-is-2445-133-12454-123-what-is-max-list1" tabindex="-1"><a class="header-anchor" href="#_62-suppose-list1-is-2445-133-12454-123-what-is-max-list1"><span>62. Suppose list1 is <code v-pre>[2445,133,12454,123]</code>, what is <code v-pre>max(list1)</code>?</span></a></h3>
+<h3 id="_62-suppose-list1-is-2445-133-12454-123-what-is-max-list1" tabindex="-1"><a class="header-anchor" href="#_62-suppose-list1-is-2445-133-12454-123-what-is-max-list1"><span>62. Suppose <code v-pre>list1</code> is <code v-pre>[2445,133,12454,123]</code>, what is <code v-pre>max(list1)</code>?</span></a></h3>
 <p>a) <code v-pre>2445</code></p>
 <p>b) <code v-pre>133</code></p>
 <p>c) <code v-pre>12454</code></p>
 <p>d) <code v-pre>123</code></p>
 </section>
 <section class="print-section">
-<h3 id="_63-suppose-list1-is-1-5-9-what-is-sum-list1" tabindex="-1"><a class="header-anchor" href="#_63-suppose-list1-is-1-5-9-what-is-sum-list1"><span>63. Suppose list1 is <code v-pre>[1, 5, 9]</code>, what is <code v-pre>sum(list1)</code>?</span></a></h3>
+<h3 id="_63-suppose-list1-is-1-5-9-what-is-sum-list1" tabindex="-1"><a class="header-anchor" href="#_63-suppose-list1-is-1-5-9-what-is-sum-list1"><span>63. Suppose <code v-pre>list1</code> is <code v-pre>[1, 5, 9]</code>, what is <code v-pre>sum(list1)</code>?</span></a></h3>
 <p>a) <code v-pre>1</code></p>
 <p>b) <code v-pre>9</code></p>
 <p>c) <code v-pre>15</code></p>
 <p>d) Error</p>
 </section>
 <section class="print-section">
-<h3 id="_64-suppose-list1-is-2-33-222-14-25-what-is-list1-1" tabindex="-1"><a class="header-anchor" href="#_64-suppose-list1-is-2-33-222-14-25-what-is-list1-1"><span>64. Suppose list1 is <code v-pre>[2, 33, 222, 14, 25]</code>, What is <code v-pre>list1[-1]</code>?</span></a></h3>
+<h3 id="_64-suppose-list1-is-2-33-222-14-25-what-is-list1-1" tabindex="-1"><a class="header-anchor" href="#_64-suppose-list1-is-2-33-222-14-25-what-is-list1-1"><span>64. Suppose <code v-pre>list1</code> is <code v-pre>[2, 33, 222, 14, 25]</code>, What is <code v-pre>list1[-1]</code>?</span></a></h3>
 <p>a) Error</p>
 <p>b) <code v-pre>None</code></p>
 <p>c) <code v-pre>25</code></p>
 <p>d) <code v-pre>2</code></p>
 </section>
 <section class="print-section">
-<h3 id="_65-suppose-list1-is-2-33-222-14-25-what-is-list1-1" tabindex="-1"><a class="header-anchor" href="#_65-suppose-list1-is-2-33-222-14-25-what-is-list1-1"><span>65. Suppose list1 is <code v-pre>[2, 33, 222, 14, 25]</code>, What is <code v-pre>list1[:-1]</code>?</span></a></h3>
+<h3 id="_65-suppose-list1-is-2-33-222-14-25-what-is-list1-1" tabindex="-1"><a class="header-anchor" href="#_65-suppose-list1-is-2-33-222-14-25-what-is-list1-1"><span>65. Suppose <code v-pre>list1</code> is <code v-pre>[2, 33, 222, 14, 25]</code>, What is <code v-pre>list1[:-1]</code>?</span></a></h3>
 <p>a) <code v-pre>[2, 33, 222, 14]</code></p>
 <p>b) Error</p>
 <p>c) <code v-pre>25</code></p>
@@ -658,7 +658,7 @@
 <p>d) <code v-pre>n</code></p>
 </section>
 <section class="print-section">
-<h3 id="_67-suppose-list1-is-1-3-2-what-is-list1-2" tabindex="-1"><a class="header-anchor" href="#_67-suppose-list1-is-1-3-2-what-is-list1-2"><span>67. Suppose list1 is <code v-pre>[1, 3, 2]</code>, What is <code v-pre>list1 * 2</code>?</span></a></h3>
+<h3 id="_67-suppose-list1-is-1-3-2-what-is-list1-2" tabindex="-1"><a class="header-anchor" href="#_67-suppose-list1-is-1-3-2-what-is-list1-2"><span>67. Suppose <code v-pre>list1</code> is <code v-pre>[1, 3, 2]</code>, What is <code v-pre>list1 * 2</code>?</span></a></h3>
 <p>a) <code v-pre>[2, 6, 4]</code></p>
 <p>b) <code v-pre>[1, 3, 2, 1, 3]</code></p>
 <p>c) <code v-pre>[1, 3, 2, 1, 3, 2]</code></p>
@@ -852,14 +852,14 @@
 <div class="language-python line-numbers-mode" data-highlighter="prismjs" data-ext="py"><pre v-pre><code class="language-python"><span class="line">values <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">33</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">]</span></span>
 <span class="line"><span class="token keyword">for</span> row <span class="token keyword">in</span> values<span class="token punctuation">:</span></span>
 <span class="line">    row<span class="token punctuation">.</span>sort<span class="token punctuation">(</span><span class="token punctuation">)</span></span>
-<span class="line"><span class="token keyword">for</span> element <span class="token keyword">in</span> row<span class="token punctuation">:</span></span>
-<span class="line">    <span class="token keyword">print</span><span class="token punctuation">(</span>element<span class="token punctuation">,</span> end <span class="token operator">=</span> <span class="token string">" "</span><span class="token punctuation">)</span></span>
-<span class="line"><span class="token keyword">print</span><span class="token punctuation">(</span><span class="token punctuation">)</span></span>
+<span class="line">    <span class="token keyword">for</span> element <span class="token keyword">in</span> row<span class="token punctuation">:</span></span>
+<span class="line">        <span class="token keyword">print</span><span class="token punctuation">(</span>element<span class="token punctuation">,</span> end <span class="token operator">=</span> <span class="token string">" "</span><span class="token punctuation">)</span></span>
+<span class="line">    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token punctuation">)</span></span>
 <span class="line"></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>a) The program prints two rows <code v-pre>3 4 5 1</code> followed by <code v-pre>33 6 1 2</code></p>
 <p>b) The program prints on row <code v-pre>3 4 5 1 33 6 1 2</code></p>
 <p>c) The program prints two rows <code v-pre>3 4 5 1</code> followed by <code v-pre>33 6 1 2</code></p>
-<p>d) The program prints the last sorted row: <code v-pre>1 2 6 33</code></p>
+<p>d) The program prints two rows <code v-pre>1 3 4 5</code> followed by <code v-pre>1 2 6 33</code></p>
 </section>
 <section class="print-section">
 <h3 id="_85-what-will-be-the-output-of-the-following-python-code" tabindex="-1"><a class="header-anchor" href="#_85-what-will-be-the-output-of-the-following-python-code"><span>85. What will be the output of the following Python code?</span></a></h3>
@@ -867,10 +867,11 @@
 <span class="line">          <span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">]</span><span class="token punctuation">,</span></span>
 <span class="line">          <span class="token punctuation">[</span><span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">9</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">11</span><span class="token punctuation">]</span><span class="token punctuation">,</span></span>
 <span class="line">          <span class="token punctuation">[</span><span class="token number">12</span><span class="token punctuation">,</span> <span class="token number">13</span><span class="token punctuation">,</span> <span class="token number">14</span><span class="token punctuation">,</span> <span class="token number">15</span><span class="token punctuation">]</span><span class="token punctuation">]</span></span>
+<span class="line">          </span>
 <span class="line"><span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">:</span></span>
 <span class="line">    <span class="token keyword">print</span><span class="token punctuation">(</span>matrix<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> end <span class="token operator">=</span> <span class="token string">" "</span><span class="token punctuation">)</span></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>a) <code v-pre>1 2 3 4</code></p>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>a) <code v-pre>1 2 3 4</code></p>
 <p>b) <code v-pre>4 5 6 7</code></p>
 <p>c) <code v-pre>1 3 8 12</code></p>
 <p>d) <code v-pre>2 5 9 13</code></p>
@@ -992,7 +993,7 @@
 <p>d) <code v-pre>['ad', 'ae', 'af', 'bd', 'be', 'bf', 'cd', 'ce', 'cf']</code></p>
 </section>
 <section class="print-section">
-<h3 id="_96-write-the-list-comprehension-to-pick-out-only-negative-integers-from-a-given-list-l-주어진-목록-l에서-음의-정수를-고를-수-있는-list-comprehension을-써라" tabindex="-1"><a class="header-anchor" href="#_96-write-the-list-comprehension-to-pick-out-only-negative-integers-from-a-given-list-l-주어진-목록-l에서-음의-정수를-고를-수-있는-list-comprehension을-써라"><span>96. Write the list comprehension to pick out only negative integers from a given list <code v-pre>l</code>. (주어진 목록 <code v-pre>l</code>에서 음의 정수를 고를 수 있는 list comprehension을 써라.)</span></a></h3>
+<h3 id="_96-write-the-list-comprehension-to-pick-out-only-negative-integers-from-a-given-list-l" tabindex="-1"><a class="header-anchor" href="#_96-write-the-list-comprehension-to-pick-out-only-negative-integers-from-a-given-list-l"><span>96. Write the list comprehension to pick out only negative integers from a given list <code v-pre>l</code>.</span></a></h3>
 <p>a) <code v-pre>[x&lt;0 in l]</code></p>
 <p>b) <code v-pre>[x for x&lt;0 in l]</code></p>
 <p>c) <code v-pre>[x in l for x&lt;0]</code></p>
@@ -2414,7 +2415,7 @@ d) file</p>
 <p>d) <code v-pre>&gt;&gt;&gt;&gt;%%%</code></p>
 </section>
 <section class="print-section">
-<h3 id="_227-r의-다른-문장에-대한-유효한-구문은-다음-중-어느-것인가" tabindex="-1"><a class="header-anchor" href="#_227-r의-다른-문장에-대한-유효한-구문은-다음-중-어느-것인가"><span>227. R의 다른 문장에 대한 유효한 구문은 다음 중 어느 것인가?</span></a></h3>
+<h3 id="_227-which-of-the-following-is-valid-syntax-for-the-else-statement-in-r" tabindex="-1"><a class="header-anchor" href="#_227-which-of-the-following-is-valid-syntax-for-the-else-statement-in-r"><span>227. Which of the following is valid syntax for the else statement in R?</span></a></h3>
 <p>a)</p>
 <div class="language-R line-numbers-mode" data-highlighter="prismjs" data-ext="R"><pre v-pre><code class="language-R"><span class="line">if(&lt;condition&gt;) {</span>
 <span class="line">    # do something</span>
@@ -2499,7 +2500,7 @@ d) file</p>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>d) Error</p>
 </section>
 <section class="print-section">
-<h3 id="_230-다음-중-처음-20회-반복을-생략한-코드는" tabindex="-1"><a class="header-anchor" href="#_230-다음-중-처음-20회-반복을-생략한-코드는"><span>230. 다음 중 처음 20회 반복을 생략한 코드는?</span></a></h3>
+<h3 id="_230-which-of-the-following-code-skips-the-first-20-iterations" tabindex="-1"><a class="header-anchor" href="#_230-which-of-the-following-code-skips-the-first-20-iterations"><span>230. Which of the following code skips the first 20 iterations?</span></a></h3>
 <p>a)</p>
 <div class="language-R line-numbers-mode" data-highlighter="prismjs" data-ext="R"><pre v-pre><code class="language-R"><span class="line">for(i in 1:100) {</span>
 <span class="line">    if(i &lt;= 20) {</span>
@@ -2565,7 +2566,7 @@ d) file</p>
 <span class="line"></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
 <section class="print-section">
-<h3 id="_232-다음-중-다중-조건-제어문-if-else-if-else-구문으로-유효한-r-코드는" tabindex="-1"><a class="header-anchor" href="#_232-다음-중-다중-조건-제어문-if-else-if-else-구문으로-유효한-r-코드는"><span>232. 다음 중 다중 조건 제어문(if-else if-else) 구문으로 유효한 R 코드는?</span></a></h3>
+<h3 id="_232-which-of-the-following-is-valid-r-code-for-the-multiple-conditional-if-else-if-else-statement" tabindex="-1"><a class="header-anchor" href="#_232-which-of-the-following-is-valid-r-code-for-the-multiple-conditional-if-else-if-else-statement"><span>232. Which of the following is valid R code for the multiple conditional (if-else if-else) statement?</span></a></h3>
 <p>a)</p>
 <div class="language-R line-numbers-mode" data-highlighter="prismjs" data-ext="R"><pre v-pre><code class="language-R"><span class="line">if ( statement1 ) {</span>
 <span class="line">    statement2</span>
@@ -2606,7 +2607,7 @@ d) file</p>
 <span class="line"></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
 <section class="print-section">
-<h3 id="_233-다음-r-코드의-출력은" tabindex="-1"><a class="header-anchor" href="#_233-다음-r-코드의-출력은"><span>233. 다음 R 코드의 출력은?</span></a></h3>
+<h3 id="_233-what-will-be-the-output-of-the-following-r-code" tabindex="-1"><a class="header-anchor" href="#_233-what-will-be-the-output-of-the-following-r-code"><span>233. What will be the output of the following R code?</span></a></h3>
 <div class="language-R line-numbers-mode" data-highlighter="prismjs" data-ext="R"><pre v-pre><code class="language-R"><span class="line">&gt; f &lt;- function() {</span>
 <span class="line">+         ## This is an empty function</span>
 <span class="line">+ }</span>
@@ -2618,7 +2619,7 @@ d) file</p>
 <p>d) <code v-pre>1</code></p>
 </section>
 <section class="print-section">
-<h3 id="_234-다음-r-코드-중-hello-world-을-출력하는-r-코드는" tabindex="-1"><a class="header-anchor" href="#_234-다음-r-코드-중-hello-world-을-출력하는-r-코드는"><span>234. 다음 R 코드 중 “Hello, world!”을 출력하는 R 코드는?</span></a></h3>
+<h3 id="_234-which-of-the-following-r-code-prints-hello-world" tabindex="-1"><a class="header-anchor" href="#_234-which-of-the-following-r-code-prints-hello-world"><span>234. Which of the following R code prints “Hello, world!”?</span></a></h3>
 <p>a)</p>
 <div class="language-R line-numbers-mode" data-highlighter="prismjs" data-ext="R"><pre v-pre><code class="language-R"><span class="line">&gt; f &lt;- function() {</span>
 <span class="line">+       cat(&quot;Hello, world!\n&quot;)</span>
@@ -2645,7 +2646,7 @@ d) file</p>
 <span class="line"></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
 <section class="print-section">
-<h3 id="_235-다음-r-코드의-출력은" tabindex="-1"><a class="header-anchor" href="#_235-다음-r-코드의-출력은"><span>235. 다음 R 코드의 출력은?</span></a></h3>
+<h3 id="_235-what-will-be-the-output-of-the-following-r-code" tabindex="-1"><a class="header-anchor" href="#_235-what-will-be-the-output-of-the-following-r-code"><span>235. What will be the output of the following R code?</span></a></h3>
 <div class="language-R line-numbers-mode" data-highlighter="prismjs" data-ext="R"><pre v-pre><code class="language-R"><span class="line">&gt; f &lt;- function(num) {</span>
 <span class="line">+   for(i in seq_len(num)) {</span>
 <span class="line">+       cat(&quot;Hello, world!\n&quot;)</span>
@@ -2673,7 +2674,7 @@ d) file</p>
 <span class="line"></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></section>
 <section class="print-section">
-<h3 id="_236-다음-r-코드-출력은" tabindex="-1"><a class="header-anchor" href="#_236-다음-r-코드-출력은"><span>236. 다음 R 코드 출력은?</span></a></h3>
+<h3 id="_236-what-will-be-the-output-of-the-following-r-code" tabindex="-1"><a class="header-anchor" href="#_236-what-will-be-the-output-of-the-following-r-code"><span>236. What will be the output of the following R code?</span></a></h3>
 <div class="language-R line-numbers-mode" data-highlighter="prismjs" data-ext="R"><pre v-pre><code class="language-R"><span class="line">&gt; f &lt;- function(num) {</span>
 <span class="line">+ hello &lt;- &quot;Hello, world!\n&quot;</span>
 <span class="line">+ for(i in seq_len(num)) {</span>
@@ -2691,7 +2692,7 @@ d) file</p>
 <p>d) Error</p>
 </section>
 <section class="print-section">
-<h3 id="_237-다음-r-코드의-출력값은" tabindex="-1"><a class="header-anchor" href="#_237-다음-r-코드의-출력값은"><span>237. 다음 R 코드의 출력값은?</span></a></h3>
+<h3 id="_237-what-will-be-the-output-of-the-following-r-code" tabindex="-1"><a class="header-anchor" href="#_237-what-will-be-the-output-of-the-following-r-code"><span>237. What will be the output of the following R code?</span></a></h3>
 <div class="language-R line-numbers-mode" data-highlighter="prismjs" data-ext="R"><pre v-pre><code class="language-R"><span class="line">&gt; f &lt;- function(num = 1) {</span>
 <span class="line">+       hello &lt;- &quot;Hello, world!\n&quot;</span>
 <span class="line">+       for(i in seq_len(num)) {</span>
@@ -2717,7 +2718,7 @@ d) file</p>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div></div></div><p>d) Error</p>
 </section>
 <section class="print-section">
-<h3 id="_238-다음-r-코드-출력은" tabindex="-1"><a class="header-anchor" href="#_238-다음-r-코드-출력은"><span>238. 다음 R 코드 출력은?</span></a></h3>
+<h3 id="_238-what-will-be-the-output-of-the-following-r-code" tabindex="-1"><a class="header-anchor" href="#_238-what-will-be-the-output-of-the-following-r-code"><span>238. What will be the output of the following R code?</span></a></h3>
 <div class="language-R line-numbers-mode" data-highlighter="prismjs" data-ext="R"><pre v-pre><code class="language-R"><span class="line">f &lt;- function(a, b) {</span>
 <span class="line">    a^2</span>
 <span class="line">}</span>
@@ -2729,56 +2730,56 @@ d) file</p>
 <p>d) <code v-pre>5</code></p>
 </section>
 <section class="print-section">
-<h3 id="_239-r-개체를-파일에-저장하는-데-사용되는-올바른-명령은" tabindex="-1"><a class="header-anchor" href="#_239-r-개체를-파일에-저장하는-데-사용되는-올바른-명령은"><span>239. R 개체를 파일에 저장하는 데 사용되는 올바른 명령은?</span></a></h3>
+<h3 id="_239-what-is-the-correct-command-used-to-save-an-r-object-to-a-file" tabindex="-1"><a class="header-anchor" href="#_239-what-is-the-correct-command-used-to-save-an-r-object-to-a-file"><span>239. What is the correct command used to save an R object to a file?</span></a></h3>
 <p>a) <code v-pre>save(x, file = &quot;x.Rdata&quot;)</code></p>
 <p>b) <code v-pre>save(x, file = x.Rdata)</code></p>
 <p>c) <code v-pre>save(x, file = &quot;x.Rdata&quot;);</code></p>
 <p>d) <code v-pre>save(x, file = &quot;x.data&quot;)</code></p>
 </section>
 <section class="print-section">
-<h3 id="_240-프로그래머가-list-형태의-출력을-반환받기를-원한다면-어떠한-함수-기능을-사용하는가" tabindex="-1"><a class="header-anchor" href="#_240-프로그래머가-list-형태의-출력을-반환받기를-원한다면-어떠한-함수-기능을-사용하는가"><span>240. 프로그래머가 List 형태의 출력을 반환받기를 원한다면 어떠한 함수 기능을 사용하는가?</span></a></h3>
+<h3 id="_240-which-function-should-be-used-if-the-programmer-wants-to-get-the-output-as-a-list" tabindex="-1"><a class="header-anchor" href="#_240-which-function-should-be-used-if-the-programmer-wants-to-get-the-output-as-a-list"><span>240. Which function should be used if the programmer wants to get the output as a list?</span></a></h3>
 <p>a) <code v-pre>lapply</code></p>
 <p>b) <code v-pre>sapply</code></p>
 <p>c) <code v-pre>vapply</code></p>
 <p>d) <code v-pre>zapply</code></p>
 </section>
 <section class="print-section">
-<h3 id="_241-는-순차-벡터-c-1-2-3-4-5-6-7-8-9-를-생성한다" tabindex="-1"><a class="header-anchor" href="#_241-는-순차-벡터-c-1-2-3-4-5-6-7-8-9-를-생성한다"><span>241. _____________는 순차 벡터 c(1,2,3,4,5,6,7,8,9)를 생성한다.</span></a></h3>
+<h3 id="_241-generates-a-sequential-vector-c-1-2-3-4-5-6-7-8-9" tabindex="-1"><a class="header-anchor" href="#_241-generates-a-sequential-vector-c-1-2-3-4-5-6-7-8-9"><span>241. _____________ generates a sequential vector <code v-pre>c(1,2,3,4,5,6,7,8,9)</code>.</span></a></h3>
 <p>a) <code v-pre>seq(9)</code></p>
 <p>b) <code v-pre>seq(10)</code></p>
 <p>c) <code v-pre>seq(15)</code></p>
 <p>d) <code v-pre>seq(12)</code></p>
 </section>
 <section class="print-section">
-<h3 id="_242-기능은-r-언어로-된-csv-파일을-읽는-데-사용된다" tabindex="-1"><a class="header-anchor" href="#_242-기능은-r-언어로-된-csv-파일을-읽는-데-사용된다"><span>242. __________ 기능은 R 언어로 된 .csv 파일을 읽는 데 사용된다.</span></a></h3>
+<h3 id="_242-the-function-is-used-to-read-a-csv-file-in-r" tabindex="-1"><a class="header-anchor" href="#_242-the-function-is-used-to-read-a-csv-file-in-r"><span>242. The __________ function is used to read a .csv file in R.</span></a></h3>
 <p>a) <code v-pre>write.csv()</code></p>
 <p>b) <code v-pre>read.csv()</code></p>
 <p>c) <code v-pre>let.csv()</code></p>
 <p>d) <code v-pre>table.csv()</code></p>
 </section>
 <section class="print-section">
-<h3 id="_243-함수는-거대한-데이터-집합에서-n-크기의-랜덤-표본을-선택하는-데-사용할-수-있다" tabindex="-1"><a class="header-anchor" href="#_243-함수는-거대한-데이터-집합에서-n-크기의-랜덤-표본을-선택하는-데-사용할-수-있다"><span>243. ____________ 함수는 거대한 데이터 집합에서 'n' 크기의 랜덤 표본을 선택하는 데 사용할 수 있다.</span></a></h3>
+<h3 id="_243-the-function-can-be-used-to-select-a-random-sample-of-size-n-from-a-large-dataset" tabindex="-1"><a class="header-anchor" href="#_243-the-function-can-be-used-to-select-a-random-sample-of-size-n-from-a-large-dataset"><span>243. The ____________ function can be used to select a random sample of size 'n' from a large dataset.</span></a></h3>
 <p>a) <code v-pre>simple()</code></p>
 <p>b) <code v-pre>sample()</code></p>
 <p>c) <code v-pre>while()</code></p>
 <p>d) <code v-pre>signal()</code></p>
 </section>
 <section class="print-section">
-<h3 id="_244-주어진-데이터-프레임에서-변수-및-관측치를-선택하는-데-사용되는-기능은" tabindex="-1"><a class="header-anchor" href="#_244-주어진-데이터-프레임에서-변수-및-관측치를-선택하는-데-사용되는-기능은"><span>244. 주어진 데이터 프레임에서 변수 및 관측치를 선택하는 데 사용되는 기능은?</span></a></h3>
+<h3 id="_244-which-function-is-used-to-select-variables-and-observations-from-a-given-data-frame" tabindex="-1"><a class="header-anchor" href="#_244-which-function-is-used-to-select-variables-and-observations-from-a-given-data-frame"><span>244. Which function is used to select variables and observations from a given data frame?</span></a></h3>
 <p>a) <code v-pre>subset()</code></p>
 <p>b) <code v-pre>sample()</code></p>
 <p>c) <code v-pre>while()</code></p>
 <p>d) <code v-pre>signal()</code></p>
 </section>
 <section class="print-section">
-<h3 id="_245-함수는-함수에-전달된-평균-및-표준-편차-인수를-기반으로-정규-난수를-생성한다" tabindex="-1"><a class="header-anchor" href="#_245-함수는-함수에-전달된-평균-및-표준-편차-인수를-기반으로-정규-난수를-생성한다"><span>245. ________ 함수는 함수에 전달된 평균 및 표준 편차 인수를 기반으로 정규 난수를 생성한다.</span></a></h3>
+<h3 id="_245-the-function-generates-normal-random-numbers-based-on-the-mean-and-standard-deviation-arguments-passed-to-it" tabindex="-1"><a class="header-anchor" href="#_245-the-function-generates-normal-random-numbers-based-on-the-mean-and-standard-deviation-arguments-passed-to-it"><span>245. The ________ function generates normal random numbers based on the mean and standard deviation arguments passed to it.</span></a></h3>
 <p>a) <code v-pre>rnorm</code></p>
 <p>b) <code v-pre>vnorm</code></p>
 <p>c) <code v-pre>knorm</code></p>
 <p>d) <code v-pre>lnorm</code></p>
 </section>
 <section class="print-section">
-<h3 id="_246-다음-r-코드-조각의-출력값은" tabindex="-1"><a class="header-anchor" href="#_246-다음-r-코드-조각의-출력값은"><span>246. 다음 R 코드 조각의 출력값은?</span></a></h3>
+<h3 id="_246-what-will-be-the-output-of-the-following-r-code-snippet" tabindex="-1"><a class="header-anchor" href="#_246-what-will-be-the-output-of-the-following-r-code-snippet"><span>246. What will be the output of the following R code snippet?</span></a></h3>
 <div class="language-R line-numbers-mode" data-highlighter="prismjs" data-ext="R"><pre v-pre><code class="language-R"><span class="line">&gt; g &lt;- function(x) {</span>
 <span class="line">+              a &lt;- 3</span>
 <span class="line">+              x+a+y</span>
@@ -2792,28 +2793,28 @@ d) file</p>
 <p>d) Error</p>
 </section>
 <section class="print-section">
-<h3 id="_247-기능은-r에서-lapply와-같다" tabindex="-1"><a class="header-anchor" href="#_247-기능은-r에서-lapply와-같다"><span>247. __________ 기능은 R에서 lapply와 같다.</span></a></h3>
+<h3 id="_247-function-is-similar-to-lapply-in-r" tabindex="-1"><a class="header-anchor" href="#_247-function-is-similar-to-lapply-in-r"><span>247. __________ function is similar to <code v-pre>lapply</code> in R.</span></a></h3>
 <p>a) <code v-pre>apply()</code></p>
 <p>b) <code v-pre>lapply()</code></p>
 <p>c) <code v-pre>sapply()</code></p>
 <p>d) <code v-pre>mapply()</code></p>
 </section>
 <section class="print-section">
-<h3 id="_248-다음-중-lapply의-다변량-버전은" tabindex="-1"><a class="header-anchor" href="#_248-다음-중-lapply의-다변량-버전은"><span>248. 다음 중 lapply의 다변량 버전은?</span></a></h3>
+<h3 id="_248-which-of-the-following-is-the-multivariate-version-of-lapply" tabindex="-1"><a class="header-anchor" href="#_248-which-of-the-following-is-the-multivariate-version-of-lapply"><span>248. Which of the following is the multivariate version of <code v-pre>lapply</code>?</span></a></h3>
 <p>a) <code v-pre>apply()</code></p>
 <p>b) <code v-pre>lapply()</code></p>
 <p>c) <code v-pre>sapply()</code></p>
 <p>d) <code v-pre>mapply()</code></p>
 </section>
 <section class="print-section">
-<h3 id="_249-는-벡터의-subset-위에-함수를-적용하는-데-사용된다" tabindex="-1"><a class="header-anchor" href="#_249-는-벡터의-subset-위에-함수를-적용하는-데-사용된다"><span>249. _______는 벡터의 subset 위에 함수를 적용하는 데 사용된다.</span></a></h3>
+<h3 id="_249-is-used-to-apply-a-function-over-subsets-of-a-vector" tabindex="-1"><a class="header-anchor" href="#_249-is-used-to-apply-a-function-over-subsets-of-a-vector"><span>249. _______ is used to apply a function over subsets of a vector.</span></a></h3>
 <p>a) <code v-pre>apply()</code></p>
 <p>b) <code v-pre>lapply()</code></p>
 <p>c) <code v-pre>tapply()</code></p>
 <p>d) <code v-pre>mapply()</code></p>
 </section>
 <section class="print-section">
-<h3 id="_250-다음-r-코드의-출력은" tabindex="-1"><a class="header-anchor" href="#_250-다음-r-코드의-출력은"><span>250. 다음 R 코드의 출력은?</span></a></h3>
+<h3 id="_250-what-will-be-the-output-of-the-following-r-code" tabindex="-1"><a class="header-anchor" href="#_250-what-will-be-the-output-of-the-following-r-code"><span>250. What will be the output of the following R code?</span></a></h3>
 <div class="language-R line-numbers-mode" data-highlighter="prismjs" data-ext="R"><pre v-pre><code class="language-R"><span class="line">&gt; x &lt;- list(a = 1:5, b = c(0.1322028))</span>
 <span class="line">&gt; lapply(x, mean)</span>
 <span class="line"></span></code></pre>
@@ -2823,7 +2824,7 @@ d) file</p>
 <p>d) Error</p>
 </section>
 <section class="print-section">
-<h3 id="_251-다음-r-코드의-출력은" tabindex="-1"><a class="header-anchor" href="#_251-다음-r-코드의-출력은"><span>251. 다음 R 코드의 출력은?</span></a></h3>
+<h3 id="_251-what-will-be-the-output-of-the-following-r-code" tabindex="-1"><a class="header-anchor" href="#_251-what-will-be-the-output-of-the-following-r-code"><span>251. What will be the output of the following R code?</span></a></h3>
 <div class="language-R line-numbers-mode" data-highlighter="prismjs" data-ext="R"><pre v-pre><code class="language-R"><span class="line">&gt; x &lt;- list(a = 1:4, b = rnorm(10), c = rnorm(20, 1), d = rnorm(100, 5))</span>
 <span class="line">&gt; sapply(x, mean)</span>
 <span class="line"></span></code></pre>
@@ -2842,14 +2843,14 @@ d) file</p>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div></div></div><p>d) Error</p>
 </section>
 <section class="print-section">
-<h3 id="_252-정규-분포에-대한-누적-분포-함수를-평가한다" tabindex="-1"><a class="header-anchor" href="#_252-정규-분포에-대한-누적-분포-함수를-평가한다"><span>252. ______ 정규 분포에 대한 누적 분포 함수를 평가한다.</span></a></h3>
+<h3 id="_252-evaluates-the-cumulative-distribution-function-of-the-normal-distribution" tabindex="-1"><a class="header-anchor" href="#_252-evaluates-the-cumulative-distribution-function-of-the-normal-distribution"><span>252. ______ evaluates the cumulative distribution function of the normal distribution.</span></a></h3>
 <p>a) <code v-pre>dnorm</code></p>
 <p>b) <code v-pre>rnorm</code></p>
 <p>c) <code v-pre>pnorm</code></p>
 <p>d) <code v-pre>rpois</code></p>
 </section>
 <section class="print-section">
-<h3 id="_253-다음-r-코드의-출력은" tabindex="-1"><a class="header-anchor" href="#_253-다음-r-코드의-출력은"><span>253. 다음 R 코드의 출력은?</span></a></h3>
+<h3 id="_253-what-will-be-the-output-of-the-following-r-code" tabindex="-1"><a class="header-anchor" href="#_253-what-will-be-the-output-of-the-following-r-code"><span>253. What will be the output of the following R code?</span></a></h3>
 <div class="language-R line-numbers-mode" data-highlighter="prismjs" data-ext="R"><pre v-pre><code class="language-R"><span class="line">&gt; x &lt;- rnorm(10)</span>
 <span class="line">&gt; x</span>
 <span class="line"></span></code></pre>
@@ -2868,7 +2869,7 @@ d) file</p>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div></div></div><p>d) Error</p>
 </section>
 <section class="print-section">
-<h3 id="_254-다음-r-코드의-출력은" tabindex="-1"><a class="header-anchor" href="#_254-다음-r-코드의-출력은"><span>254. 다음 R 코드의 출력은?</span></a></h3>
+<h3 id="_254-what-will-be-the-output-of-the-following-r-code" tabindex="-1"><a class="header-anchor" href="#_254-what-will-be-the-output-of-the-following-r-code"><span>254. What will be the output of the following R code?</span></a></h3>
 <div class="language-R line-numbers-mode" data-highlighter="prismjs" data-ext="R"><pre v-pre><code class="language-R"><span class="line">&gt; x &lt;- rnorm(10)</span>
 <span class="line">&gt; summary(x)</span>
 <span class="line"></span></code></pre>
@@ -2887,14 +2888,14 @@ d) file</p>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div></div></div><p>d) Error</p>
 </section>
 <section class="print-section">
-<h3 id="_255-는-난수-생성에-있어서-재현성을-보장한다" tabindex="-1"><a class="header-anchor" href="#_255-는-난수-생성에-있어서-재현성을-보장한다"><span>255. _________는 난수 생성에 있어서 재현성을 보장한다.</span></a></h3>
+<h3 id="_255-ensures-reproducibility-in-random-number-generation" tabindex="-1"><a class="header-anchor" href="#_255-ensures-reproducibility-in-random-number-generation"><span>255. _________ ensures reproducibility in random number generation.</span></a></h3>
 <p>a) <code v-pre>sets.seed()</code></p>
 <p>b) <code v-pre>set.seed()</code></p>
 <p>c) <code v-pre>set.seedvalue()</code></p>
 <p>d) <code v-pre>set.value()</code></p>
 </section>
 <section class="print-section">
-<h3 id="_256-다음-r-코드의-출력은" tabindex="-1"><a class="header-anchor" href="#_256-다음-r-코드의-출력은"><span>256. 다음 R 코드의 출력은?</span></a></h3>
+<h3 id="_256-what-will-be-the-output-of-the-following-r-code" tabindex="-1"><a class="header-anchor" href="#_256-what-will-be-the-output-of-the-following-r-code"><span>256. What will be the output of the following R code?</span></a></h3>
 <div class="language-R line-numbers-mode" data-highlighter="prismjs" data-ext="R"><pre v-pre><code class="language-R"><span class="line">&gt; x &lt;- rnorm(10)</span>
 <span class="line">&gt; summary(x)</span>
 <span class="line"></span></code></pre>
@@ -2920,7 +2921,7 @@ d) file</p>
 <p>d) <code v-pre>lm.interval()</code></p>
 </section>
 <section class="print-section">
-<h3 id="_258-ggplot2에서-geom의-역할은" tabindex="-1"><a class="header-anchor" href="#_258-ggplot2에서-geom의-역할은"><span>258. ggplot2에서 geom의 역할은?</span></a></h3>
+<h3 id="_258-what-is-the-role-of-geom-in-ggplot2" tabindex="-1"><a class="header-anchor" href="#_258-what-is-the-role-of-geom-in-ggplot2"><span>258. What is the role of <code v-pre>geom</code> in ggplot2?</span></a></h3>
 <p>a) 점, 선 또는 기타 모양과 같은 플롯 객체 (기하학적 형태 표현)</p>
 <p>b) 조건화 플롯을 만드는 방법</p>
 <p>c) 색상 및 크기와 같은 속성에 데이터를 매핑하는 방법</p>
@@ -2934,21 +2935,21 @@ d) file</p>
 <p>d) <code v-pre>x1 &gt;- c(norm(n))</code></p>
 </section>
 <section class="print-section">
-<h3 id="_260-다음-중-csv-파일을-읽을-수-있는-명령어는" tabindex="-1"><a class="header-anchor" href="#_260-다음-중-csv-파일을-읽을-수-있는-명령어는"><span>260. 다음 중 csv 파일을 읽을 수 있는 명령어는?</span></a></h3>
+<h3 id="_260-which-of-the-following-commands-can-read-a-csv-file" tabindex="-1"><a class="header-anchor" href="#_260-which-of-the-following-commands-can-read-a-csv-file"><span>260. Which of the following commands can read a csv file?</span></a></h3>
 <p>a) <code v-pre>read.table(filename,header=TRUE,sep=’,’)</code></p>
 <p>b) <code v-pre>read.csv(filename,header=TRUE,sep=’,’)</code></p>
 <p>c) <code v-pre>read.tab(filename,header=TRUE,sep=’,’)</code></p>
 <p>d) <code v-pre>read.tab(filename,header=False,sep=’,’)</code></p>
 </section>
 <section class="print-section">
-<h3 id="_261-다음-중-탭-또는-공간-구분-파일을-읽는-명령어는" tabindex="-1"><a class="header-anchor" href="#_261-다음-중-탭-또는-공간-구분-파일을-읽는-명령어는"><span>261. 다음 중 탭 또는 공간 구분 파일을 읽는 명령어는?</span></a></h3>
+<h3 id="_261-which-of-the-following-commands-reads-a-tab-or-space-delimited-file" tabindex="-1"><a class="header-anchor" href="#_261-which-of-the-following-commands-reads-a-tab-or-space-delimited-file"><span>261. Which of the following commands reads a tab- or space-delimited file?</span></a></h3>
 <p>a) <code v-pre>read.table(filename,header=TRUE)</code></p>
 <p>b) <code v-pre>read.CSV(filename,header=TRUE)</code></p>
 <p>c) <code v-pre>read.table(filename,header=FALSE)</code></p>
 <p>d) <code v-pre>read.tableall(filename,header=TRUE)</code></p>
 </section>
 <section class="print-section">
-<h3 id="_262-작업-공간에서-모든-변수를-제거한다" tabindex="-1"><a class="header-anchor" href="#_262-작업-공간에서-모든-변수를-제거한다"><span>262. ___________ 작업 공간에서 모든 변수를 제거한다.</span></a></h3>
+<h3 id="_262-removes-all-variables-from-the-workspace" tabindex="-1"><a class="header-anchor" href="#_262-removes-all-variables-from-the-workspace"><span>262. ___________ removes all variables from the workspace.</span></a></h3>
 <p>a) <code v-pre>rm(x)</code></p>
 <p>b) <code v-pre>rm(list = ls())</code></p>
 <p>c) <code v-pre>ls()</code></p>

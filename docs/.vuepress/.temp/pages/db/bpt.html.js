@@ -1,16 +1,3 @@
 import comp from "/home/kmbzn/blog-v2/docs/.vuepress/.temp/pages/db/bpt.html.vue"
 const data = JSON.parse("{\"path\":\"/db/bpt.html\",\"title\":\"\",\"lang\":\"ko-KR\",\"frontmatter\":{\"sitemap\":false,\"head\":[[\"script\",{\"type\":\"application/ld+json\"},\"{\\\"@context\\\":\\\"https://schema.org\\\",\\\"@type\\\":\\\"Article\\\",\\\"headline\\\":\\\"\\\",\\\"image\\\":[\\\"https://kmbzn.com/images/og.png\\\"],\\\"dateModified\\\":\\\"2025-11-20T08:17:02.000Z\\\",\\\"author\\\":[]}\"],[\"meta\",{\"property\":\"og:url\",\"content\":\"https://kmbzn.com/db/bpt.html\"}],[\"meta\",{\"property\":\"og:type\",\"content\":\"article\"}],[\"meta\",{\"property\":\"og:image\",\"content\":\"https://kmbzn.com/images/og.png\"}],[\"meta\",{\"property\":\"og:locale\",\"content\":\"ko-KR\"}],[\"meta\",{\"property\":\"og:updated_time\",\"content\":\"2025-11-20T08:17:02.000Z\"}],[\"meta\",{\"property\":\"article:modified_time\",\"content\":\"2025-11-20T08:17:02.000Z\"}]]},\"git\":{\"createdTime\":1763626450000,\"updatedTime\":1763626622000,\"contributors\":[{\"name\":\"kmbzn\",\"username\":\"kmbzn\",\"email\":\"kmbzn24@gmail.com\",\"commits\":2,\"url\":\"https://github.com/kmbzn\"}],\"changelog\":[{\"hash\":\"e1588204c171cbae93dfd80169721931ca36e2ed\",\"time\":1763626622000,\"email\":\"kmbzn24@gmail.com\",\"author\":\"kmbzn\",\"message\":\"c\"},{\"hash\":\"db59f13412c70dbd49dd7fa6dd23398d0d3044bc\",\"time\":1763626450000,\"email\":\"kmbzn24@gmail.com\",\"author\":\"kmbzn\",\"message\":\"bpt code update\"}]},\"filePathRelative\":\"db/bpt.md\"}")
 export { comp, data }
-
-if (import.meta.webpackHot) {
-  import.meta.webpackHot.accept()
-  if (__VUE_HMR_RUNTIME__.updatePageData) {
-    __VUE_HMR_RUNTIME__.updatePageData(data)
-  }
-}
-
-if (import.meta.hot) {
-  import.meta.hot.accept(({ data }) => {
-    __VUE_HMR_RUNTIME__.updatePageData(data)
-  })
-}

@@ -77,9 +77,9 @@ d) `hello`
 
 ```py
 def example(a):
-    a = a + '2'
-    a = a * 2
-    return a
+a = a + '2'
+a = a * 2
+return a
 >>> example("hello")
 ```
 
@@ -308,9 +308,9 @@ a) `not(-6 < 0 or -6 > 10)`
 
 b) `-6 >= 0 and -6 <= 10`
 
-c) `not(-6 < 10 or -6 > 10)`
+c) `not(-6 < 10 or -6 == 10)`
 
-d) `not(-6 > 10 or -6 < 10)`
+d) `not(-6 > 10 or -6 == 10)`
 
 ### 25. What will be the output of the following Python code?
 
@@ -377,9 +377,9 @@ a) `1`
 
 b) `1 2`
 
-c) `1 3 5 7 9 11 ...`
+c) `1 2 3 4 5 6 ...`
 
-d) None of the mentioned
+d) `1 3 5 7 9 11 ...`
 
 ### 29. What will be the output of the following Python code?
 
@@ -435,7 +435,7 @@ b) `abcdef`
 
 c) `i i i i i i ...`
 
-d) Error (NameError: name 'i' is not defined)
+d) Error (`NameError: name 'i' is not defined`)
 
 ### 32. What will be the output of the following Python code?
 
@@ -577,7 +577,7 @@ d) None of the mentioned
 x = 'abcd'
 for i in range(len(x)):
     x = 'a'
-print(x)
+    print(x)
 ```
 
 a) `a`
@@ -674,14 +674,14 @@ d) None of the mentioned
 x = 2
 for i in range(x):
     x += 1
-print(x)
+    print(x)
 ```
 
 a) `0 1 2 3 4 ...`
 
 b) `0 1`
 
-c) `4`
+c) `3 4`
 
 d) `0 1 2 3`
 
@@ -879,7 +879,7 @@ c) `['llo']`
 
 d) `['olleh']`
 
-### 61. Suppose listExample is `['h','e','l','l','o']`, what is `len(listExample)`?
+### 61. Suppose `listExample` is `['h','e','l','l','o']`, what is `len(listExample)`?
 
 a) `5`
 
@@ -889,7 +889,7 @@ c) `None`
 
 d) Error
 
-### 62. Suppose list1 is `[2445,133,12454,123]`, what is `max(list1)`?
+### 62. Suppose `list1` is `[2445,133,12454,123]`, what is `max(list1)`?
 
 a) `2445`
 
@@ -899,7 +899,7 @@ c) `12454`
 
 d) `123`
 
-### 63. Suppose list1 is `[1, 5, 9]`, what is `sum(list1)`?
+### 63. Suppose `list1` is `[1, 5, 9]`, what is `sum(list1)`?
 
 a) `1`
 
@@ -909,7 +909,7 @@ c) `15`
 
 d) Error
 
-### 64. Suppose list1 is `[2, 33, 222, 14, 25]`, What is `list1[-1]`?
+### 64. Suppose `list1` is `[2, 33, 222, 14, 25]`, What is `list1[-1]`?
 
 a) Error
 
@@ -919,7 +919,7 @@ c) `25`
 
 d) `2`
 
-### 65. Suppose list1 is `[2, 33, 222, 14, 25]`, What is `list1[:-1]`?
+### 65. Suppose `list1` is `[2, 33, 222, 14, 25]`, What is `list1[:-1]`?
 
 a) `[2, 33, 222, 14]`
 
@@ -944,7 +944,7 @@ c) Error
 
 d) `n`
 
-### 67. Suppose list1 is `[1, 3, 2]`, What is `list1 * 2`?
+### 67. Suppose `list1` is `[1, 3, 2]`, What is `list1 * 2`?
 
 a) `[2, 6, 4]`
 
@@ -1214,9 +1214,9 @@ d) `6`
 values = [[3, 4, 5, 1], [33, 6, 1, 2]]
 for row in values:
     row.sort()
-for element in row:
-    print(element, end = " ")
-print()
+    for element in row:
+        print(element, end = " ")
+    print()
 ```
 
 a) The program prints two rows `3 4 5 1` followed by `33 6 1 2`
@@ -1225,7 +1225,7 @@ b) The program prints on row `3 4 5 1 33 6 1 2`
 
 c) The program prints two rows `3 4 5 1` followed by `33 6 1 2`
 
-d) The program prints the last sorted row: `1 2 6 33`
+d) The program prints two rows `1 3 4 5` followed by `1 2 6 33`
 
 ### 85. What will be the output of the following Python code?
 
@@ -1234,6 +1234,7 @@ matrix = [[1, 2, 3, 4],
           [4, 5, 6, 7],
           [8, 9, 10, 11],
           [12, 13, 14, 15]]
+          
 for i in range(0, 4):
     print(matrix[i][1], end = " ")
 ```
@@ -1410,7 +1411,7 @@ c) `[['da', 'db', 'dc'], ['ea', 'eb', 'ec'], ['fa', 'fb', 'fc']]`
 
 d) `['ad', 'ae', 'af', 'bd', 'be', 'bf', 'cd', 'ce', 'cf']`
 
-### 96. Write the list comprehension to pick out only negative integers from a given list `l`. (주어진 목록 `l`에서 음의 정수를 고를 수 있는 list comprehension을 써라.)
+### 96. Write the list comprehension to pick out only negative integers from a given list `l`.
 
 a) `[x<0 in l]`
 
@@ -3379,7 +3380,7 @@ c) `>%>%`
 
 d) `>>>>%%%`
 
-### 227. R의 다른 문장에 대한 유효한 구문은 다음 중 어느 것인가?
+### 227. Which of the following is valid syntax for the else statement in R?
 
 a)
 
@@ -3497,7 +3498,7 @@ c)
 
 d) Error
 
-### 230. 다음 중 처음 20회 반복을 생략한 코드는?
+### 230. Which of the following code skips the first 20 iterations?
 
 a)
 
@@ -3585,7 +3586,7 @@ for(i in 2:100) {
 }
 ```
 
-### 232. 다음 중 다중 조건 제어문(if-else if-else) 구문으로 유효한 R 코드는?
+### 232. Which of the following is valid R code for the multiple conditional (if-else if-else) statement?
 
 a)
 
@@ -3636,7 +3637,7 @@ if ( statement1 ) {
     statement8
 ```
 
-### 233. 다음 R 코드의 출력은?
+### 233. What will be the output of the following R code?
 
 ```R
 > f <- function() {
@@ -3653,7 +3654,7 @@ c) `NULL`
 
 d) `1`
 
-### 234. 다음 R 코드 중 “Hello, world!”을 출력하는 R 코드는?
+### 234. Which of the following R code prints “Hello, world!”?
 
 a)
 
@@ -3691,7 +3692,7 @@ d)
 <= f()
 ```
 
-### 235. 다음 R 코드의 출력은?
+### 235. What will be the output of the following R code?
 
 ```R
 > f <- function(num) {
@@ -3732,7 +3733,7 @@ Hello, world!
 Hello, world!
 ```
 
-### 236. 다음 R 코드 출력은?
+### 236. What will be the output of the following R code?
 
 ```R
 > f <- function(num) {
@@ -3755,7 +3756,7 @@ c) `52`
 
 d) Error
 
-### 237. 다음 R 코드의 출력값은?
+### 237. What will be the output of the following R code?
 
 ```R
 > f <- function(num = 1) {
@@ -3789,7 +3790,7 @@ Hello, world!
 
 d) Error
 
-### 238. 다음 R 코드 출력은?
+### 238. What will be the output of the following R code?
 
 ```R
 f <- function(a, b) {
@@ -3806,7 +3807,7 @@ c) `2`
 
 d) `5`
 
-### 239. R 개체를 파일에 저장하는 데 사용되는 올바른 명령은?
+### 239. What is the correct command used to save an R object to a file?
 
 a) `save(x, file = "x.Rdata")`
 
@@ -3816,7 +3817,7 @@ c) `save(x, file = "x.Rdata");`
 
 d) `save(x, file = "x.data")`
 
-### 240. 프로그래머가 List 형태의 출력을 반환받기를 원한다면 어떠한 함수 기능을 사용하는가?
+### 240. Which function should be used if the programmer wants to get the output as a list?
 
 a) `lapply`
 
@@ -3826,7 +3827,7 @@ c) `vapply`
 
 d) `zapply`
 
-### 241. _____________는 순차 벡터 c(1,2,3,4,5,6,7,8,9)를 생성한다.
+### 241. _____________ generates a sequential vector `c(1,2,3,4,5,6,7,8,9)`.
 
 a) `seq(9)`
 
@@ -3836,7 +3837,7 @@ c) `seq(15)`
 
 d) `seq(12)`
 
-### 242. __________ 기능은 R 언어로 된 .csv 파일을 읽는 데 사용된다.
+### 242. The __________ function is used to read a .csv file in R.
 
 a) `write.csv()`
 
@@ -3846,7 +3847,7 @@ c) `let.csv()`
 
 d) `table.csv()`
 
-### 243. ____________ 함수는 거대한 데이터 집합에서 'n' 크기의 랜덤 표본을 선택하는 데 사용할 수 있다.
+### 243. The ____________ function can be used to select a random sample of size 'n' from a large dataset.
 
 a) `simple()`
 
@@ -3856,7 +3857,7 @@ c) `while()`
 
 d) `signal()`
 
-### 244. 주어진 데이터 프레임에서 변수 및 관측치를 선택하는 데 사용되는 기능은?
+### 244. Which function is used to select variables and observations from a given data frame?
 
 a) `subset()`
 
@@ -3866,7 +3867,7 @@ c) `while()`
 
 d) `signal()`
 
-### 245. ________ 함수는 함수에 전달된 평균 및 표준 편차 인수를 기반으로 정규 난수를 생성한다.
+### 245. The ________ function generates normal random numbers based on the mean and standard deviation arguments passed to it.
 
 a) `rnorm`
 
@@ -3876,7 +3877,7 @@ c) `knorm`
 
 d) `lnorm`
 
-### 246. 다음 R 코드 조각의 출력값은?
+### 246. What will be the output of the following R code snippet?
 
 ```R
 > g <- function(x) {
@@ -3895,7 +3896,7 @@ c) `8`
 
 d) Error
 
-### 247. __________ 기능은 R에서 lapply와 같다.
+### 247. __________ function is similar to `lapply` in R.
 
 a) `apply()`
 
@@ -3905,7 +3906,7 @@ c) `sapply()`
 
 d) `mapply()`
 
-### 248. 다음 중 lapply의 다변량 버전은?
+### 248. Which of the following is the multivariate version of `lapply`?
 
 a) `apply()`
 
@@ -3915,7 +3916,7 @@ c) `sapply()`
 
 d) `mapply()`
 
-### 249. _______는 벡터의 subset 위에 함수를 적용하는 데 사용된다.
+### 249. _______ is used to apply a function over subsets of a vector.
 
 a) `apply()`
 
@@ -3925,7 +3926,7 @@ c) `tapply()`
 
 d) `mapply()`
 
-### 250. 다음 R 코드의 출력은?
+### 250. What will be the output of the following R code?
 
 ```R
 > x <- list(a = 1:5, b = c(0.1322028))
@@ -3940,7 +3941,7 @@ c) `$a \n [1] 5 ...`
 
 d) Error
 
-### 251. 다음 R 코드의 출력은?
+### 251. What will be the output of the following R code?
 
 ```R
 > x <- list(a = 1:4, b = rnorm(10), c = rnorm(20, 1), d = rnorm(100, 5))
@@ -3970,7 +3971,7 @@ c)
 
 d) Error
 
-### 252. ______ 정규 분포에 대한 누적 분포 함수를 평가한다.
+### 252. ______ evaluates the cumulative distribution function of the normal distribution.
 
 a) `dnorm`
 
@@ -3980,7 +3981,7 @@ c) `pnorm`
 
 d) `rpois`
 
-### 253. 다음 R 코드의 출력은?
+### 253. What will be the output of the following R code?
 
 ```R
 > x <- rnorm(10)
@@ -4007,7 +4008,7 @@ Min. 1st Qu. Median Mean 3rd Qu. Max.
 
 d) Error
 
-### 254. 다음 R 코드의 출력은?
+### 254. What will be the output of the following R code?
 
 ```R
 > x <- rnorm(10)
@@ -4034,7 +4035,7 @@ Min. 1st Qu. Median Mean 3rd Qu. Max.
 
 d) Error
 
-### 255. _________는 난수 생성에 있어서 재현성을 보장한다.
+### 255. _________ ensures reproducibility in random number generation.
 
 a) `sets.seed()`
 
@@ -4044,7 +4045,7 @@ c) `set.seedvalue()`
 
 d) `set.value()`
 
-### 256. 다음 R 코드의 출력은?
+### 256. What will be the output of the following R code?
 
 ```R
 > x <- rnorm(10)
@@ -4081,7 +4082,7 @@ c) `lm.fit()` (또는 `lm()`)
 
 d) `lm.interval()`
 
-### 258. ggplot2에서 geom의 역할은?
+### 258. What is the role of `geom` in ggplot2?
 
 a) 점, 선 또는 기타 모양과 같은 플롯 객체 (기하학적 형태 표현)
 
@@ -4101,7 +4102,7 @@ c) `x1 <- c(rnorm(n))`
 
 d) `x1 >- c(norm(n))`
 
-### 260. 다음 중 csv 파일을 읽을 수 있는 명령어는?
+### 260. Which of the following commands can read a csv file?
 
 a) `read.table(filename,header=TRUE,sep=’,’)`
 
@@ -4111,7 +4112,7 @@ c) `read.tab(filename,header=TRUE,sep=’,’)`
 
 d) `read.tab(filename,header=False,sep=’,’)`
 
-### 261. 다음 중 탭 또는 공간 구분 파일을 읽는 명령어는?
+### 261. Which of the following commands reads a tab- or space-delimited file?
 
 a) `read.table(filename,header=TRUE)`
 
@@ -4121,7 +4122,7 @@ c) `read.table(filename,header=FALSE)`
 
 d) `read.tableall(filename,header=TRUE)`
 
-### 262. ___________ 작업 공간에서 모든 변수를 제거한다.
+### 262. ___________ removes all variables from the workspace.
 
 a) `rm(x)`
 

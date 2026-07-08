@@ -1,16 +1,3 @@
 import comp from "/home/kmbzn/blog-v2/docs/.vuepress/.temp/pages/se/12.html.vue"
 const data = JSON.parse("{\"path\":\"/se/12.html\",\"title\":\"12. Design Patterns\",\"lang\":\"ko-KR\",\"frontmatter\":{\"description\":\"12. Design Patterns Learning Goals Design pattern의 동기 이해 (솔루션의 template로서) 다양한 design pattern 유형 학습 Design pattern 사용 시점 논의 문제 해결을 위한 적절한 design pattern 적용 Design Challenges 재사용...\",\"sitemap\":false,\"head\":[[\"script\",{\"type\":\"application/ld+json\"},\"{\\\"@context\\\":\\\"https://schema.org\\\",\\\"@type\\\":\\\"Article\\\",\\\"headline\\\":\\\"12. Design Patterns\\\",\\\"image\\\":[\\\"https://kmbzn.com/images/og.png\\\"],\\\"dateModified\\\":\\\"2025-12-11T22:02:37.000Z\\\",\\\"author\\\":[]}\"],[\"meta\",{\"property\":\"og:url\",\"content\":\"https://kmbzn.com/se/12.html\"}],[\"meta\",{\"property\":\"og:title\",\"content\":\"12. Design Patterns\"}],[\"meta\",{\"property\":\"og:description\",\"content\":\"12. Design Patterns Learning Goals Design pattern의 동기 이해 (솔루션의 template로서) 다양한 design pattern 유형 학습 Design pattern 사용 시점 논의 문제 해결을 위한 적절한 design pattern 적용 Design Challenges 재사용...\"}],[\"meta\",{\"property\":\"og:type\",\"content\":\"article\"}],[\"meta\",{\"property\":\"og:image\",\"content\":\"https://kmbzn.com/images/og.png\"}],[\"meta\",{\"property\":\"og:locale\",\"content\":\"ko-KR\"}],[\"meta\",{\"property\":\"og:updated_time\",\"content\":\"2025-12-11T22:02:37.000Z\"}],[\"meta\",{\"property\":\"article:modified_time\",\"content\":\"2025-12-11T22:02:37.000Z\"}]]},\"git\":{\"createdTime\":1763149723000,\"updatedTime\":1765490557000,\"contributors\":[{\"name\":\"kmbzn\",\"username\":\"kmbzn\",\"email\":\"kmbzn24@gmail.com\",\"commits\":2,\"url\":\"https://github.com/kmbzn\"},{\"name\":\"Byungjun Kim\",\"username\":\"\",\"email\":\"kmbzn24@gmail.com\",\"commits\":1}],\"changelog\":[{\"hash\":\"4803658c3d1a310eb04dd4cddd8242ad9591eff8\",\"time\":1765490557000,\"email\":\"kmbzn24@gmail.com\",\"author\":\"Byungjun Kim\",\"message\":\"update db final\"},{\"hash\":\"f81f9042e7888855a506f92261c74aaa2d86aa2a\",\"time\":1764305376000,\"email\":\"kmbzn24@gmail.com\",\"author\":\"kmbzn\",\"message\":\"update npm\"},{\"hash\":\"6120a63360466143831636b40c0f1ff3226d9d3e\",\"time\":1763149723000,\"email\":\"kmbzn24@gmail.com\",\"author\":\"kmbzn\",\"message\":\"Refactor code structure for improved readability and maintainability\"}]},\"filePathRelative\":\"se/12.md\",\"autoDesc\":true}")
 export { comp, data }
-
-if (import.meta.webpackHot) {
-  import.meta.webpackHot.accept()
-  if (__VUE_HMR_RUNTIME__.updatePageData) {
-    __VUE_HMR_RUNTIME__.updatePageData(data)
-  }
-}
-
-if (import.meta.hot) {
-  import.meta.hot.accept(({ data }) => {
-    __VUE_HMR_RUNTIME__.updatePageData(data)
-  })
-}

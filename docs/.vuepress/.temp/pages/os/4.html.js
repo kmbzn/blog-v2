@@ -1,16 +1,3 @@
 import comp from "/home/kmbzn/blog-v2/docs/.vuepress/.temp/pages/os/4.html.vue"
 const data = JSON.parse("{\"path\":\"/os/4.html\",\"title\":\"4. Threads\",\"lang\":\"ko-KR\",\"frontmatter\":{\"description\":\"4. Threads 다루는 주제 A. 스레드 개념 B. 멀티스레딩 모델 C. 스레딩 관련 이슈 D. 사례 A. 스레드 개념 개념 스레드는 흔히 경량 프로세스(lightweight process)라 불림 실행의 단위 (스케줄링의 단위) 최소한의 자원만을 필요로 전통적인 프로세스는 중량 프로세스(heavyweight p...\",\"sitemap\":false,\"head\":[[\"script\",{\"type\":\"application/ld+json\"},\"{\\\"@context\\\":\\\"https://schema.org\\\",\\\"@type\\\":\\\"Article\\\",\\\"headline\\\":\\\"4. Threads\\\",\\\"image\\\":[\\\"https://kmbzn.com/images/og.png\\\"],\\\"dateModified\\\":\\\"2026-01-10T09:38:14.000Z\\\",\\\"author\\\":[]}\"],[\"meta\",{\"property\":\"og:url\",\"content\":\"https://kmbzn.com/os/4.html\"}],[\"meta\",{\"property\":\"og:title\",\"content\":\"4. Threads\"}],[\"meta\",{\"property\":\"og:description\",\"content\":\"4. Threads 다루는 주제 A. 스레드 개념 B. 멀티스레딩 모델 C. 스레딩 관련 이슈 D. 사례 A. 스레드 개념 개념 스레드는 흔히 경량 프로세스(lightweight process)라 불림 실행의 단위 (스케줄링의 단위) 최소한의 자원만을 필요로 전통적인 프로세스는 중량 프로세스(heavyweight p...\"}],[\"meta\",{\"property\":\"og:type\",\"content\":\"article\"}],[\"meta\",{\"property\":\"og:image\",\"content\":\"https://kmbzn.com/images/og.png\"}],[\"meta\",{\"property\":\"og:locale\",\"content\":\"ko-KR\"}],[\"meta\",{\"property\":\"og:updated_time\",\"content\":\"2026-01-10T09:38:14.000Z\"}],[\"meta\",{\"property\":\"article:modified_time\",\"content\":\"2026-01-10T09:38:14.000Z\"}]]},\"git\":{\"createdTime\":1768037745000,\"updatedTime\":1768037894000,\"contributors\":[{\"name\":\"kmbzn\",\"username\":\"kmbzn\",\"email\":\"kmbzn24@gmail.com\",\"commits\":2,\"url\":\"https://github.com/kmbzn\"}],\"changelog\":[{\"hash\":\"459e08c429eec70829858495ad8e7a1bc661d8b0\",\"time\":1768037894000,\"email\":\"kmbzn24@gmail.com\",\"author\":\"kmbzn\",\"message\":\"black text\"},{\"hash\":\"a0aafb6736244476d03cd43d49a895d5b2b2840b\",\"time\":1768037745000,\"email\":\"kmbzn24@gmail.com\",\"author\":\"kmbzn\",\"message\":\"add os/4.md\"}]},\"filePathRelative\":\"os/4.md\",\"autoDesc\":true}")
 export { comp, data }
-
-if (import.meta.webpackHot) {
-  import.meta.webpackHot.accept()
-  if (__VUE_HMR_RUNTIME__.updatePageData) {
-    __VUE_HMR_RUNTIME__.updatePageData(data)
-  }
-}
-
-if (import.meta.hot) {
-  import.meta.hot.accept(({ data }) => {
-    __VUE_HMR_RUNTIME__.updatePageData(data)
-  })
-}
