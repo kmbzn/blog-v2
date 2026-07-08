@@ -24,10 +24,10 @@ const sidebar = [
     children: [
       '/os/dunggeunmo',
       '/os/ubuntu_thumbnails',
-      '/os/wine_without_explorer',
       '/os/clipboard_image_kakaotalk_ubuntu',
-      '/os/winemoji',
+      '/os/wine_without_explorer',
       '/os/no_animation',
+      '/os/winemoji',
     ]
   },
   {
