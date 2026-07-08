@@ -20,11 +20,10 @@ sudo unzip -j -o /usr/share/fonts/truetype/dunggeunmo/DungGeunMo_TTF.zip -d /usr
 sudo rm /usr/share/fonts/truetype/dunggeunmo/DungGeunMo_TTF.zip
 
 # 3. 32pt 크기로 한글 영역을 포함하여 GRUB용 비트맵 폰트 생성
-# (한글 메뉴 환경에서 폰트가 깨지거나 기본 폰트로 폴백되는 것을 방지하기 위해 --range 옵션을 명시합니다)
 sudo grub-mkfont -s 32 --range=0x0000-0xffff -o /boot/grub/fonts/dunggeunmo32.pf2 /usr/share/fonts/truetype/dunggeunmo/DungGeunMo.ttf
 sudo chmod 644 /boot/grub/fonts/dunggeunmo32.pf2
 
-# 4. GRUB 설정 파일 자동 업데이트 (폰트 지정 및 그래픽 터미널 모드 활성화)
+# 4. GRUB 설정 파일 자동 업데이트
 sudo sed -i '/^GRUB_FONT=/d; $a GRUB_FONT="/boot/grub/fonts/dunggeunmo32.pf2"' /etc/default/grub
 sudo sed -i '/^GRUB_TERMINAL_OUTPUT=/d; $a GRUB_TERMINAL_OUTPUT="gfxterm"' /etc/default/grub
 
@@ -37,8 +36,8 @@ sudo update-grub
 sudo reboot
 ```
 
-## 요약
+## 4줄 요약
 1. `/usr/share/fonts/truetype/dunggeunmo` 경로에 `DungGeunMo_TTF.zip` 다운로드 및 압축 해제
-2. `grub-mkfont`를 통해 한글 영역을 포함한 32pt 크기의 `dunggeunmo32.pf2` 파일 생성
+2. `grub-mkfont`를 통해 32pt 크기의 `dunggeunmo32.pf2` 파일 생성
 3. `/etc/default/grub` 파일에 폰트 경로(`GRUB_FONT`) 및 그래픽 터미널 출력(`GRUB_TERMINAL_OUTPUT="gfxterm"`) 설정 추가
 4. `update-grub`으로 설정 적용
