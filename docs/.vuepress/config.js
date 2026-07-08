@@ -22,7 +22,7 @@ const sidebar = [
     text: 'Ubuntu',
     collapsible: false,
     children: [
-      '/os/terminus',
+      '/os/dunggeunmo',
       '/os/ubuntu_thumbnails',
       '/os/wine_without_explorer',
       '/os/clipboard_image_kakaotalk_ubuntu',
