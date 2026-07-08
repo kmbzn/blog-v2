@@ -1,5 +1,0 @@
-import "/home/kmbzn/blog-v2/node_modules/@vuepress/highlighter-helper/dist/client/styles/base.css"
-import "/home/kmbzn/blog-v2/node_modules/@vuepress/plugin-prismjs/dist/client/styles/ghcolors.css"
-import "/home/kmbzn/blog-v2/node_modules/@vuepress/highlighter-helper/dist/client/styles/line-numbers.css"
-import "/home/kmbzn/blog-v2/node_modules/@vuepress/highlighter-helper/dist/client/styles/notation-highlight.css"
-import "/home/kmbzn/blog-v2/node_modules/@vuepress/highlighter-helper/dist/client/styles/code-block-title.css"
