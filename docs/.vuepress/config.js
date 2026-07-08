@@ -136,6 +136,10 @@ export default defineUserConfig({
     if (normalized !== '/' && !sidebarPaths.has(normalized)) {
       page.frontmatter.sitemap = false
     }
+    if (normalized !== '/' && page.path !== '/404.html') {
+      page.path = normalized
+      page.frontmatter.permalink = normalized
+    }
   },
   lang: 'ko-KR',
   extendsMarkdown: (md) => {
